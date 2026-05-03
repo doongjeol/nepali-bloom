@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "title": "인사하기",
+    "description": "처음 만났을 때 인사하는 대화",
+    "lines": [
+      { "speaker": "A", "nepali": "नमस्ते!", "romanized": "Namaste!", "korean": "안녕하세요!" },
+      { "speaker": "B", "nepali": "नमस्ते! तपाईंको नाम के हो?", "romanized": "Namaste! Tapaaiko naam ke ho?", "korean": "안녕하세요! 이름이 뭐예요?" },
+      { "speaker": "A", "nepali": "मेरो नाम सुमन हो। तपाईंको?", "romanized": "Mero naam Suman ho. Tapaaiko?", "korean": "제 이름은 수만이에요. 당신은요?" },
+      { "speaker": "B", "nepali": "मेरो नाम रीता हो। भेटेर खुसी लाग्यो।", "romanized": "Mero naam Rita ho. Bhetera khusi laagyo.", "korean": "제 이름은 리타예요. 만나서 반가워요." }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "시장에서 물건 사기",
+    "description": "시장에서 물건을 사는 상황",
+    "lines": [
+      { "speaker": "A", "nepali": "यो कति हो?", "romanized": "Yo kati ho?", "korean": "이거 얼마예요?" },
+      { "speaker": "B", "nepali": "यो दुई सय रुपैयाँ हो।", "romanized": "Yo dui saya rupaiyaan ho.", "korean": "이건 200루피예요." },
+      { "speaker": "A", "nepali": "अलि सस्तो गर्नुहोस् न।", "romanized": "Ali sasto garnuhos na.", "korean": "좀 싸게 해주세요." },
+      { "speaker": "B", "nepali": "ठीक छ, एक सय पचास।", "romanized": "Thik chha, ek saya pachaas.", "korean": "좋아요, 150이요." },
+      { "speaker": "A", "nepali": "धन्यवाद!", "romanized": "Dhanyavaad!", "korean": "감사합니다!" }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "길 물어보기",
+    "description": "길을 찾을 때 사용하는 대화",
+    "lines": [
+      { "speaker": "A", "nepali": "माफ गर्नुहोस्, बजार कहाँ छ?", "romanized": "Maaf garnuhos, bazaar kahaan chha?", "korean": "실례합니다, 시장이 어디에 있나요?" },
+      { "speaker": "B", "nepali": "सिधा जानुहोस्, दायाँ मोड्नुहोस्।", "romanized": "Sidhaa jaanuhos, daayaan modnuhos.", "korean": "직진하시고, 오른쪽으로 도세요." },
+      { "speaker": "A", "nepali": "टाढा छ?", "romanized": "Taadha chha?", "korean": "멀어요?" },
+      { "speaker": "B", "nepali": "होइन, नजिक छ। पाँच मिनेट लाग्छ।", "romanized": "Hoina, najik chha. Paanch minet laagchha.", "korean": "아니요, 가까워요. 5분 걸려요." },
+      { "speaker": "A", "nepali": "धन्यवाद!", "romanized": "Dhanyavaad!", "korean": "감사합니다!" }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "식당에서 주문하기",
+    "description": "식당에서 음식을 주문하는 대화",
+    "lines": [
+      { "speaker": "A", "nepali": "मेनु दिनुहोस्।", "romanized": "Menu dinuhos.", "korean": "메뉴 주세요." },
+      { "speaker": "B", "nepali": "यहाँ छ। के खानुहुन्छ?", "romanized": "Yahaan chha. Ke khaanuhunchha?", "korean": "여기요. 뭐 드실래요?" },
+      { "speaker": "A", "nepali": "दाल भात र चिकन दिनुहोस्।", "romanized": "Daal bhaat ra chicken dinuhos.", "korean": "달밧이랑 치킨 주세요." },
+      { "speaker": "B", "nepali": "पिउने केही?", "romanized": "Piune kehi?", "korean": "마실 건요?" },
+      { "speaker": "A", "nepali": "एक कप चिया दिनुहोस्।", "romanized": "Ek cup chiya dinuhos.", "korean": "차 한 잔 주세요." }
+    ]
+  }
+]
