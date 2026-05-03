@@ -1,0 +1,203 @@
+[
+  {
+    "id": 1,
+    "title": "Greetings",
+    "titleKo": "인사하기",
+    "description": "기본 인사말과 소개 표현을 배웁니다",
+    "vocabulary": [
+      { "nepali": "नमस्ते", "romanized": "namaste", "korean": "안녕하세요" },
+      { "nepali": "धन्यवाद", "romanized": "dhanyavaad", "korean": "감사합니다" },
+      { "nepali": "माफ गर्नुहोस्", "romanized": "maaf garnuhos", "korean": "죄송합니다/실례합니다" },
+      { "nepali": "नाम", "romanized": "naam", "korean": "이름" },
+      { "nepali": "हो", "romanized": "ho", "korean": "~입니다/네" },
+      { "nepali": "के", "romanized": "ke", "korean": "무엇" },
+      { "nepali": "मेरो", "romanized": "mero", "korean": "나의" },
+      { "nepali": "तपाईंको", "romanized": "tapaaiko", "korean": "당신의 (존칭)" }
+    ],
+    "quiz": [
+      {
+        "question": "'안녕하세요'를 네팔어로 무엇이라 하나요?",
+        "options": ["धन्यवाद", "नमस्ते", "माफ गर्नुहोस्", "राम्रो"],
+        "answer": 1
+      },
+      {
+        "question": "'감사합니다'의 네팔어는?",
+        "options": ["नमस्ते", "माफ गर्नुहोस्", "धन्यवाद", "ठीक छ"],
+        "answer": 2
+      },
+      {
+        "question": "'मेरो नाम ... हो'의 의미는?",
+        "options": ["당신의 이름은 뭐예요?", "제 이름은 ...입니다", "만나서 반갑습니다", "안녕히 가세요"],
+        "answer": 1
+      }
+    ],
+    "dialogues": [
+      {
+        "title": "처음 만난 사이",
+        "lines": [
+          { "speaker": "A", "nepali": "नमस्ते!", "romanized": "Namaste!", "korean": "안녕하세요!" },
+          { "speaker": "B", "nepali": "नमस्ते! तपाईंको नाम के हो?", "romanized": "Namaste! Tapaaiko naam ke ho?", "korean": "안녕하세요! 이름이 뭐예요?" },
+          { "speaker": "A", "nepali": "मेरो नाम सुमन हो। तपाईंको?", "romanized": "Mero naam Suman ho. Tapaaiko?", "korean": "제 이름은 수만이에요. 당신은요?" },
+          { "speaker": "B", "nepali": "मेरो नाम रीता हो। भेटेर खुसी लाग्यो।", "romanized": "Mero naam Rita ho. Bhetera khusi laagyo.", "korean": "제 이름은 리타예요. 만나서 반가워요." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Useful Expressions",
+    "titleKo": "유용한 표현",
+    "description": "일상에서 자주 쓰이는 기본 표현을 배웁니다",
+    "vocabulary": [
+      { "nepali": "ठीक छ", "romanized": "thik chha", "korean": "괜찮아요/좋아요" },
+      { "nepali": "हुन्छ", "romanized": "hunchha", "korean": "됩니다/좋아요" },
+      { "nepali": "छ", "romanized": "chha", "korean": "있다/~이다" },
+      { "nepali": "छैन", "romanized": "chhaina", "korean": "없다/아니다" },
+      { "nepali": "राम्रो", "romanized": "ramro", "korean": "좋은/예쁜" },
+      { "nepali": "नराम्रो", "romanized": "naramro", "korean": "나쁜" },
+      { "nepali": "कसरी", "romanized": "kasari", "korean": "어떻게" },
+      { "nepali": "किन", "romanized": "kina", "korean": "왜" }
+    ],
+    "quiz": [
+      {
+        "question": "'ठीक छ'의 의미는?",
+        "options": ["감사합니다", "괜찮아요/좋아요", "안녕하세요", "죄송합니다"],
+        "answer": 1
+      },
+      {
+        "question": "'없다/아니다'를 뜻하는 네팔어는?",
+        "options": ["छ", "हो", "छैन", "हुन्छ"],
+        "answer": 2
+      },
+      {
+        "question": "'राम्रो'의 반대말은?",
+        "options": ["ठीक", "नराम्रो", "सानो", "ठूलो"],
+        "answer": 1
+      }
+    ],
+    "dialogues": [
+      {
+        "title": "안부 묻기",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंलाई कस्तो छ?", "romanized": "Tapaaalaai kasto chha?", "korean": "어떠세요? (기분이)" },
+          { "speaker": "B", "nepali": "ठीक छ, धन्यवाद।", "romanized": "Thik chha, dhanyavaad.", "korean": "괜찮아요, 감사합니다." },
+          { "speaker": "A", "nepali": "राम्रो छ?", "romanized": "Ramro chha?", "korean": "좋아요?" },
+          { "speaker": "B", "nepali": "हो, राम्रो छ।", "romanized": "Ho, ramro chha.", "korean": "네, 좋아요." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Pronouns",
+    "titleKo": "대명사",
+    "description": "인칭 대명사와 존칭 체계를 배웁니다",
+    "vocabulary": [
+      { "nepali": "म", "romanized": "ma", "korean": "나" },
+      { "nepali": "तिमी", "romanized": "timi", "korean": "너 (비격식)" },
+      { "nepali": "तपाईं", "romanized": "tapaaee", "korean": "당신 (존칭)" },
+      { "nepali": "उ", "romanized": "u", "korean": "그/그녀 (비격식)" },
+      { "nepali": "उनी", "romanized": "uni", "korean": "그/그녀" },
+      { "nepali": "उहाँ", "romanized": "uhaan", "korean": "그분 (존칭)" },
+      { "nepali": "हामी", "romanized": "haami", "korean": "우리" },
+      { "nepali": "तिनीहरू", "romanized": "tiniharu", "korean": "그들" }
+    ],
+    "quiz": [
+      {
+        "question": "'나'를 뜻하는 네팔어는?",
+        "options": ["तिमी", "म", "हामी", "उनी"],
+        "answer": 1
+      },
+      {
+        "question": "존칭으로 '당신'을 말할 때 사용하는 단어는?",
+        "options": ["तिमी", "तँ", "तपाईं", "उ"],
+        "answer": 2
+      },
+      {
+        "question": "'हामी'의 의미는?",
+        "options": ["나", "너", "우리", "그들"],
+        "answer": 2
+      }
+    ],
+    "dialogues": [
+      {
+        "title": "소개하기",
+        "lines": [
+          { "speaker": "A", "nepali": "उहाँ को हुन्?", "romanized": "Uhaan ko hun?", "korean": "저 분은 누구세요?" },
+          { "speaker": "B", "nepali": "उहाँ मेरो शिक्षक हुन्।", "romanized": "Uhaan mero shikshak hun.", "korean": "저 분은 제 선생님이세요." },
+          { "speaker": "A", "nepali": "र तिनीहरू?", "romanized": "Ra tiniharu?", "korean": "그리고 그분들은요?" },
+          { "speaker": "B", "nepali": "तिनीहरू मेरा साथीहरू हुन्।", "romanized": "Tiniharu mera saathiharu hun.", "korean": "그들은 제 친구들이에요." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Numbers",
+    "titleKo": "숫자",
+    "description": "네팔어 숫자를 배웁니다",
+    "vocabulary": [
+      { "nepali": "एक", "romanized": "ek", "korean": "1 (하나)" },
+      { "nepali": "दुई", "romanized": "dui", "korean": "2 (둘)" },
+      { "nepali": "तीन", "romanized": "tin", "korean": "3 (셋)" },
+      { "nepali": "चार", "romanized": "chaar", "korean": "4 (넷)" },
+      { "nepali": "पाँच", "romanized": "paanch", "korean": "5 (다섯)" },
+      { "nepali": "छ", "romanized": "chha", "korean": "6 (여섯)" },
+      { "nepali": "सात", "romanized": "saat", "korean": "7 (일곱)" },
+      { "nepali": "आठ", "romanized": "aath", "korean": "8 (여덟)" },
+      { "nepali": "नौ", "romanized": "nau", "korean": "9 (아홉)" },
+      { "nepali": "दश", "romanized": "das", "korean": "10 (열)" }
+    ],
+    "quiz": [
+      {
+        "question": "'पाँच'는 몇인가요?",
+        "options": ["3", "4", "5", "6"],
+        "answer": 2
+      },
+      {
+        "question": "숫자 '7'을 네팔어로?",
+        "options": ["छ", "सात", "आठ", "नौ"],
+        "answer": 1
+      },
+      {
+        "question": "'दश'는 몇인가요?",
+        "options": ["8", "9", "10", "100"],
+        "answer": 2
+      }
+    ],
+    "dialogues": []
+  },
+  { "id": 5, "title": "Nouns", "titleKo": "명사", "description": "기본 명사를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 6, "title": "Verbs I", "titleKo": "동사 1", "description": "기본 동사를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 7, "title": "Verbs II", "titleKo": "동사 2", "description": "동사 활용을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 8, "title": "Adjectives", "titleKo": "형용사", "description": "형용사를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 9, "title": "Postpositions", "titleKo": "후치사", "description": "후치사를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 10, "title": "Questions", "titleKo": "의문문", "description": "의문문을 만드는 방법을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 11, "title": "Negation", "titleKo": "부정문", "description": "부정 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 12, "title": "Present Tense", "titleKo": "현재 시제", "description": "현재 시제를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 13, "title": "Past Tense", "titleKo": "과거 시제", "description": "과거 시제를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 14, "title": "Future Tense", "titleKo": "미래 시제", "description": "미래 시제를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 15, "title": "Imperative", "titleKo": "명령문", "description": "명령형 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 16, "title": "Shopping", "titleKo": "쇼핑", "description": "물건을 사고 파는 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 17, "title": "Food and Drink", "titleKo": "음식과 음료", "description": "음식 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 18, "title": "Directions", "titleKo": "길 찾기", "description": "방향과 위치 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 19, "title": "Time", "titleKo": "시간", "description": "시간 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 20, "title": "Weather", "titleKo": "날씨", "description": "날씨 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 21, "title": "Family", "titleKo": "가족", "description": "가족 관련 어휘를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 22, "title": "Health", "titleKo": "건강", "description": "건강 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 23, "title": "Travel", "titleKo": "여행", "description": "여행 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 24, "title": "At the Hotel", "titleKo": "호텔에서", "description": "숙소 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 25, "title": "Transportation", "titleKo": "교통", "description": "교통 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 26, "title": "At the Post Office", "titleKo": "우체국에서", "description": "우체국 관련 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 27, "title": "Comparisons", "titleKo": "비교 표현", "description": "비교급과 최상급을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 28, "title": "Conjunctions", "titleKo": "접속사", "description": "접속사를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 29, "title": "Relative Clauses", "titleKo": "관계절", "description": "관계절을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 30, "title": "Conditional", "titleKo": "조건문", "description": "조건 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 31, "title": "Passive Voice", "titleKo": "수동태", "description": "수동태를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 32, "title": "Causative", "titleKo": "사역 표현", "description": "사역 표현을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 33, "title": "Honorifics", "titleKo": "존칭", "description": "존칭 체계를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 34, "title": "Compound Verbs", "titleKo": "복합 동사", "description": "복합 동사를 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 35, "title": "Reported Speech", "titleKo": "간접 화법", "description": "간접 화법을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 36, "title": "Expressions of Desire", "titleKo": "희망 표현", "description": "바람과 희망을 표현하는 방법을 배웁니다", "vocabulary": [], "quiz": [], "dialogues": [] },
+  { "id": 37, "title": "Review", "titleKo": "총 복습", "description": "전체 내용을 복습합니다", "vocabulary": [], "quiz": [], "dialogues": [] }
+]
