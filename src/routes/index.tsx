@@ -5,35 +5,11 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "네팔어 학습 - 홈" },
-      { name: "description", content: "네팔어를 쉽고 재미있게 배워보세요" },
+      { name: "description", content: "Basic Course in Spoken Nepali 기반 네팔어 학습" },
     ],
   }),
   component: Index,
 });
-
-const features = [
-  {
-    to: "/vocabulary" as const,
-    icon: "📖",
-    title: "단어장",
-    description: "카테고리별 네팔어 단어를 학습해요",
-    color: "bg-warm",
-  },
-  {
-    to: "/quiz" as const,
-    icon: "✏️",
-    title: "퀴즈",
-    description: "객관식 퀴즈로 실력을 테스트해요",
-    color: "bg-nepali/10",
-  },
-  {
-    to: "/dialogues" as const,
-    icon: "💬",
-    title: "대화문",
-    description: "실생활 대화를 통해 연습해요",
-    color: "bg-success/10",
-  },
-];
 
 function Index() {
   return (
@@ -46,31 +22,54 @@ function Index() {
             네팔어 학습
           </h1>
           <p className="mx-auto max-w-md text-lg text-muted-foreground">
-            단어, 퀴즈, 대화문으로 네팔어를 쉽고 재미있게 배워보세요
+            Basic Course in Spoken Nepali 교재를 기반으로
+            <br />
+            37개 레슨을 통해 네팔어를 배워보세요
           </p>
         </section>
 
-        <section className="grid gap-6 sm:grid-cols-3">
-          {features.map((f) => (
-            <Link
-              key={f.to}
-              to={f.to}
-              className="group rounded-2xl border bg-card p-8 text-left shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
-            >
-              <div
-                className={`mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl ${f.color} text-2xl`}
-              >
-                {f.icon}
-              </div>
-              <h2 className="mb-2 text-xl font-semibold text-foreground">
-                {f.title}
-              </h2>
-              <p className="text-sm text-muted-foreground">{f.description}</p>
-            </Link>
-          ))}
+        <section className="mb-12">
+          <Link
+            to="/lessons"
+            className="group mx-auto block max-w-lg rounded-2xl border bg-card p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+          >
+            <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-warm text-2xl">
+              📚
+            </div>
+            <h2 className="mb-2 text-xl font-semibold text-foreground">
+              레슨 시작하기
+            </h2>
+            <p className="text-sm text-muted-foreground">
+              단어장, 퀴즈, 대화문이 포함된 37개 레슨
+            </p>
+          </Link>
         </section>
 
-        <section className="mt-16 rounded-2xl bg-warm/50 p-8 text-center">
+        <section className="grid gap-4 sm:grid-cols-3">
+          <div className="rounded-xl border bg-card p-6 text-center shadow-sm">
+            <div className="mb-2 text-2xl">📖</div>
+            <h3 className="font-semibold text-foreground">단어장</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              플립 카드로 어휘를 학습
+            </p>
+          </div>
+          <div className="rounded-xl border bg-card p-6 text-center shadow-sm">
+            <div className="mb-2 text-2xl">✏️</div>
+            <h3 className="font-semibold text-foreground">퀴즈</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              객관식으로 실력 테스트
+            </p>
+          </div>
+          <div className="rounded-xl border bg-card p-6 text-center shadow-sm">
+            <div className="mb-2 text-2xl">💬</div>
+            <h3 className="font-semibold text-foreground">대화문</h3>
+            <p className="mt-1 text-sm text-muted-foreground">
+              실생활 대화 연습
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-12 rounded-2xl bg-warm/50 p-8 text-center">
           <h2 className="mb-2 text-lg font-semibold text-warm-foreground">
             🙏 नमस्ते (나마스테)
           </h2>

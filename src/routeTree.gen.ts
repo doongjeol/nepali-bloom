@@ -11,8 +11,10 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as VocabularyRouteImport } from './routes/vocabulary'
 import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as DialoguesRouteImport } from './routes/dialogues'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 
 const VocabularyRoute = VocabularyRouteImport.update({
   id: '/vocabulary',
@@ -22,6 +24,11 @@ const VocabularyRoute = VocabularyRouteImport.update({
 const QuizRoute = QuizRouteImport.update({
   id: '/quiz',
   path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LessonsRoute = LessonsRouteImport.update({
+  id: '/lessons',
+  path: '/lessons',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DialoguesRoute = DialoguesRouteImport.update({
@@ -34,37 +41,68 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LessonsLessonIdRoute = LessonsLessonIdRouteImport.update({
+  id: '/$lessonId',
+  path: '/$lessonId',
+  getParentRoute: () => LessonsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dialogues': typeof DialoguesRoute
+  '/lessons': typeof LessonsRouteWithChildren
   '/quiz': typeof QuizRoute
   '/vocabulary': typeof VocabularyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dialogues': typeof DialoguesRoute
+  '/lessons': typeof LessonsRouteWithChildren
   '/quiz': typeof QuizRoute
   '/vocabulary': typeof VocabularyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dialogues': typeof DialoguesRoute
+  '/lessons': typeof LessonsRouteWithChildren
   '/quiz': typeof QuizRoute
   '/vocabulary': typeof VocabularyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dialogues' | '/quiz' | '/vocabulary'
+  fullPaths:
+    | '/'
+    | '/dialogues'
+    | '/lessons'
+    | '/quiz'
+    | '/vocabulary'
+    | '/lessons/$lessonId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dialogues' | '/quiz' | '/vocabulary'
-  id: '__root__' | '/' | '/dialogues' | '/quiz' | '/vocabulary'
+  to:
+    | '/'
+    | '/dialogues'
+    | '/lessons'
+    | '/quiz'
+    | '/vocabulary'
+    | '/lessons/$lessonId'
+  id:
+    | '__root__'
+    | '/'
+    | '/dialogues'
+    | '/lessons'
+    | '/quiz'
+    | '/vocabulary'
+    | '/lessons/$lessonId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DialoguesRoute: typeof DialoguesRoute
+  LessonsRoute: typeof LessonsRouteWithChildren
   QuizRoute: typeof QuizRoute
   VocabularyRoute: typeof VocabularyRoute
 }
@@ -85,6 +123,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuizRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lessons': {
+      id: '/lessons'
+      path: '/lessons'
+      fullPath: '/lessons'
+      preLoaderRoute: typeof LessonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/dialogues': {
       id: '/dialogues'
       path: '/dialogues'
@@ -99,12 +144,31 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lessons/$lessonId': {
+      id: '/lessons/$lessonId'
+      path: '/$lessonId'
+      fullPath: '/lessons/$lessonId'
+      preLoaderRoute: typeof LessonsLessonIdRouteImport
+      parentRoute: typeof LessonsRoute
+    }
   }
 }
+
+interface LessonsRouteChildren {
+  LessonsLessonIdRoute: typeof LessonsLessonIdRoute
+}
+
+const LessonsRouteChildren: LessonsRouteChildren = {
+  LessonsLessonIdRoute: LessonsLessonIdRoute,
+}
+
+const LessonsRouteWithChildren =
+  LessonsRoute._addFileChildren(LessonsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DialoguesRoute: DialoguesRoute,
+  LessonsRoute: LessonsRouteWithChildren,
   QuizRoute: QuizRoute,
   VocabularyRoute: VocabularyRoute,
 }

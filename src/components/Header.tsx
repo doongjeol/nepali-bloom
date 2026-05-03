@@ -3,9 +3,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { to: "/" as const, label: "홈", icon: "🏠" },
-  { to: "/vocabulary" as const, label: "단어장", icon: "📖" },
-  { to: "/quiz" as const, label: "퀴즈", icon: "✏️" },
-  { to: "/dialogues" as const, label: "대화문", icon: "💬" },
+  { to: "/lessons" as const, label: "레슨", icon: "📚" },
 ];
 
 export function Header() {
@@ -22,7 +20,9 @@ export function Header() {
         </Link>
         <nav className="flex items-center gap-1">
           {navItems.map((item) => {
-            const isActive = location.pathname === item.to;
+            const isActive =
+              location.pathname === item.to ||
+              (item.to === "/lessons" && location.pathname.startsWith("/lessons"));
             return (
               <Link
                 key={item.to}
