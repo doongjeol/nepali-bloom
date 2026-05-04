@@ -153,7 +153,7 @@ function LessonDetailPage() {
   const currentIndex = lessonsData.findIndex((l) => l.id === Number(lessonId));
   const prevId = currentIndex > 0 ? lessonsData[currentIndex - 1].id : null;
   const nextId = currentIndex < lessonsData.length - 1 ? lessonsData[currentIndex + 1].id : null;
-
+  
   const allTabs: { key: Tab; label: string; icon: string; count: number }[] = [
     { key: "vocabulary", label: "단어장", icon: "📖", count: lesson.vocabulary.length },
     { key: "examples", label: "예문", icon: "💡", count: lesson.examples.length },

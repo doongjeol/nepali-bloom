@@ -24,7 +24,7 @@ function LessonsPage() {
         </p>
 
         <div className="grid gap-2 sm:gap-3">
-          {lessonsData.map((lesson) => {
+          {[...lessonsData].sort((a, b) => a.id - b.id).map((lesson) => {
             const hasContent = lesson.vocabulary.length > 0 || lesson.examples.length > 0 || (lesson.grammar && lesson.grammar.length > 0) || lesson.quiz.length > 0 || lesson.dialogues.length > 0;
             return (
               <Link
