@@ -1,0 +1,418 @@
+{
+  "id": 15,
+  "title": "Lesson 15",
+  "titleKo": "제15과",
+  "description": "소유의 두 가지 표현 방식(Saṅga와 -ko)과 그 차이점을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बाजे",
+      "romanized": "baajyaa",
+      "korean": "grandfather (할아버지)"
+    },
+    {
+      "nepali": "बज्यै",
+      "romanized": "bajyaai",
+      "korean": "grandmother (할머니)"
+    },
+    {
+      "nepali": "भाइ",
+      "romanized": "bhaai",
+      "korean": "younger brother (남동생)"
+    },
+    {
+      "nepali": "बिहा",
+      "romanized": "bihaa",
+      "korean": "marriage (결혼)"
+    },
+    {
+      "nepali": "छ",
+      "romanized": "chha",
+      "korean": "have / is (있다 - 소유/존재)"
+    },
+    {
+      "nepali": "छैन",
+      "romanized": "chhaina",
+      "korean": "don't have / isn't (없다 - 소유/존재의 부정)"
+    },
+    {
+      "nepali": "छोरा",
+      "romanized": "chhoraa",
+      "korean": "son (아들)"
+    },
+    {
+      "nepali": "छोरी",
+      "romanized": "chhori",
+      "korean": "daughter (딸)"
+    },
+    {
+      "nepali": "दिदी",
+      "romanized": "didi",
+      "korean": "elder sister (누나/언니)"
+    },
+    {
+      "nepali": "जन्मनु",
+      "romanized": "janmannu",
+      "korean": "to be born (태어나다)"
+    },
+    {
+      "nepali": "जवान",
+      "romanized": "jawaan",
+      "korean": "young (젊은)"
+    },
+    {
+      "nepali": "कान्छो",
+      "romanized": "kaanchho",
+      "korean": "youngest (막내 - 남성)"
+    },
+    {
+      "nepali": "कान्छी",
+      "romanized": "kaanchhi",
+      "korean": "youngest (막내 - 여성)"
+    },
+    {
+      "nepali": "केटाकेटी",
+      "romanized": "keTaakaeTi",
+      "korean": "children (아이들)"
+    },
+    {
+      "nepali": "खेतीबारी",
+      "romanized": "khetibaari",
+      "korean": "agriculture (농업)"
+    },
+    {
+      "nepali": "परिवार",
+      "romanized": "pariwaar",
+      "korean": "family (가족)"
+    },
+    {
+      "nepali": "सँग",
+      "romanized": "saṅga",
+      "korean": "with (함께 / ~가 가지고 있는)"
+    },
+    {
+      "nepali": "श्रीमान्",
+      "romanized": "shriman",
+      "korean": "husband (남편)"
+    },
+    {
+      "nepali": "श्रीमती",
+      "romanized": "shrimati",
+      "korean": "wife (아내)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 소유의 두 가지 표현: Saṅga (현재 몸에 지니고 있거나 일시적 휴대), -ko (가족 관계, 신체 부위 등 영구적 소유).",
+    "2. Saṅga의 사용: 인칭 대명사 'ma'와 쓰일 때는 'ma saṅga' 또는 'mero saṅga' 둘 다 가능하지만 'ma saṅga'가 더 일반적입니다.",
+    "3. Chha vs Chhan: 소유하고 있는 대상이 단수이면 'chha', 복수이면 'chhan'을 사용합니다."
+  ],
+  "quiz": [
+    {
+      "question": "'함께' 또는 '현재 가지고 있는'을 나타내는 후치사는?",
+      "options": [
+        "को (-ko)",
+        "सँग (saṅga)",
+        "मा (maa)",
+        "बाट (baaTa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "영구적인 소유나 가족 관계를 나타낼 때 붙이는 접미사는?",
+      "options": [
+        "सँग (saṅga)",
+        "को (-ko)",
+        "लाई (laai)",
+        "ले (-le)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "복수 대상을 소유하고 있을 때 사용하는 '있다' 동사 형태는?",
+      "options": [
+        "छ (chha)",
+        "हुन् (hun)",
+        "छन् (chhan)",
+        "हो (ho)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'딸'을 뜻하는 네팔어는?",
+      "options": [
+        "छोरा (chhoraa)",
+        "छोरी (chhori)",
+        "दिदी (didi)",
+        "बहिनी (bahini)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'남편'을 의미하는 단어는?",
+      "options": [
+        "श्रीमती (shrimati)",
+        "श्रीमान् (shriman)",
+        "बाजे (baajyaa)",
+        "दाइ (daai)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'가족'을 뜻하는 단어는?",
+      "options": [
+        "परिवार (pariwaar)",
+        "केटाकेटी (keTaakaeTi)",
+        "खेतीबारी (khetibaari)",
+        "गाउँ (gaaũ)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'아이들'을 뜻하는 단어는?",
+      "options": [
+        "परिवार (pariwaar)",
+        "केटाकेटी (keTaakaeTi)",
+        "जवान (jawaan)",
+        "पशु (pashu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'결혼'을 뜻하는 단어는?",
+      "options": [
+        "बिहा (bihaa)",
+        "खेती (kheti)",
+        "काम (kaam)",
+        "दिन (din)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'젊은'을 의미하는 형용사는?",
+      "options": [
+        "कान्छो (kaanchho)",
+        "जवान (jawaan)",
+        "अमिलो (amilo)",
+        "रातो (raato)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'없다(소유/존재의 부정)'를 뜻하는 단어는?",
+      "options": [
+        "होइन (hoina)",
+        "छ (chha)",
+        "छैन (chhaina)",
+        "पनि (pani)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 물건의 휴대 소유 (saṅga)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सँग कलम छ ?",
+          "romanized": "tapaaï saṅga kalam chha ?",
+          "korean": "당신 지금 펜 가지고 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छ।",
+          "romanized": "chha.",
+          "korean": "네, 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कतिवटा छ ?",
+          "romanized": "katiwaTaa chha ?",
+          "korean": "몇 개 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "एउटा मात्र छ।",
+          "romanized": "euTaa maatra chha.",
+          "korean": "하나만 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सँग पैसा छ ?",
+          "romanized": "tapaaï saṅga paisaa chha ?",
+          "korean": "당신 지금 돈 가지고 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छैन।",
+          "romanized": "chhaina.",
+          "korean": "아니요, 없습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सँग कस्तो कलम छ ?",
+          "romanized": "tapaaï saṅga kasto kalam chha ?",
+          "korean": "어떤 펜을 가지고 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो सँग रातो कलम छ।",
+          "romanized": "mero saṅga raato kalam chha.",
+          "korean": "저는 빨간 펜을 가지고 있습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 영구적 소유/관계 (-ko)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको छोराछोरी छन् ?",
+          "romanized": "tapaaïko chhoraa-chhori chhan ?",
+          "korean": "당신은 자녀(아들, 딸)가 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छन्।",
+          "romanized": "chhan.",
+          "korean": "네, 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कति जना छन् ?",
+          "romanized": "kati janaa chhan ?",
+          "korean": "몇 명인가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "एक जना छोरा र एक जना छोरी।",
+          "romanized": "ek janaa chhoraa ra ek janaa chhori.",
+          "korean": "아들 एक जना(한 명)과 딸 एक जना(한 명)입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको घरमा कुकुर छ ?",
+          "romanized": "tapaaïko gharmaa kukur chha ?",
+          "korean": "당신의 घरमा(집에) 개가 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छैन।",
+          "romanized": "chhaina.",
+          "korean": "아니요, 없습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 휴대 물품 확인",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सँग घडी छ ?",
+          "romanized": "tapaaï saṅga ghaDi chha ?",
+          "korean": "당신은 시계를 가지고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छ।",
+          "romanized": "chha.",
+          "korean": "네, 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो घडी कसको हो ?",
+          "romanized": "tyo ghaDi kasko ho ?",
+          "korean": "그 시계는 कसको(누구의) 것입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो हो।",
+          "romanized": "yo mero ho.",
+          "korean": "이것은 제 것입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सँग कतिवटा किताब छन् ?",
+          "romanized": "tapaaï saṅga katiiwaTaa kitaab chhan ?",
+          "korean": "당신은 책을 कतिवटा(몇 권) 가지고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म सँग तीनवटा किताब छन्।",
+          "romanized": "ma saṅga tinwaTaa kitaab chhan.",
+          "korean": "저는 책 तीनवटा(세 권)를 가지고 있습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 가족 및 관계 소유",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको दिदीबहिनी छन् ?",
+          "romanized": "tapaaïko didi-bahini chhan ?",
+          "korean": "당신은 자매(언니, 여동생)가 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छन्।",
+          "romanized": "chhan.",
+          "korean": "네, 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कति जना छन् ?",
+          "romanized": "kati janaa chhan ?",
+          "korean": "कति जना(몇 명)인가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "एक जना दिदी र दुई जना बहिनी।",
+          "romanized": "ek janaa didi ra dui janaa bahini.",
+          "korean": "언니(누나) एक जना(한 명)와 여동생 दुई जना(두 명)입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथी छ ?",
+          "romanized": "tapaaïko saathi chha ?",
+          "korean": "당신은 친구가 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छ, मेरो धेरै साथी छन्।",
+          "romanized": "chha, mero dherai saathi chhan.",
+          "korean": "네, 제게는 친구가 많습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 장소와 소유",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "नेपालमा धेरै पहाड छन् ?",
+          "romanized": "nepaalmaa dherai pahaaD chhan ?",
+          "korean": "नेपालमा(네팔에는) 산이 많습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छन्।",
+          "romanized": "chhan.",
+          "korean": "네, 많습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "नेपालमा धेरै धुलो छ ?",
+          "romanized": "nepaalmaa dherai dhuulo chha ?",
+          "korean": "नेपालमा(네팔에는) 먼지가 많습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छ।",
+          "romanized": "chha.",
+          "korean": "네, 많습니다."
+        }
+      ]
+    }
+  ]
+}

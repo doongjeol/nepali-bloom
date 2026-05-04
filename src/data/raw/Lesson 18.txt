@@ -1,0 +1,89 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 18
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+agaaDi         : in front of (앞에)
+dakshin        : south (남쪽)
+daayaa         : right (side) (오른쪽)
+dhuur          : far (먼, 거리)
+janu           : to go (가다)
+kaThmaaNDu     : Kathmandu (카트만두)
+kati dhuur     : how far (얼마나 먼)
+kina           : why (왜)
+laagnu         : to take (time) (시간이 걸리다)
+milo           : mile (마일)
+naums           : North (북쪽) - [교재 표기: uttar]
+pachhaadi      : behind (뒤에)
+pachhim        : west (서쪽)
+paaTan         : Patan (파탄 - 카트만두 인근 도시)
+purb           : east (동쪽)
+saaya          : side (쪽/편)
+saat           : seven (7)
+sabai          : all (모두)
+Teppari        : tape recorder (테이프 레코더)
+waayaa         : left (side) (왼쪽)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 방향 묻기
+1. purb kahãã chha ? / purb tyahãã chha.
+   (동쪽은 어디입니까? / 동쪽은 저기입니다.)
+2. pachhim ni ? / pachhim mero pachhaadi chha.
+   (서쪽은요? / 서쪽은 제 뒤에 있습니다.)
+3. tapaaïko daayaatira ke chha ? / mero daayaatira blyaakborD chha.
+   (당신의 오른쪽에 무엇이 있습니까? / 제 오른쪽에는 칠판이 있습니다.)
+4. waayaatira ni ? / waayaatira jhyaal chha.
+
+(b) 거리와 소요 시간
+1. tapaaïko DeraabaaTa aphis kati dhuur chha ? / dherai dhuur chhaina.
+   (숙소에서 사무실까지 얼마나 멉니까? / 그리 멀지 않습니다.)
+2. hĩDera jaana kati mineT laagchha ? / pandhra mineT jati laagchha.
+   (걸어서 가는 데 몇 분 걸립니까? / 15분 정도 걸립니다.)
+3. basmaa jaana ni ? / basmaa jaana paach mineT maatra laagchha.
+   (버스로 가는 데는요? / 버스로는 5분밖에 안 걸립니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 위치 관계 확인
+1. blyaakborD tapaaïko agaaDi chha ? / chha.
+   (칠판이 당신 앞에 있습니까? / 네, 있습니다.)
+2. tapaaïko pachhaadi ke chha ? / mero pachhaadi Dhokaa chha.
+3. tapaaïko daayaa saayemaa ko chha ? / mero daayaa saayemaa raam chha.
+   (당신의 오른편에 누가 있습니까? / 제 오른편에는 Ram이 있습니다.)
+
+(b) 도시 간 거리
+1. kaaThmaaNDu dekhi paaTan kati dhuur chha ? / tin mil jati chha.
+   (카트만두에서 파탄까지 얼마나 멉니까? / 3마일 정도 됩니다.)
+2. tyahãã jaana kati mineT laagchha ? / das mineT laagchha.
+   (거기 가는 데 몇 분 걸리나요? / 10분 걸립니다.)
+
+(c) 기기 조작 (Tep)
+1. yo ke हो ? / yo Tep हो.
+2. yo kasko laagi ho ? / yo nepaali siknako laagi ho.
+   (이것은 무엇을 위한 것인가요? / 네팔어를 배우기 위한 것입니다.)
+3. yo kasari kholne ? / yasari kholne.
+   (이것은 어떻게 여나요? / 이렇게 엽니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 지미의 숙소는 카트만두에 있습니다. 그의 숙소에서 사무실까지는 그리 멀지 않습니다. 걸어가면 약 20분이 걸리고, 자전거로 가면 10분이 걸립니다. 사무실 앞에는 큰 공원이 있고 뒤에는 시장이 있습니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 방향(Directions): 
+   - Purb (동), Pachhim (서), Uttar (북), Dakshin (남).
+2. 위치 관계 후치사: 
+   - AgaaDi (앞), Pachhaadi (뒤), Daayaa (오른쪽), Waayaa (왼쪽).
+   - 특정 방향을 가리킬 때 '-tira'(~쪽으로)를 붙여 사용합니다 (예: daayaatira).
+3. Laagchha (Takes time): 시간이 걸린다는 의미로 쓰입니다.
+   - [장소] + jaana + [시간] + laagchha 형식으로 사용합니다.
+4. HĩDera (By walking): '걷다'라는 동사의 분사형으로 '걸어서'라는 수단을 나타냅니다.
+5. Yasari / Tyasari / Kasari: 
+   - Yasari (이렇게), Tyasari (그렇게), Kasari (어떻게 - 방법).
+==================================================

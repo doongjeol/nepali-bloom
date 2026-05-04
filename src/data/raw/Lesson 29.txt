@@ -1,0 +1,73 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 29
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+bechnu        : to sell (팔다) [cite: 313]
+bekaar        : jobless, useless (실업 상태의, 쓸모없는) [cite: 316, 317]
+bhiD          : crowd (군중/인파) [cite: 318]
+bideshi       : foreigner (외국인) [cite: 320]
+dikkalaagnu   : to be bored (지루하다/답답하다) [cite: 315]
+gaajaa        : marijuana (대마초) [cite: 315]
+gaph garnu    : to gossip (수다를 떨다) [cite: 315]
+kattiko       : how much (어느 정도) [cite: 315]
+khojnu        : to look for (찾다) [cite: 315]
+kisim         : kind, type, sort (종류) [cite: 315]
+kohi          : some (누군가/어떤 이들) [cite: 315]
+kunni         : I don't know (글쎄요/모르겠습니다) [cite: 322]
+patrikaa      : newspaper (신문/잡지) [cite: 324]
+talab         : salary (급여) [cite: 326]
+ustai         : just like that (그저 그런/마찬가지의) [cite: 328]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 과거의 구직 활동 [cite: 330]
+1. nepaal aaunubhandaa pahile tapaai kahãã hunuhunthyo, jim? / ma amerikaamaa thiế. [cite: 330]
+   (짐, 네팔에 오기 전에 어디에 있었나요? / 미국에 있었습니다.) [cite: 330]
+2. tapaai ke gardaihunuhunthyo ? / ma bekaar thiế. kaam khojdaithié. [cite: 331, 336]
+   (무엇을 하고 있었나요? / 직업이 없었습니다. 일을 찾고 있었어요.) [cite: 332, 337]
+3. kun kisimko kaam khojdaihunuhunthyo ? / jasto paayo ustai. [cite: 333, 338]
+   (어떤 종류의 일을 찾고 있었나요? / 얻을 수 있는 건 무엇이든요.) [cite: 334, 339]
+4. bekaar basdaakheri tapaallaai dikka laagdainathyo ? / ekdam dikka laagthyo. [cite: 335, 340]
+   (일 없이 지낼 때 지루하지 않았나요? / 아주 지루했습니다.) [cite: 335, 341]
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 어제 저녁의 거리 풍경 [cite: 343, 346]
+1. hijo belukaa tapaai ke gardai hunuhunthyo ? / ma nayãã saDakmaa ghumdai thiế. [cite: 343, 348]
+   (어제 저녁에 무엇을 하고 있었나요? / 뉴 로드(New Road)를 돌아다니고 있었습니다.) [cite: 343, 350]
+2. maanisharuko kattiko bhiD thiyo ? / nikai bhiD thiyo. [cite: 347, 353]
+   (사람들이 얼마나 붐볐나요? / 정말 붐볐습니다.) [cite: 354]
+3. tiniharu ke garirahekaa thie ? / kohi patrikaa kinirahekaa thie; dherai jaso gaph garirahekaa thie. [cite: 355, 359]
+   (다들 무엇을 하고 있었나요? / 어떤 이들은 신문을 사고 있었고, 대부분은 수다를 떨고 있었습니다.) [cite: 356, 359]
+
+(b) 아픈 친구 상황 [cite: 374]
+1. Tam ke gari raheko chha ? / u sutiraheko chha. [cite: 375, 386]
+   (톰은 무엇을 하고 있나요? / 자고 있습니다.) [cite: 375, 386]
+2. usle peT dukheko ausadhi khããdai chha ? / kunni, hijo samma ta khããdai thiyo. [cite: 378, 389]
+   (그는 배 아플 때 먹는 약을 복용 중인가요? / 글쎄요, 어제까지는 먹고 있었습니다.) [cite: 379, 390]
+
+
+4. COMPREHENSION (이해하기) [cite: 394]
+--------------------------------------------------
+[내용 요약: 람과 남동생은 바산타푸르에 구경을 갔습니다. 그곳에서 과일을 파는 사람들과 외국인에게 골동품을 파는 사람들을 보았습니다. 한 사원 근처에서는 머리가 길고 화려한 옷을 입은 두 남자가 대마초를 피우고 있는 것을 보았는데, 람과 동생은 그들이 마음에 들지 않았습니다.] [cite: 395, 396, 397, 398]
+
+
+5. GRAMMAR NOTES (문법 정리) [cite: 409]
+--------------------------------------------------
+1. 과거 진행 시제 (Past Progressive): [cite: 410]
+   - 과거의 특정 시점에 진행 중이었던 동작을 나타냅니다 (~하고 있었다). [cite: 416]
+   - 형태: [동사 어간 + dai] + [thiế/thiyo 등 과거 Be동사] [cite: 412, 414]
+   - 예: ma gardaithié (나는 하고 있었다), u gardaithiyo (그는 하고 있었다). [cite: 412, 414, 416, 418]
+2. 진행 시제의 대안 형태 (-iraheko): [cite: 422]
+   - '-dai' 대신 '-iraheko'를 사용하여 진행의 의미를 나타낼 수 있습니다. [cite: 422]
+   - 예: ma gariraheko thié (나는 하고 있었다). [cite: 422]
+3. 형용사로 쓰이는 '-eko' 형태: [cite: 431, 449]
+   - 완료된 상태를 나타내며 명사를 수식하는 형용사처럼 쓰입니다. [cite: 449]
+   - 예: phuTeko ainaa (깨진 거울), kuheko phalphul (썩은 과일), bigreko ghaDi (고장 난 시계). [cite: 452, 453]
+4. 진행/상태의 부정: [cite: 424, 427, 428]
+   - 질문에 대해 "아니오(hoina/chhaina)"라고 먼저 답한 뒤, 실제로 하고 있던 동작을 긍정형으로 말하는 방식이 흔합니다. [cite: 428, 430]
+==================================================

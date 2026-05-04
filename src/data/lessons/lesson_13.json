@@ -1,0 +1,428 @@
+{
+  "id": 13,
+  "title": "Lesson 13",
+  "titleKo": "제13과",
+  "description": "출생지, 물건의 제조원, 형제 관계 등 과거 완료/상태 표현과 가족에 대한 질문을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बाजे",
+      "romanized": "baajyaa",
+      "korean": "grandfather (할아버지)"
+    },
+    {
+      "nepali": "बज्यै",
+      "romanized": "bajyaai",
+      "korean": "grandmother (할머니)"
+    },
+    {
+      "nepali": "बिहा गरेको",
+      "romanized": "bihaae ko",
+      "korean": "married (결혼한)"
+    },
+    {
+      "nepali": "बिहा गरेको छैन",
+      "romanized": "bihaae ko chhaina",
+      "korean": "unmarried (결혼하지 않은)"
+    },
+    {
+      "nepali": "छोरा",
+      "romanized": "chhoraa",
+      "korean": "son (아들)"
+    },
+    {
+      "nepali": "छोरी",
+      "romanized": "chhori",
+      "korean": "daughter (딸)"
+    },
+    {
+      "nepali": "दाइ",
+      "romanized": "daai",
+      "korean": "elder brother (형/오빠)"
+    },
+    {
+      "nepali": "दिदी",
+      "romanized": "didi",
+      "korean": "elder sister (누나/언니)"
+    },
+    {
+      "nepali": "जन्मनु",
+      "romanized": "janmannu",
+      "korean": "to be born (태어나다)"
+    },
+    {
+      "nepali": "जवान",
+      "romanized": "jawaan",
+      "korean": "young (젊은)"
+    },
+    {
+      "nepali": "कान्छो",
+      "romanized": "kaanchho",
+      "korean": "youngest (막내 - 남성)"
+    },
+    {
+      "nepali": "कान्छी",
+      "romanized": "kaanchhi",
+      "korean": "youngest (막내 - 여성)"
+    },
+    {
+      "nepali": "केटाकेटी",
+      "romanized": "keTaakaeTi",
+      "korean": "children (아이들)"
+    },
+    {
+      "nepali": "खेती",
+      "romanized": "kheti",
+      "korean": "farming (농사)"
+    },
+    {
+      "nepali": "खेतीबारी",
+      "romanized": "khetibaari",
+      "korean": "agriculture (농업)"
+    },
+    {
+      "nepali": "किसान",
+      "romanized": "kisane",
+      "korean": "farmer (농부)"
+    },
+    {
+      "nepali": "मैले",
+      "romanized": "maile",
+      "korean": "I (과거 타동사 주어)"
+    },
+    {
+      "nepali": "परिवार",
+      "romanized": "paribaar",
+      "korean": "family (가족)"
+    },
+    {
+      "nepali": "पशु",
+      "romanized": "pashu",
+      "korean": "animal (동물)"
+    },
+    {
+      "nepali": "प्राध्यापक",
+      "romanized": "praadhyaapak",
+      "korean": "professor (교수)"
+    },
+    {
+      "nepali": "श्रीमती",
+      "romanized": "shrimati",
+      "korean": "wife (아내)"
+    },
+    {
+      "nepali": "श्रीमान्",
+      "romanized": "shriman",
+      "korean": "husband (남편)"
+    },
+    {
+      "nepali": "थाहा छ",
+      "romanized": "thahaa chha",
+      "korean": "(I) know (알다)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. -ko / -eko form: 상태나 완료된 동작을 나타낼 때 형용사처럼 쓰입니다. (bihaa bhaeko: 결혼한 상태, janme ko: 태어난, bane ko: 만들어진)",
+    "2. Janaa: 사람을 셀 때 쓰는 분류사입니다. (예: paach janaa - 다섯 명)",
+    "3. Daai-bhaai / Didi-bahini: Daai-bhaai는 남자 형제 전체를, Didi-bahini는 여자 형제 전체를 일컫는 말입니다.",
+    "4. Kaanchho / Kaanchhi: 형제나 자매 중 가장 어린 '막내'를 뜻합니다.",
+    "5. Bidyaarthi / Bidyaarthini: 남학생은 'Bidyaarthi', 여학생은 'Bidyaarthini'로 구분하기도 합니다."
+  ],
+  "quiz": [
+    {
+      "question": "'할아버지'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "बाजे (baajyaa)",
+        "बज्यै (bajyaai)",
+        "श्रीमान् (shriman)",
+        "दाइ (daai)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'결혼한' 상태를 나타내는 표현은?",
+      "options": [
+        "जन्मनु (janmannu)",
+        "जवान (jawaan)",
+        "बिहा गरेको (bihaae ko)",
+        "खेती (kheti)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "사람을 세는 단위(분류사)는 무엇인가요?",
+      "options": [
+        "वटा (waTaa)",
+        "जना (janaa)",
+        "चाहिँ (chaahi)",
+        "को (ko)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "남학생을 'Bidyaarthi'라고 한다면, 여학생을 부르는 말은?",
+      "options": [
+        "जवान (jawaan)",
+        "श्रीमती (shrimati)",
+        "विद्यार्थिनी (Bidyaarthini)",
+        "छोरी (chhori)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'형' 또는 '오빠'를 의미하는 네팔어는?",
+      "options": [
+        "भाइ (bhaai)",
+        "दाइ (daai)",
+        "कान्छो (kaanchho)",
+        "बाजे (baajyaa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'막내(여성)'를 뜻하는 단어는?",
+      "options": [
+        "कान्छी (kaanchhi)",
+        "दिदी (didi)",
+        "बज्यै (bajyaai)",
+        "श्रीमती (shrimati)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'태어나다'라는 의미를 가진 동사는?",
+      "options": [
+        "थाहा हुनु (thaahaa hunu)",
+        "बन्नु (bannu)",
+        "जन्मनु (janmannu)",
+        "खेती गर्नु (kheti garnu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'농부'를 뜻하는 단어는?",
+      "options": [
+        "किसान (kisane)",
+        "प्राध्यापक (praadhyaapak)",
+        "पशु (pashu)",
+        "परिवार (paribaar)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "네팔어로 '알다'를 의미하는 표현은?",
+      "options": [
+        "मलाई थाहा छ (malaai thahaa chha)",
+        "मैले गरेको (maile gareko)",
+        "बिहा गरेको (bihaae ko)",
+        "जवान हो (jawaan ho)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'아내'를 뜻하는 단어는?",
+      "options": [
+        "श्रीमान् (shriman)",
+        "छोरी (chhori)",
+        "श्रीमती (shrimati)",
+        "दिदी (didi)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 가족 관계와 결혼",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको बिहा भयो ?",
+          "romanized": "tapaaïko bihaa bhaeyo ?",
+          "korean": "당신은 결혼했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "भयो।",
+          "romanized": "bhaeyo.",
+          "korean": "네, 했습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको परिवारमा कति जना छन् ?",
+          "romanized": "tapaaïko paribaarmaa kati janaa chhan ?",
+          "korean": "당신의 가족은 몇 명입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "जम्मा पाँच जना।",
+          "romanized": "jammaa paach janaa.",
+          "korean": "전부 다섯 명입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "को को हुनुहुन्छ ?",
+          "romanized": "ko ko hunuhunchha ?",
+          "korean": "누구누구 계십니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो श्रीमती, एक छोरा, दुई छोरी र म।",
+          "romanized": "mero shrimati, ek chhoraa, dui chhori ra ma.",
+          "korean": "제 아내, 아들 한 명, 딸 두 명, 그리고 저입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 직업과 거주",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको बा के गर्नुहुन्छ ?",
+          "romanized": "tapaaïko baa ke garnuhunchha ?",
+          "korean": "당신의 아버지는 무엇을 하십니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँ खेतीबारी गर्नुहुन्छ।",
+          "romanized": "wahãã khetibaari garnuhunchha.",
+          "korean": "그분은 농사를 지으십니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको आमा नि ?",
+          "romanized": "tapaaïko aamaa ni ?",
+          "korean": "당신의 어머니는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँ घरमा काम गर्नुहुन्छ।",
+          "romanized": "wahãã gharmaa kaam garnuhunchha.",
+          "korean": "그분은 집안일을 하십니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको दिदी बिहा गरेको छ ?",
+          "romanized": "tapaaïko didi bihaae ko chha ?",
+          "korean": "당신의 누나(언니)는 결혼했나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छैन।",
+          "romanized": "chhaina.",
+          "korean": "아니요, 안 했습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँ के गर्नुहुन्छ ?",
+          "romanized": "wahãã ke garnuhunchha ?",
+          "korean": "그분은 무엇을 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँ विद्यार्थिनी हुनुहुन्छ।",
+          "romanized": "wahãã bidyaarthini hunuhunchha.",
+          "korean": "그분은 학생(여학생)입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 출생지",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कहाँ जन्मनु भएको ?",
+          "romanized": "tapaaï kahãã janmannu bhaeko ?",
+          "korean": "당신은 कहाँ(어디)에서 태어났습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म अमेरिकामा जन्मेको।",
+          "romanized": "ma amerikaamaa janme ko.",
+          "korean": "저는 अमेरिकामा(미국에서) 태어났습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथी नि ?",
+          "romanized": "tapaaïko saathi ni ?",
+          "korean": "당신의 친구는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "ऊ नेपालमा जन्मेको।",
+          "romanized": "u nepaalmaa janme ko.",
+          "korean": "그는 नेपालमा(네팔에서) 태어났습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 물건의 제조원",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यो कलम कहाँ बनेको ?",
+          "romanized": "yo kalam kahãã bane ko ?",
+          "korean": "이 펜은 कहाँ(어디)에서 만들어졌습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो जापानमा बनेको।",
+          "romanized": "yo jaapaanmaa bane ko.",
+          "korean": "이것은 जापानमा(일본에서) 만들어졌습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "यो कपडा नि ?",
+          "romanized": "yo kaparaa ni ?",
+          "korean": "이 옷은요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो नेपालमा बनेको।",
+          "romanized": "yo nepaalmaa bane ko.",
+          "korean": "이것은 नेपालमा(네팔에서) 만들어졌습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो घडी कहाँ बनेको ?",
+          "romanized": "tyo ghaDi kahãã bane ko ?",
+          "korean": "저 시계는 कहाँ(어디)에서 만들어졌습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "त्यो स्विजरल्याण्डमा बनेको।",
+          "romanized": "tyo suijarlyanDmaa bane ko.",
+          "korean": "저것은 स्विजरल्याण्डमा(스위스에서) 만들어졌습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 형제 관계",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको कति जना दाइभाइ छन् ?",
+          "romanized": "tapaaïko kati janaa daai-bhaai chhan ?",
+          "korean": "당신은 형제(남자)가 कति जना(몇 명)입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो एक जना दाइ र एक जना भाइ छ।",
+          "romanized": "mero ek janaa daai ra ek janaa bhaai chha.",
+          "korean": "형 एक जना(한 명)과 남동생 एक जना(한 명)가 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कान्छो को हो ?",
+          "romanized": "kaanchho ko ho ?",
+          "korean": "누가 막내인가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो भाइ कान्छो हो।",
+          "romanized": "mero bhaai kaanchho ho.",
+          "korean": "제 남동생이 막내입니다."
+        }
+      ]
+    }
+  ]
+}

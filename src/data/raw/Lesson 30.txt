@@ -1,0 +1,62 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 30
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+khet baari      : field, farm (밭, 농장) [cite: 457]
+khojnu          : to look for (찾다) [cite: 457]
+pakaaunu        : to cook (요리하다) [cite: 457]
+samaaj shaastra : sociology (사회학) [cite: 457]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 구직 대화
+1. namaste! dherai bhayo bheT nabhaeko !
+   (안녕하세요! 못 본 지 정말 오래되었네요!) [cite: 460, 462]
+2. aajabholi ke garirahekaa chhau ? / kehipani gariraheko chhaina. kam khojdai chhu.
+   (요즘 무엇을 하고 지내나요? / 아무것도 안 하고 있어요. 일자리를 찾고 있습니다.) [cite: 463, 468, 469, 470, 473]
+3. kasto kaam garna sakchhau ? / khaanaa pakaune, ghar sapha garne.
+   (어떤 일을 할 수 있나요? / 요리나 집안 청소요.) [cite: 471, 472, 474, 475]
+4. ek mahinaako kati linchhau? / pahile kaam gardaa mahinaako baara sae thiyo.
+   (한 달에 얼마를 원하나요? / 지난번 일했을 때는 한 달에 1,200루피였습니다.) [cite: 476, 477, 478, 479, 480, 481, 482, 483]
+5. usobhae bholidekhi makãã aau. / hunchha, ma aauchhu.
+   (그렇다면 내일부터 우리 집으로 오세요. / 네, 가겠습니다.) [cite: 489, 491, 492, 493]
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 가족의 근황 (현재 진행)
+1. tapaaïko bhaai aaja bholi kahãã chha ? / amerikaamaa chha.
+   (당신의 남동생은 요즘 어디에 있나요? / 미국에 있습니다.) [cite: 498, 499, 496, 497]
+2. ke gariraheko chha ? / kalejmaa paDhiraheko chha.
+   (무엇을 하고 있나요? / 대학에 다니고 있습니다.) [cite: 500, 501, 504, 505]
+3. u ke bishaya paDhiraheko chha ? / u samaaj shaastra paDhiraheko chha.
+   (그는 무엇을 공부하고 있나요? / 사회학을 공부하고 있습니다.) [cite: 502, 503, 506, 507]
+
+(b) 과거의 활동 (복습)
+1. nepaalmaa aaunubhandaa pahile tapaaï kahãã hunuhunthyo ? / ma yuropmaa thiế.
+   (네팔에 오기 전에 어디에 계셨나요? / 유럽에 있었습니다.) [cite: 508, 509, 512, 513, 511, 514]
+2. tyahãã ke kaam garirahanu bhaeko thiyo ? / dherai jaso khet baarimaa kaam garthế.
+   (거기서 무슨 일을 하셨나요? / 대부분 밭에서 일했습니다.) [cite: 522, 523, 530, 531]
+
+(c) 어제 저녁의 행적
+1. timi hijo belukaa kahãã gayau ? / ma mero keTi saathikãã gaẽ.
+   (너 어제 저녁에 어디 갔었니? / 여자친구 집에 갔었어.) [cite: 524]
+2. timi tyahãã jäädaakheri u ke gariraheko thiyo ? / u saathisanga kuraa gariraheko thiyo.
+   (네가 거기 갔을 때 그녀는 무엇을 하고 있었니? / 친구와 이야기하고 있었어.) [cite: 524]
+
+
+4. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 현재 진행 시제 (-iraheko form):
+   - 지금 이 순간 일어나고 있는 동작을 나타냅니다 (~하고 있다). [cite: 535]
+   - 형태: [동사 어간 + iraheko] + [Be 동사 현재형(chhu/chha 등)] [cite: 535]
+   - 예: ma paDhiraheko chhu (나는 공부하고 있다), u paDhiraheko chha (그는 공부하고 있다). [cite: 539, 540, 545, 546]
+2. 부정형:
+   - 'chhu/chha' 대신 'chhaina'를 사용합니다. [cite: 541, 547]
+   - 예: ma paDhiraheko chhaina (나는 공부하고 있지 않다). [cite: 539, 541]
+3. 경어체 (Tapaaï):
+   - 'paDhirahanu bhaeko chha' 형식을 사용하여 존칭의 의미를 담습니다. [cite: 557, 558, 560]
+==================================================

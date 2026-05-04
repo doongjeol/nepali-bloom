@@ -1,0 +1,77 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 25
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+akTobar        : October (10월)
+bokaa          : he-goat (숫염소)
+chaaD          : festival (축제)
+dashai         : Dashain (다샤인 - 네팔 최대 축제)
+durgaa         : Durga (두르가 - 힌두교 여신)
+hindu          : Hindu (힌두교도)
+jaaDo          : cold (추위/겨울)
+kaaran         : reason (이유)
+laagnu         : to start / to begin (시작하다 - 복합동사)
+manaau-nu      : to celebrate (기념하다/축제를 지내다)
+mula          : radish (무)
+pachhi         : later (나중에)
+pujaa          : worship (예배/푸자)
+tikaa          : Tika (티카 - 이마에 찍는 붉은 점)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 다샤인 축제 소개
+1. hinduharuko sabbhandaa Thulo chaaD kun ho ? / dashai ho.
+   (힌두교도들의 가장 큰 축제는 무엇입니까? / 다샤인입니다.)
+2. dashai kati dinsamma manaainchha ? / yo pandhra dinsamma manaainchha.
+   (다샤인은 며칠 동안 지냅니까? / 15일 동안 지냅니다.)
+3. dashai kun mahinaamaa parchha ? / dherai jaso akTobar mahinaamaa parchha.
+   (다샤인은 몇 월에 있습니까? / 보통 10월에 있습니다.)
+
+(b) 축제 관습
+1. dashaima ke ko pujaa garinchha ? / durgaako pujaa garinchha.
+   (다샤인에는 무엇을 예배합니까? / 두르가 여신을 예배합니다.)
+2. Tikaa kahile lagaainchha ? / Tikaa dashaito sabbhandaa Thulo dinmaa lagaainchha.
+   (티카는 언제 찍습니까? / 다샤인의 가장 큰 날(10일째)에 찍습니다.)
+3. kasbaaTa Tikaa lagaainchha ? / aaphubhandaa Thulaa maanchhebaaTa.
+   (누구로부터 티카를 받습니까? / 자신보다 어른인 분들로부터 받습니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 복합 동사 (~하기 시작하다)
+1. ahile kati bajyo ? / baara bajna laagyo.
+   (지금 몇 시입니까? / 거의 12시가 되려고 합니다 / 12시가 시작되었습니다.)
+2. garmi huna laagyo ? / ho, garmi huna laagyo.
+   (더워지기 시작했나요? / 네, 더워지기 시작했습니다.)
+3. u kahãã jaana laagyo ? / u aaphno Deraamaa jaana laagyo.
+   (그는 어디로 가기 시작했나요(가려고 하나요)? / 그는 자신의 숙소로 가려고 합니다.)
+
+(b) 수동태 표현 (-in-chha)
+1. nepaalmaa ke khaainchha ? / nepaalmaa daal bhaat khaainchha.
+   (네팔에서는 무엇이 먹힙니까? / 네팔에서는 달밧이 먹힙니다(주로 먹습니다).)
+2. yo kele lekhinchha ? / yo kalamle lekhinchha.
+   (이것은 무엇으로 쓰입니까? / 이것은 펜으로 쓰입니다.)
+3. tyahãã ke garinchha ? / tyahãã kaam garinchha.
+   (거기서는 무엇이 행해집니까? / 거기서는 일이 행해집니다(일을 합니다).)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 다샤인은 네팔에서 가장 중요하고 큰 축제입니다. 15일 동안 이어지며, 사람들은 두르가 여신에게 기도하고 염소를 제물로 바치기도 합니다. 가장 중요한 날에는 가족 어른들에게 티카를 받으며 축복을 빕니다. 축제 기간 동안 사람들은 맛있는 음식을 먹고 새 옷을 입으며 즐거운 시간을 보냅니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 복합 동사 'laagnu' (~하기 시작하다 / ~하려고 하다):
+   - 동사의 목적형(-na) 뒤에 'laagnu'가 붙어 동작의 시작이나 임박함을 나타냅니다.
+   - 예: jaana laagyo (가기 시작했다 / 가려고 한다), huna laagyo (~되기 시작했다).
+2. 수동태 (Passive Voice):
+   - 동사의 어간에 '-i-'를 삽입하여 수동의 의미를 만듭니다.
+   - 가해자(누가 하는지)보다 행위 자체나 대상이 중요할 때 사용합니다.
+   - 예: gar-nu (하다) -> gar-i-nchha (해지다 / 된다), khaa-nu (먹다) -> khaa-i-nchha (먹히다).
+3. Tikaa: 쌀, 요거트, 붉은 색소를 섞어 이마에 찍는 것으로, 축복과 보호의 상징입니다.
+4. Dashain: 네팔의 '추석'과 같은 최대 명절로, 선이 악을 이긴 것을 기념합니다.
+==================================================

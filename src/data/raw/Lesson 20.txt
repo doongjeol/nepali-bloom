@@ -1,0 +1,83 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 20
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+aauchha        : to know (skill/language), to come (할 줄 안다, 오다)
+aaűdaina       : don't know (skill/language) (할 줄 모른다)
+bhaashaa       : language (언어)
+bihaana        : morning (아침)
+Dibo           : Devo (인명)
+dherai         : much, many (많이, 많은)
+hĩDnu          : to walk (걷다)
+janu           : to go (가다)
+kana           : reason (이유) [교재 표기: kaaran]
+kannu          : to tell (말해주다) [교재 표기: bhannu]
+khaltI         : pocket (주머니)
+nepaali        : Nepali (네팔의, 네팔어)
+pachhaaDi      : behind (뒤에)
+paDhnu         : to read, to study (읽다, 공부하다)
+phuTbal        : football (축구)
+raato          : red (빨간색)
+saathi         : friend (친구)
+siknu          : to learn (배우다)
+Tep            : tape (테이프)
+tyasai kaaran  : for that reason (그렇기 때문에)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 언어 능력 (aauchha)
+1. tapaaïlaai nepaali bhaashaa aauchha ? / aliali aauchha.
+   (당신은 네팔어를 할 줄 압니까? / 조금 할 줄 압니다.)
+2. tapaaïko saathilaai ni ? / uslaai dherai raamro aauchha.
+   (당신의 친구는요? / 그는 아주 잘합니다.)
+3. usle kahãã sikyõ ? / usle amerikaamaa sikyõ.
+   (그는 어디에서 배웠습니까? / 그는 미국에서 배웠습니다.)
+
+(b) 복습 - 도구와 방법
+1. tapaaï kele lekhnuhunchha ? / ma kalamle lekhchhu.
+2. nepaali bhaashaa kasari lekhne ? / yasari lekhne.
+   (네팔어는 어떻게 쓰나요? / 이렇게 씁니다.)
+3. tapaaï nepaali paDhna saknuhunchha ? / sakchhu.
+   (당신은 네팔어를 읽을 수 있습니까? / 네, 할 수 있습니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 능력과 취향 복합
+1. tapaaïlaai phuTbal khelna aauchha ? / aauchha.
+2. tapaaïlaai phuTbal khelna manparchha ? / manparchha.
+   (당신은 축구하는 것을 좋아합니까? / 네, 좋아합니다.)
+3. tapaaïko saathilaai ni ? / uslaai khelna aauchha tara manpardaina.
+   (당신의 친구는요? / 그는 할 줄은 알지만 좋아하지는 않습니다.)
+
+(b) 과거 경험 복습
+1. hijo tapaaï kahãã jaanubhayo ? / ma bajaarmaa gaẽ.
+2. tyahãã ke garnubhayo ? / maile kaparaa kine.
+3. kati miTar kinnubhayo ? / tin miTar kine.
+
+(c) 소유와 위치 복합
+1. tapaaï saṅga paisaa chha ? / chhaina.
+2. tapaaïko khaltimaa ke chha ? / mero khaltimaa kalam chha.
+3. tapaaïko pachhaaDi ko chha ? / mero pachhaaDi mero saathi chha.
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 지미는 네팔에 온 지 세 달이 되었습니다. 그는 이제 네팔어를 조금 할 줄 압니다. 그는 매일 아침 7시부터 10시까지 네팔어를 공부합니다. 그의 친구 리처드는 그보다 네팔어를 더 잘합니다. 그들은 가끔 시장에 가서 네팔어로 대화하며 물건을 삽니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. Aauchha (능력/지식): 
+   - 언어나 기술(수영, 축구 등)을 '할 줄 안다'고 할 때 사용합니다.
+   - 'Manparnu'와 마찬가지로 주어 뒤에 '-laai'를 붙입니다. (예: malaai aauchha)
+   - 부정형은 'aaűdaina'입니다.
+2. Saknu (Can): '~할 수 있다'는 가능성을 나타내며 동사 원형 뒤에 붙습니다.
+   - paDhna sakchhu (읽을 수 있다).
+3. Tyasai kaaran (Therefore): 앞선 내용에 대한 결과를 나타낼 때 쓰는 접속어입니다.
+4. Tara (But): 두 문장을 대조할 때 사용하는 '그러나'의 의미입니다.
+5. 종합 복습: Lesson 20은 이전 레슨에서 배운 격식/비격식 동사 변화, 과거 시제, 소유격, 방향 및 도구 조사를 모두 활용하여 문장을 구성하는 연습을 합니다.
+==================================================

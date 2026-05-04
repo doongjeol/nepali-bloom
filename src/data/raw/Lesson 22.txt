@@ -1,0 +1,81 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 22
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+baje           : o'clock (시)
+ekai chhin     : for a while (잠시 동안)
+-epachhi       : after (doing) (~한 후에)
+-era           : having done (~하고, ~해서 - 순서/이유)
+gaun           : song (노래) [교재 표기: geet]
+haasnu         : to laugh (웃다)
+hĩDnu          : to walk, to leave (걷다, 떠나다)
+kholaa         : river (강)
+lugaa          : clothes (옷)
+pharkanu       : to return (돌아오다)
+pakaaunu       : to cook (요리하다)
+saaykal        : bicycle (자전거)
+sutnu          : to sleep (자다)
+tyaspachhi     : after that (그 후에)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 일상의 순서 (-era)
+1. tapaai bihaana uThera ke garnuhunchha ? / ma uThera mukh dhunchhu.
+   (당신은 아침에 일어나서 무엇을 합니까? / 저는 일어나서 세수를 합니다.)
+2. ani ke garnuhunchha ? / ani khaanaa khaachhu ra aphis jaanchhu.
+   (그러고 나서 무엇을 합니까? / 그러고 나서 밥을 먹고 사무실에 갑니다.)
+3. aphisbaaTa pharkera ke garnuhunchha ? / aphisbaaTa pharkera khaajaa khaanchhu.
+   (사무실에서 돌아와서 무엇을 합니까? / 사무실에서 돌아와서 간식을 먹습니다.)
+
+(b) 시간적 선후 관계 (-epachhi)
+1. nepaali paDhepachhi ke garne ? / nepaali paDhepachhi Deraamaa jaane.
+   (네팔어를 공부한 후에 뭐 할 거예요? / 네팔어 공부 후에 숙소에 갈 거예요.)
+2. khaanaa khaae pachhi ke garne ? / khaanaa khaae pachhi ekai chhin aaraam garne.
+   (밥을 먹은 후에 뭐 할 거예요? / 밥을 먹은 후에 잠시 쉴 거예요.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 연속된 동작 연결
+1. tapaai bajaar gaera ke kinnuhunchha ? / ma bajaar gaera kaparaa kinchhu.
+   (당신은 시장에 가서 무엇을 삽니까? / 저는 시장에 가서 옷감을 삽니다.)
+2. tapaai ghar gaera ke garnuhunchha ? / ma ghar gaera khaanaa pakaauchu.
+   (당신은 집에 가서 무엇을 합니까? / 저는 집에 가서 요리를 합니다.)
+
+(b) 분사 구문 활용 (-era)
+1. yo ke हो ? / yo ghaDi हो.
+2. ghaDi herera baje bhannus. / ghaDi herera maile das baje bhanẽ.
+   (시계를 보고 시간을 말하세요. / 시계를 보고 10시라고 말했습니다.)
+3. wahããle ke garnubhayo ? / wahããle ghaDi herera baje bhannubhayo.
+
+(c) 식사와 휴식 (Timi 사용)
+1. timi khaajaa khaaera kahãã jaanchhau ? / ma khaajaa khaaera phuTbal khelna jaanchhu.
+   (너는 간식을 먹고 어디에 가니? / 나는 간식을 먹고 축구하러 가.)
+2. phuTbal khele pachhi ke garchhau ? / phuTbal khele pachhi nuhããunchhu.
+   (축구를 한 후에 무엇을 하니? / 축구를 한 후에 목욕을 해.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 리처드는 매일 아침 일찍 일어납니다. 그는 일어나서 세수를 하고 차를 마십니다. 그러고 나서 7시부터 10시까지 네팔어를 공부합니다. 수업이 끝난 후에는 시장에 가서 채소를 사고 숙소로 돌아와 요리를 합니다. 식사 후에는 잠시 쉬었다가 오후 일을 시작합니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 분사 어미 '-era' (Absolutive Participle):
+   - 한 동작이 끝난 후 바로 다음 동작이 이어질 때 사용합니다 (~하고 나서).
+   - 동사 어간에 '-era'를 붙입니다. (예: uThnu -> uThera, jaanu -> gaera).
+   - 이유를 나타낼 때도 쓰입니다 (~해서).
+2. 후치사 '-epachhi' (After):
+   - "~한 후에"라는 뜻으로, 동작의 완료를 강조합니다.
+   - 동사 어간에 '-e'를 붙이고 'pachhi'를 더합니다. (예: khaanu -> khaaepachhi).
+3. 'Tyaspachhi' vs '-epachhi':
+   - Tyaspachhi: 문장 사이를 잇는 부사 (그 후에).
+   - -epachhi: 특정 동사 뒤에 붙는 어미 (~한 후에).
+4. 불규칙 변화:
+   - jaanu (가다) -> gaera (가서) / gaepachhi (간 후에)
+   - khaanu (먹다) -> khaaera (먹고) / khaaepachhi (먹은 후에)
+==================================================

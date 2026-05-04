@@ -1,0 +1,419 @@
+{
+  "id": 17,
+  "title": "Lesson 17",
+  "titleKo": "제17과",
+  "description": "목적(~를 위해)을 나타내는 표현과 의무(~해야 한다)를 표현하는 방법을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "भोटे",
+      "romanized": "bhote",
+      "korean": "Tibetan (티베트 사람 - 다소 격식 없는 표현)"
+    },
+    {
+      "nepali": "दारी काट्नु",
+      "romanized": "daahri kaaTnu",
+      "korean": "to shave (면도하다)"
+    },
+    {
+      "nepali": "धोबिनी",
+      "romanized": "dhobini",
+      "korean": "washerwoman (빨래해 주는 여자)"
+    },
+    {
+      "nepali": "हात",
+      "romanized": "haat",
+      "korean": "hand (손)"
+    },
+    {
+      "nepali": "हुनु",
+      "romanized": "hunu",
+      "korean": "to be / to happen (있다/되다)"
+    },
+    {
+      "nepali": "जाडो",
+      "romanized": "jaaro",
+      "korean": "cold (추위 - 날씨)"
+    },
+    {
+      "nepali": "खोज्नु",
+      "romanized": "khojnu",
+      "korean": "to search, to look for (찾다)"
+    },
+    {
+      "nepali": "को लागि",
+      "romanized": "ko laagi",
+      "korean": "for (someone/something) (~를 위해)"
+    },
+    {
+      "nepali": "लुगा",
+      "romanized": "lugaa",
+      "korean": "clothes (옷)"
+    },
+    {
+      "nepali": "मस्त",
+      "romanized": "masta",
+      "korean": "fun, joy (즐거움)"
+    },
+    {
+      "nepali": "मोजा",
+      "romanized": "mojaa",
+      "korean": "socks (양말)"
+    },
+    {
+      "nepali": "नुहाउनु",
+      "romanized": "nuhããunu",
+      "korean": "to bathe (목욕하다)"
+    },
+    {
+      "nepali": "पर्छ",
+      "romanized": "parchha",
+      "korean": "must, have to (해야 한다 / 가격이 ~이다)"
+    },
+    {
+      "nepali": "पैसा",
+      "romanized": "paisa",
+      "korean": "money (돈)"
+    },
+    {
+      "nepali": "फोहोर",
+      "romanized": "phohar",
+      "korean": "dirty (더러운)"
+    },
+    {
+      "nepali": "सबै",
+      "romanized": "sabaia",
+      "korean": "all (모두)"
+    },
+    {
+      "nepali": "सफा",
+      "romanized": "saphaa",
+      "korean": "clean (깨끗한)"
+    },
+    {
+      "nepali": "साबुन",
+      "romanized": "saabun",
+      "korean": "soap (비누)"
+    },
+    {
+      "nepali": "टोपी",
+      "romanized": "topi",
+      "korean": "Nepali cap (네팔 전통 모자)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. Ko laagi (For): '~를 위해' 또는 '~용'이라는 의미로 사용됩니다.\n   - 사람 뒤: baako laagi (아버지를 위해)\n   - 동사 뒤: dhunako laagi (씻기 위해) - 동사의 'nu'가 'na'가 아닌 'nu' 형태 그대로 유지되거나 'nako'로 변형됩니다.",
+    "2. Parchha (Must / Have to): 의무나 필요를 나타낼 때 동사 원형 뒤에 붙습니다.\n   - 주어 뒤에 '-laai'를 붙여야 합니다. (예: malaai janu parchha - 나는 가야 한다)",
+    "3. 'Bhane' (If): '~한다면'이라는 뜻으로 조건을 나타냅니다.",
+    "4. Yesko / Usko: '이것의(of this)', '저것의(of that)'라는 뜻으로 가격을 물을 때 주로 사용합니다. (예: yesko kati? - 이것 얼마?)"
+  ],
+  "quiz": [
+    {
+      "question": "'~를 위해'를 뜻하는 네팔어 표현은?",
+      "options": [
+        "को (ko)",
+        "को लागि (ko laagi)",
+        "सँग (saṅga)",
+        "मा (maa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'~해야 한다'는 의무를 나타내는 동사는?",
+      "options": [
+        "सक्छ (sakchha)",
+        "पर्छ (parchha)",
+        "हुनु (hunu)",
+        "जानु (janu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'옷'을 뜻하는 단어는?",
+      "options": [
+        "पैसा (paisa)",
+        "मोजा (mojaa)",
+        "लुगा (lugaa)",
+        "टोपी (topi)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'더러운'을 뜻하는 형용사는?",
+      "options": [
+        "सफा (saphaa)",
+        "फोहोर (phohar)",
+        "मस्त (masta)",
+        "जाडो (jaaro)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'비누'를 뜻하는 단어는?",
+      "options": [
+        "साबुन (saabun)",
+        "पैसा (paisa)",
+        "लुगा (lugaa)",
+        "हात (haat)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'찾다'를 의미하는 동사는?",
+      "options": [
+        "हेर्नु (hernu)",
+        "खेल्नु (khelnu)",
+        "खोज्नु (khojnu)",
+        "धुनी (dhunu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'~한다면'이라는 조건을 나타내는 단어는?",
+      "options": [
+        "भने (bhane)",
+        "अनि (ani)",
+        "किन (kina)",
+        "कसरी (kasari)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'목욕하다'를 뜻하는 동사는?",
+      "options": [
+        "दारी काट्नु (daahri kaaTnu)",
+        "नुहाउनु (nuhããunu)",
+        "आराम गर्नु (aaraam garnu)",
+        "जानु (janu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'이것의 가격은 얼마입니까?'를 올바르게 표현한 것은?",
+      "options": [
+        "तपाईं के खोज्दैछ ? (tapaaï ke khojdaichha ?)",
+        "यसको कति पर्छ ? (yesko kati parchha ?)",
+        "यो कस्तो छ ? (yo kasto chha ?)",
+        "के के गर्नु पर्छ ? (ke ke garnu parchha ?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'깨끗한'을 뜻하는 형용사는?",
+      "options": [
+        "फोहोर (phohar)",
+        "सफा (saphaa)",
+        "राम्रो (raamro)",
+        "सबै (sabaia)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 선물 사기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं के खोज्दैछ ?",
+          "romanized": "tapaaï ke khojdaichha ?",
+          "korean": "당신은 무엇을 찾고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म टोपी खोज्दैछु।",
+          "romanized": "ma topi khojdaichhu.",
+          "korean": "저는 모자(토피)를 찾고 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कसको लागि ?",
+          "romanized": "kasko laagi ?",
+          "korean": "누구를 위한 것인가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो बाको लागि।",
+          "romanized": "mero baako laagi.",
+          "korean": "저희 아버지를 위한 것입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "यो कस्तो छ ?",
+          "romanized": "yo kasto chha ?",
+          "korean": "이것은 어떤가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो धेरै राम्रो छ।",
+          "romanized": "yo dherai raamro chha.",
+          "korean": "이것은 매우 좋네요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "यसको कति पर्छ ?",
+          "romanized": "yesko kati parchha ?",
+          "korean": "이것은 가격이 얼마인가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यसको पन्ध्र रुपैयाँ पर्छ।",
+          "romanized": "yesko pandhra rupiyaa parchha.",
+          "korean": "이것은 15루피입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 의무와 일과",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "आज तपाईंलाई धेरै काम छ ?",
+          "romanized": "aaja tapaaïlaai dherai kaam chha ?",
+          "korean": "오늘 당신은 일이 많습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हो, धेरै काम छ।",
+          "romanized": "ho, dherai kaam chha.",
+          "korean": "네, 일이 많습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "के के गर्नु पर्छ ?",
+          "romanized": "ke ke garnu parchha ?",
+          "korean": "무엇무엇을 해야 하나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "लुगा धुनु पर्छ र नुहाउनु पर्छ।",
+          "romanized": "lugaa dhunu parchha ra nuhããunu parchha.",
+          "korean": "옷을 빨아야 하고 목욕을 해야 합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "दारी पनि काट्नु पर्छ ?",
+          "romanized": "daahri pani kaaTnu parchha ?",
+          "korean": "면도도 해야 하나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पर्छ।",
+          "romanized": "parchha.",
+          "korean": "네, 해야 합니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 비누의 용도",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यो के हो ?",
+          "romanized": "yo ke ho ?",
+          "korean": "이것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो साबुन हो।",
+          "romanized": "yo saabun ho.",
+          "korean": "이것은 비누입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "साबुन के को लागि हो ?",
+          "romanized": "saabun ke ko laagi ho ?",
+          "korean": "비누는 무엇을 위한 것입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "साबुन नुहाउनको लागि हो।",
+          "romanized": "saabun nuhããunako laagi ho.",
+          "korean": "비누는 목욕하기 위한 것입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "लुगा धुनको लागि के चाहिन्छ ?",
+          "romanized": "lugaa dhunako laagi ke chaahinchha ?",
+          "korean": "옷을 빨기 위해서는 무엇이 필요합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "लुगा धुनको लागि पनि साबुन चाहिन्छ।",
+          "romanized": "lugaa dhunako laagi pani saabun chaahinchha.",
+          "korean": "옷을 빨기 위해서도 비누가 필요합니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 의무 표현 연습",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई भोक लाग्यो भने के गर्नु पर्छ ?",
+          "romanized": "tapaaïlaai bhok laagyo bhane ke garnu parchha ?",
+          "korean": "당신이 배가 고프다면 무엇을 해야 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "खाना खानु पर्छ।",
+          "romanized": "khaanaa khaanu parchha.",
+          "korean": "음식을 먹어야 합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तिर्खा लाग्यो भने नि ?",
+          "romanized": "tirkhaa laagyo bhane ni ?",
+          "korean": "목이 마르다면요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पानी पिउनु पर्छ।",
+          "romanized": "paani piunu parchha.",
+          "korean": "물을 마셔야 합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "थकाइ लाग्यो भने के गर्नु पर्छ ?",
+          "romanized": "thakaai laagyo bhane ke garnu parchha ?",
+          "korean": "피곤하다면 무엇을 해야 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "आराम गर्नु पर्छ।",
+          "romanized": "aaraam garnu parchha.",
+          "korean": "쉬어야 합니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 소유와 선물",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सँग कसको लागि चिठी छ ?",
+          "romanized": "tapaaï saṅga kasko laagi chiThi chha ?",
+          "korean": "당신은 누구를 위한 편지를 가지고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म सँग मेरो आमाको लागि चिठी छ।",
+          "romanized": "ma saṅga mero aamaako laagi chiThi chha.",
+          "korean": "제 어머니를 위한 편지를 가지고 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो उपहार कसको लागि हो ?",
+          "romanized": "tyo upahaar kasko laagi ho ?",
+          "korean": "그 선물은 누구를 위한 것입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो साथीको लागि हो।",
+          "romanized": "yo mero saathiko laagi ho.",
+          "korean": "이것은 제 친구를 위한 것입니다."
+        }
+      ]
+    }
+  ]
+}

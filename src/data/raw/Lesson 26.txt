@@ -1,0 +1,77 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 26
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+bigyaan        : science (과학)
+gaai           : cow (암소)
+khasi          : goat (거세한 수염소)
+krishi         : agriculture (농업)
+parsi          : day after tomorrow (내레/모레)
+phursad        : free time (한가한 시간)
+siddhinu       : to be finished (끝나다/매진되다)
+TikaT          : ticket (표/티켓)
+usobhae        : in that case (그렇다면)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 티켓 예매하기
+1. bhannos. / malaai TikaT chaahiyo.
+   (말씀하세요. / 티켓이 필요합니다.)
+2. kahããko laagi ? / pokharaako.
+   (어디로 가는 건가요? / 포카라행입니다.)
+3. kahileko laagi ni ? / bholiko laagi.
+   (언제 것이 필요하죠? / 내일 것입니다.)
+4. bholiko TikaT ta siddhiyo. / usobhae parsiko laagi dinos.
+   (내일 티켓은 매진되었습니다. / 그렇다면 모레 것으로 주세요.)
+5. ek chhin parkhanos, hai. / hawas.
+   (잠시만 기다려주세요, 네? / 알겠습니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 과거의 습관 (~하곤 했다: -thẽ / -thyo)
+1. amerikaamaa hudaa tapaai ke garnuhunthyo ? / ma kalejmaa paDhthẽ.
+   (미국에 있을 때 당신은 무엇을 하곤 했나요? / 저는 대학에서 공부하곤 했습니다.)
+2. ke paDhnuhunthyo ? / ma bigyaan paDhthẽ.
+   (무엇을 공부했었나요? / 과학을 공부했었습니다.)
+3. nepaali pani paDhnuhunthyo ? / paDhdinathẽ.
+   (네팔어도 공부했었나요? / 아니요, 하지 않았습니다.)
+
+(b) 과거의 일상
+1. tapaai kati baje uThnuhunthyo ? / ma chha baje uThthẽ.
+   (몇 시에 일어나곤 했나요? / 6시에 일어나곤 했습니다.)
+2. bihaana ke khaanhunthyo ? / ma kaphi ra ToST khaanthẽ.
+   (아침에 무엇을 먹었나요? / 커피와 토스트를 먹었습니다.)
+3. aphis kati baje jaanuhunthyo ? / ma saat baje jaanthẽ.
+
+(c) 과거의 여가
+1. phursadmaa ke garnuhunthyo ? / ma phuTbal khelthẽ.
+   (한가할 때는 무엇을 했나요? / 축구를 하곤 했습니다.)
+2. sinemaa herna jaanuhunthyo ? / jaanthẽ, kahile kaahi maatra.
+   (영화를 보러 가곤 했나요? / 네, 아주 가끔만 가곤 했습니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 조지는 네팔에 오기 전 미국에서 과학을 공부하던 학생이었습니다. 그는 보통 아침 일찍 일어나서 공부를 하고, 주말에는 친구들과 축구를 하곤 했습니다. 네팔어는 전혀 몰랐지만, 지금은 네팔에서 매일 네팔어를 공부하며 시간을 보냅니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 과거 습관/지속 시제 (-thẽ / -thyo):
+   - 과거에 반복적으로 했던 행동이나 지속적인 상태를 나타낼 때 사용합니다 (~하곤 했다 / ~했었다).
+   - 동사 어간에 인칭별 어미를 붙입니다.
+     - ma paDh-thẽ (나는 공부하곤 했다)
+     - u paDh-thyo (그는 공부하곤 했다)
+     - tapaai paDhu-hunthyo (당신은 공부하곤 하셨습니다)
+2. 부정형 (-dinathẽ):
+   - 과거에 하지 않았던 습관을 나타냅니다.
+   - ma paDh-dinathẽ (나는 공부하지 않았었다).
+3. Hudaa (When being):
+   - '~일 때', '~하는 동안'이라는 상태를 나타냅니다 (예: amerikaamaa hudaa - 미국에 있을 때).
+4. Chaahiyo (Needed):
+   - 'chaahinchha'가 일반적인 필요라면, 'chaahiyo'는 구체적인 현재의 요구("~가 필요하게 되었다/주세요")를 나타낼 때 자주 쓰입니다.
+==================================================

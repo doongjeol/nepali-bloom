@@ -1,0 +1,327 @@
+[
+  {
+    "id": 1,
+    "title": "Lesson 1",
+    "titleKo": "제1과",
+    "description": "기본 동사와 사물 명칭, 그리고 주어에 따른 변화를 배웁니다.",
+    "counts": {
+      "vocabulary": 29,
+      "examples": 0,
+      "grammar": 11,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 2,
+    "title": "Lesson 2",
+    "titleKo": "제2과",
+    "description": "기초 단어 및 안부 묻기, 과일 먹기 등의 일상 표현을 배웁니다.",
+    "counts": {
+      "vocabulary": 19,
+      "examples": 0,
+      "grammar": 5,
+      "quiz": 10,
+      "dialogues": 4
+    }
+  },
+  {
+    "id": 3,
+    "title": "Lesson 3",
+    "titleKo": "제3과",
+    "description": "소유격 표현과 가족 관계, 그리고 사물의 위치와 수량을 묻고 답하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 31,
+      "examples": 0,
+      "grammar": 8,
+      "quiz": 10,
+      "dialogues": 9
+    }
+  },
+  {
+    "id": 4,
+    "title": "Lesson 4",
+    "titleKo": "제4과",
+    "description": "시간에 따른 일과와 미래의 계획을 묻고 답하는 표현을 배웁니다.",
+    "counts": {
+      "vocabulary": 38,
+      "examples": 0,
+      "grammar": 5,
+      "quiz": 10,
+      "dialogues": 7
+    }
+  },
+  {
+    "id": 5,
+    "title": "Lesson 5",
+    "titleKo": "제5과",
+    "description": "가게에서 옷감을 사며 가격을 묻고 흥정하는 표현과 단위를 배웁니다.",
+    "counts": {
+      "vocabulary": 25,
+      "examples": 0,
+      "grammar": 6,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 6,
+    "title": "Lesson 6",
+    "titleKo": "제6과",
+    "description": "물건의 필요 여부, 가격 묻기 및 흥정하기와 관련된 표현을 배웁니다.",
+    "counts": {
+      "vocabulary": 20,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 7,
+    "title": "Lesson 7",
+    "titleKo": "제7과",
+    "description": "현재 진행형을 사용하여 현재 일어나는 동작과 가까운 미래의 계획을 표현하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 12,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 8,
+    "title": "Lesson 8",
+    "titleKo": "제8과",
+    "description": "시간 표현과 일상적인 식습관, 언어 학습에 대해 묻고 답하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 24,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 4
+    }
+  },
+  {
+    "id": 9,
+    "title": "Lesson 9",
+    "titleKo": "제9과",
+    "description": "개인 신상과 나이를 묻고 답하며, 제3자를 소개하는 표현을 배웁니다.",
+    "counts": {
+      "vocabulary": 15,
+      "examples": 0,
+      "grammar": 3,
+      "quiz": 10,
+      "dialogues": 2
+    }
+  },
+  {
+    "id": 10,
+    "title": "Lesson 10",
+    "titleKo": "제10과",
+    "description": "건강 상태, 증상, 피로 및 신체적 요구를 표현하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 18,
+      "examples": 0,
+      "grammar": 5,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 11,
+    "title": "Lesson 11",
+    "titleKo": "제11과",
+    "description": "과거의 상태나 위치를 나타내는 과거형 동사와 요일, 날짜, 생일 등을 묻고 답하는 표현을 배웁니다.",
+    "counts": {
+      "vocabulary": 17,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 4
+    }
+  },
+  {
+    "id": 12,
+    "title": "Lesson 12",
+    "titleKo": "제12과",
+    "description": "신체 부위 명칭과 외모, 사물의 상태나 색깔을 묘사하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 22,
+      "examples": 0,
+      "grammar": 3,
+      "quiz": 10,
+      "dialogues": 4
+    }
+  },
+  {
+    "id": 13,
+    "title": "Lesson 13",
+    "titleKo": "제13과",
+    "description": "출생지, 물건의 제조원, 형제 관계 등 과거 완료/상태 표현과 가족에 대한 질문을 배웁니다.",
+    "counts": {
+      "vocabulary": 23,
+      "examples": 0,
+      "grammar": 5,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 14,
+    "title": "Lesson 14",
+    "titleKo": "제14과",
+    "description": "취향(좋아함/싫어함)을 묻고 답하며, 취미나 활동에 대한 표현을 배웁니다.",
+    "counts": {
+      "vocabulary": 21,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 15,
+    "title": "Lesson 15",
+    "titleKo": "제15과",
+    "description": "소유의 두 가지 표현 방식(Saṅga와 -ko)과 그 차이점을 배웁니다.",
+    "counts": {
+      "vocabulary": 19,
+      "examples": 0,
+      "grammar": 3,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 16,
+    "title": "Lesson 16",
+    "titleKo": "제16과",
+    "description": "시간과 장소의 범위(~부터 ~까지)를 나타내는 표현과 일과 시간에 대해 배웁니다.",
+    "counts": {
+      "vocabulary": 12,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 17,
+    "title": "Lesson 17",
+    "titleKo": "제17과",
+    "description": "목적(~를 위해)을 나타내는 표현과 의무(~해야 한다)를 표현하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 19,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 18,
+    "title": "Lesson 18",
+    "titleKo": "제18과",
+    "description": "방향과 거리를 묻고 답하며, 소요 시간을 표현하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 20,
+      "examples": 0,
+      "grammar": 5,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 19,
+    "title": "Lesson 19",
+    "titleKo": "제19과",
+    "description": "도구(~로써) 및 대상을 나타내는 조사의 사용법과 네팔의 식사 예절을 배웁니다.",
+    "counts": {
+      "vocabulary": 20,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 20,
+    "title": "Lesson 20",
+    "titleKo": "제20과",
+    "description": "언어나 기술을 '할 줄 안다'는 표현과 과거 경험에 대한 복합적인 문장 구성을 배웁니다.",
+    "counts": {
+      "vocabulary": 20,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 21,
+    "title": "Lesson 21",
+    "titleKo": "제21과",
+    "description": "비교급(bhandaa)과 최상급(sabbhandaa) 표현을 사용하여 날씨, 크기, 나이 등을 비교하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 14,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 22,
+    "title": "Lesson 22",
+    "titleKo": "제22과",
+    "description": "연속된 동작을 연결하는 분사 구문(-era)과 시간적 선후 관계(-epachhi)를 배웁니다.",
+    "counts": {
+      "vocabulary": 14,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 23,
+    "title": "Lesson 23",
+    "titleKo": "제23과",
+    "description": "과거의 경험이나 현재 완료 상태(-eko chhu)를 표현하는 방법을 배웁니다.",
+    "counts": {
+      "vocabulary": 15,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 5
+    }
+  },
+  {
+    "id": 24,
+    "title": "Lesson 24",
+    "titleKo": "제24과",
+    "description": "동시 동작(-daakheri)을 표현하는 방법과 물건 분실, 기억에 관련된 어휘를 배웁니다.",
+    "counts": {
+      "vocabulary": 11,
+      "examples": 0,
+      "grammar": 5,
+      "quiz": 10,
+      "dialogues": 4
+    }
+  },
+  {
+    "id": 26,
+    "title": "Lesson 26",
+    "titleKo": "제26과",
+    "description": "과거의 습관이나 지속적인 상태(-thẽ / -thyo)를 나타내는 시제를 배웁니다.",
+    "counts": {
+      "vocabulary": 9,
+      "examples": 0,
+      "grammar": 4,
+      "quiz": 10,
+      "dialogues": 4
+    }
+  }
+]

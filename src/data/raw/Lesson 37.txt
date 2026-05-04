@@ -1,0 +1,70 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 37
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+anekaű         : several (여러/다양한) [cite: 1163]
+byawasthaa     : system (시스템/체제) [cite: 1163]
+chhetra        : region, area (지역/구역) [cite: 1163]
+janasankhyaa   : population (인구) [cite: 1163]
+karoD          : ten million (천만 - 10,000,000) [cite: 1163]
+krishi         : agriculture (농업) [cite: 1163]
+laakh          : one hundred thousand (십만 - 100,000) [cite: 1163]
+peshaa         : occupation (직업) [cite: 1163]
+pratisat       : percent (퍼센트/%) [cite: 1163]
+raajmaarga     : highway (고속도로) [cite: 1163]
+yaataayaat     : transportation (교통/운송) [cite: 1163]
+
+
+2. PART I: GENERAL KNOWLEDGE (네팔 정보)
+--------------------------------------------------
+(a) 인구와 직업
+1. nepaalko janasankhyaa kati chha ? / karib dui karoD tis laakh. [cite: 1164]
+   (네팔의 인구는 얼마인가요? / 약 2,300만 명입니다.) [cite: 1164]
+2. dherai jaso nepaaliharuko pesaa ke ho ? / krishi. [cite: 1164]
+   (대부분 네팔인의 직업은 무엇인가요? / 농업입니다.) [cite: 1164]
+3. kati pratishat nepaaliharu saakchhyar chhan ? / bayaalis. [cite: 1164]
+   (네팔인의 문해율은 몇 퍼센트인가요? / 42%입니다.) [cite: 1164]
+
+(b) 교통과 정치
+1. nepaalmaa yaataayaatko byawasthaa kasto chha ni? [cite: 1167]
+   (네팔의 교통 체계는 어떠한가요?) [cite: 1167]
+2. euTaa purba pashchim raajmaarg chha. pahaaDi chhetrakaa anekaű Thaauharumaa hawaai jahaajbaaTa pani pugna sakinchha. [cite: 1167]
+   (동서 고속도로가 하나 있습니다. 또한 산악 지역의 여러 장소는 비행기로도 갈 수 있습니다.) [cite: 1167]
+3. nepaalmaa kasto raajnaitik byawasthaa chha ? / sambaidhaanik raajtantra. [cite: 1167]
+   (네팔의 정치 체제는 어떠한가요? / 입헌 군주제입니다.) [cite: 1167]
+
+
+3. PART II: REPORTED SPEECH (간접 화법 연습)
+--------------------------------------------------
+(a) 메시지 전달 (bhanera)
+1. ke bhannu bhayo ta ? / bholi aaunu holaa bhanera bhane. [cite: 1171, 1179]
+   (뭐라고 말씀하셨나요? / 내일 오시라고 말했습니다.) [cite: 1172, 1180]
+2. usle ke bhanyo ta ? / aauchhu bhanera bhanyo. [cite: 1173, 1181]
+   (그가 뭐라고 하던가요? / 온다고 말했습니다.) [cite: 1174, 1181]
+
+(b) 병원 진료 결과
+1. DaakTarle ke bhanyo ta ? / peTmaa jukaa parekochha bhanera bhanyo. [cite: 1191, 1207]
+   (의사가 뭐라고 하던가요? / 배에 기생충이 있다고 말했습니다.) [cite: 1192, 1209]
+2. ausadhi diyo ta ? / diena, bholi aaunus bhanyo. [cite: 1193, 1210, 1212]
+   (약을 주던가요? / 아니요, 내일 오라고 했습니다.) [cite: 1195, 1211, 1213]
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 어제 마이크가 우리 집에 온다고 했지만 오지 않아서 오늘 아침 그의 숙소에 갔습니다. [cite: 1216] 그는 자고 있었는데, 배가 아파서 못 갔다고 했습니다. [cite: 1217, 1219] 의사가 물을 항상 끓여 마시라고 했지만 스토브가 고장 나 그냥 마셨다고 합니다. [cite: 1221] 끓이지 않은 물 때문에 배에 기생충이 생겨서 아픈 것 같습니다.] [cite: 1222]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 간접 화법 (Reported Speech): [cite: 1239]
+   - 말한 내용을 전달할 때 인용구 끝에 'bhanera'(~라고)를 붙입니다. [cite: 1244]
+   - 구어체에서는 문장 끝에 're'를 붙여 전해 들은 정보임을 나타내기도 합니다. [cite: 1241]
+2. 미래 조건 시제 (-laa form): [cite: 1276, 1277]
+   - 미래의 막연한 행동이나 추측을 나타냅니다 (~할 것이다 / ~일 것 같다). [cite: 1277]
+   - 예: ma bholi aaűlaa (내일 오겠습니다), parlaa jasto chha (비가 올 것 같습니다). [cite: 1279, 1292]
+3. 미래 확정 시제 (-nechhu form): [cite: 1296]
+   - 공식적인 발표, 뉴스, 강한 약속이나 예언에 사용됩니다. [cite: 1297, 1301]
+   - 예: paani parnechha (비가 내릴 것입니다 - 일기예보). [cite: 1300]
+==================================================

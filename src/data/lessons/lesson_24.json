@@ -1,0 +1,339 @@
+{
+  "id": 24,
+  "title": "Lesson 24",
+  "titleKo": "제24과",
+  "description": "동시 동작(-daakheri)을 표현하는 방법과 물건 분실, 기억에 관련된 어휘를 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बाटो",
+      "romanized": "baaTo",
+      "korean": "way, road (길)"
+    },
+    {
+      "nepali": "दाखेरि",
+      "romanized": "-daakheri",
+      "korean": "while doing (~할 때 / ~하는 동안)"
+    },
+    {
+      "nepali": "हराउनु",
+      "romanized": "haraau-nu",
+      "korean": "to lose, to be lost (잃어버리다, 길을 잃다)"
+    },
+    {
+      "nepali": "जिल्ला",
+      "romanized": "jilla",
+      "korean": "district (지역/구역)"
+    },
+    {
+      "nepali": "काम",
+      "romanized": "kaam",
+      "korean": "work (일)"
+    },
+    {
+      "nepali": "खोज्नु",
+      "romanized": "khojnu",
+      "korean": "to search, to look for (찾다)"
+    },
+    {
+      "nepali": "पाउनु",
+      "romanized": "paaunu",
+      "korean": "to find, to get (찾다, 얻다)"
+    },
+    {
+      "nepali": "पैसा",
+      "romanized": "paisa",
+      "korean": "money (돈)"
+    },
+    {
+      "nepali": "रुपियाँ",
+      "romanized": "ruupiyaa",
+      "korean": "rupees (루피)"
+    },
+    {
+      "nepali": "सम्झनु",
+      "romanized": "samjhannu",
+      "korean": "to remember (기억하다)"
+    },
+    {
+      "nepali": "त्यसबेला",
+      "romanized": "tyasbelaa",
+      "korean": "at that time (그때)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 동시 동작 어미 '-daakheri': 두 가지 동작이 동시에 일어날 때(~할 때, ~하는 동안) 사용합니다. 동사 어간에 '-daakheri'를 붙입니다. (예: lekhnu -> lekhdaakheri, jaanu -> jaadaakheri).",
+    "2. 'Haraaunu' (잃어버리다): 물건을 분실했을 때뿐만 아니라 길을 잃었을 때도 사용합니다. 완료된 상태를 나타낼 때 'haraaeko' 형식을 자주 씁니다.",
+    "3. 'Samjhannu' (기억하다): 과거의 일을 떠올리거나 잊지 않고 있을 때 사용합니다.",
+    "4. 'Rahechha' (있었군요/있더군요): 몰랐던 사실을 새로 알게 되었을 때 사용하는 감탄/확인형 종결 어미입니다. (예: tyahãã rahechha - 거기 있었군요).",
+    "5. '-maatrai' (오직/단지): 수량이나 범위를 한정할 때 강조하여 사용합니다. (예: pachchis rupiyaa maatrai - 겨우 25루피)."
+  ],
+  "quiz": [
+    {
+      "question": "두 동작이 동시에 일어남(~할 때, ~하는 동안)을 나타낼 때 붙이는 어미는?",
+      "options": [
+        "-एर (-era)",
+        "-एपछि (-epachhi)",
+        "-दाखेरि (-daakheri)",
+        "-ने (-ne)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'잃어버리다' 또는 '길을 잃다'를 뜻하는 동사는?",
+      "options": [
+        "खोज्नु (khojnu)",
+        "पाउनु (paaunu)",
+        "हराउनु (haraau-nu)",
+        "सम्झनु (samjhannu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "몰랐던 사실을 새로 알게 되었을 때 쓰는 감탄/확인형 어미는?",
+      "options": [
+        "होला (holaa)",
+        "रहेछ (rahechha)",
+        "छैन (chhaina)",
+        "थियो (thiyo)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'기억하다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "सम्झनु (samjhannu)",
+        "पाउनु (paaunu)",
+        "खोज्नु (khojnu)",
+        "हेर्नु (hernu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "수량을 한정하여 '오직, 겨우 ~뿐'을 강조할 때 쓰는 단어는?",
+      "options": [
+        "धेरै (dherai)",
+        "सबै (sabai)",
+        "मात्रै (-maatrai)",
+        "पनि (pani)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'찾다'라는 뜻의 동사는?",
+      "options": [
+        "हराउनु (haraau-nu)",
+        "खोज्नु (khojnu)",
+        "सम्झनु (samjhannu)",
+        "भन्नु (bhannu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'찾았다/얻었다'를 뜻하는 동사는?",
+      "options": [
+        "खोज्नु (khojnu)",
+        "हराउनु (haraau-nu)",
+        "पाउनु (paaunu)",
+        "हेर्नु (hernu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'길에서'를 바르게 표현한 네팔어는?",
+      "options": [
+        "बाटोमा (baaTomaa)",
+        "शहरमा (shaharmaa)",
+        "जिल्लामा (jillaamaa)",
+        "खल्तीमा (khaltimaa)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'편지를 쓸 때'의 올바른 네팔어 표현은?",
+      "options": [
+        "चिठी लेखेर (chiThi lekhera)",
+        "चिठी लेखेपछि (chiThi lekhepachhi)",
+        "चिठी लेख्दाखेरि (chiThi lekhdaakheri)",
+        "चिठी लेख्ने (chiThi lekhne)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'그때'를 뜻하는 단어는?",
+      "options": [
+        "अहिले (ahile)",
+        "त्यसबेला (tyasbelaa)",
+        "त्यसपछि (tyaspachhi)",
+        "कहिले (kahile)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 물건 분실과 기억 (-daakheri)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले के खोज्नु भएको ?",
+          "romanized": "tapaaïle ke khojnu bhaeko ?",
+          "korean": "당신은 무엇을 찾고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले मेरो कलम खोजेको।",
+          "romanized": "maile mero kalam khojeko.",
+          "korean": "제 펜을 찾고 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कहाँ हराएको ?",
+          "romanized": "kahãã haraaeko ?",
+          "korean": "어디서 잃어버렸나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "थाहा छैन।",
+          "romanized": "thaahaa chhaina.",
+          "korean": "모르겠습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "चिठी लेख्दाखेरि तपाईं सँग थियो ?",
+          "romanized": "chiThi lekhdaakheri tapaaï saṅga thiyo ?",
+          "korean": "편지를 쓸 때 당신에게 있었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "थियो।",
+          "romanized": "thiyo.",
+          "korean": "네, 있었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यसपछि के गर्नुभयो ?",
+          "romanized": "tyaspachhi ke garnubhayo ?",
+          "korean": "그 후에 무엇을 했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "त्यसपछि म बाहिर गएँ।",
+          "romanized": "tyaspachhi ma baahira gaẽ.",
+          "korean": "그 후에 밖으로 나갔습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 분실물 찾기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "बाटोमा हराएको होला।",
+          "romanized": "baaTomaa haraaeko holaa.",
+          "korean": "길에서 잃어버렸나 보네요."
+        },
+        {
+          "speaker": "B",
+          "nepali": "होला, म फेरि खोज्छु।",
+          "romanized": "holaa, ma pheri khojchhu.",
+          "korean": "아마도요, 다시 찾아보겠습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "पाउनुभयो ?",
+          "romanized": "paaunubhayo ?",
+          "korean": "찾았습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पाएँ, ब्ल्याकबोर्डनिर रहेछ।",
+          "romanized": "paaẽ, blyaakborDnira rahechha.",
+          "korean": "찾았습니다, 칠판 근처에 있더군요."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 동시 동작 연습 (-daakheri)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "नेपालमा हिँड्दाखेरि तपाईंले के देख्नुभयो ?",
+          "romanized": "nepaalmaa hĩDdaakheri tapaaïle ke dekhnubhayo ?",
+          "korean": "네팔에서 걸어 다닐 때 무엇을 보았습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले धेरै पहाड देखेँ।",
+          "romanized": "maile dherai pahaaD dekhẽ.",
+          "korean": "많은 산을 보았습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "खाना खाँदाखेरि बोल्नु हुन्छ ?",
+          "romanized": "khaanaa khaadaakheri bolnu hunchha ?",
+          "korean": "밥을 먹을 때 말을 하나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "नेपालीहरू खाना खाँदाखेरि बोल्दैनन्।",
+          "romanized": "nepaaliharu khaanaa khaadaakheri boldainan.",
+          "korean": "네팔 사람들은 밥 먹을 때 말을 하지 않습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं नेपाली सिक्दाखेरि के गर्नुहुन्छ ?",
+          "romanized": "tapaaï nepaali sikdaakheri ke garnuhunchha ?",
+          "korean": "당신은 네팔어를 배울 때 무엇을 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म नेपाली सिक्दाखेरि धेरै लेख्छु।",
+          "romanized": "ma nepaali sikdaakheri dherai lekhchhu.",
+          "korean": "저는 네팔어를 배울 때 많이 씁니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 돈 분실 상황",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको के हराएको ?",
+          "romanized": "tapaaïko ke haraaeko ?",
+          "korean": "무엇을 잃어버렸습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो पैसा हराएको।",
+          "romanized": "mero paisaa haraaeko.",
+          "korean": "돈을 잃어버렸습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कति हराएको ?",
+          "romanized": "kati haraaeko ?",
+          "korean": "얼마나 잃어버렸나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पच्चीस रुपियाँ मात्रै।",
+          "romanized": "pachchis rupiyaa maatrai.",
+          "korean": "25루피밖에 안 됩니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कहाँ हराएको, सम्झनु हुन्छ ?",
+          "romanized": "kahãã haraaeko, samjhannu hunchha ?",
+          "korean": "어디서 잃어버렸는지 기억나나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "बजार जाँदाखेरि हराएको होला।",
+          "romanized": "bajaar jaadaakheri haraaeko holaa.",
+          "korean": "시장에 갈 때 잃어버린 것 같습니다."
+        }
+      ]
+    }
+  ]
+}

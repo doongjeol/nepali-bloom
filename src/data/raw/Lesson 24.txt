@@ -1,0 +1,77 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 24
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+bates          : way, road (길) [교재 표기: baaTo]
+-daakheri      : while doing (~할 때 / ~하는 동안)
+हराउनु (haraau-nu) : to lose, to be lost (잃어버리다, 길을 잃다)
+jilla          : district (지역/구역)
+kaam           : work (일)
+khojnu         : to search, to look for (찾다)
+paaunu         : to find, to get (찾다, 얻다)
+paisa          : money (돈)
+ruupiyaa       : rupees (루피)
+samjhannu      : to remember (기억하다) [교재 표기: samjhinu]
+tyasbelaa      : at that time (그때)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 물건 분실과 기억 (-daakheri)
+1. tapaaïle ke khojnu bhaeko ? / maile mero kalam khojeko.
+   (당신은 무엇을 찾고 있습니까? / 제 펜을 찾고 있습니다.)
+2. kahãã haraaeko ? / thaahaa chhaina.
+   (어디서 잃어버렸나요? / 모르겠습니다.)
+3. chiThi lekhdaakheri tapaaï saṅga thiyo ? / thiyo.
+   (편지를 쓸 때 당신에게 있었나요? / 네, 있었습니다.)
+4. tyaspachhi ke garnubhayo ? / tyaspachhi ma baahira gaẽ.
+   (그 후에 무엇을 했습니까? / 그 후에 밖으로 나갔습니다.)
+
+(b) 분실물 찾기
+1. baaTomaa haraaeko holaa. / holaa, ma pheri khojchhu.
+   (길에서 잃어버렸나 보네요. / 아마도요, 다시 찾아보겠습니다.)
+2. paaunubhayo ? / paae, blyaakborDnira rahechha.
+   (찾았습니까? / 찾았습니다, 칠판 근처에 있더군요.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 동시 동작 연습 (-daakheri)
+1. nepaalmaa hĩDdaakheri tapaaïle ke dekhnubhayo ? / maile dherai pahaaD dekhẽ.
+   (네팔에서 걸어 다닐 때 무엇을 보았습니까? / 많은 산을 보았습니다.)
+2. khaanaa khaadaakheri bolnu hunchha ? / nepaaliharu khaanaa khaadaakheri boldainan.
+   (밥을 먹을 때 말을 하나요? / 네팔 사람들은 밥 먹을 때 말을 하지 않습니다.)
+3. tapaaï nepaali sikdaakheri ke garnuhunchha ? / ma nepaali sikdaakheri dherai lekhchhu.
+   (당신은 네팔어를 배울 때 무엇을 합니까? / 저는 네팔어를 배울 때 많이 씁니다.)
+
+(b) 돈 분실 상황
+1. tapaaïko ke haraaeko ? / mero paisaa haraaeko.
+   (무엇을 잃어버렸습니까? / 돈을 잃어버렸습니다.)
+2. kati haraaeko ? / pachchis rupiyaa maatrai.
+   (얼마나 잃어버렸나요? / 25루피밖에 안 됩니다.)
+3. kahãã haraaeko, samjhannu hunchha ? / bajaar jaadaakheri haraaeko holaa.
+   (어디서 잃어버렸는지 기억나나요? / 시장에 갈 때 잃어버린 것 같습니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 지미는 오늘 아침에 자신의 시계를 잃어버렸습니다. 그는 세수할 때 시계를 벗어두었는데, 그 후에 어디에 두었는지 기억이 나지 않았습니다. 숙소 여기저기를 찾다가 결국 침대 밑에서 시계를 찾았습니다. 그는 시계를 다시 찾아서 매우 기뻐했습니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 동시 동작 어미 '-daakheri':
+   - 두 가지 동작이 동시에 일어날 때(~할 때, ~하는 동안) 사용합니다.
+   - 동사 어간에 '-daakheri'를 붙입니다. (예: lekhnu -> lekhdaakheri, jaanu -> jaadaakheri).
+2. 'Haraaunu' (잃어버리다):
+   - 물건을 분실했을 때뿐만 아니라 길을 잃었을 때도 사용합니다.
+   - 완료된 상태를 나타낼 때 'haraaeko' 형식을 자주 씁니다.
+3. 'Samjhannu' (기억하다):
+   - 과거의 일을 떠올리거나 잊지 않고 있을 때 사용합니다.
+4. 'Rahechha' (있었군요/있더군요):
+   - 몰랐던 사실을 새로 알게 되었을 때 사용하는 감탄/확인형 종결 어미입니다. (예: tyahãã rahechha - 거기 있었군요).
+5. '-maatrai' (오직/단지):
+   - 수량이나 범위를 한정할 때 강조하여 사용합니다. (예: pachchis rupiyaa maatrai - 겨우 25루피).
+==================================================

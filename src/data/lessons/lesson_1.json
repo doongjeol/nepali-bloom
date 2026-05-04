@@ -1,0 +1,560 @@
+{
+  "id": 1,
+  "title": "Lesson 1",
+  "titleKo": "제1과",
+  "description": "기본 동사와 사물 명칭, 그리고 주어에 따른 변화를 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "छ",
+      "romanized": "chha",
+      "korean": "is (있다/이다)"
+    },
+    {
+      "nepali": "खोल्नु",
+      "romanized": "kholnu",
+      "korean": "to open (열다)"
+    },
+    {
+      "nepali": "दिनु",
+      "romanized": "dinu",
+      "korean": "to give (주다)"
+    },
+    {
+      "nepali": "किताब",
+      "romanized": "kitaab",
+      "korean": "book (책)"
+    },
+    {
+      "nepali": "गर्नु",
+      "romanized": "garnu",
+      "korean": "to do (하다)"
+    },
+    {
+      "nepali": "मेरो",
+      "romanized": "mero",
+      "korean": "my, mine (나의, 내 것)"
+    },
+    {
+      "nepali": "घर",
+      "romanized": "ghar",
+      "korean": "home, house (집)"
+    },
+    {
+      "nepali": "नाम",
+      "romanized": "naam",
+      "korean": "name (이름)"
+    },
+    {
+      "nepali": "हजुर",
+      "romanized": "hajur",
+      "korean": "yes (polite) (네 - 공손한 대답)"
+    },
+    {
+      "nepali": "नमस्ते",
+      "romanized": "namaste",
+      "korean": "hello, goodbye (인사)"
+    },
+    {
+      "nepali": "हो",
+      "romanized": "ho",
+      "korean": "is (definitive) (~이다 - 단정적)"
+    },
+    {
+      "nepali": "होइन",
+      "romanized": "hoina",
+      "korean": "is not (~이 아니다)"
+    },
+    {
+      "nepali": "नि",
+      "romanized": "ni",
+      "korean": "and how about (~는요?)"
+    },
+    {
+      "nepali": "झोला",
+      "romanized": "jholaa",
+      "korean": "shoulder bag (가방)"
+    },
+    {
+      "nepali": "कालो",
+      "romanized": "kaalo",
+      "korean": "black (검은색)"
+    },
+    {
+      "nepali": "कापी",
+      "romanized": "kaapi",
+      "korean": "note book (공책)"
+    },
+    {
+      "nepali": "पढ्नु",
+      "romanized": "paDhnu",
+      "korean": "to read (읽다)"
+    },
+    {
+      "nepali": "सेतो",
+      "romanized": "seto",
+      "korean": "white (흰색)"
+    },
+    {
+      "nepali": "कहाँ",
+      "romanized": "kahãã",
+      "korean": "where (어디)"
+    },
+    {
+      "nepali": "कलम",
+      "romanized": "kalam",
+      "korean": "pen (펜)"
+    },
+    {
+      "nepali": "कमिज",
+      "romanized": "kamij",
+      "korean": "shirt (셔츠)"
+    },
+    {
+      "nepali": "कसको",
+      "romanized": "kasko",
+      "korean": "whose (누구의)"
+    },
+    {
+      "nepali": "तपाईंको",
+      "romanized": "tapaaïko",
+      "korean": "your, yours (당신의)"
+    },
+    {
+      "nepali": "त्यो",
+      "romanized": "tyo",
+      "korean": "that (저것/그것)"
+    },
+    {
+      "nepali": "उहाँको",
+      "romanized": "wahããko",
+      "korean": "his, her, hers (그/그녀의 - 존칭)"
+    },
+    {
+      "nepali": "यो",
+      "romanized": "yo",
+      "korean": "this (이것)"
+    },
+    {
+      "nepali": "कस्तो",
+      "romanized": "kasto",
+      "korean": "what color, how (어떤, 어떤색의)"
+    },
+    {
+      "nepali": "के",
+      "romanized": "ke",
+      "korean": "what (무엇)"
+    },
+    {
+      "nepali": "त",
+      "romanized": "ta",
+      "korean": "then (그러면)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 소유격 접미사 '-ko': 명사나 대명사 뒤에 붙어 소유를 나타냄. (ma -> mero, u -> usko, haami -> haamro)",
+    "2. Namaste: 만날 때와 헤어질 때 모두 사용하는 인사말.",
+    "3. 어순: 네팔어는 동사가 항상 문장 끝에 옴. (SOV 구조)",
+    "4. Hajur: 공손한 대답 '네'. 끝을 올리면 '다시 말씀해 주시겠어요?'라는 뜻.",
+    "5. -ji / -jyu: 이름 뒤에 붙여 존경을 표함.",
+    "6. Hoina: 단순히 'No'가 아니라 '아니요, 그렇지 않습니다'라는 뜻.",
+    "7. 명령형: 'kholnos', 'dinos' 등은 공손한 명령형(존칭)임.",
+    "8. -eko 형태: 비격식적인 상황에서 단순 과거, 현재 진행 등으로 흔히 쓰임.",
+    "9. 접미사 '-le': 과거 시제에서 타동사의 주어 뒤에 붙음.",
+    "10. 'ni'와 'ta': 'ni'는 \"~는요?\", 'ta'는 문맥에 따라 '그러면(then)'의 뜻을 가짐.",
+    "11. 동사 'is'의 세 가지 형태: ho(정의), chha(위치, 상태), hunchha(일반적 진리)."
+  ],
+  "quiz": [
+    {
+      "question": "'안녕하세요'를 뜻하는 네팔어 인사말은 무엇인가요?",
+      "options": [
+        "हजुर (hajur)",
+        "नमस्ते (namaste)",
+        "होइन (hoina)",
+        "नि (ni)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'이것은 책입니다.'를 네팔어로 올바르게 표현한 것은?",
+      "options": [
+        "त्यो कलम हो। (tyo kalam ho.)",
+        "यो किताब हो। (yo kitaab ho.)",
+        "त्यो कसको किताब हो ? (tyo kasko kitaab ho ?)",
+        "यो मेरो किताब हो। (yo mero kitaab ho.)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "네팔어로 '나의(my)'를 뜻하는 단어는?",
+      "options": [
+        "तपाईंको (tapaaïko)",
+        "उहाँको (wahããko)",
+        "मेरो (mero)",
+        "कसको (kasko)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "상대방이 부를 때 대답하는 공손한 표현 '네'는 무엇인가요?",
+      "options": [
+        "त (ta)",
+        "हजुर (hajur)",
+        "हो (ho)",
+        "के (ke)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'저것은 무엇입니까?'를 네팔어로 바르게 표현한 것은?",
+      "options": [
+        "यो के हो ? (yo ke ho ?)",
+        "त्यो के हो ? (tyo ke ho ?)",
+        "त्यो कसको हो ? (tyo kasko ho ?)",
+        "यो कसको हो ? (yo kasko ho ?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "네팔어로 '어디'를 뜻하는 의문사는 무엇인가요?",
+      "options": [
+        "के (ke)",
+        "कहाँ (kahãã)",
+        "कस्तो (kasto)",
+        "कसको (kasko)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "다음 중 '검은색'을 뜻하는 단어는 무엇인가요?",
+      "options": [
+        "सेतो (seto)",
+        "कालो (kaalo)",
+        "राम्रो (ramro)",
+        "चिसो (chiso)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'그분의 이름은 무엇입니까?'를 네팔어로 올바르게 표현한 것은?",
+      "options": [
+        "मेरो नाम के हो ? (mero naam ke ho ?)",
+        "तपाईंको नाम के हो ? (tapaaïko naam ke ho ?)",
+        "उहाँको नाम के हो ? (wahããko naam ke ho ?)",
+        "उहाँको घर कहाँ हो ? (wahããko ghar kahãã ho ?)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'열다'라는 의미를 가진 네팔어 동사는 무엇인가요?",
+      "options": [
+        "गर्नु (garnu)",
+        "दिनु (dinu)",
+        "पढ्नु (paDhnu)",
+        "खोल्नु (kholnu)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'당신의'에 해당하는 네팔어 소유격 대명사는 무엇인가요?",
+      "options": [
+        "मेरो (mero)",
+        "तपाईंको (tapaaïko)",
+        "उहाँको (wahããko)",
+        "कसको (kasko)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (대화문)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "नमस्ते!",
+          "romanized": "Namaste!",
+          "korean": "안녕하세요!"
+        },
+        {
+          "speaker": "B",
+          "nepali": "नमस्ते!",
+          "romanized": "Namaste!",
+          "korean": "안녕하세요!"
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको नाम के हो ?",
+          "romanized": "tapaaïko naam ke ho ?",
+          "korean": "당신의 이름은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो नाम राम हो।",
+          "romanized": "mero naam raam ho.",
+          "korean": "제 이름은 Ram입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँको नाम के हो ?",
+          "romanized": "wahããko naam ke ho ?",
+          "korean": "그분의 이름은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँको नाम कृष्ण हो।",
+          "romanized": "wahããko naam krishna ho.",
+          "korean": "그분의 이름은 Krishna입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको घर कहाँ हो ?",
+          "romanized": "tapaaïko ghar kahãã ho ?",
+          "korean": "당신의 집(고향)은 어디입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो घर अमेरिका हो।",
+          "romanized": "mero ghar amerikaa ho.",
+          "korean": "제 고향은 미국입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँको घर कहाँ हो ?",
+          "romanized": "wahããko ghar kahãã ho ?",
+          "korean": "그분의 고향은 어디입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँको घर नेपाल हो।",
+          "romanized": "wahããko ghar nepaal ho.",
+          "korean": "그분의 고향은 네팔입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यो के हो ?",
+          "romanized": "yo ke ho ?",
+          "korean": "이것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो कलम हो।",
+          "romanized": "yo kalam ho.",
+          "korean": "이것은 펜입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "यो कसको कलम हो ?",
+          "romanized": "yo kasko kalam ho ?",
+          "korean": "이것은 누구의 펜입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो कलम हो।",
+          "romanized": "yo mero kalam ho.",
+          "korean": "이것은 제 펜입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो के हो ?",
+          "romanized": "tyo ke ho ?",
+          "korean": "저것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "त्यो किताब हो।",
+          "romanized": "tyo kitaab ho.",
+          "korean": "저것은 책입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कसको किताब हो ?",
+          "romanized": "tyo kasko kitaab ho ?",
+          "korean": "저것은 누구의 책입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "त्यो उहाँको किताब हो।",
+          "romanized": "tyo wahããko kitaab ho.",
+          "korean": "저것은 그분의 책입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "यो नि ?",
+          "romanized": "yo ni ?",
+          "korean": "이것은요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "त्यो तपाईंको किताब हो।",
+          "romanized": "tyo tapaaïko kitaab ho.",
+          "korean": "저것은 당신의 책입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "त्यो के हो ?",
+          "romanized": "tyo ke ho ?",
+          "korean": "저것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो किताब हो।",
+          "romanized": "yo kitaab ho.",
+          "korean": "이것은 책입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कसको किताब हो ?",
+          "romanized": "tyo kasko kitaab ho ?",
+          "korean": "저것은 누구의 책입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो किताब हो।",
+          "romanized": "yo mero kitaab ho.",
+          "korean": "이것은 제 책입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "किताब खोल्नुस्।",
+          "romanized": "kitaab kholnus.",
+          "korean": "책을 펴세요."
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले किताब खोलेको।",
+          "romanized": "maile kitaab kholeko.",
+          "korean": "제가 책을 폈습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले के गरेको ?",
+          "romanized": "tapaaïle ke gareko ?",
+          "korean": "당신은 무엇을 했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँले किताब खोलेको।",
+          "romanized": "wahããle kitaab kholeko.",
+          "korean": "그분이 책을 폈습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "जिम !",
+          "romanized": "jim !",
+          "korean": "Jim !"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हजुर !",
+          "romanized": "hajur !",
+          "korean": "네 !"
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कलम हो ?",
+          "romanized": "tyo kalam ho ?",
+          "korean": "저것은 펜입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "होइन।",
+          "romanized": "hoina.",
+          "korean": "아니요, 그렇지 않습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो के हो त ?",
+          "romanized": "tyo ke ho ta ?",
+          "korean": "그러면 저것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो कापी हो।",
+          "romanized": "yo kaapi ho.",
+          "korean": "이것은 공책입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कसको कापी हो ?",
+          "romanized": "tyo kasko kaapi ho ?",
+          "korean": "저것은 누구의 공책입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो कापी हो।",
+          "romanized": "yo mero kaapi ho.",
+          "korean": "이것은 제 공책입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (d)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "त्यो के हो ?",
+          "romanized": "tyo ke ho ?",
+          "korean": "저것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो कलम हो।",
+          "romanized": "yo kalam ho.",
+          "korean": "이것은 펜입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कसको कलम हो ?",
+          "romanized": "tyo kasko kalam ho ?",
+          "korean": "저것은 누구의 펜입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो कलम हो।",
+          "romanized": "yo mero kalam ho.",
+          "korean": "이것은 제 펜입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको कलम कस्तो छ ?",
+          "romanized": "tapaaïko kalam kasto chha ?",
+          "korean": "당신의 펜은 어떤 색입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो कलम कालो छ।",
+          "romanized": "mero kalam kaalo chha.",
+          "korean": "제 펜은 검은색입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कलम दिनोस्।",
+          "romanized": "kalam dinos.",
+          "korean": "펜을 주세요."
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले कलम दिएको।",
+          "romanized": "maile kalam dieko.",
+          "korean": "제가 펜을 주었습니다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "id": 26,
+  "title": "Lesson 26",
+  "titleKo": "제26과",
+  "description": "과거의 습관이나 지속적인 상태(-thẽ / -thyo)를 나타내는 시제를 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "विज्ञान",
+      "romanized": "bigyaan",
+      "korean": "science (과학)"
+    },
+    {
+      "nepali": "गाई",
+      "romanized": "gaai",
+      "korean": "cow (암소)"
+    },
+    {
+      "nepali": "खसी",
+      "romanized": "khasi",
+      "korean": "goat (거세한 수염소)"
+    },
+    {
+      "nepali": "कृषि",
+      "romanized": "krishi",
+      "korean": "agriculture (농업)"
+    },
+    {
+      "nepali": "पर्सी",
+      "romanized": "parsi",
+      "korean": "day after tomorrow (모레/내일모레)"
+    },
+    {
+      "nepali": "फुर्सद",
+      "romanized": "phursad",
+      "korean": "free time (한가한 시간)"
+    },
+    {
+      "nepali": "सिद्धिनु",
+      "romanized": "siddhinu",
+      "korean": "to be finished (끝나다/매진되다)"
+    },
+    {
+      "nepali": "टिकट",
+      "romanized": "TikaT",
+      "korean": "ticket (표/티켓)"
+    },
+    {
+      "nepali": "उसोभए",
+      "romanized": "usobhae",
+      "korean": "in that case (그렇다면)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 과거 습관/지속 시제 (-thẽ / -thyo): 과거에 반복적으로 했던 행동이나 지속적인 상태를 나타낼 때 사용합니다 (~하곤 했다 / ~했었다). (예: ma paDh-thẽ - 나는 공부하곤 했다, u paDh-thyo - 그는 공부하곤 했다).",
+    "2. 부정형 (-dinathẽ): 과거에 하지 않았던 습관을 나타냅니다. (예: ma paDh-dinathẽ - 나는 공부하지 않았었다).",
+    "3. Hudaa (When being): '~일 때', '~하는 동안'이라는 상태를 나타냅니다. (예: amerikaamaa hudaa - 미국에 있을 때).",
+    "4. Chaahiyo (Needed): 'chaahinchha'가 일반적인 필요라면, 'chaahiyo'는 구체적인 현재의 요구(\"~가 필요하게 되었다/주세요\")를 나타낼 때 자주 쓰입니다."
+  ],
+  "quiz": [
+    {
+      "question": "과거에 반복적으로 했던 행동(~하곤 했다)을 나타낼 때 동사 어간(주어 'म')에 붙는 어미는?",
+      "options": [
+        "-न्छु (-nchhu)",
+        "-थेँ (-thẽ)",
+        "-दै छु (-dai chhu)",
+        "-एँ (-ẽ)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "과거 습관 시제의 부정형(~하지 않곤 했다)으로 알맞은 형태는?",
+      "options": [
+        "-दिनथेँ (-dinathẽ)",
+        "-इनँ (-ina)",
+        "-दैन (-daina)",
+        "-एको छैन (-eko chhaina)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'~일 때' 또는 '~하는 상태일 때'를 나타내는 단어는?",
+      "options": [
+        "भने (bhane)",
+        "हुँदा (hudaa)",
+        "देखि (dekhi)",
+        "सम्म (samma)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'그렇다면' 또는 '그런 경우에'를 뜻하는 접속사는?",
+      "options": [
+        "अनि (ani)",
+        "त्यसपछि (tyaspachhi)",
+        "उसोभए (usobhae)",
+        "किनभने (kinabhane)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "현재 구체적으로 필요한 것을 요구할 때('~주세요, ~가 필요하게 되었습니다') 쓰는 동사 형태는?",
+      "options": [
+        "चाहिन्छ (chaahinchha)",
+        "चाहियो (chaahiyo)",
+        "चाहिँदैन (chaahīdaina)",
+        "चाहियोस् (chaahiyos)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'끝나다' 또는 '매진되다'를 뜻하는 동사는?",
+      "options": [
+        "सिद्धिनु (siddhinu)",
+        "सुरु हुनु (shuru hunu)",
+        "खोज्नु (khojnu)",
+        "पाउनु (paaunu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'과학'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "इतिहास (itihaas)",
+        "कृषि (krishi)",
+        "विज्ञान (bigyaan)",
+        "भाषा (bhaashaa)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'한가한 시간'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "फुर्सद (phursad)",
+        "काम (kaam)",
+        "बिदा (bidaa)",
+        "समय (samaya)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'저는 대학에서 공부하곤 했습니다'의 올바른 네팔어 표현은?",
+      "options": [
+        "म कलेजमा पढ्छु। (ma kalejmaa paDhchhu.)",
+        "म कलेजमा पढेँ। (ma kalejmaa paDhẽ.)",
+        "म कलेजमा पढ्दै छु। (ma kalejmaa paDhdai chhu.)",
+        "म कलेजमा पढ्थेँ। (ma kalejmaa paDhthẽ.)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'내일모레(모레)'를 뜻하는 단어는?",
+      "options": [
+        "भोलि (bholi)",
+        "आज (aaja)",
+        "हिजो (hijo)",
+        "पर्सी (parsi)"
+      ],
+      "answer": 3
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 티켓 예매하기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "भन्नुस्।",
+          "romanized": "bhannos.",
+          "korean": "말씀하세요."
+        },
+        {
+          "speaker": "B",
+          "nepali": "मलाई टिकट चाहियो।",
+          "romanized": "malaai TikaT chaahiyo.",
+          "korean": "티켓이 필요합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कहाँको लागि ?",
+          "romanized": "kahããko laagi ?",
+          "korean": "어디로 가는 건가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पोखराको।",
+          "romanized": "pokharaako.",
+          "korean": "포카라행입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कहिलेको लागि नि ?",
+          "romanized": "kahileko laagi ni ?",
+          "korean": "언제 것이 필요하죠?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "भोलिको लागि।",
+          "romanized": "bholiko laagi.",
+          "korean": "내일 것입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "भोलिको टिकट त सिद्धियो।",
+          "romanized": "bholiko TikaT ta siddhiyo.",
+          "korean": "내일 티켓은 매진되었습니다."
+        },
+        {
+          "speaker": "B",
+          "nepali": "उसोभए पर्सीको लागि दिनुस्।",
+          "romanized": "usobhae parsiko laagi dinos.",
+          "korean": "그렇다면 모레(내일모레) 것으로 주세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "एक छिन पर्खनुस्, है।",
+          "romanized": "ek chhin parkhanos, hai.",
+          "korean": "잠시만 기다려주세요, 네?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हवस्।",
+          "romanized": "hawas.",
+          "korean": "알겠습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 과거의 습관 (~하곤 했다: -thẽ / -thyo)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "अमेरिकामा हुँदा तपाईं के गर्नुहुन्थ्यो ?",
+          "romanized": "amerikaamaa hudaa tapaai ke garnuhunthyo ?",
+          "korean": "미국에 있을 때 당신은 무엇을 하곤 했나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म कलेजमा पढ्थेँ।",
+          "romanized": "ma kalejmaa paDhthẽ.",
+          "korean": "저는 대학에서 공부하곤 했습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "के पढ्नुहुन्थ्यो ?",
+          "romanized": "ke paDhnuhunthyo ?",
+          "korean": "무엇을 공부했었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म विज्ञान पढ्थेँ।",
+          "romanized": "ma bigyaan paDhthẽ.",
+          "korean": "과학을 공부했었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "नेपाली पनि पढ्नुहुन्थ्यो ?",
+          "romanized": "nepaali pani paDhnuhunthyo ?",
+          "korean": "네팔어도 공부했었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पढ्दिनथेँ।",
+          "romanized": "paDhdinathẽ.",
+          "korean": "아니요, 하지 않았습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 과거의 일상",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कति बजे उठ्नुहुन्थ्यो ?",
+          "romanized": "tapaai kati baje uThnuhunthyo ?",
+          "korean": "몇 시에 일어나곤 했나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म छ बजे उठ्थेँ।",
+          "romanized": "ma chha baje uThthẽ.",
+          "korean": "6시에 일어나곤 했습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "बिहान के खानुहुन्थ्यो ?",
+          "romanized": "bihaana ke khaanhunthyo ?",
+          "korean": "아침에 무엇을 먹었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म कफी र टोस्ट खान्थेँ।",
+          "romanized": "ma kaphi ra ToST khaanthẽ.",
+          "korean": "커피와 토스트를 먹었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "अफिस कति बजे जानुहुन्थ्यो ?",
+          "romanized": "aphis kati baje jaanuhunthyo ?",
+          "korean": "사무실에 몇 시에 가곤 했나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म सात बजे जान्थेँ।",
+          "romanized": "ma saat baje jaanthẽ.",
+          "korean": "7시에 가곤 했습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 과거의 여가",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "फुर्सदमा के गर्नुहुन्थ्यो ?",
+          "romanized": "phursadmaa ke garnuhunthyo ?",
+          "korean": "한가할 때는 무엇을 했나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म फुटबल खेल्थेँ।",
+          "romanized": "ma phuTbal khelthẽ.",
+          "korean": "축구를 하곤 했습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "सिनेमा हेर्न जानुहुन्थ्यो ?",
+          "romanized": "sinemaa herna jaanuhunthyo ?",
+          "korean": "영화를 보러 가곤 했나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "जान्थेँ, कहिले काहीँ मात्र।",
+          "romanized": "jaanthẽ, kahile kaahi maatra.",
+          "korean": "네, 아주 가끔만 가곤 했습니다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,388 @@
+{
+  "id": 19,
+  "title": "Lesson 19",
+  "titleKo": "제19과",
+  "description": "도구(~로써) 및 대상을 나타내는 조사의 사용법과 네팔의 식사 예절을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बाँस",
+      "romanized": "baas",
+      "korean": "bamboo (대나무)"
+    },
+    {
+      "nepali": "चम्चा",
+      "romanized": "chamchaa",
+      "korean": "spoon (숟가락)"
+    },
+    {
+      "nepali": "चिठी",
+      "romanized": "chiThi",
+      "korean": "letter (편지)"
+    },
+    {
+      "nepali": "हात",
+      "romanized": "haat",
+      "korean": "hand (손)"
+    },
+    {
+      "nepali": "काँटा",
+      "romanized": "kaata",
+      "korean": "fork (포크)"
+    },
+    {
+      "nepali": "खाना",
+      "romanized": "khaana",
+      "korean": "food, meal (음식, 식사)"
+    },
+    {
+      "nepali": "खानु",
+      "romanized": "khaanu",
+      "korean": "to eat (먹다)"
+    },
+    {
+      "nepali": "खोल्नु",
+      "romanized": "kholnu",
+      "korean": "to open (열다)"
+    },
+    {
+      "nepali": "खुकुरी",
+      "romanized": "khukuri",
+      "korean": "Nepali knife (쿠쿠리 - 네팔 전통 단검)"
+    },
+    {
+      "nepali": "ले",
+      "romanized": "le",
+      "korean": "with, by (도구의 '~로써' / 과거 타동사 주어 조사)"
+    },
+    {
+      "nepali": "लेख्नु",
+      "romanized": "lekhnu",
+      "korean": "to write (쓰다)"
+    },
+    {
+      "nepali": "मुख",
+      "romanized": "mukh",
+      "korean": "mouth (입)"
+    },
+    {
+      "nepali": "नुहाउनु",
+      "romanized": "nuhããunu",
+      "korean": "to bathe (목욕하다)"
+    },
+    {
+      "nepali": "पानी",
+      "romanized": "paani",
+      "korean": "water (물)"
+    },
+    {
+      "nepali": "पलास",
+      "romanized": "palaas",
+      "korean": "pliers (플라이어/펜치)"
+    },
+    {
+      "nepali": "पिउनु",
+      "romanized": "piunu",
+      "korean": "to drink (마시다)"
+    },
+    {
+      "nepali": "साबुन",
+      "romanized": "saabun",
+      "korean": "soap (비누)"
+    },
+    {
+      "nepali": "टाउको",
+      "romanized": "shirna/Tauko",
+      "korean": "head (머리)"
+    },
+    {
+      "nepali": "सिरीष",
+      "romanized": "sirish",
+      "korean": "siris tree (시리스 나무)"
+    },
+    {
+      "nepali": "टोपी",
+      "romanized": "Taapa/Topi",
+      "korean": "cap (모자)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 도구의 조사 '-le' (Instrumental): '~으로', '~를 가지고'라는 뜻으로 도구나 수단을 나타낼 때 명사 뒤에 붙습니다. (kalamle: 펜으로, haatle: 손으로, basle: 버스로)",
+    "2. Kele (With what): 'Ke' (무엇) + 'le' (으로)의 결합형입니다.",
+    "3. 수혜자 조사 '-laai': '~에게'라는 뜻으로 편지를 받는 사람이나 동작의 대상을 나타냅니다. (aamaalaai: 어머니에게, saathilaai: 친구에게)",
+    "4. 식사 예절 (Jutho): 네팔에서는 입을 댄 음식이나 그릇을 'Jutho(더러워진)'하다고 여겨 피하는 문화가 있으니 유의해야 합니다."
+  ],
+  "quiz": [
+    {
+      "question": "'도구(~로써)'를 나타낼 때 명사 뒤에 붙이는 조사는?",
+      "options": [
+        "को (ko)",
+        "मा (maa)",
+        "ले (le)",
+        "लाई (laai)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'숟가락'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "चम्चा (chamchaa)",
+        "काँटा (kaata)",
+        "खुकुरी (khukuri)",
+        "पलास (palaas)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'무엇으로'를 의미하는 의문사는?",
+      "options": [
+        "कसरी (kasari)",
+        "केले (kele)",
+        "कसलाई (kaslaai)",
+        "किन (kina)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'손으로'를 올바르게 표현한 네팔어는?",
+      "options": [
+        "हातमा (haatmaa)",
+        "हातको (haatko)",
+        "हातले (haatle)",
+        "हातलाई (haatlaai)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "동작의 대상(~에게)을 나타낼 때 붙이는 조사는?",
+      "options": [
+        "ले (le)",
+        "को (ko)",
+        "बाट (baaTa)",
+        "लाई (laai)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'비누'를 뜻하는 단어는?",
+      "options": [
+        "पानी (paani)",
+        "साबुन (saabun)",
+        "मुख (mukh)",
+        "बाँस (baas)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'포크'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "चम्चा (chamchaa)",
+        "काँटा (kaata)",
+        "पलास (palaas)",
+        "खुकुरी (khukuri)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'당신은 무엇으로 편지를 씁니까?'를 바르게 표현한 것은?",
+      "options": [
+        "तपाईं कसलाई चिठी लेख्नुहुन्छ ? (tapaaï kaslaai chiThi lekhnuhunchha ?)",
+        "तपाईं केले चिठी लेख्नुहुन्छ ? (tapaaï kele chiThi lekhnuhunchha ?)",
+        "तपाईं केले खाना खानुहुन्छ ? (tapaaï kele khaanaa khaannuhunchha ?)",
+        "तपाईं केले मुख धुनुहुन्छ ? (tapaaï kele mukh dhunuhunchha ?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'물'을 뜻하는 단어는?",
+      "options": [
+        "खाना (khaana)",
+        "पानी (paani)",
+        "टोपी (Topi)",
+        "सिरीष (sirish)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'네팔 사람들은 보통 무엇으로 밥을 먹습니까?'의 정답으로 알맞은 것은?",
+      "options": [
+        "चम्चाले (chamchaale)",
+        "काँटाले (kaataale)",
+        "हातले (haatle)",
+        "पलासले (palaasle)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 식사 도구와 습관",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं केले खाना खानुहुन्छ ?",
+          "romanized": "tapaaï kele khaanaa khaannuhunchha ?",
+          "korean": "당신은 무엇으로 음식을 먹습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म हातले खान्छु।",
+          "romanized": "ma haatle khaanchhu.",
+          "korean": "저는 손으로 먹습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथी नि ?",
+          "romanized": "tapaaïko saathi ni ?",
+          "korean": "당신의 친구는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "ऊ चम्चा र काँटाले खान्छ।",
+          "romanized": "u chamchaa ra kaataale khaanchha.",
+          "korean": "그는 숟가락과 포크로 먹습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "नेपालीहरू केले खान्छन् ?",
+          "romanized": "nepaaliharu kele khaanchhan ?",
+          "korean": "네팔 사람들은 무엇으로 먹나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "धेरै जसो नेपालीहरू हातले खान्छन्।",
+          "romanized": "dherai jaso nepaaliharu haatle khaanchhan.",
+          "korean": "대부분의 네팔 사람들은 손으로 먹습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 편지 쓰기와 도구",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं केले चिठी लेख्नुहुन्छ ?",
+          "romanized": "tapaaï kele chiThi lekhnuhunchha ?",
+          "korean": "당신은 무엇으로 편지를 씁니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म कलमले लेख्छु।",
+          "romanized": "ma kalamle lekhchhu.",
+          "korean": "저는 펜으로 씁니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कसलाई चिठी लेख्नुहुन्छ ?",
+          "romanized": "tapaaï kaslaai chiThi lekhnuhunchha ?",
+          "korean": "당신은 누구에게 편지를 씁니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म आफ्नो आमालाई लेख्छु।",
+          "romanized": "ma aaphno aamaalaai lekhchhu.",
+          "korean": "저는 제 어머니께 씁니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 도구의 사용 (-le)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यो के हो ?",
+          "romanized": "yo ke ho ?",
+          "korean": "이것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो खुकुरी हो।",
+          "romanized": "yo khukuri ho.",
+          "korean": "이것은 쿠쿠리(단검)입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "खुकुरी के को लागि हो ?",
+          "romanized": "khukuri ke ko laagi ho ?",
+          "korean": "쿠쿠리는 무엇을 위한 것입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "खुकुरी काट्नको लागि हो।",
+          "romanized": "khukuri kaaTna ko laagi ho.",
+          "korean": "쿠쿠리는 자르기 위한 것입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं केले काट्नुहुन्छ ?",
+          "romanized": "tapaaï kele kaaTnuhunchha ?",
+          "korean": "당신은 무엇으로 자릅니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म खुकुरीले काट्छु।",
+          "romanized": "ma khukurile kaaTchhu.",
+          "korean": "저는 쿠쿠리로 자릅니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 세정 도구",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं केले मुख धुनुहुन्छ ?",
+          "romanized": "tapaaï kele mukh dhunuhunchha ?",
+          "korean": "당신은 무엇으로 얼굴/입을 씻습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म पानीले मुख धुन्छु।",
+          "romanized": "ma paanile mukh dhunchhu.",
+          "korean": "저는 물로 씻습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "साबुनले नि ?",
+          "romanized": "saabunle ni ?",
+          "korean": "비누로는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "साबुनले पनि धुन्छु।",
+          "romanized": "saabunle pani dhunchhu.",
+          "korean": "비누로도 씻습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 편지 봉투 쓰기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "खाममा कसको नाम लेख्ने ?",
+          "romanized": "khaammaa kasko naam lekhne ?",
+          "korean": "봉투에 누구의 이름을 쓰나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "कसलाई चिठी पठाउने, उसको नाम लेख्ने।",
+          "romanized": "kaslaai chiThi pathaane, usko naam lekhne.",
+          "korean": "편지를 받을 사람의 이름을 씁니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको नाम नि ?",
+          "romanized": "tapaaïko naam ni ?",
+          "korean": "당신의 이름은요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो नाम पछाडि लेख्ने।",
+          "romanized": "mero naam pachhaadi lekhne.",
+          "korean": "제 이름은 뒤에 씁니다."
+        }
+      ]
+    }
+  ]
+}

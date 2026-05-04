@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
+import { MAX_LESSON_ID } from "@/data/lessonsMeta";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -15,20 +16,20 @@ function Index() {
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
       <Header />
-      <main className="mx-auto max-w-5xl px-4 py-6 sm:py-12">
-        <section className="mb-8 sm:mb-16 text-center">
-          <div className="mb-3 sm:mb-6 text-5xl sm:text-6xl">🇳🇵</div>
+      <main className="mx-auto max-w-5xl px-4 py-5 sm:py-8">
+        <section className="mb-6 sm:mb-10 text-center">
+          <div className="mb-2 sm:mb-4 text-5xl sm:text-6xl">🇳🇵</div>
           <h1 className="mb-2 sm:mb-4 text-2xl sm:text-4xl font-bold tracking-tight text-foreground">
             네팔어 학습
           </h1>
           <p className="mx-auto max-w-md text-sm sm:text-lg text-muted-foreground">
             Basic Course in Spoken Nepali 교재를 기반으로
             <br />
-            37개 레슨을 통해 네팔어를 배워보세요
+            {MAX_LESSON_ID}개 레슨을 통해 네팔어를 배워보세요
           </p>
         </section>
 
-        <section className="mb-8 sm:mb-12">
+        <section className="mb-6 sm:mb-8">
           <div className="grid gap-3 sm:grid-cols-2">
             <Link
               to="/lessons"
@@ -41,7 +42,7 @@ function Index() {
                 레슨 시작하기
               </h2>
               <p className="text-sm text-muted-foreground">
-                전체 37개 레슨을 순서대로 학습
+                전체 {MAX_LESSON_ID}개 레슨을 순서대로 학습
               </p>
             </Link>
             <Link
@@ -62,11 +63,11 @@ function Index() {
           </div>
         </section>
 
-        <section className="grid grid-cols-3 gap-3 sm:gap-4">
+        <section className="grid grid-cols-3 gap-2 sm:gap-3">
           <Link
             to="/study/vocab"
             search={{ start: undefined, end: undefined }}
-            className="rounded-xl border bg-card p-4 sm:p-6 text-center shadow-sm transition-all hover:shadow-md active:scale-[0.99]"
+            className="rounded-xl border bg-card p-4 sm:p-5 text-center shadow-sm transition-all hover:shadow-sm active:scale-[0.99]"
           >
             <div className="mb-1 sm:mb-2 text-xl sm:text-2xl">📖</div>
             <h3 className="text-sm sm:text-base font-semibold text-foreground">단어장</h3>
@@ -77,7 +78,7 @@ function Index() {
           <Link
             to="/study/quiz"
             search={{ start: undefined, end: undefined }}
-            className="rounded-xl border bg-card p-4 sm:p-6 text-center shadow-sm transition-all hover:shadow-md active:scale-[0.99]"
+            className="rounded-xl border bg-card p-4 sm:p-5 text-center shadow-sm transition-all hover:shadow-sm active:scale-[0.99]"
           >
             <div className="mb-1 sm:mb-2 text-xl sm:text-2xl">✏️</div>
             <h3 className="text-sm sm:text-base font-semibold text-foreground">퀴즈</h3>
@@ -88,7 +89,7 @@ function Index() {
           <Link
             to="/study/dialogues"
             search={{ start: undefined, end: undefined }}
-            className="rounded-xl border bg-card p-4 sm:p-6 text-center shadow-sm transition-all hover:shadow-md active:scale-[0.99]"
+            className="rounded-xl border bg-card p-4 sm:p-5 text-center shadow-sm transition-all hover:shadow-sm active:scale-[0.99]"
           >
             <div className="mb-1 sm:mb-2 text-xl sm:text-2xl">💬</div>
             <h3 className="text-sm sm:text-base font-semibold text-foreground">대화문</h3>
@@ -98,7 +99,7 @@ function Index() {
           </Link>
         </section>
 
-        <section className="mt-8 sm:mt-12 rounded-2xl bg-warm/50 p-6 sm:p-8 text-center">
+        <section className="mt-6 sm:mt-8 rounded-2xl bg-warm/30 p-5 sm:p-6 text-center">
           <h2 className="mb-1 sm:mb-2 text-base sm:text-lg font-semibold text-warm-foreground">
             🙏 जय मसीह (저이머씨)
           </h2>

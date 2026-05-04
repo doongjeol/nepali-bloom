@@ -1,0 +1,427 @@
+{
+  "id": 8,
+  "title": "Lesson 8",
+  "titleKo": "제8과",
+  "description": "시간 표현과 일상적인 식습관, 언어 학습에 대해 묻고 답하는 방법을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "आलु",
+      "romanized": "aalu",
+      "korean": "potato (감자)"
+    },
+    {
+      "nepali": "बज्यो",
+      "romanized": "bajyo",
+      "korean": "o'clock (시 - 현재 시각을 말할 때)"
+    },
+    {
+      "nepali": "महिना",
+      "romanized": "mahinaa",
+      "korean": "month (월/달)"
+    },
+    {
+      "nepali": "भाषा",
+      "romanized": "bhaashaa",
+      "korean": "language (언어)"
+    },
+    {
+      "nepali": "बिहानको खाना",
+      "romanized": "bihaanako khaanaa",
+      "korean": "morning meal (아침 식사)"
+    },
+    {
+      "nepali": "बोल्नु",
+      "romanized": "bolnu",
+      "korean": "to speak (말하다)"
+    },
+    {
+      "nepali": "देख्नु",
+      "romanized": "dekhnu",
+      "korean": "to see (보다)"
+    },
+    {
+      "nepali": "धेरै जसो",
+      "romanized": "dherai jaso",
+      "korean": "mostly, usually (주로, 보통)"
+    },
+    {
+      "nepali": "घण्टा",
+      "romanized": "ghanTaa",
+      "korean": "hour (시간 - 기간 단위)"
+    },
+    {
+      "nepali": "घडी",
+      "romanized": "ghaDi",
+      "korean": "watch (시계)"
+    },
+    {
+      "nepali": "कहिले काहीँ",
+      "romanized": "kahile kaahi",
+      "korean": "sometimes (때때로)"
+    },
+    {
+      "nepali": "खाजा",
+      "romanized": "khaajaa",
+      "korean": "snack (간식)"
+    },
+    {
+      "nepali": "खेल्नु",
+      "romanized": "khelnu",
+      "korean": "to play (놀다/경기를 하다)"
+    },
+    {
+      "nepali": "मासु",
+      "romanized": "maasu",
+      "korean": "meat (고기)"
+    },
+    {
+      "nepali": "मात्र",
+      "romanized": "maatra",
+      "korean": "only (오직/단지)"
+    },
+    {
+      "nepali": "मिनेट",
+      "romanized": "mineT",
+      "korean": "minute (분)"
+    },
+    {
+      "nepali": "मिठाई",
+      "romanized": "miThaai",
+      "korean": "sweets (단 음식/사탕)"
+    },
+    {
+      "nepali": "पढाउनु",
+      "romanized": "paDhaaunu",
+      "korean": "to teach (가르치다)"
+    },
+    {
+      "nepali": "फेरि",
+      "romanized": "pheri",
+      "korean": "again (다시)"
+    },
+    {
+      "nepali": "र",
+      "romanized": "ra",
+      "korean": "and (그리고)"
+    },
+    {
+      "nepali": "सधैँ",
+      "romanized": "sadhai",
+      "korean": "always (항상)"
+    },
+    {
+      "nepali": "सलाद",
+      "romanized": "salaad",
+      "korean": "salad (샐러드)"
+    },
+    {
+      "nepali": "सुत्नु",
+      "romanized": "sutnu",
+      "korean": "to sleep (자다)"
+    },
+    {
+      "nepali": "उठ्नु",
+      "romanized": "uThnu",
+      "korean": "to get up (일어나다)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 단순 현재 시제 변화 (bolnu - 말하다):\n   - ma bolchhu (나는 말한다)\n   - haami bolchhaũ (우리는 말한다)\n   - timi bolchhau (너는 말한다)\n   - tapaal bolnuhunchha (당신은 말합니다)",
+    "2. 시각 표현:\n   - sawaa: 15분 지나 (a quarter past)\n   - saaDhe: 30분 지나 (half past)\n   - paune: 15분 전 (a quarter to)\n   - bajera mineT gayo: ~시 ~분 지남 (It is ... after ...)\n   - bajna mineT baaki chha: ~시 ~분 전 (It is ... to ...)",
+    "3. bajyo vs baje:\n   - bajyo: 시각을 묻거나 답할 때 사용 (예: saat bajyo - 7시이다).\n   - baje: 특정 시각에 일어나는 사건을 말할 때 사용 (예: saat baje - 7시에).",
+    "4. nai: 강조를 나타내는 입자 (예: aaja nai - 반드시 오늘)."
+  ],
+  "quiz": [
+    {
+      "question": "'감자'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "मासु (maasu)",
+        "आलु (aalu)",
+        "सलाद (salaad)",
+        "मिठाई (miThaai)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'시계'를 뜻하는 단어는?",
+      "options": [
+        "घण्टा (ghanTaa)",
+        "घडी (ghaDi)",
+        "मिनेट (mineT)",
+        "समय (samaya)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'가르치다'를 뜻하는 동사는?",
+      "options": [
+        "खेल्नु (khelnu)",
+        "सुत्नु (sutnu)",
+        "उठ्नु (uThnu)",
+        "पढाउनु (paDhaaunu)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'항상'을 뜻하는 단어는?",
+      "options": [
+        "कहिले काहीँ (kahile kaahi)",
+        "फेरि (pheri)",
+        "सधैँ (sadhai)",
+        "धेरै जसो (dherai jaso)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'나는 말한다'의 올바른 네팔어 표현은?",
+      "options": [
+        "म बोल्छु (ma bolchhu)",
+        "तिमी बोल्छौ (timi bolchhau)",
+        "हामी बोल्छौँ (haami bolchhaũ)",
+        "तपाईं बोल्नुहुन्छ (tapaal bolnuhunchha)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'15분 지나(a quarter past)'를 뜻하는 시각 표현은?",
+      "options": [
+        "साढे (saaDhe)",
+        "सवा (sawaa)",
+        "पौने (paune)",
+        "बज्यो (bajyo)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'30분 지나(half past)'를 뜻하는 시각 표현은?",
+      "options": [
+        "साढे (saaDhe)",
+        "सवा (sawaa)",
+        "पौने (paune)",
+        "बज्यो (bajyo)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'가끔, 때때로'를 뜻하는 단어는?",
+      "options": [
+        "सधैँ (sadhai)",
+        "कहिले काहीँ (kahile kaahi)",
+        "धेरै जसो (dherai jaso)",
+        "मात्र (maatra)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'고기'를 뜻하는 단어는?",
+      "options": [
+        "आलु (aalu)",
+        "मासु (maasu)",
+        "सलाद (salaad)",
+        "मिठाई (miThaai)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'일어나다'를 뜻하는 동사는?",
+      "options": [
+        "सुत्नु (sutnu)",
+        "खेल्नु (khelnu)",
+        "उठ्नु (uThnu)",
+        "बोल्नु (bolnu)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 언어 학습",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तिम्रो नाम के हो ?",
+          "romanized": "timro naam ke ho ?",
+          "korean": "너의 이름은 무엇이니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो नाम टिम हो।",
+          "romanized": "mero naam Tim ho.",
+          "korean": "내 이름은 Tim이야."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तिमी कुन भाषा बोल्छौ ?",
+          "romanized": "timi kun bhaashaa bolchhau ?",
+          "korean": "너는 어떤 언어를 말하니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म अंग्रेजी बोल्छु।",
+          "romanized": "ma angreji bolchhu.",
+          "korean": "나는 영어를 말해."
+        },
+        {
+          "speaker": "A",
+          "nepali": "अहिले तिमी कुन भाषा सिक्दैछौ ?",
+          "romanized": "ahile timi kun bhaashaa sikdaichhau ?",
+          "korean": "지금 너는 어떤 언어를 배우고 있니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "अहिले म नेपाली सिक्दैछु।",
+          "romanized": "ahile ma nepaali sikdaichhu.",
+          "korean": "지금 나는 네팔어를 배우고 있어."
+        },
+        {
+          "speaker": "A",
+          "nepali": "नेपाली कति महिना पढ्छौ ?",
+          "romanized": "nepaali kati mahinaa paDhchhau ?",
+          "korean": "네팔어를 몇 달 동안 공부할 거니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "तीन महिना पढ्छु।",
+          "romanized": "tin mahinaa paDhchhu.",
+          "korean": "세 달 동안 공부할 거야."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 일과 시간",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कति बजे उठ्नुहुन्छ ?",
+          "romanized": "tapaal kati baje uThnuhunchha ?",
+          "korean": "당신은 몇 시에 일어나시나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म छ बजे उठ्छु।",
+          "romanized": "ma chha baje uThchhu.",
+          "korean": "저는 6시에 일어납니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कति बजे सुत्नुहुन्छ नि ?",
+          "romanized": "kati baje sutnuhunchha ni ?",
+          "korean": "그럼 몇 시에 주무시나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म दस बजे सुत्छु।",
+          "romanized": "ma das baje sutchhu.",
+          "korean": "저는 10시에 잡니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कति बजे अफिस जानुहुन्छ ?",
+          "romanized": "tapaaï kati baje aphis jaanuhunchha ?",
+          "korean": "당신은 몇 시에 사무실에 ग나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म आठ बजे अफिस जान्छु।",
+          "romanized": "ma aaTh baje aphis jaanchhu.",
+          "korean": "저는 8시에 사무실에 갑니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) सि각 묻고 답하기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "अहिले कति बज्यो ?",
+          "romanized": "ahile kati bajyo ?",
+          "korean": "지금 몇 시입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "अहिले पाँच बज्यो।",
+          "romanized": "ahile paach bajyo.",
+          "korean": "지금 5시입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तिमी सवा पाँच बजे के गर्छौ ?",
+          "romanized": "timi sawaa paach baje ke garchhau ?",
+          "korean": "너는 5시 15분에 무엇을 하니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "चिया खान्छु।",
+          "romanized": "chiyaa khaanchhu.",
+          "korean": "차를 마셔."
+        },
+        {
+          "speaker": "A",
+          "nepali": "फुटबल खेल्न कति बजे जान्छौ ?",
+          "romanized": "phuTbal khelna kati baje jaanchhau ?",
+          "korean": "축구하러 몇 시에 ग니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "साढे पाँच बजे जान्छु।",
+          "romanized": "saaDhe paach baje jaanchhu.",
+          "korean": "5시 30분에 ग."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 식습관 (미국인과 네팔인)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "अमेरिकीहरू दाल भात खान्छन् ?",
+          "romanized": "amerikaaliharu daal bhaat khaanchhan ?",
+          "korean": "미국인들은 달밧(밥)을 먹나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "खाँदैनन्।",
+          "romanized": "khaadainan.",
+          "korean": "아니요, 먹지 않습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "के खान्छन् त ?",
+          "romanized": "ke khaanchhan ta ?",
+          "korean": "그럼 무엇을 먹나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मासु र आलु खान्छन्।",
+          "romanized": "maasu ra aalu khaanchhan.",
+          "korean": "고기와 감자를 먹습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "बियर नि ?",
+          "romanized": "biyar ni ?",
+          "korean": "맥주는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "बियर धेरै जसो खान्छन्।",
+          "romanized": "biyar dherai jaso khaanchhan.",
+          "korean": "맥주는 보통 자주 마십니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सधैँ रक्सी खानुहुन्छ ?",
+          "romanized": "tapaat sadhaï raksi khaanuhunchha ?",
+          "korean": "당신은 항상 술을 마시나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "खाँदिन। कहिले काहीँ मात्र खान्छु।",
+          "romanized": "khaanna. kahile kaahi maatra khaanchhu.",
+          "korean": "아니요. 가끔만 마십니다."
+        }
+      ]
+    }
+  ]
+}

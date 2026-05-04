@@ -1,0 +1,82 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 19
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+baas           : bamboo (대나무)
+chamchaa       : spoon (숟가락)
+chiThi         : letter (편지)
+haat           : hand (손)
+kaata          : fork (포크)
+khaana         : food, meal (음식, 식사)
+khaanu         : to eat (먹다)
+kholnu         : to open (열다)
+khukuri        : Nepali knife (쿠쿠리 - 네팔 전통 단검)
+le             : with, by (도구의 '~로써' / 과거 타동사 주어 조사)
+lekhnu         : to write (쓰다)
+mukh           : mouth (입)
+nuhããunu       : to bathe (목욕하다)
+paani          : water (물)
+palaas         : pliers (플라이어/펜치)
+piunu          : to drink (마시다)
+saabun         : soap (비누)
+shirna         : head (머리) [교재 표기: Tauko]
+sirish          : siris tree (시리스 나무)
+Taapa          : cap (모자) [교재 표기: Topi]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 식사 도구와 습관
+1. tapaaï kele khaanaa khaannuhunchha ? / ma haatle khaanchhu.
+   (당신은 무엇으로 음식을 먹습니까? / 저는 손으로 먹습니다.)
+2. tapaaïko saathi ni ? / u chamchaa ra kaataale khaanchha.
+   (당신의 친구는요? / 그는 숟가락과 포크로 먹습니다.)
+3. nepaaliharu kele khaanchhan ? / dherai jaso nepaaliharu haatle khaanchhan.
+   (네팔 사람들은 무엇으로 먹나요? / 대부분의 네팔 사람들은 손으로 먹습니다.)
+
+(b) 편지 쓰기와 도구
+1. tapaaï kele chiThi lekhnuhunchha ? / ma kalamle lekhchhu.
+   (당신은 무엇으로 편지를 씁니까? / 저는 펜으로 씁니다.)
+2. tapaaï kaslaai chiThi lekhnuhunchha ? / ma aaphno aamaalaai lekhchhu.
+   (당신은 누구에게 편지를 씁니까? / 저는 제 어머니께 씁니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 도구의 사용 (-le)
+1. yo ke हो ? / yo khukuri हो.
+2. khukuri ke ko laagi ho ? / khukuri kaaTna ko laagi ho.
+   (쿠쿠리는 무엇을 위한 것입니까? / 쿠쿠리는 자르기 위한 것입니다.)
+3. tapaaï kele kaaTnuhunchha ? / ma khukurile kaaTchhu.
+   (당신은 무엇으로 자릅니까? / 저는 쿠쿠리로 자릅니다.)
+
+(b) 세정 도구
+1. tapaaï kele mukh dhunuhunchha ? / ma paanile mukh dhunchhu.
+   (당신은 무엇으로 얼굴/입을 씻습니까? / 저는 물로 씻습니다.)
+2. saabunle ni ? / saabunle pani dhunchhu.
+   (비누로는요? / 비누로도 씻습니다.)
+
+(c) 편지 봉투 쓰기
+1. khaammaa kasko naam lekhne ? / kaslaai chiThi pathaane, usko naam lekhne.
+   (봉투에 누구의 이름을 쓰나요? / 편지를 받을 사람의 이름을 씁니다.)
+2. tapaaïko naam ni ? / mero naam pachhaadi lekhne.
+   (당신의 이름은요? / 제 이름은 뒤에 씁니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 네팔 사람들은 보통 오른손으로 음식을 먹습니다. 왼손은 식사할 때 사용하지 않습니다. 물을 마실 때도 컵에 입을 대지 않고 마시는 경우가 많습니다. 지미는 이제 네팔 습관에 익숙해져서 손으로 달밧을 잘 먹습니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 도구의 조사 '-le' (Instrumental): '~으로', '~를 가지고'라는 뜻으로 도구나 수단을 나타낼 때 명사 뒤에 붙습니다.
+   - kalamle (펜으로), haatle (손으로), basle (버스로).
+   - *주의:* 과거 시제 타동사의 주어에 붙는 '-le'와 형태가 같으므로 문맥에 따라 구분해야 합니다.
+2. Kele (With what): 'Ke' (무엇) + 'le' (으로)의 결합형입니다.
+3. 수혜자 조사 '-laai': '~에게'라는 뜻으로 편지를 받는 사람이나 동작의 대상을 나타냅니다.
+   - aamaalaai (어머니에게), saathilaai (친구에게).
+4. 식사 예절 (Jutho): 네팔에서는 입을 댄 음식이나 그릇을 'Jutho(더러워진)'하다고 여겨 피하는 문화가 있으니 유의해야 합니다.
+==================================================

@@ -1,0 +1,56 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 36
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+anushaashan    : discipline (규율/훈육) [cite: 1093]
+badmaas        : mischievous (버릇없는/장난기 심한) [cite: 1093]
+bigyaan        : science (과학) [cite: 1093]
+byabahaar      : treatment/behavior (대우/행실) [cite: 1093]
+dwaaraa        : by (~에 의해서) [cite: 1093]
+ghanTaaghar    : clock tower (시계탑) [cite: 1093]
+kaaryaalaya    : office (사무실/관공서) [cite: 1093]
+maanabiki shaastra : humanities (인문학) [cite: 1093]
+raastra bhaashaa : national language (국어) [cite: 1093]
+rusi          : Russian (러시아의/러시아어) [cite: 1093]
+sajaaya        : punishment (처벌) [cite: 1093]
+sanskriti      : culture (문화) [cite: 1093]
+sarkaari       : government (정부의/공립의) [cite: 1093]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 대학 교육과 전공
+1. nepaalko sabbhandaa puraano kalej kun ho? / tri chandra kalej ho. [cite: 1094, 1097]
+   (네팔에서 가장 오래된 대학은 어디인가요? / 트리 찬드라 대학입니다.) [cite: 1095, 1098]
+2. tyahãã kun kun bishaya paDhaainchha? / bigyaan ra maanabiki shaastra paDhaainchha. [cite: 1101, 1103]
+   (그곳에서는 어떤 과목들이 가르쳐지나요? / 과학과 인문학이 가르쳐집니다.) [cite: 1101, 1103]
+
+(b) 언어 사용 현황 (수동태 표현)
+1. nepaalko sarkaari kaaryaalayaharumaa kun bhaashaa bolinchha? / nepaali bhaashaa bolinchha. [cite: 1107, 1117]
+   (네팔의 정부 관공서에서는 어떤 언어가 사용됩니까? / 네팔어가 사용됩니다.) [cite: 1107, 1118]
+2. tyahãã chiThiharu pani nepaali bhaashaamaa nai lekhinchha? / ho, nepaali bhaashaamaa nai lekhinchha. [cite: 1113, 1123]
+   (그곳의 편지들도 네팔어로 쓰이나요? / 네, 네팔어로만 쓰입니다.) [cite: 1114, 1124]
+
+(c) 평화봉사단(Peace Corps) 훈련
+1. piskorko taalimmaa kati ghanTaa nepaali sikaainchha? / ek dinko chaardekhi chha ghanTaa sikaainchha. [cite: 1116]
+   (평화봉사단 훈련에서 네팔어는 몇 시간 가르쳐지나요? / 하루에 4~6시간 가르쳐집니다.) [cite: 1116]
+2. yi kuraaharu nepaalidwaaraa sikaainchha ki amerikaaliharudwaaraa? / dubai dwaaraa sikaainchha. [cite: 1129, 1135]
+   (이것들은 네팔인에 의해 가르쳐지나요, 미국인에 의해 가르쳐지나요? / 둘 다에 의해 가르쳐집니다.) [cite: 1129, 1136]
+
+
+3. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 이곳은 마이크가 가르치는 학교입니다. 이 학교에서는 영어, 네팔어, 산스크리트어가 가르쳐지지만 러시아어 등은 가르치지 않습니다[cite: 1139]. 학교에서는 매주 영화 한 편이 상영됩니다[cite: 1141]. 수업에 늦거나 버릇없이 행동하는 학생에게는 처벌이 주어지기 때문에 학생들의 규율이 매우 잘 잡혀 있습니다[cite: 1142, 1143].]
+
+
+4. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 수동태 (Passive Forms):
+   - 'paDhaainchha'(가르쳐지다), 'garinchha'(행해지다), 'sikaainchha'(배워지다) 등은 동사 어간에 '-i-'를 넣어 만듭니다[cite: 1156].
+   - 네팔어에서는 능동태보다 수동태 표현이 매우 빈번하게 사용되는 특징이 있습니다[cite: 1157].
+2. '-dwaaraa' (By):
+   - 행위의 주체를 나타낼 때 쓰이며 영어의 'by'와 유사합니다[cite: 1093].
+   - 예: nepaalidwaaraa (네팔인에 의해서)[cite: 1129].
+==================================================

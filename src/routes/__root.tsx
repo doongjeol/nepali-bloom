@@ -3,6 +3,20 @@ import { Toaster } from "@/components/ui/sonner";
 
 import appCss from "../styles.css?url";
 
+const initThemeScript = `
+(() => {
+  try {
+    const mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    const apply = () => {
+      const isDark = !!(mq && mq.matches);
+      document.documentElement.classList.toggle('dark', isDark);
+    };
+    apply();
+    mq && mq.addEventListener && mq.addEventListener('change', apply);
+  } catch {}
+})();
+`;
+
 function NotFoundComponent() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -39,6 +53,7 @@ export const Route = createRootRoute({
       { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       {
         rel: "stylesheet",
         href: appCss,
@@ -60,6 +75,10 @@ export const Route = createRootRoute({
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700&display=swap",
       },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -72,6 +91,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: initThemeScript }} />
       </head>
       <body>
         {children}

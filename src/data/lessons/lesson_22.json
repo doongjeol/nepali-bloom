@@ -1,0 +1,358 @@
+{
+  "id": 22,
+  "title": "Lesson 22",
+  "titleKo": "제22과",
+  "description": "연속된 동작을 연결하는 분사 구문(-era)과 시간적 선후 관계(-epachhi)를 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बजे",
+      "romanized": "baje",
+      "korean": "o'clock (시)"
+    },
+    {
+      "nepali": "एकै छिन",
+      "romanized": "ekai chhin",
+      "korean": "for a while (잠시 동안)"
+    },
+    {
+      "nepali": "एपछि",
+      "romanized": "-epachhi",
+      "korean": "after (doing) (~한 후에)"
+    },
+    {
+      "nepali": "एर",
+      "romanized": "-era",
+      "korean": "having done (~하고, ~해서 - 순서/이유)"
+    },
+    {
+      "nepali": "गीत",
+      "romanized": "gaun/geet",
+      "korean": "song (노래)"
+    },
+    {
+      "nepali": "हाँस्नु",
+      "romanized": "haasnu",
+      "korean": "to laugh (웃다)"
+    },
+    {
+      "nepali": "हिँड्नु",
+      "romanized": "hĩDnu",
+      "korean": "to walk, to leave (걷다, 떠나다)"
+    },
+    {
+      "nepali": "खोला",
+      "romanized": "kholaa",
+      "korean": "river (강)"
+    },
+    {
+      "nepali": "लुगा",
+      "romanized": "lugaa",
+      "korean": "clothes (옷)"
+    },
+    {
+      "nepali": "फर्कनु",
+      "romanized": "pharkanu",
+      "korean": "to return (돌아오다)"
+    },
+    {
+      "nepali": "पकाउनु",
+      "romanized": "pakaaunu",
+      "korean": "to cook (요리하다)"
+    },
+    {
+      "nepali": "साइकल",
+      "romanized": "saaykal",
+      "korean": "bicycle (자전거)"
+    },
+    {
+      "nepali": "सुत्नु",
+      "romanized": "sutnu",
+      "korean": "to sleep (자다)"
+    },
+    {
+      "nepali": "त्यसपछि",
+      "romanized": "tyaspachhi",
+      "korean": "after that (그 후에)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 분사 어미 '-era' (Absolutive Participle): 한 동작이 끝난 후 바로 다음 동작이 이어질 때 사용합니다 (~하고 나서). 동사 어간에 '-era'를 붙입니다. (예: uThnu -> uThera, jaanu -> gaera). 이유를 나타낼 때도 쓰입니다 (~해서).",
+    "2. 후치사 '-epachhi' (After): \"~한 후에\"라는 뜻으로, 동작의 완료를 강조합니다. 동사 어간에 '-e'를 붙이고 'pachhi'를 더합니다. (예: khaanu -> khaaepachhi).",
+    "3. 'Tyaspachhi' vs '-epachhi': Tyaspachhi는 문장 사이를 잇는 부사(그 후에), -epachhi는 특정 동사 뒤에 붙는 어미(~한 후에)입니다.",
+    "4. 불규칙 변화: jaanu (가다) -> gaera (가서) / gaepachhi (간 후에), khaanu (먹다) -> khaaera (먹고) / khaaepachhi (먹은 후에)."
+  ],
+  "quiz": [
+    {
+      "question": "한 동작이 끝난 후 다음 동작이 이어질 때(~하고 나서) 동사에 붙이는 어미는?",
+      "options": [
+        "-ने (-ne)",
+        "-दै (-dai)",
+        "-एर (-era)",
+        "-को (-ko)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'~한 후에'라는 뜻으로 동작의 완료를 강조할 때 붙이는 어미는?",
+      "options": [
+        "-एपछि (-epachhi)",
+        "-एर (-era)",
+        "-न (-na)",
+        "-दै (-dai)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'가서(가고 나서)'를 뜻하는 불규칙 동사 형태는?",
+      "options": [
+        "जानेर (jaanera)",
+        "गएर (gaera)",
+        "गएको (gaeko)",
+        "गएपछि (gaepachhi)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'먹은 후에'를 뜻하는 올바른 네팔어는?",
+      "options": [
+        "खाएर (khaaera)",
+        "खाएपछि (khaaepachhi)",
+        "खाने (khaane)",
+        "खाँदा (khaadaa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'일어나서'를 뜻하는 동사 형태는?",
+      "options": [
+        "उठ्ने (uThne)",
+        "उठ्छु (uThchhu)",
+        "उठेर (uThera)",
+        "उठेपछि (uThepachhi)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'그 후에'라는 뜻으로 문장과 문장을 이어주는 부사는?",
+      "options": [
+        "त्यसपछि (tyaspachhi)",
+        "त्यसै कारण (tyasai kaaran)",
+        "कहिले काहीँ (kahile kaahi)",
+        "अलिअलि (aliali)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'잠시 동안'을 뜻하는 네팔어 표현은?",
+      "options": [
+        "दिनभरि (dinbhari)",
+        "एकै छिन (ekai chhin)",
+        "सधैँ (sadhai)",
+        "धेरै जसो (dherai jaso)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'저는 시장에 가서 옷감을 삽니다'를 바르게 표현한 것은?",
+      "options": [
+        "म बजार गएपछि कपडा किन्छु। (ma bajaar gaepachhi kaparaa kinchhu.)",
+        "म बजार गएर कपडा किन्छु। (ma bajaar gaera kaparaa kinchhu.)",
+        "म बजार जाने कपडा किन्छु। (ma bajaar jaane kaparaa kinchhu.)",
+        "म बजार जाँदा कपडा किन्छु। (ma bajaar jaadaa kaparaa kinchhu.)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'밥을 먹은 후에 뭐 할 거예요?'의 올바른 네팔어 표현은?",
+      "options": [
+        "खाना खाएर के गर्ने ? (khaanaa khaaera ke garne ?)",
+        "खाना खाएपछि के गर्ने ? (khaanaa khaae pachhi ke garne ?)",
+        "खाना खाने कि नखाने ? (khaanaa khaane ki nakhaane ?)",
+        "खाना खाँदाखेरि के गर्ने ? (khaanaa khaadaakheri ke garne ?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'웃다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "सुत्नु (sutnu)",
+        "हाँस्नु (haasnu)",
+        "रुँनु (runu)",
+        "खेल्नु (khelnu)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 일상의 순서 (-era)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं बिहान उठेर के गर्नुहुन्छ ?",
+          "romanized": "tapaai bihaana uThera ke garnuhunchha ?",
+          "korean": "당신은 아침에 일어나서 무엇을 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म उठेर मुख धुन्छु।",
+          "romanized": "ma uThera mukh dhunchhu.",
+          "korean": "저는 일어나서 세수를 합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "अनि के गर्नुहुन्छ ?",
+          "romanized": "ani ke garnuhunchha ?",
+          "korean": "그러고 나서 무엇을 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "अनि खाना खान्छु र अफिस जान्छु।",
+          "romanized": "ani khaanaa khaachhu ra aphis jaanchhu.",
+          "korean": "그러고 나서 밥을 먹고 사무실에 갑니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "अफिसबाट फर्केर के गर्नुहुन्छ ?",
+          "romanized": "aphisbaaTa pharkera ke garnuhunchha ?",
+          "korean": "사무실에서 돌아와서 무엇을 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "अफिसबाट फर्केर खाजा खान्छु।",
+          "romanized": "aphisbaaTa pharkera khaajaa khaanchhu.",
+          "korean": "사무실에서 돌아와서 간식을 먹습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 시간적 선후 관계 (-epachhi)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "नेपाली पढेपछि के गर्ने ?",
+          "romanized": "nepaali paDhepachhi ke garne ?",
+          "korean": "네팔어를 공부한 후에 뭐 할 거예요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "नेपाली पढेपछि डेरामा जाने।",
+          "romanized": "nepaali paDhepachhi Deraamaa jaane.",
+          "korean": "네팔어 공부 후에 숙소에 갈 거예요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "खाना खाएपछि के गर्ने ?",
+          "romanized": "khaanaa khaae pachhi ke garne ?",
+          "korean": "밥을 먹은 후에 뭐 할 거예요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "खाना खाएपछि एकै छिन आराम गर्ने।",
+          "romanized": "khaanaa khaae pachhi ekai chhin aaraam garne.",
+          "korean": "밥을 먹은 후에 잠시 쉴 거예요."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 연속된 동작 연결",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं बजार गएर के किन्नुहुन्छ ?",
+          "romanized": "tapaai bajaar gaera ke kinnuhunchha ?",
+          "korean": "당신은 시장에 가서 무엇을 삽니다까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म बजार गएर कपडा किन्छु।",
+          "romanized": "ma bajaar gaera kaparaa kinchhu.",
+          "korean": "저는 시장에 가서 옷감을 삽니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं घर गएर के गर्नुहुन्छ ?",
+          "romanized": "tapaai ghar gaera ke garnuhunchha ?",
+          "korean": "당신은 집에 가서 무엇을 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म घर गएर खाना पकाउँछु।",
+          "romanized": "ma ghar gaera khaanaa pakaauchu.",
+          "korean": "저는 집에 가서 요리를 합니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 분사 구문 활용 (-era)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यो के हो ?",
+          "romanized": "yo ke ho ?",
+          "korean": "이것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो घडी हो।",
+          "romanized": "yo ghaDi ho.",
+          "korean": "이것은 시계입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "घडी हेरेर बजे भन्नुस्।",
+          "romanized": "ghaDi herera baje bhannus.",
+          "korean": "시계를 보고 시간을 말하세요."
+        },
+        {
+          "speaker": "B",
+          "nepali": "घडी हेरेर मैले दस बजे भनेँ।",
+          "romanized": "ghaDi herera maile das baje bhanẽ.",
+          "korean": "시계를 보고 10시라고 말했습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँले के गर्नुभयो ?",
+          "romanized": "wahããle ke garnubhayo ?",
+          "korean": "그분은 무엇을 하셨습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँले घडी हेरेर बजे भन्नुभयो।",
+          "romanized": "wahããle ghaDi herera baje bhannubhayo.",
+          "korean": "그분은 시계를 보고 시간을 말했습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 식사와 휴식 (Timi 사용)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तिमी खाजा खाएर कहाँ जान्छौ ?",
+          "romanized": "timi khaajaa khaaera kahãã jaanchhau ?",
+          "korean": "너는 간식을 먹고 어디에 가니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म खाजा खाएर फुटबल खेल्न जान्छु।",
+          "romanized": "ma khaajaa khaaera phuTbal khelna jaanchhu.",
+          "korean": "나는 간식을 먹고 축구하러 가."
+        },
+        {
+          "speaker": "A",
+          "nepali": "फुटबल खेलेपछि के गर्छौ ?",
+          "romanized": "phuTbal khele pachhi ke garchhau ?",
+          "korean": "축구를 한 후에 무엇을 하니?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "फुटबल खेलेपछि नुहाउँछु।",
+          "romanized": "phuTbal khele pachhi nuhããunchhu.",
+          "korean": "축구를 한 후에 목욕을 해."
+        }
+      ]
+    }
+  ]
+}

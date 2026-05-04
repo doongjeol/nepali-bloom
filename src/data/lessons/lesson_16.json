@@ -1,0 +1,372 @@
+{
+  "id": 16,
+  "title": "Lesson 16",
+  "titleKo": "제16과",
+  "description": "시간과 장소의 범위(~부터 ~까지)를 나타내는 표현과 일과 시간에 대해 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बार",
+      "romanized": "baara",
+      "korean": "twelve (12)"
+    },
+    {
+      "nepali": "देखि",
+      "romanized": "dekhi",
+      "korean": "from (시간/장소의 시작점)"
+    },
+    {
+      "nepali": "एकदम",
+      "romanized": "ekdam",
+      "korean": "very, extremely (매우, 아주)"
+    },
+    {
+      "nepali": "घण्टा",
+      "romanized": "ghanTaa",
+      "korean": "hour (시간 - 기간 단위)"
+    },
+    {
+      "nepali": "काम",
+      "romanized": "kaam",
+      "korean": "work (일)"
+    },
+    {
+      "nepali": "खुल्नु",
+      "romanized": "khulnu",
+      "korean": "to open (가게/기관 등이 문을 열다)"
+    },
+    {
+      "nepali": "पढाउनु",
+      "romanized": "paDhaaunu",
+      "korean": "to teach (가르치다)"
+    },
+    {
+      "nepali": "फर्कनु",
+      "romanized": "pharkanu",
+      "korean": "to return (돌아오다)"
+    },
+    {
+      "nepali": "फेरि",
+      "romanized": "pheri",
+      "korean": "again (다시)"
+    },
+    {
+      "nepali": "सम्म",
+      "romanized": "samma",
+      "korean": "until, up to (시간/장소의 끝점)"
+    },
+    {
+      "nepali": "शुरु हुनु",
+      "romanized": "shuru hunu",
+      "korean": "to start, to begin (시작되다)"
+    },
+    {
+      "nepali": "तिर्खा",
+      "romanized": "tirkhaa",
+      "korean": "thirst (목마름)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. Dekhi... Samma: 시간이나 장소의 시작과 끝을 나타내는 후치사입니다.\n   - 시간: saat baje dekhi (7시부터), das bajesamma (10시까지).\n   - 장소: kaaThmaaNDu dekhi (카트만두에서), paaTan samma (파탄까지).",
+    "2. GhanTaa vs Baje:\n   - Baje: 특정 시각(o'clock)을 의미합니다.\n   - GhanTaa: 시간의 양/기간(hour)을 의미합니다.",
+    "3. Bichmaa: '~사이에(between)'라는 뜻으로, 두 사건이나 시간대 사이를 나타낼 때 씁니다.",
+    "4. Jati: 숫자 뒤에 붙어 '약', '정도로'라는 추측의 의미를 더합니다."
+  ],
+  "quiz": [
+    {
+      "question": "'~부터(시작점)'를 뜻하는 후치사는?",
+      "options": [
+        "सम्म (samma)",
+        "देखि (dekhi)",
+        "मा (maa)",
+        "बाट (baaTa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'~까지(끝점)'를 뜻하는 후치사는?",
+      "options": [
+        "देखि (dekhi)",
+        "सम्म (samma)",
+        "लाई (laai)",
+        "को (ko)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'시간(기간)'을 나타내는 단위는?",
+      "options": [
+        "बजे (baje)",
+        "घण्टा (ghanTaa)",
+        "मिनेट (mineT)",
+        "दिन (din)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'일(work)'을 뜻하는 단어는?",
+      "options": [
+        "खेल्नु (khelnu)",
+        "काम (kaam)",
+        "भ्रमण (bhraman)",
+        "घुम्नु (ghumnu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'문이 열리다'를 뜻하는 동사는?",
+      "options": [
+        "फर्कनु (pharkanu)",
+        "पढाउनु (paDhaaunu)",
+        "खुल्नु (khulnu)",
+        "शुरु हुनु (shuru hunu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "숫자 뒤에 붙어 '약', '정도로'를 뜻하는 단어는?",
+      "options": [
+        "जति (jati)",
+        "एकदम (ekdam)",
+        "फेरि (pheri)",
+        "धेरै (dherai)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'가르치다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "सिक्नु (siknu)",
+        "पढ्नु (paDhnu)",
+        "पढाउनु (paDhaaunu)",
+        "हेर्नु (hernu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "두 시간대 '사이'를 표현할 때 사용하는 단어는?",
+      "options": [
+        "देखि (dekhi)",
+        "बिचमा (bichmaa)",
+        "सम्म (samma)",
+        "पछाडि (pachhaadi)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'시작하다'를 뜻하는 네팔어 표현은?",
+      "options": [
+        "शुरु हुनु (shuru hunu)",
+        "फर्कनु (pharkanu)",
+        "खुल्नु (khulnu)",
+        "जानु (janu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'당신은 몇 시에 사무실에 갑니까?'의 올바른 네팔어 표현은?",
+      "options": [
+        "अफिस कति बजे खुल्छ ? (aphis kati baje khulchha ?)",
+        "तपाईं कति बजे अफिस जानुहुन्छ ? (tapaaï kati baje aphis jaanuhunchha ?)",
+        "तपाईंको नेपाली क्लास कति बजे शुरु हुन्छ ? (tapaaïko nepaali klaas kati baje shuru hunchha ?)",
+        "अफिसबाट कति बजे फर्कनुहुन्छ ? (aphisbaaTa kati baje pharkanuhunchha ?)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 수업 시간",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको नेपाली क्लास कति बजे शुरु हुन्छ ?",
+          "romanized": "tapaaïko nepaali klaas kati baje shuru hunchha ?",
+          "korean": "당신의 네팔어 수업은 몇 시에 시작합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "सात बजे।",
+          "romanized": "saat baje.",
+          "korean": "7시입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कति बजेसम्म हुन्छ ?",
+          "romanized": "kati bajesamma hunchha ?",
+          "korean": "몇 시까지 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "दस बजेसम्म।",
+          "romanized": "das bajesamma.",
+          "korean": "10시까지 합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कति बजे देखि कति बजेसम्म पढ्नुहुन्छ ?",
+          "romanized": "tapaaï kati baje dekhi kati bajesamma paDhnuhunchha ?",
+          "korean": "당신은 몇 시부터 몇 시까지 공부합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म सात बजे देखि दस बजेसम्म पढ्छु।",
+          "romanized": "ma saat baje dekhi das bajesamma paDhchhu.",
+          "korean": "저는 7시부터 10시까지 공부합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको गुरुले कति घण्टा पढाउनुहुन्छ ?",
+          "romanized": "tapaaïko gurule kati ghanTaa paDhaaunuhunchha ?",
+          "korean": "선생님은 몇 시간 동안 가르치시나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "तीन घण्टा।",
+          "romanized": "tin ghanTaa.",
+          "korean": "3시간 동안요."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 사무실 근무 시간",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "अफिस कति बजे खुल्छ ?",
+          "romanized": "aphis kati baje khulchha ?",
+          "korean": "사무실은 몇 시에 문을 엽니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "दस बजे।",
+          "romanized": "das baje.",
+          "korean": "10시입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कति बजे अफिस जानुहुन्छ ?",
+          "romanized": "tapaaï kati baje aphis jaanuhunchha ?",
+          "korean": "당신은 몇 시에 사무실에 갑니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म साढे दस बजे जान्छु।",
+          "romanized": "ma saaDhe das baje jaanchhu.",
+          "korean": "저는 10시 반에 갑니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "अफिसबाट कति बजे फर्कनुहुन्छ ?",
+          "romanized": "aphisbaaTa kati baje pharkanuhunchha ?",
+          "korean": "사무실에서 몇 시에 돌아옵니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पाँच बजे।",
+          "romanized": "paach baje.",
+          "korean": "5시입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 장소의 범위",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको डेराबाट अफिस कति दूर छ ?",
+          "romanized": "tapaaïko DeraabaaTa aphis kati dhuur chha ?",
+          "korean": "숙소에서 사무실까지 얼마나 멉니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "एकदम निर छ।",
+          "romanized": "ekdam nira chha.",
+          "korean": "아주 가깝습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "काठमाण्डु देखि पाटन सम्म कति दूर छ ?",
+          "romanized": "kaaThmaaNDu dekhi paaTan samma kati dhuur chha ?",
+          "korean": "카트만두에서 파탄까지 거리가 얼마나 됩니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "तीन माइल जति होला।",
+          "romanized": "tin mil jati holaa.",
+          "korean": "아마 3마일 정도일 것입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 활동 시간",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं बिहान कति बजे देखि काम गर्नुहुन्छ ?",
+          "romanized": "tapaaï bihaana kati baje dekhi kaam garnuhunchha ?",
+          "korean": "당신은 아침 몇 시부터 일하십니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म सात बजे देखि काम गर्छु।",
+          "romanized": "ma saat baje dekhi kaam garchhu.",
+          "korean": "저는 7시부터 일합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "दिउँसो कति बजे देखि कति बजेसम्म आराम गर्नुहुन्छ ?",
+          "romanized": "diűso kati baje dekhi kati bajesamma aaraam garnuhunchha ?",
+          "korean": "오후 몇 시부터 몇 시까지 쉽니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "एक बजे देखि दुई बजेसम्म।",
+          "romanized": "ek baje dekhi dui bajesamma.",
+          "korean": "1시부터 2시까지요."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 식사와 간식",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कति बजे खाना खानुहुन्छ ?",
+          "romanized": "tapaaï kati baje khaanaa khaannuhunchha ?",
+          "korean": "당신은 몇 시에 식사하십니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "दस बजे।",
+          "romanized": "das baje.",
+          "korean": "10시입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "फेरि कहिले खानुहुन्छ ?",
+          "romanized": "pheri kahile khaannuhunchha ?",
+          "korean": "다시 언제 드십니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "बेलुका साढे सात बजे।",
+          "romanized": "belukaa saaDhe saat baje.",
+          "korean": "저녁 7시 반입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "बिहानको खाना र बेलुकाको खानाको बिचमा केही खानुहुन्छ ?",
+          "romanized": "bihaanako khaanaa ra belukaako khaanaako bichmaa kehi khaannuhunchha ?",
+          "korean": "아침 식사와 저녁 식사 사이에 무언가를 먹나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "खान्छु, खाजा खान्छु।",
+          "romanized": "khaanchhu, khaajaa khaanchhu.",
+          "korean": "네, 간식을 먹습니다."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "id": 9,
+  "title": "Lesson 9",
+  "titleKo": "제9과",
+  "description": "개인 신상과 나이를 묻고 답하며, 제3자를 소개하는 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "अब",
+      "romanized": "aba",
+      "korean": "now (지금/이제)"
+    },
+    {
+      "nepali": "बाल्नु",
+      "romanized": "baalnu",
+      "korean": "to light (불을 켜다)"
+    },
+    {
+      "nepali": "बत्ती",
+      "romanized": "batti",
+      "korean": "light (불/전등)"
+    },
+    {
+      "nepali": "चालीस",
+      "romanized": "chaalis",
+      "korean": "forty (40)"
+    },
+    {
+      "nepali": "विद्यार्थी",
+      "romanized": "bidyaarthi",
+      "korean": "student (학생)"
+    },
+    {
+      "nepali": "हेर्नु",
+      "romanized": "hernu",
+      "korean": "to look (보다)"
+    },
+    {
+      "nepali": "हिजो",
+      "romanized": "hijo",
+      "korean": "yesterday (어제)"
+    },
+    {
+      "nepali": "कागती",
+      "romanized": "kaagati",
+      "korean": "lemon (레몬)"
+    },
+    {
+      "nepali": "केरा",
+      "romanized": "keraa",
+      "korean": "banana (바나나)"
+    },
+    {
+      "nepali": "निभाउनु",
+      "romanized": "nibhaaunu",
+      "korean": "to turn off (light) (불을 끄다)"
+    },
+    {
+      "nepali": "पाउनु",
+      "romanized": "paaunu",
+      "korean": "to get, to find (얻다/찾다)"
+    },
+    {
+      "nepali": "पच्चीस",
+      "romanized": "pachchis",
+      "korean": "twenty-five (25)"
+    },
+    {
+      "nepali": "फोहोर",
+      "romanized": "phohar",
+      "korean": "dirty (더러운)"
+    },
+    {
+      "nepali": "सफा",
+      "romanized": "saphaa",
+      "korean": "clean (깨끗한)"
+    },
+    {
+      "nepali": "तीस",
+      "romanized": "tis",
+      "korean": "thirty (30)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 나이 묻기: 'kati barsha hunubhayo?' (몇 살이 되셨습니까?)와 같이 과거형 'hunubhayo'를 사용합니다.",
+    "2. 현재 진행형 (-dai chhu): 'sikdaichhu' (배우고 있다)처럼 현재 진행 중인 동작을 나타냅니다.",
+    "3. 직업 및 소속: 'pis kor swayam sewak' (평화봉사단 자원봉사자)와 같이 소속을 나타냅니다."
+  ],
+  "quiz": [
+    {
+      "question": "'지금, 이제'를 뜻하는 단어는?",
+      "options": [
+        "हिजो (hijo)",
+        "अब (aba)",
+        "फेरि (pheri)",
+        "सधैँ (sadhai)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'학생'을 뜻하는 단어는?",
+      "options": [
+        "गुरु (guru)",
+        "साथी (saathi)",
+        "विद्यार्थी (bidyaarthi)",
+        "स्वयंसेवक (swayam sewak)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'불을 켜다'의 올바른 네팔어 동사는?",
+      "options": [
+        "निभाउनु (nibhaaunu)",
+        "हेर्नु (hernu)",
+        "बाल्नु (baalnu)",
+        "पाउनु (paaunu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'깨끗한'을 뜻하는 단어는?",
+      "options": [
+        "फोहोर (phohar)",
+        "सफा (saphaa)",
+        "रातो (raato)",
+        "नयाँ (nayaa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'어제'를 뜻하는 단어는?",
+      "options": [
+        "आज (aaja)",
+        "भोलि (bholi)",
+        "हिजो (hijo)",
+        "अहिले (ahile)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "숫자 '40'을 뜻하는 네팔어는?",
+      "options": [
+        "तीस (tis)",
+        "चालीस (chaalis)",
+        "पच्चीस (pachchis)",
+        "बीस (bis)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'당신은 몇 살입니까?'를 올바르게 표현한 것은?",
+      "options": [
+        "तपाईं कति वर्ष हुनुभयो ? (tapaaï kati barsha hunubhayo ?)",
+        "तपाईंको नाम के हो ? (tapaaïko naam ke ho ?)",
+        "तपाईं कुन भाषा बोल्नुहुन्छ ? (tapaaï kun bhaashaa bolnuhunchha ?)",
+        "तपाईं कहाँ बस्नुहुन्छ ? (tapaaï kahãã basnuhunchha ?)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'어느 언어'를 뜻하는 네팔어 표현은?",
+      "options": [
+        "कुन देश (kun desh)",
+        "कुन भाषा (kun bhaashaa)",
+        "कति वर्ष (kati barsha)",
+        "के काम (ke kaam)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "숫자 '30'을 뜻하는 네팔어는?",
+      "options": [
+        "बीस (bis)",
+        "तीस (tis)",
+        "चालीस (chaalis)",
+        "पचास (pachaas)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'바나나'를 뜻하는 단어는?",
+      "options": [
+        "कागती (kaagati)",
+        "स्याउ (syaau)",
+        "सुन्तला (suntalaa)",
+        "केरा (keraa)"
+      ],
+      "answer": 3
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 개인 신상 및 나이",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको नाम के हो ?",
+          "romanized": "tapaaïko naam ke ho ?",
+          "korean": "당신의 이름은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो नाम टिम हो।",
+          "romanized": "mero naam Tim ho.",
+          "korean": "제 이름은 Tim입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको घर कहाँ हो ?",
+          "romanized": "tapaaïko ghar kahãã ho ?",
+          "korean": "당신의 고향은 कहाँ(어디)입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो घर अमेरिका हो।",
+          "romanized": "mero ghar amerikaa ho.",
+          "korean": "제 고향은 미국입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कुन भाषा बोल्नुहुन्छ ?",
+          "romanized": "tapaat kun bhaashaa bolnuhunchha ?",
+          "korean": "당신은 어떤 언어를 말합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म अंग्रेजी बोल्छु।",
+          "romanized": "ma angreji bolchhu.",
+          "korean": "저는 영어를 말합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं अहिले कुन भाषा सिक्दै हुनुहुन्छ ?",
+          "romanized": "tapaaï ahile kun bhaashaa sikdai hunuhunchha ?",
+          "korean": "당신은 अहिले(지금) 어떤 언어를 배우고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म नेपाली सिक्दैछु।",
+          "romanized": "ma nepaali sikdaichhu.",
+          "korean": "저는 네팔어를 배우고 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कति वर्ष हुनुभयो ?",
+          "romanized": "tapaaï kati barsha hunubhayo ?",
+          "korean": "당신은 कति(몇) 살입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म बीस वर्ष भएँ।",
+          "romanized": "ma bis barsha bhae.",
+          "korean": "저는 20살이 되었습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 제3자 소개 (평화봉사단원)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "उहाँ कुन भाषा बोल्नुहुन्छ ?",
+          "romanized": "wahaa kun bhaashaa bolnuhunchha ?",
+          "korean": "그분은 어떤 언어를 말합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँ अंग्रेजी बोल्नुहुन्छ।",
+          "romanized": "wahaa angreji bolnuhunchha.",
+          "korean": "그분은 영어를 말합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँ के काम गर्नुहुन्छ ?",
+          "romanized": "wahaa ke kaam garnuhunchha ?",
+          "korean": "그분은 무슨 일을 합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँ पिस कोर स्वयंसेवक हुनुहुन्छ।",
+          "romanized": "wahaa pis kor swayam sewak hunuhunchha.",
+          "korean": "그분은 평화봉사단 자원봉사자입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँ कति वर्ष हुनुभयो ?",
+          "romanized": "wahaa kati barsha hunubhayo ?",
+          "korean": "그분은 कति(몇) 살입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँ बाईस वर्ष हुनुभयो।",
+          "romanized": "wahãã baais barsha hunubhayo.",
+          "korean": "그분은 22살입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँ कहाँ बस्नुहुन्छ ?",
+          "romanized": "wahaa kahãã basnuhunchha ?",
+          "korean": "그분은 कहाँ(어디)에 삽니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँ पाटनमा बस्नुहुन्छ।",
+          "romanized": "wahãã paaTanmaa basnuhunchha.",
+          "korean": "그분은 파탄(Patan)에 삽니다."
+        }
+      ]
+    }
+  ]
+}

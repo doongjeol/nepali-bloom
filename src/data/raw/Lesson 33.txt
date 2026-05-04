@@ -1,0 +1,62 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 33
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+gaeko          : last (as in past) (지난) [cite: 760]
+gaarho laagnu  : to find difficult (어렵게 느끼다) [cite: 760]
+jhan Dai       : almost (거의) [cite: 760]
+sikchhak       : teacher (교사) [cite: 760]
+
+
+2. PART I: PRACTICE (연습)
+--------------------------------------------------
+(a) 질병과 이유 (-ekole)
+1. hijo kina aaunu bhaena ? / Taauko dukhekole.
+   (어제 왜 안 오셨나요? / 머리가 아팠기 때문입니다.) [cite: 763, 773]
+2. kina Taauko dukhyo ta ? / dherai raksi khaaekole.
+   (왜 머리가 아팠나요? / 술을 많이 마셨기 때문입니다.) [cite: 763, 774]
+3. ke ausadhi khaanubhayo ta ? / kehipani khaaina.
+   (무슨 약을 드셨나요? / 아무것도 안 먹었습니다.) [cite: 765, 775]
+4. kina nakhaaeko ta? / khaana man nalaagekole.
+   (왜 안 먹었나요? / 먹고 싶지 않았기 때문입니다.) [cite: 767, 777]
+
+(b) 늦잠과 이유
+1. aaja bihaana kina abelaa uThnubhayo ? / hijo raati abelaa sutekole.
+   (오늘 아침에 왜 늦게 일어났나요? / 어제 밤에 늦게 잤기 때문입니다.) [cite: 768, 778]
+2. kina abelaa sutnunbhayo ta ? / mero saathiharu aaekaale.
+   (왜 늦게 잤나요? / 친구들이 왔었기 때문입니다.) [cite: 770, 782]
+3. saathiharu kina aaekaa thie ta ? / hijo mero gharmaa bihaa bhoj bhaekole.
+   (친구들이 왜 왔었나요? / 어제 제 집에서 결혼 잔치가 있었기 때문입니다.) [cite: 787]
+
+(c) 상황에 따른 이유 (-naale)
+1. chiyaamaa kina dudh raakhenau ? / dudh nabhaeko hunaale.
+   (차에 왜 우유를 넣지 않았니? / 우유가 없었기 때문이야.) [cite: 789, 790]
+2. dudh lina kina nagaeko ta ? / phursad nabhaeko hunaale.
+   (우유를 사러 왜 안 갔니? / 시간이 없었기 때문이야.) [cite: 793]
+3. kina phursad bhaena ? / lugaa dhunu parekole.
+   (왜 시간이 없었니? / 옷을 빨아야 했기 때문이야.) [cite: 793]
+4. saabun siddhiekole sabai lugaa dhoyau ta ? / dhoina.
+   (비누가 다 떨어져서 옷을 다 빨았니? / 아니, 못 빨았어.) [cite: 793]
+
+
+3. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 마이크가 네팔에 온 지 거의 3년이 되었습니다[cite: 795]. 그는 반디푸르의 한 학교에서 가르치고 있는데, 네팔에 오기 전 미국에서 교사 훈련을 받았기 때문에 가르치는 것이 어렵지 않습니다[cite: 795, 796]. 그는 트레킹을 매우 좋아합니다[cite: 796]. 지난 겨울에 좀솜에 가고 싶었으나 건강이 좋지 않아 가지 못했습니다[cite: 797]. 어제 뉴 로드에서 그를 만났는데, 다음 주에 좀솜에 갈 것이라고 했습니다[cite: 797, 800].]
+
+
+4. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 이유의 표현 (-ekole / -ekohunaale):
+   - 두 형태는 서로 바꾸어 쓸 수 있으며 원인이나 이유를 나타냅니다[cite: 827, 828].
+   - paisaa nabhaekole (돈이 없기 때문에), Taauko dukhekole (머리가 아프기 때문에)[cite: 823, 826].
+2. 'kinabhane' (Because):
+   - '왜냐하면'이라는 뜻이지만 일상 회화에서는 자주 생략됩니다[cite: 829].
+3. '-era'와 '-ekole'의 인과관계:
+   - 두 형태 모두 문장을 연결하며 원인과 결과의 의미를 담습니다[cite: 837].
+   - 예: Taauko dukhera naaaeko (머리가 아파서 안 온 것)[cite: 840].
+4. 종결 어미 're':
+   - 전해 들은 정보(간접 화법)를 나타낼 때 문장 끝에 붙입니다[cite: 853, 854].
+   - 예: u bholi jaane re (그가 내일 간다고 합니다)[cite: 857].
+==================================================

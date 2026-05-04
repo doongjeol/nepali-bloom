@@ -1,0 +1,363 @@
+{
+  "id": 23,
+  "title": "Lesson 23",
+  "titleKo": "제23과",
+  "description": "과거의 경험이나 현재 완료 상태(-eko chhu)를 표현하는 방법을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "अनुभव",
+      "romanized": "anubhav",
+      "korean": "experience (경험)"
+    },
+    {
+      "nepali": "एको छु",
+      "romanized": "-eko chhu",
+      "korean": "have done (현재 완료 어미)"
+    },
+    {
+      "nepali": "गएको",
+      "romanized": "gaeko",
+      "korean": "gone / went (가 본, 간)"
+    },
+    {
+      "nepali": "जानु",
+      "romanized": "janu",
+      "korean": "to go (가다)"
+    },
+    {
+      "nepali": "कहिले",
+      "romanized": "kahile",
+      "korean": "ever / when (언제, 언젠가)"
+    },
+    {
+      "nepali": "कहिले पनि",
+      "romanized": "kahile pani",
+      "korean": "never (결코 ~않다 - 부정문과 함께)"
+    },
+    {
+      "nepali": "भन्नु",
+      "romanized": "bhannu",
+      "korean": "to tell (말하다)"
+    },
+    {
+      "nepali": "खाएको",
+      "romanized": "khaae ko",
+      "korean": "eaten (먹어 본, 먹은)"
+    },
+    {
+      "nepali": "खोला",
+      "romanized": "kholaa",
+      "korean": "river (강)"
+    },
+    {
+      "nepali": "मैले",
+      "romanized": "maile",
+      "korean": "I (타동사 주어)"
+    },
+    {
+      "nepali": "पकाउनु",
+      "romanized": "pakaaunu",
+      "korean": "to cook (요리하다)"
+    },
+    {
+      "nepali": "पोखरा",
+      "romanized": "pokharaa",
+      "korean": "Pokhara (포카라)"
+    },
+    {
+      "nepali": "सगरमाथा",
+      "romanized": "sagarmathaa",
+      "korean": "Mt. Everest (에베레스트)"
+    },
+    {
+      "nepali": "सुन्नु",
+      "romanized": "sunnu",
+      "korean": "to hear, to listen (듣다)"
+    },
+    {
+      "nepali": "कि",
+      "romanized": "ki",
+      "korean": "that (접속사)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 현재 완료 시제 (-eko chhu): 과거에 일어난 일이 현재까지 영향을 미치거나, 과거의 경험을 나타낼 때 사용합니다 (~한 적이 있다, ~했다). [동사 어간 + eko] + [Be 동사 현재형] 형식. (ma gaeko chhu - 나는 가 본 적 있다).",
+    "2. 부정형 (-eko chhaina): \"~한 적이 없다\"는 뜻입니다. (ma gaeko chhaina - 나는 가 본 적이 없다).",
+    "3. Kahile (Ever) / Kahile pani (Never): 의문문에서 'kahile'는 '언젠가/한 번이라도'라는 뜻, 부정문에서 'kahile pani'는 '결코/한 번도'라는 강한 부정을 나타냅니다.",
+    "4. 단순 과거 vs 현재 완료: 단순 과거(gaẽ)는 과거의 특정 시점 동작 자체에 집중, 현재 완료(gaeko chhu)는 결과나 경험에 집중합니다."
+  ],
+  "quiz": [
+    {
+      "question": "과거의 경험(~한 적이 있다)을 나타낼 때 사용하는 동사 형태는?",
+      "options": [
+        "-ने छु (-ne chhu)",
+        "-दै छु (-dai chhu)",
+        "-एको छु (-eko chhu)",
+        "-एर (-era)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'~한 적이 없다'를 나타내는 현재 완료 부정형은?",
+      "options": [
+        "-एको छैन (-eko chhaina)",
+        "-दिनँ (-dina)",
+        "-इनँ (-ina)",
+        "-ने छैन (-ne chhaina)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'결코 ~않다(Never)'를 뜻하는 네팔어 표현은?",
+      "options": [
+        "सधैँ (sadhai)",
+        "कहिले (kahile)",
+        "कहिले पनि (kahile pani)",
+        "एकदम (ekdam)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "의문문에서 '언젠가/한 번이라도'의 의미로 쓰이는 단어는?",
+      "options": [
+        "किन (kina)",
+        "कसरी (kasari)",
+        "कहाँ (kahãã)",
+        "कहिले (kahile)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'나는 포카라에 가 본 적이 있다'의 올바른 네팔어는?",
+      "options": [
+        "म पोखरा जान्छु। (ma pokharaa jaanchhu.)",
+        "म पोखरा जाँदै छु। (ma pokharaa jäädai chhu.)",
+        "म पोखरा गएको छु। (ma pokharaa gaeko chhu.)",
+        "म पोखरा गएँ। (ma pokharaa gaẽ.)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'먹어 본 적이 있다'를 뜻하는 동사 형태는?",
+      "options": [
+        "खाएको छु (khaaeko chhu)",
+        "खाएको छैन (khaaeko chhaina)",
+        "खाने (khaane)",
+        "खान्छु (khaanchhu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'경험'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "कारण (kaaran)",
+        "अनुभव (anubhav)",
+        "फुर्सद (phursad)",
+        "इतिहास (itihaas)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'당신은 에베레스트를 본 적이 있습니까?'의 올바른 네팔어 질문은?",
+      "options": [
+        "तपाईं सगरमाथा जानुभएको छ ? (tapaaï sagarmathaa jaanubhaeko chha ?)",
+        "तपाईंले सगरमाथा देख्नुभएको छ ? (tapaaïle sagarmathaa dekhnubhaeko chha ?)",
+        "सगरमाथा कहाँ छ ? (sagarmathaa kahãã chha ?)",
+        "सगरमाथा कस्तो छ ? (sagarmathaa kasto chha ?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'그는 한 번도 가 본 적이 없습니다'의 올바른 표현은?",
+      "options": [
+        "ऊ गएको छैन। (u gaeko chhaina.)",
+        "ऊ कहिले पनि गएको छैन। (u kahile pani gaeko chhaina.)",
+        "ऊ कहिले गएको छ। (u kahile gaeko chha.)",
+        "ऊ गएन। (u gaena.)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'요리하다'를 뜻하는 동사는?",
+      "options": [
+        "पकाउनु (pakaaunu)",
+        "खानु (khaanu)",
+        "सुन्नु (sunnu)",
+        "भन्नु (bhannu)"
+      ],
+      "answer": 0
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 여행 경험 (현재 완료)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं कहिले पोखरा जानुभएको छ ?",
+          "romanized": "tapaaï kahile pokharaa jaanubhaeko chha ?",
+          "korean": "당신은 포카라에 가 본 적이 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छ, म एक पटक गएको छु।",
+          "romanized": "chha, ma ek paTak gaeko chhu.",
+          "korean": "네, 한 번 가 본 적이 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथी नि ?",
+          "romanized": "tapaaïko saathi ni ?",
+          "korean": "당신의 친구는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "ऊ पनि गएको छ।",
+          "romanized": "u pani gaeko chha.",
+          "korean": "그도 가 본 적이 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले सगरमाथा देख्नुभएको छ ?",
+          "romanized": "tapaaïle sagarmathaa dekhnubhaeko chha ?",
+          "korean": "당신은 에베레스트를 본 적이 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "देखेको छैन।",
+          "romanized": "dekheko chhaina.",
+          "korean": "본 적이 없습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 음식 경험",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले नेपाली खाना खानुभएको छ ?",
+          "romanized": "tapaaïle nepaali khaanaa khaannubhaeko chha ?",
+          "korean": "당신은 네팔 음식을 먹어 본 적이 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "खाएको छु।",
+          "romanized": "khaae ko chhu.",
+          "korean": "먹어 본 적이 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले आफै पकाउनुभएको छ ?",
+          "romanized": "tapaaïle aaphai pakaaunubhaeko chha ?",
+          "korean": "당신이 직접 요리해 본 적도 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छैन, मैले पकाएको छैन।",
+          "romanized": "chhaina, maile pakaaeko chhaina.",
+          "korean": "아니요, 요리해 본 적은 없습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 완료된 상태와 경험",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले यो किताब पढ्नुभएको छ ?",
+          "romanized": "tapaaïle yo kitaab paDhnubhaeko chha ?",
+          "korean": "당신은 이 책을 읽었습니까/읽어 본 적 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "पढेको छु।",
+          "romanized": "paDheko chhu.",
+          "korean": "읽었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले नेपाली गीत सुन्नुभएको छ ?",
+          "romanized": "tapaaïle nepaali geet sunnubhaeko chha ?",
+          "korean": "네팔 노래를 들어 본 적이 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "सुनेको छु।",
+          "romanized": "suneko chhu.",
+          "korean": "들어 본 적이 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले नेपाली गीत गाउनुभएको छ ?",
+          "romanized": "tapaaïle nepaali geet gaaunubhaeko chha ?",
+          "korean": "네팔 노래를 불러 본 적이 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "गाएको छैन।",
+          "romanized": "gaaeko chhaina.",
+          "korean": "불러 본 적은 없습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 가 본 장소 확인",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं पशुपति जानुभएको छ ?",
+          "romanized": "tapaaï pashupati jaanubhaeko chha ?",
+          "korean": "당신은 파슈파티에 가 본 적이 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "गएको छु।",
+          "romanized": "gaeko chhu.",
+          "korean": "가 본 적이 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथी नि ?",
+          "romanized": "tapaaïko saathi ni ?",
+          "korean": "당신의 친구는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "ऊ कहिले पनि गएको छैन।",
+          "romanized": "u kahile pani gaeko chhaina.",
+          "korean": "그는 한 번도 가 본 적이 없습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 과거와 현재 완료 비교",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "हिजो तपाईं कहाँ जानुभयो ?",
+          "romanized": "hijo tapaaï kahãã jaanubhayo ?",
+          "korean": "어제 당신은 कहाँ(어디에) 갔습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म पशुपति गएँ।",
+          "romanized": "ma pashupati gaẽ.",
+          "korean": "저는 파슈파티에 갔습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं त्यहाँ फेरि जानुभएको छ ?",
+          "romanized": "tapaaï tyahãã pheri jaanubhaeko chha ?",
+          "korean": "당신은 거기에 (그전에도) 가 본 적이 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छैन, हिजो मात्र गएँ।",
+          "romanized": "chhaina, hijo maatra gaẽ.",
+          "korean": "아니요, 어제 처음 갔습니다."
+        }
+      ]
+    }
+  ]
+}

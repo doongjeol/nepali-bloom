@@ -1,0 +1,85 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 23
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+anubhav        : experience (경험)
+-eko chhu      : have done (현재 완료 어미)
+gaeko          : gone / went (가 본, 간)
+janu           : to go (가다)
+kahile         : ever / when (언제, 언젠가)
+kahile pani    : never (결코 ~않다 - 부정문과 함께)
+kannu          : to tell (말하다) [교재 표기: bhannu]
+khaae ko       : eaten (먹어 본, 먹은)
+kholaa         : river (강)
+maile          : I (타동사 주어)
+pakaaunu       : to cook (요리하다)
+pokharaa       : Pokhara (포카라)
+sagarmathaa    : Mt. Everest (에베레스트)
+sunnu          : to hear, to listen (듣다)
+-te           : that (접속사) [교재 표기: ki]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 여행 경험 (현재 완료)
+1. tapaaï kahile pokharaa jaanubhaeko chha ? / chha, ma ek paTak gaeko chhu.
+   (당신은 포카라에 가 본 적이 있습니까? / 네, 한 번 가 본 적이 있습니다.)
+2. tapaaïko saathi ni ? / u pani gaeko chha.
+   (당신의 친구는요? / 그도 가 본 적이 있습니다.)
+3. tapaaïle sagarmathaa dekhnubhaeko chha ? / dekhneko chhaina.
+   (당신은 에베레스트를 본 적이 있습니까? / 본 적이 없습니다.)
+
+(b) 음식 경험
+1. tapaaïle nepaali khaanaa khaannubhaeko chha ? / khaae ko chhu.
+   (당신은 네팔 음식을 먹어 본 적이 있습니까? / 먹어 본 적이 있습니다.)
+2. tapaaïle aaphai pakaaunubhaeko chha ? / chhaina, maile pakaaeko chhaina.
+   (당신이 직접 요리해 본 적도 있나요? / 아니요, 요리해 본 적은 없습니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 완료된 상태와 경험
+1. tapaaïle yo kitaab paDhnubhaeko chha ? / paDheko chhu.
+   (당신은 이 책을 읽었습니까/읽어 본 적 있습니까? / 읽었습니다.)
+2. tapaaïle nepaali geet sunnubhaeko chha ? / suneko chhu.
+   (네팔 노래를 들어 본 적이 있습니까? / 들어 본 적이 있습니다.)
+3. tapaaïle nepaali geet gaaunubhaeko chha ? / gaaeko chhaina.
+   (네팔 노래를 불러 본 적이 있습니까? / 불러 본 적은 없습니다.)
+
+(b) 가 본 장소 확인
+1. tapaaï pashupati jaanubhaeko chha ? / gaeko chhu.
+2. tapaaïko saathi ni ? / u kahile pani gaeko chhaina.
+   (당신의 친구는요? / 그는 한 번도 가 본 적이 없습니다.)
+
+(c) 과거와 현재 완료 비교
+1. hijo tapaaï kahãã jaanubhayo ? / ma pashupati gaẽ.
+   (어제 당신은 어디에 갔습니까? / 저는 파슈파티에 갔습니다.)
+2. tapaaï tyahãã pheri jaanubhaeko chha ? / chhaina, hijo maatra gaẽ.
+   (당신은 거기에 (그전에도) 가 본 적이 있나요? / 아니요, 어제 처음 갔습니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 지미는 네팔에서 많은 경험을 했습니다. 그는 포카라에도 가 보았고, 네팔 음식인 달밧도 먹어 보았습니다. 하지만 그는 아직 에베레스트를 직접 본 적은 없습니다. 그는 네팔어를 세 달 동안 배웠기 때문에 이제 네팔 노래도 조금 들을 수 있습니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 현재 완료 시제 (-eko chhu):
+   - 과거에 일어난 일이 현재까지 영향을 미치거나, 과거의 경험을 나타낼 때 사용합니다 (~한 적이 있다, ~했다).
+   - [동사 어간 + eko] + [Be 동사 현재형]
+   - ma gaeko chhu (나는 갔다/가 본 적 있다)
+   - u gaeko chha (그는 갔다/가 본 적 있다)
+   - tapaai jaanubhaeko chha (당신은 가셨다/가 본 적 있다)
+2. 부정형 (-eko chhaina):
+   - "~한 적이 없다"는 뜻입니다.
+   - ma gaeko chhaina (나는 가 본 적이 없다).
+3. Kahile (Ever) / Kahile pani (Never):
+   - 의문문에서 'kahile'는 '언젠가/한 번이라도'라는 뜻으로 쓰입니다.
+   - 부정문에서 'kahile pani'는 '결코/한 번도'라는 강한 부정을 나타냅니다.
+4. 단순 과거(Lesson 9) vs 현재 완료:
+   - 단순 과거(gaẽ): 과거의 특정 시점에 일어난 동작 자체에 집중.
+   - 현재 완료(gaeko chhu): 그 동작의 결과가 현재까지 지속되거나 경험으로 남아 있음에 집중.
+==================================================

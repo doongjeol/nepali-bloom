@@ -5,9 +5,10 @@ import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { RangeSelector } from "@/components/RangeSelector";
 import { useLessonRangeData } from "@/hooks/useLessonRangeData";
 import { cn } from "@/lib/utils";
+import { MAX_LESSON_ID, MIN_LESSON_ID } from "@/data/lessonsMeta";
 
-const MIN = 1;
-const MAX = 37;
+const MIN = MIN_LESSON_ID;
+const MAX = MAX_LESSON_ID;
 
 type Question =
   | { kind: "vocab"; prompt: string; answer: string; options: string[] }
@@ -37,11 +38,11 @@ function shuffle<T>(arr: T[]) {
 
 export const Route = createFileRoute("/study/quiz")({
   validateSearch: (search: Record<string, unknown>) => {
-    const start = typeof search.start === "string" ? Number(search.start) : undefined;
-    const end = typeof search.end === "string" ? Number(search.end) : undefined;
+    const startRaw = typeof search.start === "string" || typeof search.start === "number" ? Number(search.start) : undefined;
+    const endRaw = typeof search.end === "string" || typeof search.end === "number" ? Number(search.end) : undefined;
     return {
-      start: Number.isFinite(start) ? start : undefined,
-      end: Number.isFinite(end) ? end : undefined,
+      start: Number.isFinite(startRaw) ? startRaw : undefined,
+      end: Number.isFinite(endRaw) ? endRaw : undefined,
     };
   },
   component: StudyQuizPage,
@@ -50,7 +51,9 @@ export const Route = createFileRoute("/study/quiz")({
 function StudyQuizPage() {
   const navigate = Route.useNavigate();
   const search = Route.useSearch();
-  const range = search.start && search.end ? { start: search.start, end: search.end } : null;
+  const start = search.start;
+  const end = search.end;
+  const range = typeof start === "number" && typeof end === "number" ? { start, end } : null;
 
   const { isLoading, error, data } = useLessonRangeData(range, { minLessonId: MIN, maxLessonId: MAX });
   const [question, setQuestion] = useState<Question | null>(null);
@@ -64,6 +67,18 @@ function StudyQuizPage() {
       data?.dialogues.flatMap((d) => d.lines.map((l) => ({ nepali: l.nepali, korean: l.korean }))) ?? [];
     return { vocab, sentences };
   }, [data?.dialogues, data?.vocabulary]);
+
+  // Debug logs for range selection issues
+  // eslint-disable-next-line no-console
+  console.log("[study.quiz] search:", search, "range:", range);
+  // eslint-disable-next-line no-console
+  console.log("[study.quiz] data:", {
+    isLoading,
+    error,
+    lessons: data?.lessons.length ?? null,
+    vocabulary: data?.vocabulary.length ?? null,
+    dialogues: data?.dialogues.length ?? null,
+  });
 
   const makeQuestion = (): Question | null => {
     if (!pool.vocab.length && !pool.sentences.length) return null;
@@ -137,6 +152,12 @@ function StudyQuizPage() {
 
         {isLoading && <LoadingSpinner />}
         {error && <div className="rounded-2xl border bg-card p-6 text-sm text-destructive shadow-sm">{error}</div>}
+
+        {data && !question && (
+          <div className="rounded-2xl border bg-card p-8 text-sm text-muted-foreground shadow-sm">
+            선택한 범위에 퀴즈를 만들 수 있는 데이터가 없어요.
+          </div>
+        )}
 
         {data && question && (
           <div className="rounded-2xl border bg-card p-5 shadow-sm">

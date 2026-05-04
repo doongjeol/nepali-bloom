@@ -1,0 +1,77 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 21
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+baajyaa        : grandfather (할아버지)
+bhandaa        : than (보다 - 비교)
+dhobi          : washerman (빨래해 주는 남자)
+garmi          : heat, hot (더위, 더운 - 날씨)
+jaaDo          : cold (추위, 추운 - 날씨)
+jillaa         : district (군/행정 구역)
+kaanchho       : youngest (막내)
+kaaThmaaNDu    : Kathmandu (카트만두)
+nepaalgunj     : Nepalgunj (네팔군지 - 네팔 남부의 도시)
+pahaaD         : mountain, hill (산)
+pashupati      : Pashupati (파슈파티 - 유명한 힌두 사원)
+sabbhandaa     : most, of all (가장, 무엇보다도)
+shahar         : city (도시)
+terai          : Terai (테라이 - 네팔 남부 평원 지대)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 날씨 비교 (bhandaa)
+1. kaaThmaaNDumaa jaaDo chha ? / chha.
+   (카트만두는 춥습니까? / 네, 춥습니다.)
+2. nepaalgunjmaa ni ? / nepaalgunjmaa kaaThmaaNDumaa bhandaa dherai garmi chha.
+   (네팔군지는요? / 네팔군지는 카트만두보다 훨씬 덥습니다.)
+3. kun shahar dherai Thulo chha ? / nepaalgunj bhandaa kaaThmaaNDu dherai Thulo chha.
+   (어느 도시가 더 큽니까? / 네팔군지보다 카트만두가 훨씬 더 큽니다.)
+
+(b) 최상급 표현 (sabbhandaa)
+1. nepaalmaa sabbhandaa garmi kahãã hunchha ? / nepaalmaa sabbhandaa garmi teraimaa hunchha.
+   (네팔에서 어디가 가장 덥습니까? / 네팔에서 테라이 지역이 가장 덥습니다.)
+2. sabbhandaa Thulo shahar kun ho ? / kaaThmaaNDu ho.
+   (가장 큰 도시는 어디인가요? / 카트만두입니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 크기와 상태 비교
+1. yo bhandaa tyo Thulo chha ? / ho, yo bhandaa tyo dherai Thulo chha.
+   (이것보다 저것이 더 큽니까? / 네, 이것보다 저것이 훨씬 더 큽니다.)
+2. tapaaï bhandaa tapaaïko saathi aglo chha ? / chhaina, u ma bhandaa hocho chha.
+   (당신보다 당신의 친구가 키가 더 큽니까? / 아니요, 그는 저보다 키가 작습니다.)
+
+(b) 연령 및 형제 비교
+1. tapaaïko daai-bhaaima maa sabbhandaa kaanchho ko हो ? / ma sabbhandaa kaanchho hũ.
+   (형제들 중에서 누가 가장 막내입니까? / 제가 가장 막내입니다.)
+2. tapaaï bhandaa tapaaïko daai kati barsha Thulo hunuhunchha ? / wahãã ma bhandaa tin barsha Thulo hunuhunchha.
+   (당신보다 형님이 몇 살 더 많으십니까? / 그는 저보다 세 살 더 많습니다.)
+
+(c) 지리적 비교
+1. pahaaD bhandaa himaal aglo chha ? / chha.
+   (산보다 히말라야가 더 높습니까? / 네, 더 높습니다.)
+2. nepaalmaa sabbhandaa aglo himaal kun ho ? / sagarmathaa हो.
+   (네팔에서 가장 높은 산은 무엇입니까? / 에베레스트(사가르마타)입니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 네팔에는 세 가지 지형이 있습니다. 히말라야, 산악 지대(PahaaD), 그리고 평원 지대(Terai)입니다. 테라이는 히말라야보다 훨씬 덥습니다. 카트만두는 산악 지대에 있으며 네팔에서 가장 큰 도시입니다. 에베레스트는 네팔뿐만 아니라 세계에서 가장 높은 산입니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. Bhandaa (Than): 비교의 기준이 되는 명사 뒤에 붙어 '~보다'라는 뜻을 나타냅니다.
+   - [A] [B] bhandaa [형용사] chha: A는 B보다 ~하다.
+2. Sabbhandaa (Most / Best): '모든 것보다'라는 뜻으로 최상급을 나타냅니다.
+   - sabbhandaa raamro (가장 좋은/아름다운), sabbhandaa Thulo (가장 큰).
+3. 연령 비교에서의 Thulo/Saano:
+   - 나이가 많을 때는 'Thulo'(크다), 나이가 적을 때는 'Saano'(작다)를 사용합니다.
+4. Himaal vs PahaaD: 
+   - Himaal: 눈 덮인 고산(히말라야)을 뜻합니다.
+   - PahaaD: 눈이 쌓이지 않는 일반적인 산이나 구릉 지대를 뜻합니다.
+==================================================

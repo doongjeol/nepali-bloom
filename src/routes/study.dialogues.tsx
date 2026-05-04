@@ -5,17 +5,18 @@ import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { RangeSelector } from "@/components/RangeSelector";
 import { useLessonRangeData } from "@/hooks/useLessonRangeData";
 import { cn } from "@/lib/utils";
+import { MAX_LESSON_ID, MIN_LESSON_ID } from "@/data/lessonsMeta";
 
-const MIN = 1;
-const MAX = 37;
+const MIN = MIN_LESSON_ID;
+const MAX = MAX_LESSON_ID;
 
 export const Route = createFileRoute("/study/dialogues")({
   validateSearch: (search: Record<string, unknown>) => {
-    const start = typeof search.start === "string" ? Number(search.start) : undefined;
-    const end = typeof search.end === "string" ? Number(search.end) : undefined;
+    const startRaw = typeof search.start === "string" || typeof search.start === "number" ? Number(search.start) : undefined;
+    const endRaw = typeof search.end === "string" || typeof search.end === "number" ? Number(search.end) : undefined;
     return {
-      start: Number.isFinite(start) ? start : undefined,
-      end: Number.isFinite(end) ? end : undefined,
+      start: Number.isFinite(startRaw) ? startRaw : undefined,
+      end: Number.isFinite(endRaw) ? endRaw : undefined,
     };
   },
   component: StudyDialoguesPage,
@@ -24,7 +25,9 @@ export const Route = createFileRoute("/study/dialogues")({
 function StudyDialoguesPage() {
   const navigate = Route.useNavigate();
   const search = Route.useSearch();
-  const range = search.start && search.end ? { start: search.start, end: search.end } : null;
+  const start = search.start;
+  const end = search.end;
+  const range = typeof start === "number" && typeof end === "number" ? { start, end } : null;
 
   const { isLoading, error, data } = useLessonRangeData(range, { minLessonId: MIN, maxLessonId: MAX });
   const [idx, setIdx] = useState(0);
@@ -38,6 +41,18 @@ function StudyDialoguesPage() {
   const current = slides[idx] ?? null;
   const canPrev = idx > 0;
   const canNext = idx < slides.length - 1;
+
+  // Debug logs for range selection issues
+  // eslint-disable-next-line no-console
+  console.log("[study.dialogues] search:", search, "range:", range);
+  // eslint-disable-next-line no-console
+  console.log("[study.dialogues] data:", {
+    isLoading,
+    error,
+    lessons: data?.lessons.length ?? null,
+    dialogues: data?.dialogues.length ?? null,
+    slides: slides.length,
+  });
 
   return (
     <div className="min-h-screen pb-16 sm:pb-0">

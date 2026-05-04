@@ -1,0 +1,417 @@
+{
+  "id": 14,
+  "title": "Lesson 14",
+  "titleKo": "제14과",
+  "description": "취향(좋아함/싫어함)을 묻고 답하며, 취미나 활동에 대한 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "भेट्नु",
+      "romanized": "bheTnu",
+      "korean": "to meet (만나다)"
+    },
+    {
+      "nepali": "भ्रमण",
+      "romanized": "bhraman",
+      "korean": "travel, tour (여행/관광)"
+    },
+    {
+      "nepali": "एकदम",
+      "romanized": "ekdam",
+      "korean": "very, extremely (매우, 아주)"
+    },
+    {
+      "nepali": "फिल्म",
+      "romanized": "film",
+      "korean": "film, movie (영화)"
+    },
+    {
+      "nepali": "घुम्नु",
+      "romanized": "ghumnu",
+      "korean": "to roam, to travel (돌아다니다, 여행하다)"
+    },
+    {
+      "nepali": "हल",
+      "romanized": "hal",
+      "korean": "hall, cinema hall (극장/홀)"
+    },
+    {
+      "nepali": "हेर्नु",
+      "romanized": "hernu",
+      "korean": "to see, to watch (보다)"
+    },
+    {
+      "nepali": "जानु",
+      "romanized": "janu",
+      "korean": "to go (가다)"
+    },
+    {
+      "nepali": "कहिले काहीँ",
+      "romanized": "kahile kahile",
+      "korean": "sometimes (때때로)"
+    },
+    {
+      "nepali": "खेल्नु",
+      "romanized": "khelnu",
+      "korean": "to play (놀다, 경기를 하다)"
+    },
+    {
+      "nepali": "मनपर्छ",
+      "romanized": "manparnu",
+      "korean": "to like (좋아하다)"
+    },
+    {
+      "nepali": "मनपर्दैन",
+      "romanized": "manpardaina",
+      "korean": "to dislike (좋아하지 않다)"
+    },
+    {
+      "nepali": "न",
+      "romanized": "na",
+      "korean": "isn't it? (그렇지 않니? - 확인형 어미)"
+    },
+    {
+      "nepali": "पोखरा",
+      "romanized": "pokharaa",
+      "korean": "Pokhara (포카라 - 네팔의 도시)"
+    },
+    {
+      "nepali": "फुटबल",
+      "romanized": "phuTbal",
+      "korean": "football (축구)"
+    },
+    {
+      "nepali": "राम्रो",
+      "romanized": "raamro",
+      "korean": "good, beautiful (좋은, 아름다운)"
+    },
+    {
+      "nepali": "रमाइलो",
+      "romanized": "ramaailo",
+      "korean": "pleasant, fun (즐거운)"
+    },
+    {
+      "nepali": "सधैँ",
+      "romanized": "sadhai",
+      "korean": "always (항상)"
+    },
+    {
+      "nepali": "साथी",
+      "romanized": "saathi",
+      "korean": "friend (친구)"
+    },
+    {
+      "nepali": "सिनेमा",
+      "romanized": "sinemaa",
+      "korean": "cinema, movie (영화)"
+    },
+    {
+      "nepali": "तस्बिर",
+      "romanized": "tasbir",
+      "korean": "picture, photo (사진)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. Manparnu (좋아하다):\n   - 주어(사람) 뒤에 반드시 '-laai'를 붙여야 합니다.\n   - malaai manparchha (나는 좋아한다) / malaai manpardaina (나는 좋아하지 않는다).",
+    "2. Manparchha vs Lagyo:\n   - Manparchha: 일반적인 취향을 말할 때 사용.\n   - Lagyo: 특정 경험에 대한 주관적인 느낌을 말할 때 사용 (예: ramaailo laagyo - 즐거웠다).",
+    "3. 부가 의문문 'na': 문장 끝에 붙여 \"그렇죠?\" 또는 \"그렇지 않니?\"라는 확인의 의미를 나타냅니다.",
+    "4. 동사의 목적형 (-na): \"~하기 위해\"라는 의미로 동사의 'nu'를 'na'로 바꿉니다.\n   - herna (보러/보기 위해), khelna (경기하러/하기 위해)."
+  ],
+  "quiz": [
+    {
+      "question": "'좋아하다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "हेर्नु (hernu)",
+        "मनपर्छ (manparchha)",
+        "भेट्नु (bheTnu)",
+        "जानु (janu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'영화'를 뜻하는 단어는?",
+      "options": [
+        "हल (hal)",
+        "तस्बिर (tasbir)",
+        "सिनेमा (sinemaa)",
+        "भ्रमण (bhraman)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'친구'를 의미하는 네팔어는?",
+      "options": [
+        "साथी (saathi)",
+        "कहिले काहीँ (kahile kahile)",
+        "सधैँ (sadhai)",
+        "एकदम (ekdam)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'만나다'를 뜻하는 동사는?",
+      "options": [
+        "घुम्नु (ghumnu)",
+        "खेल्नु (khelnu)",
+        "भेट्नु (bheTnu)",
+        "हेर्नु (hernu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'즐거운'을 뜻하는 형용사는?",
+      "options": [
+        "राम्रो (raamro)",
+        "रमाइलो (ramaailo)",
+        "ठूलो (Thulo)",
+        "कालो (kaalo)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "다음 중 '돌아다니다' 또는 '여행하다'를 뜻하는 동사는?",
+      "options": [
+        "घुम्नु (ghumnu)",
+        "जानु (janu)",
+        "हेर्नु (hernu)",
+        "भेट्नु (bheTnu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'항상'을 뜻하는 부사는?",
+      "options": [
+        "कहिले काहीँ (kahile kahile)",
+        "एकदम (ekdam)",
+        "सधैँ (sadhai)",
+        "फेरि (pheri)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'가끔, 때때로'를 뜻하는 표현은?",
+      "options": [
+        "एकदम (ekdam)",
+        "सधैँ (sadhai)",
+        "कहिले काहीँ (kahile kahile)",
+        "धेरै (dherai)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "문장 끝에 붙여 '그렇지 않니?' 하고 동의를 구하는 부가 의문문 어미는?",
+      "options": [
+        "कि (ki)",
+        "त (ta)",
+        "न (na)",
+        "हो (ho)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'당신은 영화를 좋아합니까?'의 올바른 네팔어 문장은?",
+      "options": [
+        "तपाईंलाई फुटबल खेल्न मनपर्छ ? (tapaaïlaai phuTbal khelna manparchha ?)",
+        "तपाईंलाई सिनेमा मनपर्छ ? (tapaaïlaai sinemaa manparchha ?)",
+        "तपाईं सिनेमा हेर्न कहाँ जानुहुन्छ ? (tapaaï sinemaa herna kahãã jaanuhunchha ?)",
+        "तपाईंलाई पोखरा कस्तो लाग्यो ? (tapaaïlaai pokharaa kasto laagyo ?)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 영화 취향",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई सिनेमा मनपर्छ ?",
+          "romanized": "tapaaïlaai sinemaa manparchha ?",
+          "korean": "당신은 영화를 좋아합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मनपर्छ।",
+          "romanized": "manparchha.",
+          "korean": "네, 좋아합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कस्तो सिनेमा मनपर्छ ?",
+          "romanized": "kasto sinemaa manparchha ?",
+          "korean": "어떤 영화를 좋아하나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मलाई नेपाली सिनेमा मनपर्छ।",
+          "romanized": "malaai nepaali sinemaa manparchha.",
+          "korean": "저는 네팔 영화를 좋아합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं सिनेमा हेर्न कहाँ जानुहुन्छ ?",
+          "romanized": "tapaaï sinemaa herna kahãã jaanuhunchha ?",
+          "korean": "영화를 보러 어디로 가시나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म विश्वज्योति सिनेमा हलमा जान्छु।",
+          "romanized": "ma biswojyoti sinemaa halmaa jaanchhu.",
+          "korean": "저는 비쇼죠티 영화관에 갑니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथीलाई नि ?",
+          "romanized": "tapaaïko saathilaai ni ?",
+          "korean": "당신의 친구는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उसलाई पनि नेपाली सिनेमा मनपर्छ।",
+          "romanized": "uslaai pani nepaali sinemaa manparchha.",
+          "korean": "그(녀)도 네팔 영화를 좋아합니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 여행과 취미",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई पोखरा कस्तो लाग्यो ?",
+          "romanized": "tapaaïlaai pokharaa kasto laagyo ?",
+          "korean": "포카라는 어땠나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "धेरै रमाइलो लाग्यो।",
+          "romanized": "dherai ramaailo laagyo.",
+          "korean": "아주 즐거웠습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई घुम्न मनपर्छ, न ?",
+          "romanized": "tapaaïlaai ghumnu manparchha, na ?",
+          "korean": "당신은 돌아다니는 것을 좋아하죠, 그렇죠?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हो, मलाई भ्रमण धेरै मनपर्छ।",
+          "romanized": "ho, malaai bhraman dherai manparchha.",
+          "korean": "네, 저는 여행하는 것을 아주 좋아합니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 스포츠 취향",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई फुटबल खेल्न मनपर्छ ?",
+          "romanized": "tapaaïlaai phuTbal khelna manparchha ?",
+          "korean": "당신은 축구하는 것을 좋아합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मनपर्छ।",
+          "romanized": "manparchha.",
+          "korean": "네, 좋아합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथीलाई नि ?",
+          "romanized": "tapaaïko saathilaai ni ?",
+          "korean": "당신의 친구는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उसलाई मनपर्दैन।",
+          "romanized": "uslaai manpardaina.",
+          "korean": "그는 좋아하지 않습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उसलाई के मनपर्छ त ?",
+          "romanized": "uslaai ke manparchha ta ?",
+          "korean": "그럼 그는 무엇을 좋아합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उसलाई सिनेमा हेर्न मनपर्छ।",
+          "romanized": "uslaai sinemaa herna manparchha.",
+          "korean": "그는 영화 보는 것을 좋아합니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 음식 취향",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई नेपाली खाना मनपर्छ ?",
+          "romanized": "tapaaïlaai nepaali khaanaa manparchha ?",
+          "korean": "당신은 네팔 음식을 좋아합니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "एकदम मनपर्छ।",
+          "romanized": "ekdam manparchha.",
+          "korean": "아주 좋아합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "के के मनपर्छ ?",
+          "romanized": "ke ke manparchha ?",
+          "korean": "무엇무엇을 좋아하나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "दाल, भात र तरकारी मनपर्छ।",
+          "romanized": "daal, bhaat ra tarkaari manparchha.",
+          "korean": "달, 밥, 그리고 채소를 좋아합니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई रक्सी मनपर्छ कि मनपर्दैन ?",
+          "romanized": "tapaaïlaai raksi manparchha ki manpardaina ?",
+          "korean": "당신은 술을 좋아하나요, 좋아하지 않나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मनपर्दैन।",
+          "romanized": "manpardaina.",
+          "korean": "좋아하지 않습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 만남과 활동",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "भोलि तपाईं कसलाई भेट्ने ?",
+          "romanized": "bholi tapaaï kaslaai bheTne ?",
+          "korean": "내일 누구를 만날 건가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म आफ्नो साथीलाई भेट्ने।",
+          "romanized": "ma aaphno saathilaai bheTne.",
+          "korean": "제 친구를 만날 거예요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंहरू के गर्ने ?",
+          "romanized": "tapaaïharu ke garne ?",
+          "korean": "당신들은 무엇을 할 건가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हामी सिनेमा हेर्न जाने।",
+          "romanized": "haami sinemaa herna jaane.",
+          "korean": "우리는 영화를 보러 갈 거예요."
+        }
+      ]
+    }
+  ]
+}

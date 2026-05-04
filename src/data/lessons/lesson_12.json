@@ -1,0 +1,404 @@
+{
+  "id": 12,
+  "title": "Lesson 12",
+  "titleKo": "제12과",
+  "description": "신체 부위 명칭과 외모, 사물의 상태나 색깔을 묘사하는 방법을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "आँखा",
+      "romanized": "aankhaa",
+      "korean": "eye (눈)"
+    },
+    {
+      "nepali": "आकाश",
+      "romanized": "akaash",
+      "korean": "sky (하늘)"
+    },
+    {
+      "nepali": "अनुहार",
+      "romanized": "anuhar",
+      "korean": "face (얼굴)"
+    },
+    {
+      "nepali": "दारी",
+      "romanized": "daahri",
+      "korean": "beard (턱수염)"
+    },
+    {
+      "nepali": "दाँत",
+      "romanized": "daat",
+      "korean": "tooth (치아)"
+    },
+    {
+      "nepali": "गाला",
+      "romanized": "gaalaa",
+      "korean": "cheek (볼/뺨)"
+    },
+    {
+      "nepali": "जुँगे",
+      "romanized": "junge",
+      "korean": "moustached (콧수염이 있는)"
+    },
+    {
+      "nepali": "कालो",
+      "romanized": "kaalo",
+      "korean": "black (검은색)"
+    },
+    {
+      "nepali": "कान",
+      "romanized": "kaan",
+      "korean": "ear (귀)"
+    },
+    {
+      "nepali": "कपाल",
+      "romanized": "kapaal",
+      "korean": "hair (머리칼)"
+    },
+    {
+      "nepali": "खोइ",
+      "romanized": "khoi",
+      "korean": "where (어디/글쎄요 - 대화 시작 시)"
+    },
+    {
+      "nepali": "खुट्टा",
+      "romanized": "khuTTaa",
+      "korean": "leg, foot (다리, 발)"
+    },
+    {
+      "nepali": "मुख",
+      "romanized": "mukh",
+      "korean": "mouth (입)"
+    },
+    {
+      "nepali": "नाक",
+      "romanized": "naak",
+      "korean": "nose (코)"
+    },
+    {
+      "nepali": "निलो",
+      "romanized": "nilo",
+      "korean": "blue (파란색)"
+    },
+    {
+      "nepali": "पातलो",
+      "romanized": "paatalo",
+      "korean": "thin (얇은/마른)"
+    },
+    {
+      "nepali": "फिका",
+      "romanized": "phiikaa",
+      "korean": "light (color) (연한 색)"
+    },
+    {
+      "nepali": "राम्रो",
+      "romanized": "raamro",
+      "korean": "good, beautiful (좋은, 아름다운)"
+    },
+    {
+      "nepali": "सेतो",
+      "romanized": "seto",
+      "korean": "white (흰색)"
+    },
+    {
+      "nepali": "थोरै",
+      "romanized": "thoraai",
+      "korean": "a few, a little (적은, 조금)"
+    },
+    {
+      "nepali": "ठूलो",
+      "romanized": "Thulo",
+      "korean": "big (큰)"
+    },
+    {
+      "nepali": "उच्च",
+      "romanized": "uchcha",
+      "korean": "high (높은)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. Chha vs Hunchha:\n   - Chha: 특정 개인이나 구체적인 사물의 현재 상태를 말할 때 씁니다 (My eyes are blue).\n   - Hunchha: 일반적인 사실이나 변하지 않는 속성을 말할 때 씁니다 (The sky is blue).",
+    "2. 신체 부위 관련 형용사:\n   - Aglo: 키가 큰 (사람/건물)\n   - Hocho: 키가 작은\n   - Paatalo: 마른/얇은\n   - MoTo: 뚱뚱한/굵은",
+    "3. 신체 부위 명칭: 복수형인 눈(aankhaa), 귀(kaan) 등을 지칭할 때는 동사 'chhan'을 사용합니다."
+  ],
+  "quiz": [
+    {
+      "question": "신체 부위 중 '눈'을 뜻하는 단어는?",
+      "options": [
+        "नाक (naak)",
+        "आँखा (aankhaa)",
+        "मुख (mukh)",
+        "कान (kaan)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'얼굴'을 뜻하는 네팔어는?",
+      "options": [
+        "अनुहार (anuhar)",
+        "कपाल (kapaal)",
+        "खुट्टा (khuTTaa)",
+        "दाँत (daat)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'머리카락'을 뜻하는 단어는?",
+      "options": [
+        "दारी (daahri)",
+        "गाला (gaalaa)",
+        "कपाल (kapaal)",
+        "अनुहार (anuhar)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "다음 중 '검은색'을 뜻하는 단어는?",
+      "options": [
+        "निलो (nilo)",
+        "कालो (kaalo)",
+        "सेतो (seto)",
+        "फिका (phiikaa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "다음 중 '흰색'을 의미하는 단어는?",
+      "options": [
+        "कालो (kaalo)",
+        "निलो (nilo)",
+        "सेतो (seto)",
+        "रातो (raato)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'크다'라는 뜻의 형용사는?",
+      "options": [
+        "ठूलो (Thulo)",
+        "पातलो (paatalo)",
+        "थोरै (thoraai)",
+        "राम्रो (raamro)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'코'를 의미하는 네팔어 단어는?",
+      "options": [
+        "कान (kaan)",
+        "आँखा (aankhaa)",
+        "मुख (mukh)",
+        "नाक (naak)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'아름다운' 또는 '좋은'을 뜻하는 단어는?",
+      "options": [
+        "ठूलो (Thulo)",
+        "राम्रो (raamro)",
+        "पातलो (paatalo)",
+        "निलो (nilo)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'저 사람은 어떤가요?'의 올바른 네팔어 표현은?",
+      "options": [
+        "त्यो मान्छे कस्तो छ ? (tyo maanchhe kasto chha ?)",
+        "तपाईंको कपाल कस्तो छ ? (tapaaïko kapaal kasto chha ?)",
+        "तपाईंको उचाइ कति छ ? (tapaaïko uchchaai kati chha ?)",
+        "आकाश कस्तो हुन्छ ? (akaash kasto hunchha ?)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'하늘은 파랗다(일반적인 사실)'를 네팔어로 바르게 표현한 것은?",
+      "options": [
+        "आकाश निलो छ। (akaash nilo chha.)",
+        "आकाश निलो हुन्छ। (akaash nilo hunchha.)",
+        "मेरो आँखा फिका निलो छ। (mero aankhaa phiikaa nilo chha.)",
+        "त्यो मान्छे कालो छ। (tyo maanchhe kaalo chha.)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 외모 묘사",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको कपाल कस्तो छ ?",
+          "romanized": "tapaaïko kapaal kasto chha ?",
+          "korean": "당신의 머리카락은 कौन 색입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो कपाल कालो छ।",
+          "romanized": "mero kapaal kaalo chha.",
+          "korean": "제 머리카락은 검은색입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको आँखा नि ?",
+          "romanized": "tapaaïko aankhaa ni ?",
+          "korean": "눈은요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो आँखा फिका निलो छ।",
+          "romanized": "mero aankhaa phiikaa nilo chha.",
+          "korean": "제 눈은 연한 파란색입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको नाक कस्तो छ ?",
+          "romanized": "tapaaïko naak kasto chha ?",
+          "korean": "코는 어떤가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो नाक अलि ठूलो छ।",
+          "romanized": "mero naak ali Thulo chha.",
+          "korean": "제 코는 조금 큽니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको उचाइ कति छ ?",
+          "romanized": "tapaaïko uchchaai kati chha ?",
+          "korean": "키가 얼마나 되나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो उचाइ पाँच फिट तीन इन्च छ।",
+          "romanized": "mero uchchaai paach phiT tin inch chha.",
+          "korean": "제 키는 5피트 3인치입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 사람의 특징",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "त्यो मान्छे कस्तो छ ?",
+          "romanized": "tyo maanchhe kasto chha ?",
+          "korean": "저 사람은 कौन가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "ऊ धेरै अग्लो छ।",
+          "romanized": "u dherai aglo chha.",
+          "korean": "그는 매우 키가 큽니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उसको कपाल कस्तो छ ?",
+          "romanized": "usko kapaal kasto chha ?",
+          "korean": "그의 머리색은 어떤가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उसको कपाल सेतो छ।",
+          "romanized": "usko kapaal seto chha.",
+          "korean": "그의 머리카락은 흰색입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "ऊ जुँगे हो ?",
+          "romanized": "u junge ho ?",
+          "korean": "그는 콧수염이 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "होइन, उसको दारी छ।",
+          "romanized": "hoina, usko daahri chha.",
+          "korean": "아니요, 그는 턱수염이 있습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) श인체 부위 확인",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यो के हो ?",
+          "romanized": "yo ke ho ?",
+          "korean": "이것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो नाक हो।",
+          "romanized": "yo naak ho.",
+          "korean": "이것은 코입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको मुख कहाँ छ ?",
+          "romanized": "tapaaïko mukh kahãã chha ?",
+          "korean": "입이 어디 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो मुख यहाँ छ।",
+          "romanized": "mero mukh yahãã chha.",
+          "korean": "여기 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको आँखा कतिवटा छन् ?",
+          "romanized": "tapaaïko aankhaa katiwaTaa chhan ?",
+          "korean": "눈이 몇 개 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "दुइवटा छन्।",
+          "romanized": "duiwaTaa chhan.",
+          "korean": "두 개 있습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 사물과 상태의 색깔",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "आकाश कस्तो हुन्छ ?",
+          "romanized": "akaash kasto hunchha ?",
+          "korean": "하늘은 कौन가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "आकाश निलो हुन्छ।",
+          "romanized": "akaash nilo hunchha.",
+          "korean": "하늘은 파랗습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "धेरै जसो नेपालीहरू कस्तो हुन्छन् ?",
+          "romanized": "dherai jaso nepaaliharu kasto hunchhan ?",
+          "korean": "대부분의 네팔 사람들은 कौन가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "धेरै जसो नेपालीहरू होचा हुन्छन्।",
+          "romanized": "dherai jaso nepaaliharu hochaa hunchhan.",
+          "korean": "대부분의 네팔 사람들은 키가 작습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको देश कस्तो छ ?",
+          "romanized": "tapaaïko desh kasto chha ?",
+          "korean": "당신의 나라는 कौन가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो देश धेरै ठूलो छ।",
+          "romanized": "mero desh dherai Thulo chha.",
+          "korean": "제 나라는 매우 큽니다."
+        }
+      ]
+    }
+  ]
+}

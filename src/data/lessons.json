@@ -1936,5 +1936,849 @@
         ]
       }
     ]
+  },
+  {
+    "id": 21,
+    "title": "Lesson 21",
+    "titleKo": "제21과",
+    "description": "비교급(bhandaa)과 최상급(sabbhandaa) 표현을 사용하여 날씨, 크기, 나이 등을 비교하는 방법을 배웁니다.",
+    "vocabulary": [
+      { "nepali": "बाजे", "romanized": "baajyaa", "korean": "grandfather (할아버지)" },
+      { "nepali": "भन्दा", "romanized": "bhandaa", "korean": "than (보다 - 비교)" },
+      { "nepali": "धोबी", "romanized": "dhobi", "korean": "washerman (빨래해 주는 남자)" },
+      { "nepali": "गर्मी", "romanized": "garmi", "korean": "heat, hot (더위, 더운 - 날씨)" },
+      { "nepali": "जाडो", "romanized": "jaaDo", "korean": "cold (추위, 추운 - 날씨)" },
+      { "nepali": "जिल्ला", "romanized": "jillaa", "korean": "district (군/행정 구역)" },
+      { "nepali": "कान्छो", "romanized": "kaanchho", "korean": "youngest (막내)" },
+      { "nepali": "काठमाण्डु", "romanized": "kaaThmaaNDu", "korean": "Kathmandu (카트만두)" },
+      { "nepali": "नेपालगन्ज", "romanized": "nepaalgunj", "korean": "Nepalgunj (네팔군지 - 네팔 남부의 도시)" },
+      { "nepali": "पहाड", "romanized": "pahaaD", "korean": "mountain, hill (산)" },
+      { "nepali": "पशुपति", "romanized": "pashupati", "korean": "Pashupati (파슈파티 - 유명한 힌두 사원)" },
+      { "nepali": "सबभन्दा", "romanized": "sabbhandaa", "korean": "most, of all (가장, 무엇보다도)" },
+      { "nepali": "शहर", "romanized": "shahar", "korean": "city (도시)" },
+      { "nepali": "तराई", "romanized": "terai", "korean": "Terai (테라이 - 네팔 남부 평원 지대)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. Bhandaa (Than): 비교의 기준이 되는 명사 뒤에 붙어 '~보다'라는 뜻을 나타냅니다.\n   - [A] [B] bhandaa [형용사] chha: A는 B보다 ~하다.",
+      "2. Sabbhandaa (Most / Best): '모든 것보다'라는 뜻으로 최상급을 나타냅니다.\n   - sabbhandaa raamro (가장 좋은/아름다운), sabbhandaa Thulo (가장 큰).",
+      "3. 연령 비교에서의 Thulo/Saano: 나이가 많을 때는 'Thulo'(크다), 나이가 적을 때는 'Saano'(작다)를 사용합니다.",
+      "4. Himaal vs PahaaD: Himaal은 눈 덮인 고산(히말라야)을, PahaaD는 눈이 쌓이지 않는 일반적인 산이나 구릉 지대를 뜻합니다."
+    ],
+    "quiz": [
+      { "question": "'~보다(비교)'를 뜻하는 네팔어는?", "options": ["सबभन्दा (sabbhandaa)", "भन्दा (bhandaa)", "धेरै (dherai)", "सम्म (samma)"], "answer": 1 },
+      { "question": "'가장 (최상급)'을 뜻하는 네팔어 단어는?", "options": ["एकदम (ekdam)", "धेरै जसो (dherai jaso)", "सबभन्दा (sabbhandaa)", "भन्दा (bhandaa)"], "answer": 2 },
+      { "question": "'추위' 또는 '추운 날씨'를 뜻하는 단어는?", "options": ["गर्मी (garmi)", "जाडो (jaaDo)", "चिसो (chiso)", "तातो (taato)"], "answer": 1 },
+      { "question": "'더위' 또는 '더운 날씨'를 뜻하는 단어는?", "options": ["जाडो (jaaDo)", "अमिलो (amilo)", "गर्मी (garmi)", "निलो (nilo)"], "answer": 2 },
+      { "question": "'도시'를 뜻하는 네팔어 단어는?", "options": ["गाउँ (gaaũ)", "जिल्ला (jillaa)", "देश (desh)", "शहर (shahar)"], "answer": 3 },
+      { "question": "'막내'를 뜻하는 단어는?", "options": ["कान्छो (kaanchho)", "जवान (jawaan)", "दाइ (daai)", "भाइ (bhaai)"], "answer": 0 },
+      { "question": "눈이 쌓여 있는 고산(히말라야)을 부르는 명칭은?", "options": ["पहाड (pahaaD)", "तराई (terai)", "हिमाल (himaal)", "जिल्ला (jillaa)"], "answer": 2 },
+      { "question": "'이것보다 저것이 더 큽니다'를 바르게 표현한 것은?", "options": ["योभन्दा त्यो ठूलो छ। (yo bhandaa tyo Thulo chha.)", "त्योभन्दा यो ठूलो छ। (tyo bhandaa yo Thulo chha.)", "यो सबभन्दा ठूलो छ। (yo sabbhandaa Thulo chha.)", "त्यो सबभन्दा ठूलो छ। (tyo sabbhandaa Thulo chha.)"], "answer": 0 },
+      { "question": "'네팔에서 어디가 가장 덥습니까?'의 올바른 네팔어 표현은?", "options": ["नेपालमा कहाँ जाडो हुन्छ ? (nepaalmaa kahãã jaaDo hunchha ?)", "नेपालमा सबभन्दा गर्मी कहाँ हुन्छ ? (nepaalmaa sabbhandaa garmi kahãã hunchha ?)", "नेपालमा सबभन्दा ठूलो शहर कुन हो ? (nepaalmaa sabbhandaa Thulo shahar kun ho ?)", "कुन शहर धेरै ठूलो छ ? (kun shahar dherai Thulo chha ?)"], "answer": 1 },
+      { "question": "'나이가 많다/크다'를 표현할 때 사용하는 형용사는?", "options": ["सानो (saano)", "होचो (hocho)", "पातलो (paatalo)", "ठूलो (Thulo)"], "answer": 3 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 날씨 비교",
+        "lines": [
+          { "speaker": "A", "nepali": "काठमाण्डुमा जाडो छ ?", "romanized": "kaaThmaaNDumaa jaaDo chha ?", "korean": "카트만두는 춥습니까?" },
+          { "speaker": "B", "nepali": "छ।", "romanized": "chha.", "korean": "네, 춥습니다." },
+          { "speaker": "A", "nepali": "नेपालगन्जमा नि ?", "romanized": "nepaalgunjmaa ni ?", "korean": "네팔군지는요?" },
+          { "speaker": "B", "nepali": "नेपालगन्जमा काठमाण्डुभन्दा धेरै गर्मी छ।", "romanized": "nepaalgunjmaa kaaThmaaNDumaa bhandaa dherai garmi chha.", "korean": "네팔군지는 카트만두보다 훨씬 덥습니다." },
+          { "speaker": "A", "nepali": "कुन शहर धेरै ठूलो छ ?", "romanized": "kun shahar dherai Thulo chha ?", "korean": "어느 도시가 더 큽니까?" },
+          { "speaker": "B", "nepali": "नेपालगन्जभन्दा काठमाण्डु धेरै ठूलो छ।", "romanized": "nepaalgunj bhandaa kaaThmaaNDu dherai Thulo chha.", "korean": "네팔군지보다 카트만두가 훨씬 더 큽니다." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 최상급 표현",
+        "lines": [
+          { "speaker": "A", "nepali": "नेपालमा सबभन्दा गर्मी कहाँ हुन्छ ?", "romanized": "nepaalmaa sabbhandaa garmi kahãã hunchha ?", "korean": "네팔에서 어디가 가장 덥습니까?" },
+          { "speaker": "B", "nepali": "नेपालमा सबभन्दा गर्मी तराईमा हुन्छ।", "romanized": "nepaalmaa sabbhandaa garmi teraimaa hunchha.", "korean": "네팔에서 테라이 지역이 가장 덥습니다." },
+          { "speaker": "A", "nepali": "सबभन्दा ठूलो शहर कुन हो ?", "romanized": "sabbhandaa Thulo shahar kun ho ?", "korean": "가장 큰 도시는 어디인가요?" },
+          { "speaker": "B", "nepali": "काठमाण्डु हो।", "romanized": "kaaThmaaNDu ho.", "korean": "카트만두입니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 크기와 상태 비교",
+        "lines": [
+          { "speaker": "A", "nepali": "योभन्दा त्यो ठूलो छ ?", "romanized": "yo bhandaa tyo Thulo chha ?", "korean": "이것보다 저것이 더 큽니까?" },
+          { "speaker": "B", "nepali": "हो, योभन्दा त्यो धेरै ठूलो छ।", "romanized": "ho, yo bhandaa tyo dherai Thulo chha.", "korean": "네, 이것보다 저것이 훨씬 더 큽니다." },
+          { "speaker": "A", "nepali": "तपाईंभन्दा तपाईंको साथी अग्लो छ ?", "romanized": "tapaaï bhandaa tapaaïko saathi aglo chha ?", "korean": "당신보다 당신의 친구가 키가 더 큽니까?" },
+          { "speaker": "B", "nepali": "छैन, ऊ मभन्दा होचो छ।", "romanized": "chhaina, u ma bhandaa hocho chha.", "korean": "아니요, 그는 저보다 키가 작습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 연령 및 형제 비교",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंको दाजुभाइमा सबभन्दा कान्छो को हो ?", "romanized": "tapaaïko daai-bhaaimaa sabbhandaa kaanchho ko ho ?", "korean": "형제들 중에서 누가 가장 막내입니까?" },
+          { "speaker": "B", "nepali": "म सबभन्दा कान्छो हूँ।", "romanized": "ma sabbhandaa kaanchho hũ.", "korean": "제가 가장 막내입니다." },
+          { "speaker": "A", "nepali": "तपाईंभन्दा तपाईंको दाइ कति वर्ष ठूलो हुनुहुन्छ ?", "romanized": "tapaaï bhandaa tapaaïko daai kati barsha Thulo hunuhunchha ?", "korean": "당신보다 형님이 몇 살 더 많으십니까?" },
+          { "speaker": "B", "nepali": "उहाँ मभन्दा तीन वर्ष ठूलो हुनुहुन्छ।", "romanized": "wahãã ma bhandaa tin barsha Thulo hunuhunchha.", "korean": "그는 저보다 세 살 더 많습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) 지리적 비교",
+        "lines": [
+          { "speaker": "A", "nepali": "पहाडभन्दा हिमाल अग्लो छ ?", "romanized": "pahaaD bhandaa himaal aglo chha ?", "korean": "산보다 히말라야가 더 높습니까?" },
+          { "speaker": "B", "nepali": "छ।", "romanized": "chha.", "korean": "네, 더 높습니다." },
+          { "speaker": "A", "nepali": "नेपालमा सबभन्दा अग्लो हिमाल कुन हो ?", "romanized": "nepaalmaa sabbhandaa aglo himaal kun ho ?", "korean": "네팔에서 가장 높은 산은 무엇입니까?" },
+          { "speaker": "B", "nepali": "सगरमाथा हो।", "romanized": "sagarmathaa ho.", "korean": "에베레스트(사가르마타)입니다." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "title": "Lesson 18",
+    "titleKo": "제18과",
+    "description": "방향과 거리를 묻고 답하며, 소요 시간을 표현하는 방법을 배웁니다.",
+    "vocabulary": [
+      { "nepali": "अगाडि", "romanized": "agaaDi", "korean": "in front of (앞에)" },
+      { "nepali": "दक्षिण", "romanized": "dakshin", "korean": "south (남쪽)" },
+      { "nepali": "दायाँ", "romanized": "daayaa", "korean": "right (side) (오른쪽)" },
+      { "nepali": "दूर", "romanized": "dhuur", "korean": "far (먼, 거리)" },
+      { "nepali": "जानु", "romanized": "janu", "korean": "to go (가다)" },
+      { "nepali": "काठमाण्डु", "romanized": "kaThmaaNDu", "korean": "Kathmandu (카트만두)" },
+      { "nepali": "कति दूर", "romanized": "kati dhuur", "korean": "how far (얼마나 먼)" },
+      { "nepali": "किन", "romanized": "kina", "korean": "why (왜)" },
+      { "nepali": "लाग्नु", "romanized": "laagnu", "korean": "to take (time) (시간이 걸리다)" },
+      { "nepali": "माइल", "romanized": "milo", "korean": "mile (마일)" },
+      { "nepali": "उत्तर", "romanized": "naums", "korean": "North (북쪽)" },
+      { "nepali": "पछाडि", "romanized": "pachhaadi", "korean": "behind (뒤에)" },
+      { "nepali": "पश्चिम", "romanized": "pachhim", "korean": "west (서쪽)" },
+      { "nepali": "पाटन", "romanized": "paaTan", "korean": "Patan (파탄 - 카트만두 인근 도시)" },
+      { "nepali": "पूर्व", "romanized": "purb", "korean": "east (동쪽)" },
+      { "nepali": "साये", "romanized": "saaya", "korean": "side (쪽/편)" },
+      { "nepali": "सात", "romanized": "saat", "korean": "seven (7)" },
+      { "nepali": "सबै", "romanized": "sabai", "korean": "all (모두)" },
+      { "nepali": "टेप", "romanized": "Teppari", "korean": "tape recorder (테이프 레코더)" },
+      { "nepali": "बायाँ", "romanized": "waayaa", "korean": "left (side) (왼쪽)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. 방향(Directions): Purb (동), Pachhim (서), Uttar (북), Dakshin (남).",
+      "2. 위치 관계 후치사: AgaaDi (앞), Pachhaadi (뒤), Daayaa (오른쪽), Waayaa (왼쪽). 특정 방향을 가리킬 때 '-tira'(~쪽으로)를 붙여 사용합니다 (예: daayaatira).",
+      "3. Laagchha (Takes time): 시간이 걸린다는 의미로 쓰입니다. [장소] + jaana + [시간] + laagchha 형식으로 사용합니다.",
+      "4. HĩDera (By walking): '걷다'라는 동사의 분사형으로 '걸어서'라는 수단을 나타냅니다.",
+      "5. Yasari / Tyasari / Kasari: Yasari (이렇게), Tyasari (그렇게), Kasari (어떻게 - 방법)."
+    ],
+    "quiz": [
+      { "question": "'앞에'를 뜻하는 네팔어는?", "options": ["पछाडि (pachhaadi)", "अगाडि (agaaDi)", "दायाँ (daayaa)", "बायाँ (waayaa)"], "answer": 1 },
+      { "question": "'동쪽'을 뜻하는 단어는?", "options": ["दक्षिण (dakshin)", "उत्तर (naums/uttar)", "पूर्व (purb)", "पश्चिम (pachhim)"], "answer": 2 },
+      { "question": "'시간이 걸리다'를 뜻하는 동사는?", "options": ["जानु (janu)", "लाग्नु (laagnu)", "हेर्नु (hernu)", "खोज्नु (khojnu)"], "answer": 1 },
+      { "question": "'왼쪽'을 뜻하는 단어는?", "options": ["बायाँ (waayaa)", "दायाँ (daayaa)", "अगाडि (agaaDi)", "पछाडि (pachhaadi)"], "answer": 0 },
+      { "question": "'걸어서'를 뜻하는 단어는?", "options": ["यसरी (yasari)", "कहाँ (kahãã)", "हिँडेर (hĩDera)", "कति (kati)"], "answer": 2 },
+      { "question": "'뒤에'를 뜻하는 네팔어 단어는?", "options": ["बायाँ (waayaa)", "अगाडि (agaaDi)", "पछाडि (pachhaadi)", "दायाँ (daayaa)"], "answer": 2 },
+      { "question": "'얼마나 멉니까?'의 네팔어 표현은?", "options": ["कहाँ छ ? (kahãã chha ?)", "कति दूर छ ? (kati dhuur chha ?)", "कति बजे ? (kati baje ?)", "कसरी जाने ? (kasari jaane ?)"], "answer": 1 },
+      { "question": "'서쪽'을 뜻하는 단어는?", "options": ["पूर्व (purb)", "दक्षिण (dakshin)", "पश्चिम (pachhim)", "उत्तर (naums/uttar)"], "answer": 2 },
+      { "question": "'이렇게'를 뜻하는 단어는?", "options": ["त्यसरी (tyasari)", "यसरी (yasari)", "कसरी (kasari)", "किन (kina)"], "answer": 1 },
+      { "question": "'당신의 오른쪽에 무엇이 있습니까?'의 올바른 표현은?", "options": ["तपाईंको पछाडि के छ ? (tapaaïko pachhaadi ke chha ?)", "तपाईंको दायाँतिर के छ ? (tapaaïko daayaatira ke chha ?)", "तपाईंको बायाँतिर के छ ? (tapaaïko waayaatira ke chha ?)", "तपाईंको अगाडि के छ ? (tapaaïko agaaDi ke chha ?)"], "answer": 1 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 방향 묻기",
+        "lines": [
+          { "speaker": "A", "nepali": "पूर्व कहाँ छ ?", "romanized": "purb kahãã chha ?", "korean": "동쪽은 कहाँ(어디)입니까?" },
+          { "speaker": "B", "nepali": "पूर्व त्यहाँ छ।", "romanized": "purb tyahãã chha.", "korean": "동쪽은 저기입니다." },
+          { "speaker": "A", "nepali": "पश्चिम नि ?", "romanized": "pachhim ni ?", "korean": "서쪽은요?" },
+          { "speaker": "B", "nepali": "पश्चिम मेरो पछाडि छ।", "romanized": "pachhim mero pachhaadi chha.", "korean": "서쪽은 제 뒤에 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंको दायाँतिर के छ ?", "romanized": "tapaaïko daayaatira ke chha ?", "korean": "당신의 오른쪽에 무엇이 있습니까?" },
+          { "speaker": "B", "nepali": "मेरो दायाँतिर ब्ल्याकबोर्ड छ।", "romanized": "mero daayaatira blyaakborD chha.", "korean": "제 오른쪽には 칠판이 있습니다." },
+          { "speaker": "A", "nepali": "बायाँतिर नि ?", "romanized": "waayaatira ni ?", "korean": "왼쪽은요?" },
+          { "speaker": "B", "nepali": "बायाँतिर झ्याल छ।", "romanized": "waayaatira jhyaal chha.", "korean": "왼쪽에는 창문이 있습니다." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 거리와 소요 시간",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंको डेराबाट अफिस कति दूर छ ?", "romanized": "tapaaïko DeraabaaTa aphis kati dhuur chha ?", "korean": "숙소에서 사무실까지 얼마나 멉니까?" },
+          { "speaker": "B", "nepali": "धेरै दूर छैन।", "romanized": "dherai dhuur chhaina.", "korean": "그리 멀지 않습니다." },
+          { "speaker": "A", "nepali": "हिँडेर जान कति मिनेट लाग्छ ?", "romanized": "hĩDera jaana kati mineT laagchha ?", "korean": "걸어서 가는 데 몇 분 걸립니까?" },
+          { "speaker": "B", "nepali": "पन्ध्र मिनेट जति लाग्छ।", "romanized": "pandhra mineT jati laagchha.", "korean": "15분 정도 걸립니다." },
+          { "speaker": "A", "nepali": "बसमा जान नि ?", "romanized": "basmaa jaana ni ?", "korean": "버스로 가는 데는요?" },
+          { "speaker": "B", "nepali": "बसमा जान पाँच मिनेट मात्र लाग्छ।", "romanized": "basmaa jaana paach mineT maatra laagchha.", "korean": "버스로는 5분밖에 안 걸립니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 위치 관계 확인",
+        "lines": [
+          { "speaker": "A", "nepali": "ब्ल्याकबोर्ड तपाईंको अगाडि छ ?", "romanized": "blyaakborD tapaaïko agaaDi chha ?", "korean": "칠판이 당신 앞에 있습니까?" },
+          { "speaker": "B", "nepali": "छ।", "romanized": "chha.", "korean": "네, 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंको पछाडि के छ ?", "romanized": "tapaaïko pachhaadi ke chha ?", "korean": "당신의 뒤에 무엇이 있습니까?" },
+          { "speaker": "B", "nepali": "मेरो पछाडि ढोका छ।", "romanized": "mero pachhaadi Dhokaa chha.", "korean": "제 뒤에는 문이 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंको दायाँ सायेमा को छ ?", "romanized": "tapaaïko daayaa saayemaa ko chha ?", "korean": "당신의 오른편에 누가 있습니까?" },
+          { "speaker": "B", "nepali": "मेरो दायाँ सायेमा राम छ।", "romanized": "mero daayaa saayemaa raam chha.", "korean": "제 오른편에는 Ram이 있습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 도시 간 거리",
+        "lines": [
+          { "speaker": "A", "nepali": "काठमाण्डु देखि पाटन कति दूर छ ?", "romanized": "kaaThmaaNDu dekhi paaTan kati dhuur chha ?", "korean": "카트만두에서 파탄까지 얼마나 멉니까?" },
+          { "speaker": "B", "nepali": "तीन माइल जति छ।", "romanized": "tin mil jati chha.", "korean": "3마일 정도 됩니다." },
+          { "speaker": "A", "nepali": "त्यहाँ जान कति मिनेट लाग्छ ?", "romanized": "tyahãã jaana kati mineT laagchha ?", "korean": "거기 가는 데 몇 분 걸리나요?" },
+          { "speaker": "B", "nepali": "दस मिनेट लाग्छ।", "romanized": "das mineT laagchha.", "korean": "10분 걸립니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) 기기 조작 (टेप)",
+        "lines": [
+          { "speaker": "A", "nepali": "यो के हो ?", "romanized": "yo ke ho ?", "korean": "이것은 무엇입니까?" },
+          { "speaker": "B", "nepali": "यो टेप हो।", "romanized": "yo Tep ho.", "korean": "이것은 테이프 레코더입니다." },
+          { "speaker": "A", "nepali": "यो कसको लागि हो ?", "romanized": "yo kasko laagi ho ?", "korean": "이것은 무엇을 위한 것인가요?" },
+          { "speaker": "B", "nepali": "यो नेपाली सिक्नको लागि हो।", "romanized": "yo nepaali siknako laagi ho.", "korean": "네팔어를 배우기 위한 것입니다." },
+          { "speaker": "A", "nepali": "यो कसरी खोल्ने ?", "romanized": "yo kasari kholne ?", "korean": "이것은 कैसे 여나요(작동하나요)?" },
+          { "speaker": "B", "nepali": "यसरी खोल्ने।", "romanized": "yasari kholne.", "korean": "이렇게 엽니다." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "title": "Lesson 19",
+    "titleKo": "제19과",
+    "description": "도구(~로써) 및 대상을 나타내는 조사의 사용법과 네팔의 식사 예절을 배웁니다.",
+    "vocabulary": [
+      { "nepali": "बाँस", "romanized": "baas", "korean": "bamboo (대나무)" },
+      { "nepali": "चम्चा", "romanized": "chamchaa", "korean": "spoon (숟가락)" },
+      { "nepali": "चिठी", "romanized": "chiThi", "korean": "letter (편지)" },
+      { "nepali": "हात", "romanized": "haat", "korean": "hand (손)" },
+      { "nepali": "काँटा", "romanized": "kaata", "korean": "fork (포크)" },
+      { "nepali": "खाना", "romanized": "khaana", "korean": "food, meal (음식, 식사)" },
+      { "nepali": "खानु", "romanized": "khaanu", "korean": "to eat (먹다)" },
+      { "nepali": "खोल्नु", "romanized": "kholnu", "korean": "to open (열다)" },
+      { "nepali": "खुकुरी", "romanized": "khukuri", "korean": "Nepali knife (쿠쿠리 - 네팔 전통 단검)" },
+      { "nepali": "ले", "romanized": "le", "korean": "with, by (도구의 '~로써' / 과거 타동사 주어 조사)" },
+      { "nepali": "लेख्नु", "romanized": "lekhnu", "korean": "to write (쓰다)" },
+      { "nepali": "मुख", "romanized": "mukh", "korean": "mouth (입)" },
+      { "nepali": "नुहाउनु", "romanized": "nuhããunu", "korean": "to bathe (목욕하다)" },
+      { "nepali": "पानी", "romanized": "paani", "korean": "water (물)" },
+      { "nepali": "पलास", "romanized": "palaas", "korean": "pliers (플라이어/펜치)" },
+      { "nepali": "पिउनु", "romanized": "piunu", "korean": "to drink (마시다)" },
+      { "nepali": "साबुन", "romanized": "saabun", "korean": "soap (비누)" },
+      { "nepali": "टाउको", "romanized": "shirna/Tauko", "korean": "head (머리)" },
+      { "nepali": "सिरीष", "romanized": "sirish", "korean": "siris tree (시리스 나무)" },
+      { "nepali": "टोपी", "romanized": "Taapa/Topi", "korean": "cap (모자)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. 도구의 조사 '-le' (Instrumental): '~으로', '~를 가지고'라는 뜻으로 도구나 수단을 나타낼 때 명사 뒤에 붙습니다. (kalamle: 펜으로, haatle: 손으로, basle: 버스로)",
+      "2. Kele (With what): 'Ke' (무엇) + 'le' (으로)의 결합형입니다.",
+      "3. 수혜자 조사 '-laai': '~에게'라는 뜻으로 편지를 받는 사람이나 동작의 대상을 나타냅니다. (aamaalaai: 어머니에게, saathilaai: 친구에게)",
+      "4. 식사 예절 (Jutho): 네팔에서는 입을 댄 음식이나 그릇을 'Jutho(더러워진)'하다고 여겨 피하는 문화가 있으니 유의해야 합니다."
+    ],
+    "quiz": [
+      { "question": "'도구(~로써)'를 나타낼 때 명사 뒤에 붙이는 조사는?", "options": ["को (ko)", "मा (maa)", "ले (le)", "लाई (laai)"], "answer": 2 },
+      { "question": "'숟가락'을 뜻하는 네팔어 단어는?", "options": ["चम्चा (chamchaa)", "काँटा (kaata)", "खुकुरी (khukuri)", "पलास (palaas)"], "answer": 0 },
+      { "question": "'무엇으로'를 의미하는 의문사는?", "options": ["कसरी (kasari)", "केले (kele)", "कसलाई (kaslaai)", "किन (kina)"], "answer": 1 },
+      { "question": "'손으로'를 올바르게 표현한 네팔어는?", "options": ["हातमा (haatmaa)", "हातको (haatko)", "हातले (haatle)", "हातलाई (haatlaai)"], "answer": 2 },
+      { "question": "동작의 대상(~에게)을 나타낼 때 붙이는 조사는?", "options": ["ले (le)", "को (ko)", "बाट (baaTa)", "लाई (laai)"], "answer": 3 },
+      { "question": "'비누'를 뜻하는 단어는?", "options": ["पानी (paani)", "साबुन (saabun)", "मुख (mukh)", "बाँस (baas)"], "answer": 1 },
+      { "question": "'포크'를 뜻하는 네팔어 단어는?", "options": ["चम्चा (chamchaa)", "काँटा (kaata)", "पलास (palaas)", "खुकुरी (khukuri)"], "answer": 1 },
+      { "question": "'당신은 무엇으로 편지를 씁니까?'를 바르게 표현한 것은?", "options": ["तपाईं कसलाई चिठी लेख्नुहुन्छ ? (tapaaï kaslaai chiThi lekhnuhunchha ?)", "तपाईं केले चिठी लेख्नुहुन्छ ? (tapaaï kele chiThi lekhnuhunchha ?)", "तपाईं केले खाना खानुहुन्छ ? (tapaaï kele khaanaa khaannuhunchha ?)", "तपाईं केले मुख धुनुहुन्छ ? (tapaaï kele mukh dhunuhunchha ?)"], "answer": 1 },
+      { "question": "'물'을 뜻하는 단어는?", "options": ["खाना (khaana)", "पानी (paani)", "टोपी (Topi)", "सिरीष (sirish)"], "answer": 1 },
+      { "question": "'네팔 사람들은 보통 무엇으로 밥을 먹습니까?'의 정답으로 알맞은 것은?", "options": ["चम्चाले (chamchaale)", "काँटाले (kaataale)", "हातले (haatle)", "पलासले (palaasle)"], "answer": 2 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 식사 도구와 습관",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं केले खाना खानुहुन्छ ?", "romanized": "tapaaï kele khaanaa khaannuhunchha ?", "korean": "당신은 무엇으로 음식을 먹습니까?" },
+          { "speaker": "B", "nepali": "म हातले खान्छु।", "romanized": "ma haatle khaanchhu.", "korean": "저는 손으로 먹습니다." },
+          { "speaker": "A", "nepali": "तपाईंको साथी नि ?", "romanized": "tapaaïko saathi ni ?", "korean": "당신의 친구는요?" },
+          { "speaker": "B", "nepali": "ऊ चम्चा र काँटाले खान्छ।", "romanized": "u chamchaa ra kaataale khaanchha.", "korean": "그는 숟가락과 포크로 먹습니다." },
+          { "speaker": "A", "nepali": "नेपालीहरू केले खान्छन् ?", "romanized": "nepaaliharu kele khaanchhan ?", "korean": "네팔 사람들은 무엇으로 먹나요?" },
+          { "speaker": "B", "nepali": "धेरै जसो नेपालीहरू हातले खान्छन्।", "romanized": "dherai jaso nepaaliharu haatle khaanchhan.", "korean": "대부분의 네팔 사람들은 손으로 먹습니다." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 편지 쓰기와 도구",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं केले चिठी लेख्नुहुन्छ ?", "romanized": "tapaaï kele chiThi lekhnuhunchha ?", "korean": "당신은 무엇으로 편지를 씁니까?" },
+          { "speaker": "B", "nepali": "म कलमले लेख्छु।", "romanized": "ma kalamle lekhchhu.", "korean": "저는 펜으로 씁니다." },
+          { "speaker": "A", "nepali": "तपाईं कसलाई चिठी लेख्नुहुन्छ ?", "romanized": "tapaaï kaslaai chiThi lekhnuhunchha ?", "korean": "당신은 누구에게 편지를 씁니까?" },
+          { "speaker": "B", "nepali": "म आफ्नो आमालाई लेख्छु।", "romanized": "ma aaphno aamaalaai lekhchhu.", "korean": "저는 제 어머니께 씁니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 도구의 사용 (-le)",
+        "lines": [
+          { "speaker": "A", "nepali": "यो के हो ?", "romanized": "yo ke ho ?", "korean": "이것은 무엇입니까?" },
+          { "speaker": "B", "nepali": "यो खुकुरी हो।", "romanized": "yo khukuri ho.", "korean": "이것은 쿠쿠리(단검)입니다." },
+          { "speaker": "A", "nepali": "खुकुरी के को लागि हो ?", "romanized": "khukuri ke ko laagi ho ?", "korean": "쿠쿠리는 무엇을 위한 것입니까?" },
+          { "speaker": "B", "nepali": "खुकुरी काट्नको लागि हो।", "romanized": "khukuri kaaTna ko laagi ho.", "korean": "쿠쿠리는 자르기 위한 것입니다." },
+          { "speaker": "A", "nepali": "तपाईं केले काट्नुहुन्छ ?", "romanized": "tapaaï kele kaaTnuhunchha ?", "korean": "당신은 무엇으로 자릅니까?" },
+          { "speaker": "B", "nepali": "म खुकुरीले काट्छु।", "romanized": "ma khukurile kaaTchhu.", "korean": "저는 쿠쿠리로 자릅니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 세정 도구",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं केले मुख धुनुहुन्छ ?", "romanized": "tapaaï kele mukh dhunuhunchha ?", "korean": "당신은 무엇으로 얼굴/입을 씻습니까?" },
+          { "speaker": "B", "nepali": "म पानीले मुख धुन्छु।", "romanized": "ma paanile mukh dhunchhu.", "korean": "저는 물로 씻습니다." },
+          { "speaker": "A", "nepali": "साबुनले नि ?", "romanized": "saabunle ni ?", "korean": "비누로는요?" },
+          { "speaker": "B", "nepali": "साबुनले पनि धुन्छु।", "romanized": "saabunle pani dhunchhu.", "korean": "비누로도 씻습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) 편지 봉투 쓰기",
+        "lines": [
+          { "speaker": "A", "nepali": "खाममा कसको नाम लेख्ने ?", "romanized": "khaammaa kasko naam lekhne ?", "korean": "봉투에 누구의 이름을 쓰나요?" },
+          { "speaker": "B", "nepali": "कसलाई चिठी पठाउने, उसको नाम लेख्ने।", "romanized": "kaslaai chiThi pathaane, usko naam lekhne.", "korean": "편지를 받을 사람의 이름을 씁니다." },
+          { "speaker": "A", "nepali": "तपाईंको नाम नि ?", "romanized": "tapaaïko naam ni ?", "korean": "당신의 이름은요?" },
+          { "speaker": "B", "nepali": "मेरो नाम पछाडि लेख्ने।", "romanized": "mero naam pachhaadi lekhne.", "korean": "제 이름은 뒤에 씁니다." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "title": "Lesson 20",
+    "titleKo": "제20과",
+    "description": "언어나 기술을 '할 줄 안다'는 표현과 과거 경험에 대한 복합적인 문장 구성을 배웁니다.",
+    "vocabulary": [
+      { "nepali": "आउँछ", "romanized": "aauchha", "korean": "to know (skill/language), to come (할 줄 안다, 오다)" },
+      { "nepali": "आउँदैन", "romanized": "aaűdaina", "korean": "don't know (skill/language) (할 줄 모른다)" },
+      { "nepali": "भाषा", "romanized": "bhaashaa", "korean": "language (언어)" },
+      { "nepali": "बिहान", "romanized": "bihaana", "korean": "morning (아침)" },
+      { "nepali": "डिबो", "romanized": "Dibo", "korean": "Devo (인명)" },
+      { "nepali": "धेरै", "romanized": "dherai", "korean": "much, many (많이, 많은)" },
+      { "nepali": "हिँड्नु", "romanized": "hĩDnu", "korean": "to walk (걷다)" },
+      { "nepali": "जानु", "romanized": "janu", "korean": "to go (가다)" },
+      { "nepali": "कारण", "romanized": "kaaran", "korean": "reason (이유)" },
+      { "nepali": "भन्नु", "romanized": "bhannu", "korean": "to tell (말해주다)" },
+      { "nepali": "खल्ती", "romanized": "khaltI", "korean": "pocket (주머니)" },
+      { "nepali": "नेपाली", "romanized": "nepaali", "korean": "Nepali (네팔의, 네팔어)" },
+      { "nepali": "पछाडि", "romanized": "pachhaaDi", "korean": "behind (뒤에)" },
+      { "nepali": "पढ्नु", "romanized": "paDhnu", "korean": "to read, to study (읽다, 공부하다)" },
+      { "nepali": "फुटबल", "romanized": "phuTbal", "korean": "football (축구)" },
+      { "nepali": "रातो", "romanized": "raato", "korean": "red (빨간색)" },
+      { "nepali": "साथी", "romanized": "saathi", "korean": "friend (친구)" },
+      { "nepali": "सिक्नु", "romanized": "siknu", "korean": "to learn (배우다)" },
+      { "nepali": "टेप", "romanized": "Tep", "korean": "tape (테이프)" },
+      { "nepali": "त्यसै कारण", "romanized": "tyasai kaaran", "korean": "for that reason (그렇기 때문에)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. Aauchha (능력/지식): 언어나 기술(수영, 축구 등)을 '할 줄 안다'고 할 때 사용합니다. 'Manparnu'와 마찬가지로 주어 뒤에 '-laai'를 붙입니다. (예: malaai aauchha) 부정형은 'aaűdaina'입니다.",
+      "2. Saknu (Can): '~할 수 있다'는 가능성을 나타내며 동사 원형 뒤에 붙습니다. (예: paDhna sakchhu - 읽을 수 있다).",
+      "3. Tyasai kaaran (Therefore): 앞선 내용에 대한 결과를 나타낼 때 쓰는 접속어입니다.",
+      "4. Tara (But): 두 문장을 대조할 때 사용하는 '그러나'의 의미입니다."
+    ],
+    "quiz": [
+      { "question": "언어나 기술을 '할 줄 안다'고 표현할 때 쓰는 동사는?", "options": ["सक्छु (sakchhu)", "आउँछ (aauchha)", "जान्छु (jaanchhu)", "हेर्छु (herchhu)"], "answer": 1 },
+      { "question": "'aauchha(할 줄 안다)'를 사용할 때 주어에 붙여야 하는 조사는?", "options": ["ले (le)", "को (ko)", "बाट (baaTa)", "लाई (laai)"], "answer": 3 },
+      { "question": "'할 줄 모른다'의 올바른 네팔어 표현은?", "options": ["आउँदैन (aaűdaina)", "छैन (chhaina)", "सक्दैन (sakdaina)", "होइन (hoina)"], "answer": 0 },
+      { "question": "동사 원형 뒤에 붙어 '~할 수 있다(능력/가능성)'를 나타내는 동사는?", "options": ["पर्छ (parchha)", "सक्नु (saknu)", "आउनु (aaunu)", "खोज्नु (khojnu)"], "answer": 1 },
+      { "question": "두 문장을 대조하는 '그러나'를 뜻하는 접속사는?", "options": ["अनि (ani)", "किन (kina)", "तर (tara)", "र (ra)"], "answer": 2 },
+      { "question": "'그렇기 때문에' 또는 '그러한 이유로'를 뜻하는 표현은?", "options": ["कहिले काहीँ (kahile kaahi)", "त्यसै कारण (tyasai kaaran)", "धेरै जसो (dherai jaso)", "उसोभए (usobhae)"], "answer": 1 },
+      { "question": "'당신은 네팔어를 할 줄 압니까?'를 네팔어로 바르게 표현한 것은?", "options": ["तपाईंलाई नेपाली भाषा आउँछ ? (tapaaïlaai nepaali bhaashaa aauchha ?)", "तपाईं नेपाली पढ्न सक्नुहुन्छ ? (tapaaï nepaali paDhna saknuhunchha ?)", "तपाईंलाई नेपाली खाना मनपर्छ ? (tapaaïlaai nepaali khaanaa manparchha ?)", "तपाईं कुन भाषा बोल्नुहुन्छ ? (tapaaï kun bhaashaa bolnuhunchha ?)"], "answer": 0 },
+      { "question": "'조금 할 줄 압니다'의 올바른 표현은?", "options": ["धेरै आउँछ। (dherai aauchha.)", "एकदम आउँछ। (ekdam aauchha.)", "अलिअलि आउँछ। (aliali aauchha.)", "आउँदैन। (aaűdaina.)"], "answer": 2 },
+      { "question": "'배우다'를 뜻하는 동사는?", "options": ["सिक्नु (siknu)", "पढाउनु (paDhaaunu)", "हेर्नु (hernu)", "भन्नु (bhannu)"], "answer": 0 },
+      { "question": "'읽을 수 있다'의 올바른 표현은?", "options": ["पढ्ने (paDhne)", "पढ्न सक्छु (paDhna sakchhu)", "पढेर (paDhera)", "पढ्न जान्छु (paDhna jaanchhu)"], "answer": 1 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 언어 능력 (aauchha)",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंलाई नेपाली भाषा आउँछ ?", "romanized": "tapaaïlaai nepaali bhaashaa aauchha ?", "korean": "당신은 네팔어를 할 줄 압니까?" },
+          { "speaker": "B", "nepali": "अलिअलि आउँछ।", "romanized": "aliali aauchha.", "korean": "조금 할 줄 압니다." },
+          { "speaker": "A", "nepali": "तपाईंको साथीलाई नि ?", "romanized": "tapaaïko saathilaai ni ?", "korean": "당신의 친구는요?" },
+          { "speaker": "B", "nepali": "उसलाई धेरै राम्रो आउँछ।", "romanized": "uslaai dherai raamro aauchha.", "korean": "그는 아주 잘합니다." },
+          { "speaker": "A", "nepali": "उसले कहाँ सिक्यो ?", "romanized": "usle kahãã sikyõ ?", "korean": "그는 कहाँ(어디)에서 배웠습니까?" },
+          { "speaker": "B", "nepali": "उसले अमेरिकामा सिक्यो।", "romanized": "usle amerikaamaa sikyõ.", "korean": "그는 미국에서 배웠습니다." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 복습 - 도구와 방법",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं केले लेख्नुहुन्छ ?", "romanized": "tapaaï kele lekhnuhunchha ?", "korean": "당신은 무엇으로 씁니까?" },
+          { "speaker": "B", "nepali": "म कलमले लेख्छु।", "romanized": "ma kalamle lekhchhu.", "korean": "저는 펜으로 씁니다." },
+          { "speaker": "A", "nepali": "नेपाली भाषा कसरी लेख्ने ?", "romanized": "nepaali bhaashaa kasari lekhne ?", "korean": "네팔어는 कैसे(어떻게) 쓰나요?" },
+          { "speaker": "B", "nepali": "यसरी लेख्ने।", "romanized": "yasari lekhne.", "korean": "이렇게 씁니다." },
+          { "speaker": "A", "nepali": "तपाईं नेपाली पढ्न सक्नुहुन्छ ?", "romanized": "tapaaï nepaali paDhna saknuhunchha ?", "korean": "당신은 네팔어를 읽을 सु 있습니까?" },
+          { "speaker": "B", "nepali": "सक्छु।", "romanized": "sakchhu.", "korean": "네, 할 수 있습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 능력과 취향 복합",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंलाई फुटबल खेल्न आउँछ ?", "romanized": "tapaaïlaai phuTbal khelna aauchha ?", "korean": "당신은 축구를 할 줄 압니까?" },
+          { "speaker": "B", "nepali": "आउँछ।", "romanized": "aauchha.", "korean": "네, 할 줄 압니다." },
+          { "speaker": "A", "nepali": "तपाईंलाई फुटबल खेल्न मनपर्छ ?", "romanized": "tapaaïlaai phuTbal khelna manparchha ?", "korean": "당신은 축구하는 것을 좋아합니까?" },
+          { "speaker": "B", "nepali": "मनपर्छ।", "romanized": "manparchha.", "korean": "네, 좋아합니다." },
+          { "speaker": "A", "nepali": "तपाईंको साथीलाई नि ?", "romanized": "tapaaïko saathilaai ni ?", "korean": "당신의 친구는요?" },
+          { "speaker": "B", "nepali": "उसलाई खेल्न आउँछ तर मनपर्दैन।", "romanized": "uslaai khelna aauchha tara manpardaina.", "korean": "그는 할 줄은 알지만 좋아하지는 않습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 과거 경험 복습",
+        "lines": [
+          { "speaker": "A", "nepali": "हिजो तपाईं कहाँ जानुभयो ?", "romanized": "hijo tapaaï kahãã jaanubhayo ?", "korean": "어제 당신은 어디에 갔습니까?" },
+          { "speaker": "B", "nepali": "म बजारमा गएँ।", "romanized": "ma bajaarmaa gaẽ.", "korean": "저는 시장에 갔습니다." },
+          { "speaker": "A", "nepali": "त्यहाँ के गर्नुभयो ?", "romanized": "tyahãã ke garnubhayo ?", "korean": "거기서 무엇을 했습니까?" },
+          { "speaker": "B", "nepali": "मैले कपडा किनेँ।", "romanized": "maile kaparaa kine.", "korean": "옷감을 샀습니다." },
+          { "speaker": "A", "nepali": "कति मिटर किन्नुभयो ?", "romanized": "kati miTar kinnubhayo ?", "korean": "몇 미터 샀습니까?" },
+          { "speaker": "B", "nepali": "तीन मिटर किनेँ।", "romanized": "tin miTar kine.", "korean": "3미터 샀습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) सो유와 위치 복합",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं सँग पैसा छ ?", "romanized": "tapaaï saṅga paisaa chha ?", "korean": "당신 지금 돈 가지고 있습니까?" },
+          { "speaker": "B", "nepali": "छैन।", "romanized": "chhaina.", "korean": "없습니다." },
+          { "speaker": "A", "nepali": "तपाईंको खल्तीमा के छ ?", "romanized": "tapaaïko khaltimaa ke chha ?", "korean": "당신의 주머니에는 무엇이 있습니까?" },
+          { "speaker": "B", "nepali": "मेरो खल्तीमा कलम छ।", "romanized": "mero khaltimaa kalam chha.", "korean": "제 주머니에는 펜이 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंको पछाडि को छ ?", "romanized": "tapaaïko pachhaaDi ko chha ?", "korean": "당신의 뒤에는 누가 있습니까?" },
+          { "speaker": "B", "nepali": "मेरो पछाडि मेरो साथी छ।", "romanized": "mero pachhaaDi mero saathi chha.", "korean": "제 뒤에는 제 친구가 있습니다." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 22,
+    "title": "Lesson 22",
+    "titleKo": "제22과",
+    "description": "연속된 동작을 연결하는 분사 구문(-era)과 시간적 선후 관계(-epachhi)를 배웁니다.",
+    "vocabulary": [
+      { "nepali": "बजे", "romanized": "baje", "korean": "o'clock (시)" },
+      { "nepali": "एकै छिन", "romanized": "ekai chhin", "korean": "for a while (잠시 동안)" },
+      { "nepali": "एपछि", "romanized": "-epachhi", "korean": "after (doing) (~한 후에)" },
+      { "nepali": "एर", "romanized": "-era", "korean": "having done (~하고, ~해서 - 순서/이유)" },
+      { "nepali": "गीत", "romanized": "gaun/geet", "korean": "song (노래)" },
+      { "nepali": "हाँस्नु", "romanized": "haasnu", "korean": "to laugh (웃다)" },
+      { "nepali": "हिँड्नु", "romanized": "hĩDnu", "korean": "to walk, to leave (걷다, 떠나다)" },
+      { "nepali": "खोला", "romanized": "kholaa", "korean": "river (강)" },
+      { "nepali": "लुगा", "romanized": "lugaa", "korean": "clothes (옷)" },
+      { "nepali": "फर्कनु", "romanized": "pharkanu", "korean": "to return (돌아오다)" },
+      { "nepali": "पकाउनु", "romanized": "pakaaunu", "korean": "to cook (요리하다)" },
+      { "nepali": "साइकल", "romanized": "saaykal", "korean": "bicycle (자전거)" },
+      { "nepali": "सुत्नु", "romanized": "sutnu", "korean": "to sleep (자다)" },
+      { "nepali": "त्यसपछि", "romanized": "tyaspachhi", "korean": "after that (그 후에)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. 분사 어미 '-era' (Absolutive Participle): 한 동작이 끝난 후 바로 다음 동작이 이어질 때 사용합니다 (~하고 나서). 동사 어간에 '-era'를 붙입니다. (예: uThnu -> uThera, jaanu -> gaera). 이유를 나타낼 때도 쓰입니다 (~해서).",
+      "2. 후치사 '-epachhi' (After): \"~한 후에\"라는 뜻으로, 동작의 완료를 강조합니다. 동사 어간에 '-e'를 붙이고 'pachhi'를 더합니다. (예: khaanu -> khaaepachhi).",
+      "3. 'Tyaspachhi' vs '-epachhi': Tyaspachhi는 문장 사이를 잇는 부사(그 후에), -epachhi는 특정 동사 뒤에 붙는 어미(~한 후에)입니다.",
+      "4. 불규칙 변화: jaanu (가다) -> gaera (가서) / gaepachhi (간 후에), khaanu (먹다) -> khaaera (먹고) / khaaepachhi (먹은 후에)."
+    ],
+    "quiz": [
+      { "question": "한 동작이 끝난 후 다음 동작이 이어질 때(~하고 나서) 동사에 붙이는 어미는?", "options": ["-ने (-ne)", "-दै (-dai)", "-एर (-era)", "-को (-ko)"], "answer": 2 },
+      { "question": "'~한 후에'라는 뜻으로 동작의 완료를 강조할 때 붙이는 어미는?", "options": ["-एपछि (-epachhi)", "-एर (-era)", "-न (-na)", "-दै (-dai)"], "answer": 0 },
+      { "question": "'가서(가고 나서)'를 뜻하는 불규칙 동사 형태는?", "options": ["जानेर (jaanera)", "गएर (gaera)", "गएको (gaeko)", "गएपछि (gaepachhi)"], "answer": 1 },
+      { "question": "'먹은 후에'를 뜻하는 올바른 네팔어는?", "options": ["खाएर (khaaera)", "खाएपछि (khaaepachhi)", "खाने (khaane)", "खाँदा (khaadaa)"], "answer": 1 },
+      { "question": "'일어나서'를 뜻하는 동사 형태는?", "options": ["उठ्ने (uThne)", "उठ्छु (uThchhu)", "उठेर (uThera)", "उठेपछि (uThepachhi)"], "answer": 2 },
+      { "question": "'그 후에'라는 뜻으로 문장과 문장을 이어주는 부사는?", "options": ["त्यसपछि (tyaspachhi)", "त्यसै कारण (tyasai kaaran)", "कहिले काहीँ (kahile kaahi)", "अलिअलि (aliali)"], "answer": 0 },
+      { "question": "'잠시 동안'을 뜻하는 네팔어 표현은?", "options": ["दिनभरि (dinbhari)", "एकै छिन (ekai chhin)", "सधैँ (sadhai)", "धेरै जसो (dherai jaso)"], "answer": 1 },
+      { "question": "'저는 시장에 가서 옷감을 삽니다'를 바르게 표현한 것은?", "options": ["म बजार गएपछि कपडा किन्छु। (ma bajaar gaepachhi kaparaa kinchhu.)", "म बजार गएर कपडा किन्छु। (ma bajaar gaera kaparaa kinchhu.)", "म बजार जाने कपडा किन्छु। (ma bajaar jaane kaparaa kinchhu.)", "म बजार जाँदा कपडा किन्छु। (ma bajaar jaadaa kaparaa kinchhu.)"], "answer": 1 },
+      { "question": "'밥을 먹은 후에 뭐 할 거예요?'의 올바른 네팔어 표현은?", "options": ["खाना खाएर के गर्ने ? (khaanaa khaaera ke garne ?)", "खाना खाएपछि के गर्ने ? (khaanaa khaae pachhi ke garne ?)", "खाना खाने कि नखाने ? (khaanaa khaane ki nakhaane ?)", "खाना खाँदाखेरि के गर्ने ? (khaanaa khaadaakheri ke garne ?)"], "answer": 1 },
+      { "question": "'웃다'를 뜻하는 네팔어 동사는?", "options": ["सुत्नु (sutnu)", "हाँस्नु (haasnu)", "रुँनु (runu)", "खेल्नु (khelnu)"], "answer": 1 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 일상의 순서 (-era)",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं बिहान उठेर के गर्नुहुन्छ ?", "romanized": "tapaai bihaana uThera ke garnuhunchha ?", "korean": "당신은 아침에 일어나서 무엇을 합니까?" },
+          { "speaker": "B", "nepali": "म उठेर मुख धुन्छु।", "romanized": "ma uThera mukh dhunchhu.", "korean": "저는 일어나서 세수를 합니다." },
+          { "speaker": "A", "nepali": "अनि के गर्नुहुन्छ ?", "romanized": "ani ke garnuhunchha ?", "korean": "그러고 나서 무엇을 합니까?" },
+          { "speaker": "B", "nepali": "अनि खाना खान्छु र अफिस जान्छु।", "romanized": "ani khaanaa khaachhu ra aphis jaanchhu.", "korean": "그러고 나서 밥을 먹고 사무실에 갑니다." },
+          { "speaker": "A", "nepali": "अफिसबाट फर्केर के गर्नुहुन्छ ?", "romanized": "aphisbaaTa pharkera ke garnuhunchha ?", "korean": "사무실에서 돌아와서 무엇을 합니까?" },
+          { "speaker": "B", "nepali": "अफिसबाट फर्केर खाजा खान्छु।", "romanized": "aphisbaaTa pharkera khaajaa khaanchhu.", "korean": "사무실에서 돌아와서 간식을 먹습니다." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 시간적 선후 관계 (-epachhi)",
+        "lines": [
+          { "speaker": "A", "nepali": "नेपाली पढेपछि के गर्ने ?", "romanized": "nepaali paDhepachhi ke garne ?", "korean": "네팔어를 공부한 후에 뭐 할 거예요?" },
+          { "speaker": "B", "nepali": "नेपाली पढेपछि डेरामा जाने।", "romanized": "nepaali paDhepachhi Deraamaa jaane.", "korean": "네팔어 공부 후에 숙소에 갈 거예요." },
+          { "speaker": "A", "nepali": "खाना खाएपछि के गर्ने ?", "romanized": "khaanaa khaae pachhi ke garne ?", "korean": "밥을 먹은 후에 뭐 할 거예요?" },
+          { "speaker": "B", "nepali": "खाना खाएपछि एकै छिन आराम गर्ने।", "romanized": "khaanaa khaae pachhi ekai chhin aaraam garne.", "korean": "밥을 먹은 후에 잠시 쉴 거예요." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 연속된 동작 연결",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं बजार गएर के किन्नुहुन्छ ?", "romanized": "tapaai bajaar gaera ke kinnuhunchha ?", "korean": "당신은 시장에 가서 무엇을 삽니다까?" },
+          { "speaker": "B", "nepali": "म बजार गएर कपडा किन्छु।", "romanized": "ma bajaar gaera kaparaa kinchhu.", "korean": "저는 시장에 가서 옷감을 삽니다." },
+          { "speaker": "A", "nepali": "तपाईं घर गएर के गर्नुहुन्छ ?", "romanized": "tapaai ghar gaera ke garnuhunchha ?", "korean": "당신은 집에 가서 무엇을 합니까?" },
+          { "speaker": "B", "nepali": "म घर गएर खाना पकाउँछु।", "romanized": "ma ghar gaera khaanaa pakaauchu.", "korean": "저는 집에 가서 요리를 합니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 분사 구문 활용 (-era)",
+        "lines": [
+          { "speaker": "A", "nepali": "यो के हो ?", "romanized": "yo ke ho ?", "korean": "이것은 무엇입니까?" },
+          { "speaker": "B", "nepali": "यो घडी हो।", "romanized": "yo ghaDi ho.", "korean": "이것은 시계입니다." },
+          { "speaker": "A", "nepali": "घडी हेरेर बजे भन्नुस्।", "romanized": "ghaDi herera baje bhannus.", "korean": "시계를 보고 시간을 말하세요." },
+          { "speaker": "B", "nepali": "घडी हेरेर मैले दस बजे भनेँ।", "romanized": "ghaDi herera maile das baje bhanẽ.", "korean": "시계를 보고 10시라고 말했습니다." },
+          { "speaker": "A", "nepali": "उहाँले के गर्नुभयो ?", "romanized": "wahããle ke garnubhayo ?", "korean": "그분은 무엇을 하셨습니까?" },
+          { "speaker": "B", "nepali": "उहाँले घडी हेरेर बजे भन्नुभयो।", "romanized": "wahããle ghaDi herera baje bhannubhayo.", "korean": "그분은 시계를 보고 시간을 말했습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) 식사와 휴식 (Timi 사용)",
+        "lines": [
+          { "speaker": "A", "nepali": "तिमी खाजा खाएर कहाँ जान्छौ ?", "romanized": "timi khaajaa khaaera kahãã jaanchhau ?", "korean": "너는 간식을 먹고 어디에 가니?" },
+          { "speaker": "B", "nepali": "म खाजा खाएर फुटबल खेल्न जान्छु।", "romanized": "ma khaajaa khaaera phuTbal khelna jaanchhu.", "korean": "나는 간식을 먹고 축구하러 가." },
+          { "speaker": "A", "nepali": "फुटबल खेलेपछि के गर्छौ ?", "romanized": "phuTbal khele pachhi ke garchhau ?", "korean": "축구를 한 후에 무엇을 하니?" },
+          { "speaker": "B", "nepali": "फुटबल खेलेपछि नुहाउँछु।", "romanized": "phuTbal khele pachhi nuhããunchhu.", "korean": "축구를 한 후에 목욕을 해." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 23,
+    "title": "Lesson 23",
+    "titleKo": "제23과",
+    "description": "과거의 경험이나 현재 완료 상태(-eko chhu)를 표현하는 방법을 배웁니다.",
+    "vocabulary": [
+      { "nepali": "अनुभव", "romanized": "anubhav", "korean": "experience (경험)" },
+      { "nepali": "एको छु", "romanized": "-eko chhu", "korean": "have done (현재 완료 어미)" },
+      { "nepali": "गएको", "romanized": "gaeko", "korean": "gone / went (가 본, 간)" },
+      { "nepali": "जानु", "romanized": "janu", "korean": "to go (가다)" },
+      { "nepali": "कहिले", "romanized": "kahile", "korean": "ever / when (언제, 언젠가)" },
+      { "nepali": "कहिले पनि", "romanized": "kahile pani", "korean": "never (결코 ~않다 - 부정문과 함께)" },
+      { "nepali": "भन्नु", "romanized": "bhannu", "korean": "to tell (말하다)" },
+      { "nepali": "खाएको", "romanized": "khaae ko", "korean": "eaten (먹어 본, 먹은)" },
+      { "nepali": "खोला", "romanized": "kholaa", "korean": "river (강)" },
+      { "nepali": "मैले", "romanized": "maile", "korean": "I (타동사 주어)" },
+      { "nepali": "पकाउनु", "romanized": "pakaaunu", "korean": "to cook (요리하다)" },
+      { "nepali": "पोखरा", "romanized": "pokharaa", "korean": "Pokhara (포카라)" },
+      { "nepali": "सगरमाथा", "romanized": "sagarmathaa", "korean": "Mt. Everest (에베레스트)" },
+      { "nepali": "सुन्नु", "romanized": "sunnu", "korean": "to hear, to listen (듣다)" },
+      { "nepali": "कि", "romanized": "ki", "korean": "that (접속사)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. 현재 완료 시제 (-eko chhu): 과거에 일어난 일이 현재까지 영향을 미치거나, 과거의 경험을 나타낼 때 사용합니다 (~한 적이 있다, ~했다). [동사 어간 + eko] + [Be 동사 현재형] 형식. (ma gaeko chhu - 나는 가 본 적 있다).",
+      "2. 부정형 (-eko chhaina): \"~한 적이 없다\"는 뜻입니다. (ma gaeko chhaina - 나는 가 본 적이 없다).",
+      "3. Kahile (Ever) / Kahile pani (Never): 의문문에서 'kahile'는 '언젠가/한 번이라도'라는 뜻, 부정문에서 'kahile pani'는 '결코/한 번도'라는 강한 부정을 나타냅니다.",
+      "4. 단순 과거 vs 현재 완료: 단순 과거(gaẽ)는 과거의 특정 시점 동작 자체에 집중, 현재 완료(gaeko chhu)는 결과나 경험에 집중합니다."
+    ],
+    "quiz": [
+      { "question": "과거의 경험(~한 적이 있다)을 나타낼 때 사용하는 동사 형태는?", "options": ["-ने छु (-ne chhu)", "-दै छु (-dai chhu)", "-एको छु (-eko chhu)", "-एर (-era)"], "answer": 2 },
+      { "question": "'~한 적이 없다'를 나타내는 현재 완료 부정형은?", "options": ["-एको छैन (-eko chhaina)", "-दिनँ (-dina)", "-इनँ (-ina)", "-ने छैन (-ne chhaina)"], "answer": 0 },
+      { "question": "'결코 ~않다(Never)'를 뜻하는 네팔어 표현은?", "options": ["सधैँ (sadhai)", "कहिले (kahile)", "कहिले पनि (kahile pani)", "एकदम (ekdam)"], "answer": 2 },
+      { "question": "의문문에서 '언젠가/한 번이라도'의 의미로 쓰이는 단어는?", "options": ["किन (kina)", "कसरी (kasari)", "कहाँ (kahãã)", "कहिले (kahile)"], "answer": 3 },
+      { "question": "'나는 포카라에 가 본 적이 있다'의 올바른 네팔어는?", "options": ["म पोखरा जान्छु। (ma pokharaa jaanchhu.)", "म पोखरा जाँदै छु। (ma pokharaa jäädai chhu.)", "म पोखरा गएको छु। (ma pokharaa gaeko chhu.)", "म पोखरा गएँ। (ma pokharaa gaẽ.)"], "answer": 2 },
+      { "question": "'먹어 본 적이 있다'를 뜻하는 동사 형태는?", "options": ["खाएको छु (khaaeko chhu)", "खाएको छैन (khaaeko chhaina)", "खाने (khaane)", "खान्छु (khaanchhu)"], "answer": 0 },
+      { "question": "'경험'을 뜻하는 네팔어 단어는?", "options": ["कारण (kaaran)", "अनुभव (anubhav)", "फुर्सद (phursad)", "इतिहास (itihaas)"], "answer": 1 },
+      { "question": "'당신은 에베레스트를 본 적이 있습니까?'의 올바른 네팔어 질문은?", "options": ["तपाईं सगरमाथा जानुभएको छ ? (tapaaï sagarmathaa jaanubhaeko chha ?)", "तपाईंले सगरमाथा देख्नुभएको छ ? (tapaaïle sagarmathaa dekhnubhaeko chha ?)", "सगरमाथा कहाँ छ ? (sagarmathaa kahãã chha ?)", "सगरमाथा कस्तो छ ? (sagarmathaa kasto chha ?)"], "answer": 1 },
+      { "question": "'그는 한 번도 가 본 적이 없습니다'의 올바른 표현은?", "options": ["ऊ गएको छैन। (u gaeko chhaina.)", "ऊ कहिले पनि गएको छैन। (u kahile pani gaeko chhaina.)", "ऊ कहिले गएको छ। (u kahile gaeko chha.)", "ऊ गएन। (u gaena.)"], "answer": 1 },
+      { "question": "'요리하다'를 뜻하는 동사는?", "options": ["पकाउनु (pakaaunu)", "खानु (khaanu)", "सुन्नु (sunnu)", "भन्नु (bhannu)"], "answer": 0 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 여행 경험 (현재 완료)",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं कहिले पोखरा जानुभएको छ ?", "romanized": "tapaaï kahile pokharaa jaanubhaeko chha ?", "korean": "당신은 포카라에 가 본 적이 있습니까?" },
+          { "speaker": "B", "nepali": "छ, म एक पटक गएको छु।", "romanized": "chha, ma ek paTak gaeko chhu.", "korean": "네, 한 번 가 본 적이 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंको साथी नि ?", "romanized": "tapaaïko saathi ni ?", "korean": "당신의 친구는요?" },
+          { "speaker": "B", "nepali": "ऊ पनि गएको छ।", "romanized": "u pani gaeko chha.", "korean": "그도 가 본 적이 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंले सगरमाथा देख्नुभएको छ ?", "romanized": "tapaaïle sagarmathaa dekhnubhaeko chha ?", "korean": "당신은 에베레스트를 본 적이 있습니까?" },
+          { "speaker": "B", "nepali": "देखेको छैन।", "romanized": "dekheko chhaina.", "korean": "본 적이 없습니다." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 음식 경험",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंले नेपाली खाना खानुभएको छ ?", "romanized": "tapaaïle nepaali khaanaa khaannubhaeko chha ?", "korean": "당신은 네팔 음식을 먹어 본 적이 있습니까?" },
+          { "speaker": "B", "nepali": "खाएको छु।", "romanized": "khaae ko chhu.", "korean": "먹어 본 적이 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंले आफै पकाउनुभएको छ ?", "romanized": "tapaaïle aaphai pakaaunubhaeko chha ?", "korean": "당신이 직접 요리해 본 적도 있나요?" },
+          { "speaker": "B", "nepali": "छैन, मैले पकाएको छैन।", "romanized": "chhaina, maile pakaaeko chhaina.", "korean": "아니요, 요리해 본 적은 없습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 완료된 상태와 경험",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंले यो किताब पढ्नुभएको छ ?", "romanized": "tapaaïle yo kitaab paDhnubhaeko chha ?", "korean": "당신은 이 책을 읽었습니까/읽어 본 적 있습니까?" },
+          { "speaker": "B", "nepali": "पढेको छु।", "romanized": "paDheko chhu.", "korean": "읽었습니다." },
+          { "speaker": "A", "nepali": "तपाईंले नेपाली गीत सुन्नुभएको छ ?", "romanized": "tapaaïle nepaali geet sunnubhaeko chha ?", "korean": "네팔 노래를 들어 본 적이 있습니까?" },
+          { "speaker": "B", "nepali": "सुनेको छु।", "romanized": "suneko chhu.", "korean": "들어 본 적이 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंले नेपाली गीत गाउनुभएको छ ?", "romanized": "tapaaïle nepaali geet gaaunubhaeko chha ?", "korean": "네팔 노래를 불러 본 적이 있습니까?" },
+          { "speaker": "B", "nepali": "गाएको छैन।", "romanized": "gaaeko chhaina.", "korean": "불러 본 적은 없습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 가 본 장소 확인",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं पशुपति जानुभएको छ ?", "romanized": "tapaaï pashupati jaanubhaeko chha ?", "korean": "당신은 파슈파티에 가 본 적이 있습니까?" },
+          { "speaker": "B", "nepali": "गएको छु।", "romanized": "gaeko chhu.", "korean": "가 본 적이 있습니다." },
+          { "speaker": "A", "nepali": "तपाईंको साथी नि ?", "romanized": "tapaaïko saathi ni ?", "korean": "당신의 친구는요?" },
+          { "speaker": "B", "nepali": "ऊ कहिले पनि गएको छैन।", "romanized": "u kahile pani gaeko chhaina.", "korean": "그는 한 번도 가 본 적이 없습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) 과거와 현재 완료 비교",
+        "lines": [
+          { "speaker": "A", "nepali": "हिजो तपाईं कहाँ जानुभयो ?", "romanized": "hijo tapaaï kahãã jaanubhayo ?", "korean": "어제 당신은 कहाँ(어디에) 갔습니까?" },
+          { "speaker": "B", "nepali": "म पशुपति गएँ।", "romanized": "ma pashupati gaẽ.", "korean": "저는 파슈파티에 갔습니다." },
+          { "speaker": "A", "nepali": "तपाईं त्यहाँ फेरि जानुभएको छ ?", "romanized": "tapaaï tyahãã pheri jaanubhaeko chha ?", "korean": "당신은 거기에 (그전에도) 가 본 적이 있나요?" },
+          { "speaker": "B", "nepali": "छैन, हिजो मात्र गएँ।", "romanized": "chhaina, hijo maatra gaẽ.", "korean": "아니요, 어제 처음 갔습니다." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "title": "Lesson 24",
+    "titleKo": "제24과",
+    "description": "동시 동작(-daakheri)을 표현하는 방법과 물건 분실, 기억에 관련된 어휘를 배웁니다.",
+    "vocabulary": [
+      { "nepali": "बाटो", "romanized": "baaTo", "korean": "way, road (길)" },
+      { "nepali": "दाखेरि", "romanized": "-daakheri", "korean": "while doing (~할 때 / ~하는 동안)" },
+      { "nepali": "हराउनु", "romanized": "haraau-nu", "korean": "to lose, to be lost (잃어버리다, 길을 잃다)" },
+      { "nepali": "जिल्ला", "romanized": "jilla", "korean": "district (지역/구역)" },
+      { "nepali": "काम", "romanized": "kaam", "korean": "work (일)" },
+      { "nepali": "खोज्नु", "romanized": "khojnu", "korean": "to search, to look for (찾다)" },
+      { "nepali": "पाउनु", "romanized": "paaunu", "korean": "to find, to get (찾다, 얻다)" },
+      { "nepali": "पैसा", "romanized": "paisa", "korean": "money (돈)" },
+      { "nepali": "रुपियाँ", "romanized": "ruupiyaa", "korean": "rupees (루피)" },
+      { "nepali": "सम्झनु", "romanized": "samjhannu", "korean": "to remember (기억하다)" },
+      { "nepali": "त्यसबेला", "romanized": "tyasbelaa", "korean": "at that time (그때)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. 동시 동작 어미 '-daakheri': 두 가지 동작이 동시에 일어날 때(~할 때, ~하는 동안) 사용합니다. 동사 어간에 '-daakheri'를 붙입니다. (예: lekhnu -> lekhdaakheri, jaanu -> jaadaakheri).",
+      "2. 'Haraaunu' (잃어버리다): 물건을 분실했을 때뿐만 아니라 길을 잃었을 때도 사용합니다. 완료된 상태를 나타낼 때 'haraaeko' 형식을 자주 씁니다.",
+      "3. 'Samjhannu' (기억하다): 과거의 일을 떠올리거나 잊지 않고 있을 때 사용합니다.",
+      "4. 'Rahechha' (있었군요/있더군요): 몰랐던 사실을 새로 알게 되었을 때 사용하는 감탄/확인형 종결 어미입니다. (예: tyahãã rahechha - 거기 있었군요).",
+      "5. '-maatrai' (오직/단지): 수량이나 범위를 한정할 때 강조하여 사용합니다. (예: pachchis rupiyaa maatrai - 겨우 25루피)."
+    ],
+    "quiz": [
+      { "question": "두 동작이 동시에 일어남(~할 때, ~하는 동안)을 나타낼 때 붙이는 어미는?", "options": ["-एर (-era)", "-एपछि (-epachhi)", "-दाखेरि (-daakheri)", "-ने (-ne)"], "answer": 2 },
+      { "question": "'잃어버리다' 또는 '길을 잃다'를 뜻하는 동사는?", "options": ["खोज्नु (khojnu)", "पाउनु (paaunu)", "हराउनु (haraau-nu)", "सम्झनु (samjhannu)"], "answer": 2 },
+      { "question": "몰랐던 사실을 새로 알게 되었을 때 쓰는 감탄/확인형 어미는?", "options": ["होला (holaa)", "रहेछ (rahechha)", "छैन (chhaina)", "थियो (thiyo)"], "answer": 1 },
+      { "question": "'기억하다'를 뜻하는 네팔어 동사는?", "options": ["सम्झनु (samjhannu)", "पाउनु (paaunu)", "खोज्नु (khojnu)", "हेर्नु (hernu)"], "answer": 0 },
+      { "question": "수량을 한정하여 '오직, 겨우 ~뿐'을 강조할 때 쓰는 단어는?", "options": ["धेरै (dherai)", "सबै (sabai)", "मात्रै (-maatrai)", "पनि (pani)"], "answer": 2 },
+      { "question": "'찾다'라는 뜻의 동사는?", "options": ["हराउनु (haraau-nu)", "खोज्नु (khojnu)", "सम्झनु (samjhannu)", "भन्नु (bhannu)"], "answer": 1 },
+      { "question": "'찾았다/얻었다'를 뜻하는 동사는?", "options": ["खोज्नु (khojnu)", "हराउनु (haraau-nu)", "पाउनु (paaunu)", "हेर्नु (hernu)"], "answer": 2 },
+      { "question": "'길에서'를 바르게 표현한 네팔어는?", "options": ["बाटोमा (baaTomaa)", "शहरमा (shaharmaa)", "जिल्लामा (jillaamaa)", "खल्तीमा (khaltimaa)"], "answer": 0 },
+      { "question": "'편지를 쓸 때'의 올바른 네팔어 표현은?", "options": ["चिठी लेखेर (chiThi lekhera)", "चिठी लेखेपछि (chiThi lekhepachhi)", "चिठी लेख्दाखेरि (chiThi lekhdaakheri)", "चिठी लेख्ने (chiThi lekhne)"], "answer": 2 },
+      { "question": "'그때'를 뜻하는 단어는?", "options": ["अहिले (ahile)", "त्यसबेला (tyasbelaa)", "त्यसपछि (tyaspachhi)", "कहिले (kahile)"], "answer": 1 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 물건 분실과 기억 (-daakheri)",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंले के खोज्नु भएको ?", "romanized": "tapaaïle ke khojnu bhaeko ?", "korean": "당신은 무엇을 찾고 있습니까?" },
+          { "speaker": "B", "nepali": "मैले मेरो कलम खोजेको।", "romanized": "maile mero kalam khojeko.", "korean": "제 펜을 찾고 있습니다." },
+          { "speaker": "A", "nepali": "कहाँ हराएको ?", "romanized": "kahãã haraaeko ?", "korean": "어디서 잃어버렸나요?" },
+          { "speaker": "B", "nepali": "थाहा छैन।", "romanized": "thaahaa chhaina.", "korean": "모르겠습니다." },
+          { "speaker": "A", "nepali": "चिठी लेख्दाखेरि तपाईं सँग थियो ?", "romanized": "chiThi lekhdaakheri tapaaï saṅga thiyo ?", "korean": "편지를 쓸 때 당신에게 있었나요?" },
+          { "speaker": "B", "nepali": "थियो।", "romanized": "thiyo.", "korean": "네, 있었습니다." },
+          { "speaker": "A", "nepali": "त्यसपछि के गर्नुभयो ?", "romanized": "tyaspachhi ke garnubhayo ?", "korean": "그 후에 무엇을 했습니까?" },
+          { "speaker": "B", "nepali": "त्यसपछि म बाहिर गएँ।", "romanized": "tyaspachhi ma baahira gaẽ.", "korean": "그 후에 밖으로 나갔습니다." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 분실물 찾기",
+        "lines": [
+          { "speaker": "A", "nepali": "बाटोमा हराएको होला।", "romanized": "baaTomaa haraaeko holaa.", "korean": "길에서 잃어버렸나 보네요." },
+          { "speaker": "B", "nepali": "होला, म फेरि खोज्छु।", "romanized": "holaa, ma pheri khojchhu.", "korean": "아마도요, 다시 찾아보겠습니다." },
+          { "speaker": "A", "nepali": "पाउनुभयो ?", "romanized": "paaunubhayo ?", "korean": "찾았습니까?" },
+          { "speaker": "B", "nepali": "पाएँ, ब्ल्याकबोर्डनिर रहेछ।", "romanized": "paaẽ, blyaakborDnira rahechha.", "korean": "찾았습니다, 칠판 근처에 있더군요." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 동시 동작 연습 (-daakheri)",
+        "lines": [
+          { "speaker": "A", "nepali": "नेपालमा हिँड्दाखेरि तपाईंले के देख्नुभयो ?", "romanized": "nepaalmaa hĩDdaakheri tapaaïle ke dekhnubhayo ?", "korean": "네팔에서 걸어 다닐 때 무엇을 보았습니까?" },
+          { "speaker": "B", "nepali": "मैले धेरै पहाड देखेँ।", "romanized": "maile dherai pahaaD dekhẽ.", "korean": "많은 산을 보았습니다." },
+          { "speaker": "A", "nepali": "खाना खाँदाखेरि बोल्नु हुन्छ ?", "romanized": "khaanaa khaadaakheri bolnu hunchha ?", "korean": "밥을 먹을 때 말을 하나요?" },
+          { "speaker": "B", "nepali": "नेपालीहरू खाना खाँदाखेरि बोल्दैनन्।", "romanized": "nepaaliharu khaanaa khaadaakheri boldainan.", "korean": "네팔 사람들은 밥 먹을 때 말을 하지 않습니다." },
+          { "speaker": "A", "nepali": "तपाईं नेपाली सिक्दाखेरि के गर्नुहुन्छ ?", "romanized": "tapaaï nepaali sikdaakheri ke garnuhunchha ?", "korean": "당신은 네팔어를 배울 때 무엇을 합니까?" },
+          { "speaker": "B", "nepali": "म नेपाली सिक्दाखेरि धेरै लेख्छु।", "romanized": "ma nepaali sikdaakheri dherai lekhchhu.", "korean": "저는 네팔어를 배울 때 많이 씁니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 돈 분실 상황",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईंको के हराएको ?", "romanized": "tapaaïko ke haraaeko ?", "korean": "무엇을 잃어버렸습니까?" },
+          { "speaker": "B", "nepali": "मेरो पैसा हराएको।", "romanized": "mero paisaa haraaeko.", "korean": "돈을 잃어버렸습니다." },
+          { "speaker": "A", "nepali": "कति हराएको ?", "romanized": "kati haraaeko ?", "korean": "얼마나 잃어버렸나요?" },
+          { "speaker": "B", "nepali": "पच्चीस रुपियाँ मात्रै।", "romanized": "pachchis rupiyaa maatrai.", "korean": "25루피밖에 안 됩니다." },
+          { "speaker": "A", "nepali": "कहाँ हराएको, सम्झनु हुन्छ ?", "romanized": "kahãã haraaeko, samjhannu hunchha ?", "korean": "어디서 잃어버렸는지 기억나나요?" },
+          { "speaker": "B", "nepali": "बजार जाँदाखेरि हराएको होला।", "romanized": "bajaar jaadaakheri haraaeko holaa.", "korean": "시장에 갈 때 잃어버린 것 같습니다." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 26,
+    "title": "Lesson 26",
+    "titleKo": "제26과",
+    "description": "과거의 습관이나 지속적인 상태(-thẽ / -thyo)를 나타내는 시제를 배웁니다.",
+    "vocabulary": [
+      { "nepali": "विज्ञान", "romanized": "bigyaan", "korean": "science (과학)" },
+      { "nepali": "गाई", "romanized": "gaai", "korean": "cow (암소)" },
+      { "nepali": "खसी", "romanized": "khasi", "korean": "goat (거세한 수염소)" },
+      { "nepali": "कृषि", "romanized": "krishi", "korean": "agriculture (농업)" },
+      { "nepali": "पर्सी", "romanized": "parsi", "korean": "day after tomorrow (모레/내일모레)" },
+      { "nepali": "फुर्सद", "romanized": "phursad", "korean": "free time (한가한 시간)" },
+      { "nepali": "सिद्धिनु", "romanized": "siddhinu", "korean": "to be finished (끝나다/매진되다)" },
+      { "nepali": "टिकट", "romanized": "TikaT", "korean": "ticket (표/티켓)" },
+      { "nepali": "उसोभए", "romanized": "usobhae", "korean": "in that case (그렇다면)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. 과거 습관/지속 시제 (-thẽ / -thyo): 과거에 반복적으로 했던 행동이나 지속적인 상태를 나타낼 때 사용합니다 (~하곤 했다 / ~했었다). (예: ma paDh-thẽ - 나는 공부하곤 했다, u paDh-thyo - 그는 공부하곤 했다).",
+      "2. 부정형 (-dinathẽ): 과거에 하지 않았던 습관을 나타냅니다. (예: ma paDh-dinathẽ - 나는 공부하지 않았었다).",
+      "3. Hudaa (When being): '~일 때', '~하는 동안'이라는 상태를 나타냅니다. (예: amerikaamaa hudaa - 미국에 있을 때).",
+      "4. Chaahiyo (Needed): 'chaahinchha'가 일반적인 필요라면, 'chaahiyo'는 구체적인 현재의 요구(\"~가 필요하게 되었다/주세요\")를 나타낼 때 자주 쓰입니다."
+    ],
+    "quiz": [
+      { "question": "과거에 반복적으로 했던 행동(~하곤 했다)을 나타낼 때 동사 어간(주어 'म')에 붙는 어미는?", "options": ["-न्छु (-nchhu)", "-थेँ (-thẽ)", "-दै छु (-dai chhu)", "-एँ (-ẽ)"], "answer": 1 },
+      { "question": "과거 습관 시제의 부정형(~하지 않곤 했다)으로 알맞은 형태는?", "options": ["-दिनथेँ (-dinathẽ)", "-इनँ (-ina)", "-दैन (-daina)", "-एको छैन (-eko chhaina)"], "answer": 0 },
+      { "question": "'~일 때' 또는 '~하는 상태일 때'를 나타내는 단어는?", "options": ["भने (bhane)", "हुँदा (hudaa)", "देखि (dekhi)", "सम्म (samma)"], "answer": 1 },
+      { "question": "'그렇다면' 또는 '그런 경우에'를 뜻하는 접속사는?", "options": ["अनि (ani)", "त्यसपछि (tyaspachhi)", "उसोभए (usobhae)", "किनभने (kinabhane)"], "answer": 2 },
+      { "question": "현재 구체적으로 필요한 것을 요구할 때('~주세요, ~가 필요하게 되었습니다') 쓰는 동사 형태는?", "options": ["चाहिन्छ (chaahinchha)", "चाहियो (chaahiyo)", "चाहिँदैन (chaahīdaina)", "चाहियोस् (chaahiyos)"], "answer": 1 },
+      { "question": "'끝나다' 또는 '매진되다'를 뜻하는 동사는?", "options": ["सिद्धिनु (siddhinu)", "सुरु हुनु (shuru hunu)", "खोज्नु (khojnu)", "पाउनु (paaunu)"], "answer": 0 },
+      { "question": "'과학'을 뜻하는 네팔어 단어는?", "options": ["इतिहास (itihaas)", "कृषि (krishi)", "विज्ञान (bigyaan)", "भाषा (bhaashaa)"], "answer": 2 },
+      { "question": "'한가한 시간'을 뜻하는 네팔어 단어는?", "options": ["फुर्सद (phursad)", "काम (kaam)", "बिदा (bidaa)", "समय (samaya)"], "answer": 0 },
+      { "question": "'저는 대학에서 공부하곤 했습니다'의 올바른 네팔어 표현은?", "options": ["म कलेजमा पढ्छु। (ma kalejmaa paDhchhu.)", "म कलेजमा पढेँ। (ma kalejmaa paDhẽ.)", "म कलेजमा पढ्दै छु। (ma kalejmaa paDhdai chhu.)", "म कलेजमा पढ्थेँ। (ma kalejmaa paDhthẽ.)"], "answer": 3 },
+      { "question": "'내일모레(모레)'를 뜻하는 단어는?", "options": ["भोलि (bholi)", "आज (aaja)", "हिजो (hijo)", "पर्सी (parsi)"], "answer": 3 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 티켓 예매하기",
+        "lines": [
+          { "speaker": "A", "nepali": "भन्नुस्।", "romanized": "bhannos.", "korean": "말씀하세요." },
+          { "speaker": "B", "nepali": "मलाई टिकट चाहियो।", "romanized": "malaai TikaT chaahiyo.", "korean": "티켓이 필요합니다." },
+          { "speaker": "A", "nepali": "कहाँको लागि ?", "romanized": "kahããko laagi ?", "korean": "어디로 가는 건가요?" },
+          { "speaker": "B", "nepali": "पोखराको।", "romanized": "pokharaako.", "korean": "포카라행입니다." },
+          { "speaker": "A", "nepali": "कहिलेको लागि नि ?", "romanized": "kahileko laagi ni ?", "korean": "언제 것이 필요하죠?" },
+          { "speaker": "B", "nepali": "भोलिको लागि।", "romanized": "bholiko laagi.", "korean": "내일 것입니다." },
+          { "speaker": "A", "nepali": "भोलिको टिकट त सिद्धियो।", "romanized": "bholiko TikaT ta siddhiyo.", "korean": "내일 티켓은 매진되었습니다." },
+          { "speaker": "B", "nepali": "उसोभए पर्सीको लागि दिनुस्।", "romanized": "usobhae parsiko laagi dinos.", "korean": "그렇다면 모레(내일모레) 것으로 주세요." },
+          { "speaker": "A", "nepali": "एक छिन पर्खनुस्, है।", "romanized": "ek chhin parkhanos, hai.", "korean": "잠시만 기다려주세요, 네?" },
+          { "speaker": "B", "nepali": "हवस्।", "romanized": "hawas.", "korean": "알겠습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 과거의 습관 (~하곤 했다: -thẽ / -thyo)",
+        "lines": [
+          { "speaker": "A", "nepali": "अमेरिकामा हुँदा तपाईं के गर्नुहुन्थ्यो ?", "romanized": "amerikaamaa hudaa tapaai ke garnuhunthyo ?", "korean": "미국에 있을 때 당신은 무엇을 하곤 했나요?" },
+          { "speaker": "B", "nepali": "म कलेजमा पढ्थेँ।", "romanized": "ma kalejmaa paDhthẽ.", "korean": "저는 대학에서 공부하곤 했습니다." },
+          { "speaker": "A", "nepali": "के पढ्नुहुन्थ्यो ?", "romanized": "ke paDhnuhunthyo ?", "korean": "무엇을 공부했었나요?" },
+          { "speaker": "B", "nepali": "म विज्ञान पढ्थेँ।", "romanized": "ma bigyaan paDhthẽ.", "korean": "과학을 공부했었습니다." },
+          { "speaker": "A", "nepali": "नेपाली पनि पढ्नुहुन्थ्यो ?", "romanized": "nepaali pani paDhnuhunthyo ?", "korean": "네팔어도 공부했었나요?" },
+          { "speaker": "B", "nepali": "पढ्दिनथेँ।", "romanized": "paDhdinathẽ.", "korean": "아니요, 하지 않았습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 과거의 일상",
+        "lines": [
+          { "speaker": "A", "nepali": "तपाईं कति बजे उठ्नुहुन्थ्यो ?", "romanized": "tapaai kati baje uThnuhunthyo ?", "korean": "몇 시에 일어나곤 했나요?" },
+          { "speaker": "B", "nepali": "म छ बजे उठ्थेँ।", "romanized": "ma chha baje uThthẽ.", "korean": "6시에 일어나곤 했습니다." },
+          { "speaker": "A", "nepali": "बिहान के खानुहुन्थ्यो ?", "romanized": "bihaana ke khaanhunthyo ?", "korean": "아침에 무엇을 먹었나요?" },
+          { "speaker": "B", "nepali": "म कफी र टोस्ट खान्थेँ।", "romanized": "ma kaphi ra ToST khaanthẽ.", "korean": "커피와 토스트를 먹었습니다." },
+          { "speaker": "A", "nepali": "अफिस कति बजे जानुहुन्थ्यो ?", "romanized": "aphis kati baje jaanuhunthyo ?", "korean": "사무실에 몇 시에 가곤 했나요?" },
+          { "speaker": "B", "nepali": "म सात बजे जान्थेँ।", "romanized": "ma saat baje jaanthẽ.", "korean": "7시에 가곤 했습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) 과거의 여가",
+        "lines": [
+          { "speaker": "A", "nepali": "फुर्सदमा के गर्नुहुन्थ्यो ?", "romanized": "phursadmaa ke garnuhunthyo ?", "korean": "한가할 때는 무엇을 했나요?" },
+          { "speaker": "B", "nepali": "म फुटबल खेल्थेँ।", "romanized": "ma phuTbal khelthẽ.", "korean": "축구를 하곤 했습니다." },
+          { "speaker": "A", "nepali": "सिनेमा हेर्न जानुहुन्थ्यो ?", "romanized": "sinemaa herna jaanuhunthyo ?", "korean": "영화를 보러 가곤 했나요?" },
+          { "speaker": "B", "nepali": "जान्थेँ, कहिले काहीँ मात्र।", "romanized": "jaanthẽ, kahile kaahi maatra.", "korean": "네, 아주 가끔만 가곤 했습니다." }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "title": "Lesson 27",
+    "titleKo": "제27과",
+    "description": "행동에 대한 허가(-na hunchha)와 가능성(-na paainchha)을 묻고 답하는 표현을 배웁니다.",
+    "vocabulary": [
+      { "nepali": "भित्र", "romanized": "bhitra", "korean": "inside (안에)" },
+      { "nepali": "छुनु", "romanized": "chhunnu", "korean": "to touch (만지다)" },
+      { "nepali": "हुनु", "romanized": "hunu", "korean": "to be / to be okay (되다/괜찮다)" },
+      { "nepali": "जान", "romanized": "jaana", "korean": "to go (목적형: 가기/가는 것)" },
+      { "nepali": "कान्छो", "romanized": "kaanchho", "korean": "youngest (막내)" },
+      { "nepali": "खुल्नु", "romanized": "khulnu", "korean": "to be open (열리다)" },
+      { "nepali": "मन", "romanized": "man", "korean": "mind / heart (마음)" },
+      { "nepali": "मिल्नु", "romanized": "milnu", "korean": "to be available / to fit (되다/맞다)" },
+      { "nepali": "पाइन्छ", "romanized": "paainchha", "korean": "is available / is allowed (얻을 수 있다/해도 된다)" },
+      { "nepali": "पाल्दै", "romanized": "paaldai", "korean": "raising / keeping (키우는 중)" },
+      { "nepali": "पाउ", "romanized": "pau", "korean": "foot / quarter (발 / 1/4)" },
+      { "nepali": "फुपू", "romanized": "phuphu", "korean": "paternal aunt (고모)" },
+      { "nepali": "प्रारब्ध", "romanized": "praarabdha", "korean": "fate / destiny (운명)" },
+      { "nepali": "सधैँ", "romanized": "sadhai", "korean": "always (항상)" }
+    ],
+    "examples": [],
+    "grammar": [
+      "1. -na hunchha: 행동에 대한 '허가'를 나타냅니다. '~해도 된다'는 뜻으로 쓰입니다. (예: bhitra aauna hunchha - 안으로 들어와도 됩니다.)",
+      "2. -na paainchha: 행동에 대한 '가능성'이나 규칙상의 '허용'을 나타냅니다. '~할 수 있다, ~해도 된다'는 뜻입니다. (예: jaana paainchha - 갈 수 있습니다.)",
+      "3. 부정형: -na hundaina (~하면 안 된다) / -na paaindaina (~할 수 없다/금지됨)."
+    ],
+    "quiz": [
+      { "question": "'만지다'를 뜻하는 ने팔어 동사는?", "options": ["हेर्नु (hernu)", "खोज्नु (khojnu)", "छुनु (chhunnu)", "खोल्नु (kholnu)"], "answer": 2 },
+      { "question": "행동에 대한 '허가(~해도 된다)'를 나타낼 때 쓰는 표현은?", "options": ["-न हुन्छ (-na hunchha)", "-न पाइन्छ (-na paainchha)", "-एर (-era)", "-एपछि (-epachhi)"], "answer": 0 },
+      { "question": "규칙상의 '허용'이나 '구할 수 있다'를 뜻하는 동사는?", "options": ["मिल्छ (milchha)", "पाइन्छ (paainchha)", "हुन्छ (hunchha)", "पर्छ (parchha)"], "answer": 1 },
+      { "question": "'항상'을 뜻하는 단어는?", "options": ["कहिले काहीँ (kahile kaahi)", "सधैँ (sadhai)", "धेरै जसो (dherai jaso)", "एकदम (ekdam)"], "answer": 1 },
+      { "question": "'안에'를 뜻하는 네팔어 단어는?", "options": ["बाहिर (baahira)", "पछाडि (pachhaadi)", "अगाडि (agaaDi)", "भित्र (bhitra)"], "answer": 3 },
+      { "question": "'내가 안으로 들어갈까?'의 올바른 네팔어 표현은?", "options": ["म भित्र जाऊँ ? (ma bhitra jaau ?)", "म भित्र आऊँ ? (ma bhitra aau ?)", "म बाहिर आऊँ ? (ma baahira aau ?)", "म भित्र बसूँ ? (ma bhitra basu ?)"], "answer": 1 },
+      { "question": "'여기서 담배를 피울 수 없습니다'의 알맞은 네팔어 표현은?", "options": ["यहाँ धुम्रपान गर्न हुन्छ। (yahãã dhumpaan garna hunchha.)", "यहाँ धुम्रपान गर्न पाइन्छ। (yahãã dhumpaan garna paainchha.)", "यहाँ धुम्रपान गर्न पाइँदैन। (yahãã dhumpaan garna paaindaina.)", "यहाँ धुम्रपान गर्न पर्दैन। (yahãã dhumpaan garna pardaina.)"], "answer": 2 },
+      { "question": "'아이들도 갈 수 있습니다'를 뜻하는 올바른 네팔어는?", "options": ["केटाकेटीहरू पनि जान पाइन्छन्। (keTaakaeTiharu pani jaana paainchhan.)", "केटाकेटीहरू पनि जान हुन्छ। (keTaakaeTiharu pani jaana hunchha.)", "केटाकेटीहरू पनि जान्छन्। (keTaakaeTiharu pani jaanchhan.)", "केटाकेटीहरू पनि जान पाउँदैनन्। (keTaakaeTiharu pani jaana paaundainan.)"], "answer": 0 },
+      { "question": "'막내'를 뜻하는 단어는?", "options": ["कान्छो (kaanchho)", "जवान (jawaan)", "दाइ (daai)", "भाइ (bhaai)"], "answer": 0 },
+      { "question": "'열리다'를 뜻하는 네팔어 동사는?", "options": ["मिल्नु (milnu)", "छुनु (chhunnu)", "पाउनु (paaunu)", "खुल्नु (khulnu)"], "answer": 3 }
+    ],
+    "dialogues": [
+      {
+        "title": "PART I: DIALOGUE (a) 출입 및 행동 허가 (-na hunchha)",
+        "lines": [
+          { "speaker": "A", "nepali": "म भित्र आऊँ ?", "romanized": "ma bhitra aau ?", "korean": "내가 안으로 들어갈까?" },
+          { "speaker": "B", "nepali": "आऊ, भित्र आउन हुन्छ।", "romanized": "aau, bhitra aauna hunchha.", "korean": "응, 들어와도 돼." },
+          { "speaker": "A", "nepali": "म यहाँ बसूँ ?", "romanized": "ma yahãã basu ?", "korean": "내가 여기 앉을까?" },
+          { "speaker": "B", "nepali": "हुन्छ, बस्न हुन्छ।", "romanized": "hunchha, basna hunchha.", "korean": "응, 앉아도 돼." },
+          { "speaker": "A", "nepali": "म यो हेरूँ ?", "romanized": "ma yo heru ?", "korean": "내가 이것을 봐도 될까?" },
+          { "speaker": "B", "nepali": "हेर्न हुन्छ, हेर्नोस्।", "romanized": "herna hunchha, hernos.", "korean": "봐도 돼, 보세요." }
+        ]
+      },
+      {
+        "title": "PART I: DIALOGUE (b) 가능성과 허용 (-na paainchha)",
+        "lines": [
+          { "speaker": "A", "nepali": "यो मन्दिरमा जान पाइन्छ ?", "romanized": "yo mandirmaa jaana paainchha ?", "korean": "이 사원에 들어가도 되나요/들어갈 수 있나요?" },
+          { "speaker": "B", "nepali": "पाइन्छ।", "romanized": "paainchha.", "korean": "네, 됩니다." },
+          { "speaker": "A", "nepali": "जो पनि जान पाइन्छ ?", "romanized": "jo pani jaana paainchha ?", "korean": "누구든지 갈 수 있나요?" },
+          { "speaker": "B", "nepali": "पाइन्छ।", "romanized": "paainchha.", "korean": "네, 갈 수 있습니다." },
+          { "speaker": "A", "nepali": "केटाकेटीहरू पनि ?", "romanized": "keTaakaeTiharu pani ?", "korean": "아이들도요?" },
+          { "speaker": "B", "nepali": "पाइन्छन्।", "romanized": "paainchhan.", "korean": "네, 갈 수 있습니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (a) 금지와 허가 비교",
+        "lines": [
+          { "speaker": "A", "nepali": "म यहाँ धुम्रपान गरूँ ?", "romanized": "ma yahãã dhumpaan garu ?", "korean": "여기서 담배를 피워도 될까요?" },
+          { "speaker": "B", "nepali": "पर्दैन, यहाँ धुम्रपान गर्न पाइँदैन।", "romanized": "pardaina, yahãã dhumpaan garna paaindaina.", "korean": "안 됩니다, 여기서는 담배를 피울 수 없습니다." },
+          { "speaker": "A", "nepali": "म बाहिर जाऊँ ?", "romanized": "ma baahira jaau ?", "korean": "제가 밖에 나가도 될까요?" },
+          { "speaker": "B", "nepali": "हुन्छ, जान हुन्छ।", "romanized": "hunchha, jaana hunchha.", "korean": "네, 나가도 됩니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (b) 물건 사용 허가",
+        "lines": [
+          { "speaker": "A", "nepali": "म यो कलमले लेखूँ ?", "romanized": "ma yo kalamle lekhu ?", "korean": "이 펜으로 써도 될까요?" },
+          { "speaker": "B", "nepali": "लेख्न हुन्छ, लेख्नोस्।", "romanized": "lekhna hunchha, lekhnos.", "korean": "써도 됩니다, 쓰세요." },
+          { "speaker": "A", "nepali": "म यो फूल छुऊँ ?", "romanized": "ma yo phul chhuvu ?", "korean": "이 꽃을 만져도 될까요?" },
+          { "speaker": "B", "nepali": "पर्दैन, फूल छुन पाइँदैन।", "romanized": "pardaina, phul chhunna paaindaina.", "korean": "안 됩니다, 꽃은 만지면 안 됩니다." }
+        ]
+      },
+      {
+        "title": "PART II: PRACTICE (c) 일반적인 가능성 (시장 상황)",
+        "lines": [
+          { "speaker": "A", "nepali": "बजारमा केरा पाइन्छ ?", "romanized": "bajaarmaa keraa paainchha ?", "korean": "시장에 바나나가 있나요/구할 수 있나요?" },
+          { "speaker": "B", "nepali": "पाइन्छ।", "romanized": "paainchha.", "korean": "네, 있습니다." },
+          { "speaker": "A", "nepali": "आलु नि ?", "romanized": "aalu ni ?", "korean": "감자는요?" },
+          { "speaker": "B", "nepali": "आलु पनि पाइन्छ।", "romanized": "aalu pani paainchha.", "korean": "감자도 있습니다." },
+          { "speaker": "A", "nepali": "आज चिनी पाइन्छ ?", "romanized": "aaja chini paainchha ?", "korean": "오늘 설탕을 구할 수 있나요?" },
+          { "speaker": "B", "nepali": "आज पाइँदैन, सिद्धियो।", "romanized": "aaja paaindaina, siddhiyo.", "korean": "오늘은 구할 수 없습니다, 다 떨어졌습니다." }
+        ]
+      }
+    ]
   }
 ]

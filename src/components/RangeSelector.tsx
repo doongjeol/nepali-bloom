@@ -15,9 +15,17 @@ export function RangeSelector({ min, max, initialStart, initialEnd, onSubmit, cl
   const [endText, setEndText] = useState(String(initialEnd ?? max));
   const [touched, setTouched] = useState(false);
 
+  const validate = (start: number, end: number): string | null => {
+    if (!Number.isInteger(start) || !Number.isInteger(end)) return "숫자만 입력해 주세요.";
+    if (start < min || start > max) return `시작 레슨은 ${min}~${max} 범위여야 합니다.`;
+    if (end < min || end > max) return `종료 레슨은 ${min}~${max} 범위여야 합니다.`;
+    if (start > end) return "시작 레슨은 종료 레슨보다 클 수 없습니다.";
+    return null;
+  };
+
   const parsed = useMemo(() => {
-    const start = Number(startText);
-    const end = Number(endText);
+    const start = Number.parseInt(startText, 10);
+    const end = Number.parseInt(endText, 10);
     return {
       start: Number.isFinite(start) ? start : NaN,
       end: Number.isFinite(end) ? end : NaN,
@@ -26,11 +34,7 @@ export function RangeSelector({ min, max, initialStart, initialEnd, onSubmit, cl
 
   const error = useMemo(() => {
     if (!touched) return null;
-    if (!Number.isInteger(parsed.start) || !Number.isInteger(parsed.end)) return "숫자만 입력해 주세요.";
-    if (parsed.start < min || parsed.start > max) return `시작 레슨은 ${min}~${max} 범위여야 합니다.`;
-    if (parsed.end < min || parsed.end > max) return `종료 레슨은 ${min}~${max} 범위여야 합니다.`;
-    if (parsed.start > parsed.end) return "시작 레슨은 종료 레슨보다 클 수 없습니다.";
-    return null;
+    return validate(parsed.start, parsed.end);
   }, [touched, parsed.start, parsed.end, min, max]);
 
   return (
@@ -44,6 +48,10 @@ export function RangeSelector({ min, max, initialStart, initialEnd, onSubmit, cl
           <input
             value={startText}
             onChange={(e) => { setTouched(true); setStartText(e.target.value); }}
+            type="number"
+            min={min}
+            max={max}
+            step={1}
             inputMode="numeric"
             className="w-full rounded-xl border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring/40"
             placeholder={`${min}`}
@@ -54,6 +62,10 @@ export function RangeSelector({ min, max, initialStart, initialEnd, onSubmit, cl
           <input
             value={endText}
             onChange={(e) => { setTouched(true); setEndText(e.target.value); }}
+            type="number"
+            min={min}
+            max={max}
+            step={1}
             inputMode="numeric"
             className="w-full rounded-xl border bg-background px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-ring/40"
             placeholder={`${max}`}
@@ -66,10 +78,13 @@ export function RangeSelector({ min, max, initialStart, initialEnd, onSubmit, cl
       <button
         type="button"
         className="mt-4 w-full rounded-xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground hover:bg-primary/90 active:scale-[0.99] transition-all disabled:opacity-60"
-        disabled={!!error}
+        disabled={touched && !!error}
         onClick={() => {
           setTouched(true);
-          if (error) return;
+          const nextError = validate(parsed.start, parsed.end);
+          if (nextError) return;
+          // eslint-disable-next-line no-console
+          console.log("[RangeSelector] submit:", { start: parsed.start, end: parsed.end });
           onSubmit({ start: parsed.start, end: parsed.end });
         }}
       >
@@ -78,4 +93,3 @@ export function RangeSelector({ min, max, initialStart, initialEnd, onSubmit, cl
     </div>
   );
 }
-

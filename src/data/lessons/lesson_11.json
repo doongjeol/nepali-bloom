@@ -1,0 +1,368 @@
+{
+  "id": 11,
+  "title": "Lesson 11",
+  "titleKo": "제11과",
+  "description": "과거의 상태나 위치를 나타내는 과거형 동사와 요일, 날짜, 생일 등을 묻고 답하는 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "आइतबार",
+      "romanized": "aitabaar",
+      "korean": "Sunday (일요일)"
+    },
+    {
+      "nepali": "आज",
+      "romanized": "aaja",
+      "korean": "today (오늘)"
+    },
+    {
+      "nepali": "अस्ति",
+      "romanized": "astI",
+      "korean": "day before yesterday (그저께)"
+    },
+    {
+      "nepali": "बार",
+      "romanized": "baara",
+      "korean": "day of the week (요일)"
+    },
+    {
+      "nepali": "बिहीबार",
+      "romanized": "bihibaar",
+      "korean": "Thursday (목요일)"
+    },
+    {
+      "nepali": "बुधबार",
+      "romanized": "budhabaar",
+      "korean": "Wednesday (수요일)"
+    },
+    {
+      "nepali": "गते",
+      "romanized": "gate",
+      "korean": "date (날짜 - 네팔력 기준)"
+    },
+    {
+      "nepali": "इतिहास",
+      "romanized": "itihaas",
+      "korean": "history (역사)"
+    },
+    {
+      "nepali": "जन्मदिवस",
+      "romanized": "janmadiwas",
+      "korean": "birthday (생일)"
+    },
+    {
+      "nepali": "मंगलबार",
+      "romanized": "mangalbaar",
+      "korean": "Tuesday (화요일)"
+    },
+    {
+      "nepali": "पर्सि",
+      "romanized": "parsi",
+      "korean": "day after tomorrow (내일모레)"
+    },
+    {
+      "nepali": "शुक्रबार",
+      "romanized": "shukrabaar",
+      "korean": "Friday (금요일)"
+    },
+    {
+      "nepali": "सोमबार",
+      "romanized": "sombaar",
+      "korean": "Monday (월요일)"
+    },
+    {
+      "nepali": "शिक्षा",
+      "romanized": "shichhyaa",
+      "korean": "education (교육)"
+    },
+    {
+      "nepali": "शनिबार",
+      "romanized": "shonibaar",
+      "korean": "Saturday (토요일)"
+    },
+    {
+      "nepali": "तारिख",
+      "romanized": "taarikh",
+      "korean": "date (날짜 - 서양력/태양력 기준)"
+    },
+    {
+      "nepali": "थिएँ",
+      "romanized": "thie",
+      "korean": "was / were (있었다/였다 - 과거 상태)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    "1. 요일 명칭: 모든 요일은 'baar'로 끝납니다. (예: Aitabaar, Sombaar 등)",
+    "2. 날짜 표현 (Gate vs Taarikh):\n   - Gate: 네팔 공식 달력(Bikram Sambat)의 날짜를 말할 때 씁니다.\n   - Taarikh: 서양 달력(Gregorian calendar)의 날짜를 말할 때 씁니다.",
+    "3. Be 동사의 과거형 (Status/Location):\n   - ma thiẽ (나는 ~였다/있었다)\n   - u thiyo (그는 ~였다/있었다)\n   - tapaai hunuhunthyo (당신은 ~였습니다/계셨습니다)\n   - 부정형: thiyena / hunuhunnathyo",
+    "4. 'Thiyo' vs 'Bhaeyo':\n   - Thiyo: 과거의 지속적인 상태나 위치 (He was a student).\n   - Bhaeyo: 과거에 일어난 사건이나 변화의 결과 (He became a student / It happened)."
+  ],
+  "quiz": [
+    {
+      "question": "'오늘'을 뜻하는 단어는?",
+      "options": [
+        "भोलि (bholi)",
+        "आज (aaja)",
+        "हिजो (hijo)",
+        "अस्ति (asti)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'일요일'을 뜻하는 단어는?",
+      "options": [
+        "सोमबार (sombaar)",
+        "मंगलबार (mangalbaar)",
+        "आइतबार (aitabaar)",
+        "शनिबार (shanibaar)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'생일'을 뜻하는 네팔어는?",
+      "options": [
+        "इतिहास (itihaas)",
+        "जन्मदिवस (janmadiwas)",
+        "गते (gate)",
+        "तारिख (taarikh)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'어제'를 뜻하는 단어는?",
+      "options": [
+        "आज (aaja)",
+        "भोलि (bholi)",
+        "पर्सि (parsi)",
+        "हिजो (hijo)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "네팔 공식 달력의 '날짜(일)'를 묻고 답할 때 쓰는 단어는?",
+      "options": [
+        "तारिख (taarikh)",
+        "गते (gate)",
+        "बार (baar)",
+        "महिना (mahinaa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'내일모레'를 의미하는 단어는?",
+      "options": [
+        "अस्ति (asti)",
+        "पर्सि (parsi)",
+        "भोलि (bholi)",
+        "हिजो (hijo)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'(과거에) 있었다/였다'를 뜻하는 be동사의 과거형은?",
+      "options": [
+        "छ (chha)",
+        "हो (ho)",
+        "थियो (thiyo)",
+        "हुनेछ (hunechha)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'오늘은 무슨 요일입니까?'의 올바른 네팔어 표현은?",
+      "options": [
+        "आज कति गते हो ? (aaja kati gate ho ?)",
+        "आज के बार हो ? (aaja ke baar ho ?)",
+        "हिजो के बार थियो ? (hijo ke baar thiyo ?)",
+        "तपाईंको जन्मदिवस कहिले हो ? (tapaaïko janmadiwas kahile ho ?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'역사'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "शिक्षा (shichhyaa)",
+        "इतिहास (itihaas)",
+        "जन्मदिवस (janmadiwas)",
+        "तारिख (taarikh)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'저는 학생이었습니다'의 올바른 표현은?",
+      "options": [
+        "म विद्यार्थी हुँ। (ma bidyaarthi hu.)",
+        "म विद्यार्थी थिएँ। (ma bidyaarthi thiẽ.)",
+        "म विद्यार्थी हुनेछु। (ma bidyaarthi hunechhu.)",
+        "ऊ विद्यार्थी थियो। (u bidyaarthi thiyo.)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 요일과 날짜",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "आज के बार हो ?",
+          "romanized": "aaja ke baar ho ?",
+          "korean": "오늘은 무슨 요일입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "आज आइतबार हो।",
+          "romanized": "aaja aitabaar ho.",
+          "korean": "오늘은 일요일입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "भोलि नि ?",
+          "romanized": "bholi ni ?",
+          "korean": "내일은요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "भोलि सोमबार हो।",
+          "romanized": "bholi sombaar ho.",
+          "korean": "내일은 월요일입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "हिजो के बार थियो ?",
+          "romanized": "hijo ke baar thiyo ?",
+          "korean": "어제는 무슨 요일이었습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हिजो शनिबार थियो।",
+          "romanized": "hijo shanibaar thiyo.",
+          "korean": "어제는 토요일이었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "आज कति गते हो ?",
+          "romanized": "aaja kati gate ho ?",
+          "korean": "오늘은 며칠입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "आज दस गते हो।",
+          "romanized": "aaja das gate ho.",
+          "korean": "오늘은 10일입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 생일 묻기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको जन्मदिवस कहिले हो ?",
+          "romanized": "tapaaïko janmadiwas kahile ho ?",
+          "korean": "당신의 생일은 언제입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो जन्मदिवस मार्च १५ तारिखमा हो।",
+          "romanized": "mero janmadiwas march 15 taarikhmaa ho.",
+          "korean": "제 생일은 3월 15일입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको घरमा को को हुनुहुन्छ ?",
+          "romanized": "tapaaïko gharmaa ko ko hunuhunchha ?",
+          "korean": "집에 가족 누가 계십니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो बा, आमा र दिदी।",
+          "romanized": "mero baa, aamaa ra didi.",
+          "korean": "아버지, 어머니, 그리고 누나(언니)가 있습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 과거의 위치/상태",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "हिजो तपाईं कहाँ हुनुहुन्थ्यो ?",
+          "romanized": "hijo tapaaï kahãã hunuhunthyo ?",
+          "korean": "어제 당신은 어디에 있었습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हिजो म आफ्नो डेरामा थिएँ।",
+          "romanized": "hijo ma aaphno Deraamaa thiẽ.",
+          "korean": "어제 저는 제 숙소에 있었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "हिजो तपाईंलाई सन्चो थियो ?",
+          "romanized": "hijo tapaaïlaai sancho thiyo ?",
+          "korean": "어제 몸 상태가 괜찮았나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "थिएन।",
+          "romanized": "thiyena.",
+          "korean": "아니요, 좋지 않았습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "के भएको थियो ?",
+          "romanized": "ke bhaeko thiyo ?",
+          "korean": "무슨 일이 있었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "ज्वरो आएको थियो।",
+          "romanized": "jwaro aaeko thiyo.",
+          "korean": "열이 났었습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 과거의 신분",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं अमेरिकामा के हुनुहुन्थ्यो ?",
+          "romanized": "tapaai amerikaamaa ke hunuhunthyo ?",
+          "korean": "당신은 미국에서 무엇이었습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म विद्यार्थी थिएँ।",
+          "romanized": "ma bidyaarthi thiẽ.",
+          "korean": "저는 학생이었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको साथी नि ?",
+          "romanized": "tapaaïko saathi ni ?",
+          "korean": "당신의 친구는요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "ऊ पनि विद्यार्थी नै थियो।",
+          "romanized": "u pani bidyaarthi nai thiyo.",
+          "korean": "그도 역시 학생이었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको विषय के थियो ?",
+          "romanized": "tapaaïko bishaya ke thiyo ?",
+          "korean": "당신의 전공/과목은 무엇이었습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मेरो विषय इतिहास थियो।",
+          "romanized": "mero bishaya itihaas thiyo.",
+          "korean": "제 전공은 역사였습니다."
+        }
+      ]
+    }
+  ]
+}

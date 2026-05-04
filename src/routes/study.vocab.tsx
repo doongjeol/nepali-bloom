@@ -1,22 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { RangeSelector } from "@/components/RangeSelector";
 import { useLessonRangeData } from "@/hooks/useLessonRangeData";
-import type { Vocabulary } from "@/data/lesson";
+import { WordStudyView } from "@/components/WordStudyView";
 import { cn } from "@/lib/utils";
+import { MAX_LESSON_ID, MIN_LESSON_ID } from "@/data/lessonsMeta";
 
-const MIN = 1;
-const MAX = 37;
+const MIN = MIN_LESSON_ID;
+const MAX = MAX_LESSON_ID;
 
 export const Route = createFileRoute("/study/vocab")({
   validateSearch: (search: Record<string, unknown>) => {
-    const start = typeof search.start === "string" ? Number(search.start) : undefined;
-    const end = typeof search.end === "string" ? Number(search.end) : undefined;
+    const startRaw = typeof search.start === "string" || typeof search.start === "number" ? Number(search.start) : undefined;
+    const endRaw = typeof search.end === "string" || typeof search.end === "number" ? Number(search.end) : undefined;
     return {
-      start: Number.isFinite(start) ? start : undefined,
-      end: Number.isFinite(end) ? end : undefined,
+      start: Number.isFinite(startRaw) ? startRaw : undefined,
+      end: Number.isFinite(endRaw) ? endRaw : undefined,
     };
   },
   component: StudyVocabPage,
@@ -25,22 +26,18 @@ export const Route = createFileRoute("/study/vocab")({
 function StudyVocabPage() {
   const navigate = Route.useNavigate();
   const search = Route.useSearch();
-  const range = search.start && search.end ? { start: search.start, end: search.end } : null;
+  const [isLearningMode, setIsLearningMode] = useState(false);
+  const start = search.start;
+  const end = search.end;
+  const range = typeof start === "number" && typeof end === "number" ? { start, end } : null;
+
+  // Auto-enter learning mode when query params exist
+  useEffect(() => {
+    if (range) setIsLearningMode(true);
+  }, [range?.start, range?.end]);
 
   const { isLoading, error, data } = useLessonRangeData(range, { minLessonId: MIN, maxLessonId: MAX });
-  const [sortMode, setSortMode] = useState<"shuffle" | "korean">("shuffle");
-
-  const vocab = useMemo(() => {
-    const list = data?.vocabulary ?? [];
-    if (sortMode === "korean") return [...list].sort((a, b) => a.korean.localeCompare(b.korean, "ko"));
-    // shuffle
-    const out = [...list];
-    for (let i = out.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [out[i], out[j]] = [out[j], out[i]];
-    }
-    return out;
-  }, [data?.vocabulary, sortMode]);
+  const lessonTitles = useMemo(() => (data?.lessons ?? []).map((l) => l.titleKo ?? `Lesson ${l.id}`), [data?.lessons]);
 
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
@@ -56,48 +53,66 @@ function StudyVocabPage() {
           </p>
         </div>
 
-        {!range && (
-          <RangeSelector min={MIN} max={MAX} onSubmit={({ start, end }) => navigate({ search: { start, end } })} />
+        {!isLearningMode && (
+          <RangeSelector
+            min={MIN}
+            max={MAX}
+            onSubmit={({ start, end }) => {
+              // eslint-disable-next-line no-console
+              console.log("[study.vocab] submit:", { start, end });
+              navigate({ search: { start, end } });
+              setIsLearningMode(true);
+            }}
+          />
         )}
 
-        {range && (
-          <div className="mb-4 flex items-center justify-between gap-2">
-            <div className="text-sm text-muted-foreground">
-              범위: <span className="font-semibold text-foreground">{range.start} ~ {range.end}</span>
-            </div>
-            <div className="flex items-center gap-2">
+        {isLearningMode && range && (
+          <div className="mb-4 rounded-3xl border bg-card p-4 shadow-sm">
+            <div className="flex flex-wrap items-center justify-between gap-2">
+              <div className="text-sm text-muted-foreground">
+                범위: <span className="font-semibold text-foreground">{range.start} ~ {range.end}</span>
+              </div>
               <button
                 type="button"
-                className={cn("rounded-lg px-3 py-1.5 text-xs font-medium transition-colors", sortMode === "shuffle" ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground")}
-                onClick={() => setSortMode("shuffle")}
+                className="rounded-xl bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground hover:bg-accent active:scale-[0.99] transition-all"
+                onClick={() => {
+                  // eslint-disable-next-line no-console
+                  console.log("[study.vocab] reset range");
+                  navigate({ search: { start: undefined, end: undefined } });
+                  setIsLearningMode(false);
+                }}
               >
-                랜덤(Shuffle)
-              </button>
-              <button
-                type="button"
-                className={cn("rounded-lg px-3 py-1.5 text-xs font-medium transition-colors", sortMode === "korean" ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground")}
-                onClick={() => setSortMode("korean")}
-              >
-                가나다순
+                범위 다시 정하기
               </button>
             </div>
+            {lessonTitles.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {lessonTitles.map((t, i) => (
+                  <span key={`${t}-${i}`} className="rounded-full border border-[#D7DEE8] bg-[#E2E8F0] px-2.5 py-0.5 text-[10px] sm:text-xs font-medium tracking-wide text-[#4A5568]">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         )}
 
         {isLoading && <LoadingSpinner />}
         {error && <div className="rounded-2xl border bg-card p-6 text-sm text-destructive shadow-sm">{error}</div>}
 
-        {data && (
-          <div className="grid gap-2 sm:grid-cols-2">
-            {vocab.map((w: Vocabulary, idx) => (
-              <div key={idx} className="rounded-xl border bg-card p-4 shadow-sm">
-                <p className="text-lg font-bold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
-                  {w.nepali}
-                </p>
-                <p className="mt-0.5 text-xs text-muted-foreground italic">{w.romanized}</p>
-                <p className="mt-1 text-sm text-foreground">{w.korean}</p>
-              </div>
-            ))}
+        {isLearningMode && range && data && (
+          data.lessons.length === 0 ? (
+            <div className="rounded-2xl border bg-card p-8 text-sm text-muted-foreground shadow-sm">
+              선택한 범위에 레슨 데이터가 없어요. (현재 데이터: {data.range.start}~{data.range.end})
+            </div>
+          ) : (
+            <WordStudyView lessons={data.lessons} range={data.range} />
+          )
+        )}
+
+        {isLearningMode && range && !data && !error && (
+          <div className="rounded-2xl border bg-card p-8 text-sm text-muted-foreground shadow-sm">
+            학습 데이터를 준비 중입니다...
           </div>
         )}
       </main>
