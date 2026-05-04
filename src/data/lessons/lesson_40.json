@@ -1,0 +1,236 @@
+{
+  "id": 40,
+  "title": "Lesson 40",
+  "titleKo": "제40과",
+  "description": "미래의 불확실한 행동이나 화자의 추측을 나타내는 어미(-laa)와 'holaa', 'bhannai sakindaina' 등의 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "अनुमान",
+      "romanized": "anumaan",
+      "korean": "guess, estimation (추측, 어림잡음)"
+    },
+    {
+      "nepali": "भन्नै सकिँदैन",
+      "romanized": "bhannai sakindaina",
+      "korean": "cannot even say (확답할 수 없다, 말할 수조차 없다)"
+    },
+    {
+      "nepali": "डर",
+      "romanized": "dar",
+      "korean": "fear (두려움, 무서움)"
+    },
+    {
+      "nepali": "दुवै",
+      "romanized": "dubai",
+      "korean": "both (둘 다)"
+    },
+    {
+      "nepali": "गाडी",
+      "romanized": "gaadi",
+      "korean": "vehicle, car (차, 탈것)"
+    },
+    {
+      "nepali": "होला",
+      "romanized": "holaa",
+      "korean": "maybe, probably (~일 것이다, ~일지도 모른다)"
+    },
+    {
+      "nepali": "पछुतो",
+      "romanized": "pachhuto",
+      "korean": "regret (후회)"
+    },
+    {
+      "nepali": "पुग्नु",
+      "romanized": "pugnu",
+      "korean": "to reach, to arrive (도착하다)"
+    },
+    {
+      "nepali": "रोग",
+      "romanized": "rog",
+      "korean": "disease, illness (병, 질병)"
+    },
+    {
+      "nepali": "समय",
+      "romanized": "samaya",
+      "korean": "time (시간)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 미래 추측 어미 (-laa / -laan)",
+      "details": [
+        "불확실한 미래나 화자의 추측을 나타낼 때 사용합니다 (~할 것이다 / ~일 것 같다).",
+        "- ma aaűlaa (내가 올 것이다), u aaulaa (그가 올 것이다), uniharu aaulaan (그들이 올 것이다)."
+      ]
+    },
+    {
+      "title": "2. ~laa jasto chha",
+      "details": [
+        "\"~할 것 같다\"는 뜻으로 추측의 의미를 한층 더 부드럽게 강화합니다.",
+        "- 예: paani parlaa jasto chha (비가 올 것 같다)."
+      ]
+    },
+    {
+      "title": "3. Bhannai sakindaina",
+      "details": [
+        "\"말할 수 없다\"는 뜻에서 나아가, 상황이 유동적이어서 \"확답/장담할 수 없다\"는 의미로 자주 쓰입니다."
+      ]
+    },
+    {
+      "title": "4. Holaa (Maybe)",
+      "details": [
+        "문장 끝에 붙어 \"아마도 ~일 것이다\"라는 추측을 나타냅니다.",
+        "- 예: u gharmaa holaa (그는 아마 집에 있을 것이다)."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "불확실한 미래나 화자의 추측(~할 것이다/일 것 같다)을 나타낼 때 사용하는 동사 어미는?",
+      "options": [
+        "-नेछ (-nechhu)",
+        "-ला / -लान् (-laa / -laan)",
+        "-दाखेरि (-daakheri)",
+        "-दै (-dai)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'추측'이나 '어림잡음'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "डर (dar)",
+        "रोग (rog)",
+        "समय (samaya)",
+        "अनुमान (anumaan)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "\"확답할 수 없다(말할 수조차 없다)\"라는 뜻으로 유동적인 상황에 쓰이는 표현은?",
+      "options": [
+        "भन्नै सकिँदैन (bhannai sakindaina)",
+        "हुन त (hunu ta)",
+        "जस्तो छ (jasto chha)",
+        "पछुतो (pachhuto)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "문장 끝에 붙어 '아마도 ~일 것이다'라는 추측을 나타내는 단어는?",
+      "options": [
+        "पनि (pani)",
+        "होला (holaa)",
+        "नि (ni)",
+        "त (ta)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "추측형 어미(-laa) 뒤에 붙어 '~할 것 같다'는 뉘앙스를 강화하는 표현은?",
+      "options": [
+        "जस्तो छ (jasto chha)",
+        "भने (bhane)",
+        "मात्रै (maatrai)",
+        "सकिन्छ (sakinchha)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'도착하다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "खोज्नु (khojnu)",
+        "पुग्नु (pugnu)",
+        "मर्नु (marnu)",
+        "पाउनु (paaunu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'두려움'이나 '무서움'을 뜻하는 네팔어는?",
+      "options": [
+        "डर (dar)",
+        "पछुतो (pachhuto)",
+        "समय (samaya)",
+        "रोग (rog)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'후회'를 뜻하는 단어는?",
+      "options": [
+        "अनुमान (anumaan)",
+        "दुवै (dubai)",
+        "पछुतो (pachhuto)",
+        "गाडी (gaadi)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'차'나 '탈것'을 의미하는 네팔어 단어는?",
+      "options": [
+        "हवाई जहाज (hawaai jahaaj)",
+        "गाडी (gaadi)",
+        "बाटो (baaTo)",
+        "समय (samaya)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'비가 올 것 같습니다'를 네팔어로 바르게 표현한 것은?",
+      "options": [
+        "पानी पर्ला जस्तो छ। (paani parlaa jasto chha.)",
+        "पानी पर्यो। (paani paryo.)",
+        "पानी पर्नेछ। (paani parnechha.)",
+        "पानी पर्दैछ। (paani pardaichha.)"
+      ],
+      "answer": 0
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 여행 시간 추측 (holaa / laa)",
+      "lines": [
+        { "speaker": "A", "nepali": "काठमाडौंबाट पोखरा पुग्न कति घण्टा लाग्ला ?", "romanized": "kaaThmaaNDubaaTa pokharaa pugna kati ghanTaa laaglaa ?", "korean": "카트만두에서 포카라까지 도착하는 데 몇 시간이나 걸릴까요?" },
+        { "speaker": "B", "nepali": "गाडीमा गयो भने छ-सात घण्टा लाग्ला।", "romanized": "gaadimaa gayo bhane chha-saat ghanTaa laaglaa.", "korean": "차로 가면 6~7시간 정도 걸릴 겁니다." },
+        { "speaker": "A", "nepali": "हवाई जहाजमा नि ?", "romanized": "hawaai jahaajmaa ni ?", "korean": "비행기로는요?" },
+        { "speaker": "B", "nepali": "हवाई जहाजमा त एक घण्टा पनि नलाग्ला।", "romanized": "hawaai jahaajmaa ta ek ghanTaa pani na-laaglaa.", "korean": "비행기로는 한 시간도 채 안 걸릴 겁니다." },
+        { "speaker": "A", "nepali": "भोलि पानी पर्ला जस्तो छ ?", "romanized": "bholi paani parlaa jasto chha ?", "korean": "내일 비가 올 것 같나요?" },
+        { "speaker": "B", "nepali": "पर्ला जस्तो छ।", "romanized": "parlaa jasto chha.", "korean": "올 것 같습니다." }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 불확실한 결과와 대답",
+      "lines": [
+        { "speaker": "A", "nepali": "तपाईं भोलि आउनुहुन्छ ?", "romanized": "tapaai bholi aaunuhunchha ?", "korean": "당신 내일 오실 건가요?" },
+        { "speaker": "B", "nepali": "भोलि त भन्नै सकिँदैन।", "romanized": "bholi ta bhannai sakindaina.", "korean": "내일 일은 장담할 수 없네요." },
+        { "speaker": "A", "nepali": "किन ?", "romanized": "kina ?", "korean": "왜요?" },
+        { "speaker": "B", "nepali": "काम सिद्धियो भने आउँछु, नसिद्धिए आउन सक्दिनँ।", "romanized": "kaam siddhiyo bhane aauchhu, nasiddhie aauna sakdina.", "korean": "일이 끝나면 오겠지만, 안 끝나면 못 옵니다." },
+        { "speaker": "A", "nepali": "तपाईं नेपालमा बस्दाखेरि बिरामी हुनुभयो ?", "romanized": "tapaai nepaalmaa basdaakheri birami hunubhayo ?", "korean": "네팔에 있을 때 아픈 적이 있었나요?" },
+        { "speaker": "B", "nepali": "भएँ, एकपटक साह्रै बिरामी भएँ।", "romanized": "bhayé, ekpaTak saarhai birami bhayé.", "korean": "네, 한번은 아주 심하게 아팠어요." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 미래의 추측 표현 (-laa)",
+      "lines": [
+        { "speaker": "A", "nepali": "भोलि धूप लाग्ला ?", "romanized": "bholi dhuup laaglaa ?", "korean": "내일 해가 날까요?" },
+        { "speaker": "B", "nepali": "लाग्ला जस्तो छ।", "romanized": "laaglaa jasto chha.", "korean": "날 것 같습니다." },
+        { "speaker": "A", "nepali": "ऊ भोलि आउला ?", "romanized": "u bholi aaulaa ?", "korean": "그가 내일 올까요?" },
+        { "speaker": "B", "nepali": "आउला।", "romanized": "aaulaa.", "korean": "아마 올 겁니다." },
+        { "speaker": "A", "nepali": "तिनीहरू कहिले फर्कलान् ?", "romanized": "tiniharu kahile pharkalaan ?", "korean": "그들은 언제 돌아올까요?" },
+        { "speaker": "B", "nepali": "भोलि फर्कलान्।", "romanized": "bholi pharkalaan.", "korean": "내일 돌아올 겁니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 가능성과 불확실성",
+      "lines": [
+        { "speaker": "A", "nepali": "त्यो काम गर्न सकिएला ?", "romanized": "tyo kaam garna sakiyelaa ?", "korean": "그 일을 할 수 있을까요?" },
+        { "speaker": "B", "nepali": "सकिएला जस्तो छ।", "romanized": "sakiyelaa jasto chha.", "korean": "할 수 있을 것 같습니다." },
+        { "speaker": "A", "nepali": "उसलाई यो कुरा थाहा होला ?", "romanized": "uslaai yo kuraa thahaa holaa ?", "korean": "그가 이 사실을 알까요?" },
+        { "speaker": "B", "nepali": "होला।", "romanized": "holaa.", "korean": "아마 알 겁니다." },
+        { "speaker": "A", "nepali": "भोलि बिहान छिटै उठ्न सकिएला ?", "romanized": "bholi bihaana chhiTai uThna sakiyelaa ?", "korean": "내일 아침 일찍 일어날 수 있을까요?" },
+        { "speaker": "B", "nepali": "सकिएला।", "romanized": "sakiyelaa.", "korean": "그럴 수 있을 겁니다." }
+      ]
+    }
+  ]
+}
