@@ -226,33 +226,31 @@ export function PronunciationStudy() {
 
           {detailTab === "card" ? (
             <div key="tab-card" className="mt-4 animate-in fade-in duration-200">
-              <div className="rounded-2xl border bg-card p-4 sm:p-5">
-                <div className="flex items-start justify-between gap-3">
-                  <div className="min-w-0">
-                    <p
-                      className="text-5xl font-extrabold leading-none text-foreground sm:text-6xl"
-                      style={{ fontFamily: "var(--font-nepali)" }}
-                    >
-                      {selectedItem.char}
-                    </p>
-                    <p className="mt-3 text-sm font-semibold text-foreground">{selectedItem.romanized}</p>
-                    <p className="mt-1 text-sm font-bold text-primary">{selectedItem.phonetic}</p>
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      void audioPlayer.play(
-                        `pron-${makeId(selectedItem)}`,
-                        getPronunciationAudioPath(selectedItem.audio),
-                        { silentError: true },
-                      )
-                    }
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-secondary-foreground shadow-sm transition-all hover:bg-accent active:scale-[0.98]"
-                    aria-label="발음 음성 재생"
+              <div className="flex items-start justify-between gap-3 rounded-2xl border bg-muted/20 p-4 sm:p-5">
+                <div className="min-w-0">
+                  <p
+                    className="text-5xl font-extrabold leading-none text-foreground sm:text-6xl"
+                    style={{ fontFamily: "var(--font-nepali)" }}
                   >
-                    <Volume2 className="h-5 w-5" />
-                  </button>
+                    {selectedItem.char}
+                  </p>
+                  <div className="mt-3 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                    <span className="text-sm font-semibold text-foreground">{selectedItem.romanized}</span>
+                    <span className="text-sm font-bold text-primary">{selectedItem.phonetic}</span>
+                  </div>
                 </div>
+                <button
+                  type="button"
+                  onClick={() =>
+                    void audioPlayer.play(`pron-${makeId(selectedItem)}`, getPronunciationAudioPath(selectedItem.audio), {
+                      silentError: true,
+                    })
+                  }
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-secondary-foreground shadow-sm transition-all hover:bg-accent active:scale-[0.98]"
+                  aria-label="발음 음성 재생"
+                >
+                  <Volume2 className="h-5 w-5" />
+                </button>
               </div>
             </div>
           ) : (

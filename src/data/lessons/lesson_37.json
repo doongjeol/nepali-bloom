@@ -1,0 +1,229 @@
+{
+  "id": 37,
+  "title": "Lesson 37",
+  "titleKo": "제37과",
+  "description": "네팔의 일반적인 정보(인구, 직업, 교통 등)와 간접 화법(Reported Speech), 그리고 미래 시제 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "अनेकौँ",
+      "romanized": "anekaű",
+      "korean": "several (여러/다양한)"
+    },
+    {
+      "nepali": "व्यवस्था",
+      "romanized": "byawasthaa",
+      "korean": "system (시스템/체제)"
+    },
+    {
+      "nepali": "क्षेत्र",
+      "romanized": "chhetra",
+      "korean": "region, area (지역/구역)"
+    },
+    {
+      "nepali": "जनसंख्या",
+      "romanized": "janasankhyaa",
+      "korean": "population (인구)"
+    },
+    {
+      "nepali": "करोड",
+      "romanized": "karoD",
+      "korean": "ten million (천만 - 10,000,000)"
+    },
+    {
+      "nepali": "कृषि",
+      "romanized": "krishi",
+      "korean": "agriculture (농업)"
+    },
+    {
+      "nepali": "लाख",
+      "romanized": "laakh",
+      "korean": "one hundred thousand (십만 - 100,000)"
+    },
+    {
+      "nepali": "पेशा",
+      "romanized": "peshaa",
+      "korean": "occupation (직업)"
+    },
+    {
+      "nepali": "प्रतिशत",
+      "romanized": "pratisat",
+      "korean": "percent (퍼센트/%)"
+    },
+    {
+      "nepali": "राजमार्ग",
+      "romanized": "raajmaarga",
+      "korean": "highway (고속도로)"
+    },
+    {
+      "nepali": "यातायात",
+      "romanized": "yaataayaat",
+      "korean": "transportation (교통/운송)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 간접 화법 (Reported Speech)",
+      "details": [
+        "말한 내용을 전달할 때 인용구 끝에 'bhanera'(~라고)를 붙입니다.",
+        "- 구어체에서는 문장 끝에 're'를 붙여 전해 들은 정보임을 나타내기도 합니다."
+      ]
+    },
+    {
+      "title": "2. 미래 조건 시제 (-laa form)",
+      "details": [
+        "미래의 막연한 행동이나 추측을 나타냅니다 (~할 것이다 / ~일 것 같다).",
+        "- 예: ma bholi aaűlaa (내일 오겠습니다), parlaa jasto chha (비가 올 것 같습니다)."
+      ]
+    },
+    {
+      "title": "3. 미래 확정 시제 (-nechhu form)",
+      "details": [
+        "공식적인 발표, 뉴스, 강한 약속이나 예언에 사용됩니다.",
+        "- 예: paani parnechha (비가 내릴 것입니다 - 일기예보)."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "간접 화법에서 다른 사람이 한 말을 전달할 때 인용구 끝에 붙이는 단어는?",
+      "options": [
+        "भनेर (bhanera)",
+        "ला (laa)",
+        "त (ta)",
+        "पनि (pani)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "네팔어로 '인구'를 뜻하는 단어는?",
+      "options": [
+        "जनसंख्या (janasankhyaa)",
+        "कृषि (krishi)",
+        "पेशा (peshaa)",
+        "क्षेत्र (chhetra)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "네팔어로 '농업'을 뜻하는 단어는?",
+      "options": [
+        "यातायात (yaataayaat)",
+        "कृषि (krishi)",
+        "राजमार्ग (raajmaarga)",
+        "पेशा (peshaa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "숫자 '천만 (10,000,000)'을 나타내는 단위는?",
+      "options": [
+        "लाख (laakh)",
+        "करोड (karoD)",
+        "हजार (hajaar)",
+        "सय (sae)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "숫자 '십만 (100,000)'을 나타내는 단위는?",
+      "options": [
+        "लाख (laakh)",
+        "करोड (karoD)",
+        "हजार (hajaar)",
+        "सय (sae)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'교통'이나 '운송'을 뜻하는 네팔어는?",
+      "options": [
+        "राजमार्ग (raajmaarga)",
+        "यातायात (yaataayaat)",
+        "पेशा (peshaa)",
+        "व्यवस्था (byawasthaa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "미래의 막연한 행동이나 추측(~할 것이다/일 것 같다)을 나타내는 시제 형태는?",
+      "options": [
+        "-नेछ (-nechhu form)",
+        "-ला (-laa form)",
+        "-एको (-eko)",
+        "-दै (-dai)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "일기예보, 뉴스 등 공식적인 발표나 강한 약속에서 사용하는 미래 시제 형태는?",
+      "options": [
+        "-ला (-laa form)",
+        "-नेछ (-nechhu form)",
+        "-दाखेरि (-daakheri)",
+        "-ने (-ne)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'고속도로'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "क्षेत्र (chhetra)",
+        "राजमार्ग (raajmaarga)",
+        "पेशा (peshaa)",
+        "अनेकौँ (anekaű)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'그가 온다고 말했다'를 바르게 작문한 것은?",
+      "options": [
+        "ऊ आयो। (u aayo.)",
+        "उसले आउँछु भनेर भन्यो। (usle aauchhu bhanera bhanyo.)",
+        "उसले आउनेछ। (usle aaunechha.)",
+        "ऊ आउँछ त। (u aauchha ta.)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: GENERAL KNOWLEDGE (a) 인구와 직업",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपालको जनसंख्या कति छ ?", "romanized": "nepaalko janasankhyaa kati chha ?", "korean": "네팔의 인구는 얼마인가요?" },
+        { "speaker": "B", "nepali": "करिब दुई करोड तीस लाख।", "romanized": "karib dui karoD tis laakh.", "korean": "약 2,300만 명입니다." },
+        { "speaker": "A", "nepali": "धेरै जसो नेपालीहरूको पेशा के हो ?", "romanized": "dherai jaso nepaaliharuko pesaa ke ho ?", "korean": "대부분 네팔인의 직업은 무엇인가요?" },
+        { "speaker": "B", "nepali": "कृषि।", "romanized": "krishi.", "korean": "농업입니다." },
+        { "speaker": "A", "nepali": "कति प्रतिशत नेपालीहरू साक्षर छन् ?", "romanized": "kati pratishat nepaaliharu saakchhyar chhan ?", "korean": "네팔인의 문해율은 몇 퍼센트인가요?" },
+        { "speaker": "B", "nepali": "बयालीस।", "romanized": "bayaalis.", "korean": "42%입니다." }
+      ]
+    },
+    {
+      "title": "PART I: GENERAL KNOWLEDGE (b) 교통과 정치",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपालमा यातायातको व्यवस्था कस्तो छ नि ?", "romanized": "nepaalmaa yaataayaatko byawasthaa kasto chha ni?", "korean": "네팔의 교통 체계는 어떠한가요?" },
+        { "speaker": "B", "nepali": "एउटा पूर्व-पश्चिम राजमार्ग छ। पहाडी क्षेत्रका अनेकौँ ठाउँहरूमा हवाई जहाजबाट पनि पुग्न सकिन्छ।", "romanized": "euTaa purba pashchim raajmaarg chha. pahaaDi chhetrakaa anekaű Thaauharumaa hawaai jahaajbaaTa pani pugna sakinchha.", "korean": "동서 고속도로가 하나 있습니다. 또한 산악 지역의 여러 장소는 비행기로도 갈 수 있습니다." },
+        { "speaker": "A", "nepali": "नेपालमा कस्तो राजनैतिक व्यवस्था छ ?", "romanized": "nepaalmaa kasto raajnaitik byawasthaa chha ?", "korean": "네팔의 정치 체제는 어떠한가요?" },
+        { "speaker": "B", "nepali": "संवैधानिक राजतन्त्र।", "romanized": "sambaidhaanik raajtantra.", "korean": "입헌 군주제입니다." }
+      ]
+    },
+    {
+      "title": "PART II: REPORTED SPEECH (a) 메시지 전달 (bhanera)",
+      "lines": [
+        { "speaker": "A", "nepali": "के भन्नुभयो त ?", "romanized": "ke bhannu bhayo ta ?", "korean": "뭐라고 말씀하셨나요?" },
+        { "speaker": "B", "nepali": "भोलि आउनुहोला भनेर भनेँ।", "romanized": "bholi aaunu holaa bhanera bhane.", "korean": "내일 오시라고 말했습니다." },
+        { "speaker": "A", "nepali": "उसले के भन्यो त ?", "romanized": "usle ke bhanyo ta ?", "korean": "그가 뭐라고 하던가요?" },
+        { "speaker": "B", "nepali": "आउँछु भनेर भन्यो।", "romanized": "aauchhu bhanera bhanyo.", "korean": "온다고 말했습니다." }
+      ]
+    },
+    {
+      "title": "PART II: REPORTED SPEECH (b) 병원 진료 결과",
+      "lines": [
+        { "speaker": "A", "nepali": "डाक्टरले के भन्यो त ?", "romanized": "DaakTarle ke bhanyo ta ?", "korean": "의사가 뭐라고 하던가요?" },
+        { "speaker": "B", "nepali": "पेटमा जुका परेको छ भनेर भन्यो।", "romanized": "peTmaa jukaa parekochha bhanera bhanyo.", "korean": "배에 기생충이 있다고 말했습니다." },
+        { "speaker": "A", "nepali": "औषधी दियो त ?", "romanized": "ausadhi diyo ta ?", "korean": "약을 주던가요?" },
+        { "speaker": "B", "nepali": "दिएन, भोलि आउनुस् भन्यो।", "romanized": "diena, bholi aaunus bhanyo.", "korean": "아니요, 내일 오라고 했습니다." }
+      ]
+    }
+  ]
+}
