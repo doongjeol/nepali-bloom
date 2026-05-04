@@ -71,6 +71,8 @@ function StudyQuizPage() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const [score, setScore] = useState({ correct: 0, total: 0 });
+  const [quizLimit, setQuizLimit] = useState(10);
+  const [isFinished, setIsFinished] = useState(false);
 
   const pool = useMemo(() => {
     const lessons = data?.lessons ?? [];
@@ -166,6 +168,7 @@ function StudyQuizPage() {
     setSelectedId(null);
     setRevealed(false);
     setScore({ correct: 0, total: 0 });
+    setIsFinished(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data?.range.start, data?.range.end]);
 
@@ -173,16 +176,27 @@ function StudyQuizPage() {
     if (!question || revealed) return;
     setSelectedId(valueId);
     setRevealed(true);
-    setScore((s) => ({
-      total: s.total + 1,
-      correct: s.correct + (valueId === question.answerId ? 1 : 0),
-    }));
+    setScore((s) => {
+      const nextTotal = s.total + 1;
+      const nextCorrect = s.correct + (valueId === question.answerId ? 1 : 0);
+      if (nextTotal >= quizLimit) setIsFinished(true);
+      return { total: nextTotal, correct: nextCorrect };
+    });
   };
 
   const next = () => {
+    if (isFinished) return;
     setQuestion(makeQuestion());
     setSelectedId(null);
     setRevealed(false);
+  };
+
+  const restart = () => {
+    setQuestion(makeQuestion());
+    setSelectedId(null);
+    setRevealed(false);
+    setScore({ correct: 0, total: 0 });
+    setIsFinished(false);
   };
 
   return (
@@ -206,8 +220,27 @@ function StudyQuizPage() {
             <div className="text-sm text-muted-foreground">
               범위: <span className="font-semibold text-foreground">{range.start} ~ {range.end}</span>
             </div>
-            <div className="text-xs text-muted-foreground">
-              점수: <span className="font-semibold text-foreground">{score.correct}</span> / {score.total}
+            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+              <span>
+                문제: <span className="font-semibold text-foreground">{Math.min(score.total + 1, quizLimit)}</span> /{" "}
+                {quizLimit}
+              </span>
+              <span>
+                점수: <span className="font-semibold text-foreground">{score.correct}</span> / {quizLimit}
+              </span>
+              <select
+                value={quizLimit}
+                onChange={(e) => setQuizLimit(Number(e.target.value))}
+                className="rounded-lg border bg-card px-2 py-1 text-xs text-foreground"
+                aria-label="문제 수 선택"
+                disabled={score.total > 0}
+              >
+                {[5, 10, 15, 20].map((n) => (
+                  <option key={n} value={n}>
+                    {n}문제
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         )}
@@ -221,7 +254,33 @@ function StudyQuizPage() {
           </div>
         )}
 
-        {data && question && (
+        {data && isFinished && (
+          <div className="rounded-2xl border bg-card p-8 text-center shadow-sm">
+            <div className="mb-3 text-4xl sm:text-5xl">🎉</div>
+            <h2 className="mb-2 text-xl font-bold text-foreground sm:text-2xl">퀴즈 완료!</h2>
+            <p className="mb-6 text-base text-muted-foreground sm:text-lg">
+              <span className="font-semibold text-primary">{score.correct}</span> / {quizLimit} 정답
+            </p>
+            <div className="flex flex-col justify-center gap-3 sm:flex-row">
+              <button
+                type="button"
+                onClick={restart}
+                className="inline-flex items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 active:scale-95"
+              >
+                다시 하기
+              </button>
+              <Link
+                to="/study"
+                search={{ start: search.start, end: search.end }}
+                className="inline-flex items-center justify-center rounded-xl bg-secondary px-6 py-3 text-sm font-semibold text-secondary-foreground shadow-sm transition-all hover:bg-accent active:scale-95"
+              >
+                범위 학습으로
+              </Link>
+            </div>
+          </div>
+        )}
+
+        {data && question && !isFinished && (
           <div className="rounded-2xl border bg-card p-5 shadow-sm">
             <div className="rounded-2xl border border-[#E7D7CF] bg-[#FDF2F0] p-4 sm:p-5">
               <div className="flex items-start gap-3">

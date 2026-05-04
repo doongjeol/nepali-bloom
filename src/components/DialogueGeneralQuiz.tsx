@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 import { CheckCircle2, XCircle } from "lucide-react";
+import globalVocab from "@/data/vocabulary.json";
 
 type DialogueLineWithMeta = {
   dIdx: number;
@@ -17,6 +18,16 @@ type WordToken = {
   id: string;
   word: string;
 };
+
+type VocabularyItem = {
+  romanized: string;
+  korean: string;
+};
+
+function normalizeRomanizedWord(word: string) {
+  // Keep unicode letters (ā ī ū ñ etc.), remove punctuation/numbers/spaces.
+  return word.normalize("NFKD").replace(/[^\p{L}]/gu, "").toLowerCase();
+}
 
 // 유틸리티: 배열 랜덤 셔플
 export function shuffleArray<T>(arr: T[]): T[] {
@@ -47,11 +58,13 @@ export function extractQuizLines(dialogues: any[]): DialogueLineWithMeta[] {
 export function DialogueGeneralQuiz({
   dialogues,
   lessonId,
+  vocabulary,
   audioPlayer,
   onClose,
 }: {
   dialogues: any[];
   lessonId: number | string;
+  vocabulary?: VocabularyItem[];
   audioPlayer: any;
   onClose: () => void;
 }) {
@@ -104,7 +117,7 @@ export function DialogueGeneralQuiz({
     // 4. 성능 및 예외 처리: 에러를 뱉지 않고 조용히 넘어가도록 try-catch 적용
     try {
       // 특수문자 제거 후 파일명 규칙에 맞게 소문자로 변환 (예: /audio/lesson_1/kholnu.mp3)
-      const cleanWord = token.word.replace(/[^a-zA-Z]/g, "").toLowerCase();
+      const cleanWord = normalizeRomanizedWord(token.word);
       const itemId = `token-${token.id}`;
       const src = getVocabAudioPath(lessonId, cleanWord);
 
@@ -164,10 +177,7 @@ export function DialogueGeneralQuiz({
         if (!hasErrorOnCurrent) {
           setScore((s) => s + 1);
         }
-        // 정답 시 오디오 자동 재생
-        const itemId = `dial-quiz-${lessonId}-${line.dIdx}-${line.lIdx}`;
-        const src = getDialogueAudioPath(lessonId, line.dIdx, line.lIdx);
-        void audioPlayer.play(itemId, src, { silentError: true });
+        // 정답 시 오디오 자동 재생은 하지 않음 (파일 누락/소음 방지)
       } else {
         setIsError(true);
         setHasErrorOnCurrent(true);
@@ -209,6 +219,16 @@ export function DialogueGeneralQuiz({
   }
 
   const line = quizLines[currentStep];
+  const vocabMap = new Map<string, string>();
+  for (const v of globalVocab as any[]) {
+    if (!v?.romanized || !v?.korean) continue;
+    vocabMap.set(normalizeRomanizedWord(String(v.romanized)), String(v.korean));
+  }
+  for (const v of vocabulary ?? []) {
+    vocabMap.set(normalizeRomanizedWord(v.romanized), v.korean);
+  }
+
+  const uniqueTokens = Array.from(new Set(line.parsedWords.map((w) => w.trim()).filter(Boolean)));
 
   return (
     <div className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
@@ -237,6 +257,25 @@ export function DialogueGeneralQuiz({
           </button>
         ))}
       </div>
+
+      {isSuccess && (
+        <div className="mb-6 rounded-xl border bg-muted/20 p-4">
+          <p className="mb-2 text-xs font-semibold text-muted-foreground">단어 뜻</p>
+          <div className="flex flex-wrap gap-2">
+            {uniqueTokens.map((raw) => {
+              const key = normalizeRomanizedWord(raw);
+              const meaning = vocabMap.get(key) ?? "뜻 없음";
+              return (
+                <span key={raw} className="rounded-lg border bg-card px-3 py-1.5 text-sm">
+                  <span className="font-semibold text-foreground">{raw}</span>
+                <span className="mx-1 text-muted-foreground">·</span>
+                <span className="text-muted-foreground">{meaning}</span>
+              </span>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* 단어 풀 영역 */}
       <div className="mb-6 flex flex-wrap justify-center gap-2">

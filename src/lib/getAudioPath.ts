@@ -1,7 +1,19 @@
 export type AudioItemKind = "vocab" | "dial" | "example";
 
 function formatAudioUrl(path: string) {
-  return encodeURI(path.toLowerCase());
+  const normalized = encodeURI(path.toLowerCase());
+  // Ensure public assets respect Vite base path in production builds.
+  // If BASE_URL is "/", keep absolute paths as-is.
+  const base = (import.meta as any)?.env?.BASE_URL as string | undefined;
+  const baseUrl = typeof base === "string" ? base : "/";
+  if (baseUrl !== "/" && normalized.startsWith("/")) {
+    return `${baseUrl.replace(/\/$/, "")}${normalized}`;
+  }
+  return normalized;
+}
+
+export function getPronunciationAudioPath(audioPath: string): string {
+  return formatAudioUrl(audioPath);
 }
 
 export function getVocabAudioPath(lessonId: number | string, romanized: string): string {

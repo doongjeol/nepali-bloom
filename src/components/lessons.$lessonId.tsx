@@ -740,22 +740,8 @@ function isPracticable(card: GrammarCardData) {
   const hasPossessive = blob.includes("'-ko'") || blob.includes("-ko") || blob.includes("소유");
   const hasErgative = blob.includes("'-le'") || blob.includes("-le") || blob.includes("타동사");
   const hasCopula = hasHoChhaHunchhaText(` ${card.lines.join(" ").toLowerCase()} `) || (blob.includes(" ho ") && blob.includes(" chha ") && blob.includes(" hunchha "));
-  
-  const practiceCard = toPracticeCard(card);
-  let hasRealExercise = false;
-  const examples = (practiceCard.examples ?? []).filter(Boolean);
-  
-  for (const ex of examples) {
-    const nepaliMatch = ex.match(/^[^(]+/);
-    const nepaliText = nepaliMatch ? nepaliMatch[0].trim() : ex;
-    const words = nepaliText.split(/\s+/).filter((w) => w.replace(/[^a-zA-Z]/g, "").length >= 2);
-    if (words.length > 0) {
-      hasRealExercise = true;
-      break;
-    }
-  }
-
-  return hasPossessive || hasErgative || hasCopula || hasRealExercise;
+  const hasExamples = (card.examples ?? []).length > 0;
+  return hasPossessive || hasErgative || hasCopula || hasExamples;
 }
 
 function GrammarCard({

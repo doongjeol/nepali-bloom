@@ -26,6 +26,14 @@ const possessiveMap: Record<string, string> = {
   wahãã: "wahããko",
 };
 
+const possessiveKoreanMap: Record<string, string> = {
+  ma: "나의",
+  u: "그의",
+  haami: "우리의",
+  tapaaï: "당신의",
+  wahãã: "그분의",
+};
+
 function pick<T>(arr: T[]) {
   return arr[Math.floor(Math.random() * arr.length)]!;
 }
@@ -53,8 +61,18 @@ function inferKind(card: GrammarPracticeCard) {
 
 function buildExercise(card: GrammarPracticeCard, difficulty: Difficulty): Exercise {
   const kind = inferKind(card);
-  const hasExamples = (card.examples ?? []).filter(Boolean).length > 0;
-  const pickedExample = hasExamples ? pick(card.examples.filter(Boolean)) : "";
+  
+  let validExamples = (card.examples ?? []).filter(Boolean);
+  if (kind === "generic") {
+    validExamples = validExamples.filter((ex) => {
+      const nepaliMatch = ex.match(/^[^(]+/);
+      const nepaliText = nepaliMatch ? nepaliMatch[0].trim() : ex;
+      const words = nepaliText.split(/\s+/).filter((w) => w.replace(/[^a-zA-Z]/g, "").length >= 2);
+      return words.length > 0;
+    });
+  }
+
+  const pickedExample = validExamples.length > 0 ? pick(validExamples) : "";
 
   const kinds: ExerciseKind[] = ["fill-blank", "sentence-completion", "ox"];
   const exerciseKind = pick(kinds);
@@ -96,7 +114,7 @@ function buildExercise(card: GrammarPracticeCard, difficulty: Difficulty): Exerc
         id: `pos-comp-${pronoun}`,
         kind: "sentence-completion",
         title: "문장 완성",
-        koreanHint: "‘~의’를 말할 때 소유격 형태를 고르세요.",
+        koreanHint: `‘${possessiveKoreanMap[pronoun]}’를 뜻하는 알맞은 형태를 고르세요.`,
         prompt: `빈칸에 들어갈 알맞은 형태를 고르세요:\n____ kitaab ho.`,
         choices,
         answer: correct,
@@ -110,7 +128,7 @@ function buildExercise(card: GrammarPracticeCard, difficulty: Difficulty): Exerc
       kind: "fill-blank",
       title: "빈칸 채우기",
       koreanHint: "‘-ko’는 소유(~의)를 나타냅니다.",
-      prompt: `다음 문장의 빈칸을 채우세요:\n____ ghar kahãã ho?`,
+      prompt: `다음 한국어 뜻에 맞게 빈칸을 채우세요:\n${possessiveKoreanMap[pronoun]} 집은 어디입니까?\n____ ghar kahãã ho?`,
       choices,
       answer: correct,
       explanation: `${pronoun}의 소유격은 ${correct} 입니다.`,
@@ -154,16 +172,37 @@ function buildExercise(card: GrammarPracticeCard, difficulty: Difficulty): Exerc
     };
   }
 
+  if (kind === "generic" && pickedExample) {
+    const nepaliMatch = pickedExample.match(/^[^(]+/);
+    const nepaliText = nepaliMatch ? nepaliMatch[0].trim() : pickedExample;
+    const words = nepaliText.split(/\s+/).filter((w) => w.replace(/[^a-zA-Z]/g, "").length >= 2);
+    if (words.length > 0) {
+      const answer = pick(words);
+      const blanked = pickedExample.replace(answer, "____");
+      const distractors = shuffle(["ho", "chha", "mero", "ramro", "dherai", "ali", "tapaaïko", "tyo", "yo", "kasto", "kasko"])
+        .filter((w) => w !== answer)
+        .slice(0, 3);
+      const choices = shuffle([answer, ...distractors]);
+      return {
+        id: `generic-blank-${Date.now()}`,
+        kind: "fill-blank",
+        title: "빈칸 채우기",
+        koreanHint: "예문의 문맥에 맞는 단어를 고르세요.",
+        prompt: `다음 문장의 빈칸을 채우세요:\n${blanked}`,
+        choices,
+        answer,
+        explanation: `정답은 '${answer}' 입니다.`,
+      };
+    }
+  }
+
   // generic fallback: use whatever example exists
-  const prompt = pickedExample
-    ? `예문을 읽고 아래 질문에 답하세요:\n${pickedExample}`
-    : "아직 이 문법 항목의 자동 문제 생성 데이터가 부족해요.";
   return {
     id: "generic",
     kind: "fill-blank",
     title: "연습",
     koreanHint: "노트를 먼저 읽고 예문에서 적용을 확인해보세요.",
-    prompt,
+    prompt: pickedExample ? `예문을 읽고 확인하세요:\n${pickedExample}` : "아직 이 문법 항목의 자동 문제 생성 데이터가 부족해요.",
     choices: ["확인"],
     answer: "확인",
     explanation: "이 항목은 현재 자동 퀴즈가 준비되지 않았습니다.",
@@ -190,7 +229,7 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
           <div className="min-w-0 flex-1">
             <p className="text-xs font-semibold text-[#7A4F3B]/80">{exercise.title}</p>
             <div className="mt-3 border-l-4 border-[#B28471] pl-4">
-              <p className="whitespace-pre-wrap text-xl font-bold leading-snug text-[#3A2B22] sm:text-2xl">
+              <p className="whitespace-pre-wrap text-sm font-bold leading-relaxed text-[#3A2B22] sm:text-base">
                 {exercise.prompt}
               </p>
             </div>
@@ -201,9 +240,9 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
     );
   }, [exercise.koreanHint, exercise.prompt, exercise.title]);
 
-  const submit = () => {
+  const handlePick = (c: string) => {
     if (revealed) return;
-    if (!picked) return;
+    setPicked(c);
     setRevealed(true);
   };
 
@@ -281,7 +320,7 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
               key={c}
               type="button"
               disabled={revealed}
-              onClick={() => setPicked(c)}
+              onClick={() => handlePick(c)}
               className={cn(
                 "rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all active:scale-[0.99]",
                 !revealed && "bg-white/70 hover:bg-white",
@@ -298,9 +337,6 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
       </div>
 
       <div className="flex items-center justify-end gap-2">
-        <Button type="button" className="rounded-xl" onClick={submit} disabled={!picked || revealed}>
-          제출하기
-        </Button>
         <Button type="button" variant="secondary" className="rounded-xl" onClick={next} disabled={!revealed}>
           다음 문제
         </Button>
@@ -320,4 +356,3 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
     </div>
   );
 }
-

@@ -15,6 +15,7 @@ import { Route as StudyIndexRouteImport } from './routes/study.index'
 import { Route as LessonsIndexRouteImport } from './routes/lessons.index'
 import { Route as StudyVocabRouteImport } from './routes/study.vocab'
 import { Route as StudyQuizRouteImport } from './routes/study.quiz'
+import { Route as StudyPronunciationRouteImport } from './routes/study.pronunciation'
 import { Route as StudyDialoguesRouteImport } from './routes/study.dialogues'
 import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 
@@ -48,6 +49,11 @@ const StudyQuizRoute = StudyQuizRouteImport.update({
   path: '/quiz',
   getParentRoute: () => StudyRoute,
 } as any)
+const StudyPronunciationRoute = StudyPronunciationRouteImport.update({
+  id: '/pronunciation',
+  path: '/pronunciation',
+  getParentRoute: () => StudyRoute,
+} as any)
 const StudyDialoguesRoute = StudyDialoguesRouteImport.update({
   id: '/dialogues',
   path: '/dialogues',
@@ -64,6 +70,7 @@ export interface FileRoutesByFullPath {
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
+  '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
   '/lessons/': typeof LessonsIndexRoute
@@ -73,6 +80,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
+  '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
   '/lessons': typeof LessonsIndexRoute
@@ -84,6 +92,7 @@ export interface FileRoutesById {
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
+  '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
   '/lessons/': typeof LessonsIndexRoute
@@ -96,6 +105,7 @@ export interface FileRouteTypes {
     | '/study'
     | '/lessons/$lessonId'
     | '/study/dialogues'
+    | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
     | '/lessons/'
@@ -105,6 +115,7 @@ export interface FileRouteTypes {
     | '/'
     | '/lessons/$lessonId'
     | '/study/dialogues'
+    | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
     | '/lessons'
@@ -115,6 +126,7 @@ export interface FileRouteTypes {
     | '/study'
     | '/lessons/$lessonId'
     | '/study/dialogues'
+    | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
     | '/lessons/'
@@ -172,6 +184,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StudyQuizRouteImport
       parentRoute: typeof StudyRoute
     }
+    '/study/pronunciation': {
+      id: '/study/pronunciation'
+      path: '/pronunciation'
+      fullPath: '/study/pronunciation'
+      preLoaderRoute: typeof StudyPronunciationRouteImport
+      parentRoute: typeof StudyRoute
+    }
     '/study/dialogues': {
       id: '/study/dialogues'
       path: '/dialogues'
@@ -191,6 +210,7 @@ declare module '@tanstack/react-router' {
 
 interface StudyRouteChildren {
   StudyDialoguesRoute: typeof StudyDialoguesRoute
+  StudyPronunciationRoute: typeof StudyPronunciationRoute
   StudyQuizRoute: typeof StudyQuizRoute
   StudyVocabRoute: typeof StudyVocabRoute
   StudyIndexRoute: typeof StudyIndexRoute
@@ -198,6 +218,7 @@ interface StudyRouteChildren {
 
 const StudyRouteChildren: StudyRouteChildren = {
   StudyDialoguesRoute: StudyDialoguesRoute,
+  StudyPronunciationRoute: StudyPronunciationRoute,
   StudyQuizRoute: StudyQuizRoute,
   StudyVocabRoute: StudyVocabRoute,
   StudyIndexRoute: StudyIndexRoute,

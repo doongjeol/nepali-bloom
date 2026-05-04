@@ -4,7 +4,8 @@ import { Header } from "@/components/Header";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { RangeSelector } from "@/components/RangeSelector";
 import { useLessonRangeData } from "@/hooks/useLessonRangeData";
-import { WordStudyView } from "@/components/WordStudyView";
+import { RangeVocabCard } from "@/components/RangeVocabCard";
+import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { cn } from "@/lib/utils";
 import { MAX_LESSON_ID, MIN_LESSON_ID } from "@/data/lessonsMeta";
 
@@ -30,6 +31,7 @@ function StudyVocabPage() {
   const start = search.start;
   const end = search.end;
   const range = typeof start === "number" && typeof end === "number" ? { start, end } : null;
+  const audioPlayer = useAudioPlayer();
 
   // Auto-enter learning mode when query params exist
   useEffect(() => {
@@ -38,6 +40,13 @@ function StudyVocabPage() {
 
   const { isLoading, error, data } = useLessonRangeData(range, { minLessonId: MIN, maxLessonId: MAX });
   const lessonTitles = useMemo(() => (data?.lessons ?? []).map((l) => l.titleKo ?? `Lesson ${l.id}`), [data?.lessons]);
+
+  const allVocab = useMemo(() => {
+    if (!data?.lessons) return [];
+    return data.lessons.flatMap((l) =>
+      (l.vocabulary ?? []).map((w) => ({ ...w, lessonId: l.id }))
+    );
+  }, [data?.lessons]);
 
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
@@ -106,7 +115,12 @@ function StudyVocabPage() {
               선택한 범위에 레슨 데이터가 없어요. (현재 데이터: {data.range.start}~{data.range.end})
             </div>
           ) : (
-            <WordStudyView lessons={data.lessons} range={data.range} />
+          <RangeVocabCard
+            lessonId={`range-${data.range.start}-${data.range.end}`}
+            vocabulary={allVocab}
+            audioPlayer={audioPlayer}
+            onFinish={() => setIsLearningMode(false)}
+          />
           )
         )}
 

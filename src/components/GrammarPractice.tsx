@@ -209,14 +209,13 @@ function PossessiveDrill({ card }: { card: GrammarPracticeCard }) {
 
   const generateQuestion = () => {
     const pronouns = Object.keys(possessiveMap);
-    const from = pick(pronouns);
-    const to = pick(pronouns.filter((p) => p !== from));
-    const answer = possessiveMap[to] ?? "";
+    const target = pick(pronouns);
+    const answer = possessiveMap[target]!;
     const distractors = shuffle(
       pronouns.map((p) => possessiveMap[p]!).filter((v) => v !== answer),
     ).slice(0, 3);
     const options = shuffle([answer, ...distractors]).slice(0, 4);
-    return { from, to, answer, options };
+    return { target, answer, options };
   };
   const [question, setQuestion] = useState(() => generateQuestion());
 
@@ -241,9 +240,7 @@ function PossessiveDrill({ card }: { card: GrammarPracticeCard }) {
       <div className="rounded-xl border border-[#DCCFC4] bg-[#F5EBE0]/60 p-3">
         <p className="text-xs font-medium text-[#6B5D4F]">변형 과제</p>
         <p className="mt-1 text-sm text-[#333D29]">
-          주어를 <span className="font-semibold text-[#8A5A2B]">{question.from}</span> 에서{" "}
-          <span className="font-semibold text-[#8A5A2B]">{question.to}</span> 로 바꾸면 소유격은
-          무엇이 될까요?
+          대명사 <span className="font-semibold text-[#8A5A2B]">{question.target}</span> 의 소유격 형태는 무엇일까요?
         </p>
       </div>
 
@@ -317,78 +314,56 @@ function PossessiveDrill({ card }: { card: GrammarPracticeCard }) {
 
 type Bucket = "pool" | "transitive" | "intransitive";
 
-function DragChip({
+function TapChip({
   word,
   bucket,
-  onMove,
+  onClick,
 }: {
   word: string;
   bucket: Bucket;
-  onMove: (word: string, to: Bucket) => void;
+  onClick: () => void;
 }) {
   return (
     <button
       type="button"
-      draggable
-      onDragStart={(e) => {
-        e.dataTransfer.setData("text/plain", JSON.stringify({ word, bucket }));
-        e.dataTransfer.effectAllowed = "move";
-      }}
-      onClick={() => {
-        if (bucket === "pool") onMove(word, "transitive");
-        else onMove(word, "pool");
-      }}
-      className="rounded-lg border border-[#DCCFC4] bg-white/75 px-2.5 py-1.5 text-sm font-medium text-[#333D29] hover:bg-white"
+      onClick={onClick}
+      className={cn(
+        "rounded-lg border px-2.5 py-1.5 text-sm font-medium transition-all active:scale-95",
+        bucket === "pool" && "border-[#DCCFC4] bg-white/75 text-[#333D29] hover:bg-white",
+        bucket === "transitive" && "border-blue-200 bg-blue-50 text-blue-800 hover:bg-blue-100",
+        bucket === "intransitive" && "border-emerald-200 bg-emerald-50 text-emerald-800 hover:bg-emerald-100",
+      )}
     >
       {word}
     </button>
   );
 }
 
-function DropZone({
+function TapZone({
   title,
   hint,
-  words,
-  onDropTo,
+  count,
+  className,
   children,
 }: {
   title: string;
   hint: string;
-  words: string[];
-  onDropTo: (payload: { word: string; bucket: Bucket }) => void;
+  count: number;
+  className?: string;
   children: React.ReactNode;
 }) {
   return (
-    <div
-      className="rounded-xl border border-[#DCCFC4] bg-white/55 p-3"
-      onDragOver={(e) => {
-        e.preventDefault();
-        e.dataTransfer.dropEffect = "move";
-      }}
-      onDrop={(e) => {
-        e.preventDefault();
-        try {
-          const payload = JSON.parse(e.dataTransfer.getData("text/plain")) as {
-            word: string;
-            bucket: Bucket;
-          };
-          if (!payload?.word || !payload?.bucket) return;
-          onDropTo(payload);
-        } catch {
-          // ignore
-        }
-      }}
-    >
+    <div className={cn("rounded-xl border border-[#DCCFC4] p-3", className)}>
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <p className="text-sm font-semibold text-[#333D29]">{title}</p>
           <p className="mt-0.5 text-xs text-muted-foreground">{hint}</p>
         </div>
         <Badge className="shrink-0 rounded-full border-[#CDB9A8] bg-[#EEF1E6]/70 px-2 py-0.5 text-[10px] text-[#5A4636]">
-          {words.length}
+          {count}
         </Badge>
       </div>
-      <div className="mt-2 flex flex-wrap gap-2">{children}</div>
+      <div className="mt-2 flex min-h-[2.5rem] flex-wrap gap-2">{children}</div>
     </div>
   );
 }
@@ -417,20 +392,15 @@ function ErgativeDrill({ card }: { card: GrammarPracticeCard }) {
     lists.intransitive.length ? lists.intransitive : ["sutnu", "jaanu"],
   );
 
-  const move = (word: string, to: Bucket) => {
+  const handleTap = (word: string, currentBucket: Bucket) => {
     setChecked(null);
     setPool((prev) => prev.filter((w) => w !== word));
     setTransitive((prev) => prev.filter((w) => w !== word));
     setIntransitive((prev) => prev.filter((w) => w !== word));
 
-    if (to === "pool") setPool((prev) => [...prev, word]);
-    if (to === "transitive") setTransitive((prev) => [...prev, word]);
-    if (to === "intransitive") setIntransitive((prev) => [...prev, word]);
-  };
-
-  const onDropTo = (to: Bucket) => (payload: { word: string; bucket: Bucket }) => {
-    if (payload.bucket === to) return;
-    move(payload.word, to);
+    if (currentBucket === "pool") setTransitive((prev) => [...prev, word]);
+    if (currentBucket === "transitive") setIntransitive((prev) => [...prev, word]);
+    if (currentBucket === "intransitive") setPool((prev) => [...prev, word]);
   };
 
   const reset = () => {
@@ -459,44 +429,42 @@ function ErgativeDrill({ card }: { card: GrammarPracticeCard }) {
       <div className="rounded-xl border border-[#DCCFC4] bg-[#E8EDDF]/55 p-3">
         <p className="text-xs font-medium text-[#6B5D4F]">분류 과제</p>
         <p className="mt-1 text-sm text-[#333D29]">
-          어떤 동사가 <span className="font-semibold text-[#8A5A2B]">타동사</span>인지 구분해보세요.
-          (과거 타동사면 주어에 <span className="font-semibold text-[#8A5A2B]">-le</span>가 붙을 수
-          있어요)
+          단어를 <strong>터치</strong>해서 <span className="font-semibold text-[#8A5A2B]">타동사</span>인지 <span className="font-semibold text-[#8A5A2B]">자동사</span>인지 분류해보세요.
         </p>
       </div>
 
-      <DropZone
+      <TapZone
         title="대기"
-        hint="여기서 드래그해서 분류하세요"
-        words={pool}
-        onDropTo={onDropTo("pool")}
+        hint="터치하면 타동사로 이동해요"
+        count={pool.length}
+        className="bg-white/55"
       >
         {pool.map((w) => (
-          <DragChip key={w} word={w} bucket="pool" onMove={move} />
+          <TapChip key={w} word={w} bucket="pool" onClick={() => handleTap(w, "pool")} />
         ))}
-      </DropZone>
+      </TapZone>
 
       <div className="grid gap-3 sm:grid-cols-2">
-        <DropZone
+        <TapZone
           title="타동사"
-          hint="목적어가 필요한 동사"
-          words={transitive}
-          onDropTo={onDropTo("transitive")}
+          hint="목적어가 필요 (터치 시 자동사로 이동)"
+          count={transitive.length}
+          className="bg-blue-50/40"
         >
           {transitive.map((w) => (
-            <DragChip key={w} word={w} bucket="transitive" onMove={move} />
+            <TapChip key={w} word={w} bucket="transitive" onClick={() => handleTap(w, "transitive")} />
           ))}
-        </DropZone>
-        <DropZone
+        </TapZone>
+        <TapZone
           title="자동사"
-          hint="목적어가 필요 없는 동사"
-          words={intransitive}
-          onDropTo={onDropTo("intransitive")}
+          hint="목적어 불필요 (터치 시 대기로 이동)"
+          count={intransitive.length}
+          className="bg-emerald-50/40"
         >
           {intransitive.map((w) => (
-            <DragChip key={w} word={w} bucket="intransitive" onMove={move} />
+            <TapChip key={w} word={w} bucket="intransitive" onClick={() => handleTap(w, "intransitive")} />
           ))}
-        </DropZone>
+        </TapZone>
       </div>
 
       <div className="flex items-center justify-end gap-2">
@@ -618,7 +586,16 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
   const hasPossessive = kind === "possessive-ko";
   const hasErgative = kind === "ergative-le";
   const hasCopula = kind === "copula-contrast";
-  const hasExamples = (card.examples ?? []).filter(Boolean).length > 0;
+  const hasExercise = hasPossessive || hasErgative || hasCopula || (() => {
+    const examples = (card.examples ?? []).filter(Boolean);
+    for (const ex of examples) {
+      const nepaliMatch = ex.match(/^[^(]+/);
+      const nepaliText = nepaliMatch ? nepaliMatch[0].trim() : ex;
+      const words = nepaliText.split(/\s+/).filter((w) => w.replace(/[^a-zA-Z]/g, "").length >= 2);
+      if (words.length > 0) return true;
+    }
+    return false;
+  })();
 
   return (
     <div className="space-y-4">
@@ -626,7 +603,7 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
 
       <Tabs
         defaultValue={
-          hasExamples ? "exercise" : hasPossessive ? "transform" : hasErgative ? "classify" : hasCopula ? "contrast" : "notes"
+          hasPossessive ? "transform" : hasErgative ? "classify" : hasCopula ? "contrast" : hasExercise ? "exercise" : "notes"
         }
       >
         <TabsList className="w-full rounded-xl bg-[#EFE7E1] p-1">
@@ -645,17 +622,11 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
               대조
             </TabsTrigger>
           )}
-          <TabsTrigger
-            value="exercise"
-            disabled={!hasExamples}
-            className={cn(
-              "w-full rounded-lg text-sm gap-1.5",
-              !hasExamples &&
-                "opacity-50 cursor-not-allowed border-none shadow-none text-muted-foreground bg-transparent",
-            )}
-          >
-            문제 {!hasExamples && <span className="ml-1 text-[10px] text-muted-foreground">준비 중</span>}
-          </TabsTrigger>
+          {hasExercise && (
+            <TabsTrigger value="exercise" className="w-full rounded-lg text-sm">
+              문제
+            </TabsTrigger>
+          )}
           <TabsTrigger value="notes" className="w-full rounded-lg text-sm">
             노트
           </TabsTrigger>
@@ -676,9 +647,11 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
             <CopulaContrastDrill card={card} />
           </TabsContent>
         )}
-        <TabsContent value="exercise" className="mt-3">
-          <GrammarExercise card={card} />
-        </TabsContent>
+        {hasExercise && (
+          <TabsContent value="exercise" className="mt-3">
+            <GrammarExercise card={card} />
+          </TabsContent>
+        )}
         <TabsContent value="notes" className="mt-3">
           <NotesView card={card} />
         </TabsContent>

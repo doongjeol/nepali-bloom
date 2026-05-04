@@ -1,0 +1,331 @@
+{
+  "lesson_note": "네팔어는 데바나가리(Devanagari) 문자를 사용합니다. 자음은 숨을 강하게 내뱉는 **거센소리(유기음)**와 그렇지 않은 **예사소리(무기음)**의 구분이 매우 중요합니다. 카드를 눌러 정확한 소리와 특징을 확인해보세요.",
+  "vowels": [
+    {
+      "char": "अ",
+      "romanized": "a",
+      "phonetic": "어",
+      "audio": "/audio/pronunciation/a.mp3",
+      "description": "우리말의 **'어'**와 **'아'**의 중간 소리(예: about의 a)입니다. 입을 가볍게 벌리고 짧게 발음합니다."
+    },
+    {
+      "char": "आ",
+      "romanized": "aa",
+      "phonetic": "아",
+      "audio": "/audio/pronunciation/aa.mp3",
+      "description": "우리말의 **'아'**와 비슷하게 입을 크게 벌리고 소리를 내며 길게 발음합니다."
+    },
+    {
+      "char": "इ",
+      "romanized": "i",
+      "phonetic": "이",
+      "audio": "/audio/pronunciation/i.mp3",
+      "description": "우리말의 **'이'**와 비슷하게 짧고 가볍게 발음합니다."
+    },
+    {
+      "char": "ई",
+      "romanized": "ii",
+      "phonetic": "이 (길게)",
+      "audio": "/audio/pronunciation/ii.mp3",
+      "description": "우리말의 **'이'**와 같으나, 조금 더 길게 발음합니다. (현대 구어체에서는 इ와 거의 구분하지 않습니다)"
+    },
+    {
+      "char": "उ",
+      "romanized": "u",
+      "phonetic": "우",
+      "audio": "/audio/pronunciation/u.mp3",
+      "description": "우리말의 **'우'**와 비슷하게 입술을 둥글게 하여 짧게 발음합니다."
+    },
+    {
+      "char": "ऊ",
+      "romanized": "uu",
+      "phonetic": "우 (길게)",
+      "audio": "/audio/pronunciation/uu.mp3",
+      "description": "우리말의 **'우'**와 같으나, 조금 더 길게 발음합니다."
+    },
+    {
+      "char": "ए",
+      "romanized": "e",
+      "phonetic": "에",
+      "audio": "/audio/pronunciation/e.mp3",
+      "description": "우리말의 **'에'**와 비슷하게 입술을 평평하게 하고 길게 발음합니다."
+    },
+    {
+      "char": "ऐ",
+      "romanized": "ai",
+      "phonetic": "아이",
+      "audio": "/audio/pronunciation/ai.mp3",
+      "description": "**'अ(어/아)'**와 **'इ(이)'**가 합쳐진 이중모음으로 **'아이'**라고 발음합니다."
+    },
+    {
+      "char": "ओ",
+      "romanized": "o",
+      "phonetic": "오",
+      "audio": "/audio/pronunciation/o.mp3",
+      "description": "우리말의 **'오'**와 비슷하게 입술을 둥글게 하여 길게 발음합니다."
+    },
+    {
+      "char": "औ",
+      "romanized": "au",
+      "phonetic": "아우",
+      "audio": "/audio/pronunciation/au.mp3",
+      "description": "**'अ(어/아)'**와 **'उ(우)'**가 합쳐진 이중모음으로 **'아우'** 혹은 **'어우'**라고 발음합니다."
+    }
+  ],
+  "consonants": [
+    {
+      "char": "क",
+      "romanized": "ka",
+      "phonetic": "까",
+      "audio": "/audio/pronunciation/ka.mp3",
+      "description": "[연구개음] 우리말의 **'ㄲ'**과 유사하게 숨을 내쉬지 않고 짧고 강하게 발음합니다."
+    },
+    {
+      "char": "ख",
+      "romanized": "kha",
+      "phonetic": "카",
+      "audio": "/audio/pronunciation/kha.mp3",
+      "description": "[연구개음] 우리말의 **'ㅋ'**과 유사하며, 목 안쪽에서 거센 숨을 내뱉듯 발음합니다."
+    },
+    {
+      "char": "ग",
+      "romanized": "ga",
+      "phonetic": "가",
+      "audio": "/audio/pronunciation/ga.mp3",
+      "description": "[연구개음] 우리말의 **'ㄱ'**과 비슷하게 목청을 울려 부드럽게 발음합니다."
+    },
+    {
+      "char": "घ",
+      "romanized": "gha",
+      "phonetic": "가ㅎ",
+      "audio": "/audio/pronunciation/gha.mp3",
+      "description": "[연구개음] **'ㄱ'** 발음에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다."
+    },
+    {
+      "char": "ङ",
+      "romanized": "nga",
+      "phonetic": "응/앙",
+      "audio": "/audio/pronunciation/nga.mp3",
+      "description": "[연구개음] 우리말의 **'ㅇ'** 받침소리(ng)와 같습니다. 코를 울려 발음합니다."
+    },
+    {
+      "char": "च",
+      "romanized": "cha",
+      "phonetic": "짜",
+      "audio": "/audio/pronunciation/cha.mp3",
+      "description": "[구개음] 우리말의 **'ㅉ'**과 유사하게 숨을 내쉬지 않고 강하게 발음합니다."
+    },
+    {
+      "char": "छ",
+      "romanized": "chha",
+      "phonetic": "차",
+      "audio": "/audio/pronunciation/chha.mp3",
+      "description": "[구개음] 우리말의 **'ㅊ'**과 유사하며, 거센 숨을 내뱉으며 발음합니다."
+    },
+    {
+      "char": "ज",
+      "romanized": "ja",
+      "phonetic": "자",
+      "audio": "/audio/pronunciation/ja.mp3",
+      "description": "[구개음] 우리말의 **'ㅈ'**과 비슷하게 목청을 울려 부드럽게 발음합니다."
+    },
+    {
+      "char": "झ",
+      "romanized": "jha",
+      "phonetic": "자ㅎ",
+      "audio": "/audio/pronunciation/jha.mp3",
+      "description": "[구개음] **'ㅈ'** 발음에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다."
+    },
+    {
+      "char": "ञ",
+      "romanized": "nya",
+      "phonetic": "냐",
+      "audio": "/audio/pronunciation/nya.mp3",
+      "description": "[구개음] 코를 울려 내는 구개비음으로, 일상에서는 드물게 사용됩니다."
+    },
+    {
+      "char": "ट",
+      "romanized": "Ta",
+      "phonetic": "따 (혀 말아)",
+      "audio": "/audio/pronunciation/Ta.mp3",
+      "description": "[반전음] 혀끝을 입천장 뒤쪽으로 둥글게 말아 올린 후 튕기며 내는 강한 **'ㄸ'** 소리입니다."
+    },
+    {
+      "char": "ठ",
+      "romanized": "Tha",
+      "phonetic": "타 (혀 말아)",
+      "audio": "/audio/pronunciation/Tha.mp3",
+      "description": "[반전음] 혀를 말아 올린 상태에서 거센 숨과 함께 내는 **'ㅌ'** 소리입니다."
+    },
+    {
+      "char": "ड",
+      "romanized": "Da",
+      "phonetic": "다 (혀 말아)",
+      "audio": "/audio/pronunciation/Da.mp3",
+      "description": "[반전음] 혀를 말아 올린 상태에서 목청을 울려 내는 묵직한 **'ㄷ'** 소리입니다."
+    },
+    {
+      "char": "ढ",
+      "romanized": "Dha",
+      "phonetic": "다ㅎ (혀 말아)",
+      "audio": "/audio/pronunciation/Dha.mp3",
+      "description": "[반전음] 혀를 말아 올린 'ड(Da)' 소리에 거친 숨소리(h)를 더해 탁하게 발음합니다."
+    },
+    {
+      "char": "ण",
+      "romanized": "Na",
+      "phonetic": "나 (혀 말아)",
+      "audio": "/audio/pronunciation/Na.mp3",
+      "description": "[반전음] 혀를 말아 올린 상태에서 내는 콧소리(n)로, 구어체에서는 잘 쓰이지 않습니다."
+    },
+    {
+      "char": "त",
+      "romanized": "ta",
+      "phonetic": "따",
+      "audio": "/audio/pronunciation/ta.mp3",
+      "description": "[치음] 혀끝을 윗니 바로 뒤에 대고 내는 부드러운 **'ㄸ'** 소리입니다."
+    },
+    {
+      "char": "थ",
+      "romanized": "tha",
+      "phonetic": "타",
+      "audio": "/audio/pronunciation/tha.mp3",
+      "description": "[치음] 혀끝을 윗니 뒤에 대고 거센 숨과 함께 내는 **'ㅌ'** 소리입니다."
+    },
+    {
+      "char": "द",
+      "romanized": "da",
+      "phonetic": "다",
+      "audio": "/audio/pronunciation/da.mp3",
+      "description": "[치음] 혀끝을 윗니 뒤에 대고 목청을 울려 내는 부드러운 **'ㄷ'** 소리입니다."
+    },
+    {
+      "char": "ध",
+      "romanized": "dha",
+      "phonetic": "다ㅎ",
+      "audio": "/audio/pronunciation/dha.mp3",
+      "description": "[치음] 'द(da)' 소리에 거친 숨소리(h)를 더해 탁하게 발음합니다."
+    },
+    {
+      "char": "न",
+      "romanized": "na",
+      "phonetic": "나",
+      "audio": "/audio/pronunciation/na.mp3",
+      "description": "[치음] 우리말의 **'ㄴ'**과 같습니다."
+    },
+    {
+      "char": "प",
+      "romanized": "pa",
+      "phonetic": "빠",
+      "audio": "/audio/pronunciation/pa.mp3",
+      "description": "[양순음] 두 입술을 부딪쳐 내는 강한 **'ㅃ'** 소리입니다. 숨을 내뱉지 않습니다."
+    },
+    {
+      "char": "फ",
+      "romanized": "pha",
+      "phonetic": "파 / 화",
+      "audio": "/audio/pronunciation/pha.mp3",
+      "description": "[양순음] 우리말의 **'ㅍ'** 또는 영어의 **'f'**와 유사하며, 두 입술 사이로 거센 숨을 내뱉습니다."
+    },
+    {
+      "char": "ब",
+      "romanized": "ba",
+      "phonetic": "바",
+      "audio": "/audio/pronunciation/ba.mp3",
+      "description": "[양순음] 우리말의 **'ㅂ'**과 비슷하게 목청을 울려 냅니다."
+    },
+    {
+      "char": "भ",
+      "romanized": "bha",
+      "phonetic": "바ㅎ",
+      "audio": "/audio/pronunciation/bha.mp3",
+      "description": "[양순음] 'ब(ba)' 소리에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다."
+    },
+    {
+      "char": "म",
+      "romanized": "ma",
+      "phonetic": "마",
+      "audio": "/audio/pronunciation/ma.mp3",
+      "description": "[양순음] 우리말의 **'ㅁ'**과 같습니다."
+    },
+    {
+      "char": "य",
+      "romanized": "ya",
+      "phonetic": "야",
+      "audio": "/audio/pronunciation/ya.mp3",
+      "description": "우리말의 **'야/여/요/유'**를 만들 때 내는 반모음 'y' 소리입니다."
+    },
+    {
+      "char": "र",
+      "romanized": "ra",
+      "phonetic": "라 (굴림)",
+      "audio": "/audio/pronunciation/ra.mp3",
+      "description": "우리말의 **'ㄹ'**보다 혀끝을 더 굴려 떠는 소리(rolled r)입니다."
+    },
+    {
+      "char": "ल",
+      "romanized": "la",
+      "phonetic": "라",
+      "audio": "/audio/pronunciation/la.mp3",
+      "description": "우리말의 **'ㄹ'**과 유사한 부드러운 소리(l)입니다."
+    },
+    {
+      "char": "व",
+      "romanized": "wa",
+      "phonetic": "와 / 바",
+      "audio": "/audio/pronunciation/wa.mp3",
+      "description": "우리말의 **'와/워'**를 만들 때의 'w' 소리지만, 구어체에서는 종종 'b(ㅂ)'로 발음됩니다."
+    },
+    {
+      "char": "श",
+      "romanized": "sha",
+      "phonetic": "사 / 샤",
+      "audio": "/audio/pronunciation/sha.mp3",
+      "description": "구어에서는 주로 일반적인 **'ㅅ/ㅆ'** 소리로 발음됩니다."
+    },
+    {
+      "char": "ष",
+      "romanized": "sha2",
+      "phonetic": "사 / 샤",
+      "audio": "/audio/pronunciation/sha2.mp3",
+      "description": "구어에서는 주로 일반적인 **'ㅅ/ㅆ'** 소리로 발음됩니다."
+    },
+    {
+      "char": "स",
+      "romanized": "sa",
+      "phonetic": "사 / 싸",
+      "audio": "/audio/pronunciation/sa.mp3",
+      "description": "우리말의 **'ㅅ'** 혹은 **'ㅆ'** 소리와 같습니다."
+    },
+    {
+      "char": "ह",
+      "romanized": "ha",
+      "phonetic": "하",
+      "audio": "/audio/pronunciation/ha.mp3",
+      "description": "우리말의 **'ㅎ'**과 같습니다."
+    }
+  ],
+  "special_characters": [
+    {
+      "char": "क्ष",
+      "romanized": "ksha",
+      "phonetic": "크샤 / 체",
+      "audio": "/audio/pronunciation/ksha.mp3",
+      "description": "k + sh 의 복합 자음입니다. 단어에 따라 '체'로 발음되기도 합니다."
+    },
+    {
+      "char": "त्र",
+      "romanized": "tra",
+      "phonetic": "뜨라",
+      "audio": "/audio/pronunciation/tra.mp3",
+      "description": "t + r 의 복합 자음입니다."
+    },
+    {
+      "char": "ज्ञ",
+      "romanized": "gya",
+      "phonetic": "갸",
+      "audio": "/audio/pronunciation/gya.mp3",
+      "description": "gy + n 의 복합 자음입니다. 우리말의 **'갸'** 혹은 **'갼'**과 비슷하게 발음됩니다."
+    }
+  ]
+}

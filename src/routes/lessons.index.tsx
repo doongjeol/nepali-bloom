@@ -24,6 +24,28 @@ function LessonsPage() {
           Basic Course in Spoken Nepali · 총 {MAX_LESSON_ID}개 레슨
         </p>
 
+        <div className="mb-4">
+          <Link
+            to="/study/pronunciation"
+            className="group flex items-center gap-3 rounded-xl border bg-card p-3 sm:p-4 shadow-sm transition-all active:scale-[0.99] hover:-translate-y-0.5 hover:shadow-md"
+          >
+            <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-warm text-base sm:text-lg font-bold text-warm-foreground">
+              🔊
+            </div>
+            <div className="flex-1 min-w-0">
+              <h2 className="text-sm sm:text-base font-semibold text-foreground">발음 연습</h2>
+              <p className="mt-0.5 text-xs sm:text-sm text-muted-foreground">
+                모음/자음을 누르며 발음 듣기
+              </p>
+              <div className="mt-1 flex flex-wrap gap-1">
+                <span className="rounded-full border border-[#E9DED3] bg-[#F5EBE0] px-2.5 py-0.5 text-[10px] sm:text-xs font-medium tracking-wide text-[#8D7B68] transition-colors hover:bg-[#E9DED3]">
+                  발음
+                </span>
+              </div>
+            </div>
+          </Link>
+        </div>
+
         <div className="grid gap-2 sm:gap-3">
           {[...lessonsIndex].sort((a, b) => a.id - b.id).map((lesson) => {
             const counts = lesson.counts ?? {};

@@ -1,0 +1,140 @@
+
+AN INTRODUCTION TO THE NEPALI SOUND SYSTEM
+
+The Nepali alphabet is arranged in the following order. To use a Nepali-English Dictionary, this order must be memorized. The Roman letters used in this book are given with their equivalents in Devanagari script.
+
+VOWELS
+अ (a), आ (aa), इ (i), ई (i), उ (u), ऊ (u), ए (e), ऐ (ai), ओ (o), औ (au)
+
+CONSONANTS
+क (k), ख (kh), ग (g), घ (gh), ङ (ng)
+च (ch), छ (chh), ज (j), झ (jh), ञ (n)
+ट (T), ठ (Th), ड (D), ढ (Dh), ण (n)
+त (t), थ (th), द (d), ध (dh), न (n)
+प (p), फ (ph), ब (b), भ (bh), म (m)
+य (y), र (r), ल (l), व (w), श (sh)
+ष (sh), स (s), ह (h), क्ष (ksh), त्र (tra)
+ज्ञ (gyn)
+
+NOTE:
+1) The vowels i and u have two forms in written Nepali: short form (इ, उ) and long form (ई, ऊ). However, since no distinction is made in spoken Nepali, they will be treated as the same in this book.
+2) There are three different "s" sounds in written Nepali (श, ष, स). In common spoken Nepali, they are all pronounced as 'स'.
+3) All Nepali vowel sounds have nasalized forms. Tilde (~) has been used in this book to nasalize a sound.
+
+---
+
+A BRIEF GUIDE TO THE PRODUCTION OF THE NEPALI SOUNDS
+
+VOWELS
+1. अ (a) - Short, mid-central vowel similar to 'about'.
+   - अब (aba) - now
+   - असल (asal) - good
+   - दस (das) - ten
+   - उठ (uTha) - stand up!
+
+2. आ (aa) - Long, low, unsounded vowel similar to 'father'.
+   - आमा (aamaa) - mother
+   - आगो (aago) - fire
+   - न आउ (na aau) - don't come!
+   - जरा (jaraa) - root
+
+3. इ (i) - Short, high front, unrounded vowel similar to 'fit'.
+   - इनार (inaar) - well
+   - इन्द्र (indra) - the god of rain
+   - गीत (git) - song
+   - पनि (pani) - also
+
+4. ई (i) - Long but produced the same way (i) is.
+   - ईश्वर (ishwar) - God
+   - पानी (paani) - water
+   - दिदी (didi) - elder sister
+   - बहिनी (bahini) - younger sister
+   - तीर (tir) - arrow
+   - तिर (tira) - towards
+
+5. उ (u) - Short, high back, rounded vowel similar to 'put'.
+   - उठ (uTha) - stand up!
+   - बाउन्न (baaunna) - fifty-two
+   - जाउ (jaau) - go!
+
+6. ऊ (u) - Long but produced the same way as (u).
+   - ऊन (un) - wool
+   - ठूलो (Thulo) - big
+   - फूल (phul) - flower
+
+7. ए (e) - Long, high-mid, front, unrounded vowel.
+   - एक (ek) - one
+   - गए (gae) - they went
+   - खाएकोछु (khaaeko chhu) - I have eaten.
+
+8. ऐ (ai) - Low-mid, front, unrounded diphthong (a + i).
+   - ऐना (aina) - looking glass
+   - सबै (sabai) - all
+   - आजै (aajai) - today (emphatic)
+   - बजै (bajai) - grandmother
+   - मकै (makai) - corn
+   - ऐठन (aiThan) - nightmare
+
+9. ओ (o) - Long, high-mid, back rounded vowel.
+   - ओत (ot) - shelter
+   - फोहोर (phohor) - dirty
+   - बाटो (baaTo) - road
+
+10. औ (au) - Long, low-mid, back and rounded diphthong (अ + उ).
+    - औलो (aulo) - malaria
+    - थियौ (thiyau) - you were
+    - जौ (jau) - barley
+    - औषधी (ausadhi) - medicine
+    - कौवा (kauwaa) - crow
+
+CONSONANTS
+Nepali has 33 consonant sounds divided into five broad categories.
+
+1. Velar Consonants ( articulated at the soft palate/velum)
+   1.1 क (k) - Unvoiced, non-aspirate. Ex: कलम (kalam) - pen, नक्कल (nakkal) - copy, छाक (chhaak) - food for one meal.
+   1.2 ख (kh) - Aspirated form of 'k'. Ex: खानु (khaanu) - to eat, पर्खनु (parkhanu) - to wait, लेख (lekh) - article.
+   1.3 ग (g) - Voiced counterpart of (k). Ex: गन (gana) - count!, पागल (paagal) - insane, काग (kaag) - crow.
+   1.4 घ (gh) - Voiced counterpart of 'kh'. Ex: घर (ghar) - house, बाघ (baagh) - tiger, उघार्नु (ughaarnu) - to open.
+   1.5 ङ (ng) - Voiced and nasal. Ex: नङ (nang) - finger or toe nail, टाङ्गो (Taango) - a long stick, रङ (rang) - color.
+
+2. Palatal Consonants (articulated at the hard palate)
+   2.1 च (ch) - Unvoiced, non-aspirated. Similar to 'ch' in 'church'. Ex: चार (chaar) - four, बचन (bachan) - word, चम्चा (chamchaa) - spoon.
+   2.2 छ (chh) - Voiceless aspirated counterpart of (ch). Ex: छ (chha) - six, कान्छी (kaanchhi) - youngest female, माछा (maachhaa) - fish.
+   2.3 ज (j) - Voiced, unaspirated palatal sound. Ex: जरा (jaraa) - root, आज (aaja) - today, भजन (bhajan) - hymn.
+   2.4 झ (jh) - Aspirated counterpart of (j). Ex: झूटो (jhuTho) - lie, बुझ्नु (bujhnu) - to understand, साझा (saajhaa) - partnership.
+   2.5 ञ (n) - Nasalized palatal sound. Rarely used.
+
+3. Retroflex Consonants (tongue arching backward in the oral cavity)
+   3.1 ट (T) - Unvoiced, non-aspirate. Ex: टाउको (Taauko) - head, घटाउ (ghaTaau) - subtract, केटाकेटी (keTaakeTi) - children.
+   3.2 ठ (Th) - Unvoiced aspirate. Ex: ठाउँ (Thaaũ) - place, कोठा (koThaa) - room, अठार (aThaara) - eighteen.
+   3.3 ड (D) - Voiced, non-aspirate. Ex: डर (Dar) - fear, लडाई (laDaaĩ) - fight, हाडे (haaDe) - bone.
+   3.4 ढ (Dh) - Voiced, aspirate. Ex: ढोका (Dhokaa) - door, बढार्नु (baDhaarnu) - to sweep, चढ (chaDha) - climb.
+   3.5 ण (n) - Rarely used.
+
+4. Dental Consonants (articulated at the teeth)
+   4.1 त (t) - Unvoiced, non-aspirate. Ex: तास (taas) - playing card, बतास (bataas) - wind, सर्बत (sarbat) - cold drink.
+   4.2 थ (th) - Unvoiced, aspirate. Ex: थाल (thaal) - plate, बथान (bathaan) - group, अनाथ (anaath) - orphan.
+   4.3 द (d) - Voiced, non-aspirate. Ex: दाम (daam) - price, बिबाद (bibaad) - argument, बदाम (badaam) - peanut.
+   4.4 ध (dh) - Voiced, aspirate. Ex: धर्म (dharma) - religion, आधा (aadhaa) - half, राजधानी (raajdhaani) - capital.
+   4.5 न (n) - Nasal dental consonant. Ex: नाम (naam) - name, इनार (inaar) - well, पानी (paani) - water.
+
+5. Bi-labial Consonants (articulated by both lips)
+   5.1 प (p) - Unvoiced, non-aspirate. Ex: पानी (paani) - water, तपाईं (tapaaĩ) - you (Hon.), ताप (taap) - heat.
+   5.2 फ (ph) - Unvoiced, aspirate. Ex: फोहोर (phohor) - dirty, फलफूल (phalphul) - fruits, जवाफ (jawaaph) - answer.
+   5.3 ब (b) - Voiced, non-aspirate. Ex: बाटो (baaTo) - way, बराबर (baraabar) - equal, बा (baa) - father.
+   5.4 भ (bh) - Voiced, aspirate. Ex: भित्र (bhitra) - inside, अभागी (abhaagi) - unlucky.
+   5.5 म (m) - Bi-labial nasal sound. Ex: मलाई (malaai) - me, नाम (naam) - name, आमा (aamaa) - mother.
+
+6. Remaining Consonant Sounds
+   6.1 य (y) - Unrounded, palatal semi-vowel. Ex: यता (yataa) - hither, बयासी (bayaasi) - eighty-two, समय (samaya) - time.
+   6.2 र (r) - Voiced, non-aspirate, rolled alveolar. Ex: राम्रो (raamro) - good/pretty, कराउ (karaau) - shout!
+   6.3 ल (l) - Voiced, non-aspirate lateral sound. Ex: लामो (laamo) - long, कलम (kalam) - pen, दाल (daal) - lentil soup.
+   6.4 व (w) - Bi-labial semi-vowel. Tendency to pronounce as 'b'. Ex: वारी (waari) - side of river, वरिपरि (waripari) - around.
+   6.5 स (s) - Unvoiced dental sibilant. Ex: पचास (pachaas) - fifty, कसरी (kasari) - how.
+   6.6 श, ष - In Nepali words, these 's' sounds are pronounced as स (s).
+   6.7 ह (h) - Glottal fricative. Ex: हामी (haami) - we, मह (maha) - honey, शहर (shahar) - city, पोहोर (pohor) - last year.
+
+7. Compound Consonant Sounds
+   7.1 क्ष (ksh) - k + sh. Ex: अक्षर (akshar) - alphabet.
+   7.2 त्र (tra) - t + r. Ex: भित्र (bhitra) - inside.
+   7.3 ज्ञ (gyn/gyaan) - gy + n. Ex: ज्ञान (gyaan) - knowledge.
