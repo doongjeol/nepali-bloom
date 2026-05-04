@@ -1,7 +1,11 @@
 export type AudioItemKind = "vocab" | "dial" | "example";
 
+function formatAudioUrl(path: string) {
+  return encodeURI(path.toLowerCase());
+}
+
 export function getVocabAudioPath(lessonId: number | string, romanized: string): string {
-  return `/audio/lesson_${lessonId}/${romanized}.mp3`;
+  return formatAudioUrl(`/audio/lesson_${lessonId}/${romanized}.mp3`);
 }
 
 export function getDialogueAudioPath(

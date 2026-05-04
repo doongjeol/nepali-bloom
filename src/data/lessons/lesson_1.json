@@ -642,6 +642,124 @@
           "korean": "제가 펜을 주었습니다."
         }
       ]
+    },
+    {
+      "title": "PART II: PRACTICE (e)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "त्यो के हो ?",
+          "romanized": "tyo ke ho ?",
+          "korean": "저것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो झोला हो।",
+          "romanized": "yo jholaa ho.",
+          "korean": "이것은 가방(숄더백)입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कसको झोला हो ?",
+          "romanized": "tyo kasko jholaa ho ?",
+          "korean": "저것은 누구의 가방입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो उहाँको झोला हो।",
+          "romanized": "yo wahããko jholaa ho.",
+          "korean": "이것은 그분의 가방입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो झोला कस्तो छ ?",
+          "romanized": "tyo jholaa kasto chha ?",
+          "korean": "저 가방은 어떤 색입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो झोला सेतो छ।",
+          "romanized": "yo jholaa seto chha.",
+          "korean": "이 가방은 흰색입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो झोला दिनोस्।",
+          "romanized": "tyo jholaa dinos.",
+          "korean": "저 가방을 주세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले के गरेको ?",
+          "romanized": "tapaaïle ke gareko ?",
+          "korean": "당신은 무엇을 했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले झोला दिएको।",
+          "romanized": "maile jholaa dieko.",
+          "korean": "제가 가방을 주었습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (f)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "माइकजी !",
+          "romanized": "maaikji !",
+          "korean": "마이크 씨!"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हजुर !",
+          "romanized": "hajur !",
+          "korean": "네!"
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कसको किताब हो ?",
+          "romanized": "tyo kasko kitaab ho ?",
+          "korean": "저것은 누구의 책입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो किताब हो।",
+          "romanized": "yo mero kitaab ho.",
+          "korean": "이것은 제 책입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "पढ्नोस्।",
+          "romanized": "paDhnos.",
+          "korean": "읽으세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले के गरेको ?",
+          "romanized": "tapaaïle ke gareko ?",
+          "korean": "당신은 무엇을 했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले पढेको।",
+          "romanized": "maile paDheko.",
+          "korean": "제가 읽었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले कसको किताब पढेको ?",
+          "romanized": "tapaaïle kasko kitaab paDheko ?",
+          "korean": "당신은 누구의 책을 읽었습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले मेरो किताब पढेको।",
+          "romanized": "maile mero kitaab paDheko.",
+          "korean": "저는 제 책을 읽었습니다."
+        }
+      ]
     }
   ]
 }

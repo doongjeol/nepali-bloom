@@ -23,12 +23,6 @@ export type GrammarPracticeCard = {
   hasComparisonTable: boolean;
 };
 
-type FormulaToken = {
-  label: string;
-  tooltip: string;
-  emphasis?: boolean;
-};
-
 type PracticeKind = "possessive-ko" | "ergative-le" | "copula-contrast" | "generic";
 
 const possessiveMap: Record<string, string> = {
@@ -92,51 +86,6 @@ function inferPracticeKind(card: GrammarPracticeCard): PracticeKind {
     return "copula-contrast";
   }
   return "generic";
-}
-
-function buildFormula(card: GrammarPracticeCard, kind: PracticeKind): FormulaToken[] {
-  if (kind === "possessive-ko") {
-    return [
-      { label: "[명사/대명사]", tooltip: "소유를 나타내고 싶은 대상(‘~의’) 앞부분" },
-      { label: "+", tooltip: "결합" },
-      { label: "[-ko]", tooltip: "소유(~의)를 나타내는 접미사", emphasis: true },
-      { label: "->", tooltip: "결과" },
-      { label: "[소유격 형태]", tooltip: "예: ma -> mero, tapaaï -> tapaaïko" },
-    ];
-  }
-
-  if (kind === "ergative-le") {
-    return [
-      { label: "[주어]", tooltip: "행동을 한 주체(과거 타동사에서 -le가 붙을 수 있음)" },
-      { label: "+", tooltip: "결합" },
-      { label: "[-le]", tooltip: "과거 시제의 타동사에서 주어를 표시하는 마커", emphasis: true },
-      { label: "+", tooltip: "결합" },
-      { label: "[목적어]", tooltip: "행동의 대상" },
-      { label: "+", tooltip: "결합" },
-      { label: "[타동사(과거)]", tooltip: "목적어를 필요로 하는 동사의 과거 표현" },
-    ];
-  }
-
-  if (kind === "copula-contrast") {
-    return [
-      { label: "[명사/대명사]", tooltip: "문장의 주어(대상)" },
-      { label: "+", tooltip: "결합" },
-      { label: "[ho]", tooltip: "정의/식별", emphasis: true },
-      { label: "|", tooltip: "상황에 따라 선택" },
-      { label: "[chha]", tooltip: "위치/상태", emphasis: true },
-      { label: "|", tooltip: "상황에 따라 선택" },
-      { label: "[hunchha]", tooltip: "일반적 진리", emphasis: true },
-    ];
-  }
-
-  // Generic fallback: show a compact “rule skeleton” so every card has something visual.
-  return [
-    { label: `[${card.category}]`, tooltip: "이 문법 항목의 분류" },
-    { label: "+", tooltip: "결합" },
-    { label: "[핵심 규칙]", tooltip: "설명에 있는 핵심 원리를 확인하세요", emphasis: true },
-    { label: "->", tooltip: "적용" },
-    { label: "[예문/의미]", tooltip: "규칙이 문장에 어떻게 적용되는지" },
-  ];
 }
 
 function PrincipleKorean({ kind }: { kind: PracticeKind }) {
@@ -776,9 +725,46 @@ function GenericDrill({ card }: { card: GrammarPracticeCard }) {
   );
 }
 
+function GrammarPracticeButtons({
+  hasTransform,
+  hasClassify,
+  hasContrast,
+}: {
+  hasTransform: boolean;
+  hasClassify: boolean;
+  hasContrast: boolean;
+}) {
+  const triggerBase =
+    "w-full rounded-lg text-sm gap-1.5" +
+    " disabled:pointer-events-auto disabled:cursor-not-allowed disabled:opacity-50" +
+    " disabled:bg-transparent disabled:text-muted-foreground disabled:shadow-none";
+
+  const Soon = () => (
+    <span className="ml-1 rounded-full border border-muted-foreground/30 bg-muted/40 px-1.5 py-0.5 text-[10px] font-medium leading-none text-muted-foreground">
+      준비 중
+    </span>
+  );
+
+  return (
+    <TabsList className="w-full rounded-xl bg-[#EFE7E1] p-1">
+      <TabsTrigger value="transform" disabled={!hasTransform} className={triggerBase}>
+        변형 {!hasTransform && <Soon />}
+      </TabsTrigger>
+      <TabsTrigger value="classify" disabled={!hasClassify} className={triggerBase}>
+        분류 {!hasClassify && <Soon />}
+      </TabsTrigger>
+      <TabsTrigger value="contrast" disabled={!hasContrast} className={triggerBase}>
+        대조 {!hasContrast && <Soon />}
+      </TabsTrigger>
+      <TabsTrigger value="notes" className="w-full rounded-lg text-sm">
+        노트
+      </TabsTrigger>
+    </TabsList>
+  );
+}
+
 export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
   const kind = inferPracticeKind(card);
-  const formula = useMemo(() => buildFormula(card, kind), [card, kind]);
 
   const hasPossessive = kind === "possessive-ko";
   const hasErgative = kind === "ergative-le";
@@ -786,35 +772,6 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
 
   return (
     <div className="space-y-4">
-      <section className="rounded-2xl border border-[#DCCFC4] bg-white/55 p-3 sm:p-4">
-        <div className="mb-2 flex items-center justify-between gap-2">
-          <div className="min-w-0">
-            <p className="text-xs font-medium text-[#6B5D4F]">문법 공식</p>
-            <p className="mt-0.5 text-sm font-semibold text-[#333D29]">{card.title}</p>
-          </div>
-          <Badge className="shrink-0 rounded-full border-[#CDB9A8] bg-[#F5EBE0]/70 px-2 py-0.5 text-[10px] text-[#5A4636]">
-            {card.category}
-          </Badge>
-        </div>
-
-        <div className="flex flex-wrap items-center gap-2">
-          {formula.map((t, idx) => (
-            <span
-              key={`${t.label}-${idx}`}
-              aria-label={`${t.label}: ${t.tooltip}`}
-              className={cn(
-                "rounded-xl border px-2.5 py-1 text-sm font-semibold",
-                "bg-white/70",
-                t.emphasis && "border-[#D4A373]/60 bg-[#D4A373]/15 text-[#8A5A2B]",
-                !t.emphasis && "border-[#DCCFC4] text-[#333D29]",
-              )}
-            >
-              {t.label}
-            </span>
-          ))}
-        </div>
-      </section>
-
       <PrincipleKorean kind={kind} />
 
       <Tabs
@@ -822,26 +779,11 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
           hasPossessive ? "transform" : hasErgative ? "classify" : hasCopula ? "contrast" : "notes"
         }
       >
-        <TabsList className="w-full rounded-xl bg-[#EFE7E1] p-1">
-          {hasPossessive && (
-            <TabsTrigger value="transform" className="w-full rounded-lg text-sm">
-              변형
-            </TabsTrigger>
-          )}
-          {hasErgative && (
-            <TabsTrigger value="classify" className="w-full rounded-lg text-sm">
-              분류
-            </TabsTrigger>
-          )}
-          {hasCopula && (
-            <TabsTrigger value="contrast" className="w-full rounded-lg text-sm">
-              대조
-            </TabsTrigger>
-          )}
-          <TabsTrigger value="notes" className="w-full rounded-lg text-sm">
-            노트
-          </TabsTrigger>
-        </TabsList>
+        <GrammarPracticeButtons
+          hasTransform={hasPossessive}
+          hasClassify={hasErgative}
+          hasContrast={hasCopula}
+        />
 
         {hasPossessive && (
           <TabsContent value="transform" className="mt-3">

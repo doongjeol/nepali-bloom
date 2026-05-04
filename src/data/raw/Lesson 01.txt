@@ -83,13 +83,33 @@ ta            : then (그러면) [cite: 60, 61]
    (그러면 저것은 무엇입니까? / 이것은 공책입니다.) [cite: 112, 122, 123]
 4. tyo kasko kaapi ho ? / yo mero kaapi ho. [cite: 113, 124]
 
-(d)
-1. tyo ke ho ? / yo kalam ho. [cite: 114, 115, 125]
-2. tyo kasko kalam ho ? / yo mero kalam ho. [cite: 116, 126, 127]
+((d)
+1. tyo ke ho ? / yo kalam ho.
+2. tyo kasko kalam ho ? / yo mero kalam ho.
 3. tapaaïko kalam kasto chha ? / mero kalam kaalo chha.
-   (당신의 펜은 어떤 색입니까? / 제 펜은 검은색입니다.) [cite: 128, 129, 133]
+   (당신의 펜은 어떤 색입니까? / 제 펜은 검은색입니다.)
 4. kalam dinos. / maile kalam dieko.
-   (펜을 주세요. / 제가 펜을 주었습니다.) [cite: 130, 131, 134]
+   (펜을 주세요. / 제가 펜을 주었습니다.)
+
+(e)
+1. tyo ke ho ? / yo jholaa ho.
+   (저것은 무엇입니까? / 이것은 가방(숄더백)입니다.)
+2. tyo kasko jholaa ho. / yo wahããko jholaa ho.
+   (저것은 누구의 가방입니까? / 이것은 그분의 가방입니다.)
+3. tyo jholaa kasto chha ? / yo jholaa seto chha.
+   (저 가방은 어떤 색입니까? / 이 가방은 흰색입니다.)
+4. tyo jholaa dinos. / tapaaïle ke gareko ? / maile jholaa dieko.
+   (저 가방을 주세요. / 당신은 무엇을 했습니까? / 제가 가방을 주었습니다.)
+
+(f)
+1. maaikji ! / hajur !
+   (마이크 씨! / 네!)
+2. tyo kasko kitaab ho ? / yo mero kitaab ho.
+   (저것은 누구의 책입니까? / 이것은 제 책입니다.)
+3. paDhnos. / tapaaïle ke gareko ? / maile paDheko.
+   (읽으세요. / 당신은 무엇을 했습니까? / 제가 읽었습니다.)
+4. tapaaïle kasko kitaab paDheko ? / maile mero kitaab paDheko.
+   (당신은 누구의 책을 읽었습니까? / 저는 제 책을 읽었습니다.)
 
 
 4. GRAMMAR NOTES (문법 정리)

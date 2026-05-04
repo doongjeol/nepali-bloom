@@ -589,9 +589,9 @@ function LessonDetailPage() {
                 <div className="min-h-0 overflow-y-auto overscroll-contain px-4 pb-4 text-base [-webkit-overflow-scrolling:touch] sm:px-6">
                   <GrammarPractice card={toPracticeCard(grammarPractice)} />
                 </div>
-                <div className="sticky bottom-0 border-t border-[#DCCFC4] bg-[#FFFDF9]/95 px-4 py-3 sm:px-6">
+                <div className="sticky bottom-0 flex justify-end border-t border-[#DCCFC4] bg-[#FFFDF9]/95 px-4 py-3 sm:px-6">
                   <DialogClose asChild>
-                    <Button type="button" className="w-full rounded-xl sm:w-auto">
+                    <Button type="button" className="rounded-xl px-6">
                       닫기
                     </Button>
                   </DialogClose>
