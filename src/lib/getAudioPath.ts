@@ -9,11 +9,11 @@ export function getDialogueAudioPath(
   dialogueIndex: number,
   lineIndex: number,
 ): string {
-  return `/audio/lesson_${lessonId}/dial_${dialogueIndex}_${lineIndex}.mp3`;
+  return formatAudioUrl(`/audio/lesson_${lessonId}/dial_${dialogueIndex}_${lineIndex}.mp3`);
 }
 
 export function getExampleAudioPath(lessonId: number | string, index: number): string {
-  return `/audio/lesson_${lessonId}/example_${index}.mp3`;
+  return formatAudioUrl(`/audio/lesson_${lessonId}/example_${index}.mp3`);
 }
 
 export function getAudioPath(params:

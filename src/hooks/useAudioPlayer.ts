@@ -65,14 +65,10 @@ function initOnce() {
   );
   el.addEventListener("canplay", () => setState({ isLoading: false }));
   el.addEventListener("waiting", () => setState({ isLoading: true }));
-  el.addEventListener("error", () => {
-    console.error(`[오디오 로드 실패] 브라우저가 파일을 찾지 못했습니다. 요청 경로: ${el?.src}`);
-    setState({ isPlaying: false, isLoading: false, currentItemId: null, currentSrc: null });
-    const message = "음성 파일을 찾을 수 없습니다";
-    setState({ error: message });
-    if (!state.silentError) {
-      toastMissingAudioOnce();
-    }
+  // 5. 디버깅용 로그 강화: error 이벤트에서 상세 로깅, 상태 변경은 playItem 훅 내에서 제어하도록 위임
+  el.addEventListener("error", (e) => {
+    const target = e.target as HTMLAudioElement;
+    console.warn(`[오디오 미디어 에러] 브라우저 파일 로드 실패. (에러 코드: ${target.error?.code}) 요청 경로: ${target.src}`);
   });
 }
 
@@ -89,19 +85,36 @@ async function playItem(itemId: string, src: string, options?: { silentError?: b
     return;
   }
 
-  try {
-    if (!isSameItem) {
+  // 4. 다중 시도 로직 (Fallback): 확장자 대문자 변경 또는 원본 복구 시도
+  const fallbacks = Array.from(
+    new Set([
+      src,
+      src.replace(/\.mp3$/i, ".MP3"),
+      src.replace(/\.mp3$/i, ".mp3"),
+      decodeURI(src) // 인코딩 관련 서버 이슈 대비 디코딩된 버전 추가 시도
+    ])
+  );
+
+  let playSuccess = false;
+
+  for (const targetSrc of fallbacks) {
+    try {
       el.pause();
       el.currentTime = 0;
-      el.src = src;
-      setState({ currentItemId: itemId, currentSrc: src, isLoading: true, isPlaying: false });
+      el.src = targetSrc;
+      setState({ currentItemId: itemId, currentSrc: targetSrc, isLoading: true, isPlaying: false });
       el.load();
+      await el.play();
+      playSuccess = true;
+      break; // 성공하면 루프 탈출
+    } catch (e) {
+      console.warn(`[오디오 Fallback 시도 실패] 요청 경로: ${targetSrc}`, e);
     }
+  }
 
-    await el.play();
-  } catch (e) {
+  if (!playSuccess) {
     const message = "음성 파일을 찾을 수 없습니다";
-    console.error(`[오디오 재생 실패] 요청 경로: ${src}`, e);
+    console.error(`[오디오 최종 실패] 모든 Fallback 경로에서 파일을 찾지 못했습니다. 원본 경로: ${src}`);
     setState({
       error: message,
       isPlaying: false,
