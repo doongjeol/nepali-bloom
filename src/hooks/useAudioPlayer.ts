@@ -7,6 +7,7 @@ type PlayerState = {
   isPlaying: boolean;
   isLoading: boolean;
   error: string | null;
+  silentError: boolean;
 };
 
 type Listener = (state: PlayerState) => void;
@@ -17,6 +18,7 @@ const state: PlayerState = {
   isPlaying: false,
   isLoading: false,
   error: null,
+  silentError: false,
 };
 
 const listeners = new Set<Listener>();
@@ -25,11 +27,6 @@ let audio: HTMLAudioElement | null = null;
 let initialized = false;
 let lastErrorToastAt = 0;
 const ERROR_TOAST_DEDUP_MS = 1200;
-let suppressErrorsUntil = 0;
-
-function suppressErrorsFor(ms: number) {
-  suppressErrorsUntil = Date.now() + ms;
-}
 
 function toastMissingAudioOnce() {
   const now = Date.now();
@@ -69,31 +66,22 @@ function initOnce() {
   el.addEventListener("canplay", () => setState({ isLoading: false }));
   el.addEventListener("waiting", () => setState({ isLoading: true }));
   el.addEventListener("error", () => {
-    if (Date.now() < suppressErrorsUntil) {
-      // Intentional stop/cleanup can trigger an "error" event in some browsers when src is cleared.
-      setState({
-        isPlaying: false,
-        isLoading: false,
-        currentItemId: null,
-        currentSrc: null,
-        error: null,
-      });
-      return;
-    }
     console.error(`[오디오 로드 실패] 브라우저가 파일을 찾지 못했습니다. 요청 경로: ${el?.src}`);
     setState({ isPlaying: false, isLoading: false, currentItemId: null, currentSrc: null });
     const message = "음성 파일을 찾을 수 없습니다";
     setState({ error: message });
-    toastMissingAudioOnce();
+    if (!state.silentError) {
+      toastMissingAudioOnce();
+    }
   });
 }
 
-async function playItem(itemId: string, src: string) {
+async function playItem(itemId: string, src: string, options?: { silentError?: boolean }) {
   initOnce();
   const el = ensureAudio();
   if (!el) return;
 
-  setState({ error: null });
+  setState({ error: null, silentError: options?.silentError ?? false });
 
   const isSameItem = state.currentItemId === itemId && state.currentSrc === src;
   if (isSameItem && state.isPlaying) {
@@ -121,7 +109,9 @@ async function playItem(itemId: string, src: string) {
       currentItemId: null,
       currentSrc: null,
     });
-    toastMissingAudioOnce();
+    if (!state.silentError) {
+      toastMissingAudioOnce();
+    }
   }
 }
 
@@ -129,8 +119,6 @@ function stop() {
   initOnce();
   const el = ensureAudio();
   if (!el) return;
-  // Clearing src can emit an error event; treat this as an intentional stop.
-  suppressErrorsFor(800);
   el.pause();
   el.currentTime = 0;
   el.src = "";
@@ -138,7 +126,7 @@ function stop() {
 }
 
 export type UseAudioPlayerResult = PlayerState & {
-  play: (itemId: string, src: string) => Promise<void>;
+  play: (itemId: string, src: string, options?: { silentError?: boolean }) => Promise<void>;
   stop: () => void;
 };
 

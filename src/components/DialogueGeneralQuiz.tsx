@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { getDialogueAudioPath } from "@/lib/getAudioPath";
+import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 import { CheckCircle2, XCircle } from "lucide-react";
 
 type DialogueLineWithMeta = {
@@ -65,6 +65,7 @@ export function DialogueGeneralQuiz({
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [hasErrorOnCurrent, setHasErrorOnCurrent] = useState(false); // 현재 문제에서 틀린 적이 있는지 추적
+  const [clickedTokenId, setClickedTokenId] = useState<string | null>(null);
 
   useEffect(() => {
     startQuiz();
@@ -95,9 +96,40 @@ export function DialogueGeneralQuiz({
     setHasErrorOnCurrent(false);
   };
 
+  const playTokenAudio = (token: WordToken) => {
+    // 3. 시각적 피로도 고려: 미세한 팝(Pop) 애니메이션 피드백
+    setClickedTokenId(token.id);
+    setTimeout(() => setClickedTokenId(null), 150);
+
+    // 4. 성능 및 예외 처리: 에러를 뱉지 않고 조용히 넘어가도록 try-catch 적용
+    try {
+      // 특수문자 제거 후 파일명 규칙에 맞게 소문자로 변환 (예: /audio/lesson_1/kholnu.mp3)
+      const cleanWord = token.word.replace(/[^a-zA-Z]/g, "").toLowerCase();
+      const itemId = `token-${token.id}`;
+      const src = getVocabAudioPath(lessonId, cleanWord);
+
+      // 1 & 2. 로마자 단어 클릭 시 오디오 즉시 재생 (이전 소리는 자동 중단됨)
+      void audioPlayer.play(itemId, src, { silentError: true });
+
+      /* 
+        [선택 사항] 만약 단어별로 쪼개진 파일(.mp3)이 준비되어 있지 않아 에러가 나는 경우,
+        클릭 시 현재 문제로 출제된 전체 문장(Dialogue Line)의 오디오가 나오도록 대체하려면
+        위 audioPlayer.play(...) 코드를 지우고 아래 코드를 활성화하세요:
+        
+        const line = quizLines[currentStep];
+        const sentenceId = `dial-quiz-${lessonId}-${line.dIdx}-${line.lIdx}`;
+        const sentenceSrc = getDialogueAudioPath(lessonId, line.dIdx, line.lIdx);
+        void audioPlayer.play(sentenceId, sentenceSrc, { silentError: true });
+      */
+    } catch (e) {
+      // 파일을 찾을 수 없거나 재생 권한이 막힌 경우 조용히 무시합니다.
+    }
+  };
+
   const handleAdd = (token: WordToken) => {
     if (isSuccess) return;
     setIsError(false);
+    playTokenAudio(token);
     setPool((prev) => prev.filter((t) => t.id !== token.id));
     setAnswer((prev) => {
       const next = [...prev, token];
@@ -109,6 +141,7 @@ export function DialogueGeneralQuiz({
   const handleRemove = (token: WordToken) => {
     if (isSuccess) return;
     setIsError(false);
+    playTokenAudio(token);
     setAnswer((prev) => prev.filter((t) => t.id !== token.id));
     setPool((prev) => [...prev, token]);
   };
@@ -134,7 +167,7 @@ export function DialogueGeneralQuiz({
         // 정답 시 오디오 자동 재생
         const itemId = `dial-quiz-${lessonId}-${line.dIdx}-${line.lIdx}`;
         const src = getDialogueAudioPath(lessonId, line.dIdx, line.lIdx);
-        void audioPlayer.play(itemId, src);
+        void audioPlayer.play(itemId, src, { silentError: true });
       } else {
         setIsError(true);
         setHasErrorOnCurrent(true);
@@ -199,7 +232,7 @@ export function DialogueGeneralQuiz({
       <div className={cn("mb-5 flex min-h-[3.5rem] flex-wrap items-center gap-2 rounded-xl p-3 transition-colors", isError ? "border-2 border-destructive/50 bg-destructive/5" : "border border-border bg-muted/30", isSuccess ? "border-2 border-success/50 bg-success/5" : "")}>
         {answer.length === 0 && !isSuccess && <span className="ml-1 text-xs sm:text-sm text-muted-foreground">이곳에 단어가 배열됩니다.</span>}
         {answer.map((t) => (
-          <button key={t.id} onClick={() => handleRemove(t)} disabled={isSuccess} className={cn("rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm transition-transform active:scale-95", isError ? "animate-shake bg-destructive text-destructive-foreground" : "bg-primary text-primary-foreground hover:opacity-90", isSuccess ? "bg-success text-success-foreground" : "")}>
+          <button key={t.id} onClick={() => handleRemove(t)} disabled={isSuccess} className={cn("rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200 active:scale-95", isError ? "animate-shake bg-destructive text-destructive-foreground" : "bg-primary text-primary-foreground hover:opacity-90", isSuccess ? "bg-success text-success-foreground" : "", clickedTokenId === t.id && "scale-110 brightness-110 ring-2 ring-primary/40")}>
             {t.word}
           </button>
         ))}
@@ -208,7 +241,7 @@ export function DialogueGeneralQuiz({
       {/* 단어 풀 영역 */}
       <div className="mb-6 flex flex-wrap justify-center gap-2">
         {pool.map((t) => (
-          <button key={t.id} onClick={() => handleAdd(t)} className="rounded-lg border bg-card px-3 py-1.5 text-sm font-medium shadow-sm transition-transform hover:bg-accent active:scale-95">
+          <button key={t.id} onClick={() => handleAdd(t)} className={cn("rounded-lg border bg-card px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200 hover:bg-accent active:scale-95", clickedTokenId === t.id && "scale-110 border-primary bg-primary/10 text-primary ring-2 ring-primary/30")}>
             {t.word}
           </button>
         ))}

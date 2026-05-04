@@ -62,11 +62,36 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 동시 동작 어미 '-daakheri': 두 가지 동작이 동시에 일어날 때(~할 때, ~하는 동안) 사용합니다. 동사 어간에 '-daakheri'를 붙입니다. (예: lekhnu -> lekhdaakheri, jaanu -> jaadaakheri).",
-    "2. 'Haraaunu' (잃어버리다): 물건을 분실했을 때뿐만 아니라 길을 잃었을 때도 사용합니다. 완료된 상태를 나타낼 때 'haraaeko' 형식을 자주 씁니다.",
-    "3. 'Samjhannu' (기억하다): 과거의 일을 떠올리거나 잊지 않고 있을 때 사용합니다.",
-    "4. 'Rahechha' (있었군요/있더군요): 몰랐던 사실을 새로 알게 되었을 때 사용하는 감탄/확인형 종결 어미입니다. (예: tyahãã rahechha - 거기 있었군요).",
-    "5. '-maatrai' (오직/단지): 수량이나 범위를 한정할 때 강조하여 사용합니다. (예: pachchis rupiyaa maatrai - 겨우 25루피)."
+    {
+      "title": "1. 동시 동작 어미 '-daakheri'",
+      "details": [
+        "두 가지 동작이 동시에 일어날 때(~할 때, ~하는 동안) 사용합니다. 동사 어간에 '-daakheri'를 붙입니다. (예: lekhnu -> lekhdaakheri, jaanu -> jaadaakheri)."
+      ]
+    },
+    {
+      "title": "2. 'Haraaunu' (잃어버리다)",
+      "details": [
+        "물건을 분실했을 때뿐만 아니라 길을 잃었을 때도 사용합니다. 완료된 상태를 나타낼 때 'haraaeko' 형식을 자주 씁니다."
+      ]
+    },
+    {
+      "title": "3. 'Samjhannu' (기억하다)",
+      "details": [
+        "과거의 일을 떠올리거나 잊지 않고 있을 때 사용합니다."
+      ]
+    },
+    {
+      "title": "4. 'Rahechha' (있었군요/있더군요)",
+      "details": [
+        "몰랐던 사실을 새로 알게 되었을 때 사용하는 감탄/확인형 종결 어미입니다. (예: tyahãã rahechha - 거기 있었군요)."
+      ]
+    },
+    {
+      "title": "5. '-maatrai' (오직/단지)",
+      "details": [
+        "수량이나 범위를 한정할 때 강조하여 사용합니다. (예: pachchis rupiyaa maatrai - 겨우 25루피)."
+      ]
+    }
   ],
   "quiz": [
     {

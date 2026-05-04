@@ -37,7 +37,7 @@ function Index() {
           <p className="mx-auto max-w-md text-base text-muted-foreground sm:text-lg">
             Basic Course in Spoken Nepali 기반으로
             <br className="hidden sm:block" />
-            37개 레슨을 통해 네팔어를 배워보세요
+            40개 레슨을 통해 네팔어를 배워보세요
           </p>
         </section>
 
@@ -54,7 +54,7 @@ function Index() {
               레슨 시작하기
             </h2>
             <p className="text-sm text-muted-foreground">
-              단어장, 퀴즈, 대화문이 포함된 37개 레슨
+              단어장, 퀴즈, 대화문이 포함된 40개 레슨
             </p>
           </Link>
         </section>

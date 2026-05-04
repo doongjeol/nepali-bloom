@@ -102,8 +102,20 @@
   ],
   "examples": [],
   "grammar": [
-    "1. tapaaïlaai kasto chha ?: 의미: 어떻게 지내세요? (How are you?) - 설명: 네팔어의 전형적인 관용구는 아니지만, 외국인과 접촉이 잦은 네팔인들 사이에서 매우 빈번하게 사용됩니다. 영어의 'How are you?'를 직역한 형태의 표현입니다.",
-    "2. sanchai: 의미: 잘 지내요 / 건강합니다. (well, in good health) - 설명: 'sancho'의 비격식(informal) 형태입니다. 안부를 물을 때나 본인의 상태를 대답할 때 모두 사용할 수 있는 유용한 표현입니다."
+    {
+      "title": "1. tapaaïlaai kasto chha ?",
+      "details": [
+        "- 의미: 어떻게 지내세요? (How are you?)",
+        "- 설명: 네팔어의 전형적인 관용구는 아니지만, 외국인과 접촉이 잦은 네팔인들 사이에서 매우 빈번하게 사용됩니다. 영어의 'How are you?'를 직역한 형태의 표현입니다."
+      ]
+    },
+    {
+      "title": "2. sanchai",
+      "details": [
+        "- 의미: 잘 지내요 / 건강합니다. (well, in good health)",
+        "- 설명: 'sancho'의 비격식(informal) 형태입니다. 안부를 물을 때나 본인의 상태를 대답할 때 모두 사용할 수 있는 유용한 표현입니다."
+      ]
+    }
   ],
   "quiz": [
     {

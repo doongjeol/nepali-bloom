@@ -509,6 +509,20 @@ function LessonDetailPage() {
               />
             ) : (
               <div className="space-y-5 sm:space-y-6">
+                {/* 퀴즈 배너 추가 */}
+                <div className="rounded-2xl border bg-card p-5 text-center shadow-sm sm:p-6">
+                  <h2 className="mb-2 text-lg font-bold text-foreground">배운 내용을 확인해볼까요?</h2>
+                  <p className="mb-4 text-sm text-muted-foreground">
+                    이번 레슨의 대화문 문장들을 직접 조립해보며 실력을 점검해보세요.
+                  </p>
+                  <button
+                    onClick={() => setIsQuizMode(true)}
+                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 active:scale-95"
+                  >
+                    🧩 전체 대화문 퀴즈 도전하기
+                  </button>
+                </div>
+
                 {lesson.dialogues.map((dialogue, dIdx) => (
                   <div key={dIdx}>
                     <div className="mb-2 sm:mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -535,12 +549,6 @@ function LessonDetailPage() {
                           className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary px-3 text-xs font-medium text-secondary-foreground hover:bg-accent active:scale-95 transition-all sm:h-9 sm:w-auto sm:px-3 sm:text-sm"
                         >
                           {showRomanized ? "로마자 숨기기" : "로마자 보기"}
-                        </button>
-                        <button
-                          onClick={() => setIsQuizMode(true)}
-                          className="col-span-2 sm:col-span-1 inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary/10 px-3 text-xs font-medium text-primary hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all sm:h-9 sm:w-auto sm:px-3 sm:text-sm"
-                        >
-                          🧩 퀴즈 풀기
                         </button>
                       </div>
                     </div>
@@ -746,14 +754,25 @@ function toPracticeCard(card: GrammarCardData): GrammarPracticeCard {
   };
 }
 
-function parseGrammarCards(grammar: string[]): GrammarCardData[] {
+function parseGrammarCards(grammar: any[]): GrammarCardData[] {
+  if (!grammar || grammar.length === 0) return [];
+
+  // 새로운 형식 지원: 객체 형태 ({ title: string, details: string[] })
+  if (typeof grammar[0] === "object") {
+    return grammar.map((g) => ({
+      title: g.title,
+      lines: g.details || [],
+    }));
+  }
+
+  // 기존 문자열 배열 형식 지원 (이전 데이터 호환성 유지)
   const cards: GrammarCardData[] = [];
   let currentCard: GrammarCardData | null = null;
   for (const line of grammar) {
-    if (line.match(/^\d+\./)) {
+    if (typeof line === "string" && line.match(/^\d+\./)) {
       if (currentCard) cards.push(currentCard);
       currentCard = { title: line, lines: [] };
-    } else if (currentCard) {
+    } else if (currentCard && typeof line === "string") {
       if (line.trim() || currentCard.lines.length > 0) {
         currentCard.lines.push(line);
       }
