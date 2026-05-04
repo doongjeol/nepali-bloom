@@ -64,6 +64,7 @@ function initOnce() {
   el.addEventListener("canplay", () => setState({ isLoading: false }));
   el.addEventListener("waiting", () => setState({ isLoading: true }));
   el.addEventListener("error", () => {
+    console.error(`[오디오 로드 실패] 브라우저가 파일을 찾지 못했습니다. 요청 경로: ${el?.src}`);
     setState({ isPlaying: false, isLoading: false, currentItemId: null, currentSrc: null });
     const message = "음성 파일을 찾을 수 없습니다";
     setState({ error: message });
@@ -96,7 +97,7 @@ async function playItem(itemId: string, src: string) {
     await el.play();
   } catch (e) {
     const message = "음성 파일을 찾을 수 없습니다";
-    console.error("Audio play failed:", e);
+    console.error(`[오디오 재생 실패] 요청 경로: ${src}`, e);
     setState({
       error: message,
       isPlaying: false,
