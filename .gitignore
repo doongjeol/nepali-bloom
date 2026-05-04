@@ -39,5 +39,4 @@ dist-ssr
 out/
 
 # Audio assets (large / local)
-audio/
 public/audio/_legacy/

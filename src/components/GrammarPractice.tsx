@@ -273,14 +273,13 @@ function PossessiveDrill({ card }: { card: GrammarPracticeCard }) {
 
   const generateQuestion = () => {
     const pronouns = Object.keys(possessiveMap);
-    const from = pick(pronouns);
-    const to = pick(pronouns.filter((p) => p !== from));
-    const answer = possessiveMap[to] ?? "";
+    const pronoun = pick(pronouns);
+    const answer = possessiveMap[pronoun] ?? "";
     const distractors = shuffle(
       pronouns.map((p) => possessiveMap[p]!).filter((v) => v !== answer),
     ).slice(0, 3);
     const options = shuffle([answer, ...distractors]).slice(0, 4);
-    return { from, to, answer, options };
+    return { pronoun, answer, options };
   };
   const [question, setQuestion] = useState(() => generateQuestion());
 
@@ -305,9 +304,8 @@ function PossessiveDrill({ card }: { card: GrammarPracticeCard }) {
       <div className="rounded-xl border border-[#DCCFC4] bg-[#F5EBE0]/60 p-3">
         <p className="text-xs font-medium text-[#6B5D4F]">변형 과제</p>
         <p className="mt-1 text-sm text-[#333D29]">
-          주어를 <span className="font-semibold text-[#8A5A2B]">{question.from}</span> 에서{" "}
-          <span className="font-semibold text-[#8A5A2B]">{question.to}</span> 로 바꾸면 소유격은
-          무엇이 될까요?
+          <span className="font-semibold text-[#8A5A2B]">{question.pronoun}</span> 의 소유격
+          형태는 무엇일까요?
         </p>
       </div>
 
