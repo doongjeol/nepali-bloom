@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Header } from "@/components/Header";
-import lessonsData from "@/data/lessons.json";
+import lessonsData from "@/data/lesson_1.json";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 
