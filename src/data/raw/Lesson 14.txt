@@ -1,0 +1,85 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 14
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+bheTnu         : to meet (만나다)
+bhraman        : travel, tour (여행/관광)
+ekdam          : very, extremely (매우, 아주)
+film           : film, movie (영화)
+ghumnu         : to roam, to travel (돌아다니다, 여행하다)
+hal            : hall, cinema hall (극장/홀)
+hernu          : to see, to watch (보다)
+janu           : to go (가다)
+kahile kahile  : sometimes (때때로)
+khelnu         : to play (놀다, 경기를 하다)
+manparnu       : to like (좋아하다)
+manpardaina    : to dislike (좋아하지 않다)
+na             : isn't it? (그렇지 않니? - 확인형 어미)
+pokharaa       : Pokhara (포카라 - 네팔의 도시)
+phuTbal        : football (축구)
+raamro         : good, beautiful (좋은, 아름다운)
+ramaailo       : pleasant, fun (즐거운)
+sadhai         : always (항상)
+saathi         : friend (친구)
+sinemaa        : cinema, movie (영화)
+tasbir         : picture, photo (사진)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 영화 취향
+1. tapaaïlaai sinemaa manparchha ? / manparchha.
+   (당신은 영화를 좋아합니까? / 네, 좋아합니다.)
+2. kasto sinemaa manparchha ? / malaai nepaali sinemaa manparchha.
+   (어떤 영화를 좋아하나요? / 저는 네팔 영화를 좋아합니다.)
+3. tapaaï sinemaa herna kahãã jaanuhunchha ? / ma biswojyoti sinemaa halmaa jaanchhu.
+   (영화를 보러 어디로 가시나요? / 저는 비쇼죠티 영화관에 갑니다.)
+4. tapaaïko saathilaai ni ? / uslaai pani nepaali sinemaa manparchha.
+
+(b) 여행과 취미
+1. tapaaïlaai pokharaa kasto laagyo ? / dherai ramaailo laagyo.
+   (포카라는 어땠나요? / 아주 즐거웠습니다.)
+2. tapaaïlaai ghumnu manparchha, na ? / ho, malaai bhraman dherai manparchha.
+   (당신은 돌아다니는 것을 좋아하죠, 그렇죠? / 네, 저는 여행하는 것을 아주 좋아합니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 스포츠 취향
+1. tapaaïlaai phuTbal khelna manparchha ? / manparchha.
+   (당신은 축구하는 것을 좋아합니까? / 네, 좋아합니다.)
+2. tapaaïko saathilaai ni ? / uslaai manpardaina.
+3. uslaai ke manparchha ta ? / uslaai sinemaa herna manparchha.
+
+(b) 음식 취향
+1. tapaaïlaai nepaali khaanaa manparchha ? / ekdam manparchha.
+2. ke ke manparchha ? / daal, bhaat ra tarkaari manparchha.
+3. tapaaïlaai raksi manparchha ki manpardaina ? / manpardaina.
+   (당신은 술을 좋아하나요, 좋아하지 않나요? / 좋아하지 않습니다.)
+
+(c) 만남과 활동
+1. bholi tapaaï kaslaai bheTne ? / ma aaphno saathilaai bheTne.
+   (내일 누구를 만날 건가요? / 제 친구를 만날 거예요.)
+2. tapaaïharu ke garne ? / haami sinemaa herna jaane.
+   (당신들은 무엇을 할 건가요? / 우리는 영화를 보러 갈 거예요.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 존은 네팔 음식을 아주 좋아합니다. 그는 매일 달밧과 채소를 먹습니다. 그는 또한 여행하는 것(bhraman)을 좋아해서 지난주에 포카라에 다녀왔습니다. 포카라는 그에게 매우 아름답고 즐거운 곳이었습니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. Manparnu (좋아하다):
+   - 주어(사람) 뒤에 반드시 '-laai'를 붙여야 합니다.
+   - malaai manparchha (나는 좋아한다) / malaai manpardaina (나는 좋아하지 않는다).
+2. Manparchha vs Lagyo:
+   - Manparchha: 일반적인 취향을 말할 때 사용.
+   - Lagyo: 특정 경험에 대한 주관적인 느낌을 말할 때 사용 (예: ramaailo laagyo - 즐거웠다).
+3. 부가 의문문 'na': 문장 끝에 붙여 "그렇죠?" 또는 "그렇지 않니?"라는 확인의 의미를 나타냅니다.
+4. 동사의 목적형 (-na): "~하기 위해"라는 의미로 동사의 'nu'를 'na'로 바꿉니다.
+   - herna (보러/보기 위해), khelna (경기하러/하기 위해).
+==================================================

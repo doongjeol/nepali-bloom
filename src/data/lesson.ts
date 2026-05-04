@@ -2,6 +2,14 @@ export interface Vocabulary {
   nepali: string;
   romanized: string;
   korean: string;
+  example?: string;
+  exampleKo?: string;
+}
+
+export interface Example {
+  nepali: string;
+  romanized: string;
+  korean: string;
 }
 
 export interface Quiz {
@@ -28,6 +36,8 @@ export interface Lesson {
   titleKo: string;
   description: string;
   vocabulary: Vocabulary[];
+  examples: Example[];
+  grammar?: string[];
   quiz: Quiz[];
   dialogues: Dialogue[];
 }

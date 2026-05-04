@@ -1,0 +1,92 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 2 (Corrected)
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+aamaa          : mother (어머니)
+amilo          : sour (신, 시큼한)
+baa            : father (아버지)
+banda garnu    : to close, to shut (닫다)
+chhaina        : isn't (없다, 아니다 - chha의 부정)
+chiso          : cold (차가운 - 물, 음료 등)
+chiyaa         : tea (차)
+Dhokaa         : door (문)
+khaanu         : to eat, to drink (먹다, 마시다)
+linu           : to take (취하다, 가지다)
+ma             : I (나)
+maile          : I (과거 시제 타동사와 함께 쓰일 때)
+malaai         : to me, for me (나에게, 나를)
+paani          : water (물)
+pani           : also (또한, 역시)
+sanchai        : fine, well (잘 지내는, 건강한)
+suntalaa       : orange (오렌지/귤)
+syaau          : apple (사과)
+taato          : hot (뜨거운)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+1. namaste ! / namaste !
+   (안녕하세요! / 안녕하세요!)
+
+2. sanchai ? / sanchai.
+   (잘 지내세요? / 잘 지냅니다.)
+
+3. tapaaïko ghar kahãã ho ? / mero ghar amerikaa ho.
+   (고향이 어디입니까? / 제 고향은 미국입니다.)
+
+4. tapaaïko baako naam ke ho ? / mero baako naam bil ho.
+   (아버님 성함이 무엇입니까? / 저희 아버지 성함은 Bill입니다.)
+
+5. tapaaïko aamaako naam ke ho ? / mero aamaako naam baarbaraa ho.
+   (어머님 성함이 무엇입니까? / 저희 어머니 성함은 Barbara입니다.)
+
+6. tapaallaai kasto chha ? / malaai sanchai chha.
+   (어떻게 지내세요? / 저는 잘 지냅니다.)
+
+7. tapaallaai ni ? / malaai pani sanchai chha.
+   (당신은요? / 저도 잘 지냅니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 문 열고 닫기
+1. tyo ke ho ? / tyo Dhokaa ho.
+   (저것은 무엇입니까? / 저것은 문입니다.)
+2. Dhokaa kholnos. / maile Dhokaa kholeko.
+   (문을 여세요. / 제가 문을 열었습니다.)
+3. wahããle ke gareko ? / wahããle Dhokaa kholeko.
+   (그분은 무엇을 했습니까? / 그분이 문을 열었습니다.)
+4. Dhokaa banda garnos. / maile Dhokaa banda gareko.
+   (문을 닫으세요. / 제가 문을 닫았습니다.)
+
+(b) 과일 먹기
+1. tyo ke ho ? / yo suntalaa ho.
+   (저것은 무엇입니까? / 이것은 오렌지입니다.)
+2. khaanos. / maile suntalaa khaaeko.
+   (드세요. / 제가 오렌지를 먹었습니다.)
+3. suntalaa kasto chha ? / suntalaa guliyo chha.
+   (오렌지 맛이 어떻습니까? / 오렌지가 답니다.)
+4. syaau amilo chha ? / chhaina, guliyo chha.
+   (사과가 십니까? / 아니요, 답니다.)
+
+(c) 차 마시기
+1. chiyaa khaanus. / maile chiyaa khaaeko.
+   (차를 마시세요. / 제가 차를 마셨습니다.)
+2. chiyaa chiso chha ? / chhaina, taato chha.
+   (차가 차갑습니까? / 아니요, 뜨겁습니다.)
+3. paani linus. / maile paani lieko.
+   (물을 드세요/받으세요. / 제가 물을 받았습니다.)
+4. tapaaïle ke gareko ? / maile paani lieko.
+   (당신은 무엇을 했습니까? / 제가 물을 받았습니다.)
+
+
+4. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. tapaallaai kasto chha?: 영어의 "How are you?"에 대응하는 안부 인사입니다.
+2. sanchai: 'sancho'의 격식 없는 변형으로, 건강 상태를 묻고 답할 때 씁니다.
+3. maile: 과거 시제에서 '먹다', '열다', '받다'와 같은 타동사가 쓰일 때 주어 'ma' 뒤에 '-le'가 붙습니다.
+4. khaanu: 음식물을 '먹다'와 차/물 등을 '마시다'에 모두 사용됩니다.
+5. linu: 영어의 'take'에 해당하며, 물건을 받거나 취하는 동작을 의미합니다.
+==================================================

@@ -1,0 +1,81 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 10
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+aaraam garnu   : to rest (쉬다) [cite: 1351]
+alchhi         : lazy (게으른) [cite: 1351]
+eklai          : alone (혼자) [cite: 1351]
+ghoDejaatraa   : horse racing (경마 축제) [cite: 1351]
+asaadhyai      : extremely, very much (매우, 대단히) [cite: 1351]
+aushadhi       : medicine (약) [cite: 1351]
+jwaro/joro     : fever (열) [cite: 1351]
+peT            : stomach, abdomen (배, 복부) [cite: 1351]
+bhok laagnu    : to feel hungry (배고프다) [cite: 1351]
+dhumdhaam      : a great deal, very (매우 많이, 아주) [cite: 1351]
+ramaailo       : pleasant, scenic (즐거운, 경치 좋은) [cite: 1351]
+taas           : playing cards (카드 게임) [cite: 1351]
+dinbhari       : daylong (하루 종일) [cite: 1351]
+thakaai laagnu : to feel tired (피곤하다) [cite: 1351]
+dishaa         : stool (대변) [cite: 1351]
+dishaa laagnu  : to have diarrhoea (설사하다) [cite: 1351]
+tirkhaa laagnu : to feel thirsty (목마르다) [cite: 1351]
+dukhnu         : to ache, to have a pain (아프다) [cite: 1351]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 건강 상태 묻기
+1. tapaallaai sanchai chha ? / ali sancho chhaina. [cite: 1355, 1361]
+   (건강하세요? / 몸이 좀 안 좋습니다.) [cite: 1355, 1361]
+2. ke bhayo ? / jwaro aayo. [cite: 1356, 1362]
+   (무슨 일입니까? / 열이 납니다.) [cite: 1357, 1363]
+3. kahiledekhi jwaro aayo ? / hijodekhi. [cite: 1358, 1364]
+   (언제부터 열이 났습니까? / 어제부터요.) [cite: 1358, 1364]
+4. DaakTarkãã jaanubhayo ? / gae. aushadhi khaadaichhu. [cite: 1359, 1364]
+   (의사에게 갔었나요? / 네, 갔습니다. 지금 약을 먹고 있습니다.) [cite: 1360, 1364]
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 증상 상세
+1. uslaai ke bhaeko chha ? / usko peT dukheko chha. [cite: 1368]
+   (그녀에게 무슨 문제가 있나요? / 배가 아픕니다.) [cite: 1368]
+2. dishaa pani laageko chha ? / laageko chha. [cite: 1368]
+   (설사도 하나요? / 네, 합니다.) [cite: 1368]
+
+(b) 배고픔과 목마름
+1. tapaallaai bhok laagyo ? / ho, dherai bhok laagyo. [cite: 1375, 1380]
+   (배고프신가요? / 네, 아주 배가 고픕니다.) [cite: 1375, 1380]
+2. biskut khaanuhunchha ? / khaanchhu. [cite: 1377, 1381]
+3. chiyaa khaanuhunchha ki kok ? / kok khaanchhu. [cite: 1378, 1383]
+
+(c) 피로와 휴식
+1. tapaaïlaai thakaai laagyo ki laagena ? / asaadhyai thakaai laagyo. [cite: 1390, 1398]
+   (피곤하신가요, 아닌가요? / 매우 피곤합니다.) [cite: 1391, 1399]
+2. ke garnu bhayo ta ? / aaraam garẽ. [cite: 1392, 1400]
+   (그럼 무엇을 했습니까? / 쉬었습니다.) [cite: 1392, 1400]
+
+(d) 음주와 취기
+1. tapaallaai raksi laagyo ki laagena ? / ekdam laagyo. [cite: 1393]
+   (술에 취했나요, 안 취했나요? / 아주 취했습니다.) [cite: 1393]
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 라메시는 방에서 혼자 공부하다가 어머니가 부르셔서 간식을 먹으러 갑니다. 배는 고프지 않지만 목이 말라 물을 마십니다. 오늘은 툰디켈에서 열리는 경마 축제(GhoDe jaatraa)가 있는 날이라 구경하러 갈 계획입니다.] [cite: 1404, 1405, 1406, 1407]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. GhoDe jaatraa: 카트만두에서 매년 열리는 연례 경마 축제입니다. [cite: 1418]
+2. 'laagyo'의 관용적 사용: 감정, 감각, 신체적 상태 또는 효과를 묘사할 때 사용합니다. [cite: 1420]
+3. 주격 조사 '-laai': 'laagyo'와 함께 쓰이는 주어(사람) 뒤에는 항상 '-laai'를 붙입니다. [cite: 1424, 1425]
+   - malaai bhok laagyo (나는 배가 고프다) [cite: 1426, 1427]
+   - uslaai tirkhaa laagyo (그는 목이 마르다) [cite: 1428, 1429]
+   - haamilai jaaDo laagyo (우리는 춥다) [cite: 1437, 1445]
+4. 'laagyo'의 부정형: 'laageko chhaina' 형식을 사용합니다. [cite: 1454, 1455]
+   - 예: malaai tirkhaa laageko chhaina (나는 목마르지 않다). [cite: 1456, 1457]
+5. 동사의 성별 일치: 구어체에서 항상 흔하지는 않으나, 네팔어 동사는 성별에 따라 변화할 수 있습니다. (예: raam aayo / sitaa aaina) [cite: 1461, 1462, 1463, 1464]
+==================================================

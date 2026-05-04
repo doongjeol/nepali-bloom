@@ -1,0 +1,82 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 11
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+aitabaar       : Sunday (일요일)
+aja            : today (오늘)
+astI           : day before yesterday (그저께)
+baara          : day of the week (요일)
+bihibaar       : Thursday (목요일)
+budhabaar      : Wednesday (수요일)
+gate           : date (날짜 - 네팔력 기준)
+itihaas        : history (역사)
+janmadiwas     : birthday (생일)
+mangalbaar     : Tuesday (화요일)
+parsi          : day after tomorrow (내레/모레)
+shukrabaar     : Friday (금요일)
+sombaar        : Monday (월요일)
+shichhyaa      : education (교육)
+shonibaar      : Saturday (토요일)
+taarikh        : date (날짜 - 서양력/태양력 기준)
+thie           : was / were (있었다/였다 - 과거 상태)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 요일과 날짜
+1. aaja ke baar ho ? / aaja aitabaar ho.
+   (오늘은 무슨 요일입니까? / 오늘은 일요일입니다.)
+2. bholi ni ? / bholi sombaar ho.
+3. hijo ke baar thiyo ? / hijo shanibaar thiyo.
+   (어제는 무슨 요일이었습니까? / 어제는 토요일이었습니다.)
+4. aaja kati gate ho ? / aaja das gate ho.
+   (오늘은 며칠입니까? / 오늘은 10일입니다.)
+
+(b) 생일 묻기
+1. tapaaïko janmadiwas kahile ho ? / mero janmadiwas march 15 taarikhmaa ho.
+   (당신의 생일은 언제입니까? / 제 생일은 3월 15일입니다.)
+2. tapaaïko gharmaa ko ko hunuhunchha ? / mero baa, aamaa ra didi.
+   (집에 가족 누가 계십니까? / 아버지, 어머니, 그리고 누나(언니)가 있습니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 과거의 위치/상태 (Was/Were)
+1. hijo tapaaï kahãã hunuhunthyo ? / hijo ma aaphno Deraamaa thiẽ.
+   (어제 당신은 어디에 있었습니까? / 어제 저는 제 숙소에 있었습니다.)
+2. hijo tapaaïlaai sancho thiyo ? / thiyena.
+   (어제 몸 상태가 괜찮았나요? / 아니요, 좋지 않았습니다.)
+3. ke bhaeko thiyo ? / jwaro aaeko thiyo.
+   (무슨 일이 있었나요? / 열이 났었습니다.)
+
+(b) 과거의 신분
+1. tapaai amerikaamaa ke hunuhunthyo ? / ma bidyaarthi thiẽ.
+   (당신은 미국에서 무엇이었습니까? / 저는 학생이었습니다.)
+2. tapaaïko saathi ni ? / u pani bidyaarthi nai thiyo.
+   (당신의 친구는요? / 그도 역시 학생이었습니다.)
+3. tapaaïko bishaya ke thiyo ? / mero bishaya itihaas thiyo.
+   (당신의 전공/과목은 무엇이었습니까? / 제 전공은 역사였습니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 어제는 토요일(휴일)이었습니다. 리처드는 시내에 가고 싶었지만 몸이 좋지 않아 숙소에 머물며 쉬었습니다. 그는 미국에서 교육학을 전공한 학생이었으며, 지금은 네팔에서 네팔어를 배우고 있습니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 요일 명칭: 모든 요일은 'baar'로 끝납니다. (예: Aitabaar, Sombaar 등)
+2. 날짜 표현 (Gate vs Taarikh):
+   - Gate: 네팔 공식 달력(Bikram Sambat)의 날짜를 말할 때 씁니다.
+   - Taarikh: 서양 달력(Gregorian calendar)의 날짜를 말할 때 씁니다.
+3. Be 동사의 과거형 (Status/Location):
+   - ma thiẽ (나는 ~였다/있었다)
+   - u thiyo (그는 ~였다/있었다)
+   - tapaai hunuhunthyo (당신은 ~였습니다/계셨습니다)
+   - 부정형: thiyena / hunuhunnathyo
+4. 'Thiyo' vs 'Bhaeyo':
+   - Thiyo: 과거의 지속적인 상태나 위치 (He was a student).
+   - Bhaeyo: 과거에 일어난 사건이나 변화의 결과 (He became a student / It happened).
+==================================================

@@ -1,0 +1,92 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 8
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+aalu           : potato (감자) [cite: 1075]
+bajyo          : o'clock (시 - 현재 시각을 말할 때) [cite: 1075]
+mahinaa        : month (월/달) [cite: 1075]
+bhaashaa       : language (언어) [cite: 1075]
+bihaanako khaanaa : morning meal (아침 식사) [cite: 1075]
+bolnu          : to speak (말하다) [cite: 1075]
+dekhnu         : to see (보다) [cite: 1075]
+dherai jaso    : mostly, usually (주로, 보통) [cite: 1075]
+ghanTaa        : hour (시간 - 기간 단위) [cite: 1075]
+ghaDi          : watch (시계) [cite: 1075]
+kahile kaahi   : sometimes (때때로) [cite: 1075]
+khaajaa        : snack (간식) [cite: 1075]
+khelnu         : to play (놀다/경기를 하다) [cite: 1075]
+maasu          : meat (고기) [cite: 1075]
+maatra         : only (오직/단지) [cite: 1075]
+mineT          : minute (분) [cite: 1075]
+miThaai        : sweets (단 음식/사탕) [cite: 1075]
+paDhaaunu      : to teach (가르치다) [cite: 1075]
+pheri          : again (다시) [cite: 1075]
+ra             : and (그리고) [cite: 1075]
+sadhai         : always (항상) [cite: 1075]
+salaad         : salad (샐러드) [cite: 1075]
+sutnu          : to sleep (자다) [cite: 1075]
+uThnu          : to get up (일어나다) [cite: 1075]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 언어 학습
+1. timro naam ke ho ? / mero naam Tim ho. [cite: 1077, 1084]
+   (너의 이름은 무엇이니? / 내 이름은 Tim이야.) [cite: 1077, 1085]
+2. timi kun bhaashaa bolchhau ? / ma angreji bolchhu. [cite: 1078, 1086]
+   (너는 어떤 언어를 말하니? / 나는 영어를 말해.) [cite: 1079, 1087]
+3. ahile timi kun bhaashaa sikdaichhau ? / ahile ma nepaali sikdaichhu. [cite: 1080, 1088]
+   (지금 너는 어떤 언어를 배우고 있니? / 지금 나는 네팔어를 배우고 있어.) [cite: 1081, 1090]
+4. nepaali kati mahinaa paDhchhau ? / tin mahinaa paDhchhu. [cite: 1082, 1091]
+   (네팔어를 몇 달 동안 공부할 거니? / 세 달 동안 공부할 거야.) [cite: 1083, 1092]
+
+(b) 일과 시간
+1. tapaal kati baje uThnuhunchha? / ma chha baje uThchhu. [cite: 1096, 1101]
+   (당신은 몇 시에 일어나시나요? / 저는 6시에 일어납니다.) [cite: 1097, 1102]
+2. kati baje sutnuhunchha ni ? / ma das baje sutchhu. [cite: 1098, 1103]
+   (그럼 몇 시에 주무시나요? / 저는 10시에 잡니다.) [cite: 1098, 1103]
+3. tapaaï kati baje aphis jaanuhunchha? / ma aaTh baje aphis jaanchhu. [cite: 1099, 1104, 1105]
+   (당신은 몇 시에 사무실에 가나요? / 저는 8시에 사무실에 갑니다.) [cite: 1105]
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 시각 묻고 답하기
+1. ahile kati bajyo ? / ahile paach bajyo. [cite: 1123, 1126]
+   (지금 몇 시입니까? / 지금 5시입니다.) [cite: 1123, 1127]
+2. timi sawaa paach baje ke garchhau ? / chiyaa khaanchhu. [cite: 1128]
+   (너는 5시 15분에 무엇을 하니? / 차를 마셔.) [cite: 1128]
+3. phuTbal khelna kati baje jaanchhau ? / saaDhe paach baje jaanchhu. [cite: 1128]
+   (축구하러 몇 시에 가니? / 5시 30분에 가.) [cite: 1128]
+
+(b) 식습관 (미국인과 네팔인)
+1. amerikaaliharu daal bhaat khaanchhan ? / khaadainan. [cite: 1155, 1159]
+   (미국인들은 달밧(밥)을 먹나요? / 아니요, 먹지 않습니다.) [cite: 1156, 1159]
+2. ke khaanchhan ta ? / maasu ra aalu khaanchhan. [cite: 1157, 1160, 1161]
+   (그럼 무엇을 먹나요? / 고기와 감자를 먹습니다.) [cite: 1158, 1162]
+3. biyar ni ? / biyar dherai jaso khaanchhan. [cite: 1165, 1175, 1176]
+   (맥주는요? / 맥주는 보통 자주 마십니다.) [cite: 1166, 1177]
+4. tapaat sadhaï raksi khaanuhunchha ? / khaanna. kahile kaahi maatra khaanchhu. [cite: 1167, 1178, 1179]
+   (당신은 항상 술을 마시나요? / 아니요. 가끔만 마십니다.) [cite: 1169, 1180]
+
+
+4. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 단순 현재 시제 변화 (bolnu - 말하다): [cite: 1186]
+   - ma bolchhu (나는 말한다) [cite: 1188, 1199]
+   - haami bolchhaũ (우리는 말한다) [cite: 1191, 1193]
+   - timi bolchhau (너는 말한다) [cite: 1194, 1195]
+   - tapaal bolnuhunchha (당신은 말합니다) [cite: 1198, 1207]
+2. 시각 표현: [cite: 1213]
+   - sawaa: 15분 지나 (a quarter past) [cite: 1213]
+   - saaDhe: 30분 지나 (half past) [cite: 1213]
+   - paune: 15분 전 (a quarter to) [cite: 1213]
+   - bajera mineT gayo: ~시 ~분 지남 (It is ... after ...) [cite: 1213]
+   - bajna mineT baaki chha: ~시 ~분 전 (It is ... to ...) [cite: 1213]
+3. bajyo vs baje:
+   - bajyo: 시각을 묻거나 답할 때 사용 (예: saat bajyo - 7시이다). [cite: 1212, 1216]
+   - baje: 특정 시각에 일어나는 사건을 말할 때 사용 (예: saat baje - 7시에). [cite: 1218, 1221]
+4. nai: 강조를 나타내는 입자 (예: aaja nai - 반드시 오늘). [cite: 1225, 1226]
+==================================================

@@ -1,0 +1,114 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 1
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+chha          : is (있다/이다) [cite: 4, 5]
+kholnu        : to open (열다) [cite: 7, 8]
+dinu          : to give (주다) [cite: 9, 10]
+kitaab        : book (책) [cite: 11, 12]
+garnu         : to do (하다) [cite: 13, 14]
+mero          : my, mine (나의, 내 것) [cite: 15, 16]
+ghar          : home, house (집) [cite: 17, 18]
+naam          : name (이름) [cite: 20, 21]
+hajur         : yes (polite) (네 - 공손한 대답) [cite: 22, 23]
+namaste       : hello, goodbye, greetings (인사) [cite: 24, 25, 28]
+ho            : is (definitive) (~이다 - 단정적) [cite: 26, 27]
+hoina         : is not (definite) (~이 아니다) [cite: 29, 30]
+ni            : and how about (~는요?) [cite: 32, 33]
+jholaa        : shoulder bag (가방) [cite: 34, 35]
+kaalo         : black (검은색) [cite: 37, 38]
+kaapi         : note book (공책) [cite: 37, 58]
+paDhnu        : to read (읽다) [cite: 41, 42]
+seto          : white (흰색) [cite: 43, 44]
+kahãã         : where (어디) [cite: 46, 47]
+kalam         : pen (펜) [cite: 48, 51]
+kamij         : shirt (셔츠) [cite: 52, 53]
+kasko         : whose (누구의) [cite: 54]
+tapaaïko      : your, yours (당신의) [cite: 59, 62]
+tyo           : that (저것/그것) [cite: 59, 63]
+wahããko       : his, her, hers (그/그녀의 - 존칭) [cite: 64, 65]
+yo            : this (이것) [cite: 66, 67]
+kasto         : what color, how (qualitative) (어떤, 어떤색의) [cite: 68, 69]
+ke            : what (무엇) [cite: 68, 69]
+ta            : then (그러면) [cite: 60, 61]
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+1. namaste ! / namaste !
+   (안녕하세요! / 안녕하세요!) [cite: 71]
+
+2. tapaaïko naam ke ho ? / mero naam raam ho.
+   (당신의 이름은 무엇입니까? / 제 이름은 Ram입니다.) [cite: 71]
+
+3. wahããko naam ke ho ? / wahããko naam krishna ho.
+   (그분의 이름은 무엇입니까? / 그분의 이름은 Krishna입니다.) [cite: 71]
+
+4. tapaaïko ghar kahãã ho ? / mero ghar amerikaa ho.
+   (당신의 집(고향)은 어디입니까? / 제 고향은 미국입니다.) [cite: 71]
+
+5. wahããko ghar kahãã ho ? / wahããko ghar nepaal ho.
+   (그분의 고향은 어디입니까? / 그분의 고향은 네팔입니다.) [cite: 75, 76]
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a)
+1. yo ke ho ? / yo kalam ho.
+   (이것은 무엇입니까? / 이것은 펜입니다.) [cite: 79, 80, 94, 95]
+2. yo kasko kalam ho ? / yo mero kalam ho.
+   (이것은 누구의 펜입니까? / 이것은 제 펜입니다.) [cite: 81, 96, 97]
+3. tyo ke ho ? / tyo kitaab ho.
+   (저것은 무엇입니까? / 저것은 책입니다.) [cite: 82, 83, 98, 99]
+4. tyo kasko kitaab ho ? / tyo wahããko kitaab ho.
+   (저것은 누구의 책입니까? / 저것은 그분의 책입니다.) [cite: 84, 100, 101]
+5. yo ni ? / tyo tapaaïko kitaab ho.
+   (이것은요? / 저것은 당신의 책입니다.) [cite: 85, 86, 102, 103]
+
+(b)
+1. tyo ke ho ? / yo kitaab ho. [cite: 87, 88, 104, 105]
+2. tyo kasko kitaab ho ? / yo mero kitaab ho. [cite: 89, 106]
+3. kitaab kholnus. / maile kitaab kholeko.
+   (책을 펴세요. / 제가 책을 폈습니다.) [cite: 90, 107]
+4. tapaaïle ke gareko ? / wahããle kitaab kholeko.
+   (당신은 무엇을 했습니까? / 그분이 책을 폈습니다.) [cite: 91, 108]
+
+(c)
+1. jim ! / hajur ! [cite: 110, 119]
+2. tyo kalam ho ? / hoina.
+   (저것은 펜입니까? / 아니요, 그렇지 않습니다.) [cite: 111, 120, 121]
+3. tyo ke ho ta ? / yo kaapi ho.
+   (그러면 저것은 무엇입니까? / 이것은 공책입니다.) [cite: 112, 122, 123]
+4. tyo kasko kaapi ho ? / yo mero kaapi ho. [cite: 113, 124]
+
+(d)
+1. tyo ke ho ? / yo kalam ho. [cite: 114, 115, 125]
+2. tyo kasko kalam ho ? / yo mero kalam ho. [cite: 116, 126, 127]
+3. tapaaïko kalam kasto chha ? / mero kalam kaalo chha.
+   (당신의 펜은 어떤 색입니까? / 제 펜은 검은색입니다.) [cite: 128, 129, 133]
+4. kalam dinos. / maile kalam dieko.
+   (펜을 주세요. / 제가 펜을 주었습니다.) [cite: 130, 131, 134]
+
+
+4. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 소유격 접미사 '-ko': 명사나 대명사 뒤에 붙어 소유를 나타냄. [cite: 167, 168]
+   - ma (나) -> mero (나의) [cite: 180, 183]
+   - u (그) -> usko (그의) [cite: 181, 184]
+   - haami (우리) -> haamro (우리의) [cite: 182, 184]
+2. Namaste: 만날 때와 헤어질 때 모두 사용하는 인사말. [cite: 186]
+3. 어순: 네팔어는 동사가 항상 문장 끝에 옴. (SOV 구조) [cite: 189]
+4. Hajur: 공손한 대답 '네'. 끝을 올리면 '다시 말씀해 주시겠어요?'라는 뜻. [cite: 192, 193]
+5. -ji / -jyu: 이름 뒤에 붙여 존경을 표함. [cite: 194]
+6. Hoina: 단순히 'No'가 아니라 '아니요, 그렇지 않습니다'라는 뜻. [cite: 195]
+7. 명령형: 'kholnos', 'dinos' 등은 공손한 명령형(존칭)임. [cite: 197]
+8. -eko 형태: 비격식적인 상황에서 단순 과거, 현재 진행 등으로 흔히 쓰임. [cite: 198]
+9. 접미사 '-le': 과거 시제에서 타동사의 주어 뒤에 붙음. [cite: 202]
+10. 'ni'와 'ta': 'ni'는 "~는요?", 'ta'는 문맥에 따라 '그러면(then)'의 뜻을 가짐. [cite: 209, 210, 211]
+11. 동사 'is'의 세 가지 형태:
+    - ho: 정의(Identification) [cite: 213, 214]
+    - chha: 위치(Location)나 상태/질(Quality) [cite: 213, 222, 227]
+    - hunchha: 일반적 진리(Universal truth) [cite: 213, 232]
+==================================================

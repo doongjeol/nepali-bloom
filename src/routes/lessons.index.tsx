@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import lessonsData from "@/data/lesson_1.json";
+import lessonsData from "@/data/lessons";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/lessons/")({
@@ -25,7 +25,7 @@ function LessonsPage() {
 
         <div className="grid gap-2 sm:gap-3">
           {lessonsData.map((lesson) => {
-            const hasContent = lesson.vocabulary.length > 0 || lesson.quiz.length > 0 || lesson.dialogues.length > 0;
+            const hasContent = lesson.vocabulary.length > 0 || lesson.examples.length > 0 || (lesson.grammar && lesson.grammar.length > 0) || lesson.quiz.length > 0 || lesson.dialogues.length > 0;
             return (
               <Link
                 key={lesson.id}
@@ -50,6 +50,16 @@ function LessonsPage() {
                     {lesson.vocabulary.length > 0 && (
                       <span className="rounded-full bg-warm/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-warm-foreground">
                         단어 {lesson.vocabulary.length}
+                      </span>
+                    )}
+                    {lesson.examples.length > 0 && (
+                      <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] sm:text-xs font-medium text-secondary-foreground">
+                        예문 {lesson.examples.length}
+                      </span>
+                    )}
+                    {lesson.grammar && lesson.grammar.length > 0 && (
+                      <span className="rounded-full bg-purple-500/10 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-purple-600">
+                        문법 {lesson.grammar.length}
                       </span>
                     )}
                     {lesson.quiz.length > 0 && (

@@ -1,0 +1,85 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 15
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+baajyaa        : grandfather (할아버지)
+bajyaai        : grandmother (할머니)
+bhaai          : younger brother (남동생)
+bihaa          : marriage (결혼)
+chha           : have / is (있다 - 소유/존재)
+chhaina        : don't have / isn't (없다 - 소유/존재의 부정)
+chhoraa        : son (아들)
+chhori         : daughter (딸)
+didi           : elder sister (누나/언니)
+janmannu       : to be born (태어나다)
+jawaan         : young (젊은)
+kaanchho       : youngest (막내 - 남성)
+kaanchhi       : youngest (막내 - 여성)
+keTaakaeTi     : children (아이들)
+khetibaari     : agriculture (농업)
+pariwaar       : family (가족)
+saṅga          : with (함께 / ~가 가지고 있는)
+shriman        : husband (남편)
+shrimati       : wife (아내)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 물건의 휴대 소유 (saṅga)
+1. tapaaï saṅga kalam chha ? / chha.
+   (당신 지금 펜 가지고 있나요? / 네, 있습니다.)
+2. katiwaTaa chha ? / euTaa maatra chha.
+   (몇 개 있나요? / 하나만 있습니다.)
+3. tapaaï saṅga paisaa chha ? / chhaina.
+   (당신 지금 돈 가지고 있나요? / 아니요, 없습니다.)
+4. tapaaï saṅga kasto kalam chha ? / mero saṅga raato kalam chha.
+   (어떤 펜을 가지고 있나요? / 저는 빨간 펜을 가지고 있습니다.)
+
+(b) 영구적 소유/관계 (-ko)
+1. tapaaïko chhoraa-chhori chhan ? / chhan.
+   (당신은 자녀(아들, 딸)가 있습니까? / 네, 있습니다.)
+2. kati janaa chhan ? / ek janaa chhoraa ra ek janaa chhori.
+   (몇 명인가요? / 아들 한 명과 딸 한 명입니다.)
+3. tapaaïko gharmaa kukur chha ? / chhaina.
+   (당신의 집에 개가 있나요? / 아니요, 없습니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 휴대 물품 확인
+1. tapaaï saṅga ghaDi chha ? / chha.
+2. tyo ghaDi kasko ho ? / yo mero ho.
+3. tapaaï saṅga katiiwaTaa kitaab chhan ? / ma saṅga tinwaTaa kitaab chhan.
+   (당신은 책을 몇 권 가지고 있습니까? / 저는 책 세 권을 가지고 있습니다.)
+
+(b) 가족 및 관계 소유
+1. tapaaïko didi-bahini chhan ? / chhan.
+   (당신은 자매(언니, 여동생)가 있습니까? / 네, 있습니다.)
+2. kati janaa chhan ? / ek janaa didi ra dui janaa bahini.
+3. tapaaïko saathi chha ? / chha, mero dherai saathi chhan.
+   (당신은 친구가 있습니까? / 네, 제게는 친구가 많습니다.)
+
+(c) 장소와 소유
+1. nepaalmaa dherai pahaaD chhan ? / chhan.
+   (네팔에는 산이 많습니까? / 네, 많습니다.)
+2. nepaalmaa dherai dhuulo chha ? / chha.
+   (네팔에는 먼지가 많습니까? / 네, 많습니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 마이크는 지금 시장에 가고 있습니다. 그는 가방을 가지고 있고, 가방 안에는 돈이 조금 있습니다. 그는 시장에서 옷감을 사고 싶어 합니다. 그는 네팔에 가족은 없지만, 친한 네팔 친구들이 많이 있습니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. 소유의 두 가지 표현:
+   - Saṅga (With): 주체가 현재 몸에 지니고 있거나 일시적으로 휴대하고 있는 상태를 나타냅니다.
+     (예: ma saṅga kalam chha - 나는 (지금) 펜을 가지고 있다)
+   - -ko (Genitive): 가족 관계, 신체 부위, 집, 토지 등 영구적이거나 본질적인 소유를 나타냅니다.
+     (예: mero chhoraa chha - 나는 아들이 있다 / 내게는 아들이 있다)
+2. Saṅga의 사용: 인칭 대명사 'ma'와 쓰일 때는 'ma saṅga' 또는 'mero saṅga' 둘 다 가능하지만 'ma saṅga'가 더 일반적입니다.
+3. Chha vs Chhan: 소유하고 있는 대상이 단수이면 'chha', 복수이면 'chhan'을 사용합니다.
+==================================================

@@ -1,0 +1,91 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 13
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+baajyaa        : grandfather (할아버지)
+bajyaai        : grandmother (할머니)
+bihaae ko      : married (결혼한)
+bihaae ko chhaina : unmarried (결혼하지 않은)
+ छोरा (chhoraa) : son (아들)
+ छोरी (chhori)  : daughter (딸)
+daai           : elder brother (형/오빠)
+didi           : elder sister (누나/언니)
+janmannu       : to be born (태어나다)
+jawaan         : young (젊은)
+kaanchho       : youngest (막내 - 남성)
+kaanchhi       : youngest (막내 - 여성)
+keTaakaeTi     : children (아이들)
+kheti          : farming (농사)
+khetibaari     : agriculture (농업)
+kisane         : farmer (농부)
+maile          : I (과거 타동사 주어)
+paribaar       : family (가족)
+pariwaar       : family (가족 - 변형)
+pashu          : animal (동물)
+praadhyaapak   : professor (교수)
+shrimati       : wife (아내)
+shriman        : husband (남편)
+thahaa chha    : (I) know (알다)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 가족 관계와 결혼
+1. tapaaïko bihaa bhaeyo ? / bhaeyo.
+   (당신은 결혼했습니까? / 네, 했습니다.)
+2. tapaaïko paribaarmaa kati janaa chhan ? / jammaa paach janaa.
+   (당신의 가족은 몇 명입니까? / 전부 다섯 명입니다.)
+3. ko ko hunuhunchha ? / mero shrimati, ek chhoraa, dui chhori ra ma.
+   (누구누구 계십니까? / 제 아내, 아들 한 명, 딸 두 명, 그리고 저입니다.)
+
+(b) 직업과 거주
+1. tapaaïko baa ke garnuhunchha ? / wahãã khetibaari garnuhunchha.
+   (당신의 아버지는 무엇을 하십니까? / 그분은 농사를 지으십니다.)
+2. tapaaïko aamaa ni ? / wahãã gharmaa kaam garnuhunchha.
+   (당신의 어머니는요? / 그분은 집안일을 하십니다.)
+3. tapaaïko didi bihaae ko chha ? / chhaina.
+   (당신의 누나(언니)는 결혼했나요? / 아니요, 안 했습니다.)
+4. wahãã ke garnuhunchha ? / wahãã bidyaarthini hunuhunchha.
+   (그분은 무엇을 합니까? / 그분은 학생(여학생)입니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 출생지
+1. tapaaï kahãã janmannu bhaeko ? / ma amerikaamaa janme ko.
+   (당신은 어디에서 태어났습니까? / 저는 미국에서 태어났습니다.)
+2. tapaaïko saathi ni ? / u nepaalmaa janme ko.
+
+(b) 물건의 제조원
+1. yo kalam kahãã bane ko ? / yo jaapaanmaa bane ko.
+   (이 펜은 어디에서 만들어졌습니까? / 이것은 일본에서 만들어졌습니다.)
+2. yo kaparaa ni ? / yo nepaalmaa bane ko.
+3. tyo ghaDi kahãã bane ko ? / tyo suijarlyanDmaa bane ko.
+
+(c) 형제 관계
+1. tapaaïko kati janaa daai-bhaai chhan ? / mero ek janaa daai ra ek janaa bhaai chha.
+   (당신은 형제(남자)가 몇 명입니까? / 형 한 명과 남동생 한 명이 있습니다.)
+2. kaanchho ko हो ? / mero bhaai kaanchho ho.
+   (누가 막내인가요? / 제 남동생이 막내입니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 라메시의 가족은 파탄(Patan)에 살고 있습니다. 그의 아버지는 교수이고 어머니는 집안일을 하십니다. 라메시는 결혼을 했고 아이가 둘(아들 하나, 딸 하나) 있습니다. 그의 남동생은 아직 젊으며 학생입니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. -ko / -eko form: 상태나 완료된 동작을 나타낼 때 형용사처럼 쓰입니다.
+   - bihaa bhaeko: 결혼한 상태
+   - janme ko: 태어난 (출생한)
+   - bane ko: 만들어진 (제조된)
+2. Janaa: 사람을 셀 때 쓰는 분류사입니다. (예: paach janaa - 다섯 명)
+3. Daai-bhaai / Didi-bahini:
+   - Daai-bhaai: 남자 형제 전체를 일컫는 말.
+   - Didi-bahini: 여자 형제 전체를 일컫는 말.
+4. Kaanchho / Kaanchhi: 형제나 자매 중 가장 어린 '막내'를 뜻합니다.
+5. Bidyaarthi / Bidyaarthini: 남학생은 'Bidyaarthi', 여학생은 'Bidyaarthini'로 구분하기도 합니다.
+==================================================

@@ -1,0 +1,87 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 17
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+bhote          : Tibetan (티베트 사람 - 다소 격식 없는 표현)
+daahri kaaTnu  : to shave (면도하다)
+dhobini        : washerwoman (빨래해 주는 여자)
+haat           : hand (손)
+hunu           : to be / to happen (있다/되다)
+jaaro          : cold (추위 - 날씨)
+khojnu         : to search, to look for (찾다)
+ko laagi       : for (someone/something) (~를 위해)
+lugaa          : clothes (옷)
+masta          : fun, joy (즐거움)
+mojaa          : socks (양말)
+nuhããunu       : to bathe (목욕하다)
+parchha        : must, have to (해야 한다 / 가격이 ~이다)
+paisa          : money (돈)
+phohar          : dirty (더러운)
+sabaia          : all (모두)
+saphaa         : clean (깨끗한)
+saabun         : soap (비누)
+topi           : Nepali cap (네팔 전통 모자)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 선물 사기 (ko laagi)
+1. tapaaï ke khojdaichha ? / ma topi khojdaichhu.
+   (당신은 무엇을 찾고 있습니까? / 저는 모자(토피)를 찾고 있습니다.)
+2. kasko laagi ? / mero baako laagi.
+   (누구를 위한 것인가요? / 저희 아버지를 위한 것입니다.)
+3. yo kasto chha ? / yo dherai raamro chha.
+   (이것은 어떤가요? / 이것은 매우 좋네요.)
+4. yesko kati parchha ? / yesko pandhra rupiyaa parchha.
+   (이것은 가격이 얼마인가요? / 이것은 15루피입니다.)
+
+(b) 의무와 일과 (parchha)
+1. aaja tapaaïlaai dherai kaam chha ? / ho, dherai kaam chha.
+   (오늘 당신은 일이 많습니까? / 네, 일이 많습니다.)
+2. ke ke garnu parchha ? / lugaa dhunu parchha ra nuhããunu parchha.
+   (무엇무엇을 해야 하나요? / 옷을 빨아야 하고 목욕을 해야 합니다.)
+3. daahri pani kaaTnu parchha ? / parchha.
+   (면도도 해야 하나요? / 네, 해야 합니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 비누의 용도
+1. yo ke ho ? / yo saabun ho.
+2. saabun ke ko laagi ho ? / saabun nuhããunako laagi ho.
+   (비누는 무엇을 위한 것입니까? / 비누는 목욕하기 위한 것입니다.)
+3. lugaa dhunako laagi ke chaahinchha ? / lugaa dhunako laagi pani saabun chaahinchha.
+   (옷을 빨기 위해서는 무엇이 필요합니까? / 옷을 빨기 위해서도 비누가 필요합니다.)
+
+(b) 의무 표현 연습
+1. tapaaïlaai bhok laagyo bhane ke garnu parchha ? / khaanaa khaanu parchha.
+   (당신이 배가 고프다면 무엇을 해야 합니까? / 음식을 먹어야 합니다.)
+2. tirkhaa laagyo bhane ni ? / paani piunu parchha.
+   (목이 마르다면요? / 물을 마셔야 합니다.)
+3. thakaai laagyo bhane ke garnu parchha ? / aaraam garnu parchha.
+   (피곤하다면 무엇을 해야 합니까? / 쉬어야 합니다.)
+
+(c) 소유와 선물
+1. tapaaï saṅga kasko laagi chiThi chha ? / ma saṅga mero aamaako laagi chiThi chha.
+   (당신은 누구를 위한 편지를 가지고 있습니까? / 제 어머니를 위한 편지를 가지고 있습니다.)
+2. tyo उपहार (upahaar) kasko laagi ho ? / yo mero saathiko laagi ho.
+   (그 선물은 누구를 위한 것입니까? / 이것은 제 친구를 위한 것입니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 마이크는 오늘 시장에 가서 아버지를 위한 네팔 모자(Topi)와 친구를 위한 선물을 샀습니다. 집에 돌아온 후 그는 빨래를 하고 목욕을 해야 합니다. 그의 옷이 매우 더러워졌기 때문에 비누가 많이 필요합니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. Ko laagi (For): '~를 위해' 또는 '~용'이라는 의미로 사용됩니다.
+   - 사람 뒤: baako laagi (아버지를 위해)
+   - 동사 뒤: dhunako laagi (씻기 위해) - 동사의 'nu'가 'na'가 아닌 'nu' 형태 그대로 유지되거나 'nako'로 변형됩니다.
+2. Parchha (Must / Have to): 의무나 필요를 나타낼 때 동사 원형 뒤에 붙습니다.
+   - 주어 뒤에 '-laai'를 붙여야 합니다. (예: malaai janu parchha - 나는 가야 한다)
+3. 'Bhane' (If): '~한다면'이라는 뜻으로 조건을 나타냅니다.
+4. Yesko / Usko: '이것의(of this)', '저것의(of that)'라는 뜻으로 가격을 물을 때 주로 사용합니다. (예: yesko kati? - 이것 얼마?)
+==================================================

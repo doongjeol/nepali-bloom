@@ -1,0 +1,77 @@
+==================================================
+BASIC COURSE IN SPOKEN NEPALI - LESSON 16
+==================================================
+
+1. VOCABULARY (어휘)
+--------------------------------------------------
+baara          : twelve (12)
+dekhi          : from (시간/장소의 시작점)
+ekdam          : very, extremely (매우, 아주)
+ghanTaa        : hour (시간 - 기간 단위)
+kaam           : work (일)
+khulnu         : to open (가게/기관 등이 문을 열다)
+paDhaaunu      : to teach (가르치다)
+pharkanu       : to return (돌아오다)
+pheri          : again (다시)
+samma          : until, up to (시간/장소의 끝점)
+shuru hunu     : to start, to begin (시작되다)
+tirkhaa        : thirst (목마름)
+
+
+2. PART I: DIALOGUE (대화문)
+--------------------------------------------------
+(a) 수업 시간 (dekhi... samma)
+1. tapaaïko nepaali klaas kati baje shuru hunchha ? / saat baje.
+   (당신의 네팔어 수업은 몇 시에 시작합니까? / 7시입니다.)
+2. kati bajesamma hunchha ? / das bajesamma.
+   (몇 시까지 합니까? / 10시까지 합니다.)
+3. tapaaï kati baje dekhi kati bajesamma paDhnuhunchha ? / ma saat baje dekhi das bajesamma paDhnuchhu.
+   (당신은 몇 시부터 몇 시까지 공부합니까? / 저는 7시부터 10시까지 공부합니다.)
+4. tapaaïko gurule kati ghanTaa paDhaaunuhunchha ? / tin ghanTaa.
+   (선생님은 몇 시간 동안 가르치시나요? / 3시간 동안요.)
+
+(b) 사무실 근무 시간
+1. aphis kati baje khulchha ? / das baje.
+   (사무실은 몇 시에 문을 엽니까? / 10시입니다.)
+2. tapaaï kati baje aphis jaanuhunchha ? / ma saaDhe das baje jaanchhu.
+   (당신은 몇 시에 사무실에 갑니까? / 저는 10시 반에 갑니다.)
+3. aphisbaaTa kati baje pharkanuhunchha ? / paach baje.
+   (사무실에서 몇 시에 돌아옵니까? / 5시입니다.)
+
+
+3. PART II: PRACTICE (연습)
+--------------------------------------------------
+(a) 장소의 범위
+1. tapaaïko DeraabaaTa aphis kati dhuur chha ? / ekdam nira chha.
+   (숙소에서 사무실까지 얼마나 멉니까? / 아주 가깝습니다.)
+2. kaaThmaaNDu dekhi paaTan samma kati dhuur chha ? / tin mil jati holaa.
+   (카트만두에서 파탄까지 거리가 얼마나 됩니까? / 아마 3마일 정도일 것입니다.)
+
+(b) 활동 시간
+1. tapaaï bihaana kati baje dekhi kaam garnuhunchha ? / ma saat baje dekhi kaam garchhu.
+2. diűso kati baje dekhi kati bajesamma aaraam garnuhunchha ? / ek baje dekhi dui bajesamma.
+   (오후 몇 시부터 몇 시까지 쉽니까? / 1시부터 2시까지요.)
+
+(c) 식사와 간식
+1. tapaaï kati baje khaanaa khaannuhunchha ? / das baje.
+2. pheri kahile khaannuhunchha ? / belukaa saaDhe saat baje.
+3. bihaanako khaanaa ra belukaako khaanaako bichmaa kehi khaannuhunchha ? / khaanchhu, khaajaa khaanchhu.
+   (아침 식사와 저녁 식사 사이에 무언가를 먹나요? / 네, 간식을 먹습니다.)
+
+
+4. COMPREHENSION (이해하기)
+--------------------------------------------------
+[내용 요약: 리처드는 매일 아침 6시에 일어납니다. 그는 7시부터 10시까지 네팔어를 공부합니다. 그의 네팔어 선생님은 3시간 동안 가르칩니다. 수업이 끝난 후 그는 숙소로 돌아와 10시에 식사를 합니다. 오후에는 2시부터 5시까지 사무실에서 일합니다.]
+
+
+5. GRAMMAR NOTES (문법 정리)
+--------------------------------------------------
+1. Dekhi... Samma: 시간이나 장소의 시작과 끝을 나타내는 후치사입니다.
+   - 시간: saat baje dekhi (7시부터), das bajesamma (10시까지).
+   - 장소: kaaThmaaNDu dekhi (카트만두에서), paaTan samma (파탄까지).
+2. GhanTaa vs Baje: 
+   - Baje: 특정 시각(o'clock)을 의미합니다.
+   - GhanTaa: 시간의 양/기간(hour)을 의미합니다.
+3. Bichmaa: '~사이에(between)'라는 뜻으로, 두 사건이나 시간대 사이를 나타낼 때 씁니다.
+4. Jati: 숫자 뒤에 붙어 '약', '정도로'라는 추측의 의미를 더합니다.
+==================================================
