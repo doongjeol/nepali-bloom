@@ -515,8 +515,8 @@ function LessonDetailPage() {
                           <div key={idx} className={cn("flex gap-2 sm:gap-3", line.speaker === "B" && "flex-row-reverse text-right")}>
                             <div
                               className={cn(
-                                "flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full text-xs sm:text-sm font-bold",
-                                line.speaker === "A" ? "bg-primary text-primary-foreground" : "bg-nepali text-nepali-foreground",
+                                "flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full border border-black/5 text-xs sm:text-sm font-bold",
+                                line.speaker === "A" ? "bg-[#DDE3D2] text-[#333D29]" : "bg-[#E9DED3] text-[#333D29]",
                               )}
                             >
                               {line.speaker}
@@ -532,13 +532,13 @@ function LessonDetailPage() {
                                 }
                               }}
                               className={cn(
-                                "group max-w-[80%] rounded-2xl px-3 py-2 sm:px-4 sm:py-2.5 cursor-pointer outline-none focus:ring-2 focus:ring-ring/40 transition-opacity",
-                                line.speaker === "A" ? "rounded-tl-sm bg-warm/40" : "rounded-tr-sm bg-nepali/10",
+                                "group max-w-[80%] rounded-2xl border px-3 py-2 text-[#333D29] sm:px-4 sm:py-2.5 cursor-pointer outline-none focus:ring-2 focus:ring-ring/40 transition-opacity",
+                                line.speaker === "A" ? "bg-[#E8EDDF] border-[#DDE3D2]" : "bg-[#F5EBE0] border-[#E9DED3]",
                               )}
                             >
                               <div className={cn("flex items-start gap-2", line.speaker === "B" && "flex-row-reverse")}>
                                 <div className={cn("min-w-0 flex-1", dimmedForRole && "opacity-40")}>
-                                  <p className="text-sm sm:text-base font-medium text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
+                                  <p className="text-sm sm:text-base font-medium text-[#333D29]" style={{ fontFamily: "var(--font-nepali)" }}>
                                     {nepaliVisible ? line.nepali : "••••••••"}
                                   </p>
                                   {showRomanized &&
@@ -621,9 +621,9 @@ function LessonDetailPage() {
                                         </div>
                                       </div>
                                     ) : (
-                                      <p className="mt-0.5 text-[10px] sm:text-xs text-muted-foreground italic">{line.romanized}</p>
+                                      <p className="mt-0.5 text-[10px] sm:text-xs text-[#333D29]/70 italic">{line.romanized}</p>
                                     ))}
-                                  <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground">{line.korean}</p>
+                                  <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-[#333D29]/80">{line.korean}</p>
                                   {scrambleAllowed && !isScrambling && (
                                     <p className="mt-1 text-[10px] sm:text-xs text-muted-foreground">클릭하면 단어 셔플 모드</p>
                                   )}
