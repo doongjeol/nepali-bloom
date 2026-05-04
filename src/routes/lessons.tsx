@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import lessonsData from "@/data/lessons.json";
+import lessonsData from "@/data/lesson_1.json";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/lessons")({
