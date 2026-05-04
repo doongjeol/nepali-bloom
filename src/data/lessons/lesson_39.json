@@ -1,0 +1,227 @@
+{
+  "id": 39,
+  "title": "Lesson 39",
+  "titleKo": "제39과",
+  "description": "'jhandai'(하마터면 ~할 뻔했다), 'baani parnu'(익숙해지다) 등 과거 경험과 익숙함에 대해 묘사하는 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "अनुभव",
+      "romanized": "anubhav",
+      "korean": "experience (경험)"
+    },
+    {
+      "nepali": "बिते",
+      "romanized": "bites / bityo",
+      "korean": "passed (time) (지나간/경과한)"
+    },
+    {
+      "nepali": "हाल्नु",
+      "romanized": "daalnu / haalnu",
+      "korean": "to put into / to pour (넣다/붓다)"
+    },
+    {
+      "nepali": "घटना",
+      "romanized": "ghatanaa",
+      "korean": "incident / event (사건/일)"
+    },
+    {
+      "nepali": "हुन त",
+      "romanized": "hunu ta",
+      "korean": "actually / although (사실은/그렇긴 하지만)"
+    },
+    {
+      "nepali": "झन्डै",
+      "romanized": "jhandai",
+      "korean": "almost / nearly (하마터면/거의)"
+    },
+    {
+      "nepali": "मर्नु",
+      "romanized": "marnu",
+      "korean": "to die (죽다)"
+    },
+    {
+      "nepali": "सम्झनु",
+      "romanized": "samjhanu",
+      "korean": "to remember (기억하다)"
+    },
+    {
+      "nepali": "तर्सिनु",
+      "romanized": "tarsinu",
+      "korean": "to be frightened (깜짝 놀라다/겁나다)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. Jhandai (Almost / Nearly)",
+      "details": [
+        "\"하마터면 ~할 뻔했다\"는 의미로, 일어나지 않았지만 거의 일어날 뻔한 위험한 상황 등을 묘사할 때 씁니다.",
+        "- 예: jhandai gaadile kichyo (하마터면 차에 치일 뻔했다)."
+      ]
+    },
+    {
+      "title": "2. Baani parnu (To be accustomed to)",
+      "details": [
+        "습관이 들다, 익숙해지다라는 뜻입니다.",
+        "- 예: malaai piro khaane baani paryo (저는 매운 것을 먹는 데 익숙해졌습니다)."
+      ]
+    },
+    {
+      "title": "3. ~na thaalnu (To start doing)",
+      "details": [
+        "어떤 동작이나 상태가 시작됨을 나타냅니다.",
+        "- 예: bolna thaalyo (말하기 시작했다), sajilo laagna thaalyo (쉬워지기 시작했다)."
+      ]
+    },
+    {
+      "title": "4. Hunu ta (Actually / Although)",
+      "details": [
+        "\"사실은 말이죠\", \"그렇기는 하지만\"과 같이 화제를 전환하거나 부연 설명을 할 때 사용합니다."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "\"하마터면 ~할 뻔했다\"는 의미로 아찔한 상황을 묘사할 때 쓰는 부사는?",
+      "options": [
+        "धेरै (dherai)",
+        "झन्डै (jhandai)",
+        "निकै (nikai)",
+        "अत्यन्त (atyanta)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'익숙해지다' 또는 '습관이 들다'를 뜻하는 네팔어 표현은?",
+      "options": [
+        "बानी पर्नु (baani parnu)",
+        "दिक्क लाग्नु (dikka laagnu)",
+        "निको हुनु (niko hunu)",
+        "सजिलो हुनु (sajilo hunu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'시작하다(~하기 시작하다)'의 의미를 더해주는 동사는?",
+      "options": [
+        "सक्नु (saknu)",
+        "थाल्नु (thaalnu)",
+        "खोज्नु (khojnu)",
+        "हेर्नु (hernu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'경험'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "घटना (ghatanaa)",
+        "बानी (baani)",
+        "अनुभव (anubhav)",
+        "विचार (bichaar)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'사건'이나 '일'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "घटना (ghatanaa)",
+        "काम (kaam)",
+        "अनुभव (anubhav)",
+        "समय (samaya)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'깜짝 놀라다' 또는 '겁나다'를 뜻하는 동사는?",
+      "options": [
+        "रुनु (runu)",
+        "तर्सिनु (tarsinu)",
+        "काम्नु (kaamnu)",
+        "दुख्नु (dukhnu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "\"사실은 말이죠\", \"그렇기는 하지만\"과 같이 부연 설명을 할 때 문장 앞에 쓰는 표현은?",
+      "options": [
+        "त्यसै कारण (tyasai kaaran)",
+        "किनभने (kinabhane)",
+        "हुन त (hunu ta)",
+        "तर (tara)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "음식에 양념이나 채소를 '넣다/붓다'를 뜻하는 동사는?",
+      "options": [
+        "निकाल्नु (nikaalnu)",
+        "हाल्नु (haalnu/daalnu)",
+        "काट्नु (kaaTnu)",
+        "पकाउनु (pakaaunu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'하마터면 차에 치일 뻔했다'를 올바르게 작문한 것은?",
+      "options": [
+        "झन्डै गाडीले किच्यो। (jhandai gaadi le kichyo.)",
+        "गाडीले किच्यो। (gaadi le kichyo.)",
+        "गाडी आयो। (gaadi aayo.)",
+        "गाडीले किच्नेछ। (gaadi le kichnechha.)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'말하기 시작했다'를 바르게 표현한 것은?",
+      "options": [
+        "बोल्न सक्छ। (bolna sakchha.)",
+        "बोल्दै छ। (boldai chha.)",
+        "बोल्न थाल्यो। (bolna thaalyo.)",
+        "बोलेको छ। (boleko chha.)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 위험했던 순간의 기억",
+      "lines": [
+        { "speaker": "A", "nepali": "तपाईं नेपालमा हुँदाको कुनै राम्रो घटना सम्झनुहुन्छ ?", "romanized": "tapaai nepaalmaa hudaako kunai raamro ghatanaa samjhannuhunchha?", "korean": "네팔에 있을 때 있었던 어떤 좋은 사건(기억)이 나나요?" },
+        { "speaker": "B", "nepali": "हो, एकपटक म झन्डै मरेको थिएँ।", "romanized": "ho, ekpaTak ma jhandai mareko thié.", "korean": "네, 한번은 하마터면 죽을 뻔한 적이 있었어요." },
+        { "speaker": "A", "nepali": "के भएको थियो ?", "romanized": "ke bhayeko thiyo?", "korean": "무슨 일이 있었나요?" },
+        { "speaker": "B", "nepali": "म पहाडबाट लड्न लागेको थिएँ।", "romanized": "ma pahaaDbaaTa ladna laageko thié.", "korean": "제가 산에서 떨어질 뻔했거든요." },
+        { "speaker": "A", "nepali": "त्यसपछि के भयो ?", "romanized": "tyaspachhi ke bhayo?", "korean": "그 후엔 어떻게 됐나요?" },
+        { "speaker": "B", "nepali": "साथीले झ्याप्पै समात्यो र बाँचें।", "romanized": "saathile jhyaappai samaatyo ra baaché.", "korean": "친구가 덥석 잡아줘서 살았습니다." }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 음식에 대한 경험",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपाली खाना कस्तो लाग्यो ?", "romanized": "nepaali khaanaa kasto laagyo?", "korean": "네팔 음식은 어떤가요?" },
+        { "speaker": "B", "nepali": "मलाई धेरै मीठो लाग्यो।", "romanized": "malaai dherai miTho laagyo.", "korean": "제 입맛에 아주 잘 맞아요." },
+        { "speaker": "A", "nepali": "खुर्सानी धेरै हुन्छ, होइन ?", "romanized": "khorsaani dherai hunchha, hoina?", "korean": "고추가 많이 들어가죠, 그렇죠?" },
+        { "speaker": "B", "nepali": "हो, पहिले पहिले त साह्रै पिरो लाग्थ्यो।", "romanized": "ho, pahile pahile ta saarhai piro laagthyo.", "korean": "네, 처음에는 정말 매웠어요." },
+        { "speaker": "A", "nepali": "अहिले नि ?", "romanized": "ahile ni?", "korean": "지금은요?" },
+        { "speaker": "B", "nepali": "अहिले त बानी पर्यो। खुर्सानी नहाली खान मन पर्दैन।", "romanized": "ahile ta baani paryo. khorsaani nahaali khaana man pardaina.", "korean": "지금은 익숙해졌어요. 고추를 안 넣으면 먹고 싶지가 않아요." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) '하마터면 ~할 뻔했다' (Jhandai)",
+      "lines": [
+        { "speaker": "A", "nepali": "हिजो के भयो ?", "romanized": "hijo ke bhayo?", "korean": "어제 무슨 일이 있었니?" },
+        { "speaker": "B", "nepali": "झन्डै गाडीले किच्यो।", "romanized": "jhandai gaadi le kichyo.", "korean": "하마터면 차에 치일 뻔했어." },
+        { "speaker": "A", "nepali": "किन त्यस्तो भयो ?", "romanized": "kina tyasto bhayo?", "korean": "왜 그랬어?" },
+        { "speaker": "B", "nepali": "मैले गाडी आएको देखिनँ।", "romanized": "maile gaadi aaeko dekhina.", "korean": "차가 오는 걸 못 봤거든." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 시간의 경과와 익숙함",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपालमा बस्न थालेको कति भयो ?", "romanized": "nepaalmaa basna thaaleko kati bhayo?", "korean": "네팔에서 살기 시작한 지 얼마나 됐나요?" },
+        { "speaker": "B", "nepali": "छ महिना भयो।", "romanized": "chha mahinaa bhayo.", "korean": "6개월 됐습니다." },
+        { "speaker": "A", "nepali": "नेपाली भाषा बोल्न सजिलो लाग्छ ?", "romanized": "nepaali bhaashaa bolna sajilo laagchha?", "korean": "네팔어로 말하는 게 쉬운가요?" },
+        { "speaker": "B", "nepali": "अहिले त सजिलो लाग्न थाल्यो।", "romanized": "ahile ta sajilo laagna thaalyo.", "korean": "이제는 쉽게 느껴지기 시작했어요." }
+      ]
+    }
+  ]
+}
