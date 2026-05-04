@@ -1,0 +1,106 @@
+{
+  "id": 27,
+  "title": "Lesson 27",
+  "titleKo": "제27과",
+  "description": "출입/행동 허가(-na hunchha), 가능/허용(-na paainchha) 표현을 연습합니다.",
+  "vocabulary": [
+    { "nepali": "भित्र", "romanized": "bhitra", "korean": "inside (안에)" },
+    { "nepali": "छुनु", "romanized": "chhunnu", "korean": "to touch (만지다)" },
+    { "nepali": "हुनु", "romanized": "hunu", "korean": "to be / to be okay (되다/괜찮다)" },
+    { "nepali": "जान", "romanized": "jaana", "korean": "to go (목적형: 가기/가는 것)" },
+    { "nepali": "कान्छो", "romanized": "kaanchho", "korean": "youngest (막내)" },
+    { "nepali": "खुल्नु", "romanized": "khulnu", "korean": "to be open (열리다)" },
+    { "nepali": "मन", "romanized": "man", "korean": "mind / heart (마음)" },
+    { "nepali": "मिल्नु", "romanized": "milnu", "korean": "to be available / to fit (되다/맞다)" },
+    { "nepali": "पाइन्छ", "romanized": "paainchha", "korean": "is available / is allowed (얻을 수 있다/해도 된다)" },
+    { "nepali": "पाल्दै", "romanized": "paaldai", "korean": "raising / keeping (키우는 중)" },
+    { "nepali": "पाउ", "romanized": "pau", "korean": "foot / quarter (발 / 1/4)" },
+    { "nepali": "फुपू", "romanized": "phuphu", "korean": "paternal aunt (고모)" },
+    { "nepali": "प्रारब्ध", "romanized": "praarabdha", "korean": "fate / destiny (운명)" },
+    { "nepali": "सधैँ", "romanized": "sadhai", "korean": "always (항상)" }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 허가 요청/허가 (-na hunchha)",
+      "details": ["‘~해도 될까요?’ / ‘~해도 됩니다’를 표현합니다. (예: basna hunchha - 앉아도 됩니다)"]
+    },
+    {
+      "title": "2. 가능/허용 (-na paainchha)",
+      "details": ["‘~할 수 있다/해도 된다’를 표현합니다. (예: jaana paainchha - 갈 수 있다)"]
+    },
+    {
+      "title": "3. 금지 (-na paaindaina)",
+      "details": ["‘~하면 안 된다/할 수 없다’를 표현합니다. (예: chhunna paaindaina - 만지면 안 된다)"]
+    }
+  ],
+  "quiz": [],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 출입 및 행동 허가 (-na hunchha)",
+      "lines": [
+        { "speaker": "A", "nepali": "म भित्र आऊँ ?", "romanized": "ma bhitra aau ?", "korean": "내가 안으로 들어갈까?" },
+        { "speaker": "B", "nepali": "आऊ, भित्र आउन हुन्छ।", "romanized": "aau, bhitra aauna hunchha", "korean": "응, 들어와도 돼." },
+        { "speaker": "A", "nepali": "म यहाँ बसूँ ?", "romanized": "ma yahãã basu ?", "korean": "내가 여기 앉을까?" },
+        { "speaker": "B", "nepali": "हुन्छ, बस्न हुन्छ।", "romanized": "hunchha, basna hunchha", "korean": "응, 앉아도 돼." },
+        { "speaker": "A", "nepali": "म यो हेरूँ ?", "romanized": "ma yo heru ?", "korean": "내가 이것을 봐도 될까?" },
+        { "speaker": "B", "nepali": "हेर्न हुन्छ, हेर्नोस्।", "romanized": "herna hunchha, hernos", "korean": "봐도 돼, 보세요." }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 가능성과 허용 (-na paainchha)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यो मन्दिरमा जान पाइन्छ ?",
+          "romanized": "yo mandirmaa jaana paainchha ?",
+          "korean": "이 사원에 들어가도 되나요/들어갈 수 있나요?"
+        },
+        { "speaker": "B", "nepali": "पाइन्छ।", "romanized": "paainchha", "korean": "네, 됩니다." },
+        { "speaker": "A", "nepali": "जो पनि जान पाइन्छ ?", "romanized": "jo pani jaana paainchha ?", "korean": "누구든지 갈 수 있나요?" },
+        { "speaker": "B", "nepali": "पाइन्छ।", "romanized": "paainchha", "korean": "네, 갈 수 있습니다." },
+        { "speaker": "A", "nepali": "केटाकेटीहरू पनि ?", "romanized": "keTaakaeTiharu pani ?", "korean": "아이들도요?" },
+        { "speaker": "B", "nepali": "पाइन्छन्।", "romanized": "paainchhan", "korean": "네, 갈 수 있습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 금지와 허가 비교",
+      "lines": [
+        { "speaker": "A", "nepali": "म यहाँ धुम्रपान गरूँ ?", "romanized": "ma yahãã dhumpaan garu ?", "korean": "여기서 담배를 피워도 될까요?" },
+        {
+          "speaker": "B",
+          "nepali": "पर्दैन, यहाँ धुम्रपान गर्न पाइँदैन।",
+          "romanized": "pardaina, yahãã dhumpaan garna paaindaina",
+          "korean": "안 됩니다, 여기서는 담배를 피울 수 없습니다."
+        },
+        { "speaker": "A", "nepali": "म बाहिर जाऊँ ?", "romanized": "ma baahira jaau ?", "korean": "제가 밖에 나가도 될까요?" },
+        { "speaker": "B", "nepali": "हुन्छ, जान हुन्छ।", "romanized": "hunchha, jaana hunchha", "korean": "네, 나가도 됩니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 물건 사용 허가",
+      "lines": [
+        { "speaker": "A", "nepali": "म यो कलमले लेखूँ ?", "romanized": "ma yo kalamle lekhu ?", "korean": "이 펜으로 써도 될까요?" },
+        { "speaker": "B", "nepali": "लेख्न हुन्छ, लेख्नोस्।", "romanized": "lekhna hunchha, lekhnos", "korean": "써도 됩니다, 쓰세요." },
+        { "speaker": "A", "nepali": "म यो फूल छुऊँ ?", "romanized": "ma yo phul chhuvu ?", "korean": "이 꽃을 만져도 될까요?" },
+        { "speaker": "B", "nepali": "पर्दैन, फूल छुन पाइँदैन।", "romanized": "pardaina, phul chhunna paaindaina", "korean": "안 됩니다, 꽃은 만지면 안 됩니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 일반적인 가능성 (시장 상황)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "बजारमा केरा पाइन्छ ?",
+          "romanized": "bajaarmaa keraa paainchha ?",
+          "korean": "시장에 바나나가 있나요/구할 수 있나요?"
+        },
+        { "speaker": "B", "nepali": "पाइन्छ।", "romanized": "paainchha", "korean": "네, 있습니다." },
+        { "speaker": "A", "nepali": "आलु नि ?", "romanized": "aalu ni ?", "korean": "감자는요?" },
+        { "speaker": "B", "nepali": "आलु पनि पाइन्छ।", "romanized": "aalu pani paainchha", "korean": "감자도 있습니다." },
+        { "speaker": "A", "nepali": "आज चिनी पाइन्छ ?", "romanized": "aaja chini paainchha ?", "korean": "오늘 설탕이 있나요?" },
+        { "speaker": "B", "nepali": "आज पाइँदैन, सिद्धियो।", "romanized": "aaja paaindaina, siddhiyo", "korean": "오늘은 없습니다, 다 떨어졌습니다." }
+      ]
+    }
+  ]
+}

@@ -148,6 +148,41 @@
       "nepali": "त",
       "romanized": "ta",
       "korean": "then (그러면)"
+    },
+    {
+      "nepali": "मैले",
+      "romanized": "maile",
+      "korean": "I (내가 - 과거 타동사 주어)"
+    },
+    {
+      "nepali": "तपाईंले",
+      "romanized": "tapaaïle",
+      "korean": "you (당신이 - 과거 타동사 주어)"
+    },
+    {
+      "nepali": "उहाँले",
+      "romanized": "wahããle",
+      "korean": "he/she (그분이 - 과거 타동사 주어)"
+    },
+    {
+      "nepali": "पढेको",
+      "romanized": "paDheko",
+      "korean": "read (읽었다 - paDhnu의 변형)"
+    },
+    {
+      "nepali": "खोलेको",
+      "romanized": "kholeko",
+      "korean": "opened (열었다 - kholnu의 변형)"
+    },
+    {
+      "nepali": "दिएको",
+      "romanized": "dieko",
+      "korean": "gave (주었다 - dinu의 변형)"
+    },
+    {
+      "nepali": "गरेको",
+      "romanized": "gareko",
+      "korean": "did (했다 - garnu의 변형)"
     }
   ],
   "examples": [],

@@ -1,10 +1,29 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
-import { lessonsIndex } from "@/data/lessonLoader";
+import { lessonsIndex, availableLessonIds, loadLesson } from "@/data/lessonLoader";
 import { cn } from "@/lib/utils";
 import { MAX_LESSON_ID } from "@/data/lessonsMeta";
 
 export const Route = createFileRoute("/lessons/")({
+  loader: async () => {
+    // 각 레슨의 최신 JSON 데이터를 불러와 실제 개수를 실시간으로 동기화합니다.
+    const loaded = await Promise.all(
+      availableLessonIds.map((id) => loadLesson(id).catch(() => null))
+    );
+    const realCounts: Record<number, any> = {};
+    loaded.forEach((l) => {
+      if (l) {
+        realCounts[l.id] = {
+          vocabulary: l.vocabulary?.length || 0,
+          examples: l.examples?.length || 0,
+          grammar: l.grammar?.length || 0,
+          quiz: l.quiz?.length || 0,
+          dialogues: l.dialogues?.length || 0,
+        };
+      }
+    });
+    return realCounts;
+  },
   head: () => ({
     meta: [
       { title: "레슨 목록 - 네팔어 학습" },
@@ -15,6 +34,8 @@ export const Route = createFileRoute("/lessons/")({
 });
 
 function LessonsPage() {
+  const realCounts = Route.useLoaderData();
+
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
       <Header />
@@ -24,31 +45,28 @@ function LessonsPage() {
           Basic Course in Spoken Nepali · 총 {MAX_LESSON_ID}개 레슨
         </p>
 
-        <div className="mb-4">
+        <div className="mb-4 sm:mb-6">
           <Link
             to="/study/pronunciation"
-            className="group flex items-center gap-3 rounded-xl border bg-card p-3 sm:p-4 shadow-sm transition-all active:scale-[0.99] hover:-translate-y-0.5 hover:shadow-md"
+            className="group flex items-center justify-between gap-3 rounded-2xl border bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-md active:scale-[0.99]"
           >
-            <div className="flex h-10 w-10 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-lg bg-warm text-base sm:text-lg font-bold text-warm-foreground">
-              🔊
-            </div>
-            <div className="flex-1 min-w-0">
-              <h2 className="text-sm sm:text-base font-semibold text-foreground">발음 연습</h2>
-              <p className="mt-0.5 text-xs sm:text-sm text-muted-foreground">
-                모음/자음을 누르며 발음 듣기
-              </p>
-              <div className="mt-1 flex flex-wrap gap-1">
-                <span className="rounded-full border border-[#E9DED3] bg-[#F5EBE0] px-2.5 py-0.5 text-[10px] sm:text-xs font-medium tracking-wide text-[#8D7B68] transition-colors hover:bg-[#E9DED3]">
-                  발음
-                </span>
+            <div className="min-w-0">
+              <div className="text-xs font-semibold text-muted-foreground">시작하기</div>
+              <div className="mt-1 text-base font-bold text-foreground">발음 연습</div>
+              <div className="mt-1 text-xs text-muted-foreground">
+                네팔어 기초 발음(모음/자음)을 카드로 학습해요
               </div>
+            </div>
+            <div className="shrink-0 rounded-xl bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground transition-colors group-hover:bg-accent">
+              열기 →
             </div>
           </Link>
         </div>
 
         <div className="grid gap-2 sm:gap-3">
           {[...lessonsIndex].sort((a, b) => a.id - b.id).map((lesson) => {
-            const counts = lesson.counts ?? {};
+            const baseCounts = lesson.counts ?? {};
+            const counts = { ...baseCounts, ...(realCounts[lesson.id] ?? {}) };
             const hasContent =
               (counts.vocabulary ?? 0) > 0 ||
               (counts.examples ?? 0) > 0 ||

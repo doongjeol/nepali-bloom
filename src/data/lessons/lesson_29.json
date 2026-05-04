@@ -1,0 +1,251 @@
+{
+  "id": 29,
+  "title": "Lesson 29",
+  "titleKo": "제29과",
+  "description": "과거 진행 시제(-dai thiyo / -iraheko)와 명사를 수식하는 '-eko' 형용사 용법을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बेच्नु",
+      "romanized": "bechnu",
+      "korean": "to sell (팔다)"
+    },
+    {
+      "nepali": "बेकार",
+      "romanized": "bekaar",
+      "korean": "jobless, useless (실업 상태의, 쓸모없는)"
+    },
+    {
+      "nepali": "भीड",
+      "romanized": "bhiD",
+      "korean": "crowd (군중/인파)"
+    },
+    {
+      "nepali": "विदेशी",
+      "romanized": "bideshi",
+      "korean": "foreigner (외국인)"
+    },
+    {
+      "nepali": "दिक्कलाग्नु",
+      "romanized": "dikkalaagnu",
+      "korean": "to be bored (지루하다/답답하다)"
+    },
+    {
+      "nepali": "गाँजा",
+      "romanized": "gaajaa",
+      "korean": "marijuana (대마초)"
+    },
+    {
+      "nepali": "गफ गर्नु",
+      "romanized": "gaph garnu",
+      "korean": "to gossip (수다를 떨다)"
+    },
+    {
+      "nepali": "कत्तिको",
+      "romanized": "kattiko",
+      "korean": "how much (어느 정도)"
+    },
+    {
+      "nepali": "खोज्नु",
+      "romanized": "khojnu",
+      "korean": "to look for (찾다)"
+    },
+    {
+      "nepali": "किसिम",
+      "romanized": "kisim",
+      "korean": "kind, type, sort (종류)"
+    },
+    {
+      "nepali": "कोही",
+      "romanized": "kohi",
+      "korean": "some (누군가/어떤 이들)"
+    },
+    {
+      "nepali": "कुन्नि",
+      "romanized": "kunni",
+      "korean": "I don't know (글쎄요/모르겠습니다)"
+    },
+    {
+      "nepali": "पत्रिका",
+      "romanized": "patrikaa",
+      "korean": "newspaper (신문/잡지)"
+    },
+    {
+      "nepali": "तलब",
+      "romanized": "talab",
+      "korean": "salary (급여)"
+    },
+    {
+      "nepali": "उस्तै",
+      "romanized": "ustai",
+      "korean": "just like that (그저 그런/마찬가지의)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 과거 진행 시제 (Past Progressive)",
+      "details": [
+        "과거의 특정 시점에 진행 중이었던 동작을 나타냅니다 (~하고 있었다).",
+        "- 형태: [동사 어간 + dai] + [thiế/thiyo 등 과거 Be동사]",
+        "- 예: ma gardaithié (나는 하고 있었다), u gardaithiyo (그는 하고 있었다)."
+      ]
+    },
+    {
+      "title": "2. 진행 시제의 대안 형태 (-iraheko)",
+      "details": [
+        "'-dai' 대신 '-iraheko'를 사용하여 진행의 의미를 나타낼 수 있습니다.",
+        "- 예: ma gariraheko thié (나는 하고 있었다)."
+      ]
+    },
+    {
+      "title": "3. 형용사로 쓰이는 '-eko' 형태",
+      "details": [
+        "완료된 상태를 나타내며 명사를 수식하는 형용사처럼 쓰입니다.",
+        "- 예: phuTeko ainaa (깨진 거울), kuheko phalphul (썩은 과일), bigreko ghaDi (고장 난 시계)."
+      ]
+    },
+    {
+      "title": "4. 진행/상태의 부정",
+      "details": [
+        "질문에 대해 \"아니오(hoina/chhaina)\"라고 먼저 답한 뒤, 실제로 하고 있던 동작을 긍정형으로 말하는 방식이 흔합니다."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "과거에 진행 중이던 동작(~하고 있었다)을 나타내는 동사 형태는?",
+      "options": [
+        "[어간 + e] + [Be동사]",
+        "[어간 + daakheri]",
+        "[어간 + dai] + [과거 Be동사]",
+        "[어간 + era]"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'팔다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "खोज्नु (khojnu)",
+        "बेच्नु (bechnu)",
+        "गफ गर्नु (gaph garnu)",
+        "हेर्नु (hernu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'군중'이나 '인파'를 뜻하는 네팔어는?",
+      "options": [
+        "किसिम (kisim)",
+        "तलब (talab)",
+        "भीड (bhiD)",
+        "पत्रिका (patrikaa)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "진행을 나타내는 '-dai' 대신 사용할 수 있는 동사 형태는?",
+      "options": [
+        "-iraheko",
+        "-era",
+        "-eko",
+        "-ne"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "대화에서 '글쎄요' 또는 '모르겠습니다'라고 말할 때 쓰이는 단어는?",
+      "options": [
+        "उस्तै (ustai)",
+        "कत्तिको (kattiko)",
+        "कोही (kohi)",
+        "कुन्नि (kunni)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'-eko' 형태가 명사 앞에서 수식어로 쓰일 때의 역할은?",
+      "options": [
+        "명사의 소유격 표시",
+        "명사의 복수형 표시",
+        "완료된 상태를 나타내는 형용사",
+        "동사의 미래 시제"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'수다를 떨다'를 뜻하는 네팔어 표현은?",
+      "options": [
+        "गफ गर्नु (gaph garnu)",
+        "बेकार बस्नु (bekaar basnu)",
+        "काम खोज्नु (kaam khojnu)",
+        "दिक्क लाग्नु (dikka laagnu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'어느 정도'나 '얼마나'를 묻는 네팔어 단어는?",
+      "options": [
+        "कति (kati)",
+        "कत्तिको (kattiko)",
+        "उस्तै (ustai)",
+        "कहाँ (kahãã)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'지루하다' 또는 '답답하다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "खुसी हुनु (khusi hunu)",
+        "दुख्नु (dukhnu)",
+        "दिक्कलाग्नु (dikkalaagnu)",
+        "मिल्नु (milnu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'외국인'을 뜻하는 네팔어는?",
+      "options": [
+        "विदेशी (bideshi)",
+        "नेपाली (nepaali)",
+        "मानिस (maanis)",
+        "साथी (saathi)"
+      ],
+      "answer": 0
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 과거의 구직 활동",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपाल आउनुभन्दा पहिले तपाईं कहाँ हुनुहुन्थ्यो, जिम?", "romanized": "nepaal aaunubhandaa pahile tapaai kahãã hunuhunthyo, jim?", "korean": "짐, 네팔에 오기 전에 어디에 있었나요?" },
+        { "speaker": "B", "nepali": "म अमेरिकामा थिएँ।", "romanized": "ma amerikaamaa thiế.", "korean": "미국에 있었습니다." },
+        { "speaker": "A", "nepali": "तपाईं के गर्दैहुनुहुन्थ्यो ?", "romanized": "tapaai ke gardaihunuhunthyo ?", "korean": "무엇을 하고 있었나요?" },
+        { "speaker": "B", "nepali": "म बेकार थिएँ। काम खोज्दैथिएँ।", "romanized": "ma bekaar thiế. kaam khojdaithié.", "korean": "직업이 없었습니다. 일을 찾고 있었어요." },
+        { "speaker": "A", "nepali": "कुन किसिमको काम खोज्दैहुनुहुन्थ्यो ?", "romanized": "kun kisimko kaam khojdaihunuhunthyo ?", "korean": "어떤 종류의 일을 찾고 있었나요?" },
+        { "speaker": "B", "nepali": "जस्तो पायो उस्तै।", "romanized": "jasto paayo ustai.", "korean": "얻을 수 있는 건 무엇이든요." },
+        { "speaker": "A", "nepali": "बेकार बस्दाखेरि तपाईंलाई दिक्क लाग्दैनथ्यो ?", "romanized": "bekaar basdaakheri tapaallaai dikka laagdainathyo ?", "korean": "일 없이 지낼 때 지루하지 않았나요?" },
+        { "speaker": "B", "nepali": "एकदम दिक्क लाग्थ्यो।", "romanized": "ekdam dikka laagthyo.", "korean": "아주 지루했습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 어제 저녁의 거리 풍경",
+      "lines": [
+        { "speaker": "A", "nepali": "हिजो बेलुका तपाईं के गर्दै हुनुहुन्थ्यो ?", "romanized": "hijo belukaa tapaai ke gardai hunuhunthyo ?", "korean": "어제 저녁에 무엇을 하고 있었나요?" },
+        { "speaker": "B", "nepali": "म नयाँ सडकमा घुम्दै थिएँ।", "romanized": "ma nayãã saDakmaa ghumdai thiế.", "korean": "뉴 로드(New Road)를 돌아다니고 있었습니다." },
+        { "speaker": "A", "nepali": "मानिसहरूको कत्तिको भीड थियो ?", "romanized": "maanisharuko kattiko bhiD thiyo ?", "korean": "사람들이 얼마나 붐볐나요?" },
+        { "speaker": "B", "nepali": "निकै भीड थियो।", "romanized": "nikai bhiD thiyo.", "korean": "정말 붐볐습니다." },
+        { "speaker": "A", "nepali": "तिनीहरू के गरिरहेका थिए ?", "romanized": "tiniharu ke garirahekaa thie ?", "korean": "다들 무엇을 하고 있었나요?" },
+        { "speaker": "B", "nepali": "कोही पत्रिका किनिरहेका थिए; धेरै जसो गफ गरिरहेका थिए।", "romanized": "kohi patrikaa kinirahekaa thie; dherai jaso gaph garirahekaa thie.", "korean": "어떤 이들은 신문을 사고 있었고, 대부분은 수다를 떨고 있었습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) आ픈 친구 상황",
+      "lines": [
+        { "speaker": "A", "nepali": "टम के गरि रहेको छ ?", "romanized": "Tam ke gari raheko chha ?", "korean": "톰은 무엇을 하고 있나요?" },
+        { "speaker": "B", "nepali": "ऊ सुतिरहेको छ।", "romanized": "u sutiraheko chha.", "korean": "자고 있습니다." },
+        { "speaker": "A", "nepali": "उसले पेट दुखेको औषधी खाँदै छ ?", "romanized": "usle peT dukheko ausadhi khããdai chha ?", "korean": "그는 배 아플 때 먹는 약을 복용 중인가요?" },
+        { "speaker": "B", "nepali": "कुन्नि, हिजो सम्म त खाँदै थियो।", "romanized": "kunni, hijo samma ta khããdai thiyo.", "korean": "글쎄요, 어제까지는 먹고 있었습니다." }
+      ]
+    }
+  ]
+}

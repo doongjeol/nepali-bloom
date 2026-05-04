@@ -215,7 +215,23 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
   const [picked, setPicked] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
 
-  const canGenerate = (card.examples ?? []).length > 0;
+  const hasDifficultyDistinction = useMemo(() => {
+    const kind = inferKind(card);
+    if (kind === "generic") return false;
+    const validExamples = (card.examples ?? []).filter(Boolean);
+    return validExamples.length > 0;
+  }, [card]);
+
+  // 현재 출제된 문제 외에 다른 형태의 문제(프롬프트나 정답이 다른 문제)가 존재하는지 미리 판별합니다.
+  const hasNext = useMemo(() => {
+    for (let i = 0; i < 20; i++) {
+      const ex = buildExercise(card, difficulty);
+      if (ex.prompt !== exercise.prompt || ex.answer !== exercise.answer) {
+        return true;
+      }
+    }
+    return false;
+  }, [card, difficulty, exercise.prompt, exercise.answer]);
 
   const isCorrect = revealed && picked === exercise.answer;
 
@@ -247,7 +263,17 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
   };
 
   const next = () => {
-    const nextEx = buildExercise(card, difficulty);
+    let nextEx = buildExercise(card, difficulty);
+    let attempts = 0;
+    // 같은 문제가 나오지 않도록 최대 20번까지 다시 뽑습니다.
+    while (
+      nextEx.prompt === exercise.prompt &&
+      nextEx.answer === exercise.answer &&
+      attempts < 20
+    ) {
+      nextEx = buildExercise(card, difficulty);
+      attempts++;
+    }
     setExercise(nextEx);
     setPicked(null);
     setRevealed(false);
@@ -255,43 +281,50 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center justify-between gap-2">
-        <div className="flex gap-2">
-          <button
-            type="button"
-            className={cn(
-              "rounded-xl border px-3 py-2 text-xs font-semibold transition-colors",
-              difficulty === "beginner"
-                ? "border-[#DCCFC4] bg-white/70 text-[#333D29]"
-                : "border-[#DCCFC4] bg-white/40 text-[#333D29]/70 hover:bg-white/60",
-            )}
-            onClick={() => {
-              setDifficulty("beginner");
-              setExercise(buildExercise(card, "beginner"));
-              setPicked(null);
-              setRevealed(false);
-            }}
-          >
-            초급
-          </button>
-          <button
-            type="button"
-            className={cn(
-              "rounded-xl border px-3 py-2 text-xs font-semibold transition-colors",
-              difficulty === "intermediate"
-                ? "border-[#DCCFC4] bg-white/70 text-[#333D29]"
-                : "border-[#DCCFC4] bg-white/40 text-[#333D29]/70 hover:bg-white/60",
-            )}
-            onClick={() => {
-              setDifficulty("intermediate");
-              setExercise(buildExercise(card, "intermediate"));
-              setPicked(null);
-              setRevealed(false);
-            }}
-          >
-            중급
-          </button>
-        </div>
+      <div
+        className={cn(
+          "flex items-center gap-2",
+          hasDifficultyDistinction ? "justify-between" : "justify-end",
+        )}
+      >
+        {hasDifficultyDistinction && (
+          <div className="flex gap-2">
+            <button
+              type="button"
+              className={cn(
+                "rounded-xl border px-3 py-2 text-xs font-semibold transition-colors",
+                difficulty === "beginner"
+                  ? "border-[#DCCFC4] bg-white/70 text-[#333D29]"
+                  : "border-[#DCCFC4] bg-white/40 text-[#333D29]/70 hover:bg-white/60",
+              )}
+              onClick={() => {
+                setDifficulty("beginner");
+                setExercise(buildExercise(card, "beginner"));
+                setPicked(null);
+                setRevealed(false);
+              }}
+            >
+              초급
+            </button>
+            <button
+              type="button"
+              className={cn(
+                "rounded-xl border px-3 py-2 text-xs font-semibold transition-colors",
+                difficulty === "intermediate"
+                  ? "border-[#DCCFC4] bg-white/70 text-[#333D29]"
+                  : "border-[#DCCFC4] bg-white/40 text-[#333D29]/70 hover:bg-white/60",
+              )}
+              onClick={() => {
+                setDifficulty("intermediate");
+                setExercise(buildExercise(card, "intermediate"));
+                setPicked(null);
+                setRevealed(false);
+              }}
+            >
+              중급
+            </button>
+          </div>
+        )}
         <Button
           type="button"
           variant="secondary"
@@ -302,7 +335,7 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
             setPicked(null);
             setRevealed(false);
           }}
-          disabled={!canGenerate}
+          disabled={!hasNext}
         >
           새로 만들기
         </Button>
@@ -336,11 +369,13 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
         })}
       </div>
 
-      <div className="flex items-center justify-end gap-2">
-        <Button type="button" variant="secondary" className="rounded-xl" onClick={next} disabled={!revealed}>
-          다음 문제
-        </Button>
-      </div>
+      {hasNext && (
+        <div className="flex items-center justify-end gap-2">
+          <Button type="button" variant="secondary" className="rounded-xl" onClick={next} disabled={!revealed}>
+            다음 문제
+          </Button>
+        </div>
+      )}
 
       {revealed && (
         <div

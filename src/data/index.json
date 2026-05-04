@@ -323,5 +323,18 @@
       "quiz": 10,
       "dialogues": 4
     }
+  },
+  {
+    "id": 27,
+    "title": "Lesson 27",
+    "titleKo": "제27과",
+    "description": "출입/행동 허가(-na hunchha), 가능/허용(-na paainchha) 표현을 연습합니다.",
+    "counts": {
+      "vocabulary": 14,
+      "examples": 0,
+      "grammar": 3,
+      "quiz": 0,
+      "dialogues": 5
+    }
   }
 ]

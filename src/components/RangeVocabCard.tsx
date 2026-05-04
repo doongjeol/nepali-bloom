@@ -71,13 +71,13 @@ export function RangeVocabCard({
 
   const knownCount = useMemo(() => vocabulary.filter((w) => getStatus(w) === "known").length, [getStatus, vocabulary]);
   const unknownCount = useMemo(
-    () => vocabulary.filter((w) => getStatus(w) === "unknown").length,
+    () => vocabulary.filter((w) => getStatus(w) !== "known").length,
     [getStatus, vocabulary],
   );
 
   const studyQueue = useMemo(() => {
     if (filter === "known") return vocabulary.filter((w) => getStatus(w) === "known");
-    if (filter === "unknown") return vocabulary.filter((w) => getStatus(w) === "unknown");
+    if (filter === "unknown") return vocabulary.filter((w) => getStatus(w) !== "known");
     return vocabulary;
   }, [filter, getStatus, vocabulary]);
 

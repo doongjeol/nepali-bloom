@@ -6,70 +6,305 @@
       "romanized": "a",
       "phonetic": "어",
       "audio": "/audio/pronunciation/a.mp3",
-      "description": "우리말의 **'어'**와 **'아'**의 중간 소리(예: about의 a)입니다. 입을 가볍게 벌리고 짧게 발음합니다."
+      "description": "우리말의 **'어'**와 **'아'**의 중간 소리(예: about의 a)입니다. 입을 가볍게 벌리고 짧게 발음합니다.",
+      "book_guide": "Short, mid-central vowel similar to 'about'.",
+      "book_examples": [
+        {
+          "nepali": "अब",
+          "romanized": "aba",
+          "meaning": "now"
+        },
+        {
+          "nepali": "असल",
+          "romanized": "asal",
+          "meaning": "good"
+        },
+        {
+          "nepali": "दस",
+          "romanized": "das",
+          "meaning": "ten"
+        },
+        {
+          "nepali": "उठ",
+          "romanized": "uTha",
+          "meaning": "stand up!"
+        }
+      ]
     },
     {
       "char": "आ",
       "romanized": "aa",
       "phonetic": "아",
       "audio": "/audio/pronunciation/aa.mp3",
-      "description": "우리말의 **'아'**와 비슷하게 입을 크게 벌리고 소리를 내며 길게 발음합니다."
+      "description": "우리말의 **'아'**와 비슷하게 입을 크게 벌리고 소리를 내며 길게 발음합니다.",
+      "book_guide": "Long, low, unsounded vowel similar to 'father'.",
+      "book_examples": [
+        {
+          "nepali": "आमा",
+          "romanized": "aamaa",
+          "meaning": "mother"
+        },
+        {
+          "nepali": "आगो",
+          "romanized": "aago",
+          "meaning": "fire"
+        },
+        {
+          "nepali": "न आउ",
+          "romanized": "na aau",
+          "meaning": "don't come!"
+        },
+        {
+          "nepali": "जरा",
+          "romanized": "jaraa",
+          "meaning": "root"
+        }
+      ]
     },
     {
       "char": "इ",
       "romanized": "i",
       "phonetic": "이",
       "audio": "/audio/pronunciation/i.mp3",
-      "description": "우리말의 **'이'**와 비슷하게 짧고 가볍게 발음합니다."
+      "description": "우리말의 **'이'**와 비슷하게 짧고 가볍게 발음합니다.",
+      "book_guide": "Short, high front, unrounded vowel similar to 'fit'.",
+      "book_examples": [
+        {
+          "nepali": "इनार",
+          "romanized": "inaar",
+          "meaning": "well"
+        },
+        {
+          "nepali": "इन्द्र",
+          "romanized": "indra",
+          "meaning": "the god of rain"
+        },
+        {
+          "nepali": "गीत",
+          "romanized": "git",
+          "meaning": "song"
+        },
+        {
+          "nepali": "पनि",
+          "romanized": "pani",
+          "meaning": "also"
+        }
+      ]
     },
     {
       "char": "ई",
       "romanized": "ii",
       "phonetic": "이 (길게)",
       "audio": "/audio/pronunciation/ii.mp3",
-      "description": "우리말의 **'이'**와 같으나, 조금 더 길게 발음합니다. (현대 구어체에서는 इ와 거의 구분하지 않습니다)"
+      "description": "우리말의 **'이'**와 같으나, 조금 더 길게 발음합니다. (현대 구어체에서는 इ와 거의 구분하지 않습니다)",
+      "book_guide": "Long but produced the same way (i) is.",
+      "book_examples": [
+        {
+          "nepali": "ईश्वर",
+          "romanized": "ishwar",
+          "meaning": "God"
+        },
+        {
+          "nepali": "पानी",
+          "romanized": "paani",
+          "meaning": "water"
+        },
+        {
+          "nepali": "दिदी",
+          "romanized": "didi",
+          "meaning": "elder sister"
+        },
+        {
+          "nepali": "बहिनी",
+          "romanized": "bahini",
+          "meaning": "younger sister"
+        },
+        {
+          "nepali": "तीर",
+          "romanized": "tir",
+          "meaning": "arrow"
+        },
+        {
+          "nepali": "तिर",
+          "romanized": "tira",
+          "meaning": "towards"
+        }
+      ]
     },
     {
       "char": "उ",
       "romanized": "u",
       "phonetic": "우",
       "audio": "/audio/pronunciation/u.mp3",
-      "description": "우리말의 **'우'**와 비슷하게 입술을 둥글게 하여 짧게 발음합니다."
+      "description": "우리말의 **'우'**와 비슷하게 입술을 둥글게 하여 짧게 발음합니다.",
+      "book_guide": "Short, high back, rounded vowel similar to 'put'.",
+      "book_examples": [
+        {
+          "nepali": "उठ",
+          "romanized": "uTha",
+          "meaning": "stand up!"
+        },
+        {
+          "nepali": "बाउन्न",
+          "romanized": "baaunna",
+          "meaning": "fifty-two"
+        },
+        {
+          "nepali": "जाउ",
+          "romanized": "jaau",
+          "meaning": "go!"
+        }
+      ]
     },
     {
       "char": "ऊ",
       "romanized": "uu",
       "phonetic": "우 (길게)",
       "audio": "/audio/pronunciation/uu.mp3",
-      "description": "우리말의 **'우'**와 같으나, 조금 더 길게 발음합니다."
+      "description": "우리말의 **'우'**와 같으나, 조금 더 길게 발음합니다.",
+      "book_guide": "Long but produced the same way as (u).",
+      "book_examples": [
+        {
+          "nepali": "ऊन",
+          "romanized": "un",
+          "meaning": "wool"
+        },
+        {
+          "nepali": "ठूलो",
+          "romanized": "Thulo",
+          "meaning": "big"
+        },
+        {
+          "nepali": "फूल",
+          "romanized": "phul",
+          "meaning": "flower"
+        }
+      ]
     },
     {
       "char": "ए",
       "romanized": "e",
       "phonetic": "에",
       "audio": "/audio/pronunciation/e.mp3",
-      "description": "우리말의 **'에'**와 비슷하게 입술을 평평하게 하고 길게 발음합니다."
+      "description": "우리말의 **'에'**와 비슷하게 입술을 평평하게 하고 길게 발음합니다.",
+      "book_guide": "Long, high-mid, front, unrounded vowel.",
+      "book_examples": [
+        {
+          "nepali": "एक",
+          "romanized": "ek",
+          "meaning": "one"
+        },
+        {
+          "nepali": "गए",
+          "romanized": "gae",
+          "meaning": "they went"
+        },
+        {
+          "nepali": "खाएकोछु",
+          "romanized": "khaaeko chhu",
+          "meaning": "I have eaten"
+        }
+      ]
     },
     {
       "char": "ऐ",
       "romanized": "ai",
       "phonetic": "아이",
       "audio": "/audio/pronunciation/ai.mp3",
-      "description": "**'अ(어/아)'**와 **'इ(이)'**가 합쳐진 이중모음으로 **'아이'**라고 발음합니다."
+      "description": "**'अ(어/아)'**와 **'इ(이)'**가 합쳐진 이중모음으로 **'아이'**라고 발음합니다.",
+      "book_guide": "Low-mid, front, unrounded diphthong (a + i).",
+      "book_examples": [
+        {
+          "nepali": "ऐना",
+          "romanized": "aina",
+          "meaning": "looking glass"
+        },
+        {
+          "nepali": "सबै",
+          "romanized": "sabai",
+          "meaning": "all"
+        },
+        {
+          "nepali": "आजै",
+          "romanized": "aajai",
+          "meaning": "today (emphatic)"
+        },
+        {
+          "nepali": "बजै",
+          "romanized": "bajai",
+          "meaning": "grandmother"
+        },
+        {
+          "nepali": "मकै",
+          "romanized": "makai",
+          "meaning": "corn"
+        },
+        {
+          "nepali": "ऐठन",
+          "romanized": "aiThan",
+          "meaning": "nightmare"
+        }
+      ]
     },
     {
       "char": "ओ",
       "romanized": "o",
       "phonetic": "오",
       "audio": "/audio/pronunciation/o.mp3",
-      "description": "우리말의 **'오'**와 비슷하게 입술을 둥글게 하여 길게 발음합니다."
+      "description": "우리말의 **'오'**와 비슷하게 입술을 둥글게 하여 길게 발음합니다.",
+      "book_guide": "Long, high-mid, back rounded vowel.",
+      "book_examples": [
+        {
+          "nepali": "ओत",
+          "romanized": "ot",
+          "meaning": "shelter"
+        },
+        {
+          "nepali": "फोहोर",
+          "romanized": "phohor",
+          "meaning": "dirty"
+        },
+        {
+          "nepali": "बाटो",
+          "romanized": "baaTo",
+          "meaning": "road"
+        }
+      ]
     },
     {
       "char": "औ",
       "romanized": "au",
       "phonetic": "아우",
       "audio": "/audio/pronunciation/au.mp3",
-      "description": "**'अ(어/아)'**와 **'उ(우)'**가 합쳐진 이중모음으로 **'아우'** 혹은 **'어우'**라고 발음합니다."
+      "description": "**'अ(어/아)'**와 **'उ(우)'**가 합쳐진 이중모음으로 **'아우'** 혹은 **'어우'**라고 발음합니다.",
+      "book_guide": "Long, low-mid, back and rounded diphthong (अ + उ).",
+      "book_examples": [
+        {
+          "nepali": "औलो",
+          "romanized": "aulo",
+          "meaning": "malaria"
+        },
+        {
+          "nepali": "थियौ",
+          "romanized": "thiyau",
+          "meaning": "you were"
+        },
+        {
+          "nepali": "जौ",
+          "romanized": "jau",
+          "meaning": "barley"
+        },
+        {
+          "nepali": "औषधी",
+          "romanized": "ausadhi",
+          "meaning": "medicine"
+        },
+        {
+          "nepali": "कौवा",
+          "romanized": "kauwaa",
+          "meaning": "crow"
+        }
+      ]
     }
   ],
   "consonants": [
@@ -78,203 +313,678 @@
       "romanized": "ka",
       "phonetic": "까",
       "audio": "/audio/pronunciation/ka.mp3",
-      "description": "[연구개음] 우리말의 **'ㄲ'**과 유사하게 숨을 내쉬지 않고 짧고 강하게 발음합니다."
+      "description": "[연구개음] 우리말의 **'ㄲ'**과 유사하게 숨을 내쉬지 않고 짧고 강하게 발음합니다.",
+      "book_guide": "Unvoiced, non-aspirate",
+      "book_examples": [
+        {
+          "nepali": "कलम",
+          "romanized": "kalam",
+          "meaning": "pen"
+        },
+        {
+          "nepali": "नक्कल",
+          "romanized": "nakkal",
+          "meaning": "copy"
+        },
+        {
+          "nepali": "छाक",
+          "romanized": "chhaak",
+          "meaning": "food for one meal"
+        }
+      ]
     },
     {
       "char": "ख",
       "romanized": "kha",
       "phonetic": "카",
       "audio": "/audio/pronunciation/kha.mp3",
-      "description": "[연구개음] 우리말의 **'ㅋ'**과 유사하며, 목 안쪽에서 거센 숨을 내뱉듯 발음합니다."
+      "description": "[연구개음] 우리말의 **'ㅋ'**과 유사하며, 목 안쪽에서 거센 숨을 내뱉듯 발음합니다.",
+      "book_guide": "Aspirated form of 'k'",
+      "book_examples": [
+        {
+          "nepali": "खानु",
+          "romanized": "khaanu",
+          "meaning": "to eat"
+        },
+        {
+          "nepali": "पर्खनु",
+          "romanized": "parkhanu",
+          "meaning": "to wait"
+        },
+        {
+          "nepali": "लेख",
+          "romanized": "lekh",
+          "meaning": "article"
+        }
+      ]
     },
     {
       "char": "ग",
       "romanized": "ga",
       "phonetic": "가",
       "audio": "/audio/pronunciation/ga.mp3",
-      "description": "[연구개음] 우리말의 **'ㄱ'**과 비슷하게 목청을 울려 부드럽게 발음합니다."
+      "description": "[연구개음] 우리말의 **'ㄱ'**과 비슷하게 목청을 울려 부드럽게 발음합니다.",
+      "book_guide": "Voiced counterpart of (k)",
+      "book_examples": [
+        {
+          "nepali": "गन",
+          "romanized": "gana",
+          "meaning": "count!"
+        },
+        {
+          "nepali": "पागल",
+          "romanized": "paagal",
+          "meaning": "insane"
+        },
+        {
+          "nepali": "काग",
+          "romanized": "kaag",
+          "meaning": "crow"
+        }
+      ]
     },
     {
       "char": "घ",
       "romanized": "gha",
       "phonetic": "가ㅎ",
       "audio": "/audio/pronunciation/gha.mp3",
-      "description": "[연구개음] **'ㄱ'** 발음에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다."
+      "description": "[연구개음] **'ㄱ'** 발음에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다.",
+      "book_guide": "Voiced counterpart of 'kh'",
+      "book_examples": [
+        {
+          "nepali": "घर",
+          "romanized": "ghar",
+          "meaning": "house"
+        },
+        {
+          "nepali": "बाघ",
+          "romanized": "baagh",
+          "meaning": "tiger"
+        },
+        {
+          "nepali": "उघार्नु",
+          "romanized": "ughaarnu",
+          "meaning": "to open"
+        }
+      ]
     },
     {
       "char": "ङ",
       "romanized": "nga",
       "phonetic": "응/앙",
       "audio": "/audio/pronunciation/nga.mp3",
-      "description": "[연구개음] 우리말의 **'ㅇ'** 받침소리(ng)와 같습니다. 코를 울려 발음합니다."
+      "description": "[연구개음] 우리말의 **'ㅇ'** 받침소리(ng)와 같습니다. 코를 울려 발음합니다.",
+      "book_guide": "Voiced and nasal",
+      "book_examples": [
+        {
+          "nepali": "नङ",
+          "romanized": "nang",
+          "meaning": "finger or toe nail"
+        },
+        {
+          "nepali": "टाङ्गो",
+          "romanized": "Taango",
+          "meaning": "a long stick"
+        },
+        {
+          "nepali": "रङ",
+          "romanized": "rang",
+          "meaning": "color"
+        }
+      ]
     },
     {
       "char": "च",
       "romanized": "cha",
       "phonetic": "짜",
       "audio": "/audio/pronunciation/cha.mp3",
-      "description": "[구개음] 우리말의 **'ㅉ'**과 유사하게 숨을 내쉬지 않고 강하게 발음합니다."
+      "description": "[구개음] 우리말의 **'ㅉ'**과 유사하게 숨을 내쉬지 않고 강하게 발음합니다.",
+      "book_guide": "Unvoiced, non-aspirated. Similar to 'ch' in 'church'",
+      "book_examples": [
+        {
+          "nepali": "चार",
+          "romanized": "chaar",
+          "meaning": "four"
+        },
+        {
+          "nepali": "बचन",
+          "romanized": "bachan",
+          "meaning": "word"
+        },
+        {
+          "nepali": "चम्चा",
+          "romanized": "chamchaa",
+          "meaning": "spoon"
+        }
+      ]
     },
     {
       "char": "छ",
       "romanized": "chha",
       "phonetic": "차",
       "audio": "/audio/pronunciation/chha.mp3",
-      "description": "[구개음] 우리말의 **'ㅊ'**과 유사하며, 거센 숨을 내뱉으며 발음합니다."
+      "description": "[구개음] 우리말의 **'ㅊ'**과 유사하며, 거센 숨을 내뱉으며 발음합니다.",
+      "book_guide": "Voiceless aspirated counterpart of (ch)",
+      "book_examples": [
+        {
+          "nepali": "छ",
+          "romanized": "chha",
+          "meaning": "six"
+        },
+        {
+          "nepali": "कान्छी",
+          "romanized": "kaanchhi",
+          "meaning": "youngest female"
+        },
+        {
+          "nepali": "माछा",
+          "romanized": "maachhaa",
+          "meaning": "fish"
+        }
+      ]
     },
     {
       "char": "ज",
       "romanized": "ja",
       "phonetic": "자",
       "audio": "/audio/pronunciation/ja.mp3",
-      "description": "[구개음] 우리말의 **'ㅈ'**과 비슷하게 목청을 울려 부드럽게 발음합니다."
+      "description": "[구개음] 우리말의 **'ㅈ'**과 비슷하게 목청을 울려 부드럽게 발음합니다.",
+      "book_guide": "Voiced, unaspirated palatal sound",
+      "book_examples": [
+        {
+          "nepali": "जरा",
+          "romanized": "jaraa",
+          "meaning": "root"
+        },
+        {
+          "nepali": "आज",
+          "romanized": "aaja",
+          "meaning": "today"
+        },
+        {
+          "nepali": "भजन",
+          "romanized": "bhajan",
+          "meaning": "hymn"
+        }
+      ]
     },
     {
       "char": "झ",
       "romanized": "jha",
       "phonetic": "자ㅎ",
       "audio": "/audio/pronunciation/jha.mp3",
-      "description": "[구개음] **'ㅈ'** 발음에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다."
+      "description": "[구개음] **'ㅈ'** 발음에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다.",
+      "book_guide": "Aspirated counterpart of (j)",
+      "book_examples": [
+        {
+          "nepali": "झूटो",
+          "romanized": "jhuTho",
+          "meaning": "lie"
+        },
+        {
+          "nepali": "बुझ्नु",
+          "romanized": "bujhnu",
+          "meaning": "to understand"
+        },
+        {
+          "nepali": "साझा",
+          "romanized": "saajhaa",
+          "meaning": "partnership"
+        }
+      ]
     },
     {
       "char": "ञ",
       "romanized": "nya",
       "phonetic": "냐",
       "audio": "/audio/pronunciation/nya.mp3",
-      "description": "[구개음] 코를 울려 내는 구개비음으로, 일상에서는 드물게 사용됩니다."
+      "description": "[구개음] 코를 울려 내는 구개비음으로, 일상에서는 드물게 사용됩니다.",
+      "book_guide": "Nasalized palatal sound. Rarely used.",
+      "book_examples": []
     },
     {
       "char": "ट",
       "romanized": "Ta",
       "phonetic": "따 (혀 말아)",
       "audio": "/audio/pronunciation/Ta.mp3",
-      "description": "[반전음] 혀끝을 입천장 뒤쪽으로 둥글게 말아 올린 후 튕기며 내는 강한 **'ㄸ'** 소리입니다."
+      "description": "[반전음] 혀끝을 입천장 뒤쪽으로 둥글게 말아 올린 후 튕기며 내는 강한 **'ㄸ'** 소리입니다.",
+      "book_guide": "Unvoiced, non-aspirate",
+      "book_examples": [
+        {
+          "nepali": "टाउको",
+          "romanized": "Taauko",
+          "meaning": "head"
+        },
+        {
+          "nepali": "घटाउ",
+          "romanized": "ghaTaau",
+          "meaning": "subtract"
+        },
+        {
+          "nepali": "केटाकेटी",
+          "romanized": "keTaakeTi",
+          "meaning": "children"
+        }
+      ]
     },
     {
       "char": "ठ",
       "romanized": "Tha",
       "phonetic": "타 (혀 말아)",
       "audio": "/audio/pronunciation/Tha.mp3",
-      "description": "[반전음] 혀를 말아 올린 상태에서 거센 숨과 함께 내는 **'ㅌ'** 소리입니다."
+      "description": "[반전음] 혀를 말아 올린 상태에서 거센 숨과 함께 내는 **'ㅌ'** 소리입니다.",
+      "book_guide": "Unvoiced aspirate",
+      "book_examples": [
+        {
+          "nepali": "ठाउँ",
+          "romanized": "Thaaũ",
+          "meaning": "place"
+        },
+        {
+          "nepali": "कोठा",
+          "romanized": "koThaa",
+          "meaning": "room"
+        },
+        {
+          "nepali": "अठार",
+          "romanized": "aThaara",
+          "meaning": "eighteen"
+        }
+      ]
     },
     {
       "char": "ड",
       "romanized": "Da",
       "phonetic": "다 (혀 말아)",
       "audio": "/audio/pronunciation/Da.mp3",
-      "description": "[반전음] 혀를 말아 올린 상태에서 목청을 울려 내는 묵직한 **'ㄷ'** 소리입니다."
+      "description": "[반전음] 혀를 말아 올린 상태에서 목청을 울려 내는 묵직한 **'ㄷ'** 소리입니다.",
+      "book_guide": "Voiced, non-aspirate",
+      "book_examples": [
+        {
+          "nepali": "डर",
+          "romanized": "Dar",
+          "meaning": "fear"
+        },
+        {
+          "nepali": "लडाई",
+          "romanized": "laDaaĩ",
+          "meaning": "fight"
+        },
+        {
+          "nepali": "हाडे",
+          "romanized": "haaDe",
+          "meaning": "bone"
+        }
+      ]
     },
     {
       "char": "ढ",
       "romanized": "Dha",
       "phonetic": "다ㅎ (혀 말아)",
       "audio": "/audio/pronunciation/Dha.mp3",
-      "description": "[반전음] 혀를 말아 올린 'ड(Da)' 소리에 거친 숨소리(h)를 더해 탁하게 발음합니다."
+      "description": "[반전음] 혀를 말아 올린 'ड(Da)' 소리에 거친 숨소리(h)를 더해 탁하게 발음합니다.",
+      "book_guide": "Voiced, aspirate",
+      "book_examples": [
+        {
+          "nepali": "ढोका",
+          "romanized": "Dhokaa",
+          "meaning": "door"
+        },
+        {
+          "nepali": "बढार्नु",
+          "romanized": "baDhaarnu",
+          "meaning": "to sweep"
+        },
+        {
+          "nepali": "चढ",
+          "romanized": "chaDha",
+          "meaning": "climb"
+        }
+      ]
     },
     {
       "char": "ण",
       "romanized": "Na",
       "phonetic": "나 (혀 말아)",
       "audio": "/audio/pronunciation/Na.mp3",
-      "description": "[반전음] 혀를 말아 올린 상태에서 내는 콧소리(n)로, 구어체에서는 잘 쓰이지 않습니다."
+      "description": "[반전음] 혀를 말아 올린 상태에서 내는 콧소리(n)로, 구어체에서는 잘 쓰이지 않습니다.",
+      "book_guide": "Rarely used.",
+      "book_examples": []
     },
     {
       "char": "त",
       "romanized": "ta",
       "phonetic": "따",
       "audio": "/audio/pronunciation/ta.mp3",
-      "description": "[치음] 혀끝을 윗니 바로 뒤에 대고 내는 부드러운 **'ㄸ'** 소리입니다."
+      "description": "[치음] 혀끝을 윗니 바로 뒤에 대고 내는 부드러운 **'ㄸ'** 소리입니다.",
+      "book_guide": "Unvoiced, non-aspirate",
+      "book_examples": [
+        {
+          "nepali": "तास",
+          "romanized": "taas",
+          "meaning": "playing card"
+        },
+        {
+          "nepali": "बतास",
+          "romanized": "bataas",
+          "meaning": "wind"
+        },
+        {
+          "nepali": "सर्बत",
+          "romanized": "sarbat",
+          "meaning": "cold drink"
+        }
+      ]
     },
     {
       "char": "थ",
       "romanized": "tha",
       "phonetic": "타",
       "audio": "/audio/pronunciation/tha.mp3",
-      "description": "[치음] 혀끝을 윗니 뒤에 대고 거센 숨과 함께 내는 **'ㅌ'** 소리입니다."
+      "description": "[치음] 혀끝을 윗니 뒤에 대고 거센 숨과 함께 내는 **'ㅌ'** 소리입니다.",
+      "book_guide": "Unvoiced, aspirate",
+      "book_examples": [
+        {
+          "nepali": "थाल",
+          "romanized": "thaal",
+          "meaning": "plate"
+        },
+        {
+          "nepali": "बथान",
+          "romanized": "bathaan",
+          "meaning": "group"
+        },
+        {
+          "nepali": "अनाथ",
+          "romanized": "anaath",
+          "meaning": "orphan"
+        }
+      ]
     },
     {
       "char": "द",
       "romanized": "da",
       "phonetic": "다",
       "audio": "/audio/pronunciation/da.mp3",
-      "description": "[치음] 혀끝을 윗니 뒤에 대고 목청을 울려 내는 부드러운 **'ㄷ'** 소리입니다."
+      "description": "[치음] 혀끝을 윗니 뒤에 대고 목청을 울려 내는 부드러운 **'ㄷ'** 소리입니다.",
+      "book_guide": "Voiced, non-aspirate",
+      "book_examples": [
+        {
+          "nepali": "दाम",
+          "romanized": "daam",
+          "meaning": "price"
+        },
+        {
+          "nepali": "बिबाद",
+          "romanized": "bibaad",
+          "meaning": "argument"
+        },
+        {
+          "nepali": "बदाम",
+          "romanized": "badaam",
+          "meaning": "peanut"
+        }
+      ]
     },
     {
       "char": "ध",
       "romanized": "dha",
       "phonetic": "다ㅎ",
       "audio": "/audio/pronunciation/dha.mp3",
-      "description": "[치음] 'द(da)' 소리에 거친 숨소리(h)를 더해 탁하게 발음합니다."
+      "description": "[치음] 'द(da)' 소리에 거친 숨소리(h)를 더해 탁하게 발음합니다.",
+      "book_guide": "Voiced, aspirate",
+      "book_examples": [
+        {
+          "nepali": "धर्म",
+          "romanized": "dharma",
+          "meaning": "religion"
+        },
+        {
+          "nepali": "आधा",
+          "romanized": "aadhaa",
+          "meaning": "half"
+        },
+        {
+          "nepali": "राजधानी",
+          "romanized": "raajdhaani",
+          "meaning": "capital"
+        }
+      ]
     },
     {
       "char": "न",
       "romanized": "na",
       "phonetic": "나",
       "audio": "/audio/pronunciation/na.mp3",
-      "description": "[치음] 우리말의 **'ㄴ'**과 같습니다."
+      "description": "[치음] 우리말의 **'ㄴ'**과 같습니다.",
+      "book_guide": "Nasal dental consonant",
+      "book_examples": [
+        {
+          "nepali": "नाम",
+          "romanized": "naam",
+          "meaning": "name"
+        },
+        {
+          "nepali": "इनार",
+          "romanized": "inaar",
+          "meaning": "well"
+        },
+        {
+          "nepali": "पानी",
+          "romanized": "paani",
+          "meaning": "water"
+        }
+      ]
     },
     {
       "char": "प",
       "romanized": "pa",
       "phonetic": "빠",
       "audio": "/audio/pronunciation/pa.mp3",
-      "description": "[양순음] 두 입술을 부딪쳐 내는 강한 **'ㅃ'** 소리입니다. 숨을 내뱉지 않습니다."
+      "description": "[양순음] 두 입술을 부딪쳐 내는 강한 **'ㅃ'** 소리입니다. 숨을 내뱉지 않습니다.",
+      "book_guide": "Unvoiced, non-aspirate",
+      "book_examples": [
+        {
+          "nepali": "पानी",
+          "romanized": "paani",
+          "meaning": "water"
+        },
+        {
+          "nepali": "तपाईं",
+          "romanized": "tapaaĩ",
+          "meaning": "you (Hon.)"
+        },
+        {
+          "nepali": "ताप",
+          "romanized": "taap",
+          "meaning": "heat"
+        }
+      ]
     },
     {
       "char": "फ",
       "romanized": "pha",
       "phonetic": "파 / 화",
       "audio": "/audio/pronunciation/pha.mp3",
-      "description": "[양순음] 우리말의 **'ㅍ'** 또는 영어의 **'f'**와 유사하며, 두 입술 사이로 거센 숨을 내뱉습니다."
+      "description": "[양순음] 우리말의 **'ㅍ'** 또는 영어의 **'f'**와 유사하며, 두 입술 사이로 거센 숨을 내뱉습니다.",
+      "book_guide": "Unvoiced, aspirate",
+      "book_examples": [
+        {
+          "nepali": "फोहोर",
+          "romanized": "phohor",
+          "meaning": "dirty"
+        },
+        {
+          "nepali": "फलफूल",
+          "romanized": "phalphul",
+          "meaning": "fruits"
+        },
+        {
+          "nepali": "जवाफ",
+          "romanized": "jawaaph",
+          "meaning": "answer"
+        }
+      ]
     },
     {
       "char": "ब",
       "romanized": "ba",
       "phonetic": "바",
       "audio": "/audio/pronunciation/ba.mp3",
-      "description": "[양순음] 우리말의 **'ㅂ'**과 비슷하게 목청을 울려 냅니다."
+      "description": "[양순음] 우리말의 **'ㅂ'**과 비슷하게 목청을 울려 냅니다.",
+      "book_guide": "Voiced, non-aspirate",
+      "book_examples": [
+        {
+          "nepali": "बाटो",
+          "romanized": "baaTo",
+          "meaning": "way"
+        },
+        {
+          "nepali": "बराबर",
+          "romanized": "baraabar",
+          "meaning": "equal"
+        },
+        {
+          "nepali": "बा",
+          "romanized": "baa",
+          "meaning": "father"
+        }
+      ]
     },
     {
       "char": "भ",
       "romanized": "bha",
       "phonetic": "바ㅎ",
       "audio": "/audio/pronunciation/bha.mp3",
-      "description": "[양순음] 'ब(ba)' 소리에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다."
+      "description": "[양순음] 'ब(ba)' 소리에 거친 숨소리(h)를 더해 탁하게 뱉어냅니다.",
+      "book_guide": "Voiced, aspirate",
+      "book_examples": [
+        {
+          "nepali": "भित्र",
+          "romanized": "bhitra",
+          "meaning": "inside"
+        },
+        {
+          "nepali": "अभागी",
+          "romanized": "abhaagi",
+          "meaning": "unlucky"
+        }
+      ]
     },
     {
       "char": "म",
       "romanized": "ma",
       "phonetic": "마",
       "audio": "/audio/pronunciation/ma.mp3",
-      "description": "[양순음] 우리말의 **'ㅁ'**과 같습니다."
+      "description": "[양순음] 우리말의 **'ㅁ'**과 같습니다.",
+      "book_guide": "Bi-labial nasal sound",
+      "book_examples": [
+        {
+          "nepali": "मलाई",
+          "romanized": "malaai",
+          "meaning": "me"
+        },
+        {
+          "nepali": "नाम",
+          "romanized": "naam",
+          "meaning": "name"
+        },
+        {
+          "nepali": "आमा",
+          "romanized": "aamaa",
+          "meaning": "mother"
+        }
+      ]
     },
     {
       "char": "य",
       "romanized": "ya",
       "phonetic": "야",
       "audio": "/audio/pronunciation/ya.mp3",
-      "description": "우리말의 **'야/여/요/유'**를 만들 때 내는 반모음 'y' 소리입니다."
+      "description": "우리말의 **'야/여/요/유'**를 만들 때 내는 반모음 'y' 소리입니다.",
+      "book_guide": "Unrounded, palatal semi-vowel",
+      "book_examples": [
+        {
+          "nepali": "यता",
+          "romanized": "yataa",
+          "meaning": "hither"
+        },
+        {
+          "nepali": "बयासी",
+          "romanized": "bayaasi",
+          "meaning": "eighty-two"
+        },
+        {
+          "nepali": "समय",
+          "romanized": "samaya",
+          "meaning": "time"
+        }
+      ]
     },
     {
       "char": "र",
       "romanized": "ra",
       "phonetic": "라 (굴림)",
       "audio": "/audio/pronunciation/ra.mp3",
-      "description": "우리말의 **'ㄹ'**보다 혀끝을 더 굴려 떠는 소리(rolled r)입니다."
+      "description": "우리말의 **'ㄹ'**보다 혀끝을 더 굴려 떠는 소리(rolled r)입니다.",
+      "book_guide": "Voiced, non-aspirate, rolled alveolar",
+      "book_examples": [
+        {
+          "nepali": "राम्रो",
+          "romanized": "raamro",
+          "meaning": "good/pretty"
+        },
+        {
+          "nepali": "कराउ",
+          "romanized": "karaau",
+          "meaning": "shout!"
+        }
+      ]
     },
     {
       "char": "ल",
       "romanized": "la",
       "phonetic": "라",
       "audio": "/audio/pronunciation/la.mp3",
-      "description": "우리말의 **'ㄹ'**과 유사한 부드러운 소리(l)입니다."
+      "description": "우리말의 **'ㄹ'**과 유사한 부드러운 소리(l)입니다.",
+      "book_guide": "Voiced, non-aspirate lateral sound",
+      "book_examples": [
+        {
+          "nepali": "लामो",
+          "romanized": "laamo",
+          "meaning": "long"
+        },
+        {
+          "nepali": "कलम",
+          "romanized": "kalam",
+          "meaning": "pen"
+        },
+        {
+          "nepali": "दाल",
+          "romanized": "daal",
+          "meaning": "lentil soup"
+        }
+      ]
     },
     {
       "char": "व",
       "romanized": "wa",
       "phonetic": "와 / 바",
       "audio": "/audio/pronunciation/wa.mp3",
-      "description": "우리말의 **'와/워'**를 만들 때의 'w' 소리지만, 구어체에서는 종종 'b(ㅂ)'로 발음됩니다."
+      "description": "우리말의 **'와/워'**를 만들 때의 'w' 소리지만, 구어체에서는 종종 'b(ㅂ)'로 발음됩니다.",
+      "book_guide": "Bi-labial semi-vowel. Tendency to pronounce as 'b'",
+      "book_examples": [
+        {
+          "nepali": "वारी",
+          "romanized": "waari",
+          "meaning": "side of river"
+        },
+        {
+          "nepali": "वरिपरि",
+          "romanized": "waripari",
+          "meaning": "around"
+        }
+      ]
     },
     {
       "char": "श",
@@ -295,14 +1005,50 @@
       "romanized": "sa",
       "phonetic": "사 / 싸",
       "audio": "/audio/pronunciation/sa.mp3",
-      "description": "우리말의 **'ㅅ'** 혹은 **'ㅆ'** 소리와 같습니다."
+      "description": "우리말의 **'ㅅ'** 혹은 **'ㅆ'** 소리와 같습니다.",
+      "book_guide": "Unvoiced dental sibilant",
+      "book_examples": [
+        {
+          "nepali": "पचास",
+          "romanized": "pachaas",
+          "meaning": "fifty"
+        },
+        {
+          "nepali": "कसरी",
+          "romanized": "kasari",
+          "meaning": "how"
+        }
+      ]
     },
     {
       "char": "ह",
       "romanized": "ha",
       "phonetic": "하",
       "audio": "/audio/pronunciation/ha.mp3",
-      "description": "우리말의 **'ㅎ'**과 같습니다."
+      "description": "우리말의 **'ㅎ'**과 같습니다.",
+      "book_guide": "Glottal fricative",
+      "book_examples": [
+        {
+          "nepali": "हामी",
+          "romanized": "haami",
+          "meaning": "we"
+        },
+        {
+          "nepali": "मह",
+          "romanized": "maha",
+          "meaning": "honey"
+        },
+        {
+          "nepali": "शहर",
+          "romanized": "shahar",
+          "meaning": "city"
+        },
+        {
+          "nepali": "पोहोर",
+          "romanized": "pohor",
+          "meaning": "last year"
+        }
+      ]
     }
   ],
   "special_characters": [
@@ -311,21 +1057,45 @@
       "romanized": "ksha",
       "phonetic": "크샤 / 체",
       "audio": "/audio/pronunciation/ksha.mp3",
-      "description": "k + sh 의 복합 자음입니다. 단어에 따라 '체'로 발음되기도 합니다."
+      "description": "k + sh 의 복합 자음입니다. 단어에 따라 '체'로 발음되기도 합니다.",
+      "book_guide": "k + sh",
+      "book_examples": [
+        {
+          "nepali": "अक्षर",
+          "romanized": "akshar",
+          "meaning": "alphabet"
+        }
+      ]
     },
     {
       "char": "त्र",
       "romanized": "tra",
       "phonetic": "뜨라",
       "audio": "/audio/pronunciation/tra.mp3",
-      "description": "t + r 의 복합 자음입니다."
+      "description": "t + r 의 복합 자음입니다.",
+      "book_guide": "t + r",
+      "book_examples": [
+        {
+          "nepali": "भित्र",
+          "romanized": "bhitra",
+          "meaning": "inside"
+        }
+      ]
     },
     {
       "char": "ज्ञ",
       "romanized": "gya",
       "phonetic": "갸",
       "audio": "/audio/pronunciation/gya.mp3",
-      "description": "gy + n 의 복합 자음입니다. 우리말의 **'갸'** 혹은 **'갼'**과 비슷하게 발음됩니다."
+      "description": "gy + n 의 복합 자음입니다. 우리말의 **'갸'** 혹은 **'갼'**과 비슷하게 발음됩니다.",
+      "book_guide": "gy + n",
+      "book_examples": [
+        {
+          "nepali": "ज्ञान",
+          "romanized": "gyaan",
+          "meaning": "knowledge"
+        }
+      ]
     }
   ]
 }

@@ -1,0 +1,279 @@
+{
+  "id": 28,
+  "title": "Lesson 28",
+  "titleKo": "제28과",
+  "description": "과거 완료 시제와 'hunubhandaa pahile'의 결합, 그리고 'rahechha'를 통한 새로운 사실 인지 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "बारेमा",
+      "romanized": "baaremaa",
+      "korean": "about (~에 대하여)"
+    },
+    {
+      "nepali": "बेला",
+      "romanized": "belaa",
+      "korean": "at that time (그때/시간)"
+    },
+    {
+      "nepali": "भाडा",
+      "romanized": "bhaaDaa",
+      "korean": "fare, rent (요금/세)"
+    },
+    {
+      "nepali": "त्यस दिन",
+      "romanized": "tyas din",
+      "korean": "that day (그날)"
+    },
+    {
+      "nepali": "त्यति",
+      "romanized": "tyati",
+      "korean": "that much (그만큼)"
+    },
+    {
+      "nepali": "यसको",
+      "romanized": "yasko",
+      "korean": "its, of this (이것의)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 과거 완료 시제 (Past Perfect)",
+      "details": [
+        "과거의 특정 시점보다 더 이전에 일어난 일이나 완료된 상태를 나타냅니다.",
+        "- [동사 어간 + eko/ekaa] + [thiế/thiyo 등 과거 Be동사]",
+        "- ma gaeko thiế (나는 갔었다) / ma gaeko thiina (나는 가지 않았었다)"
+      ]
+    },
+    {
+      "title": "2. 'hunubhandaa pahile'와의 결합",
+      "details": [
+        "\"~하기 전에\"라는 표현과 함께 자주 쓰여 과거의 이전 상태를 강조합니다.",
+        "- 예: nepaali siknubhandaa pahile (네팔어를 배우기 전에는...)"
+      ]
+    },
+    {
+      "title": "3. Rahechha / Rahenachha",
+      "details": [
+        "화자가 몰랐던 사실을 새롭게 알게 되었을 때 사용합니다.",
+        "- 예: sasto rahechha (알고 보니 싸군요!), aaeko rahechha (와 있었군요!)",
+        "- 구어체에서는 'raicha', 'rainachha'로 축약되기도 합니다."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "과거의 특정 시점보다 더 이전에 일어난 일(과거 완료)을 표현할 때 동사 뒤에 주로 붙는 형태는?",
+      "options": [
+        "-एर (-era)",
+        "-ने (-ne)",
+        "-एको थियो (-eko thiyo)",
+        "-दाखेरि (-daakheri)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'~에 대하여'를 뜻하는 네팔어는?",
+      "options": [
+        "बेला (belaa)",
+        "बारेमा (baaremaa)",
+        "भाडा (bhaaDaa)",
+        "त्यति (tyati)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'그날'을 뜻하는 네팔어는?",
+      "options": [
+        "त्यस दिन (tyas din)",
+        "आज (aaja)",
+        "हिजो (hijo)",
+        "त्यसबेला (tyasbelaa)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "화자가 몰랐던 사실을 새롭게 알게 되었을 때(예: '알고보니 싸군요!') 사용하는 어미는?",
+      "options": [
+        "होला (holaa)",
+        "छैन (chhaina)",
+        "रहेछ (rahechha)",
+        "थियो (thiyo)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'~하기 전에'를 뜻하는 표현은?",
+      "options": [
+        "भन्दा पहिले (bhandaa pahile)",
+        "पछि (pachhi)",
+        "सँग (saṅga)",
+        "मात्रै (maatrai)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "버스의 '요금'이나 집의 '세'를 뜻하는 단어는?",
+      "options": [
+        "पैसा (paisaa)",
+        "भाडा (bhaaDaa)",
+        "रुपियाँ (ruupiyaa)",
+        "खल्ती (khaltI)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'그때' 또는 특정 '시간'을 뜻하는 단어는?",
+      "options": [
+        "दिन (din)",
+        "बेला (belaa)",
+        "कहाँ (kahãã)",
+        "कुन (kun)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'그만큼'을 뜻하는 단어는?",
+      "options": [
+        "धेरै (dherai)",
+        "त्यति (tyati)",
+        "यति (yati)",
+        "कति (kati)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'나는 갔었다'를 네팔어로 올바르게 표현한 것은?",
+      "options": [
+        "म गएँ। (ma gaẽ.)",
+        "म जानेछु। (ma jaanechhu.)",
+        "म गएको थिएँ। (ma gaeko thiế.)",
+        "म जाँदैछु। (ma jaadaichhu.)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'이것의'를 뜻하는 단어는?",
+      "options": [
+        "मेरो (mero)",
+        "यसको (yasko)",
+        "त्यसको (tyasko)",
+        "कसको (kasko)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 어제 오후의 행적 (과거 완료)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "हिजो दिउँसो तपाईं घरमा हुनुहुन्नथ्यो नि। कहाँ जानु भएकोथियो ?",
+          "romanized": "hijo diűso tapaaï gharmaa hunuhunnathyo ni. kahãã jaanu bhaekothiyo?",
+          "korean": "어제 오후에 집에 안 계시더군요. 어디 가셨었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म चार बजे तपाईंको घरमा गएको थिएँ।",
+          "romanized": "ma chaar baje tapaaïko gharmaa gaeko thiế.",
+          "korean": "저는 4시에 당신의 집에 갔었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कुन सिनेमा हेर्न जानु भएको थियो ?",
+          "romanized": "kun sinemaa herna jaanu bhaeko thiyo ?",
+          "korean": "어느 영화를 보러 가셨었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "'War and Peace' हेर्न गएको थिएँ।",
+          "romanized": "'War and Peace' herna gaeko thiế.",
+          "korean": "‘전쟁과 평화’를 보러 갔었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "सिनेमा कति बजे सिद्धियो ?",
+          "romanized": "sinemaa kati baje siddhiyo ?",
+          "korean": "영화는 몇 시에 끝났나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छ बजे सिद्धियो।",
+          "romanized": "chha baje siddhiyo.",
+          "korean": "6시에 끝났습니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 과거의 경험과 날씨",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंहरू अस्ति कहाँ जानु भएको थियो ?",
+          "romanized": "tapaaïharu asti kahãã jaanu bhaeko thiyo ?",
+          "korean": "그저께 당신들은 어디에 갔었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "हामी पोखरा गएका थियौं।",
+          "romanized": "haami pokharaa gaekaa thiyaữ.",
+          "korean": "우리는 포카라에 갔었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "पोखरामा हुँदा माछापुच्छ्रे देखिएको थियो ?",
+          "romanized": "pokharaamaa hữdaa maachhaapuchhre dekhieko thiyo ?",
+          "korean": "포카라에 있을 때 마차푸차레 산이 보였나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "अहँ, देखिएको थिएन।",
+          "romanized": "ahã, dekhieko thiena.",
+          "korean": "아니요, 보이지 않았습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "किन ?",
+          "romanized": "kina ?",
+          "korean": "왜요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "त्यस दिन धेरै बाक्लो बादल लागेको थियो।",
+          "romanized": "tyas din dherai baaklo baadal laageko thiyo.",
+          "korean": "그날은 구름이 아주 짙게 끼었었기 때문입니다."
+        }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 네팔에 관한 독서 경험",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "यहाँ आउनुभन्दा पहिले नेपालको बारेमा कुनै किताब पढेका थियौ ?",
+          "romanized": "yahãã aaunubhandaa pahile nepaalko baaremaa kunai kitaab paDhekaa thiyau ?",
+          "korean": "여기 오기 전에 네팔에 관한 책을 읽어본 적이 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "टोनी हेगेनको 'नेपाल' पढेको थिएँ।",
+          "romanized": "Toni heganko 'Nepal' paDheko thiế.",
+          "korean": "토니 헤겐의 ‘네팔’을 읽었었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "बिस्टको 'People of Nepal' पढेका थिएनौ ?",
+          "romanized": "bisTako 'People of Nepal' paDhekaa thienau ?",
+          "korean": "비스타의 ‘네팔 사람들’은 읽지 않았었나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "अहँ, पढेको थिइनँ।",
+          "romanized": "ahã, paDheko thiina.",
+          "korean": "아니요, 읽지 않았었습니다."
+        }
+      ]
+    }
+  ]
+}

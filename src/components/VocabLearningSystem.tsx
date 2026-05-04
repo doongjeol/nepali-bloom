@@ -99,13 +99,13 @@ export function VocabLearningSystem({
     return vocabulary.filter((w) => {
       const st = statuses[w.romanized] || "none";
       if (filter === "known") return st === "known";
-      if (filter === "unknown") return st === "unknown";
+      if (filter === "unknown") return st !== "known";
       return true;
     });
   }, [vocabulary, statuses, filter]);
 
   const unknownWords = useMemo(() => {
-    return vocabulary.filter((w) => (statuses[w.romanized] || "none") === "unknown");
+    return vocabulary.filter((w) => (statuses[w.romanized] || "none") !== "known");
   }, [vocabulary, statuses]);
 
   const handleStartReview = () => {

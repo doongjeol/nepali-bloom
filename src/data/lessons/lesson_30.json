@@ -1,0 +1,215 @@
+{
+  "id": 30,
+  "title": "Lesson 30",
+  "titleKo": "제30과",
+  "description": "현재 진행 시제(-iraheko form)의 형태와 쓰임, 그리고 구직 활동 및 안부 묻기와 관련된 표현을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "खेत बारी",
+      "romanized": "khet baari",
+      "korean": "field, farm (밭, 농장)"
+    },
+    {
+      "nepali": "खोज्नु",
+      "romanized": "khojnu",
+      "korean": "to look for (찾다)"
+    },
+    {
+      "nepali": "पकाउनु",
+      "romanized": "pakaaunu",
+      "korean": "to cook (요리하다)"
+    },
+    {
+      "nepali": "समाज शास्त्र",
+      "romanized": "samaaj shaastra",
+      "korean": "sociology (사회학)"
+    },
+    {
+      "nepali": "आजभोलि",
+      "romanized": "aajabholi",
+      "korean": "nowadays (요즘)"
+    },
+    {
+      "nepali": "काम",
+      "romanized": "kaam",
+      "korean": "work, job (일, 직업)"
+    },
+    {
+      "nepali": "भोलिदेखि",
+      "romanized": "bholidekhi",
+      "korean": "from tomorrow (내일부터)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 현재 진행 시제 (-iraheko form)",
+      "details": [
+        "지금 이 순간 일어나고 있는 동작을 나타냅니다 (~하고 있다).",
+        "- 형태: [동사 어간 + iraheko] + [Be 동사 현재형(chhu/chha 등)]",
+        "- 예: ma paDhiraheko chhu (나는 공부하고 있다), u paDhiraheko chha (그는 공부하고 있다)."
+      ]
+    },
+    {
+      "title": "2. 현재 진행 시제의 부정",
+      "details": [
+        "진행형의 부정은 'chhu/chha' 대신 'chhaina'를 사용합니다.",
+        "- 예: ma paDhiraheko chhaina (나는 공부하고 있지 않다)."
+      ]
+    },
+    {
+      "title": "3. 경어체 현재 진행 (Tapaaï)",
+      "details": [
+        "존칭 대명사(tapaaï)를 주어로 할 때는 존경의 의미를 담아 '-irahanu bhaeko chha' 형식을 사용합니다.",
+        "- 예: tapaaï ke garirahanu bhaeko chha? (당신은 무엇을 하고 계십니까?)"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "지금 이 순간 일어나고 있는 동작(~하고 있다)을 나타내는 동사 형태는?",
+      "options": [
+        "[어간 + eko]",
+        "[어간 + iraheko] + [현재 Be동사]",
+        "[어간 + dai] + [과거 Be동사]",
+        "[어간 + era]"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'찾다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "हेर्नु (hernu)",
+        "खोज्नु (khojnu)",
+        "सिक्नु (siknu)",
+        "बस्नु (basnu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'요리하다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "पकाउनु (pakaaunu)",
+        "खानु (khaanu)",
+        "धुनु (dhunu)",
+        "दिनु (dinu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'사회학'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "विज्ञान (bigyaan)",
+        "इतिहास (itihaas)",
+        "समाज शास्त्र (samaaj shaastra)",
+        "गणित (gaNit)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'밭'이나 '농장'을 뜻하는 네팔어는?",
+      "options": [
+        "शहर (shahar)",
+        "खेत बारी (khet baari)",
+        "जिल्ला (jillaa)",
+        "गाउँ (gaaű)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "현재 진행 시제의 부정형(예: 나는 ~하고 있지 않다)을 만들 때 문장 끝에 쓰이는 Be동사는?",
+      "options": [
+        "होइन (hoina)",
+        "छैन (chhaina)",
+        "हुँदैन (hűdaina)",
+        "थिएन (thiena)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'당신(tapaaï)'을 주어로 하여 현재 진행 시제를 정중하게 표현할 때 사용하는 형태는?",
+      "options": [
+        "-iraheko chha",
+        "-dai chha",
+        "-irahanu bhaeko chha",
+        "-eko chha"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "인사말로 '오랜만입니다(못 본 지 오래되었네요)'를 뜻하는 네팔어 표현은?",
+      "options": [
+        "सन्चै हुनुहुन्छ ? (sanchai hunuhunchha ?)",
+        "धेरै भयो भेट नभएको ! (dherai bhayo bheT nabhaeko !)",
+        "कहाँ जाने ? (kahãã jaane ?)",
+        "के छ खबर ? (ke chha khabar ?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'아무것도 안 하고 있어요'를 네팔어로 올바르게 표현한 것은?",
+      "options": [
+        "केही पनि गरिरहेको छैन। (kehipani gariraheko chhaina.)",
+        "काम गर्दैछु। (kaam gardaichhu.)",
+        "म सुतिरहेको छु। (ma sutiraheko chhu.)",
+        "म बेकार थिएँ। (ma bekaar thiế.)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'그는 무슨 과목을 공부하고 있나요?'를 네팔어로 바르게 질문한 것은?",
+      "options": [
+        "ऊ के गर्दै छ ? (u ke gardai chha ?)",
+        "तपाईं के पढ्नुहुन्छ ? (tapaaï ke paDhnuhunchha ?)",
+        "ऊ के विषय पढिरहेको छ ? (u ke bishaya paDhiraheko chha ?)",
+        "ऊ कहाँ पढ्छ ? (u kahãã paDhchha ?)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 구직 대화",
+      "lines": [
+        { "speaker": "A", "nepali": "नमस्ते ! धेरै भयो भेट नभएको !", "romanized": "namaste! dherai bhayo bheT nabhaeko !", "korean": "안녕하세요! 못 본 지 정말 오래되었네요!" },
+        { "speaker": "A", "nepali": "आजभोलि के गरिरहेका छौ ?", "romanized": "aajabholi ke garirahekaa chhau ?", "korean": "요즘 무엇을 하고 지내나요?" },
+        { "speaker": "B", "nepali": "केही पनि गरिरहेको छैन। काम खोज्दै छु।", "romanized": "kehipani gariraheko chhaina. kaam khojdai chhu.", "korean": "아무것도 안 하고 있어요. 일자리를 찾고 있습니다." },
+        { "speaker": "A", "nepali": "कस्तो काम गर्न सक्छौ ?", "romanized": "kasto kaam garna sakchhau ?", "korean": "어떤 일을 할 수 있나요?" },
+        { "speaker": "B", "nepali": "खाना पकाउने, घर सफा गर्ने।", "romanized": "khaanaa pakaune, ghar sapha garne.", "korean": "요리나 집안 청소요." },
+        { "speaker": "A", "nepali": "एक महिनाको कति लिन्छौ ?", "romanized": "ek mahinaako kati linchhau?", "korean": "한 달에 얼마를 원하나요?" },
+        { "speaker": "B", "nepali": "पहिले काम गर्दा महिनाको बाह्र सय थियो।", "romanized": "pahile kaam gardaa mahinaako baara sae thiyo.", "korean": "지난번 일했을 때는 한 달에 1,200루피였습니다." },
+        { "speaker": "A", "nepali": "उसोभए भोलिदेखि मकहाँ आऊ।", "romanized": "usobhae bholidekhi makãã aau.", "korean": "그렇다면 내일부터 우리 집으로 오세요." },
+        { "speaker": "B", "nepali": "हुन्छ, म आउँछु।", "romanized": "hunchha, ma aauchhu.", "korean": "네, 가겠습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 가족의 근황 (현재 진행)",
+      "lines": [
+        { "speaker": "A", "nepali": "तपाईंको भाइ आजभोलि कहाँ छ ?", "romanized": "tapaaïko bhaai aaja bholi kahãã chha ?", "korean": "당신의 남동생은 요즘 어디에 있나요?" },
+        { "speaker": "B", "nepali": "अमेरिकामा छ।", "romanized": "amerikaamaa chha.", "korean": "미국에 있습니다." },
+        { "speaker": "A", "nepali": "के गरिरहेको छ ?", "romanized": "ke gariraheko chha ?", "korean": "무엇을 하고 있나요?" },
+        { "speaker": "B", "nepali": "कलेजमा पढिरहेको छ।", "romanized": "kalejmaa paDhiraheko chha.", "korean": "대학에 다니고 있습니다." },
+        { "speaker": "A", "nepali": "ऊ के विषय पढिरहेको छ ?", "romanized": "u ke bishaya paDhiraheko chha ?", "korean": "그는 무엇을 공부하고 있나요?" },
+        { "speaker": "B", "nepali": "ऊ समाज शास्त्र पढिरहेको छ।", "romanized": "u samaaj shaastra paDhiraheko chha.", "korean": "그는 사회학을 공부하고 있습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 과거의 활동 (복습)",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपालमा आउनुभन्दा पहिले तपाईं कहाँ हुनुहुन्थ्यो ?", "romanized": "nepaalmaa aaunubhandaa pahile tapaaï kahãã hunuhunthyo ?", "korean": "네팔에 오기 전에 어디에 계셨나요?" },
+        { "speaker": "B", "nepali": "म युरोपमा थिएँ।", "romanized": "ma yuropmaa thiế.", "korean": "유럽에 있었습니다." },
+        { "speaker": "A", "nepali": "त्यहाँ के काम गरिरहनु भएको थियो ?", "romanized": "tyahãã ke kaam garirahanu bhaeko thiyo ?", "korean": "거기서 무슨 일을 하셨나요?" },
+        { "speaker": "B", "nepali": "धेरै जसो खेत बारीमा काम गर्थें।", "romanized": "dherai jaso khet baarimaa kaam garthế.", "korean": "대부분 밭에서 일했습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (c) 어제 저녁의 행적",
+      "lines": [
+        { "speaker": "A", "nepali": "तिमी हिजो बेलुका कहाँ गयौ ?", "romanized": "timi hijo belukaa kahãã gayau ?", "korean": "너 어제 저녁에 어디 갔었니?" },
+        { "speaker": "B", "nepali": "म मेरो केटी साथीकहाँ गएँ।", "romanized": "ma mero keTi saathikãã gaẽ.", "korean": "여자친구 집에 갔었어." },
+        { "speaker": "A", "nepali": "तिमी त्यहाँ जाँदाखेरि ऊ के गरिरहेको थियो ?", "romanized": "timi tyahãã jäädaakheri u ke gariraheko thiyo ?", "korean": "네가 거기 갔을 때 그녀는 무엇을 하고 있었니?" },
+        { "speaker": "B", "nepali": "ऊ साथीसँग कुरा गरिरहेको थियो।", "romanized": "u saathisanga kuraa gariraheko thiyo.", "korean": "그녀는 친구와 이야기하고 있었어." }
+      ]
+    }
+  ]
+}
