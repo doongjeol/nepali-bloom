@@ -225,7 +225,7 @@ function LessonDetailPage() {
             </div>
             <div className="min-w-0">
               <h1 className="text-xl sm:text-2xl font-bold text-foreground truncate">{lesson.titleKo}</h1>
-              <p className="text-xs sm:text-sm text-muted-foreground truncate">{lesson.title} · {lesson.description}</p>
+              <p className="text-xs sm:text-sm text-muted-foreground break-words sm:truncate">{lesson.title} · {lesson.description}</p>
             </div>
           </div>
         </div>
