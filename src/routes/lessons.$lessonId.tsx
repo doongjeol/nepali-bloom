@@ -50,8 +50,9 @@ function LessonDetailPage() {
     );
   }
 
-  const prevId = lesson.id > 1 ? lesson.id - 1 : null;
-  const nextId = lesson.id < lessonsData.length ? lesson.id + 1 : null;
+  const currentIndex = lessonsData.findIndex((l) => l.id === Number(lessonId));
+  const prevId = currentIndex > 0 ? lessonsData[currentIndex - 1].id : null;
+  const nextId = currentIndex < lessonsData.length - 1 ? lessonsData[currentIndex + 1].id : null;
 
   const tabs: { key: Tab; label: string; icon: string; count: number }[] = [
     { key: "vocabulary", label: "단어장", icon: "📖", count: lesson.vocabulary.length },
