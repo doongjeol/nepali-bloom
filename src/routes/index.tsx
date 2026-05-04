@@ -13,14 +13,16 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    // h-screen과 overflow-hidden을 사용하여 전체 스크롤을 방지하고 내부 유동성을 확보합니다.
-    <div className="flex h-screen flex-col overflow-hidden bg-background">
+    // 1. h-screen 대신 min-h-[100dvh]를 사용하여 모바일 브라우저 UI를 반영한 높이를 잡습니다.
+    // 내부 콘텐츠가 길어질 수 있으므로 overflow-hidden은 제거하거나 유동적으로 바꿉니다.
+    <div className="flex min-h-[100dvh] flex-col bg-background">
       <Header />
       
-      {/* py를 줄이고 justify-center를 통해 수직 중앙 정렬을 유지합니다. */}
-      <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col justify-center px-4 py-4 sm:py-6">
+      {/* 2. pb-32(또는 pb-36)을 주어 하단 탭 바에 콘텐츠가 절대 가려지지 않게 합니다. 
+           sm(데스크톱) 환경에서는 다시 중앙 정렬(justify-center)과 패딩 초기화를 해줍니다. */}
+      <main className="mx-auto flex w-full max-w-5xl flex-1 flex-col px-4 pb-32 pt-6 sm:justify-center sm:pb-6">
         
-        {/* 상단 섹션 여백 축소 (mb-8 -> mb-6) */}
+        {/* 상단 섹션: 마진을 살짝 줄여 공간 확보 */}
         <section className="mb-6 text-center sm:mb-8">
           <div className="mb-4 flex justify-center">
             <img 
@@ -39,11 +41,11 @@ function Index() {
           </p>
         </section>
 
-        {/* 메인 버튼 여백 축소 (mb-8 -> mb-6) */}
+        {/* 메인 버튼 섹션 */}
         <section className="mb-6 sm:mb-8">
           <Link
             to="/lessons"
-            className="group mx-auto block max-w-lg rounded-2xl border bg-card p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-md sm:p-8"
+            className="group mx-auto block max-w-lg rounded-2xl border bg-card p-6 text-center shadow-sm transition-all active:scale-[0.98] hover:shadow-md sm:p-8"
           >
             <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-warm text-2xl">
               📚
@@ -57,38 +59,40 @@ function Index() {
           </Link>
         </section>
 
-        {/* 하단 카드 그리드 여백 및 패딩 축소 */}
+        {/* 하단 카드 그리드: 모바일에서 가로가 좁으므로 수직/수평 정렬 조합 변경 */}
         <section className="grid gap-3 sm:grid-cols-3 sm:gap-4">
-          <div className="rounded-xl border bg-card p-4 text-center shadow-sm sm:p-6">
-            <div className="mb-1 text-xl">📖</div>
-            <h3 className="text-sm font-semibold text-foreground sm:text-base">단어장</h3>
-            <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
-              플립 카드로 어휘 학습
-            </p>
+          <div className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm sm:flex-col sm:justify-center sm:text-center sm:p-6">
+            <div className="text-xl sm:mb-1">📖</div>
+            <div className="text-left sm:text-center">
+              <h3 className="text-sm font-semibold text-foreground sm:text-base">단어장</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">플립 카드 어휘 학습</p>
+            </div>
           </div>
-          <div className="rounded-xl border bg-card p-4 text-center shadow-sm sm:p-6">
-            <div className="mb-1 text-xl">✏️</div>
-            <h3 className="text-sm font-semibold text-foreground sm:text-base">퀴즈</h3>
-            <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
-              객관식 실력 테스트
-            </p>
+          
+          <div className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm sm:flex-col sm:justify-center sm:text-center sm:p-6">
+            <div className="text-xl sm:mb-1">✏️</div>
+            <div className="text-left sm:text-center">
+              <h3 className="text-sm font-semibold text-foreground sm:text-base">퀴즈</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">객관식 실력 테스트</p>
+            </div>
           </div>
-          <div className="rounded-xl border bg-card p-4 text-center shadow-sm sm:p-6">
-            <div className="mb-1 text-xl">💬</div>
-            <h3 className="text-sm font-semibold text-foreground sm:text-base">대화문</h3>
-            <p className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
-              실생활 대화 연습
-            </p>
+
+          <div className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm sm:flex-col sm:justify-center sm:text-center sm:p-6">
+            <div className="text-xl sm:mb-1">💬</div>
+            <div className="text-left sm:text-center">
+              <h3 className="text-sm font-semibold text-foreground sm:text-base">대화문</h3>
+              <p className="text-xs text-muted-foreground sm:text-sm">실생활 대화 연습</p>
+            </div>
           </div>
         </section>
 
-        {/* 하단 푸터 느낌의 섹션 여백 대폭 축소 */}
-        <section className="mt-6 rounded-2xl bg-warm/50 p-4 text-center sm:mt-8 sm:p-6">
+        {/* 응원 메시지 섹션 */}
+        <section className="mt-6 rounded-2xl bg-warm/50 p-6 text-center sm:mt-8">
           <h2 className="mb-1 text-base font-semibold text-warm-foreground sm:text-lg">
             🙏 जय मसीह (저이머씨)
           </h2>
           <p className="text-xs text-muted-foreground sm:text-sm">
-            네팔의 인사말 '저이머씨'처럼 따뜻하게 시작해보세요!
+            따뜻한 마음으로 학습을 시작해보세요!
           </p>
         </section>
       </main>
