@@ -1,0 +1,234 @@
+import { useState, useEffect } from "react";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { getDialogueAudioPath } from "@/lib/getAudioPath";
+import { CheckCircle2, XCircle } from "lucide-react";
+
+type DialogueLineWithMeta = {
+  dIdx: number;
+  lIdx: number;
+  korean: string;
+  nepali: string;
+  romanized: string;
+  parsedWords: string[];
+};
+
+type WordToken = {
+  id: string;
+  word: string;
+};
+
+// 유틸리티: 배열 랜덤 셔플
+export function shuffleArray<T>(arr: T[]): T[] {
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+}
+
+// 유틸리티: 전체 대화문에서 로마자 단어가 2개 이상인 문장만 추출 후 최대 10개 랜덤 선택
+export function extractQuizLines(dialogues: any[]): DialogueLineWithMeta[] {
+  const allLines: DialogueLineWithMeta[] = [];
+  dialogues.forEach((d, dIdx) => {
+    d.lines.forEach((l: any, lIdx: number) => {
+      // 구두점 제거 후 공백 기준으로 로마자 단어 추출
+      const clean = l.romanized.replace(/[?!.,;:]/g, "").trim();
+      const words = clean.split(/\s+/).filter(Boolean);
+      if (words.length >= 2) {
+        allLines.push({ ...l, dIdx, lIdx, parsedWords: words });
+      }
+    });
+  });
+  return shuffleArray(allLines).slice(0, 10);
+}
+
+export function DialogueGeneralQuiz({
+  dialogues,
+  lessonId,
+  audioPlayer,
+  onClose,
+}: {
+  dialogues: any[];
+  lessonId: number | string;
+  audioPlayer: any;
+  onClose: () => void;
+}) {
+  const [status, setStatus] = useState<"idle" | "playing" | "finished">("idle");
+  const [quizLines, setQuizLines] = useState<DialogueLineWithMeta[]>([]);
+  const [currentStep, setCurrentStep] = useState(0);
+  const [score, setScore] = useState(0);
+
+  const [pool, setPool] = useState<WordToken[]>([]);
+  const [answer, setAnswer] = useState<WordToken[]>([]);
+  const [isError, setIsError] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [hasErrorOnCurrent, setHasErrorOnCurrent] = useState(false); // 현재 문제에서 틀린 적이 있는지 추적
+
+  useEffect(() => {
+    startQuiz();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const startQuiz = () => {
+    const lines = extractQuizLines(dialogues);
+    if (lines.length === 0) {
+      alert("퀴즈를 진행할 수 있는 대화문 데이터가 부족합니다.");
+      onClose();
+      return;
+    }
+    setQuizLines(lines);
+    setCurrentStep(0);
+    setScore(0);
+    setStatus("playing");
+    initStep(lines[0]);
+  };
+
+  const initStep = (line: DialogueLineWithMeta) => {
+    // 같은 단어가 있을 수 있으므로 고유 ID 부여
+    const tokens = line.parsedWords.map((word, i) => ({ id: `${i}-${word}`, word }));
+    setPool(shuffleArray(tokens));
+    setAnswer([]);
+    setIsError(false);
+    setIsSuccess(false);
+    setHasErrorOnCurrent(false);
+  };
+
+  const handleAdd = (token: WordToken) => {
+    if (isSuccess) return;
+    setIsError(false);
+    setPool((prev) => prev.filter((t) => t.id !== token.id));
+    setAnswer((prev) => {
+      const next = [...prev, token];
+      checkAnswer(next);
+      return next;
+    });
+  };
+
+  const handleRemove = (token: WordToken) => {
+    if (isSuccess) return;
+    setIsError(false);
+    setAnswer((prev) => prev.filter((t) => t.id !== token.id));
+    setPool((prev) => [...prev, token]);
+  };
+
+  const handleReset = () => {
+    if (isSuccess) return;
+    setIsError(false);
+    const line = quizLines[currentStep];
+    const tokens = line.parsedWords.map((word, i) => ({ id: `${i}-${word}`, word }));
+    setPool(shuffleArray(tokens));
+    setAnswer([]);
+  };
+
+  const checkAnswer = (currentAnswer: WordToken[]) => {
+    const line = quizLines[currentStep];
+    if (currentAnswer.length === line.parsedWords.length) {
+      const isCorrect = currentAnswer.map((t) => t.word).join(" ") === line.parsedWords.join(" ");
+      if (isCorrect) {
+        setIsSuccess(true);
+        if (!hasErrorOnCurrent) {
+          setScore((s) => s + 1);
+        }
+        // 정답 시 오디오 자동 재생
+        const itemId = `dial-quiz-${lessonId}-${line.dIdx}-${line.lIdx}`;
+        const src = getDialogueAudioPath(lessonId, line.dIdx, line.lIdx);
+        void audioPlayer.play(itemId, src);
+      } else {
+        setIsError(true);
+        setHasErrorOnCurrent(true);
+      }
+    }
+  };
+
+  const handleNext = () => {
+    if (currentStep < quizLines.length - 1) {
+      setCurrentStep((c) => c + 1);
+      initStep(quizLines[currentStep + 1]);
+    } else {
+      setStatus("finished");
+    }
+  };
+
+  if (status === "idle") {
+    return null;
+  }
+
+  if (status === "finished") {
+    return (
+      <div className="rounded-2xl border bg-card p-8 text-center shadow-sm sm:p-10">
+        <div className="mb-3 text-4xl sm:text-5xl">🎉</div>
+        <h2 className="mb-2 text-xl font-bold text-foreground sm:text-2xl">대화문 퀴즈 완료!</h2>
+        <p className="mb-6 text-base text-muted-foreground sm:text-lg">
+          <span className="font-semibold text-primary">{score}</span> / {quizLines.length} 정답
+        </p>
+        <div className="flex flex-col justify-center gap-3 sm:flex-row">
+          <Button onClick={startQuiz} size="lg" variant="default">
+            다시 하기
+          </Button>
+          <Button onClick={onClose} size="lg" variant="secondary">
+            대화문으로 돌아가기
+          </Button>
+        </div>
+      </div>
+    );
+  }
+
+  const line = quizLines[currentStep];
+
+  return (
+    <div className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
+      {/* 스테퍼 */}
+      <div className="mb-5 flex items-center justify-between">
+        <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground sm:text-sm">
+          문제 {currentStep + 1} / {quizLines.length}
+        </span>
+        <Button variant="ghost" size="sm" onClick={onClose} className="h-8 px-2 text-xs">
+          그만두기
+        </Button>
+      </div>
+
+      {/* 프롬프트 (한국어 해석) */}
+      <div className="mb-6 text-center">
+        <h3 className="text-lg font-bold text-foreground sm:text-xl">{line.korean}</h3>
+        <p className="mt-1.5 text-xs text-muted-foreground sm:text-sm">로마자 조각을 순서대로 선택해 문장을 완성하세요.</p>
+      </div>
+
+      {/* 정답 조립 영역 */}
+      <div className={cn("mb-5 flex min-h-[3.5rem] flex-wrap items-center gap-2 rounded-xl p-3 transition-colors", isError ? "border-2 border-destructive/50 bg-destructive/5" : "border border-border bg-muted/30", isSuccess ? "border-2 border-success/50 bg-success/5" : "")}>
+        {answer.length === 0 && !isSuccess && <span className="ml-1 text-xs sm:text-sm text-muted-foreground">이곳에 단어가 배열됩니다.</span>}
+        {answer.map((t) => (
+          <button key={t.id} onClick={() => handleRemove(t)} disabled={isSuccess} className={cn("rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm transition-transform active:scale-95", isError ? "animate-shake bg-destructive text-destructive-foreground" : "bg-primary text-primary-foreground hover:opacity-90", isSuccess ? "bg-success text-success-foreground" : "")}>
+            {t.word}
+          </button>
+        ))}
+      </div>
+
+      {/* 단어 풀 영역 */}
+      <div className="mb-6 flex flex-wrap justify-center gap-2">
+        {pool.map((t) => (
+          <button key={t.id} onClick={() => handleAdd(t)} className="rounded-lg border bg-card px-3 py-1.5 text-sm font-medium shadow-sm transition-transform hover:bg-accent active:scale-95">
+            {t.word}
+          </button>
+        ))}
+      </div>
+
+      {/* 컨트롤 패널 */}
+      <div className="flex items-center justify-between border-t pt-4 min-h-[3.5rem]">
+        <div className="flex items-center gap-2">
+          {isError && !isSuccess && <><XCircle className="h-5 w-5 text-destructive" /><span className="text-sm font-semibold text-destructive">순서가 맞지 않습니다</span></>}
+          {isSuccess && <><CheckCircle2 className="h-5 w-5 text-success" /><span className="text-sm font-semibold text-success">정답입니다!</span></>}
+        </div>
+        <div className="flex gap-2">
+          {isError && !isSuccess && <Button variant="secondary" size="sm" onClick={handleReset}>초기화</Button>}
+          {isSuccess && <Button onClick={handleNext}>{currentStep === quizLines.length - 1 ? "결과 보기" : "다음 문제"}</Button>}
+        </div>
+      </div>
+      <style>{`
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
+        .animate-shake { animation: shake 0.2s ease-in-out 0s 2; }
+      `}</style>
+    </div>
+  );
+}

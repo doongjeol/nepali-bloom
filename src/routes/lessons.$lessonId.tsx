@@ -24,6 +24,7 @@ import {
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { getDialogueAudioPath, getVocabAudioPath, getExampleAudioPath } from "@/lib/getAudioPath";
 import { ChevronDown, Pause, Play, Volume2 } from "lucide-react";
+import { DialogueGeneralQuiz } from "@/components/DialogueGeneralQuiz";
 
 export const Route = createFileRoute("/lessons/$lessonId")({
   loader: async ({ params }) => {
@@ -67,15 +68,7 @@ function LessonDetailPage() {
   // Dialogue state
   const [showRomanized, setShowRomanized] = useState(true);
   const [playDialogueIndex, setPlayDialogueIndex] = useState<number | null>(null);
-
-  type ScrambleState = {
-    key: string; // `${dIdx}-${lineIdx}`
-    originalWords: string[];
-    pool: string[];
-    answer: string[];
-    done: boolean;
-  } | null;
-  const [scramble, setScramble] = useState<ScrambleState>(null);
+  const [isQuizMode, setIsQuizMode] = useState(false);
 
   const playNextLineRef = useRef<number>(0);
   const playWasPlayingRef = useRef(false);
@@ -88,23 +81,7 @@ function LessonDetailPage() {
     return dialogues[playDialogueIndex] ?? null;
   }, [lesson?.dialogues, playDialogueIndex]);
 
-  const normalizeWords = (text: string) =>
-    text
-      .split(/\s+/)
-      .map((w) => w.trim())
-      .filter(Boolean);
-
-  const shuffle = <T,>(arr: T[]) => {
-    const out = [...arr];
-    for (let i = out.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [out[i], out[j]] = [out[j], out[i]];
-    }
-    return out;
-  };
-
   const startPlayAllForDialogue = (dIdx: number) => {
-    setScramble(null);
     setPlayDialogueIndex(dIdx);
     playNextLineRef.current = 0;
     playWasPlayingRef.current = false;
@@ -523,6 +500,13 @@ function LessonDetailPage() {
           {tab === "dialogues" &&
             (lesson.dialogues.length === 0 ? (
               <EmptyState message="아직 대화문이 준비되지 않았습니다." />
+            ) : isQuizMode ? (
+              <DialogueGeneralQuiz
+                dialogues={lesson.dialogues}
+                lessonId={lesson.id}
+                audioPlayer={audioPlayer}
+                onClose={() => setIsQuizMode(false)}
+              />
             ) : (
               <div className="space-y-5 sm:space-y-6">
                 {lesson.dialogues.map((dialogue, dIdx) => (
@@ -552,225 +536,27 @@ function LessonDetailPage() {
                         >
                           {showRomanized ? "로마자 숨기기" : "로마자 보기"}
                         </button>
+                        <button
+                          onClick={() => setIsQuizMode(true)}
+                          className="col-span-2 sm:col-span-1 inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-lg bg-primary/10 px-3 text-xs font-medium text-primary hover:bg-primary hover:text-primary-foreground active:scale-95 transition-all sm:h-9 sm:w-auto sm:px-3 sm:text-sm"
+                        >
+                          🧩 퀴즈 풀기
+                        </button>
                       </div>
                     </div>
                     <div className="space-y-2.5 sm:space-y-3 rounded-2xl border bg-card p-3 sm:p-5 shadow-sm">
                       {dialogue.lines.map((line, idx) => {
-                        const itemId = `dial-${lesson.id}-${dIdx}-${idx}`;
-                        const src = getDialogueAudioPath(lesson.id, dIdx, idx);
-                        const isCurrent = audioPlayer.currentItemId === itemId;
-                        const isPlaying = isCurrent && audioPlayer.isPlaying;
-
-                        const isPlayingThisDialogue = playDialogueIndex === dIdx;
-
-                        const scrambleKey = `${dIdx}-${idx}`;
-                        const isScrambling = scramble?.key === scrambleKey;
-                        const romanizedWords = normalizeWords(line.romanized);
-                        const scrambleAllowed =
-                          romanizedWords.length >= 2 && !isPlayingThisDialogue;
-
-                        const openScramble = () => {
-                          if (!scrambleAllowed) return;
-                          // Scramble drill should not reveal the full romanized sentence.
-                          setShowRomanized(false);
-                          setScramble({
-                            key: scrambleKey,
-                            originalWords: romanizedWords,
-                            pool: shuffle(romanizedWords),
-                            answer: [],
-                            done: false,
-                          });
-                        };
-
-                        const tryPlay = () => {
-                          void audioPlayer.play(itemId, src);
-                        };
-
-                        const handleActivate = () => {
-                          if (isScrambling) return;
-                          if (scrambleAllowed) {
-                            openScramble();
-                            return;
-                          }
-
-                          tryPlay();
-                        };
-
                         return (
-                          <div
+                          <DialogueLine
                             key={idx}
-                            className={cn(
-                              "flex gap-2 sm:gap-3",
-                              line.speaker === "B" && "flex-row-reverse text-right",
-                            )}
-                          >
-                            <div
-                              className={cn(
-                                "flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full border border-black/5 text-xs sm:text-sm font-bold",
-                                line.speaker === "A"
-                                  ? "bg-[#DDE3D2] text-[#333D29]"
-                                  : "bg-[#E9DED3] text-[#333D29]",
-                              )}
-                            >
-                              {line.speaker}
-                            </div>
-                            <div
-                              role="button"
-                              tabIndex={0}
-                              onClick={handleActivate}
-                              onKeyDown={(e) => {
-                                if (e.key === "Enter" || e.key === " ") {
-                                  e.preventDefault();
-                                  handleActivate();
-                                }
-                              }}
-                              className={cn(
-                                "group max-w-[80%] rounded-2xl border px-3 py-2 text-[#333D29] sm:px-4 sm:py-2.5 cursor-pointer outline-none focus:ring-2 focus:ring-ring/40 transition-opacity",
-                                line.speaker === "A"
-                                  ? "bg-[#E8EDDF] border-[#DDE3D2]"
-                                  : "bg-[#F5EBE0] border-[#E9DED3]",
-                              )}
-                            >
-                              <div
-                                className={cn(
-                                  "flex items-start gap-2",
-                                  line.speaker === "B" && "flex-row-reverse",
-                                )}
-                              >
-                                <div className="min-w-0 flex-1">
-                                  <p
-                                    className="text-sm sm:text-base font-medium text-[#333D29]"
-                                    style={{ fontFamily: "var(--font-nepali)" }}
-                                  >
-                                    {line.nepali}
-                                  </p>
-                                  {isScrambling ? (
-                                    <div className="mt-1 space-y-2">
-                                      <div className="flex flex-wrap gap-1">
-                                        {scramble!.answer.map((w, i) => (
-                                          <button
-                                            key={`${w}-${i}`}
-                                            type="button"
-                                            className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
-                                            onClick={(e) => {
-                                              e.stopPropagation();
-                                              setScramble((prev) => {
-                                                if (!prev || prev.key !== scrambleKey || prev.done)
-                                                  return prev;
-                                                const nextAnswer = prev.answer.filter(
-                                                  (_, idx2) => idx2 !== i,
-                                                );
-                                                return { ...prev, answer: nextAnswer };
-                                              });
-                                            }}
-                                          >
-                                            {w}
-                                          </button>
-                                        ))}
-                                      </div>
-                                      <div className="flex flex-wrap gap-1">
-                                        {scramble!.pool.map((w, i) => (
-                                          <button
-                                            key={`${w}-${i}`}
-                                            type="button"
-                                            className="rounded-md border bg-background/60 px-2 py-1 text-[10px] sm:text-xs text-foreground hover:bg-accent"
-                                            onClick={(e) => {
-                                              e.stopPropagation();
-                                              setScramble((prev) => {
-                                                if (!prev || prev.key !== scrambleKey || prev.done)
-                                                  return prev;
-                                                const nextPool = prev.pool.filter(
-                                                  (_, idx2) => idx2 !== i,
-                                                );
-                                                const nextAnswer = [...prev.answer, w];
-                                                const done =
-                                                  nextAnswer.length === prev.originalWords.length &&
-                                                  nextAnswer.join(" ") ===
-                                                    prev.originalWords.join(" ");
-                                                return {
-                                                  ...prev,
-                                                  pool: nextPool,
-                                                  answer: nextAnswer,
-                                                  done,
-                                                };
-                                              });
-                                            }}
-                                          >
-                                            {w}
-                                          </button>
-                                        ))}
-                                      </div>
-                                      <div className="flex items-center gap-2">
-                                        <span
-                                          className={cn(
-                                            "text-[10px] sm:text-xs",
-                                            scramble!.done
-                                              ? "text-primary"
-                                              : "text-muted-foreground",
-                                          )}
-                                        >
-                                          {scramble!.done ? "성공!" : "단어 순서 맞추기"}
-                                        </span>
-                                        <button
-                                          type="button"
-                                          className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
-                                          onClick={(e) => {
-                                            e.stopPropagation();
-                                            setScramble(null);
-                                          }}
-                                        >
-                                          닫기
-                                        </button>
-                                        <button
-                                          type="button"
-                                          className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
-                                          onClick={(e) => {
-                                            e.stopPropagation();
-                                            setScramble((prev) => {
-                                              if (!prev || prev.key !== scrambleKey) return prev;
-                                              return {
-                                                ...prev,
-                                                pool: shuffle(prev.originalWords),
-                                                answer: [],
-                                                done: false,
-                                              };
-                                            });
-                                          }}
-                                        >
-                                          다시 섞기
-                                        </button>
-                                      </div>
-                                    </div>
-                                  ) : showRomanized ? (
-                                    <p className="mt-1 text-sm sm:text-base text-muted-foreground italic">
-                                      {line.romanized}
-                                    </p>
-                                  ) : null}
-                                  <p className="mt-1.5 sm:mt-2 text-sm sm:text-base text-foreground">
-                                    {line.korean}
-                                  </p>
-                                </div>
-                                <button
-                                  type="button"
-                                  aria-label="대화문 음성 재생"
-                                  className={cn(
-                                    "mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-background/60 text-foreground transition-colors hover:bg-accent",
-                                    isPlayingThisDialogue && "opacity-70",
-                                  )}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    tryPlay();
-                                  }}
-                                >
-                                  {isPlaying ? (
-                                    <Pause className="h-4 w-4" />
-                                  ) : (
-                                    <Volume2 className="h-4 w-4" />
-                                  )}
-                                </button>
-                              </div>
-                            </div>
-                          </div>
+                            line={line}
+                            lessonId={lesson.id}
+                            dIdx={dIdx}
+                            idx={idx}
+                            audioPlayer={audioPlayer}
+                            playDialogueIndex={playDialogueIndex}
+                            showRomanized={showRomanized}
+                          />
                         );
                       })}
                     </div>
@@ -799,6 +585,120 @@ function LessonDetailPage() {
           </DialogContent>
         </Dialog>
       </main>
+    </div>
+  );
+}
+
+// 유틸리티 함수: 배열을 무작위로 섞음
+const shuffle = <T,>(arr: T[]) => {
+  const out = [...arr];
+  for (let i = out.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [out[i], out[j]] = [out[j], out[i]];
+  }
+  return out;
+};
+
+type DialogueLineProps = {
+  line: { speaker: string; nepali: string; romanized: string; korean: string };
+  lessonId: number | string;
+  dIdx: number;
+  idx: number;
+  audioPlayer: ReturnType<typeof useAudioPlayer>;
+  playDialogueIndex: number | null;
+  showRomanized: boolean;
+};
+
+function DialogueLine({
+  line,
+  lessonId,
+  dIdx,
+  idx,
+  audioPlayer,
+  playDialogueIndex,
+  showRomanized,
+}: DialogueLineProps) {
+  const itemId = `dial-${lessonId}-${dIdx}-${idx}`;
+  const src = getDialogueAudioPath(lessonId, dIdx, idx);
+  const isCurrent = audioPlayer.currentItemId === itemId;
+  const isPlaying = isCurrent && audioPlayer.isPlaying;
+  const isPlayingThisDialogue = playDialogueIndex === dIdx;
+
+
+  const handlePlay = () => {
+    void audioPlayer.play(itemId, src);
+  };
+
+  return (
+    <div className={cn("flex flex-col w-full gap-2", line.speaker === "B" && "items-end")}>
+      <div className={cn("flex w-full gap-2 sm:gap-3", line.speaker === "B" && "flex-row-reverse text-right")}>
+        {/* 스피커 아이콘 */}
+        <div
+          className={cn(
+            "flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-black/5 text-xs font-bold sm:h-9 sm:w-9 sm:text-sm",
+            line.speaker === "A" ? "bg-[#DDE3D2] text-[#333D29]" : "bg-[#E9DED3] text-[#333D29]",
+          )}
+        >
+          {line.speaker}
+        </div>
+
+        {/* 말풍선 및 퀴즈 영역 */}
+        <div className="flex max-w-[85%] flex-col gap-2">
+          <div
+            role="button"
+            tabIndex={0}
+            onClick={handlePlay}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                handlePlay();
+              }
+            }}
+            className={cn(
+              "group relative cursor-pointer rounded-2xl border px-3 py-2 text-[#333D29] outline-none transition-all focus:ring-2 focus:ring-ring/40 sm:px-4 sm:py-2.5",
+              line.speaker === "A" ? "border-[#DDE3D2] bg-[#E8EDDF]" : "border-[#E9DED3] bg-[#F5EBE0]",
+            )}
+          >
+            <div className={cn("flex items-start gap-2", line.speaker === "B" && "flex-row-reverse")}>
+              {/* 문장 텍스트 */}
+              <div className="min-w-0 flex-1">
+                <p
+                  className="text-sm font-medium text-[#333D29] transition-all sm:text-base"
+                  style={{ fontFamily: "var(--font-nepali)" }}
+                >
+                  {line.nepali}
+                </p>
+                {showRomanized && (
+                  <p className="mt-1 text-sm italic text-muted-foreground sm:text-base">
+                    {line.romanized}
+                  </p>
+                )}
+                <p className="mt-1.5 text-sm text-foreground sm:mt-2 sm:text-base">
+                  {line.korean}
+                </p>
+              </div>
+
+              {/* 버튼 컨트롤 영역 */}
+              <div className="flex shrink-0 flex-col items-center justify-start gap-1 sm:gap-1.5">
+                <button
+                  type="button"
+                  aria-label="대화문 음성 재생"
+                  className={cn(
+                    "inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/60 text-foreground transition-colors hover:bg-accent",
+                    isPlayingThisDialogue && "opacity-70",
+                  )}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePlay();
+                  }}
+                >
+                  {isPlaying ? <Pause className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
