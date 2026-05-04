@@ -71,13 +71,13 @@ export function RangeVocabCard({
 
   const knownCount = useMemo(() => vocabulary.filter((w) => getStatus(w) === "known").length, [getStatus, vocabulary]);
   const unknownCount = useMemo(
-    () => vocabulary.filter((w) => getStatus(w) !== "known").length,
+    () => vocabulary.filter((w) => getStatus(w) === "unknown").length,
     [getStatus, vocabulary],
   );
 
   const studyQueue = useMemo(() => {
     if (filter === "known") return vocabulary.filter((w) => getStatus(w) === "known");
-    if (filter === "unknown") return vocabulary.filter((w) => getStatus(w) !== "known");
+    if (filter === "unknown") return vocabulary.filter((w) => getStatus(w) === "unknown");
     return vocabulary;
   }, [filter, getStatus, vocabulary]);
 
@@ -333,7 +333,7 @@ export function RangeVocabCard({
           (외운 단어: <span className="font-semibold text-primary">{knownCount}</span>개)
         </p>
         <div className="flex flex-wrap justify-center gap-2">
-          <Button onClick={() => setFilter("unknown")} size="lg" variant="secondary" className="rounded-xl px-7 shadow-sm">
+          <Button onClick={() => setFilter("unknown")} disabled={unknownCount === 0} size="lg" variant="secondary" className="rounded-xl px-7 shadow-sm">
             아직 몰라요 복습
           </Button>
           <Button onClick={() => setFilter("all")} size="lg" variant="secondary" className="rounded-xl px-7 shadow-sm">
@@ -362,22 +362,26 @@ export function RangeVocabCard({
           >
             전체 <span className="ml-1 text-[11px] opacity-70">{vocabulary.length}</span>
           </button>
-          <button
-            type="button"
-            onClick={() => setFilter("unknown")}
-            className={cn(
-              "flex-1 rounded-xl px-3 py-2 text-xs font-semibold transition-all",
-              filter === "unknown" ? "bg-secondary text-secondary-foreground" : "text-muted-foreground hover:text-foreground",
-            )}
-          >
-            아직 몰라요 <span className="ml-1 text-[11px] opacity-70">{unknownCount}</span>
-          </button>
+	          <button
+	            type="button"
+	            onClick={() => setFilter("unknown")}
+	            disabled={unknownCount === 0}
+	            className={cn(
+	              "flex-1 rounded-xl px-3 py-2 text-xs font-semibold transition-all",
+	              filter === "unknown" ? "bg-secondary text-secondary-foreground" : "text-muted-foreground hover:text-foreground",
+	              unknownCount === 0 && "opacity-50 cursor-not-allowed hover:text-muted-foreground",
+	            )}
+	          >
+	            아직 몰라요 <span className="ml-1 text-[11px] opacity-70">{unknownCount}</span>
+	          </button>
           <button
             type="button"
             onClick={() => setFilter("known")}
+            disabled={knownCount === 0}
             className={cn(
               "flex-1 rounded-xl px-3 py-2 text-xs font-semibold transition-all",
               filter === "known" ? "bg-secondary text-secondary-foreground" : "text-muted-foreground hover:text-foreground",
+              knownCount === 0 && "opacity-50 cursor-not-allowed hover:text-muted-foreground",
             )}
           >
             외웠어요 <span className="ml-1 text-[11px] opacity-70">{knownCount}</span>
