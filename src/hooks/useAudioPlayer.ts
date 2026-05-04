@@ -25,6 +25,11 @@ let audio: HTMLAudioElement | null = null;
 let initialized = false;
 let lastErrorToastAt = 0;
 const ERROR_TOAST_DEDUP_MS = 1200;
+let suppressErrorsUntil = 0;
+
+function suppressErrorsFor(ms: number) {
+  suppressErrorsUntil = Date.now() + ms;
+}
 
 function toastMissingAudioOnce() {
   const now = Date.now();
@@ -64,6 +69,17 @@ function initOnce() {
   el.addEventListener("canplay", () => setState({ isLoading: false }));
   el.addEventListener("waiting", () => setState({ isLoading: true }));
   el.addEventListener("error", () => {
+    if (Date.now() < suppressErrorsUntil) {
+      // Intentional stop/cleanup can trigger an "error" event in some browsers when src is cleared.
+      setState({
+        isPlaying: false,
+        isLoading: false,
+        currentItemId: null,
+        currentSrc: null,
+        error: null,
+      });
+      return;
+    }
     console.error(`[오디오 로드 실패] 브라우저가 파일을 찾지 못했습니다. 요청 경로: ${el?.src}`);
     setState({ isPlaying: false, isLoading: false, currentItemId: null, currentSrc: null });
     const message = "음성 파일을 찾을 수 없습니다";
@@ -113,6 +129,8 @@ function stop() {
   initOnce();
   const el = ensureAudio();
   if (!el) return;
+  // Clearing src can emit an error event; treat this as an intentional stop.
+  suppressErrorsFor(800);
   el.pause();
   el.currentTime = 0;
   el.src = "";

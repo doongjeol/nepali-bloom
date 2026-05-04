@@ -1,16 +1,40 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "@/components/Header";
-import lessonsData from "@/data/lessons";
+import { availableLessonIds, loadLesson } from "@/data/lessonLoader";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { GrammarPractice, type GrammarPracticeCard } from "@/components/GrammarPractice";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
-import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
-import { Pause, Play, Volume2 } from "lucide-react";
+import { getDialogueAudioPath, getVocabAudioPath, getExampleAudioPath } from "@/lib/getAudioPath";
+import { ChevronDown, Pause, Play, Volume2 } from "lucide-react";
 
 export const Route = createFileRoute("/lessons/$lessonId")({
-  head: ({ params }) => {
-    const lesson = lessonsData.find((l) => l.id === Number(params.lessonId));
+  loader: async ({ params }) => {
+    const lessonId = Number(params.lessonId);
+    if (!Number.isInteger(lessonId)) {
+      throw new Error(`Invalid lesson id: ${params.lessonId}`);
+    }
+    return await loadLesson(lessonId);
+  },
+  head: ({ params, loaderData }) => {
+    const lesson = loaderData;
     return {
       meta: [
         { title: `Lesson ${params.lessonId}: ${lesson?.titleKo ?? ""} - 네팔어 학습` },
@@ -25,9 +49,11 @@ type Tab = "vocabulary" | "examples" | "grammar" | "quiz" | "dialogues";
 
 function LessonDetailPage() {
   const { lessonId } = Route.useParams();
-  const lesson = lessonsData.find((l) => l.id === Number(lessonId));
+  const lesson = Route.useLoaderData();
   const [tab, setTab] = useState<Tab>("vocabulary");
   const [flipped, setFlipped] = useState<Set<number>>(new Set());
+  const [expandedGrammar, setExpandedGrammar] = useState<Set<number>>(new Set([0]));
+  const [grammarPractice, setGrammarPractice] = useState<GrammarCardData | null>(null);
   const audioPlayer = useAudioPlayer();
 
   // Quiz state
@@ -40,10 +66,7 @@ function LessonDetailPage() {
 
   // Dialogue state
   const [showRomanized, setShowRomanized] = useState(true);
-  const [practiceDialogueIndex, setPracticeDialogueIndex] = useState<number | null>(null);
-  const [practiceRoleA, setPracticeRoleA] = useState(false);
-  const [hideNepali, setHideNepali] = useState(false);
-  const [revealedNepaliKeys, setRevealedNepaliKeys] = useState<Set<string>>(new Set());
+  const [playDialogueIndex, setPlayDialogueIndex] = useState<number | null>(null);
 
   type ScrambleState = {
     key: string; // `${dIdx}-${lineIdx}`
@@ -54,16 +77,16 @@ function LessonDetailPage() {
   } | null;
   const [scramble, setScramble] = useState<ScrambleState>(null);
 
-  const practiceNextLineRef = useRef<number>(0);
-  const practiceWasPlayingRef = useRef(false);
+  const playNextLineRef = useRef<number>(0);
+  const playWasPlayingRef = useRef(false);
 
-  const isPracticing = practiceRoleA && practiceDialogueIndex !== null;
+  const isPlayingAll = playDialogueIndex !== null;
 
-  const practiceDialogue = useMemo(() => {
-    if (practiceDialogueIndex === null) return null;
+  const playingDialogue = useMemo(() => {
+    if (playDialogueIndex === null) return null;
     const dialogues = lesson?.dialogues ?? [];
-    return dialogues[practiceDialogueIndex] ?? null;
-  }, [lesson?.dialogues, practiceDialogueIndex]);
+    return dialogues[playDialogueIndex] ?? null;
+  }, [lesson?.dialogues, playDialogueIndex]);
 
   const normalizeWords = (text: string) =>
     text
@@ -80,61 +103,76 @@ function LessonDetailPage() {
     return out;
   };
 
-  const startPracticeForDialogue = (dIdx: number) => {
-    setPracticeDialogueIndex(dIdx);
-    setPracticeRoleA(true);
-    practiceNextLineRef.current = 0;
+  const startPlayAllForDialogue = (dIdx: number) => {
+    setScramble(null);
+    setPlayDialogueIndex(dIdx);
+    playNextLineRef.current = 0;
+    playWasPlayingRef.current = false;
+    audioPlayer.stop();
   };
 
-  const stopPractice = () => {
-    setPracticeRoleA(false);
-    setPracticeDialogueIndex(null);
-    practiceNextLineRef.current = 0;
+  const stopPlayAll = () => {
+    setPlayDialogueIndex(null);
+    playNextLineRef.current = 0;
+    playWasPlayingRef.current = false;
+    audioPlayer.stop();
   };
 
   useEffect(() => {
     if (!lesson) return;
-    if (!isPracticing || !practiceDialogue) return;
+    if (playDialogueIndex === null || !playingDialogue) return;
 
-    // Kick off: play first B line automatically.
-    if (!practiceWasPlayingRef.current && !audioPlayer.isPlaying && audioPlayer.currentItemId === null) {
-      for (let i = practiceNextLineRef.current; i < practiceDialogue.lines.length; i++) {
-        const line = practiceDialogue.lines[i];
-        practiceNextLineRef.current = i + 1;
-        if (line.speaker === "B") {
-          const itemId = `dial-${lesson.id}-${practiceDialogueIndex}-${i}`;
-          const src = getDialogueAudioPath(lesson.id, practiceDialogueIndex, i);
-          void audioPlayer.play(itemId, src);
-          break;
-        }
+    // Kick off: play the first line automatically.
+    if (
+      !playWasPlayingRef.current &&
+      !audioPlayer.isPlaying &&
+      audioPlayer.currentItemId === null
+    ) {
+      const i = playNextLineRef.current;
+      if (i >= playingDialogue.lines.length) {
+        stopPlayAll();
+        return;
       }
+      playNextLineRef.current = i + 1;
+      const itemId = `dial-${lesson.id}-${playDialogueIndex}-${i}`;
+      const src = getDialogueAudioPath(lesson.id, playDialogueIndex, i);
+      void audioPlayer.play(itemId, src);
     }
-  }, [audioPlayer, isPracticing, lessonId, practiceDialogue, practiceDialogueIndex]);
+  }, [
+    audioPlayer.currentItemId,
+    audioPlayer.isPlaying,
+    lesson,
+    playDialogueIndex,
+    playingDialogue,
+  ]);
 
   useEffect(() => {
     if (!lesson) return;
-    if (!isPracticing || !practiceDialogue) return;
+    if (playDialogueIndex === null || !playingDialogue) return;
 
-    const wasPlaying = practiceWasPlayingRef.current;
+    const wasPlaying = playWasPlayingRef.current;
     const isPlaying = audioPlayer.isPlaying;
-    practiceWasPlayingRef.current = isPlaying;
+    playWasPlayingRef.current = isPlaying;
 
-    // After a B line finishes, immediately play the next B line.
+    // After a line finishes, immediately play the next line.
     if (wasPlaying && !isPlaying && audioPlayer.currentItemId === null) {
-      for (let i = practiceNextLineRef.current; i < practiceDialogue.lines.length; i++) {
-        const line = practiceDialogue.lines[i];
-        practiceNextLineRef.current = i + 1;
-        if (line.speaker === "B") {
-          const itemId = `dial-${lesson.id}-${practiceDialogueIndex}-${i}`;
-          const src = getDialogueAudioPath(lesson.id, practiceDialogueIndex, i);
-          void audioPlayer.play(itemId, src);
-          return;
-        }
+      const i = playNextLineRef.current;
+      if (i >= playingDialogue.lines.length) {
+        stopPlayAll();
+        return;
       }
-      // Reached end.
-      stopPractice();
+      playNextLineRef.current = i + 1;
+      const itemId = `dial-${lesson.id}-${playDialogueIndex}-${i}`;
+      const src = getDialogueAudioPath(lesson.id, playDialogueIndex, i);
+      void audioPlayer.play(itemId, src);
     }
-  }, [audioPlayer.currentItemId, audioPlayer.isPlaying, isPracticing, lessonId, practiceDialogue, practiceDialogueIndex]);
+  }, [
+    audioPlayer.currentItemId,
+    audioPlayer.isPlaying,
+    lesson,
+    playDialogueIndex,
+    playingDialogue,
+  ]);
 
   useEffect(() => {
     if (!lesson) return;
@@ -146,33 +184,28 @@ function LessonDetailPage() {
     setFinished(false);
   }, [lessonId, lesson]);
 
-  if (!lesson) {
-    return (
-      <div className="min-h-screen pb-16 sm:pb-0">
-        <Header />
-        <main className="mx-auto max-w-3xl px-4 py-16 text-center">
-          <p className="text-muted-foreground">레슨을 찾을 수 없습니다.</p>
-          <Link to="/lessons" className="mt-4 inline-block text-primary underline">
-            레슨 목록으로
-          </Link>
-        </main>
-      </div>
-    );
-  }
+  const currentIndex = availableLessonIds.indexOf(Number(lessonId));
+  const prevId = currentIndex > 0 ? availableLessonIds[currentIndex - 1] : null;
+  const nextId =
+    currentIndex >= 0 && currentIndex < availableLessonIds.length - 1
+      ? availableLessonIds[currentIndex + 1]
+      : null;
 
-  const currentIndex = lessonsData.findIndex((l) => l.id === Number(lessonId));
-  const prevId = currentIndex > 0 ? lessonsData[currentIndex - 1].id : null;
-  const nextId = currentIndex < lessonsData.length - 1 ? lessonsData[currentIndex + 1].id : null;
-  
+  const grammarItemCount = useMemo(
+    () => parseGrammarCards(lesson.grammar ?? []).length,
+    [lesson.grammar],
+  );
+
   const allTabs: { key: Tab; label: string; icon: string; count: number }[] = [
     { key: "vocabulary", label: "단어장", icon: "📖", count: lesson.vocabulary.length },
     { key: "examples", label: "예문", icon: "💡", count: lesson.examples.length },
-    { key: "grammar", label: "문법", icon: "📏", count: lesson.grammar?.length || 0 },
+    { key: "grammar", label: "문법", icon: "📏", count: grammarItemCount },
     { key: "quiz", label: "퀴즈", icon: "✏️", count: lesson.quiz.length },
     { key: "dialogues", label: "대화문", icon: "💬", count: lesson.dialogues.length },
   ];
 
   const tabs = allTabs.filter((t) => t.key !== "examples" || t.count > 0);
+  const grammarCards = useMemo(() => parseGrammarCards(lesson.grammar ?? []), [lesson.grammar]);
 
   const toggleFlip = (idx: number) => {
     setFlipped((prev) => {
@@ -181,6 +214,19 @@ function LessonDetailPage() {
       else next.add(idx);
       return next;
     });
+  };
+
+  const toggleGrammar = (idx: number) => {
+    setExpandedGrammar((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
+  };
+
+  const openGrammarPractice = (card: GrammarCardData) => {
+    setGrammarPractice(card);
   };
 
   const handleSelect = (idx: number) => {
@@ -216,7 +262,10 @@ function LessonDetailPage() {
       <main className="mx-auto max-w-3xl px-4 py-4 sm:py-8">
         {/* Lesson header */}
         <div className="mb-4 sm:mb-6">
-          <Link to="/lessons" className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors">
+          <Link
+            to="/lessons"
+            className="text-xs sm:text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
             ← 레슨 목록
           </Link>
           <div className="mt-2 flex items-center gap-3">
@@ -224,8 +273,12 @@ function LessonDetailPage() {
               {lesson.id}
             </div>
             <div className="min-w-0">
-              <h1 className="text-xl sm:text-2xl font-bold text-foreground truncate">{lesson.titleKo}</h1>
-              <p className="text-xs sm:text-sm text-muted-foreground break-words sm:truncate">{lesson.title} · {lesson.description}</p>
+              <h1 className="text-xl sm:text-2xl font-bold text-foreground truncate">
+                {lesson.titleKo}
+              </h1>
+              <p className="text-xs sm:text-sm text-muted-foreground break-words sm:truncate">
+                {lesson.title} · {lesson.description}
+              </p>
             </div>
           </div>
         </div>
@@ -241,12 +294,14 @@ function LessonDetailPage() {
                   "flex-1 rounded-md px-2 py-2.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-medium transition-colors",
                   tab === t.key
                     ? "bg-card text-foreground shadow-sm"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {t.icon} {t.label}
                 {t.count > 0 && (
-                  <span className="ml-0.5 sm:ml-1 text-[10px] sm:text-xs opacity-60">({t.count})</span>
+                  <span className="ml-0.5 sm:ml-1 text-[10px] sm:text-xs opacity-60">
+                    ({t.count})
+                  </span>
                 )}
               </button>
             ))}
@@ -255,14 +310,14 @@ function LessonDetailPage() {
 
         {/* Tab content */}
         <div className="mt-4 sm:mt-6">
-          {tab === "vocabulary" && (
-            lesson.vocabulary.length === 0 ? (
+          {tab === "vocabulary" &&
+            (lesson.vocabulary.length === 0 ? (
               <EmptyState message="아직 단어가 준비되지 않았습니다." />
             ) : (
               <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
                 {lesson.vocabulary.map((word, idx) => {
                   const itemId = `vocab-${lesson.id}-${idx}`;
-                  const src = getVocabAudioPath(lesson.id, idx);
+                  const src = getVocabAudioPath(lesson.id, word.romanized);
                   const isCurrent = audioPlayer.currentItemId === itemId;
                   const isPlaying = isCurrent && audioPlayer.isPlaying;
 
@@ -281,98 +336,148 @@ function LessonDetailPage() {
                           void audioPlayer.play(itemId, src);
                         }}
                       >
-                        {isPlaying ? <Pause className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                        {isPlaying ? (
+                          <Pause className="h-4 w-4" />
+                        ) : (
+                          <Volume2 className="h-4 w-4" />
+                        )}
                       </button>
-                    {flipped.has(idx) ? (
-                      <>
-                        <p className="text-base sm:text-lg font-semibold text-foreground">{word.korean}</p>
-                        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground italic">{word.romanized}</p>
-                      </>
-                    ) : (
-                      <>
-                        <p className="text-xl sm:text-2xl font-bold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
-                          {word.nepali}
-                        </p>
-                        <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground italic">{word.romanized}</p>
-                      </>
-                    )}
-                    <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-xs text-muted-foreground">
-                      탭하여 {flipped.has(idx) ? "네팔어" : "한국어"} 보기
-                    </p>
+                      {flipped.has(idx) ? (
+                        <>
+                          <p className="text-base sm:text-lg font-semibold text-foreground">
+                            {word.korean}
+                          </p>
+                          <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground italic">
+                            {word.romanized}
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <p
+                            className="text-xl sm:text-2xl font-bold text-foreground"
+                            style={{ fontFamily: "var(--font-nepali)" }}
+                          >
+                            {word.nepali}
+                          </p>
+                          <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-muted-foreground italic">
+                            {word.romanized}
+                          </p>
+                        </>
+                      )}
+                      <p className="mt-1.5 sm:mt-2 text-[10px] sm:text-xs text-muted-foreground">
+                        탭하여 {flipped.has(idx) ? "네팔어" : "한국어"} 보기
+                      </p>
                     </div>
                   );
                 })}
               </div>
-            )
-          )}
+            ))}
 
-          {tab === "examples" && (
-            lesson.examples.length === 0 ? (
+          {tab === "examples" &&
+            (lesson.examples.length === 0 ? (
               <EmptyState message="아직 예문이 준비되지 않았습니다." />
             ) : (
               <div className="space-y-3 sm:space-y-4">
-                {lesson.examples.map((example, idx) => (
-                  <div
-                    key={idx}
-                    className="rounded-xl border bg-card p-4 sm:p-5 text-left shadow-sm transition-all hover:shadow-md"
-                  >
-                    <p className="text-lg sm:text-xl font-bold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
-                      {example.nepali}
-                    </p>
-                    <p className="mt-1 text-sm sm:text-base text-muted-foreground italic">
-                      {example.romanized}
-                    </p>
-                    <p className="mt-2 text-base sm:text-lg font-medium text-foreground">
-                      {example.korean}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            )
-          )}
+                {lesson.examples.map((example, idx) => {
+                  const itemId = `example-${lesson.id}-${idx}`;
+                  const src = getExampleAudioPath(lesson.id, idx);
+                  const isCurrent = audioPlayer.currentItemId === itemId;
+                  const isPlaying = isCurrent && audioPlayer.isPlaying;
 
-          {tab === "grammar" && (
-            !lesson.grammar || lesson.grammar.length === 0 ? (
+                  return (
+                    <div
+                      key={idx}
+                      className="relative rounded-xl border bg-card p-4 sm:p-5 text-left shadow-sm transition-all hover:shadow-md"
+                    >
+                      <button
+                        type="button"
+                        aria-label="예문 음성 재생"
+                        className="absolute right-3 top-3 inline-flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-secondary-foreground hover:bg-accent active:scale-95 transition-all"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          void audioPlayer.play(itemId, src);
+                        }}
+                      >
+                        {isPlaying ? (
+                          <Pause className="h-4 w-4" />
+                        ) : (
+                          <Volume2 className="h-4 w-4" />
+                        )}
+                      </button>
+                      <p
+                        className="pr-10 text-lg sm:text-xl font-bold text-foreground"
+                        style={{ fontFamily: "var(--font-nepali)" }}
+                      >
+                        {example.nepali}
+                      </p>
+                      <p className="mt-1 text-sm sm:text-base text-muted-foreground italic">
+                        {example.romanized}
+                      </p>
+                      <p className="mt-2 text-base sm:text-lg font-medium text-foreground">
+                        {example.korean}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            ))}
+
+          {tab === "grammar" &&
+            (!lesson.grammar || lesson.grammar.length === 0 ? (
               <EmptyState message="아직 문법 설명이 준비되지 않았습니다." />
             ) : (
               <div className="space-y-3 sm:space-y-4">
-                {lesson.grammar.map((rule, idx) => (
-                  <div
+                {grammarCards.map((card, idx) => (
+                  <GrammarCard
                     key={idx}
-                    className="rounded-xl border bg-card p-4 sm:p-5 text-left shadow-sm transition-all hover:shadow-md"
-                  >
-                    <p className="text-sm sm:text-base font-medium text-foreground whitespace-pre-wrap leading-relaxed">
-                      {rule}
-                    </p>
-                  </div>
+                    card={card}
+                    index={idx}
+                    lessonId={lesson.id}
+                    expanded={expandedGrammar.has(idx)}
+                    audioPlayer={audioPlayer}
+                    onToggle={() => toggleGrammar(idx)}
+                    onPractice={() => openGrammarPractice(card)}
+                  />
                 ))}
               </div>
-            )
-          )}
+            ))}
 
-          {tab === "quiz" && (
-            lesson.quiz.length === 0 ? (
+          {tab === "quiz" &&
+            (lesson.quiz.length === 0 ? (
               <EmptyState message="아직 퀴즈가 준비되지 않았습니다." />
             ) : finished ? (
               <div className="rounded-2xl border bg-card p-8 sm:p-10 text-center shadow-sm">
                 <div className="mb-3 sm:mb-4 text-4xl sm:text-5xl">🎉</div>
                 <h2 className="mb-2 text-xl sm:text-2xl font-bold text-foreground">퀴즈 완료!</h2>
                 <p className="mb-4 sm:mb-6 text-base sm:text-lg text-muted-foreground">
-                  <span className="font-semibold text-primary">{score}</span> / {lesson.quiz.length} 정답
+                  <span className="font-semibold text-primary">{score}</span> / {lesson.quiz.length}{" "}
+                  정답
                 </p>
                 <div className="mb-4 sm:mb-6 h-3 overflow-hidden rounded-full bg-secondary">
-                  <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${(score / lesson.quiz.length) * 100}%` }} />
+                  <div
+                    className="h-full rounded-full bg-primary transition-all"
+                    style={{ width: `${(score / lesson.quiz.length) * 100}%` }}
+                  />
                 </div>
-                <Button onClick={resetQuiz} size="lg" className="w-full sm:w-auto">다시 풀기</Button>
+                <Button onClick={resetQuiz} size="lg" className="w-full sm:w-auto">
+                  다시 풀기
+                </Button>
               </div>
             ) : (
               <div className="rounded-2xl border bg-card p-4 sm:p-6 shadow-sm">
                 <div className="mb-3 sm:mb-4 flex items-center justify-between">
-                  <span className="text-xs sm:text-sm text-muted-foreground">{qIdx + 1} / {lesson.quiz.length}</span>
-                  <span className="rounded-full bg-warm/50 px-2.5 py-1 text-xs sm:text-sm font-medium text-warm-foreground">점수: {score}</span>
+                  <span className="text-xs sm:text-sm text-muted-foreground">
+                    {qIdx + 1} / {lesson.quiz.length}
+                  </span>
+                  <span className="rounded-full bg-warm/50 px-2.5 py-1 text-xs sm:text-sm font-medium text-warm-foreground">
+                    점수: {score}
+                  </span>
                 </div>
                 <div className="mb-3 sm:mb-4 h-2 overflow-hidden rounded-full bg-secondary">
-                  <div className="h-full rounded-full bg-primary transition-all" style={{ width: `${((qIdx + 1) / lesson.quiz.length) * 100}%` }} />
+                  <div
+                    className="h-full rounded-full bg-primary transition-all"
+                    style={{ width: `${((qIdx + 1) / lesson.quiz.length) * 100}%` }}
+                  />
                 </div>
                 <h2 className="mb-4 sm:mb-5 text-base sm:text-lg font-semibold text-foreground">
                   {lesson.quiz[quizOrder[qIdx] ?? qIdx].question}
@@ -381,8 +486,10 @@ function LessonDetailPage() {
                   {lesson.quiz[quizOrder[qIdx] ?? qIdx].options.map((opt, idx) => {
                     let style = "border bg-card hover:bg-accent";
                     if (answered) {
-                      if (idx === lesson.quiz[quizOrder[qIdx] ?? qIdx].answer) style = "border-2 border-success bg-success/10";
-                      else if (idx === selectedOption) style = "border-2 border-destructive bg-destructive/10";
+                      if (idx === lesson.quiz[quizOrder[qIdx] ?? qIdx].answer)
+                        style = "border-2 border-success bg-success/10";
+                      else if (idx === selectedOption)
+                        style = "border-2 border-destructive bg-destructive/10";
                     }
                     return (
                       <button
@@ -392,7 +499,7 @@ function LessonDetailPage() {
                         className={cn(
                           "rounded-xl px-4 py-3.5 sm:py-3 text-left text-sm font-medium transition-all active:scale-[0.98]",
                           style,
-                          answered && "cursor-default"
+                          answered && "cursor-default",
                         )}
                       >
                         <span className="mr-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-secondary text-xs font-bold text-secondary-foreground">
@@ -411,48 +518,37 @@ function LessonDetailPage() {
                   </div>
                 )}
               </div>
-            )
-          )}
+            ))}
 
-          {tab === "dialogues" && (
-            lesson.dialogues.length === 0 ? (
+          {tab === "dialogues" &&
+            (lesson.dialogues.length === 0 ? (
               <EmptyState message="아직 대화문이 준비되지 않았습니다." />
             ) : (
               <div className="space-y-5 sm:space-y-6">
                 {lesson.dialogues.map((dialogue, dIdx) => (
                   <div key={dIdx}>
                     <div className="mb-2 sm:mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
-                      <h2 className="text-sm sm:text-base font-semibold text-foreground">{dialogue.title}</h2>
-                      <div className="flex w-full flex-wrap items-center justify-end gap-1.5 sm:w-auto sm:gap-2">
+                      <h2 className="text-sm sm:text-base font-semibold text-foreground">
+                        {dialogue.title}
+                      </h2>
+                      <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:justify-end">
                         <button
                           onClick={() => {
-                            if (practiceRoleA && practiceDialogueIndex === dIdx) stopPractice();
-                            else startPracticeForDialogue(dIdx);
+                            if (playDialogueIndex === dIdx) stopPlayAll();
+                            else startPlayAllForDialogue(dIdx);
                           }}
                           className={cn(
-                            "inline-flex shrink-0 items-center whitespace-nowrap rounded-lg px-2 py-1 text-[10px] leading-none sm:px-2.5 sm:py-1.5 sm:text-xs font-medium hover:bg-accent active:scale-95 transition-all",
-                            practiceRoleA && practiceDialogueIndex === dIdx
+                            "inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-lg px-3 text-xs font-medium hover:bg-accent active:scale-95 transition-all sm:h-9 sm:w-auto sm:px-3 sm:text-sm",
+                            playDialogueIndex === dIdx
                               ? "bg-primary text-primary-foreground"
                               : "bg-secondary text-secondary-foreground",
                           )}
                         >
-                          {practiceRoleA && practiceDialogueIndex === dIdx ? "학습 모드 종료" : "A 역할 하기"}
-                        </button>
-                        <button
-                          onClick={() => {
-                            setHideNepali((v) => !v);
-                            setRevealedNepaliKeys(new Set());
-                          }}
-                          className={cn(
-                            "inline-flex shrink-0 items-center whitespace-nowrap rounded-lg px-2 py-1 text-[10px] leading-none sm:px-2.5 sm:py-1.5 sm:text-xs font-medium hover:bg-accent active:scale-95 transition-all",
-                            hideNepali ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground",
-                          )}
-                        >
-                          {hideNepali ? "가리기 해제" : "가리기"}
+                          {playDialogueIndex === dIdx ? "재생 중지" : "전체 재생"}
                         </button>
                         <button
                           onClick={() => setShowRomanized(!showRomanized)}
-                          className="inline-flex shrink-0 items-center whitespace-nowrap rounded-lg bg-secondary px-2 py-1 text-[10px] leading-none font-medium text-secondary-foreground hover:bg-accent active:scale-95 transition-all sm:px-2.5 sm:py-1.5 sm:text-xs"
+                          className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary px-3 text-xs font-medium text-secondary-foreground hover:bg-accent active:scale-95 transition-all sm:h-9 sm:w-auto sm:px-3 sm:text-sm"
                         >
                           {showRomanized ? "로마자 숨기기" : "로마자 보기"}
                         </button>
@@ -465,19 +561,18 @@ function LessonDetailPage() {
                         const isCurrent = audioPlayer.currentItemId === itemId;
                         const isPlaying = isCurrent && audioPlayer.isPlaying;
 
-                        const inPracticeThisDialogue = practiceRoleA && practiceDialogueIndex === dIdx;
-                        const dimmedForRole = inPracticeThisDialogue && line.speaker === "A";
-
-                        const nepaliKey = `${dIdx}-${idx}`;
-                        const nepaliVisible = !hideNepali || revealedNepaliKeys.has(nepaliKey);
+                        const isPlayingThisDialogue = playDialogueIndex === dIdx;
 
                         const scrambleKey = `${dIdx}-${idx}`;
                         const isScrambling = scramble?.key === scrambleKey;
                         const romanizedWords = normalizeWords(line.romanized);
-                        const scrambleAllowed = romanizedWords.length >= 2 && !inPracticeThisDialogue;
+                        const scrambleAllowed =
+                          romanizedWords.length >= 2 && !isPlayingThisDialogue;
 
                         const openScramble = () => {
                           if (!scrambleAllowed) return;
+                          // Scramble drill should not reveal the full romanized sentence.
+                          setShowRomanized(false);
                           setScramble({
                             key: scrambleKey,
                             originalWords: romanizedWords,
@@ -488,20 +583,10 @@ function LessonDetailPage() {
                         };
 
                         const tryPlay = () => {
-                          if (dimmedForRole) return;
                           void audioPlayer.play(itemId, src);
                         };
 
                         const handleActivate = () => {
-                          if (hideNepali && !nepaliVisible) {
-                            setRevealedNepaliKeys((prev) => {
-                              const next = new Set(prev);
-                              next.add(nepaliKey);
-                              return next;
-                            });
-                            return;
-                          }
-
                           if (isScrambling) return;
                           if (scrambleAllowed) {
                             openScramble();
@@ -512,11 +597,19 @@ function LessonDetailPage() {
                         };
 
                         return (
-                          <div key={idx} className={cn("flex gap-2 sm:gap-3", line.speaker === "B" && "flex-row-reverse text-right")}>
+                          <div
+                            key={idx}
+                            className={cn(
+                              "flex gap-2 sm:gap-3",
+                              line.speaker === "B" && "flex-row-reverse text-right",
+                            )}
+                          >
                             <div
                               className={cn(
                                 "flex h-8 w-8 sm:h-9 sm:w-9 shrink-0 items-center justify-center rounded-full border border-black/5 text-xs sm:text-sm font-bold",
-                                line.speaker === "A" ? "bg-[#DDE3D2] text-[#333D29]" : "bg-[#E9DED3] text-[#333D29]",
+                                line.speaker === "A"
+                                  ? "bg-[#DDE3D2] text-[#333D29]"
+                                  : "bg-[#E9DED3] text-[#333D29]",
                               )}
                             >
                               {line.speaker}
@@ -533,114 +626,147 @@ function LessonDetailPage() {
                               }}
                               className={cn(
                                 "group max-w-[80%] rounded-2xl border px-3 py-2 text-[#333D29] sm:px-4 sm:py-2.5 cursor-pointer outline-none focus:ring-2 focus:ring-ring/40 transition-opacity",
-                                line.speaker === "A" ? "bg-[#E8EDDF] border-[#DDE3D2]" : "bg-[#F5EBE0] border-[#E9DED3]",
+                                line.speaker === "A"
+                                  ? "bg-[#E8EDDF] border-[#DDE3D2]"
+                                  : "bg-[#F5EBE0] border-[#E9DED3]",
                               )}
                             >
-                              <div className={cn("flex items-start gap-2", line.speaker === "B" && "flex-row-reverse")}>
-                                <div className={cn("min-w-0 flex-1", dimmedForRole && "opacity-40")}>
-                                  <p className="text-sm sm:text-base font-medium text-[#333D29]" style={{ fontFamily: "var(--font-nepali)" }}>
-                                    {nepaliVisible ? line.nepali : "••••••••"}
+                              <div
+                                className={cn(
+                                  "flex items-start gap-2",
+                                  line.speaker === "B" && "flex-row-reverse",
+                                )}
+                              >
+                                <div className="min-w-0 flex-1">
+                                  <p
+                                    className="text-sm sm:text-base font-medium text-[#333D29]"
+                                    style={{ fontFamily: "var(--font-nepali)" }}
+                                  >
+                                    {line.nepali}
                                   </p>
-                                  {showRomanized &&
-                                    (isScrambling ? (
-                                      <div className="mt-1 space-y-2">
-                                        <div className="flex flex-wrap gap-1">
-                                          {scramble!.answer.map((w, i) => (
-                                            <button
-                                              key={`${w}-${i}`}
-                                              type="button"
-                                              className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
-                                              onClick={(e) => {
-                                                e.stopPropagation();
-                                                setScramble((prev) => {
-                                                  if (!prev || prev.key !== scrambleKey || prev.done) return prev;
-                                                  const nextAnswer = prev.answer.filter((_, idx2) => idx2 !== i);
-                                                  return { ...prev, answer: nextAnswer };
-                                                });
-                                              }}
-                                            >
-                                              {w}
-                                            </button>
-                                          ))}
-                                        </div>
-                                        <div className="flex flex-wrap gap-1">
-                                          {scramble!.pool.map((w, i) => (
-                                            <button
-                                              key={`${w}-${i}`}
-                                              type="button"
-                                              className="rounded-md border bg-background/60 px-2 py-1 text-[10px] sm:text-xs text-foreground hover:bg-accent"
-                                              onClick={(e) => {
-                                                e.stopPropagation();
-                                                setScramble((prev) => {
-                                                  if (!prev || prev.key !== scrambleKey || prev.done) return prev;
-                                                  const nextPool = prev.pool.filter((_, idx2) => idx2 !== i);
-                                                  const nextAnswer = [...prev.answer, w];
-                                                  const done =
-                                                    nextAnswer.length === prev.originalWords.length &&
-                                                    nextAnswer.join(" ") === prev.originalWords.join(" ");
-                                                  return { ...prev, pool: nextPool, answer: nextAnswer, done };
-                                                });
-                                              }}
-                                            >
-                                              {w}
-                                            </button>
-                                          ))}
-                                        </div>
-                                        <div className="flex items-center gap-2">
-                                          <span
-                                            className={cn(
-                                              "text-[10px] sm:text-xs",
-                                              scramble!.done ? "text-primary" : "text-muted-foreground",
-                                            )}
-                                          >
-                                            {scramble!.done ? "성공!" : "단어 순서 맞추기"}
-                                          </span>
+                                  {isScrambling ? (
+                                    <div className="mt-1 space-y-2">
+                                      <div className="flex flex-wrap gap-1">
+                                        {scramble!.answer.map((w, i) => (
                                           <button
-                                            type="button"
-                                            className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
-                                            onClick={(e) => {
-                                              e.stopPropagation();
-                                              setScramble(null);
-                                            }}
-                                          >
-                                            닫기
-                                          </button>
-                                          <button
+                                            key={`${w}-${i}`}
                                             type="button"
                                             className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
                                             onClick={(e) => {
                                               e.stopPropagation();
                                               setScramble((prev) => {
-                                                if (!prev || prev.key !== scrambleKey) return prev;
-                                                return { ...prev, pool: shuffle(prev.originalWords), answer: [], done: false };
+                                                if (!prev || prev.key !== scrambleKey || prev.done)
+                                                  return prev;
+                                                const nextAnswer = prev.answer.filter(
+                                                  (_, idx2) => idx2 !== i,
+                                                );
+                                                return { ...prev, answer: nextAnswer };
                                               });
                                             }}
                                           >
-                                            다시 섞기
+                                            {w}
                                           </button>
-                                        </div>
+                                        ))}
                                       </div>
-                                    ) : (
-                                      <p className="mt-0.5 text-[10px] sm:text-xs text-[#333D29]/70 italic">{line.romanized}</p>
-                                    ))}
-                                  <p className="mt-0.5 sm:mt-1 text-xs sm:text-sm text-[#333D29]/80">{line.korean}</p>
-                                  {scrambleAllowed && !isScrambling && (
-                                    <p className="mt-1 text-[10px] sm:text-xs text-muted-foreground">클릭하면 단어 셔플 모드</p>
-                                  )}
+                                      <div className="flex flex-wrap gap-1">
+                                        {scramble!.pool.map((w, i) => (
+                                          <button
+                                            key={`${w}-${i}`}
+                                            type="button"
+                                            className="rounded-md border bg-background/60 px-2 py-1 text-[10px] sm:text-xs text-foreground hover:bg-accent"
+                                            onClick={(e) => {
+                                              e.stopPropagation();
+                                              setScramble((prev) => {
+                                                if (!prev || prev.key !== scrambleKey || prev.done)
+                                                  return prev;
+                                                const nextPool = prev.pool.filter(
+                                                  (_, idx2) => idx2 !== i,
+                                                );
+                                                const nextAnswer = [...prev.answer, w];
+                                                const done =
+                                                  nextAnswer.length === prev.originalWords.length &&
+                                                  nextAnswer.join(" ") ===
+                                                    prev.originalWords.join(" ");
+                                                return {
+                                                  ...prev,
+                                                  pool: nextPool,
+                                                  answer: nextAnswer,
+                                                  done,
+                                                };
+                                              });
+                                            }}
+                                          >
+                                            {w}
+                                          </button>
+                                        ))}
+                                      </div>
+                                      <div className="flex items-center gap-2">
+                                        <span
+                                          className={cn(
+                                            "text-[10px] sm:text-xs",
+                                            scramble!.done
+                                              ? "text-primary"
+                                              : "text-muted-foreground",
+                                          )}
+                                        >
+                                          {scramble!.done ? "성공!" : "단어 순서 맞추기"}
+                                        </span>
+                                        <button
+                                          type="button"
+                                          className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
+                                          onClick={(e) => {
+                                            e.stopPropagation();
+                                            setScramble(null);
+                                          }}
+                                        >
+                                          닫기
+                                        </button>
+                                        <button
+                                          type="button"
+                                          className="rounded-md bg-secondary px-2 py-1 text-[10px] sm:text-xs text-secondary-foreground hover:bg-accent"
+                                          onClick={(e) => {
+                                            e.stopPropagation();
+                                            setScramble((prev) => {
+                                              if (!prev || prev.key !== scrambleKey) return prev;
+                                              return {
+                                                ...prev,
+                                                pool: shuffle(prev.originalWords),
+                                                answer: [],
+                                                done: false,
+                                              };
+                                            });
+                                          }}
+                                        >
+                                          다시 섞기
+                                        </button>
+                                      </div>
+                                    </div>
+                                  ) : showRomanized ? (
+                                    <p className="mt-1 text-sm sm:text-base text-muted-foreground italic">
+                                      {line.romanized}
+                                    </p>
+                                  ) : null}
+                                  <p className="mt-1.5 sm:mt-2 text-sm sm:text-base text-foreground">
+                                    {line.korean}
+                                  </p>
                                 </div>
                                 <button
                                   type="button"
                                   aria-label="대화문 음성 재생"
                                   className={cn(
-                                    "mt-0.5 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/60 text-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-within:opacity-100",
-                                    dimmedForRole && "pointer-events-none opacity-0",
+                                    "mt-0.5 inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-background/60 text-foreground transition-colors hover:bg-accent",
+                                    isPlayingThisDialogue && "opacity-70",
                                   )}
                                   onClick={(e) => {
                                     e.stopPropagation();
                                     tryPlay();
                                   }}
                                 >
-                                  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                                  {isPlaying ? (
+                                    <Pause className="h-4 w-4" />
+                                  ) : (
+                                    <Volume2 className="h-4 w-4" />
+                                  )}
                                 </button>
                               </div>
                             </div>
@@ -651,33 +777,27 @@ function LessonDetailPage() {
                   </div>
                 ))}
               </div>
-            )
-          )}
+            ))}
         </div>
 
-        {/* Prev/Next navigation */}
-        <div className="mt-6 sm:mt-8 flex items-center justify-between gap-2">
-          {prevId ? (
-            <Link
-              to="/lessons/$lessonId"
-              params={{ lessonId: String(prevId) }}
-              className="rounded-lg bg-secondary px-3 sm:px-4 py-2.5 sm:py-2 text-xs sm:text-sm font-medium text-secondary-foreground hover:bg-accent active:scale-95 transition-all"
-              onClick={() => { setTab("vocabulary"); setFlipped(new Set()); resetQuiz(); }}
-            >
-              ← Lesson {prevId}
-            </Link>
-          ) : <div />}
-          {nextId ? (
-            <Link
-              to="/lessons/$lessonId"
-              params={{ lessonId: String(nextId) }}
-              className="rounded-lg bg-primary px-3 sm:px-4 py-2.5 sm:py-2 text-xs sm:text-sm font-medium text-primary-foreground hover:bg-primary/90 active:scale-95 transition-all"
-              onClick={() => { setTab("vocabulary"); setFlipped(new Set()); resetQuiz(); }}
-            >
-              Lesson {nextId} →
-            </Link>
-          ) : <div />}
-        </div>
+        {/* Grammar Practice Dialog */}
+        <Dialog open={!!grammarPractice} onOpenChange={(open) => !open && setGrammarPractice(null)}>
+          <DialogContent className="max-w-[92vw] rounded-2xl border-[#DCCFC4] bg-[#FFFDF9] p-4 text-[#333D29] sm:max-w-lg sm:p-6">
+            {grammarPractice && (
+              <>
+                <DialogHeader>
+                  <DialogTitle className="text-[#333D29]">문법 연습</DialogTitle>
+                  <DialogDescription>
+                    {grammarPractice.title.replace(/^\d+\.\s*/, "").trim()}
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="mt-4">
+                  <GrammarPractice card={toPracticeCard(grammarPractice)} />
+                </div>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
       </main>
     </div>
   );
@@ -686,9 +806,110 @@ function LessonDetailPage() {
 function EmptyState({ message }: { message: string }) {
   return (
     <div className="rounded-2xl border bg-card p-8 sm:p-12 text-center shadow-sm">
-      <div className="mb-2 sm:mb-3 text-3xl sm:text-4xl">📝</div>
+      <div className="mb-3 sm:mb-4 text-3xl sm:text-4xl">🚧</div>
       <p className="text-sm sm:text-base text-muted-foreground">{message}</p>
-      <p className="mt-1 text-xs sm:text-sm text-muted-foreground">책 내용을 기반으로 곧 추가될 예정입니다.</p>
+    </div>
+  );
+}
+
+type GrammarCardData = {
+  title: string;
+  lines: string[];
+};
+
+function hasHoChhaHunchhaText(text: string) {
+  const lower = text.toLowerCase();
+  return lower.includes(" ho ") && lower.includes(" chha ") && lower.includes(" hunchha ");
+}
+
+function inferGrammarCategory(card: GrammarCardData) {
+  const blob = [card.title, ...card.lines].join(" ").toLowerCase();
+  if (blob.includes("인사") || blob.includes("greetings")) return "인사말";
+  if (blob.includes("어순") || blob.includes("word order")) return "어순";
+  if (blob.includes("-ko") || blob.includes("소유")) return "접미사";
+  if (blob.includes("-le") || blob.includes("타동사") || blob.includes("자동사")) return "조사";
+  if (blob.includes("동사") || hasHoChhaHunchhaText(` ${blob} `)) return "동사";
+  if (blob.includes("부정")) return "부정";
+  return "문법";
+}
+
+function toPracticeCard(card: GrammarCardData): GrammarPracticeCard {
+  const details = card.lines.map((l) => l.trim()).filter(Boolean);
+  const examples = details.filter((l) => /예:|->|\([^)]+\)/.test(l) && /[a-zA-Z]/.test(l));
+  const hasComparisonTable = hasHoChhaHunchhaText(` ${details.join(" ").toLowerCase()} `);
+  return {
+    title: card.title.replace(/^\d+\.\s*/, "").trim(),
+    category: inferGrammarCategory(card),
+    details,
+    examples,
+    hasComparisonTable,
+  };
+}
+
+function parseGrammarCards(grammar: string[]): GrammarCardData[] {
+  const cards: GrammarCardData[] = [];
+  let currentCard: GrammarCardData | null = null;
+  for (const line of grammar) {
+    if (line.match(/^\d+\./)) {
+      if (currentCard) cards.push(currentCard);
+      currentCard = { title: line, lines: [] };
+    } else if (currentCard) {
+      if (line.trim() || currentCard.lines.length > 0) {
+        currentCard.lines.push(line);
+      }
+    }
+  }
+  if (currentCard) cards.push(currentCard);
+  return cards;
+}
+
+function GrammarCard({
+  card,
+  index,
+  lessonId,
+  expanded,
+  audioPlayer,
+  onToggle,
+  onPractice,
+}: {
+  card: GrammarCardData;
+  index: number;
+  lessonId: number;
+  expanded: boolean;
+  audioPlayer: ReturnType<typeof useAudioPlayer>;
+  onToggle: () => void;
+  onPractice: () => void;
+}) {
+  return (
+    <div className="rounded-2xl border bg-card shadow-sm transition-all hover:shadow-md overflow-hidden">
+      <button
+        onClick={onToggle}
+        className="flex w-full items-center justify-between p-4 sm:p-5 text-left"
+      >
+        <h2 className="text-base sm:text-lg font-semibold text-foreground pr-4">{card.title}</h2>
+        <ChevronDown
+          className={cn(
+            "h-5 w-5 shrink-0 text-muted-foreground transition-transform",
+            expanded && "rotate-180",
+          )}
+        />
+      </button>
+      {expanded && (
+        <div className="border-t bg-muted/30 p-4 sm:p-5">
+          <div className="space-y-2">
+            {card.lines.map((line, i) => (
+              <p key={i} className="text-sm sm:text-base text-foreground leading-relaxed">
+                {line}
+              </p>
+            ))}
+          </div>
+          <div className="mt-4 flex justify-end">
+            <Button variant="secondary" size="sm" onClick={onPractice}>
+              문법 연습하기
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

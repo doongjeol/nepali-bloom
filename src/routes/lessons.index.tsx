@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { lessonsIndex } from "@/data/lessonLoader";
-import lessonsData from "@/data/lessons";
 import { cn } from "@/lib/utils";
 import { MAX_LESSON_ID } from "@/data/lessonsMeta";
 
@@ -16,10 +15,6 @@ export const Route = createFileRoute("/lessons/")({
 });
 
 function LessonsPage() {
-  const descriptionById = new Map<number, string>(
-    (lessonsData ?? []).map((l) => [Number(l.id), String(l.description ?? "")]),
-  );
-
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
       <Header />
@@ -38,7 +33,7 @@ function LessonsPage() {
               (counts.grammar ?? 0) > 0 ||
               (counts.quiz ?? 0) > 0 ||
               (counts.dialogues ?? 0) > 0;
-            const description = (lesson.description ?? descriptionById.get(lesson.id) ?? "").trim();
+            const description = (lesson.description ?? "").trim();
             return (
               <Link
                 key={lesson.id}
