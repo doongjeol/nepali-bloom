@@ -125,7 +125,7 @@ export function WordStudyView({
       ) : (
         <>
           <div className="mt-6">
-            <FlashCard item={current!} />
+            <FlashCard key={current!.id} item={current!} />
           </div>
 
           <div className="mt-4 flex items-center justify-between gap-2 text-xs text-muted-foreground">
@@ -181,4 +181,3 @@ export function WordStudyView({
     </div>
   );
 }
-

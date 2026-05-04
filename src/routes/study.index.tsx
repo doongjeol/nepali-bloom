@@ -39,6 +39,15 @@ function StudyHomePage() {
           <p className="mt-1 text-sm text-muted-foreground">원하는 레슨 범위를 선택해서 단어장/퀴즈/대화문을 학습해요.</p>
         </div>
 
+        <section className="mb-4 rounded-2xl border bg-muted/30 p-4 text-sm text-foreground">
+          <p className="text-xs font-semibold text-muted-foreground">사용 방법</p>
+          <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm">
+            <li>시작/종료 레슨 번호를 입력한 뒤, 아래에서 범위를 적용하세요.</li>
+            <li>범위가 적용되면 아래 카드(단어장/퀴즈/대화문)가 활성화됩니다. 활성화된 카드를 눌러 이동하세요.</li>
+            <li>링크를 공유하려면 URL에 <span className="font-mono">?start=1&amp;end=2</span> 형태로 포함하면 됩니다.</li>
+          </ol>
+        </section>
+
         <RangeSelector
           min={MIN}
           max={MAX}
@@ -95,4 +104,3 @@ function StudyHomePage() {
     </div>
   );
 }
-

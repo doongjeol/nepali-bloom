@@ -12,11 +12,14 @@ export function useLessonRangeData(
   const [error, setError] = useState<string | null>(null);
   const [lessons, setLessons] = useState<Lesson[] | null>(null);
 
+  const start = range?.start ?? null;
+  const end = range?.end ?? null;
+
   useEffect(() => {
     let cancelled = false;
     setError(null);
 
-    if (!range) {
+    if (start === null || end === null) {
       setLessons(null);
       setIsLoading(false);
       return () => {
@@ -24,7 +27,7 @@ export function useLessonRangeData(
       };
     }
 
-    const clamped = clampLessonRange(range, opts.minLessonId, opts.maxLessonId);
+    const clamped = clampLessonRange({ start, end }, opts.minLessonId, opts.maxLessonId);
     setIsLoading(true);
     // eslint-disable-next-line no-console
     console.log("[useLessonRangeData] loading range:", clamped);
@@ -41,21 +44,20 @@ export function useLessonRangeData(
         console.error("Failed to load lessons:", e);
         if (cancelled) return;
         setLessons(null);
-        setError("?덉뒯 ?곗씠?곕? 遺덈윭?ㅼ? 紐삵뻽?듬땲??");
+        setError("레슨 데이터를 불러오지 못했어요.");
         setIsLoading(false);
       });
 
     return () => {
       cancelled = true;
     };
-  }, [opts.maxLessonId, opts.minLessonId, range]);
+  }, [opts.maxLessonId, opts.minLessonId, start, end]);
 
   const data = useMemo(() => {
-    if (!range || !lessons) return null;
-    const clamped = clampLessonRange(range, opts.minLessonId, opts.maxLessonId);
+    if (start === null || end === null || !lessons) return null;
+    const clamped = clampLessonRange({ start, end }, opts.minLessonId, opts.maxLessonId);
     return mergeLessonsInRange(lessons, clamped);
-  }, [lessons, opts.maxLessonId, opts.minLessonId, range]);
+  }, [lessons, opts.maxLessonId, opts.minLessonId, start, end]);
 
   return { isLoading, error, data };
 }
-
