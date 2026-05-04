@@ -165,7 +165,7 @@ export function WordStudyView({
               className="rounded-2xl border bg-background px-4 py-3 text-sm font-semibold text-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0"
             >
               아직 몰라요
-              <span className="ml-2 text-xs font-medium text-muted-foreground">(Need to study)</span>
+              
             </button>
             <button
               type="button"
@@ -173,7 +173,7 @@ export function WordStudyView({
               className="rounded-2xl bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0"
             >
               외웠어요
-              <span className="ml-2 text-xs font-medium opacity-80">(Knew it)</span>
+              
             </button>
           </div>
         </>
