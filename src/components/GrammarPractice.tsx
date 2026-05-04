@@ -3,7 +3,6 @@ import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   AlertDialog,
@@ -742,12 +741,19 @@ function CopulaContrastDrill({ card }: { card: GrammarPracticeCard }) {
       )}
 
       <AlertDialog open={showPrinciple} onOpenChange={setShowPrinciple}>
-        <AlertDialogContent className="max-w-[92vw] rounded-2xl border-[#DCCFC4] bg-[#FFFDF9] text-[#333D29] sm:max-w-lg">
-          <AlertDialogHeader>
+        <AlertDialogContent className="grid max-h-[85dvh] max-w-[92vw] grid-rows-[auto_minmax(0,1fr)_auto] gap-0 overflow-hidden rounded-2xl border-[#DCCFC4] bg-[#FFFDF9] p-0 text-[#333D29] sm:max-h-[80vh] sm:max-w-lg">
+          <AlertDialogHeader className="px-4 pb-3 pt-4 text-left sm:px-6 sm:pt-6">
             <AlertDialogTitle>{scenario.principleTitle}</AlertDialogTitle>
-            <AlertDialogDescription>{scenario.principle}</AlertDialogDescription>
+            <AlertDialogDescription className="sr-only">
+              {scenario.principle}
+            </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
+          <div className="min-h-0 overflow-y-auto overscroll-contain px-4 pb-4 [-webkit-overflow-scrolling:touch] sm:px-6">
+            <p className="rounded-xl border border-[#DCCFC4] bg-white/60 p-3 text-base leading-relaxed text-[#333D29]">
+              {scenario.principle}
+            </p>
+          </div>
+          <AlertDialogFooter className="sticky bottom-0 border-t border-[#DCCFC4] bg-[#FFFDF9]/95 px-4 py-3 sm:px-6">
             <AlertDialogCancel className="rounded-xl">닫기</AlertDialogCancel>
             <AlertDialogAction className="rounded-xl" onClick={next}>
               다음 문제
@@ -793,30 +799,22 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
           </Badge>
         </div>
 
-        <TooltipProvider delayDuration={120}>
-          <div className="flex flex-wrap items-center gap-2">
-            {formula.map((t, idx) => (
-              <Tooltip key={`${t.label}-${idx}`}>
-                <TooltipTrigger asChild>
-                  <button
-                    type="button"
-                    className={cn(
-                      "rounded-xl border px-2.5 py-1 text-sm font-semibold transition-colors",
-                      "bg-white/70 hover:bg-white",
-                      t.emphasis && "border-[#D4A373]/60 bg-[#D4A373]/15 text-[#8A5A2B]",
-                      !t.emphasis && "border-[#DCCFC4] text-[#333D29]",
-                    )}
-                  >
-                    {t.label}
-                  </button>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-[260px] text-left">
-                  <p>{t.tooltip}</p>
-                </TooltipContent>
-              </Tooltip>
-            ))}
-          </div>
-        </TooltipProvider>
+        <div className="flex flex-wrap items-center gap-2">
+          {formula.map((t, idx) => (
+            <span
+              key={`${t.label}-${idx}`}
+              aria-label={`${t.label}: ${t.tooltip}`}
+              className={cn(
+                "rounded-xl border px-2.5 py-1 text-sm font-semibold",
+                "bg-white/70",
+                t.emphasis && "border-[#D4A373]/60 bg-[#D4A373]/15 text-[#8A5A2B]",
+                !t.emphasis && "border-[#DCCFC4] text-[#333D29]",
+              )}
+            >
+              {t.label}
+            </span>
+          ))}
+        </div>
       </section>
 
       <PrincipleKorean kind={kind} />

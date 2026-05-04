@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { GrammarPractice, type GrammarPracticeCard } from "@/components/GrammarPractice";
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -576,17 +577,24 @@ function LessonDetailPage() {
 
         {/* Grammar Practice Dialog */}
         <Dialog open={!!grammarPractice} onOpenChange={(open) => !open && setGrammarPractice(null)}>
-          <DialogContent className="max-w-[92vw] rounded-2xl border-[#DCCFC4] bg-[#FFFDF9] p-4 text-[#333D29] sm:max-w-lg sm:p-6">
+          <DialogContent className="grid max-h-[85dvh] max-w-[94vw] grid-rows-[auto_minmax(0,1fr)_auto] gap-0 overflow-hidden rounded-2xl border-[#DCCFC4] bg-[#FFFDF9] p-0 text-[#333D29] sm:max-h-[80vh] sm:max-w-lg">
             {grammarPractice && (
               <>
-                <DialogHeader>
+                <DialogHeader className="px-4 pb-3 pt-4 text-left sm:px-6 sm:pt-6">
                   <DialogTitle className="text-[#333D29]">문법 연습</DialogTitle>
-                  <DialogDescription>
+                  <DialogDescription className="text-sm sm:text-base">
                     {grammarPractice.title.replace(/^\d+\.\s*/, "").trim()}
                   </DialogDescription>
                 </DialogHeader>
-                <div className="mt-4">
+                <div className="min-h-0 overflow-y-auto overscroll-contain px-4 pb-4 text-base [-webkit-overflow-scrolling:touch] sm:px-6">
                   <GrammarPractice card={toPracticeCard(grammarPractice)} />
+                </div>
+                <div className="sticky bottom-0 border-t border-[#DCCFC4] bg-[#FFFDF9]/95 px-4 py-3 sm:px-6">
+                  <DialogClose asChild>
+                    <Button type="button" className="w-full rounded-xl sm:w-auto">
+                      닫기
+                    </Button>
+                  </DialogClose>
                 </div>
               </>
             )}
@@ -800,10 +808,11 @@ function GrammarCard({
   onPractice: () => void;
 }) {
   return (
-    <div className="rounded-2xl border bg-card shadow-sm transition-all hover:shadow-md overflow-hidden">
+    <div className="overflow-hidden rounded-2xl border bg-card shadow-sm transition-all hover:shadow-md">
       <button
+        type="button"
         onClick={onToggle}
-        className="flex w-full items-center justify-between p-4 sm:p-5 text-left"
+        className="flex w-full touch-pan-y items-center justify-between p-4 text-left sm:p-5"
       >
         <h2 className="text-base sm:text-lg font-semibold text-foreground pr-4">{card.title}</h2>
         <ChevronDown
@@ -814,10 +823,10 @@ function GrammarCard({
         />
       </button>
       {expanded && (
-        <div className="border-t bg-muted/30 p-4 sm:p-5">
-          <div className="space-y-2">
+        <div className="touch-pan-y border-t bg-muted/30 p-4 sm:p-5">
+          <div className="space-y-2.5">
             {card.lines.map((line, i) => (
-              <p key={i} className="text-sm sm:text-base text-foreground leading-relaxed">
+              <p key={i} className="text-base leading-relaxed text-foreground">
                 {line}
               </p>
             ))}
