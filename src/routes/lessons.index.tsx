@@ -46,23 +46,23 @@ function LessonsPage() {
                   <p className="mt-0.5 text-xs sm:text-sm text-muted-foreground truncate">
                     {lesson.title}
                   </p>
-                </div>
-                <div className="flex shrink-0 flex-col sm:flex-row gap-1 sm:gap-1.5">
-                  {lesson.vocabulary.length > 0 && (
-                    <span className="rounded-full bg-warm/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-warm-foreground">
-                      단어 {lesson.vocabulary.length}
-                    </span>
-                  )}
-                  {lesson.quiz.length > 0 && (
-                    <span className="rounded-full bg-nepali/10 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-nepali">
-                      퀴즈 {lesson.quiz.length}
-                    </span>
-                  )}
-                  {!hasContent && (
-                    <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] sm:text-xs text-muted-foreground">
-                      준비 중
-                    </span>
-                  )}
+                  <div className="mt-1 flex flex-wrap gap-1">
+                    {lesson.vocabulary.length > 0 && (
+                      <span className="rounded-full bg-warm/50 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-warm-foreground">
+                        단어 {lesson.vocabulary.length}
+                      </span>
+                    )}
+                    {lesson.quiz.length > 0 && (
+                      <span className="rounded-full bg-nepali/10 px-2 py-0.5 text-[10px] sm:text-xs font-medium text-nepali">
+                        퀴즈 {lesson.quiz.length}
+                      </span>
+                    )}
+                    {!hasContent && (
+                      <span className="rounded-full bg-secondary px-2 py-0.5 text-[10px] sm:text-xs text-muted-foreground">
+                        준비 중
+                      </span>
+                    )}
+                  </div>
                 </div>
               </Link>
             );
