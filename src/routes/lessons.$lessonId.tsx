@@ -421,16 +421,16 @@ function LessonDetailPage() {
               <div className="space-y-5 sm:space-y-6">
                 {lesson.dialogues.map((dialogue, dIdx) => (
                   <div key={dIdx}>
-                    <div className="mb-2 sm:mb-3 flex items-center justify-between">
+                    <div className="mb-2 sm:mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <h2 className="text-sm sm:text-base font-semibold text-foreground">{dialogue.title}</h2>
-                      <div className="flex items-center gap-2">
+                      <div className="flex w-full flex-wrap items-center justify-end gap-1.5 sm:w-auto sm:gap-2">
                         <button
                           onClick={() => {
                             if (practiceRoleA && practiceDialogueIndex === dIdx) stopPractice();
                             else startPracticeForDialogue(dIdx);
                           }}
                           className={cn(
-                            "rounded-lg px-2.5 py-1.5 text-[10px] sm:text-xs font-medium hover:bg-accent active:scale-95 transition-all",
+                            "inline-flex shrink-0 items-center whitespace-nowrap rounded-lg px-2 py-1 text-[10px] leading-none sm:px-2.5 sm:py-1.5 sm:text-xs font-medium hover:bg-accent active:scale-95 transition-all",
                             practiceRoleA && practiceDialogueIndex === dIdx
                               ? "bg-primary text-primary-foreground"
                               : "bg-secondary text-secondary-foreground",
@@ -444,7 +444,7 @@ function LessonDetailPage() {
                             setRevealedNepaliKeys(new Set());
                           }}
                           className={cn(
-                            "rounded-lg px-2.5 py-1.5 text-[10px] sm:text-xs font-medium hover:bg-accent active:scale-95 transition-all",
+                            "inline-flex shrink-0 items-center whitespace-nowrap rounded-lg px-2 py-1 text-[10px] leading-none sm:px-2.5 sm:py-1.5 sm:text-xs font-medium hover:bg-accent active:scale-95 transition-all",
                             hideNepali ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground",
                           )}
                         >
@@ -452,7 +452,7 @@ function LessonDetailPage() {
                         </button>
                         <button
                           onClick={() => setShowRomanized(!showRomanized)}
-                          className="rounded-lg bg-secondary px-2.5 py-1.5 text-[10px] sm:text-xs font-medium text-secondary-foreground hover:bg-accent active:scale-95 transition-all"
+                          className="inline-flex shrink-0 items-center whitespace-nowrap rounded-lg bg-secondary px-2 py-1 text-[10px] leading-none font-medium text-secondary-foreground hover:bg-accent active:scale-95 transition-all sm:px-2.5 sm:py-1.5 sm:text-xs"
                         >
                           {showRomanized ? "로마자 숨기기" : "로마자 보기"}
                         </button>

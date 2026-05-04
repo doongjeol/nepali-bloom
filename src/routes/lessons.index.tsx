@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Header } from "@/components/Header";
 import { lessonsIndex } from "@/data/lessonLoader";
+import lessonsData from "@/data/lessons";
 import { cn } from "@/lib/utils";
 import { MAX_LESSON_ID } from "@/data/lessonsMeta";
 
@@ -15,6 +16,10 @@ export const Route = createFileRoute("/lessons/")({
 });
 
 function LessonsPage() {
+  const descriptionById = new Map<number, string>(
+    (lessonsData ?? []).map((l) => [Number(l.id), String(l.description ?? "")]),
+  );
+
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
       <Header />
@@ -33,6 +38,7 @@ function LessonsPage() {
               (counts.grammar ?? 0) > 0 ||
               (counts.quiz ?? 0) > 0 ||
               (counts.dialogues ?? 0) > 0;
+            const description = (lesson.description ?? descriptionById.get(lesson.id) ?? "").trim();
             return (
               <Link
                 key={lesson.id}
@@ -47,8 +53,13 @@ function LessonsPage() {
                   {lesson.id}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h2 className="text-sm sm:text-base font-semibold text-foreground truncate">{lesson.titleKo}</h2>
+                  <h2 className="text-sm sm:text-base font-semibold text-foreground break-words sm:truncate">{lesson.titleKo}</h2>
                   <p className="mt-0.5 text-xs sm:text-sm text-muted-foreground truncate">{lesson.title}</p>
+                  {description && (
+                    <p className="mt-0.5 text-xs text-muted-foreground break-words leading-snug sm:text-sm">
+                      {description}
+                    </p>
+                  )}
                   <div className="mt-1 flex flex-wrap gap-1">
                     {(counts.vocabulary ?? 0) > 0 && (
                       <span className="rounded-full border border-[#D7DEE8] bg-[#E2E8F0] px-2.5 py-0.5 text-[10px] sm:text-xs font-medium tracking-wide text-[#4A5568] transition-colors hover:bg-[#D7DEE8]">

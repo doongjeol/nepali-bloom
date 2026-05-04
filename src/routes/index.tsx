@@ -61,29 +61,38 @@ function Index() {
 
         {/* 하단 카드 그리드: 모바일에서 가로가 좁으므로 수직/수평 정렬 조합 변경 */}
         <section className="grid gap-3 sm:grid-cols-3 sm:gap-4">
-          <div className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm sm:flex-col sm:justify-center sm:text-center sm:p-6">
+          <Link
+            to="/study/vocab"
+            className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99] sm:flex-col sm:justify-center sm:text-center sm:p-6"
+          >
             <div className="text-xl sm:mb-1">📖</div>
             <div className="text-left sm:text-center">
               <h3 className="text-sm font-semibold text-foreground sm:text-base">단어장</h3>
               <p className="text-xs text-muted-foreground sm:text-sm">플립 카드 어휘 학습</p>
             </div>
-          </div>
+          </Link>
           
-          <div className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm sm:flex-col sm:justify-center sm:text-center sm:p-6">
+          <Link
+            to="/study/quiz"
+            className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99] sm:flex-col sm:justify-center sm:text-center sm:p-6"
+          >
             <div className="text-xl sm:mb-1">✏️</div>
             <div className="text-left sm:text-center">
               <h3 className="text-sm font-semibold text-foreground sm:text-base">퀴즈</h3>
               <p className="text-xs text-muted-foreground sm:text-sm">객관식 실력 테스트</p>
             </div>
-          </div>
+          </Link>
 
-          <div className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm sm:flex-col sm:justify-center sm:text-center sm:p-6">
+          <Link
+            to="/study/dialogues"
+            className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99] sm:flex-col sm:justify-center sm:text-center sm:p-6"
+          >
             <div className="text-xl sm:mb-1">💬</div>
             <div className="text-left sm:text-center">
               <h3 className="text-sm font-semibold text-foreground sm:text-base">대화문</h3>
               <p className="text-xs text-muted-foreground sm:text-sm">실생활 대화 연습</p>
             </div>
-          </div>
+          </Link>
         </section>
 
         {/* 응원 메시지 섹션 */}
