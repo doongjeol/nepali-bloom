@@ -117,9 +117,12 @@
   ],
   "examples": [],
   "grammar": [
-    "1. Chha vs Hunchha:\n   - Chha: 특정 개인이나 구체적인 사물의 현재 상태를 말할 때 씁니다 (My eyes are blue).\n   - Hunchha: 일반적인 사실이나 변하지 않는 속성을 말할 때 씁니다 (The sky is blue).",
-    "2. 신체 부위 관련 형용사:\n   - Aglo: 키가 큰 (사람/건물)\n   - Hocho: 키가 작은\n   - Paatalo: 마른/얇은\n   - MoTo: 뚱뚱한/굵은",
-    "3. 신체 부위 명칭: 복수형인 눈(aankhaa), 귀(kaan) 등을 지칭할 때는 동사 'chhan'을 사용합니다."
+    {
+      "title": "3. 신체 부위 명칭",
+      "details": [
+        "복수형인 눈(aankhaa), 귀(kaan) 등을 지칭할 때는 동사 'chhan'을 사용합니다."
+      ]
+    }
   ],
   "quiz": [
     {

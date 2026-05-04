@@ -92,10 +92,15 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 요일 명칭: 모든 요일은 'baar'로 끝납니다. (예: Aitabaar, Sombaar 등)",
-    "2. 날짜 표현 (Gate vs Taarikh):\n   - Gate: 네팔 공식 달력(Bikram Sambat)의 날짜를 말할 때 씁니다.\n   - Taarikh: 서양 달력(Gregorian calendar)의 날짜를 말할 때 씁니다.",
-    "3. Be 동사의 과거형 (Status/Location):\n   - ma thiẽ (나는 ~였다/있었다)\n   - u thiyo (그는 ~였다/있었다)\n   - tapaai hunuhunthyo (당신은 ~였습니다/계셨습니다)\n   - 부정형: thiyena / hunuhunnathyo",
-    "4. 'Thiyo' vs 'Bhaeyo':\n   - Thiyo: 과거의 지속적인 상태나 위치 (He was a student).\n   - Bhaeyo: 과거에 일어난 사건이나 변화의 결과 (He became a student / It happened)."
+    {
+      "title": "1. 요일 명칭",
+      "details": [
+        "모든 요일은 'baar'로 끝납니다. (예: Aitabaar, Sombaar 등)",
+        "2. 날짜 표현 (Gate vs Taarikh):\n   - Gate: 네팔 공식 달력(Bikram Sambat)의 날짜를 말할 때 씁니다.\n   - Taarikh: 서양 달력(Gregorian calendar)의 날짜를 말할 때 씁니다.",
+        "3. Be 동사의 과거형 (Status/Location):\n   - ma thiẽ (나는 ~였다/있었다)\n   - u thiyo (그는 ~였다/있었다)\n   - tapaai hunuhunthyo (당신은 ~였습니다/계셨습니다)\n   - 부정형: thiyena / hunuhunnathyo",
+        "4. 'Thiyo' vs 'Bhaeyo':\n   - Thiyo: 과거의 지속적인 상태나 위치 (He was a student).\n   - Bhaeyo: 과거에 일어난 사건이나 변화의 결과 (He became a student / It happened)."
+      ]
+    }
   ],
   "quiz": [
     {

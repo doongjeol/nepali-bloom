@@ -82,9 +82,24 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 나이 묻기: 'kati barsha hunubhayo?' (몇 살이 되셨습니까?)와 같이 과거형 'hunubhayo'를 사용합니다.",
-    "2. 현재 진행형 (-dai chhu): 'sikdaichhu' (배우고 있다)처럼 현재 진행 중인 동작을 나타냅니다.",
-    "3. 직업 및 소속: 'pis kor swayam sewak' (평화봉사단 자원봉사자)와 같이 소속을 나타냅니다."
+    {
+      "title": "1. 나이 묻기",
+      "details": [
+        "'kati barsha hunubhayo?' (몇 살이 되셨습니까?)와 같이 과거형 'hunubhayo'를 사용합니다."
+      ]
+    },
+    {
+      "title": "2. 현재 진행형 (-dai chhu)",
+      "details": [
+        "'sikdaichhu' (배우고 있다)처럼 현재 진행 중인 동작을 나타냅니다."
+      ]
+    },
+    {
+      "title": "3. 직업 및 소속",
+      "details": [
+        "'pis kor swayam sewak' (평화봉사단 자원봉사자)와 같이 소속을 나타냅니다."
+      ]
+    }
   ],
   "quiz": [
     {

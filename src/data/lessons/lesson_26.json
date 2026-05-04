@@ -52,10 +52,30 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 과거 습관/지속 시제 (-thẽ / -thyo): 과거에 반복적으로 했던 행동이나 지속적인 상태를 나타낼 때 사용합니다 (~하곤 했다 / ~했었다). (예: ma paDh-thẽ - 나는 공부하곤 했다, u paDh-thyo - 그는 공부하곤 했다).",
-    "2. 부정형 (-dinathẽ): 과거에 하지 않았던 습관을 나타냅니다. (예: ma paDh-dinathẽ - 나는 공부하지 않았었다).",
-    "3. Hudaa (When being): '~일 때', '~하는 동안'이라는 상태를 나타냅니다. (예: amerikaamaa hudaa - 미국에 있을 때).",
-    "4. Chaahiyo (Needed): 'chaahinchha'가 일반적인 필요라면, 'chaahiyo'는 구체적인 현재의 요구(\"~가 필요하게 되었다/주세요\")를 나타낼 때 자주 쓰입니다."
+    {
+      "title": "1. 과거 습관/지속 시제 (-thẽ / -thyo)",
+      "details": [
+        "과거에 반복적으로 했던 행동이나 지속적인 상태를 나타낼 때 사용합니다 (~하곤 했다 / ~했었다). (예: ma paDh-thẽ - 나는 공부하곤 했다, u paDh-thyo - 그는 공부하곤 했다)."
+      ]
+    },
+    {
+      "title": "2. 부정형 (-dinathẽ)",
+      "details": [
+        "과거에 하지 않았던 습관을 나타냅니다. (예: ma paDh-dinathẽ - 나는 공부하지 않았었다)."
+      ]
+    },
+    {
+      "title": "3. Hudaa (When being)",
+      "details": [
+        "'~일 때', '~하는 동안'이라는 상태를 나타냅니다. (예: amerikaamaa hudaa - 미국에 있을 때)."
+      ]
+    },
+    {
+      "title": "4. Chaahiyo (Needed)",
+      "details": [
+        "'chaahinchha'가 일반적인 필요라면, 'chaahiyo'는 구체적인 현재의 요구(\"~가 필요하게 되었다/주세요\")를 나타낼 때 자주 쓰입니다."
+      ]
+    }
   ],
   "quiz": [
     {

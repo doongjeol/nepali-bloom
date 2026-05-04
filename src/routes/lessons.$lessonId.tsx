@@ -676,24 +676,6 @@ function DialogueLine({
             )}
           >
             <div className={cn("flex items-start gap-2", line.speaker === "B" && "flex-row-reverse")}>
-              {/* 문장 텍스트 */}
-              <div className="min-w-0 flex-1">
-                <p
-                  className="text-sm font-medium text-[#333D29] transition-all sm:text-base"
-                  style={{ fontFamily: "var(--font-nepali)" }}
-                >
-                  {line.nepali}
-                </p>
-                {showRomanized && (
-                  <p className="mt-1 text-sm italic text-muted-foreground sm:text-base">
-                    {line.romanized}
-                  </p>
-                )}
-                <p className="mt-1.5 text-sm text-foreground sm:mt-2 sm:text-base">
-                  {line.korean}
-                </p>
-              </div>
-
               {/* 버튼 컨트롤 영역 */}
               <div className="flex shrink-0 flex-col items-center justify-start gap-1 sm:gap-1.5">
                 <button
@@ -710,6 +692,24 @@ function DialogueLine({
                 >
                   {isPlaying ? <Pause className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
                 </button>
+              </div>
+
+              {/* 문장 텍스트 */}
+              <div className="min-w-0 flex-1">
+                <p
+                  className="text-sm font-medium text-[#333D29] transition-all sm:text-base"
+                  style={{ fontFamily: "var(--font-nepali)" }}
+                >
+                  {line.nepali}
+                </p>
+                {showRomanized && (
+                  <p className="mt-1 text-sm italic text-muted-foreground sm:text-base">
+                    {line.romanized}
+                  </p>
+                )}
+                <p className="mt-1.5 text-sm text-foreground sm:mt-2 sm:text-base">
+                  {line.korean}
+                </p>
               </div>
             </div>
           </div>
@@ -731,6 +731,7 @@ function EmptyState({ message }: { message: string }) {
 type GrammarCardData = {
   title: string;
   lines: string[];
+  examples?: string[];
 };
 
 function hasHoChhaHunchhaText(text: string) {
@@ -751,7 +752,10 @@ function inferGrammarCategory(card: GrammarCardData) {
 
 function toPracticeCard(card: GrammarCardData): GrammarPracticeCard {
   const details = card.lines.map((l) => l.trim()).filter(Boolean);
-  const examples = details.filter((l) => /예:|->|\([^)]+\)/.test(l) && /[a-zA-Z]/.test(l));
+  const examples =
+    (card.examples ?? []).map((l) => l.trim()).filter(Boolean).length > 0
+      ? (card.examples ?? []).map((l) => l.trim()).filter(Boolean)
+      : details.filter((l) => /예:|->|\([^)]+\)/.test(l) && /[a-zA-Z]/.test(l));
   const hasComparisonTable = hasHoChhaHunchhaText(` ${details.join(" ").toLowerCase()} `);
   return {
     title: card.title.replace(/^\d+\.\s*/, "").trim(),
@@ -770,6 +774,7 @@ function parseGrammarCards(grammar: any[]): GrammarCardData[] {
     return grammar.map((g) => ({
       title: g.title,
       lines: g.details || [],
+      examples: g.examples || [],
     }));
   }
 

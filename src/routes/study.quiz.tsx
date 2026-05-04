@@ -4,15 +4,25 @@ import { Header } from "@/components/Header";
 import { LoadingSpinner } from "@/components/LoadingSpinner";
 import { RangeSelector } from "@/components/RangeSelector";
 import { useLessonRangeData } from "@/hooks/useLessonRangeData";
+import { useAudioPlayer } from "@/hooks/useAudioPlayer";
+import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 import { cn } from "@/lib/utils";
 import { MAX_LESSON_ID, MIN_LESSON_ID } from "@/data/lessonsMeta";
 
 const MIN = MIN_LESSON_ID;
 const MAX = MAX_LESSON_ID;
 
+type QuizOption = {
+  id: string;
+  nepali: string;
+  romanized: string;
+  audioItemId: string;
+  audioSrc: string;
+};
+
 type Question =
-  | { kind: "vocab"; prompt: string; answer: string; options: string[] }
-  | { kind: "sentence"; prompt: string; answer: string; options: string[] };
+  | { kind: "vocab"; instruction: string; korean: string; answerId: string; options: QuizOption[] }
+  | { kind: "sentence"; instruction: string; korean: string; answerId: string; options: QuizOption[] };
 
 function pickDistinct<T>(items: T[], count: number, key: (t: T) => string): T[] {
   const seen = new Set<string>();
@@ -54,19 +64,38 @@ function StudyQuizPage() {
   const start = search.start;
   const end = search.end;
   const range = typeof start === "number" && typeof end === "number" ? { start, end } : null;
+  const audioPlayer = useAudioPlayer();
 
   const { isLoading, error, data } = useLessonRangeData(range, { minLessonId: MIN, maxLessonId: MAX });
   const [question, setQuestion] = useState<Question | null>(null);
-  const [selected, setSelected] = useState<string | null>(null);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
   const [revealed, setRevealed] = useState(false);
   const [score, setScore] = useState({ correct: 0, total: 0 });
 
   const pool = useMemo(() => {
-    const vocab = data?.vocabulary ?? [];
-    const sentences =
-      data?.dialogues.flatMap((d) => d.lines.map((l) => ({ nepali: l.nepali, korean: l.korean }))) ?? [];
+    const lessons = data?.lessons ?? [];
+    const vocab = lessons.flatMap((lesson) =>
+      (lesson.vocabulary ?? []).map((v) => ({
+        lessonId: lesson.id,
+        nepali: v.nepali,
+        romanized: v.romanized,
+        korean: v.korean,
+      })),
+    );
+    const sentences = lessons.flatMap((lesson) =>
+      (lesson.dialogues ?? []).flatMap((d, dialogueIndex) =>
+        (d.lines ?? []).map((l, lineIndex) => ({
+          lessonId: lesson.id,
+          dialogueIndex,
+          lineIndex,
+          nepali: l.nepali,
+          romanized: l.romanized,
+          korean: l.korean,
+        })),
+      ),
+    );
     return { vocab, sentences };
-  }, [data?.dialogues, data?.vocabulary]);
+  }, [data?.lessons]);
 
   // Debug logs for range selection issues
   // eslint-disable-next-line no-console
@@ -86,40 +115,73 @@ function StudyQuizPage() {
 
     if (useSentence) {
       const base = pool.sentences[Math.floor(Math.random() * pool.sentences.length)];
-      const distractors = pickDistinct(shuffle(pool.sentences), 3, (x) => x.nepali)
-        .map((x) => x.nepali)
-        .filter((x) => x !== base.nepali);
-      const options = shuffle([base.nepali, ...distractors].slice(0, 4));
-      return { kind: "sentence", prompt: `다음 한국어를 네팔어로 고르세요:\n${base.korean}`, answer: base.nepali, options };
+      const baseId = `dial:${base.lessonId}:${base.dialogueIndex}:${base.lineIndex}`;
+      const distractors = pickDistinct(shuffle(pool.sentences), 3, (x) => `dial:${x.lessonId}:${x.dialogueIndex}:${x.lineIndex}`)
+        .filter((x) => `dial:${x.lessonId}:${x.dialogueIndex}:${x.lineIndex}` !== baseId);
+      const options = shuffle([base, ...distractors].slice(0, 4)).map((s) => {
+        const id = `dial:${s.lessonId}:${s.dialogueIndex}:${s.lineIndex}`;
+        return {
+          id,
+          nepali: s.nepali,
+          romanized: s.romanized,
+          audioItemId: `quiz-${id}`,
+          audioSrc: getDialogueAudioPath(s.lessonId, s.dialogueIndex, s.lineIndex),
+        } satisfies QuizOption;
+      });
+      return {
+        kind: "sentence",
+        instruction: "다음 한국어를 네팔어로 고르세요",
+        korean: base.korean,
+        answerId: baseId,
+        options,
+      };
     }
 
     const base = pool.vocab[Math.floor(Math.random() * pool.vocab.length)];
-    const distractors = pickDistinct(shuffle(pool.vocab), 3, (x) => x.nepali)
-      .map((x) => x.nepali)
-      .filter((x) => x !== base.nepali);
-    const options = shuffle([base.nepali, ...distractors].slice(0, 4));
-    return { kind: "vocab", prompt: `다음 뜻에 맞는 네팔어를 고르세요:\n${base.korean}`, answer: base.nepali, options };
+    const baseId = `vocab:${base.lessonId}:${base.romanized}`;
+    const distractors = pickDistinct(shuffle(pool.vocab), 3, (x) => `vocab:${x.lessonId}:${x.romanized}`)
+      .filter((x) => `vocab:${x.lessonId}:${x.romanized}` !== baseId);
+    const options = shuffle([base, ...distractors].slice(0, 4)).map((v) => {
+      const id = `vocab:${v.lessonId}:${v.romanized}`;
+      return {
+        id,
+        nepali: v.nepali,
+        romanized: v.romanized,
+        audioItemId: `quiz-${id}`,
+        audioSrc: getVocabAudioPath(v.lessonId, v.romanized),
+      } satisfies QuizOption;
+    });
+    return {
+      kind: "vocab",
+      instruction: "다음 뜻에 맞는 네팔어를 고르세요",
+      korean: base.korean,
+      answerId: baseId,
+      options,
+    };
   };
 
   useEffect(() => {
     if (!data) return;
     setQuestion(makeQuestion());
-    setSelected(null);
+    setSelectedId(null);
     setRevealed(false);
     setScore({ correct: 0, total: 0 });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data?.range.start, data?.range.end]);
 
-  const submit = (value: string) => {
+  const submit = (valueId: string) => {
     if (!question || revealed) return;
-    setSelected(value);
+    setSelectedId(valueId);
     setRevealed(true);
-    setScore((s) => ({ total: s.total + 1, correct: s.correct + (value === question.answer ? 1 : 0) }));
+    setScore((s) => ({
+      total: s.total + 1,
+      correct: s.correct + (valueId === question.answerId ? 1 : 0),
+    }));
   };
 
   const next = () => {
     setQuestion(makeQuestion());
-    setSelected(null);
+    setSelectedId(null);
     setRevealed(false);
   };
 
@@ -161,16 +223,33 @@ function StudyQuizPage() {
 
         {data && question && (
           <div className="rounded-2xl border bg-card p-5 shadow-sm">
-            <p className="whitespace-pre-wrap text-sm font-semibold text-foreground">{question.prompt}</p>
+            <div className="rounded-2xl border border-[#E7D7CF] bg-[#FDF2F0] p-4 sm:p-5">
+              <div className="flex items-start gap-3">
+                <div className="shrink-0 rounded-xl bg-white/60 px-3 py-2 text-[#7A4F3B] shadow-sm">
+                  <span className="text-lg font-extrabold">Q.</span>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <p className="text-xs font-semibold text-[#7A4F3B]/80">{question.instruction}</p>
+                  <div className="mt-3 border-l-4 border-[#B28471] pl-4">
+                    <p className="text-xl font-extrabold leading-snug text-[#3A2B22] sm:text-2xl">
+                      {question.korean}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="mt-4 grid gap-2">
               {question.options.map((opt) => {
-                const isAnswer = opt === question.answer;
-                const isSelected = selected === opt;
+                const isAnswer = opt.id === question.answerId;
+                const isSelected = selectedId === opt.id;
                 return (
                   <button
-                    key={opt}
+                    key={opt.id}
                     type="button"
-                    onClick={() => submit(opt)}
+                    onClick={() => {
+                      void audioPlayer.play(opt.audioItemId, opt.audioSrc);
+                      if (!revealed) submit(opt.id);
+                    }}
                     className={cn(
                       "rounded-xl border px-4 py-3 text-left text-sm font-medium transition-all active:scale-[0.99]",
                       !revealed && "hover:bg-accent",
@@ -178,7 +257,12 @@ function StudyQuizPage() {
                       revealed && !isAnswer && isSelected && "border-2 border-destructive bg-destructive/10",
                     )}
                   >
-                    {opt}
+                    <div className="min-w-0">
+                      <p className="text-base font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
+                        {opt.nepali}
+                      </p>
+                      <p className="mt-0.5 text-sm italic text-muted-foreground">{opt.romanized}</p>
+                    </div>
                   </button>
                 );
               })}
@@ -196,7 +280,7 @@ function StudyQuizPage() {
                 type="button"
                 onClick={() => {
                   setQuestion(makeQuestion());
-                  setSelected(null);
+                  setSelectedId(null);
                   setRevealed(false);
                   setScore({ correct: 0, total: 0 });
                 }}

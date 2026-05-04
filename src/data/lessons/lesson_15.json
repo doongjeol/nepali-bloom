@@ -102,9 +102,24 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 소유의 두 가지 표현: Saṅga (현재 몸에 지니고 있거나 일시적 휴대), -ko (가족 관계, 신체 부위 등 영구적 소유).",
-    "2. Saṅga의 사용: 인칭 대명사 'ma'와 쓰일 때는 'ma saṅga' 또는 'mero saṅga' 둘 다 가능하지만 'ma saṅga'가 더 일반적입니다.",
-    "3. Chha vs Chhan: 소유하고 있는 대상이 단수이면 'chha', 복수이면 'chhan'을 사용합니다."
+    {
+      "title": "1. 소유의 두 가지 표현",
+      "details": [
+        "Saṅga (현재 몸에 지니고 있거나 일시적 휴대), -ko (가족 관계, 신체 부위 등 영구적 소유)."
+      ]
+    },
+    {
+      "title": "2. Saṅga의 사용",
+      "details": [
+        "인칭 대명사 'ma'와 쓰일 때는 'ma saṅga' 또는 'mero saṅga' 둘 다 가능하지만 'ma saṅga'가 더 일반적입니다."
+      ]
+    },
+    {
+      "title": "3. Chha vs Chhan",
+      "details": [
+        "소유하고 있는 대상이 단수이면 'chha', 복수이면 'chhan'을 사용합니다."
+      ]
+    }
   ],
   "quiz": [
     {

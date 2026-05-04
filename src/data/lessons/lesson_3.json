@@ -162,14 +162,54 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 분류사 (Classifiers): 셀 सु 있는 명사 뒤에 붙음. (waTaa: 사물, janaa: 사람)",
-    "2. nira: ~근처, ~옆 (nera라고도 표기함).",
-    "3. hun / chhan: 복수형 동사. (hun: ho의 복수, chhan: chha의 복수)",
-    "4. 후치사 (Postpositions): 영어의 전치사와 달리 명사 뒤에 위치함 (예: nepaalmaa = 네팔에).",
-    "5. aaphno: 소유를 강조할 때 사용 (나 자신의, 그 자신의).",
-    "6. chaahi: 식별 상황에서 '것' 또는 '것들'을 의미 (예: yochaahi = 이 것).",
-    "7. 존칭에 따른 be동사 변형: hunuhunchha (존경을 표하는 대상), chha (친숙한 사이).",
-    "8. 'You'의 네 가지 형태: ta (가장 낮음), timi (친숙), tapaaï (일반적 존칭), hajur (가장 높음)."
+    {
+      "title": "1. 분류사 (Classifiers)",
+      "details": [
+        "셀 सु 있는 명사 뒤에 붙음. (waTaa: 사물, janaa: 사람)"
+      ]
+    },
+    {
+      "title": "2. nira",
+      "details": [
+        "~근처, ~옆 (nera라고도 표기함)."
+      ]
+    },
+    {
+      "title": "3. hun / chhan",
+      "details": [
+        "복수형 동사. (hun: ho의 복수, chhan: chha의 복수)"
+      ]
+    },
+    {
+      "title": "4. 후치사 (Postpositions)",
+      "details": [
+        "영어의 전치사와 달리 명사 뒤에 위치함 (예: nepaalmaa = 네팔에)."
+      ]
+    },
+    {
+      "title": "5. aaphno",
+      "details": [
+        "소유를 강조할 때 사용 (나 자신의, 그 자신의)."
+      ]
+    },
+    {
+      "title": "6. chaahi",
+      "details": [
+        "식별 상황에서 '것' 또는 '것들'을 의미 (예: yochaahi = 이 것)."
+      ]
+    },
+    {
+      "title": "7. 존칭에 따른 be동사 변형",
+      "details": [
+        "hunuhunchha (존경을 표하는 대상), chha (친숙한 사이)."
+      ]
+    },
+    {
+      "title": "8. 'You'의 네 가지 형태",
+      "details": [
+        "ta (가장 낮음), timi (친숙), tapaaï (일반적 존칭), hajur (가장 높음)."
+      ]
+    }
   ],
   "quiz": [
     {

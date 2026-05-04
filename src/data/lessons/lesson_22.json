@@ -77,10 +77,30 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 분사 어미 '-era' (Absolutive Participle): 한 동작이 끝난 후 바로 다음 동작이 이어질 때 사용합니다 (~하고 나서). 동사 어간에 '-era'를 붙입니다. (예: uThnu -> uThera, jaanu -> gaera). 이유를 나타낼 때도 쓰입니다 (~해서).",
-    "2. 후치사 '-epachhi' (After): \"~한 후에\"라는 뜻으로, 동작의 완료를 강조합니다. 동사 어간에 '-e'를 붙이고 'pachhi'를 더합니다. (예: khaanu -> khaaepachhi).",
-    "3. 'Tyaspachhi' vs '-epachhi': Tyaspachhi는 문장 사이를 잇는 부사(그 후에), -epachhi는 특정 동사 뒤에 붙는 어미(~한 후에)입니다.",
-    "4. 불규칙 변화: jaanu (가다) -> gaera (가서) / gaepachhi (간 후에), khaanu (먹다) -> khaaera (먹고) / khaaepachhi (먹은 후에)."
+    {
+      "title": "1. 분사 어미 '-era' (Absolutive Participle)",
+      "details": [
+        "한 동작이 끝난 후 바로 다음 동작이 이어질 때 사용합니다 (~하고 나서). 동사 어간에 '-era'를 붙입니다. (예: uThnu -> uThera, jaanu -> gaera). 이유를 나타낼 때도 쓰입니다 (~해서)."
+      ]
+    },
+    {
+      "title": "2. 후치사 '-epachhi' (After)",
+      "details": [
+        "\"~한 후에\"라는 뜻으로, 동작의 완료를 강조합니다. 동사 어간에 '-e'를 붙이고 'pachhi'를 더합니다. (예: khaanu -> khaaepachhi)."
+      ]
+    },
+    {
+      "title": "3. 'Tyaspachhi' vs '-epachhi'",
+      "details": [
+        "Tyaspachhi는 문장 사이를 잇는 부사(그 후에), -epachhi는 특정 동사 뒤에 붙는 어미(~한 후에)입니다."
+      ]
+    },
+    {
+      "title": "4. 불규칙 변화",
+      "details": [
+        "jaanu (가다) -> gaera (가서) / gaepachhi (간 후에), khaanu (먹다) -> khaaera (먹고) / khaaepachhi (먹은 후에)."
+      ]
+    }
   ],
   "quiz": [
     {

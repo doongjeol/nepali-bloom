@@ -122,11 +122,36 @@
   ],
   "examples": [],
   "grammar": [
-    "1. -ko / -eko form: 상태나 완료된 동작을 나타낼 때 형용사처럼 쓰입니다. (bihaa bhaeko: 결혼한 상태, janme ko: 태어난, bane ko: 만들어진)",
-    "2. Janaa: 사람을 셀 때 쓰는 분류사입니다. (예: paach janaa - 다섯 명)",
-    "3. Daai-bhaai / Didi-bahini: Daai-bhaai는 남자 형제 전체를, Didi-bahini는 여자 형제 전체를 일컫는 말입니다.",
-    "4. Kaanchho / Kaanchhi: 형제나 자매 중 가장 어린 '막내'를 뜻합니다.",
-    "5. Bidyaarthi / Bidyaarthini: 남학생은 'Bidyaarthi', 여학생은 'Bidyaarthini'로 구분하기도 합니다."
+    {
+      "title": "1. -ko / -eko form",
+      "details": [
+        "상태나 완료된 동작을 나타낼 때 형용사처럼 쓰입니다. (bihaa bhaeko: 결혼한 상태, janme ko: 태어난, bane ko: 만들어진)"
+      ]
+    },
+    {
+      "title": "2. Janaa",
+      "details": [
+        "사람을 셀 때 쓰는 분류사입니다. (예: paach janaa - 다섯 명)"
+      ]
+    },
+    {
+      "title": "3. Daai-bhaai / Didi-bahini",
+      "details": [
+        "Daai-bhaai는 남자 형제 전체를, Didi-bahini는 여자 형제 전체를 일컫는 말입니다."
+      ]
+    },
+    {
+      "title": "4. Kaanchho / Kaanchhi",
+      "details": [
+        "형제나 자매 중 가장 어린 '막내'를 뜻합니다."
+      ]
+    },
+    {
+      "title": "5. Bidyaarthi / Bidyaarthini",
+      "details": [
+        "남학생은 'Bidyaarthi', 여학생은 'Bidyaarthini'로 구분하기도 합니다."
+      ]
+    }
   ],
   "quiz": [
     {

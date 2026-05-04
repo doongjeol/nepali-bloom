@@ -77,10 +77,18 @@
   ],
   "examples": [],
   "grammar": [
-    "1. Bhandaa (Than): 비교의 기준이 되는 명사 뒤에 붙어 '~보다'라는 뜻을 나타냅니다.\n   - [A] [B] bhandaa [형용사] chha: A는 B보다 ~하다.",
-    "2. Sabbhandaa (Most / Best): '모든 것보다'라는 뜻으로 최상급을 나타냅니다.\n   - sabbhandaa raamro (가장 좋은/아름다운), sabbhandaa Thulo (가장 큰).",
-    "3. 연령 비교에서의 Thulo/Saano: 나이가 많을 때는 'Thulo'(크다), 나이가 적을 때는 'Saano'(작다)를 사용합니다.",
-    "4. Himaal vs PahaaD: Himaal은 눈 덮인 고산(히말라야)을, PahaaD는 눈이 쌓이지 않는 일반적인 산이나 구릉 지대를 뜻합니다."
+    {
+      "title": "3. 연령 비교에서의 Thulo/Saano",
+      "details": [
+        "나이가 많을 때는 'Thulo'(크다), 나이가 적을 때는 'Saano'(작다)를 사용합니다."
+      ]
+    },
+    {
+      "title": "4. Himaal vs PahaaD",
+      "details": [
+        "Himaal은 눈 덮인 고산(히말라야)을, PahaaD는 눈이 쌓이지 않는 일반적인 산이나 구릉 지대를 뜻합니다."
+      ]
+    }
   ],
   "quiz": [
     {

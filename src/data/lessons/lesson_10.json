@@ -97,11 +97,26 @@
   ],
   "examples": [],
   "grammar": [
-    "1. GhoDe jaatraa: 카트만두에서 매년 열리는 연례 경마 축제입니다.",
-    "2. 'laagyo'의 관용적 사용: 감정, 감각, 신체적 상태 또는 효과를 묘사할 때 사용합니다.",
-    "3. 주격 조사 '-laai': 'laagyo'와 함께 쓰이는 주어(사람) 뒤에는 항상 '-laai'를 붙입니다.\n   - malaai bhok laagyo (나는 배가 고프다)\n   - uslaai tirkhaa laagyo (그는 목이 마르다)\n   - haamilai jaaDo laagyo (우리는 춥다)",
-    "4. 'laagyo'의 부정형: 'laageko chhaina' 형식을 사용합니다.\n   - 예: malaai tirkhaa laageko chhaina (나는 목마르지 않다).",
-    "5. 동사의 성별 일치: 구어체에서 항상 흔하지는 않으나, 네팔어 동사는 성별에 따라 변화할 수 있습니다. (예: raam aayo / sitaa aaina)"
+    {
+      "title": "1. GhoDe jaatraa",
+      "details": [
+        "카트만두에서 매년 열리는 연례 경마 축제입니다."
+      ]
+    },
+    {
+      "title": "2. 'laagyo'의 관용적 사용",
+      "details": [
+        "감정, 감각, 신체적 상태 또는 효과를 묘사할 때 사용합니다.",
+        "3. 주격 조사 '-laai': 'laagyo'와 함께 쓰이는 주어(사람) 뒤에는 항상 '-laai'를 붙입니다.\n   - malaai bhok laagyo (나는 배가 고프다)\n   - uslaai tirkhaa laagyo (그는 목이 마르다)\n   - haamilai jaaDo laagyo (우리는 춥다)",
+        "4. 'laagyo'의 부정형: 'laageko chhaina' 형식을 사용합니다.\n   - 예: malaai tirkhaa laageko chhaina (나는 목마르지 않다)."
+      ]
+    },
+    {
+      "title": "5. 동사의 성별 일치",
+      "details": [
+        "구어체에서 항상 흔하지는 않으나, 네팔어 동사는 성별에 따라 변화할 수 있습니다. (예: raam aayo / sitaa aaina)"
+      ]
+    }
   ],
   "quiz": [
     {

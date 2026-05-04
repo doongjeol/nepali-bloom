@@ -82,10 +82,30 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 현재 완료 시제 (-eko chhu): 과거에 일어난 일이 현재까지 영향을 미치거나, 과거의 경험을 나타낼 때 사용합니다 (~한 적이 있다, ~했다). [동사 어간 + eko] + [Be 동사 현재형] 형식. (ma gaeko chhu - 나는 가 본 적 있다).",
-    "2. 부정형 (-eko chhaina): \"~한 적이 없다\"는 뜻입니다. (ma gaeko chhaina - 나는 가 본 적이 없다).",
-    "3. Kahile (Ever) / Kahile pani (Never): 의문문에서 'kahile'는 '언젠가/한 번이라도'라는 뜻, 부정문에서 'kahile pani'는 '결코/한 번도'라는 강한 부정을 나타냅니다.",
-    "4. 단순 과거 vs 현재 완료: 단순 과거(gaẽ)는 과거의 특정 시점 동작 자체에 집중, 현재 완료(gaeko chhu)는 결과나 경험에 집중합니다."
+    {
+      "title": "1. 현재 완료 시제 (-eko chhu)",
+      "details": [
+        "과거에 일어난 일이 현재까지 영향을 미치거나, 과거의 경험을 나타낼 때 사용합니다 (~한 적이 있다, ~했다). [동사 어간 + eko] + [Be 동사 현재형] 형식. (ma gaeko chhu - 나는 가 본 적 있다)."
+      ]
+    },
+    {
+      "title": "2. 부정형 (-eko chhaina)",
+      "details": [
+        "\"~한 적이 없다\"는 뜻입니다. (ma gaeko chhaina - 나는 가 본 적이 없다)."
+      ]
+    },
+    {
+      "title": "3. Kahile (Ever) / Kahile pani (Never)",
+      "details": [
+        "의문문에서 'kahile'는 '언젠가/한 번이라도'라는 뜻, 부정문에서 'kahile pani'는 '결코/한 번도'라는 강한 부정을 나타냅니다."
+      ]
+    },
+    {
+      "title": "4. 단순 과거 vs 현재 완료",
+      "details": [
+        "단순 과거(gaẽ)는 과거의 특정 시점 동작 자체에 집중, 현재 완료(gaeko chhu)는 결과나 경험에 집중합니다."
+      ]
+    }
   ],
   "quiz": [
     {

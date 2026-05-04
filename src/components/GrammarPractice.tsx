@@ -3,18 +3,8 @@ import { useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-} from "@/components/ui/alert-dialog";
+import { GrammarExercise } from "@/components/GrammarExercise";
 
 export type GrammarPracticeCard = {
   title: string;
@@ -22,12 +12,6 @@ export type GrammarPracticeCard = {
   details: string[];
   examples: string[];
   hasComparisonTable: boolean;
-};
-
-type FormulaToken = {
-  label: string;
-  tooltip: string;
-  emphasis?: boolean;
 };
 
 type PracticeKind = "possessive-ko" | "ergative-le" | "copula-contrast" | "generic";
@@ -93,51 +77,6 @@ function inferPracticeKind(card: GrammarPracticeCard): PracticeKind {
     return "copula-contrast";
   }
   return "generic";
-}
-
-function buildFormula(card: GrammarPracticeCard, kind: PracticeKind): FormulaToken[] {
-  if (kind === "possessive-ko") {
-    return [
-      { label: "[명사/대명사]", tooltip: "소유를 나타내고 싶은 대상(‘~의’) 앞부분" },
-      { label: "+", tooltip: "결합" },
-      { label: "[-ko]", tooltip: "소유(~의)를 나타내는 접미사", emphasis: true },
-      { label: "->", tooltip: "결과" },
-      { label: "[소유격 형태]", tooltip: "예: ma -> mero, tapaaï -> tapaaïko" },
-    ];
-  }
-
-  if (kind === "ergative-le") {
-    return [
-      { label: "[주어]", tooltip: "행동을 한 주체(과거 타동사에서 -le가 붙을 수 있음)" },
-      { label: "+", tooltip: "결합" },
-      { label: "[-le]", tooltip: "과거 시제의 타동사에서 주어를 표시하는 마커", emphasis: true },
-      { label: "+", tooltip: "결합" },
-      { label: "[목적어]", tooltip: "행동의 대상" },
-      { label: "+", tooltip: "결합" },
-      { label: "[타동사(과거)]", tooltip: "목적어를 필요로 하는 동사의 과거 표현" },
-    ];
-  }
-
-  if (kind === "copula-contrast") {
-    return [
-      { label: "[명사/대명사]", tooltip: "문장의 주어(대상)" },
-      { label: "+", tooltip: "결합" },
-      { label: "[ho]", tooltip: "정의/식별", emphasis: true },
-      { label: "|", tooltip: "상황에 따라 선택" },
-      { label: "[chha]", tooltip: "위치/상태", emphasis: true },
-      { label: "|", tooltip: "상황에 따라 선택" },
-      { label: "[hunchha]", tooltip: "일반적 진리", emphasis: true },
-    ];
-  }
-
-  // Generic fallback: show a compact “rule skeleton” so every card has something visual.
-  return [
-    { label: `[${card.category}]`, tooltip: "이 문법 항목의 분류" },
-    { label: "+", tooltip: "결합" },
-    { label: "[핵심 규칙]", tooltip: "설명에 있는 핵심 원리를 확인하세요", emphasis: true },
-    { label: "->", tooltip: "적용" },
-    { label: "[예문/의미]", tooltip: "규칙이 문장에 어떻게 적용되는지" },
-  ];
 }
 
 function PrincipleKorean({ kind }: { kind: PracticeKind }) {
@@ -618,51 +557,31 @@ function ErgativeDrill({ card }: { card: GrammarPracticeCard }) {
 }
 
 function CopulaContrastDrill({ card }: { card: GrammarPracticeCard }) {
-  const [scenarioIndex, setScenarioIndex] = useState(0);
-  const [picked, setPicked] = useState<null | { value: string; correct: boolean }>(null);
-  const [wrongCount, setWrongCount] = useState(0);
-  const [showPrinciple, setShowPrinciple] = useState(false);
-
-  const scenario = copulaScenarios[scenarioIndex]!;
-  const excerpt = useNoteExcerpt(card, ["ho", "chha", "hunchha", "정의", "위치", "진리"]);
-  const revealAnswer = wrongCount >= 3;
-
-  const next = () => {
-    setPicked(null);
-    setWrongCount(0);
-    setShowPrinciple(false);
-    setScenarioIndex((i) => (i + 1) % copulaScenarios.length);
-  };
-
-  const onPick = (value: string) => {
-    if (picked) return;
-    const correct = value === scenario.answer;
-    setPicked({ value, correct });
-    if (!correct) setWrongCount((c) => c + 1);
-  };
+  const [activeTab, setActiveTab] = useState<"ho" | "chha" | "hunchha">("ho");
+  const activeItem = copulaScenarios.find((s) => s.answer === activeTab)!;
 
   return (
     <div className="space-y-3">
       <div className="rounded-xl border border-[#DCCFC4] bg-[#F7EFE5]/60 p-3">
-        <p className="text-xs font-medium text-[#6B5D4F]">상황 대조</p>
-        <p className="mt-1 text-sm text-[#333D29]">{scenario.context}</p>
+        <p className="text-xs font-medium text-[#6B5D4F]">세 가지 동사 대조</p>
+        <p className="mt-1 text-sm text-[#333D29]">
+          아래 항목을 눌러 각각의 쓰임새와 차이점을 확인해보세요.
+        </p>
       </div>
 
       <div className="grid grid-cols-3 gap-2">
-        {scenario.options.map((opt) => {
-          const selected = picked?.value === opt;
-          const isAnswer = opt === scenario.answer;
-          const showCorrect = revealAnswer || (picked?.correct && isAnswer);
+        {(["ho", "chha", "hunchha"] as const).map((opt) => {
+          const selected = activeTab === opt;
           return (
             <button
               key={opt}
               type="button"
-              onClick={() => onPick(opt)}
+              onClick={() => setActiveTab(opt)}
               className={cn(
                 "rounded-xl border px-3 py-2 text-sm font-semibold transition-colors",
-                "bg-white/75 hover:bg-white",
-                selected && "border-[#8A5A2B] bg-[#F5EBE0]",
-                showCorrect && isAnswer && "border-success bg-success/10",
+                selected
+                  ? "border-[#8A5A2B] bg-[#F5EBE0] text-[#5A4636]"
+                  : "bg-white/75 text-[#333D29]/70 hover:bg-white hover:text-[#333D29]"
               )}
             >
               {opt}
@@ -671,142 +590,43 @@ function CopulaContrastDrill({ card }: { card: GrammarPracticeCard }) {
         })}
       </div>
 
-      {picked && picked.correct && (
-        <div className="flex items-center justify-between gap-2 rounded-xl border border-success bg-success/10 p-3">
-          <p className="text-sm text-success">정답이에요.</p>
-          <div className="flex items-center gap-2">
-            <Button
-              type="button"
-              size="sm"
-              className="rounded-xl"
-              onClick={() => setShowPrinciple(true)}
-            >
-              원리 보기
-            </Button>
-            <Button
-              type="button"
-              variant="secondary"
-              size="sm"
-              className="rounded-xl"
-              onClick={next}
-            >
-              다음
-            </Button>
-          </div>
+      <div
+        key={activeTab}
+        className="animate-in fade-in-0 slide-in-from-bottom-1 rounded-xl border border-[#DCCFC4] bg-white p-4 shadow-sm"
+      >
+        <div className="flex items-center gap-2">
+          <h3 className="text-base font-bold text-[#8A5A2B]">{activeItem.answer}</h3>
+          <Badge className="border-[#CDB9A8] bg-[#EEF1E6]/70 text-[#5A4636] hover:bg-[#EEF1E6]/70">
+            {activeItem.principleTitle}
+          </Badge>
         </div>
-      )}
-
-      {picked && !picked.correct && (
-        <HintPanel
-          title="이 문법 규칙을 다시 읽어보세요"
-          detail={
-            wrongCount <= 1
-              ? "정체(ho) / 위치-상태(chha) / 일반적 진리(hunchha) 중 무엇인지 먼저 판단해보세요."
-              : "문장 맥락이 ‘정의’, ‘존재/상태’, ‘항상 성립’ 중 어디에 가까운지 다시 확인해보세요."
-          }
-          noteExcerpt={excerpt}
-        />
-      )}
-
-      {picked && !picked.correct && wrongCount >= 2 && !revealAnswer && (
-        <div className="flex items-center justify-end gap-2">
-          <Button
-            type="button"
-            variant="secondary"
-            size="sm"
-            className="rounded-xl"
-            onClick={() => setWrongCount(3)}
-          >
-            정답 보기
-          </Button>
-          <Button
-            type="button"
-            variant="secondary"
-            size="sm"
-            className="rounded-xl"
-            onClick={() => setPicked(null)}
-          >
-            다시 시도
-          </Button>
+        <p className="mt-3 text-sm leading-relaxed text-[#333D29]">
+          {activeItem.principle}
+        </p>
+        <div className="mt-4 rounded-lg bg-muted/40 p-3">
+          <p className="mb-1 text-xs font-semibold text-muted-foreground">예문 상황</p>
+          <p className="text-sm font-medium text-[#333D29]">{activeItem.context}</p>
         </div>
-      )}
-
-      {revealAnswer && picked && !picked.correct && (
-        <div className="rounded-xl border border-[#DCCFC4] bg-white/60 p-3 text-sm text-[#333D29]">
-          정답: <span className="font-semibold text-[#8A5A2B]">{scenario.answer}</span>
-        </div>
-      )}
-
-      <AlertDialog open={showPrinciple} onOpenChange={setShowPrinciple}>
-        <AlertDialogContent className="max-w-[92vw] rounded-2xl border-[#DCCFC4] bg-[#FFFDF9] text-[#333D29] sm:max-w-lg">
-          <AlertDialogHeader>
-            <AlertDialogTitle>{scenario.principleTitle}</AlertDialogTitle>
-            <AlertDialogDescription>{scenario.principle}</AlertDialogDescription>
-          </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel className="rounded-xl">닫기</AlertDialogCancel>
-            <AlertDialogAction className="rounded-xl" onClick={next}>
-              다음 문제
-            </AlertDialogAction>
-          </AlertDialogFooter>
-        </AlertDialogContent>
-      </AlertDialog>
+      </div>
     </div>
   );
 }
 
 export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
   const kind = inferPracticeKind(card);
-  const formula = useMemo(() => buildFormula(card, kind), [card, kind]);
 
   const hasPossessive = kind === "possessive-ko";
   const hasErgative = kind === "ergative-le";
   const hasCopula = kind === "copula-contrast";
+  const hasExamples = (card.examples ?? []).filter(Boolean).length > 0;
 
   return (
     <div className="space-y-4">
-      <section className="rounded-2xl border border-[#DCCFC4] bg-white/55 p-3 sm:p-4">
-        <div className="mb-2 flex items-center justify-between gap-2">
-          <div className="min-w-0">
-            <p className="text-xs font-medium text-[#6B5D4F]">문법 공식</p>
-            <p className="mt-0.5 text-sm font-semibold text-[#333D29]">{card.title}</p>
-          </div>
-          <Badge className="shrink-0 rounded-full border-[#CDB9A8] bg-[#F5EBE0]/70 px-2 py-0.5 text-[10px] text-[#5A4636]">
-            {card.category}
-          </Badge>
-        </div>
-
-        <TooltipProvider delayDuration={120}>
-          <div className="flex flex-wrap items-center gap-2">
-            {formula.map((t, idx) => (
-              <Tooltip key={`${t.label}-${idx}`}>
-                <TooltipTrigger asChild>
-                  <button
-                    type="button"
-                    className={cn(
-                      "rounded-xl border px-2.5 py-1 text-sm font-semibold transition-colors",
-                      "bg-white/70 hover:bg-white",
-                      t.emphasis && "border-[#D4A373]/60 bg-[#D4A373]/15 text-[#8A5A2B]",
-                      !t.emphasis && "border-[#DCCFC4] text-[#333D29]",
-                    )}
-                  >
-                    {t.label}
-                  </button>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-[260px] text-left">
-                  <p>{t.tooltip}</p>
-                </TooltipContent>
-              </Tooltip>
-            ))}
-          </div>
-        </TooltipProvider>
-      </section>
-
       <PrincipleKorean kind={kind} />
 
       <Tabs
         defaultValue={
-          hasPossessive ? "transform" : hasErgative ? "classify" : hasCopula ? "contrast" : "notes"
+          hasExamples ? "exercise" : hasPossessive ? "transform" : hasErgative ? "classify" : hasCopula ? "contrast" : "notes"
         }
       >
         <TabsList className="w-full rounded-xl bg-[#EFE7E1] p-1">
@@ -825,11 +645,17 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
               대조
             </TabsTrigger>
           )}
-          {!hasPossessive && !hasErgative && !hasCopula && (
-            <TabsTrigger value="practice" disabled className="w-full rounded-lg text-sm opacity-50">
-              연습
-            </TabsTrigger>
-          )}
+          <TabsTrigger
+            value="exercise"
+            disabled={!hasExamples}
+            className={cn(
+              "w-full rounded-lg text-sm gap-1.5",
+              !hasExamples &&
+                "opacity-50 cursor-not-allowed border-none shadow-none text-muted-foreground bg-transparent",
+            )}
+          >
+            문제 {!hasExamples && <span className="ml-1 text-[10px] text-muted-foreground">준비 중</span>}
+          </TabsTrigger>
           <TabsTrigger value="notes" className="w-full rounded-lg text-sm">
             노트
           </TabsTrigger>
@@ -850,6 +676,9 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
             <CopulaContrastDrill card={card} />
           </TabsContent>
         )}
+        <TabsContent value="exercise" className="mt-3">
+          <GrammarExercise card={card} />
+        </TabsContent>
         <TabsContent value="notes" className="mt-3">
           <NotesView card={card} />
         </TabsContent>

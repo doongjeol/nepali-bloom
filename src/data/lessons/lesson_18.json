@@ -107,11 +107,36 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 방향(Directions): Purb (동), Pachhim (서), Uttar (북), Dakshin (남).",
-    "2. 위치 관계 후치사: AgaaDi (앞), Pachhaadi (뒤), Daayaa (오른쪽), Waayaa (왼쪽). 특정 방향을 가리킬 때 '-tira'(~쪽으로)를 붙여 사용합니다 (예: daayaatira).",
-    "3. Laagchha (Takes time): 시간이 걸린다는 의미로 쓰입니다. [장소] + jaana + [시간] + laagchha 형식으로 사용합니다.",
-    "4. HĩDera (By walking): '걷다'라는 동사의 분사형으로 '걸어서'라는 수단을 나타냅니다.",
-    "5. Yasari / Tyasari / Kasari: Yasari (이렇게), Tyasari (그렇게), Kasari (어떻게 - 방법)."
+    {
+      "title": "1. 방향(Directions)",
+      "details": [
+        "Purb (동), Pachhim (서), Uttar (북), Dakshin (남)."
+      ]
+    },
+    {
+      "title": "2. 위치 관계 후치사",
+      "details": [
+        "AgaaDi (앞), Pachhaadi (뒤), Daayaa (오른쪽), Waayaa (왼쪽). 특정 방향을 가리킬 때 '-tira'(~쪽으로)를 붙여 사용합니다 (예: daayaatira)."
+      ]
+    },
+    {
+      "title": "3. Laagchha (Takes time)",
+      "details": [
+        "시간이 걸린다는 의미로 쓰입니다. [장소] + jaana + [시간] + laagchha 형식으로 사용합니다."
+      ]
+    },
+    {
+      "title": "4. HĩDera (By walking)",
+      "details": [
+        "'걷다'라는 동사의 분사형으로 '걸어서'라는 수단을 나타냅니다."
+      ]
+    },
+    {
+      "title": "5. Yasari / Tyasari / Kasari",
+      "details": [
+        "Yasari (이렇게), Tyasari (그렇게), Kasari (어떻게 - 방법)."
+      ]
+    }
   ],
   "quiz": [
     {

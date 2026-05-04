@@ -67,10 +67,30 @@
   ],
   "examples": [],
   "grammar": [
-    "1. 현재 진행형 (-dai chhu): 현재 일어나고 있는 동작을 묘사할 때 사용합니다. (예: ma chiThi lekhdaichhu = 나는 편지를 쓰고 있다).",
-    "2. 가까운 미래 표현: '가다(go)'나 '오다(come)' 동사의 경우, 현재 진행형으로 미래의 계획을 나타내기도 합니다. (예: ma bholi jäädaichhu = 나는 내일 간다).",
-    "3. 현재 진행형 변화 (Conjugation): ma lekhdaichhu (나는 쓰고 있다), timi lekhdaichhau (너는 쓰고 있다), tapaai lekhdai hunuhunchha (당신은 쓰고 있습니다).",
-    "4. 부정형: 'ma gardai chhaina'와 같은 형태가 있으나, 실제 구어에서는 'raheko'의 부정형이 더 흔히 사용됩니다."
+    {
+      "title": "1. 현재 진행형 (-dai chhu)",
+      "details": [
+        "현재 일어나고 있는 동작을 묘사할 때 사용합니다. (예: ma chiThi lekhdaichhu = 나는 편지를 쓰고 있다)."
+      ]
+    },
+    {
+      "title": "2. 가까운 미래 표현",
+      "details": [
+        "'가다(go)'나 '오다(come)' 동사의 경우, 현재 진행형으로 미래의 계획을 나타내기도 합니다. (예: ma bholi jäädaichhu = 나는 내일 간다)."
+      ]
+    },
+    {
+      "title": "3. 현재 진행형 변화 (Conjugation)",
+      "details": [
+        "ma lekhdaichhu (나는 쓰고 있다), timi lekhdaichhau (너는 쓰고 있다), tapaai lekhdai hunuhunchha (당신은 쓰고 있습니다)."
+      ]
+    },
+    {
+      "title": "4. 부정형",
+      "details": [
+        "'ma gardai chhaina'와 같은 형태가 있으나, 실제 구어에서는 'raheko'의 부정형이 더 흔히 사용됩니다."
+      ]
+    }
   ],
   "quiz": [
     {
