@@ -1,0 +1,249 @@
+{
+  "id": 35,
+  "title": "Lesson 35",
+  "titleKo": "제35과",
+  "description": "대조와 양보의 표현('-bhaepani', '-bhaetaa pani')과 의문사를 활용한 조건/양보 구문을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "भान्सा गर्नु",
+      "romanized": "bhaansaa garnu",
+      "korean": "to eat a meal (식사하다 - 정중한 표현)"
+    },
+    {
+      "nepali": "भुरा",
+      "romanized": "bhuraa",
+      "korean": "fingerling (치어)"
+    },
+    {
+      "nepali": "विष",
+      "romanized": "bish",
+      "korean": "poison (독)"
+    },
+    {
+      "nepali": "जङ्गली",
+      "romanized": "jangali",
+      "korean": "wild (야생의)"
+    },
+    {
+      "nepali": "किसान",
+      "romanized": "kisaan",
+      "korean": "farmer (농부)"
+    },
+    {
+      "nepali": "माछा",
+      "romanized": "maachhaa",
+      "korean": "fish (물고기)"
+    },
+    {
+      "nepali": "माध्यमिक विद्यालय",
+      "romanized": "maadhyamik bidyaalaya",
+      "korean": "secondary school (중등학교)"
+    },
+    {
+      "nepali": "मार्नु",
+      "romanized": "maarnu",
+      "korean": "to kill (죽이다/잡다)"
+    },
+    {
+      "nepali": "मद्दत",
+      "romanized": "maddat",
+      "korean": "help, assistance (도움)"
+    },
+    {
+      "nepali": "मत्स्य विकास केन्द्र",
+      "romanized": "matsya bikaas kendra",
+      "korean": "Fisheries Development Centre (수산 개발 센터)"
+    },
+    {
+      "nepali": "पाल्नु",
+      "romanized": "paalnu",
+      "korean": "to raise (키우다/기르다)"
+    },
+    {
+      "nepali": "फुर्सद",
+      "romanized": "phursad",
+      "korean": "leisure (여가 시간)"
+    },
+    {
+      "nepali": "पोखरी",
+      "romanized": "pokhari",
+      "korean": "pond (연못)"
+    },
+    {
+      "nepali": "पुग नपुग",
+      "romanized": "pug na pug",
+      "korean": "approximately (거의/대략)"
+    },
+    {
+      "nepali": "रहर",
+      "romanized": "rahar",
+      "korean": "desire (소망/바람)"
+    },
+    {
+      "nepali": "साट्नु",
+      "romanized": "saaTnu",
+      "korean": "to trade, to change (교환하다/바꾸다)"
+    },
+    {
+      "nepali": "सुकाउनु",
+      "romanized": "sukaaunu",
+      "korean": "to dry (말리다)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 대조와 양보의 표현 (~하지만, ~하더라도)",
+      "details": [
+        "'-bhaepani', '-bhaetaa pani' 형식을 사용하여 \"비록 ~일지라도\", \"~함에도 불구하고\"라는 의미를 나타냅니다.",
+        "- 예: puraano bhaetaapani (오래되었을지라도), TaaDhaa bhaepani (멀지라도)."
+      ]
+    },
+    {
+      "title": "2. 의문사 + '-epani' (무엇이든, 어디든)",
+      "details": [
+        "의문사와 동사의 -epani 형태가 결합하여 조건 없는 양보를 나타냅니다.",
+        "- 예: jo aaepani (누가 오든), je khaaepani (무엇을 먹든), jahile aaepani (언제 오든)."
+      ]
+    },
+    {
+      "title": "3. 허가의 의미 (-epani hunchha)",
+      "details": [
+        "'-epani hunchha' 형식을 써서 \"~해도 된다\"는 허락을 부드럽게 나타낼 수 있습니다.",
+        "- 예: gae pani hunchha (가도 됩니다)."
+      ]
+    },
+    {
+      "title": "4. 선택의 의미 (-epani na... epani)",
+      "details": [
+        "\"하든 안 하든\"이라는 양자택일의 양보 의미를 나타냅니다.",
+        "- 예: timi gaepani nagaepani (네가 가든 안 가든)."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "\"비록 ~일지라도\", \"~함에도 불구하고\"를 뜻하는 양보의 연결 어미는?",
+      "options": [
+        "-भने (-bhane)",
+        "-दाखेरि (-daakheri)",
+        "-भए तापनि (-bhaetaa pani)",
+        "-ने (-ne)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'농부'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "शिक्षक (sikchhak)",
+        "किसान (kisaan)",
+        "डाक्टर (DaakTar)",
+        "विदेशी (bideshi)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'여가 시간'이나 '한가함'을 뜻하는 네팔어는?",
+      "options": [
+        "काम (kaam)",
+        "बेला (belaa)",
+        "फुर्सद (phursad)",
+        "रहर (rahar)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "\"누가 오든\"을 네팔어로 바르게 표현한 것은?",
+      "options": [
+        "जो आए पनि (jo aaepani)",
+        "जे खाए पनि (je khaaepani)",
+        "जहिले आए पनि (jahile aaepani)",
+        "को आएको (ko aaeko)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "\"가도 됩니다\"라는 허락의 의미를 나타내는 올바른 표현은?",
+      "options": [
+        "जानु पर्छ (jaanu parchha)",
+        "गए पनि हुन्छ (gae pani hunchha)",
+        "गए तापनि (gae taapani)",
+        "जानै पर्छ (jaanai parchha)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'말리다(dry)'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "पाल्नु (paalnu)",
+        "साट्नु (saaTnu)",
+        "सुकाउनु (sukaaunu)",
+        "मार्नु (maarnu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "\"네가 가든 안 가든\"을 네팔어로 표현할 때 알맞은 형태는?",
+      "options": [
+        "तिमी गए पनि गएको (timi gaepani gaeko)",
+        "तिमी जाँदाखेरि (timi jaadaakheri)",
+        "तिमी गए पनि नगए पनि (timi gaepani nagaepani)",
+        "तिमी गए पछि (timi gae pachhi)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'물고기'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "माछा (maachhaa)",
+        "भुरा (bhuraa)",
+        "पोखरी (pokhari)",
+        "विष (bish)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'도움' 또는 '지원'을 뜻하는 단어는?",
+      "options": [
+        "मद्दत (maddat)",
+        "काम (kaam)",
+        "रहर (rahar)",
+        "विचार (bichaar)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'죽이다' 또는 '잡다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "बचाउनु (baachaaunu)",
+        "मार्नु (maarnu)",
+        "सुकाउनु (sukaaunu)",
+        "छोड्नु (chhoDnu)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 물고기 기르기 상담",
+      "lines": [
+        { "speaker": "A", "nepali": "यहींको माध्यमिक विद्यालयमा पढाउनुहुन्छ कि कसो ?", "romanized": "yahiko maadhyamik bidyaalayamaa paDhaaunuhunchha ki kaso ?", "korean": "여기 중등학교에서 가르치시나요?" },
+        { "speaker": "B", "nepali": "होइन, म त किसानहरूलाई माछा पाल्न मद्दत गर्छु।", "romanized": "hoina, ma ta kisaanharulaai maachhaa paalna maddat garchhu.", "korean": "아니요, 저는 농부들이 물고기를 기르는 것을 돕습니다." },
+        { "speaker": "A", "nepali": "माछा पाल्न के के गर्नु पर्छ ?", "romanized": "maachhaa paalna ke ke garnu parchha ?", "korean": "물고기를 기르려면 무엇무엇을 해야 하나요?" },
+        { "speaker": "B", "nepali": "सबभन्दा पहिले पोखरीलाई सुकाउनु पर्छ अनि विष राख्नु पर्छ।", "romanized": "sabbhandaa pahile pokharilaai sukaaaunu parchha ani bish raakhnu parchha.", "korean": "가장 먼저 연못을 말려야 하고 그다음에 독을 풀어야 합니다." },
+        { "speaker": "B", "nepali": "विष राखेर त्यसमा भएका जङ्गली माछाहरू मार्नु पर्छ।", "romanized": "bish raakhera tyasmaa bhaekaa jangali maachhaaharu maarnu parchha.", "korean": "독을 넣어서 그 안에 있는 야생 물고기들을 죽여야(없애야) 합니다." },
+        { "speaker": "A", "nepali": "भुरा किन्न कहाँ पाइन्छ नि ?", "romanized": "bhuraa kinna kahãã paainchha ni?", "korean": "치어는 어디서 살 수 있나요?" },
+        { "speaker": "B", "nepali": "भुरा त मत्स्य विकास केन्द्रमा पाइन्छ।", "romanized": "bhuraa ta matsya bikaas kendramaa paainchha.", "korean": "치어는 수산 개발 센터에서 구할 수 있습니다." }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 식사 여부와 배고픔 (양보 표현)",
+      "lines": [
+        { "speaker": "A", "nepali": "भात नखाएको भए तापनि भोक लागेको छैन।", "romanized": "bhaat nakhaaeko bhaetaa pani bhok laageko chhaina.", "korean": "밥을 먹지 않았음에도 불구하고 배가 고프지 않습니다." },
+        { "speaker": "A", "nepali": "बिहान अबेला खाएको थिएँ।", "romanized": "bihaana abelaa khaaeko thié.", "korean": "아침을 늦게 먹었었거든요." },
+        { "speaker": "B", "nepali": "खाना नखाए पनि चिया सिया खान जाऔँ।", "romanized": "khaanaa nakhaaepani chiyaa siyaa khaana jaawaű.", "korean": "식사를 안 하더라도 차라도 마시러 갑시다." },
+        { "speaker": "A", "nepali": "हुन्छ, जाऔँ।", "romanized": "hunchha, jaawaű.", "korean": "좋습니다, 갑시다." }
+      ]
+    }
+  ]
+}

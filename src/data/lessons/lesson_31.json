@@ -1,0 +1,241 @@
+{
+  "id": 31,
+  "title": "Lesson 31",
+  "titleKo": "제31과",
+  "description": "조건절 'bhane'(~한다면)의 사용법과 물건의 특성/가격을 나타내는 접미사 'walaa'를 배우고, 우체국 대화를 연습합니다.",
+  "vocabulary": [
+    {
+      "nepali": "आदि",
+      "romanized": "aadi",
+      "korean": "etc. (등등)"
+    },
+    {
+      "nepali": "विचार",
+      "romanized": "bichaar",
+      "korean": "thought, idea (생각)"
+    },
+    {
+      "nepali": "बाँकी",
+      "romanized": "baaki",
+      "korean": "left over, remaining (남은)"
+    },
+    {
+      "nepali": "गाउँले",
+      "romanized": "gaaule",
+      "korean": "rural (시골의)"
+    },
+    {
+      "nepali": "हरेक",
+      "romanized": "harek",
+      "korean": "every (모든/매)"
+    },
+    {
+      "nepali": "हजारौं",
+      "romanized": "hajaaraű",
+      "korean": "thousands (수천의)"
+    },
+    {
+      "nepali": "हवाईपत्र",
+      "romanized": "hawaaipatra",
+      "korean": "aerogram (항공 서간)"
+    },
+    {
+      "nepali": "नम्बरी",
+      "romanized": "nambari",
+      "korean": "a hundred rupee note (100루피 지폐)"
+    },
+    {
+      "nepali": "निकै",
+      "romanized": "nikai",
+      "korean": "very, exceedingly (매우)"
+    },
+    {
+      "nepali": "साटी दिनु",
+      "romanized": "saaTi dinu",
+      "korean": "to change money (돈을 바꾸다)"
+    },
+    {
+      "nepali": "सजिलै",
+      "romanized": "sajilai",
+      "korean": "easily (쉽게)"
+    },
+    {
+      "nepali": "सक्नु",
+      "romanized": "saknu",
+      "korean": "to be able to (~할 수 있다)"
+    },
+    {
+      "nepali": "सुन्दर",
+      "romanized": "sundar",
+      "korean": "beautiful, nice (아름다운)"
+    },
+    {
+      "nepali": "तालिम",
+      "romanized": "taalim",
+      "korean": "training (훈련)"
+    },
+    {
+      "nepali": "यहाँ",
+      "romanized": "yahãã",
+      "korean": "you (polite) (당신 - 존칭)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 조건절 'bhane' (If)",
+      "details": [
+        "\"~한다면\"이라는 조건을 나타냅니다.",
+        "- 종속절의 동사 어미는 주로 과거형을 사용합니다.",
+        "- 예: paani paryo bhane (비가 오면), uniharu aaebhane (그들이 오면)."
+      ]
+    },
+    {
+      "title": "2. 접미사 'walaa'",
+      "details": [
+        "힌디어에서 유래된 접미사로, 사람이나 사물의 특성, 물건의 가격 등을 나타낼 때 명사 뒤에 붙여 씁니다.",
+        "- 예: raato Topi walaa (빨간 모자를 쓴 사람), pandhra rupiyaa walaa (15루피짜리 것)."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "\"~한다면\"을 뜻하는 네팔어 조건절 표현은 무엇인가요?",
+      "options": [
+        "पनि (pani)",
+        "भने (bhane)",
+        "किनभने (kinabhane)",
+        "ला (laa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "사물의 특성이나 가격(예: 15루피짜리)을 나타낼 때 명사 뒤에 붙이는 접미사는?",
+      "options": [
+        "को (-ko)",
+        "ले (-le)",
+        "वाला (walaa)",
+        "हरु (-haru)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'등등' (etc.)을 뜻하는 네팔어는?",
+      "options": [
+        "र (ra)",
+        "पनि (pani)",
+        "आदि (aadi)",
+        "सबै (sabai)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'100루피 지폐'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "पैसा (paisaa)",
+        "रुपियाँ (rupiyaa)",
+        "नम्बरी (nambari)",
+        "भाडा (bhaaDaa)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "큰돈을 잔돈으로 '바꾸다'라고 할 때 쓰는 동사 표현은?",
+      "options": [
+        "दिनु (dinu)",
+        "साटी दिनु (saaTi dinu)",
+        "उठाउनु (uThaaunu)",
+        "सक्नु (saknu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'항공 서간'을 뜻하는 네팔어는?",
+      "options": [
+        "चिठी (chiThi)",
+        "किताब (kitaab)",
+        "हवाईपत्र (hawaaipatra)",
+        "पत्रिका (patrikaa)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'모든' 또는 '매(every)'를 뜻하는 단어는?",
+      "options": [
+        "हरेक (harek)",
+        "निकै (nikai)",
+        "धेरै (dherai)",
+        "थोरै (thorai)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'아름다운'을 뜻하는 형용사는?",
+      "options": [
+        "सुन्दर (sundar)",
+        "नराम्रो (naraamro)",
+        "कालो (kaalo)",
+        "ठूलो (Thulo)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'생각'이나 '의견'을 뜻하는 네팔어는?",
+      "options": [
+        "काम (kaam)",
+        "कुरा (kuraa)",
+        "विचार (bichaar)",
+        "मन (man)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'목이 마르면'을 네팔어로 올바르게 표현한 것은?",
+      "options": [
+        "भोक लाग्यो भने (bhok laagyo bhane)",
+        "तिर्खा लाग्यो भने (tirkhaa laagyo bhane)",
+        "टाउको दुख्यो भने (Taauko dukhyo bhane)",
+        "जाडो भयो भने (jaado bhayo bhane)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 우표와 항공 서간 사기",
+      "lines": [
+        { "speaker": "A", "nepali": "मलाई टिकट दिनुस् न।", "romanized": "malaai TikaT dinus na.", "korean": "우표 좀 주세요." },
+        { "speaker": "B", "nepali": "कति कति जाने दिऊँ ?", "romanized": "kati kati jaane diű ?", "korean": "얼마짜리로 드릴까요?" },
+        { "speaker": "A", "nepali": "पच्चीस पैसे दसओटा दिनुस् अनि एक रुपियाँ जाने आठओटा।", "romanized": "pachchis paise daswaTaa dinus ani ek rupiyaa jaane aaThwaTaa.", "korean": "25파이사짜리 10장하고 1루피짜리 8장 주세요." },
+        { "speaker": "A", "nepali": "हवाईपत्र पनि त होला नि ?", "romanized": "hawaai patra pani ta holaa ni ?", "korean": "항공 서간도 있겠죠?" },
+        { "speaker": "B", "nepali": "छ, कतिओटा चाहिने यहाँलाई ?", "romanized": "chha, katiwaTaa chaahine yahããlaai ?", "korean": "네, 있습니다. 몇 장이나 필요하신가요?" },
+        { "speaker": "A", "nepali": "डेढ रुपियाँ वाला पन्ध्र ओटा दिनुस् त।", "romanized": "DeDh rupiyaa waalaa pandhra waTaa dinus ta.", "korean": "1.5루피짜리 15장 주세요." },
+        { "speaker": "B", "nepali": "हवस्।", "romanized": "hawas.", "korean": "알겠습니다." },
+        { "speaker": "A", "nepali": "जम्मा कति भयो ?", "romanized": "jammaa kati bhayo ?", "korean": "모두 얼마인가요?" },
+        { "speaker": "B", "nepali": "तेत्तीस रुपियाँ दिनुस्।", "romanized": "tettis rupiyãã dinus.", "korean": "33루피 주세요." },
+        { "speaker": "A", "nepali": "मसँग नम्बरी मात्र छ।", "romanized": "masanga nambari maatra chha.", "korean": "제게 100루피짜리 지폐밖에 없는데요." },
+        { "speaker": "B", "nepali": "हुन्छ, म साटी दिउँला।", "romanized": "hunchha, ma saaTi diűlaa.", "korean": "괜찮습니다. 제가 바꿔 드릴게요." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 조건에 따른 행동 (bhane)",
+      "lines": [
+        { "speaker": "A", "nepali": "तिर्खा लाग्यो भने पानी खान्छु।", "romanized": "tirkhaa laagyo bhane paani khaanchhu.", "korean": "목이 마르면 물을 마십니다." },
+        { "speaker": "B", "nepali": "भोक लाग्यो भने नि ?", "romanized": "bhok laagyo bhane ni?", "korean": "배가 고프면요?" },
+        { "speaker": "A", "nepali": "भात खान्छु।", "romanized": "bhaat khaanchhu.", "korean": "밥을 먹습니다." },
+        { "speaker": "B", "nepali": "टाउको दुख्यो भने के गर्नुहुन्छ नि ?", "romanized": "Taauko dukhyo bhane ke garnu hunchha ni ?", "korean": "머리가 아프면 무엇을 하나요?" },
+        { "speaker": "A", "nepali": "एस्पिरिन खान्छु।", "romanized": "aaspirin khaanchhu.", "korean": "아스피린을 먹습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 미래의 계획과 조건",
+      "lines": [
+        { "speaker": "A", "nepali": "तालिम सिद्धिएपछि गाउँमा पढाउन जान्छु।", "romanized": "taalim siddhie pachhi gaaűmaa paDhaauna jaanchhu.", "korean": "훈련이 끝나면 마을에 가르치러 갈 겁니다." },
+        { "speaker": "B", "nepali": "गाउँ मन परेन भने नि ?", "romanized": "gaaữ man parena bhane ni?", "korean": "마을이 마음에 안 들면요?" },
+        { "speaker": "A", "nepali": "अमेरिका फर्कन्छु।", "romanized": "amerikaa pharkanchhu.", "korean": "미국으로 돌아갈 겁니다." },
+        { "speaker": "B", "nepali": "काम पाउनुभएन भने के गर्नुहुन्छ त ?", "romanized": "kaam paaunubhaena bhane ke garnu hunchha ta ?", "korean": "일자리를 구하지 못하면 무엇을 할 건가요?" },
+        { "speaker": "A", "nepali": "पढ्छु।", "romanized": "paDhchhu.", "korean": "공부할 겁니다." }
+      ]
+    }
+  ]
+}

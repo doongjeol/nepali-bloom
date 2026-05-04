@@ -1,0 +1,133 @@
+{
+  "id": 33,
+  "title": "Lesson 33",
+  "titleKo": "제33과",
+  "description": "이유의 표현(-ekole / -ekohunaale)과 간접 화법 종결 어미(re)를 배웁니다.",
+  "vocabulary": [
+    { "nepali": "गएको", "romanized": "gaeko", "korean": "last (as in past) (지난)" },
+    { "nepali": "गाह्रो लाग्नु", "romanized": "gaarho laagnu", "korean": "to find difficult (어렵게 느끼다)" },
+    { "nepali": "झन्डै", "romanized": "jhanDai", "korean": "almost (거의)" },
+    { "nepali": "शिक्षक", "romanized": "sikchhak", "korean": "teacher (교사)" }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 이유의 표현 (-ekole / -ekohunaale)",
+      "details": [
+        "두 형태는 서로 바꾸어 쓸 수 있으며 원인이나 이유를 나타냅니다.",
+        "- paisaa nabhaekole (돈이 없기 때문에), Taauko dukhekole (머리가 아프기 때문에)."
+      ]
+    },
+    {
+      "title": "2. 'kinabhane' (Because)",
+      "details": [
+        "'왜냐하면'이라는 뜻이지만 일상 회화에서는 자주 생략됩니다."
+      ]
+    },
+    {
+      "title": "3. '-era'와 '-ekole'의 인과관계",
+      "details": [
+        "두 형태 모두 문장을 연결하며 원인과 결과의 의미를 담습니다.",
+        "- 예: Taauko dukhera naaaeko (머리가 아파서 안 온 것)."
+      ]
+    },
+    {
+      "title": "4. 종결 어미 're'",
+      "details": [
+        "전해 들은 정보(간접 화법)를 나타낼 때 문장 끝에 붙입니다.",
+        "- 예: u bholi jaane re (그가 내일 간다고 합니다)."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "원인이나 이유('~때문에')를 나타낼 때 동사 어간에 주로 붙는 형태는?",
+      "options": [
+        "-दाखेरि (-daakheri)",
+        "-ने (-ne)",
+        "-एकोले (-ekole)",
+        "-ला (-laa)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'왜냐하면'을 뜻하는 네팔어 접속사는?",
+      "options": [
+        "तर (tara)",
+        "किनभने (kinabhane)",
+        "पनि (pani)",
+        "र (ra)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "전해 들은 이야기(간접 화법, '~라고 합니다')를 나타낼 때 문장 끝에 붙이는 어미는?",
+      "options": [
+        "रे (re)",
+        "नि (ni)",
+        "होला (holaa)",
+        "त (ta)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'어렵게 느끼다'를 의미하는 숙어 표현은?",
+      "options": [
+        "दिक्क लाग्नु (dikka laagnu)",
+        "गाह्रो लाग्नु (gaarho laagnu)",
+        "सजिलो हुनु (sajilo hunu)",
+        "दुख्नु (dukhnu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'거의'를 뜻하는 네팔어는?",
+      "options": [
+        "धेरै (dherai)",
+        "सबै (sabai)",
+        "झन्डै (jhanDai)",
+        "अलिअलि (aliali)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: PRACTICE (a) 질병과 이유 (-ekole)",
+      "lines": [
+        { "speaker": "A", "nepali": "हिजो किन आउनु भएन ?", "romanized": "hijo kina aaunu bhaena ?", "korean": "어제 왜 안 오셨나요?" },
+        { "speaker": "B", "nepali": "टाउको दुखेकोले।", "romanized": "Taauko dukhekole.", "korean": "머리가 아팠기 때문입니다." },
+        { "speaker": "A", "nepali": "किन टाउको दुख्यो त ?", "romanized": "kina Taauko dukhyo ta ?", "korean": "왜 머리가 아팠나요?" },
+        { "speaker": "B", "nepali": "धेरै रक्सी खाएकोले।", "romanized": "dherai raksi khaaekole.", "korean": "술을 많이 마셨기 때문입니다." },
+        { "speaker": "A", "nepali": "के औषधी खानुभयो त ?", "romanized": "ke ausadhi khaanubhayo ta ?", "korean": "무슨 약을 드셨나요?" },
+        { "speaker": "B", "nepali": "केहीपनि खाइनँ।", "romanized": "kehipani khaaina.", "korean": "아무것도 안 먹었습니다." },
+        { "speaker": "A", "nepali": "किन नखाएको त ?", "romanized": "kina nakhaaeko ta?", "korean": "왜 안 먹었나요?" },
+        { "speaker": "B", "nepali": "खान मन नलागेकोले।", "romanized": "khaana man nalaagekole.", "korean": "먹고 싶지 않았기 때문입니다." }
+      ]
+    },
+    {
+      "title": "PART I: PRACTICE (b) 늦잠과 이유",
+      "lines": [
+        { "speaker": "A", "nepali": "आज बिहान किन अबेला उठ्नुभयो ?", "romanized": "aaja bihaana kina abelaa uThnubhayo ?", "korean": "오늘 아침에 왜 늦게 일어났나요?" },
+        { "speaker": "B", "nepali": "हिजो राति अबेला सुतेकोले।", "romanized": "hijo raati abelaa sutekole.", "korean": "어제 밤에 늦게 잤기 때문입니다." },
+        { "speaker": "A", "nepali": "किन अबेला सुत्नुभयो त ?", "romanized": "kina abelaa sutnunbhayo ta ?", "korean": "왜 늦게 잤나요?" },
+        { "speaker": "B", "nepali": "मेरो साथीहरू आएकाले।", "romanized": "mero saathiharu aaekaale.", "korean": "친구들이 왔었기 때문입니다." },
+        { "speaker": "A", "nepali": "साथीहरू किन आएका थिए त ?", "romanized": "saathiharu kina aaekaa thie ta ?", "korean": "친구들이 왜 왔었나요?" },
+        { "speaker": "B", "nepali": "हिजो मेरो घरमा बिहा भोज भएकोले।", "romanized": "hijo mero gharmaa bihaa bhoj bhaekole.", "korean": "어제 제 집에서 결혼 잔치가 있었기 때문입니다." }
+      ]
+    },
+    {
+      "title": "PART I: PRACTICE (c) 상황에 따른 이유 (-naale)",
+      "lines": [
+        { "speaker": "A", "nepali": "चियामा किन दूध राखेनौ ?", "romanized": "chiyaamaa kina dudh raakhenau ?", "korean": "차에 왜 우유를 넣지 않았니?" },
+        { "speaker": "B", "nepali": "दूध नभएको हुनाले।", "romanized": "dudh nabhaeko hunaale.", "korean": "우유가 없었기 때문이야." },
+        { "speaker": "A", "nepali": "दूध लिन किन नगएको त ?", "romanized": "dudh lina kina nagaeko ta ?", "korean": "우유를 사러 왜 안 갔니?" },
+        { "speaker": "B", "nepali": "फुर्सद नभएको हुनाले।", "romanized": "phursad nabhaeko hunaale.", "korean": "시간이 없었기 때문이야." },
+        { "speaker": "A", "nepali": "किन फुर्सद भएन ?", "romanized": "kina phursad bhaena ?", "korean": "왜 시간이 없었니?" },
+        { "speaker": "B", "nepali": "लुगा धुनु परेकोले।", "romanized": "lugaa dhunu parekole.", "korean": "옷을 빨아야 했기 때문이야." },
+        { "speaker": "A", "nepali": "साबुन सिद्धिएकोले सबै लुगा धोयौ त ?", "romanized": "saabun siddhiekole sabai lugaa dhoyau ta ?", "korean": "비누가 다 떨어져서 옷을 다 빨았니?" },
+        { "speaker": "B", "nepali": "धोइनँ।", "romanized": "dhoina.", "korean": "아니, 못 빨았어." }
+      ]
+    }
+  ]
+}

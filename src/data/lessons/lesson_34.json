@@ -1,0 +1,197 @@
+{
+  "id": 34,
+  "title": "Lesson 34",
+  "titleKo": "제34과",
+  "description": "명사를 수식하는 형용사절(Relative Clauses)을 만드는 방법과 'chiyaa siyaa' 같은 중첩 표현(Echo Words)을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "अत्यन्त",
+      "romanized": "atyanta",
+      "korean": "very much (매우, 대단히)"
+    },
+    {
+      "nepali": "कोही",
+      "romanized": "kohi",
+      "korean": "anybody, somebody (누군가)"
+    },
+    {
+      "nepali": "नउमालेको",
+      "romanized": "naumaaleko",
+      "korean": "unboiled (끓이지 않은)"
+    },
+    {
+      "nepali": "निको हुनु",
+      "romanized": "niko hunu",
+      "korean": "to be well, to be cured (낫다, 완쾌되다)"
+    },
+    {
+      "nepali": "उमालेको",
+      "romanized": "umaaleko",
+      "korean": "boiled (끓인)"
+    },
+    {
+      "nepali": "उठाउनु",
+      "romanized": "uThaaunu",
+      "korean": "to wake up (깨우다)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 형용사절 (Relative Clauses)",
+      "details": [
+        "영어와 달리 관계대명사 없이 동사의 특정 형태(-eko, -ne)를 사용하여 명사를 수식합니다.",
+        "- 예: tapaalle sodheko prashna (당신이 물어본 질문), umaaleko paani (끓인 물)."
+      ]
+    },
+    {
+      "title": "2. 중첩 표현 (Echo Words)",
+      "details": [
+        "'chiyaa siyaa'처럼 비슷한 소리를 덧붙여 \"차 같은 것\", \"차라든가 기타 등등\"의 의미를 나타냅니다.",
+        "- 예: paisaa saisaa (돈 같은 것), kuraa suraa (이야기라든가 뭐 그런 것)."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "'매우', '대단히'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "अत्यन्त (atyanta)",
+        "कोही (kohi)",
+        "सबै (sabai)",
+        "थोरै (thorai)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'누군가'를 뜻하는 네팔어 대명사는?",
+      "options": [
+        "कोही (kohi)",
+        "केही (kehi)",
+        "सबै (sabai)",
+        "जो (jo)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'낫다' 또는 '완쾌되다'를 뜻하는 네팔어 동사 표현은?",
+      "options": [
+        "बिरामी हुनु (biraami hunu)",
+        "निको हुनु (niko hunu)",
+        "दुख्नु (dukhnu)",
+        "मर्नु (marnu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'깨우다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "सुत्नु (sutnu)",
+        "उठ्नु (uThnu)",
+        "उठाउनु (uThaaunu)",
+        "पल्टिनु (palTinu)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'차(tea) 같은 것'을 의미하는 네팔어 중첩 표현(Echo Word)은?",
+      "options": [
+        "चिया सिया (chiyaa siyaa)",
+        "पैसा सैसा (paisaa saisaa)",
+        "कुरा सुरा (kuraa suraa)",
+        "पानी सानी (paani saani)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'끓인 물'을 뜻하는 올바른 네팔어 표현은?",
+      "options": [
+        "चिसो पानी (chiso paani)",
+        "तातो पानी (taato paani)",
+        "उमालेको पानी (umaaleko paani)",
+        "नउमालेको पानी (naumaaleko paani)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'그가 사는 마을'을 네팔어로 바르게 나타낸 것은?",
+      "options": [
+        "ऊ बस्यो गाउँ (u basyo gaaű)",
+        "ऊ बस्ने गाउँ (u basne gaaű)",
+        "ऊ बस्दै गाउँ (u basdai gaaű)",
+        "ऊ बस्छ गाउँ (u baschha gaaű)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'당신이 물어본 질문'을 네팔어로 바르게 나타낸 것은?",
+      "options": [
+        "तपाईंले सोध्ने प्रश्न (tapaaïle sodhne prashna)",
+        "तपाईंले सोधेको प्रश्न (tapaaïle sodheko prashna)",
+        "तपाईंले सोध्नुभयो प्रश्न (tapaaïle sodhnubhayo prashna)",
+        "तपाईंले सोध्दाखेरि प्रश्न (tapaaïle sodhdaakheri prashna)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'돈(money) 같은 것'을 의미하는 네팔어 중첩 표현(Echo Word)은?",
+      "options": [
+        "कुरा सुरा (kuraa suraa)",
+        "भात सात (bhaat saat)",
+        "पैसा सैसा (paisaa saisaa)",
+        "लुगा सुगा (lugaa sugaa)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "명사를 꾸며주는 형용사절을 만들 때 주로 사용되는 동사 형태는?",
+      "options": [
+        "-ने, -एको (-ne, -eko)",
+        "-दाखेरि (-daakheri)",
+        "-ला (-laa)",
+        "-रे (-re)"
+      ],
+      "answer": 0
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: PRACTICE (a) 사람과 장소 묘사 (형용사절)",
+      "lines": [
+        { "speaker": "A", "nepali": "को आएको थियो ?", "romanized": "ko aaeko thiyo ?", "korean": "누가 왔었나요?" },
+        { "speaker": "B", "nepali": "मेरो साथी।", "romanized": "mero saathi.", "korean": "제 친구요." },
+        { "speaker": "A", "nepali": "उसले पढाउने स्कुल कहाँ छ ?", "romanized": "usle paDhaaune iskul kahãã chha ?", "korean": "그가 가르치는 학교는 어디에 있나요?" },
+        { "speaker": "B", "nepali": "पोखरा नजिकैको गाउँमा छ।", "romanized": "pokharaa najikaiko gaaűmaa chha.", "korean": "포카라 근처 마을에 있습니다." },
+        { "speaker": "A", "nepali": "ऊ बस्ने गाउँको नाम के हो नि ?", "romanized": "u basne gaaűko naam ke ho ni ?", "korean": "그가 사는 마을 이름은 무엇인가요?" },
+        { "speaker": "B", "nepali": "ऊ बस्ने गाउँको नाम देउराली हो।", "romanized": "u basne gaaűko naam deuraali ho.", "korean": "그가 사는 마을 이름은 데우랄리입니다." }
+      ]
+    },
+    {
+      "title": "PART I: PRACTICE (b) 특징으로 사람 지칭하기",
+      "lines": [
+        { "speaker": "A", "nepali": "कालो टोपी लाउने मान्छे को हो ?", "romanized": "kaalo Topi laaune maanchhe ko ho?", "korean": "검은 모자를 쓴 사람은 누구인가요?" },
+        { "speaker": "B", "nepali": "कालो टोपी लाउने मान्छे प्रकाश हो।", "romanized": "kaalo Topi laaune maanchhe prakaash ho.", "korean": "검은 모자를 쓴 사람은 프라카시입니다." },
+        { "speaker": "A", "nepali": "उसले पढ्ने स्कुल यहाँबाट कति टाढा छ ?", "romanized": "usle paDhne iskul yahããbaaTa kati TaaDhaa chha ?", "korean": "그가 다니는 학교는 여기서 얼마나 먼가요?" },
+        { "speaker": "B", "nepali": "यहाँबाट नजिकै छ।", "romanized": "yahããbaaTa najikai chha.", "korean": "여기서 가깝습니다." }
+      ]
+    },
+    {
+      "title": "PART I: PRACTICE (c) 독서와 저자",
+      "lines": [
+        { "speaker": "A", "nepali": "'किङ लियर' कसले लेखेको हो ?", "romanized": "'King Lear' kasle lekheko ho?", "korean": "리어 왕은 누가 썼나요?" },
+        { "speaker": "B", "nepali": "शेक्सपियरले लेखेको हो।", "romanized": "Shekspiyarle lekheko ho.", "korean": "셰익스피어가 썼습니다." },
+        { "speaker": "A", "nepali": "तपाईंलाई उनले लेखेको किताब मन पर्छ ?", "romanized": "tapaallaai unle lekheko kitaab man parchha ?", "korean": "당신은 그가 쓴 책을 좋아하나요?" },
+        { "speaker": "B", "nepali": "हो, धेरै मन पर्छ।", "romanized": "ho, dherai man parchha.", "korean": "네, 매우 좋아합니다." }
+      ]
+    },
+    {
+      "title": "PART I: PRACTICE (d) 식수와 건강",
+      "lines": [
+        { "speaker": "A", "nepali": "जिम कस्तो पानी खान्छ ?", "romanized": "jim kasto paani khaanchha ?", "korean": "짐은 어떤 물을 마시나요?" },
+        { "speaker": "B", "nepali": "ऊ उमालेको पानी खान्छ।", "romanized": "u umaaleko paani khaanchha.", "korean": "그는 끓인 물을 마십니다." },
+        { "speaker": "A", "nepali": "नउमालेको पानी खायो भने उसलाई के हुन्छ ?", "romanized": "naumaaleko paani khaayo bhane uslaai ke hunchha ?", "korean": "끓이지 않은 물을 마시면 그는 어떻게 되나요?" },
+        { "speaker": "B", "nepali": "उसको पेट दुख्छ।", "romanized": "usko peT dukhchha.", "korean": "배가 아파집니다." }
+      ]
+    }
+  ]
+}

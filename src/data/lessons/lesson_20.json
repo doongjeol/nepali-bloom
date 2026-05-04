@@ -2,121 +2,44 @@
   "id": 20,
   "title": "Lesson 20",
   "titleKo": "제20과",
-  "description": "언어나 기술을 '할 줄 안다'는 표현과 과거 경험에 대한 복합적인 문장 구성을 배웁니다.",
+  "description": "언어나 기술을 '할 줄 안다'는 aauchha 표현과 복합적인 문장 구성(과거 시제, 소유격, 조사)을 복습합니다.",
   "vocabulary": [
-    {
-      "nepali": "आउँछ",
-      "romanized": "aauchha",
-      "korean": "to know (skill/language), to come (할 줄 안다, 오다)"
-    },
-    {
-      "nepali": "आउँदैन",
-      "romanized": "aaűdaina",
-      "korean": "don't know (skill/language) (할 줄 모른다)"
-    },
-    {
-      "nepali": "भाषा",
-      "romanized": "bhaashaa",
-      "korean": "language (언어)"
-    },
-    {
-      "nepali": "बिहान",
-      "romanized": "bihaana",
-      "korean": "morning (아침)"
-    },
-    {
-      "nepali": "डिबो",
-      "romanized": "Dibo",
-      "korean": "Devo (인명)"
-    },
-    {
-      "nepali": "धेरै",
-      "romanized": "dherai",
-      "korean": "much, many (많이, 많은)"
-    },
-    {
-      "nepali": "हिँड्नु",
-      "romanized": "hĩDnu",
-      "korean": "to walk (걷다)"
-    },
-    {
-      "nepali": "जानु",
-      "romanized": "janu",
-      "korean": "to go (가다)"
-    },
-    {
-      "nepali": "कारण",
-      "romanized": "kaaran",
-      "korean": "reason (이유)"
-    },
-    {
-      "nepali": "भन्नु",
-      "romanized": "bhannu",
-      "korean": "to tell (말해주다)"
-    },
-    {
-      "nepali": "खल्ती",
-      "romanized": "khaltI",
-      "korean": "pocket (주머니)"
-    },
-    {
-      "nepali": "नेपाली",
-      "romanized": "nepaali",
-      "korean": "Nepali (네팔의, 네팔어)"
-    },
-    {
-      "nepali": "पछाडि",
-      "romanized": "pachhaaDi",
-      "korean": "behind (뒤에)"
-    },
-    {
-      "nepali": "पढ्नु",
-      "romanized": "paDhnu",
-      "korean": "to read, to study (읽다, 공부하다)"
-    },
-    {
-      "nepali": "फुटबल",
-      "romanized": "phuTbal",
-      "korean": "football (축구)"
-    },
-    {
-      "nepali": "रातो",
-      "romanized": "raato",
-      "korean": "red (빨간색)"
-    },
-    {
-      "nepali": "साथी",
-      "romanized": "saathi",
-      "korean": "friend (친구)"
-    },
-    {
-      "nepali": "सिक्नु",
-      "romanized": "siknu",
-      "korean": "to learn (배우다)"
-    },
-    {
-      "nepali": "टेप",
-      "romanized": "Tep",
-      "korean": "tape (테이프)"
-    },
-    {
-      "nepali": "त्यसै कारण",
-      "romanized": "tyasai kaaran",
-      "korean": "for that reason (그렇기 때문에)"
-    }
+    { "nepali": "आउँछ", "romanized": "aauchha", "korean": "to know (skill/language), to come (할 줄 안다, 오다)" },
+    { "nepali": "आउँदैन", "romanized": "aaűdaina", "korean": "don't know (skill/language) (할 줄 모른다)" },
+    { "nepali": "भाषा", "romanized": "bhaashaa", "korean": "language (언어)" },
+    { "nepali": "बिहान", "romanized": "bihaana", "korean": "morning (아침)" },
+    { "nepali": "डिबो", "romanized": "Dibo", "korean": "Devo (인명)" },
+    { "nepali": "धेरै", "romanized": "dherai", "korean": "much, many (많이, 많은)" },
+    { "nepali": "हिँड्नु", "romanized": "hĩDnu", "korean": "to walk (걷다)" },
+    { "nepali": "जानु", "romanized": "jaanu", "korean": "to go (가다)" },
+    { "nepali": "कारण", "romanized": "kaaran", "korean": "reason (이유)" },
+    { "nepali": "भन्नु", "romanized": "bhannu", "korean": "to tell (말해주다)" },
+    { "nepali": "खल्ती", "romanized": "khalti", "korean": "pocket (주머니)" },
+    { "nepali": "नेपाली", "romanized": "nepaali", "korean": "Nepali (네팔의, 네팔어)" },
+    { "nepali": "पछाडि", "romanized": "pachhaaDi", "korean": "behind (뒤에)" },
+    { "nepali": "पढ्नु", "romanized": "paDhnu", "korean": "to read, to study (읽다, 공부하다)" },
+    { "nepali": "फुटबल", "romanized": "phuTbal", "korean": "football (축구)" },
+    { "nepali": "रातो", "romanized": "raato", "korean": "red (빨간색)" },
+    { "nepali": "साथी", "romanized": "saathi", "korean": "friend (친구)" },
+    { "nepali": "सिक्नु", "romanized": "siknu", "korean": "to learn (배우다)" },
+    { "nepali": "टेप", "romanized": "Tep", "korean": "tape (테이프)" },
+    { "nepali": "त्यसै कारण", "romanized": "tyasai kaaran", "korean": "for that reason (그렇기 때문에)" }
   ],
   "examples": [],
   "grammar": [
     {
       "title": "1. Aauchha (능력/지식)",
       "details": [
-        "언어나 기술(수영, 축구 등)을 '할 줄 안다'고 할 때 사용합니다. 'Manparnu'와 마찬가지로 주어 뒤에 '-laai'를 붙입니다. (예: malaai aauchha) 부정형은 'aaűdaina'입니다."
+        "언어나 기술(수영, 축구 등)을 '할 줄 안다'고 할 때 사용합니다.",
+        "- 'Manparnu'와 마찬가지로 주어 뒤에 '-laai'를 붙입니다. (예: malaai aauchha)",
+        "- 부정형은 'aaűdaina'입니다."
       ]
     },
     {
       "title": "2. Saknu (Can)",
       "details": [
-        "'~할 수 있다'는 가능성을 나타내며 동사 원형 뒤에 붙습니다. (예: paDhna sakchhu - 읽을 수 있다)."
+        "'~할 수 있다'는 가능성을 나타내며 동사 원형 뒤에 붙습니다.",
+        "- 예: paDhna sakchhu (읽을 수 있다)."
       ]
     },
     {
@@ -134,102 +57,52 @@
   ],
   "quiz": [
     {
-      "question": "언어나 기술을 '할 줄 안다'고 표현할 때 쓰는 동사는?",
+      "question": "네팔어로 언어나 기술 등을 '할 줄 안다'라고 할 때 쓰는 동사 형태는?",
       "options": [
         "सक्छु (sakchhu)",
         "आउँछ (aauchha)",
-        "जान्छु (jaanchhu)",
-        "हेर्छु (herchhu)"
+        "आउँदैन (aaűdaina)",
+        "मिल्छ (milchha)"
       ],
       "answer": 1
     },
     {
-      "question": "'aauchha(할 줄 안다)'를 사용할 때 주어에 붙여야 하는 조사는?",
+      "question": "'~할 수 있다(Can)'의 가능성을 나타내는 동사는?",
       "options": [
-        "ले (le)",
-        "को (ko)",
-        "बाट (baaTa)",
-        "लाई (laai)"
-      ],
-      "answer": 3
-    },
-    {
-      "question": "'할 줄 모른다'의 올바른 네팔어 표현은?",
-      "options": [
-        "आउँदैन (aaűdaina)",
-        "छैन (chhaina)",
-        "सक्दैन (sakdaina)",
-        "होइन (hoina)"
+        "सक्नु (saknu)",
+        "सिक्नु (siknu)",
+        "भन्नु (bhannu)",
+        "जानु (jaanu)"
       ],
       "answer": 0
     },
     {
-      "question": "동사 원형 뒤에 붙어 '~할 수 있다(능력/가능성)'를 나타내는 동사는?",
+      "question": "'이유'를 뜻하는 네팔어는?",
       "options": [
-        "पर्छ (parchha)",
-        "सक्नु (saknu)",
-        "आउनु (aaunu)",
-        "खोज्नु (khojnu)"
+        "कारण (kaaran)",
+        "साथी (saathi)",
+        "भाषा (bhaashaa)",
+        "बिहान (bihaana)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'그렇기 때문에' 또는 '그래서'를 의미하는 접속어는?",
+      "options": [
+        "तर (tara)",
+        "त्यसै कारण (tyasai kaaran)",
+        "धेरै (dherai)",
+        "पछाडि (pachhaaDi)"
       ],
       "answer": 1
     },
     {
-      "question": "두 문장을 대조하는 '그러나'를 뜻하는 접속사는?",
+      "question": "'그러나(But)'를 의미하는 단어는?",
       "options": [
         "अनि (ani)",
-        "किन (kina)",
         "तर (tara)",
+        "पनि (pani)",
         "र (ra)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "'그렇기 때문에' 또는 '그러한 이유로'를 뜻하는 표현은?",
-      "options": [
-        "कहिले काहीँ (kahile kaahi)",
-        "त्यसै कारण (tyasai kaaran)",
-        "धेरै जसो (dherai jaso)",
-        "उसोभए (usobhae)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "'당신은 네팔어를 할 줄 압니까?'를 네팔어로 바르게 표현한 것은?",
-      "options": [
-        "तपाईंलाई नेपाली भाषा आउँछ ? (tapaaïlaai nepaali bhaashaa aauchha ?)",
-        "तपाईं नेपाली पढ्न सक्नुहुन्छ ? (tapaaï nepaali paDhna saknuhunchha ?)",
-        "तपाईंलाई नेपाली खाना मनपर्छ ? (tapaaïlaai nepaali khaanaa manparchha ?)",
-        "तपाईं कुन भाषा बोल्नुहुन्छ ? (tapaaï kun bhaashaa bolnuhunchha ?)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'조금 할 줄 압니다'의 올바른 표현은?",
-      "options": [
-        "धेरै आउँछ। (dherai aauchha.)",
-        "एकदम आउँछ। (ekdam aauchha.)",
-        "अलिअलि आउँछ। (aliali aauchha.)",
-        "आउँदैन। (aaűdaina.)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "'배우다'를 뜻하는 동사는?",
-      "options": [
-        "सिक्नु (siknu)",
-        "पढाउनु (paDhaaunu)",
-        "हेर्नु (hernu)",
-        "भन्नु (bhannu)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'읽을 수 있다'의 올바른 표현은?",
-      "options": [
-        "पढ्ने (paDhne)",
-        "पढ्न सक्छु (paDhna sakchhu)",
-        "पढेर (paDhera)",
-        "पढ्न जान्छु (paDhna jaanchhu)"
       ],
       "answer": 1
     }
@@ -238,206 +111,56 @@
     {
       "title": "PART I: DIALOGUE (a) 언어 능력 (aauchha)",
       "lines": [
-        {
-          "speaker": "A",
-          "nepali": "तपाईंलाई नेपाली भाषा आउँछ ?",
-          "romanized": "tapaaïlaai nepaali bhaashaa aauchha ?",
-          "korean": "당신은 네팔어를 할 줄 압니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "अलिअलि आउँछ।",
-          "romanized": "aliali aauchha.",
-          "korean": "조금 할 줄 압니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको साथीलाई नि ?",
-          "romanized": "tapaaïko saathilaai ni ?",
-          "korean": "당신의 친구는요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "उसलाई धेरै राम्रो आउँछ।",
-          "romanized": "uslaai dherai raamro aauchha.",
-          "korean": "그는 아주 잘합니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "उसले कहाँ सिक्यो ?",
-          "romanized": "usle kahãã sikyõ ?",
-          "korean": "그는 कहाँ(어디)에서 배웠습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "उसले अमेरिकामा सिक्यो।",
-          "romanized": "usle amerikaamaa sikyõ.",
-          "korean": "그는 미국에서 배웠습니다."
-        }
+        { "speaker": "A", "nepali": "तपाईंलाई नेपाली भाषा आउँछ ?", "romanized": "tapaaïlaai nepaali bhaashaa aauchha ?", "korean": "당신은 네팔어를 할 줄 압니까?" },
+        { "speaker": "B", "nepali": "अलिअलि आउँछ।", "romanized": "aliali aauchha.", "korean": "조금 할 줄 압니다." },
+        { "speaker": "A", "nepali": "तपाईंको साथीलाई नि ?", "romanized": "tapaaïko saathilaai ni ?", "korean": "당신의 친구는요?" },
+        { "speaker": "B", "nepali": "उसलाई धेरै राम्रो आउँछ।", "romanized": "uslaai dherai raamro aauchha.", "korean": "그는 아주 잘합니다." },
+        { "speaker": "A", "nepali": "उसले कहाँ सिक्यो ?", "romanized": "usle kahãã sikyõ ?", "korean": "그는 어디에서 배웠습니까?" },
+        { "speaker": "B", "nepali": "उसले अमेरिकामा सिक्यो।", "romanized": "usle amerikaamaa sikyõ.", "korean": "그는 미국에서 배웠습니다." }
       ]
     },
     {
       "title": "PART I: DIALOGUE (b) 복습 - 도구와 방법",
       "lines": [
-        {
-          "speaker": "A",
-          "nepali": "तपाईं केले लेख्नुहुन्छ ?",
-          "romanized": "tapaaï kele lekhnuhunchha ?",
-          "korean": "당신은 무엇으로 씁니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "म कलमले लेख्छु।",
-          "romanized": "ma kalamle lekhchhu.",
-          "korean": "저는 펜으로 씁니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "नेपाली भाषा कसरी लेख्ने ?",
-          "romanized": "nepaali bhaashaa kasari lekhne ?",
-          "korean": "네팔어는 कैसे(어떻게) 쓰나요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "यसरी लेख्ने।",
-          "romanized": "yasari lekhne.",
-          "korean": "이렇게 씁니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईं नेपाली पढ्न सक्नुहुन्छ ?",
-          "romanized": "tapaaï nepaali paDhna saknuhunchha ?",
-          "korean": "당신은 네팔어를 읽을 सु 있습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "सक्छु।",
-          "romanized": "sakchhu.",
-          "korean": "네, 할 수 있습니다."
-        }
+        { "speaker": "A", "nepali": "तपाईं केले लेख्नुहुन्छ ?", "romanized": "tapaaï kele lekhnuhunchha ?", "korean": "당신은 무엇으로 씁니까?" },
+        { "speaker": "B", "nepali": "म कलमले लेख्छु।", "romanized": "ma kalamle lekhchhu.", "korean": "저는 펜으로 씁니다." },
+        { "speaker": "A", "nepali": "नेपाली भाषा कसरी लेख्ने ?", "romanized": "nepaali bhaashaa kasari lekhne ?", "korean": "네팔어는 어떻게 쓰나요?" },
+        { "speaker": "B", "nepali": "यसरी लेख्ने।", "romanized": "yasari lekhne.", "korean": "이렇게 씁니다." },
+        { "speaker": "A", "nepali": "तपाईं नेपाली पढ्न सक्नुहुन्छ ?", "romanized": "tapaaï nepaali paDhna saknuhunchha ?", "korean": "당신은 네팔어를 읽을 수 있습니까?" },
+        { "speaker": "B", "nepali": "सक्छु।", "romanized": "sakchhu.", "korean": "네, 할 수 있습니다." }
       ]
     },
     {
       "title": "PART II: PRACTICE (a) 능력과 취향 복합",
       "lines": [
-        {
-          "speaker": "A",
-          "nepali": "तपाईंलाई फुटबल खेल्न आउँछ ?",
-          "romanized": "tapaaïlaai phuTbal khelna aauchha ?",
-          "korean": "당신은 축구를 할 줄 압니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "आउँछ।",
-          "romanized": "aauchha.",
-          "korean": "네, 할 줄 압니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंलाई फुटबल खेल्न मनपर्छ ?",
-          "romanized": "tapaaïlaai phuTbal khelna manparchha ?",
-          "korean": "당신은 축구하는 것을 좋아합니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मनपर्छ।",
-          "romanized": "manparchha.",
-          "korean": "네, 좋아합니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको साथीलाई नि ?",
-          "romanized": "tapaaïko saathilaai ni ?",
-          "korean": "당신의 친구는요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "उसलाई खेल्न आउँछ तर मनपर्दैन।",
-          "romanized": "uslaai khelna aauchha tara manpardaina.",
-          "korean": "그는 할 줄은 알지만 좋아하지는 않습니다."
-        }
+        { "speaker": "A", "nepali": "तपाईंलाई फुटबल खेल्न आउँछ ?", "romanized": "tapaaïlaai phuTbal khelna aauchha ?", "korean": "당신은 축구할 줄 압니까?" },
+        { "speaker": "B", "nepali": "आउँछ।", "romanized": "aauchha.", "korean": "할 줄 압니다." },
+        { "speaker": "A", "nepali": "तपाईंलाई फुटबल खेल्न मनपर्छ ?", "romanized": "tapaaïlaai phuTbal khelna manparchha ?", "korean": "당신은 축구하는 것을 좋아합니까?" },
+        { "speaker": "B", "nepali": "मनपर्छ।", "romanized": "manparchha.", "korean": "네, 좋아합니다." },
+        { "speaker": "A", "nepali": "तपाईंको साथीलाई नि ?", "romanized": "tapaaïko saathilaai ni ?", "korean": "당신의 친구는요?" },
+        { "speaker": "B", "nepali": "उसलाई खेल्न आउँछ तर मनपर्दैन।", "romanized": "uslaai khelna aauchha tara manpardaina.", "korean": "그는 할 줄은 알지만 좋아하지는 않습니다." }
       ]
     },
     {
       "title": "PART II: PRACTICE (b) 과거 경험 복습",
       "lines": [
-        {
-          "speaker": "A",
-          "nepali": "हिजो तपाईं कहाँ जानुभयो ?",
-          "romanized": "hijo tapaaï kahãã jaanubhayo ?",
-          "korean": "어제 당신은 어디에 갔습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "म बजारमा गएँ।",
-          "romanized": "ma bajaarmaa gaẽ.",
-          "korean": "저는 시장에 갔습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "त्यहाँ के गर्नुभयो ?",
-          "romanized": "tyahãã ke garnubhayo ?",
-          "korean": "거기서 무엇을 했습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मैले कपडा किनेँ।",
-          "romanized": "maile kaparaa kine.",
-          "korean": "옷감을 샀습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "कति मिटर किन्नुभयो ?",
-          "romanized": "kati miTar kinnubhayo ?",
-          "korean": "몇 미터 샀습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "तीन मिटर किनेँ।",
-          "romanized": "tin miTar kine.",
-          "korean": "3미터 샀습니다."
-        }
+        { "speaker": "A", "nepali": "हिजो तपाईं कहाँ जानुभयो ?", "romanized": "hijo tapaaï kahãã jaanubhayo ?", "korean": "어제 당신은 어디에 갔습니까?" },
+        { "speaker": "B", "nepali": "म बजारमा गएँ।", "romanized": "ma bajaarmaa gaẽ.", "korean": "저는 시장에 갔습니다." },
+        { "speaker": "A", "nepali": "त्यहाँ के गर्नुभयो ?", "romanized": "tyahãã ke garnubhayo ?", "korean": "그곳에서 무엇을 하셨습니까?" },
+        { "speaker": "B", "nepali": "मैले कपडा किनेँ।", "romanized": "maile kaparaa kine.", "korean": "저는 옷을 샀습니다." },
+        { "speaker": "A", "nepali": "कति मिटर किन्नुभयो ?", "romanized": "kati miTar kinnubhayo ?", "korean": "몇 미터 사셨습니까?" },
+        { "speaker": "B", "nepali": "तीन मिटर किनेँ।", "romanized": "tin miTar kine.", "korean": "3미터 샀습니다." }
       ]
     },
     {
-      "title": "PART II: PRACTICE (c) सो유와 위치 복합",
+      "title": "PART II: PRACTICE (c) 소유와 위치 복합",
       "lines": [
-        {
-          "speaker": "A",
-          "nepali": "तपाईं सँग पैसा छ ?",
-          "romanized": "tapaaï saṅga paisaa chha ?",
-          "korean": "당신 지금 돈 가지고 있습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "छैन।",
-          "romanized": "chhaina.",
-          "korean": "없습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको खल्तीमा के छ ?",
-          "romanized": "tapaaïko khaltimaa ke chha ?",
-          "korean": "당신의 주머니에는 무엇이 있습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो खल्तीमा कलम छ।",
-          "romanized": "mero khaltimaa kalam chha.",
-          "korean": "제 주머니에는 펜이 있습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको पछाडि को छ ?",
-          "romanized": "tapaaïko pachhaaDi ko chha ?",
-          "korean": "당신의 뒤에는 누가 있습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो पछाडि मेरो साथी छ।",
-          "romanized": "mero pachhaaDi mero saathi chha.",
-          "korean": "제 뒤에는 제 친구가 있습니다."
-        }
+        { "speaker": "A", "nepali": "तपाईं सँग पैसा छ ?", "romanized": "tapaaï saṅga paisaa chha ?", "korean": "당신에게 돈이 있습니까?" },
+        { "speaker": "B", "nepali": "छैन।", "romanized": "chhaina.", "korean": "없습니다." },
+        { "speaker": "A", "nepali": "तपाईंको खल्तीमा के छ ?", "romanized": "tapaaïko khaltimaa ke chha ?", "korean": "당신의 주머니에는 무엇이 있습니까?" },
+        { "speaker": "B", "nepali": "मेरो खल्तीमा कलम छ।", "romanized": "mero khaltimaa kalam chha.", "korean": "제 주머니에는 펜이 있습니다." },
+        { "speaker": "A", "nepali": "तपाईंको पछाडि को छ ?", "romanized": "tapaaïko pachhaaDi ko chha ?", "korean": "당신 뒤에는 누가 있습니까?" },
+        { "speaker": "B", "nepali": "मेरो पछाडि मेरो साथी छ।", "romanized": "mero pachhaaDi mero saathi chha.", "korean": "제 뒤에는 제 친구가 있습니다." }
       ]
     }
   ]

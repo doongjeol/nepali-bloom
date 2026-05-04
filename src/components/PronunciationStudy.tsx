@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { getPronunciationAudioPath } from "@/lib/getAudioPath";
@@ -10,6 +11,8 @@ type PronunciationItem = {
   phonetic: string;
   audio: string;
   description?: string;
+  book_guide?: string;
+  book_examples?: Array<{ nepali: string; romanized: string; meaning: string }>;
 };
 
 type CategoryKey = "vowels" | "consonants" | "special_characters";
@@ -91,12 +94,15 @@ function PronCard({
         </span>
       </div>
       {/* 클릭 시 표시: 발음 & 상세 설명 (Fade-in) */}
-      <div className={cn("mt-3 flex flex-1 flex-col transition-opacity duration-300", !revealed ? "opacity-0" : "opacity-100")}>
+      <div
+        className={cn(
+          "mt-3 flex flex-1 flex-col transition-opacity duration-300",
+          !revealed ? "opacity-0 pointer-events-none" : "opacity-100",
+        )}
+      >
         <p className="mb-1.5 text-sm font-bold text-primary">{item.phonetic}</p>
         {item.description && (
-          <p className="break-keep text-sm leading-relaxed text-muted-foreground">
-            {parseFormattedText(item.description)}
-          </p>
+          <p className="break-keep text-sm leading-relaxed text-muted-foreground">{parseFormattedText(item.description)}</p>
         )}
       </div>
     </button>
@@ -106,7 +112,8 @@ function PronCard({
 export function PronunciationStudy() {
   const audioPlayer = useAudioPlayer();
   const [showAll, setShowAll] = useState(false);
-  const [revealedIds, setRevealedIds] = useState<Set<string>>(() => new Set());
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [detailTab, setDetailTab] = useState<"card" | "description">("card");
 
   const vowels = (data as any).vowels as PronunciationItem[];
   const consonants = (data as any).consonants as PronunciationItem[];
@@ -115,11 +122,14 @@ export function PronunciationStudy() {
 
   const currentPlayingId = audioPlayer.currentItemId;
 
+  const allItems = [...vowels, ...consonants, ...special];
+  const selectedItem = expandedId ? allItems.find((x) => makeId(x) === expandedId) ?? null : null;
+
   const renderGrid = (items: PronunciationItem[]) => (
     <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-5">
       {items.map((item) => {
         const id = makeId(item);
-        const revealed = showAll || revealedIds.has(id);
+        const revealed = showAll || expandedId === id;
         const playing = currentPlayingId === `pron-${id}`;
         return (
           <PronCard
@@ -129,9 +139,9 @@ export function PronunciationStudy() {
             playing={playing}
             onClick={() => {
               void audioPlayer.play(`pron-${id}`, getPronunciationAudioPath(item.audio));
-              setRevealedIds((prev) => {
-                const next = new Set(prev);
-                next.add(id);
+              setExpandedId((prev) => {
+                const next = prev === id ? null : id;
+                if (next) setDetailTab("card");
                 return next;
               });
             }}
@@ -154,14 +164,112 @@ export function PronunciationStudy() {
       )}
 
       <div className="flex flex-wrap items-center justify-end gap-2">
-          <button
-            type="button"
-            onClick={() => setShowAll((v) => !v)}
-            className="rounded-xl bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground hover:bg-accent active:scale-[0.99] transition-all"
-          >
-            {showAll ? "정답 숨기기" : "정답 보기"}
-          </button>
+        <button
+          type="button"
+          onClick={() =>
+            setShowAll((v) => {
+              const next = !v;
+              if (next) setExpandedId(null);
+              return next;
+            })
+          }
+          className="rounded-xl bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground hover:bg-accent active:scale-[0.99] transition-all"
+        >
+          {showAll ? "설명 숨기기" : "설명 보기"}
+        </button>
       </div>
+
+      {!showAll && selectedItem && (
+        <div className="rounded-2xl border bg-card p-4 shadow-sm sm:p-5">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <div className="min-w-0">
+              <p className="text-xs font-semibold text-muted-foreground">선택한 발음</p>
+              <p className="mt-1 text-sm font-semibold text-foreground">
+                {selectedItem.char} · {selectedItem.romanized}
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={() => setExpandedId(null)}
+              className="rounded-xl bg-secondary px-3 py-2 text-xs font-semibold text-secondary-foreground hover:bg-accent active:scale-[0.99] transition-all"
+            >
+              닫기
+            </button>
+          </div>
+
+          <div className="mt-4 flex rounded-xl border bg-muted/20 p-1">
+            <button
+              type="button"
+              onClick={() => setDetailTab("card")}
+              className={cn(
+                "flex-1 rounded-lg px-3 py-2.5 text-xs font-semibold transition-all",
+                detailTab === "card"
+                  ? "bg-background text-foreground shadow-sm border-b-2 border-primary"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              발음 카드
+            </button>
+            <button
+              type="button"
+              onClick={() => setDetailTab("description")}
+              className={cn(
+                "flex-1 rounded-lg px-3 py-2.5 text-xs font-semibold transition-all",
+                detailTab === "description"
+                  ? "bg-background text-foreground shadow-sm border-b-2 border-primary"
+                  : "text-muted-foreground hover:text-foreground",
+              )}
+            >
+              추가 설명
+            </button>
+          </div>
+
+          {detailTab === "card" ? (
+            <div key="tab-card" className="mt-4 animate-in fade-in duration-200">
+              <div className="rounded-2xl border bg-card p-4 sm:p-5">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <p
+                      className="text-5xl font-extrabold leading-none text-foreground sm:text-6xl"
+                      style={{ fontFamily: "var(--font-nepali)" }}
+                    >
+                      {selectedItem.char}
+                    </p>
+                    <p className="mt-3 text-sm font-semibold text-foreground">{selectedItem.romanized}</p>
+                    <p className="mt-1 text-sm font-bold text-primary">{selectedItem.phonetic}</p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      void audioPlayer.play(
+                        `pron-${makeId(selectedItem)}`,
+                        getPronunciationAudioPath(selectedItem.audio),
+                        { silentError: true },
+                      )
+                    }
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-secondary text-secondary-foreground shadow-sm transition-all hover:bg-accent active:scale-[0.98]"
+                    aria-label="발음 음성 재생"
+                  >
+                    <Volume2 className="h-5 w-5" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div key="tab-description" className="mt-4 animate-in fade-in duration-200">
+              {selectedItem.description ? (
+                <div className="rounded-2xl border bg-muted/20 p-4 text-sm leading-relaxed text-muted-foreground">
+                  {parseFormattedText(selectedItem.description)}
+                </div>
+              ) : (
+                <div className="rounded-2xl border bg-muted/20 p-4 text-sm text-muted-foreground">
+                  추가 설명이 준비되지 않았습니다.
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
 
       <Section title={categoryLabel.vowels}>{renderGrid(vowels)}</Section>
       <Section title={categoryLabel.consonants}>{renderGrid(consonants)}</Section>

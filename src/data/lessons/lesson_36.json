@@ -1,0 +1,221 @@
+{
+  "id": 36,
+  "title": "Lesson 36",
+  "titleKo": "제36과",
+  "description": "네팔어에서 빈번하게 사용되는 수동태 표현(-inchha, -aainchha)과 행위자를 나타내는 '-dwaaraa'를 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "अनुशासन",
+      "romanized": "anushaashan",
+      "korean": "discipline (규율/훈육)"
+    },
+    {
+      "nepali": "बदमास",
+      "romanized": "badmaas",
+      "korean": "mischievous (버릇없는/장난기 심한)"
+    },
+    {
+      "nepali": "विज्ञान",
+      "romanized": "bigyaan",
+      "korean": "science (과학)"
+    },
+    {
+      "nepali": "व्यवहार",
+      "romanized": "byabahaar",
+      "korean": "treatment, behavior (대우/행실)"
+    },
+    {
+      "nepali": "द्वारा",
+      "romanized": "dwaaraa",
+      "korean": "by (~에 의해서)"
+    },
+    {
+      "nepali": "घण्टाघर",
+      "romanized": "ghanTaaghar",
+      "korean": "clock tower (시계탑)"
+    },
+    {
+      "nepali": "कार्यालय",
+      "romanized": "kaaryaalaya",
+      "korean": "office (사무실/관공서)"
+    },
+    {
+      "nepali": "मानविकी शास्त्र",
+      "romanized": "maanabiki shaastra",
+      "korean": "humanities (인문학)"
+    },
+    {
+      "nepali": "राष्ट्रभाषा",
+      "romanized": "raastra bhaashaa",
+      "korean": "national language (국어)"
+    },
+    {
+      "nepali": "रुसी",
+      "romanized": "rusi",
+      "korean": "Russian (러시아의/러시아어)"
+    },
+    {
+      "nepali": "सजाय",
+      "romanized": "sajaaya",
+      "korean": "punishment (처벌)"
+    },
+    {
+      "nepali": "संस्कृति",
+      "romanized": "sanskriti",
+      "korean": "culture (문화)"
+    },
+    {
+      "nepali": "सरकारी",
+      "romanized": "sarkaari",
+      "korean": "government (정부의/공립의)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. 수동태 (Passive Forms)",
+      "details": [
+        "'paDhaainchha'(가르쳐지다), 'garinchha'(행해지다), 'sikaainchha'(배워지다) 등은 동사 어간에 '-i-'나 '-aai-'를 넣어 만듭니다.",
+        "- 네팔어에서는 영어 등 다른 언어에 비해 능동태보다 수동태 표현이 매우 빈번하고 자연스럽게 사용되는 특징이 있습니다."
+      ]
+    },
+    {
+      "title": "2. '-dwaaraa' (By)",
+      "details": [
+        "수동태 문장에서 행위의 주체를 나타낼 때 쓰이며 영어의 'by'와 유사합니다.",
+        "- 예: nepaalidwaaraa (네팔인에 의해서), amerikaaliharudwaaraa (미국인들에 의해서)."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "수동태 문장에서 '~에 의해서(by)'를 뜻하는 행위자 표시 조사는?",
+      "options": [
+        "को (-ko)",
+        "द्वारा (dwaaraa)",
+        "सँग (saṅga)",
+        "मा (-maa)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'과학'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "विज्ञान (bigyaan)",
+        "मानविकी (maanabiki)",
+        "संस्कृति (sanskriti)",
+        "भाषा (bhaashaa)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'가르쳐지다'를 뜻하는 올바른 네팔어 수동태 표현은?",
+      "options": [
+        "पढाउँछ (paDhaauchha)",
+        "पढ्छ (paDhchha)",
+        "पढाइन्छ (paDhaainchha)",
+        "सिकिन्छ (sikinchha)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'인문학'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "मानविकी शास्त्र (maanabiki shaastra)",
+        "समाज शास्त्र (samaaj shaastra)",
+        "विज्ञान (bigyaan)",
+        "कार्यालय (kaaryaalaya)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'처벌'을 뜻하는 네팔어 단어는?",
+      "options": [
+        "सजाय (sajaaya)",
+        "व्यवहार (byabahaar)",
+        "अनुशासन (anushaashan)",
+        "बदमास (badmaas)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "네팔어 동사를 수동태로 만들 때 어간에 주로 추가되는 형태소(형태)는?",
+      "options": [
+        "-ko",
+        "-i- / -aai-",
+        "-laa",
+        "-era"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'사무실' 또는 '관공서'를 뜻하는 네팔어는?",
+      "options": [
+        "कार्यालय (kaaryaalaya)",
+        "घण्टाघर (ghanTaaghar)",
+        "विद्यालय (bidyaalaya)",
+        "कलेज (kalej)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'규율' 또는 '훈육'을 뜻하는 단어는?",
+      "options": [
+        "संस्कृति (sanskriti)",
+        "सजाय (sajaaya)",
+        "अनुशासन (anushaashan)",
+        "व्यवहार (byabahaar)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'국어(국가의 공식 언어)'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "नेपाली भाषा (nepaali bhaashaa)",
+        "राष्ट्रभाषा (raastra bhaashaa)",
+        "रुसी (rusi)",
+        "अंग्रेजी (angreji)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "편지가 '쓰이다(적히다)'를 뜻하는 수동태 표현은?",
+      "options": [
+        "लेख्छ (lekhchha)",
+        "लेखिन्छ (lekhinchha)",
+        "लेख्यो (lekhyo)",
+        "लेख्नेछ (lekhnechha)"
+      ],
+      "answer": 1
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 대학 교육과 전공",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपालको सबभन्दा पुरानो कलेज कुन हो ?", "romanized": "nepaalko sabbhandaa puraano kalej kun ho?", "korean": "네팔에서 가장 오래된 대학은 어디인가요?" },
+        { "speaker": "B", "nepali": "त्रिचन्द्र कलेज हो।", "romanized": "tri chandra kalej ho.", "korean": "트리 찬드라 대학입니다." },
+        { "speaker": "A", "nepali": "त्यहाँ कुन कुन विषय पढाइन्छ ?", "romanized": "tyahãã kun kun bishaya paDhaainchha?", "korean": "그곳에서는 어떤 과목들이 가르쳐지나요?" },
+        { "speaker": "B", "nepali": "विज्ञान र मानविकी शास्त्र पढाइन्छ।", "romanized": "bigyaan ra maanabiki shaastra paDhaainchha.", "korean": "과학과 인문학이 가르쳐집니다." }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 언어 사용 현황 (수동태 표현)",
+      "lines": [
+        { "speaker": "A", "nepali": "नेपालको सरकारी कार्यालयहरूमा कुन भाषा बोलिन्छ ?", "romanized": "nepaalko sarkaari kaaryaalayaharumaa kun bhaashaa bolinchha?", "korean": "네팔의 정부 관공서에서는 어떤 언어가 사용됩니까?" },
+        { "speaker": "B", "nepali": "नेपाली भाषा बोलिन्छ।", "romanized": "nepaali bhaashaa bolinchha.", "korean": "네팔어가 사용됩니다." },
+        { "speaker": "A", "nepali": "त्यहाँ चिठीहरू पनि नेपाली भाषामा नै लेखिन्छ ?", "romanized": "tyahãã chiThiharu pani nepaali bhaashaamaa nai lekhinchha?", "korean": "그곳의 편지들도 네팔어로 쓰이나요?" },
+        { "speaker": "B", "nepali": "हो, नेपाली भाषामा नै लेखिन्छ।", "romanized": "ho, nepaali bhaashaamaa nai lekhinchha.", "korean": "네, 네팔어로만 쓰입니다." }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (c) 평화봉사단(Peace Corps) 훈련",
+      "lines": [
+        { "speaker": "A", "nepali": "पिसकोरको तालिममा कति घण्टा नेपाली सिकाइन्छ ?", "romanized": "piskorko taalimmaa kati ghanTaa nepaali sikaainchha?", "korean": "평화봉사단 훈련에서 네팔어는 몇 시간 가르쳐지나요?" },
+        { "speaker": "B", "nepali": "एक दिनको चारदेखि छ घण्टा सिकाइन्छ।", "romanized": "ek dinko chaardekhi chha ghanTaa sikaainchha.", "korean": "하루에 4~6시간 가르쳐집니다." },
+        { "speaker": "A", "nepali": "यी कुराहरू नेपालीद्वारा सिकाइन्छ कि अमेरिकीहरूद्वारा ?", "romanized": "yi kuraaharu nepaalidwaaraa sikaainchha ki amerikaaliharudwaaraa?", "korean": "이것들은 네팔인에 의해 가르쳐지나요, 미국인에 의해 가르쳐지나요?" },
+        { "speaker": "B", "nepali": "दुवैद्वारा सिकाइन्छ।", "romanized": "dubai dwaaraa sikaainchha.", "korean": "둘 다에 의해 가르쳐집니다." }
+      ]
+    }
+  ]
+}

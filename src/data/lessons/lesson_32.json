@@ -1,0 +1,253 @@
+{
+  "id": 32,
+  "title": "Lesson 32",
+  "titleKo": "제32과",
+  "description": "숙박과 식사를 요청하는 표현과 다양한 의문사에 '-pani'를 붙여 만드는 부정 대명사의 활용법을 배웁니다.",
+  "vocabulary": [
+    {
+      "nepali": "औधी",
+      "romanized": "audhi",
+      "korean": "extremely (매우, 아주)"
+    },
+    {
+      "nepali": "बास",
+      "romanized": "baas",
+      "korean": "shelter, lodging (숙박, 머물 곳)"
+    },
+    {
+      "nepali": "बिउ",
+      "romanized": "biu",
+      "korean": "seed (씨앗)"
+    },
+    {
+      "nepali": "छेउ",
+      "romanized": "chheu",
+      "korean": "side (옆, 주변)"
+    },
+    {
+      "nepali": "छोडी दिनु",
+      "romanized": "chhoDi dinu",
+      "korean": "to leave (두고 오다, 남기다)"
+    },
+    {
+      "nepali": "जहिले पनि",
+      "romanized": "jahile pani",
+      "korean": "always, all the time (언제나)"
+    },
+    {
+      "nepali": "जसलाई पनि",
+      "romanized": "jaslaai pani",
+      "korean": "to anyone (누구에게나)"
+    },
+    {
+      "nepali": "जे पनि",
+      "romanized": "je pani",
+      "korean": "anything (무엇이든)"
+    },
+    {
+      "nepali": "जुन पनि",
+      "romanized": "jun pani",
+      "korean": "any (thing) (어느 것이든)"
+    },
+    {
+      "nepali": "लगिदिनु",
+      "romanized": "lagi dinu",
+      "korean": "to take, carry for someone (가져다주다)"
+    },
+    {
+      "nepali": "पल्टिनु",
+      "romanized": "palTinu",
+      "korean": "to lie down (눕다)"
+    },
+    {
+      "nepali": "सदर मुकाम",
+      "romanized": "sadar mukaam",
+      "korean": "district centre (군청 소재지)"
+    },
+    {
+      "nepali": "थकाइ",
+      "romanized": "thakaai",
+      "korean": "fatigue (피로)"
+    },
+    {
+      "nepali": "ठीक हुनु",
+      "romanized": "Thik hunu",
+      "korean": "to be all right (괜찮아지다)"
+    },
+    {
+      "nepali": "उही",
+      "romanized": "uhi",
+      "korean": "the same, the very one (바로 그, 똑같은)"
+    }
+  ],
+  "examples": [],
+  "grammar": [
+    {
+      "title": "1. Baas paainchha?",
+      "details": [
+        "\"머물 곳이 있습니까?\"라는 뜻으로 트레킹 중 하룻밤 묵을 곳을 찾을 때 쓰는 매우 흔한 표현입니다."
+      ]
+    },
+    {
+      "title": "2. 부정 대명사 표현 (-pani)",
+      "details": [
+        "의문사 뒤에 pani를 붙여서 '어느 ~든지', '아무 ~도' 같은 의미를 만듭니다.",
+        "- jasari pani (어떻게든), jati pani (얼마든지)",
+        "- jataa pani (어디든지), jasle pani (누구든지)",
+        "- jo pani (누구나), je pani (무엇이나)"
+      ]
+    },
+    {
+      "title": "3. 형용사의 복수형",
+      "details": [
+        "구어체에서는 잘 안 쓰이지만, 복수형을 쓸 때는 어미를 -aa로 바꿉니다.",
+        "- raamro의 복수형은 raamraa, miTho는 miThaa, aglo는 aglaa 등이 있습니다."
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "트레킹 중 \"하룻밤 묵을 곳이 있습니까?\" 하고 물을 때 쓰는 표현은?",
+      "options": [
+        "खाना पाइन्छ ? (khaanaa paainchha?)",
+        "बास पाइन्छ ? (baas paainchha?)",
+        "कोठा छ ? (koThaa chha?)",
+        "सुत्न पाइन्छ ? (sutna paainchha?)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'무엇이든'을 뜻하는 부정 대명사 표현은?",
+      "options": [
+        "जता पनि (jataa pani)",
+        "जो पनि (jo pani)",
+        "जे पनि (je pani)",
+        "जसरी पनि (jasari pani)"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'누구나'를 뜻하는 부정 대명사 표현은?",
+      "options": [
+        "जो पनि (jo pani)",
+        "जे पनि (je pani)",
+        "जता पनि (jataa pani)",
+        "जति पनि (jati pani)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'어디든지'를 뜻하는 부정 대명사 표현은?",
+      "options": [
+        "जता पनि (jataa pani)",
+        "जसले पनि (jasle pani)",
+        "जति पनि (jati pani)",
+        "जहिले पनि (jahile pani)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'눕다'를 뜻하는 네팔어 동사는?",
+      "options": [
+        "सुत्नु (sutnu)",
+        "बस्नु (basnu)",
+        "उठ्नु (uThnu)",
+        "पल्टिनु (palTinu)"
+      ],
+      "answer": 3
+    },
+    {
+      "question": "'피로'를 뜻하는 네팔어 단어는?",
+      "options": [
+        "थकाइ (thakaai)",
+        "औधी (audhi)",
+        "बिउ (biu)",
+        "छेउ (chheu)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'언제나'를 뜻하는 부정 대명사 표현은?",
+      "options": [
+        "जहिले पनि (jahile pani)",
+        "जुन पनि (jun pani)",
+        "जसलाई पनि (jaslaai pani)",
+        "जे पनि (je pani)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'누구에게나'를 뜻하는 표현은?",
+      "options": [
+        "जसलाई पनि (jaslaai pani)",
+        "जसले पनि (jasle pani)",
+        "जो पनि (jo pani)",
+        "जुन पनि (jun pani)"
+      ],
+      "answer": 0
+    },
+    {
+      "question": "'두고 오다' 또는 '남기다'를 뜻하는 동사 표현은?",
+      "options": [
+        "लगिदिनु (lagi dinu)",
+        "छोडी दिनु (chhoDi dinu)",
+        "पल्टिनु (palTinu)",
+        "ठीक हुनु (Thik hunu)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "형용사 'राम्रो (raamro)'의 복수형은 무엇일까요?",
+      "options": [
+        "राम्रो (raamro)",
+        "राम्री (raamri)",
+        "राम्रा (raamraa)",
+        "राम्राहरु (raamraaharu)"
+      ],
+      "answer": 2
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "PART I: DIALOGUE (a) 숙박과 식사 요청",
+      "lines": [
+        { "speaker": "A", "nepali": "ए दिदी ! बास पाइन्छ ?", "romanized": "e didi! baas paainchha ?", "korean": "저기요! 묵어갈 수 있을까요?" },
+        { "speaker": "B", "nepali": "पाइन्छ। कति जना हुनुहुन्छ ?", "romanized": "paainchha. kati janaa hunuhunchha ?", "korean": "네, 됩니다. 몇 분이신가요?" },
+        { "speaker": "A", "nepali": "तीन जना छौं। खाना के छ ?", "romanized": "tin janaa chhaữ. khaanaa ke chha?", "korean": "세 명입니다. 먹을 건 뭐가 있나요?" },
+        { "speaker": "B", "nepali": "उही दाल भात त हो नि, अरु के हुनु !", "romanized": "uhi daal bhaat ta ho ni, aru ke hunu !", "korean": "늘 먹는 달밧이죠, 다른 게 뭐가 있겠어요!" },
+        { "speaker": "A", "nepali": "मासु छैन र ?", "romanized": "maasu chhaina ra?", "korean": "고기는 없나요?" },
+        { "speaker": "B", "nepali": "मासु त कुखुरा काट्नुपर्छ।", "romanized": "maasu ta kukhuraa kaaThnu parchha.", "korean": "고기는 닭을 잡아야 합니다." },
+        { "speaker": "A", "nepali": "सुत्ने ठाउँ कता छ नि ?", "romanized": "sutne Thaaữ kataa chha ni?", "korean": "잘 곳은 어디인가요?" },
+        { "speaker": "B", "nepali": "माथि कोठा छ।", "romanized": "maathi koThaa chha.", "korean": "위층에 방이 있습니다." }
+      ]
+    },
+    {
+      "title": "PART I: DIALOGUE (b) 휴식과 라끄시(술)",
+      "lines": [
+        { "speaker": "A", "nepali": "लौ छिटो भात पकाउनोस्। हामी एक छिन पल्टिन्छौं। साह्रै थाकेका छौं।", "romanized": "lau chhiTo bhaat pakaaunos. haami ek chhin palTinchhau. saarhai thaakekaa chhaữ.", "korean": "자, 밥 좀 빨리 해주세요. 우리는 잠시 누워 있을게요. 너무 피곤하네요." },
+        { "speaker": "B", "nepali": "रक्सी खानुस् न। थकाइ ठीक भइहाल्छ नि।", "romanized": "raksi khaanus na. thakaai Thik bhaihaalchha ni.", "korean": "술(라끄시) 좀 드세요. 피로가 확 풀릴 겁니다." },
+        { "speaker": "A", "nepali": "एक एक गिलास दिनुस् न त।", "romanized": "ek ek gilaas dinus na ta.", "korean": "그럼 한 잔씩 주세요." },
+        { "speaker": "B", "nepali": "हवस्।", "romanized": "hawas.", "korean": "알겠습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (a) 부정 대명사 활용 (누구나, 무엇이나)",
+      "lines": [
+        { "speaker": "A", "nepali": "को रक्सी खान्छ ?", "romanized": "ko raksi khaanchha ?", "korean": "누가 술을 마시나요?" },
+        { "speaker": "B", "nepali": "जो पनि खान्छ।", "romanized": "jo pani khaanchha.", "korean": "누구나 다 마십니다." },
+        { "speaker": "A", "nepali": "असनमा के के पाइन्छ ?", "romanized": "asanmaa ke ke paainchha?", "korean": "아산 시장에는 무엇이 있나요?" },
+        { "speaker": "B", "nepali": "असनमा जे पनि पाइन्छ।", "romanized": "asanmaa je pani paainchha.", "korean": "아산에는 무엇이든 다 있습니다." }
+      ]
+    },
+    {
+      "title": "PART II: PRACTICE (b) 심부름 부탁",
+      "lines": [
+        { "speaker": "A", "nepali": "यो चिठी लगिदिनुस् न।", "romanized": "yo chiThi lagi dinus na.", "korean": "이 편지 좀 가져다주세요." },
+        { "speaker": "B", "nepali": "कसलाई दिने ?", "romanized": "kaslaai dině ?", "korean": "누구에게 줄까요?" },
+        { "speaker": "A", "nepali": "मेरो घरमा। जसलाई दिए पनि हुन्छ।", "romanized": "mero gharmaa. jaslaai die pani hunchha.", "korean": "제 집에요. 누구에게나 줘도 됩니다." },
+        { "speaker": "A", "nepali": "घरमा कोही नभए नि ?", "romanized": "gharmaa kohi nabhae ni ?", "korean": "집에 아무도 없으면요?" },
+        { "speaker": "B", "nepali": "एउटा पसल छ। त्यहाँ छोडिदिए हुन्छ।", "romanized": "euTaa pasal chha. tyahãã chhoDi die hunchha.", "korean": "가게가 하나 있어요. 거기에 맡겨두면 됩니다." }
+      ]
+    }
+  ]
+}
