@@ -22,7 +22,7 @@ export function FlashCard({
   const [flipped, setFlipped] = useState(false);
   const audioPlayer = useAudioPlayer();
 
-  const audioSrc = useMemo(() => getVocabAudioPath(item.lessonId, item.vocabIndex), [item.lessonId, item.vocabIndex]);
+  const audioSrc = useMemo(() => getVocabAudioPath(item.lessonId, String(item.vocabIndex)), [item.lessonId, item.vocabIndex]);
   const audioItemId = `study-vocab-${item.id}`;
 
   return (
