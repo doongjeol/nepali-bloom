@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { to: "/" as const, label: "홈", icon: "🏠" },
+  { to: "/feed" as const, label: "피드", icon: "📷" },
   { to: "/lessons" as const, label: "레슨", icon: "📚" },
 ];
 
@@ -25,7 +26,8 @@ export function Header() {
             {navItems.map((item) => {
               const isActive =
                 location.pathname === item.to ||
-                (item.to === "/lessons" && location.pathname.startsWith("/lessons"));
+                (item.to === "/lessons" && location.pathname.startsWith("/lessons")) ||
+                (item.to === "/feed" && location.pathname.startsWith("/feed"));
               return (
                 <Link
                   key={item.to}
@@ -52,7 +54,8 @@ export function Header() {
           {navItems.map((item) => {
             const isActive =
               location.pathname === item.to ||
-              (item.to === "/lessons" && location.pathname.startsWith("/lessons"));
+              (item.to === "/lessons" && location.pathname.startsWith("/lessons")) ||
+              (item.to === "/feed" && location.pathname.startsWith("/feed"));
             return (
               <Link
                 key={item.to}

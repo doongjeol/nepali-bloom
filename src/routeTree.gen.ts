@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as StudyRouteImport } from './routes/study'
+import { Route as FeedRouteImport } from './routes/feed'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StudyIndexRouteImport } from './routes/study.index'
 import { Route as LessonsIndexRouteImport } from './routes/lessons.index'
@@ -22,6 +23,11 @@ import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 const StudyRoute = StudyRouteImport.update({
   id: '/study',
   path: '/study',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeedRoute = FeedRouteImport.update({
+  id: '/feed',
+  path: '/feed',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -67,6 +73,7 @@ const LessonsLessonIdRoute = LessonsLessonIdRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
@@ -78,6 +85,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/feed': typeof FeedRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
   '/study/pronunciation': typeof StudyPronunciationRoute
@@ -89,6 +97,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
@@ -102,6 +111,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/feed'
     | '/study'
     | '/lessons/$lessonId'
     | '/study/dialogues'
@@ -113,6 +123,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/feed'
     | '/lessons/$lessonId'
     | '/study/dialogues'
     | '/study/pronunciation'
@@ -123,6 +134,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/feed'
     | '/study'
     | '/lessons/$lessonId'
     | '/study/dialogues'
@@ -135,6 +147,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  FeedRoute: typeof FeedRoute
   StudyRoute: typeof StudyRouteWithChildren
   LessonsLessonIdRoute: typeof LessonsLessonIdRoute
   LessonsIndexRoute: typeof LessonsIndexRoute
@@ -147,6 +160,13 @@ declare module '@tanstack/react-router' {
       path: '/study'
       fullPath: '/study'
       preLoaderRoute: typeof StudyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/feed': {
+      id: '/feed'
+      path: '/feed'
+      fullPath: '/feed'
+      preLoaderRoute: typeof FeedRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -228,6 +248,7 @@ const StudyRouteWithChildren = StudyRoute._addFileChildren(StudyRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  FeedRoute: FeedRoute,
   StudyRoute: StudyRouteWithChildren,
   LessonsLessonIdRoute: LessonsLessonIdRoute,
   LessonsIndexRoute: LessonsIndexRoute,
