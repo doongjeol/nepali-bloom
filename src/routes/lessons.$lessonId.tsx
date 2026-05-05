@@ -295,7 +295,7 @@ function LessonDetailPage() {
               <EmptyState message="아직 예문이 준비되지 않았습니다." />
             ) : (
               <div className="space-y-3 sm:space-y-4">
-                {lesson.examples.map((example, idx) => {
+                {lesson.examples.map((example: any, idx: number) => {
                   const itemId = `example-${lesson.id}-${idx}`;
                   const src = getExampleAudioPath(lesson.id, idx);
                   const isCurrent = audioPlayer.currentItemId === itemId;
@@ -400,7 +400,7 @@ function LessonDetailPage() {
                   {lesson.quiz[quizOrder[qIdx] ?? qIdx].question}
                 </h2>
                 <div className="grid gap-2">
-                  {lesson.quiz[quizOrder[qIdx] ?? qIdx].options.map((opt, idx) => {
+                  {lesson.quiz[quizOrder[qIdx] ?? qIdx].options.map((opt: any, idx: number) => {
                     let style = "border bg-card hover:bg-accent";
                     if (answered) {
                       if (idx === lesson.quiz[quizOrder[qIdx] ?? qIdx].answer)
@@ -464,7 +464,7 @@ function LessonDetailPage() {
                   </button>
                 </div>
 
-                {lesson.dialogues.map((dialogue, dIdx) => (
+                {lesson.dialogues.map((dialogue: any, dIdx: number) => (
                   <div key={dIdx}>
                     <div className="mb-2 sm:mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <h2 className="text-sm sm:text-base font-semibold text-foreground">
@@ -494,7 +494,7 @@ function LessonDetailPage() {
                       </div>
                     </div>
                     <div className="space-y-2.5 sm:space-y-3 rounded-2xl border bg-card p-3 sm:p-5 shadow-sm">
-                      {dialogue.lines.map((line, idx) => {
+                      {dialogue.lines.map((line: any, idx: number) => {
                         return (
                           <DialogueLine
                             key={idx}
