@@ -250,7 +250,7 @@ function RangeDialogueQuiz({
               lessonId: lesson.id,
               dIdx,
               lIdx,
-              parsedWords: words.map((word, i) => ({ id: `${i}-${word}`, word })),
+              parsedWords: words.map((word: string, i: number) => ({ id: `${i}-${word}`, word })),
             });
           }
         });
