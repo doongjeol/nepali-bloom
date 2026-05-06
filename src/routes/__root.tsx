@@ -43,7 +43,7 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" },
       { title: "네팔어 학습" },
       { name: "description", content: "단어장, 퀴즈, 대화문으로 네팔어를 배워보세요" },
       { property: "og:title", content: "네팔어 학습" },
