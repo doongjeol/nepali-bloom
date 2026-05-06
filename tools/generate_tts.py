@@ -27,8 +27,6 @@ import json
 # gRPC DNS 오류 해결을 위한 환경 변수 설정
 os.environ["GRPC_DNS_RESOLVER"] = "native"
 
-from google.cloud import texttospeech
-
 # 프로젝트 루트 경로 계산
 ROOT = Path(__file__).resolve().parents[1]
 LESSONS_DIR = ROOT / "src" / "data" / "lessons"
@@ -57,6 +55,17 @@ def synthesize_with_retry(client, text, output_file_path):
     time.sleep(0.2)
 
 def generate_vocab_audio(target_lesson=None, start_from=None):
+    # 0. Google Cloud TTS는 지연 import (의존성 없을 때도 `--help` 사용 가능)
+    global texttospeech
+    try:
+        from google.cloud import texttospeech as _texttospeech
+        texttospeech = _texttospeech
+    except Exception as e:
+        print("필수 라이브러리 'google-cloud-texttospeech'를 찾을 수 없습니다.")
+        print("설치: pip install google-cloud-texttospeech")
+        print(f"상세 오류: {e}")
+        return
+
     # 1. Google Cloud TTS 클라이언트 초기화
     try:
         client = texttospeech.TextToSpeechClient()
@@ -177,7 +186,21 @@ def generate_vocab_audio(target_lesson=None, start_from=None):
 
             synthesize_with_retry(client, nepali_text, output_file_path)
 if __name__ == "__main__":
-    generate_vocab_audio()
+    parser = argparse.ArgumentParser(description="Generate Nepali lesson TTS MP3 files (vocabulary/dialogues/examples).")
+    parser.add_argument(
+        "--lesson",
+        type=int,
+        help="Generate audio for a single lesson number (e.g. 2 to generate only lesson_2).",
+    )
+    parser.add_argument(
+        "--start-from",
+        type=int,
+        dest="start_from",
+        help="Generate audio starting from this lesson number (e.g. 15 to generate lesson_15+). Ignored when --lesson is set.",
+    )
+    args = parser.parse_args()
+
+    generate_vocab_audio(target_lesson=args.lesson, start_from=None if args.lesson is not None else args.start_from)
 
 
 # --start-from 15
