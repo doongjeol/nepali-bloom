@@ -341,9 +341,9 @@ function LessonDetailPage() {
     });
 
     if (lesson.dialogues) {
-      lesson.dialogues.forEach((d: any) => {
-        d.lines.forEach((l: any) => {
-          items.push({ nepali: l.nepali, romanized: l.romanized, korean: `[${l.speaker}] ${l.korean}`, type: "dialogue" });
+      lesson.dialogues.forEach((d: any, dIdx: number) => {
+        d.lines.forEach((l: any, lIdx: number) => {
+          items.push({ nepali: l.nepali, romanized: l.romanized, korean: `[${l.speaker}] ${l.korean}`, type: "dialogue", dIdx, lIdx });
         });
       });
     }

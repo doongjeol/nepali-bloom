@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { getVocabAudioPath } from "@/lib/getAudioPath";
+import { getVocabAudioPath, getDialogueAudioPath } from "@/lib/getAudioPath";
 
 export type VocabularyItem = {
   nepali: string;
@@ -8,6 +8,8 @@ export type VocabularyItem = {
   example?: any;
   lessonId?: string | number;
   type?: string;
+  dIdx?: number;
+  lIdx?: number;
 };
 
 type TaskType = "audio" | "speech" | "delay";
@@ -230,7 +232,7 @@ export function useDrivingMode(
         const utterance = new SpeechSynthesisUtterance(task.payload as string);
         utteranceRef.current = utterance;
         utterance.lang = "ko-KR";
-        utterance.rate = 1.0;
+        utterance.rate = 0.9;
         
         let isDone = false;
         const finish = () => {
@@ -350,6 +352,32 @@ export function useDrivingMode(
           });
           newTasks.push({ type: "delay", payload: 2000, description: "예문 후 대기", wordIndex: index });
         }
+      } else if (type === "dialogue") {
+        const cleanKorean = word.korean.replace(/^\[.*?\]\s*/, ""); // '[A] ' 와 같은 화자 표시 제거
+        newTasks.push({
+          type: "speech",
+          payload: cleanKorean,
+          description: `뜻: ${cleanKorean}`,
+          wordIndex: index,
+        });
+        newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
+
+        if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
+          newTasks.push({
+            type: "audio",
+            payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
+            description: `네팔어: ${word.nepali}`,
+            wordIndex: index,
+          });
+        } else {
+          newTasks.push({
+            type: "speech",
+            payload: word.nepali,
+            description: `네팔어: ${word.nepali}`,
+            wordIndex: index,
+          });
+        }
+        newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
       } else {
         newTasks.push({
           type: "speech",
