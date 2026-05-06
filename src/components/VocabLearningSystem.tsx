@@ -1,4 +1,4 @@
-﻿import { useState, useEffect, useMemo } from "react";
+﻿﻿import { useState, useEffect, useMemo } from "react";
 import { Volume2, X, BrainCircuit, Pause, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -13,7 +13,27 @@ type Vocabulary = {
   romanized: string;
   korean: string;
   lessonId?: number | string;
+  example?: any;
+  exampleKo?: any;
 };
+
+function getExample(word: any) {
+  if (word.example && typeof word.example === "object") {
+    return {
+      nepali: word.example.nepali,
+      romanized: typeof word.example.romanized === "string" ? word.example.romanized : "",
+      korean: typeof word.example.korean === "string" ? word.example.korean : typeof word.exampleKo?.korean === "string" ? word.exampleKo.korean : "",
+    };
+  }
+  if (typeof word.example === "string" && word.example.trim().length > 0) {
+    return {
+      nepali: word.example,
+      romanized: "",
+      korean: typeof word.exampleKo === "string" ? word.exampleKo : "",
+    };
+  }
+  return null;
+}
 
 export function VocabLearningSystem({
   lessonId,
@@ -283,6 +303,35 @@ export function VocabLearningSystem({
                   <div className="animate-in fade-in duration-300">
                     <p className="text-base font-semibold text-foreground sm:text-lg">{word.korean}</p>
                     <p className="mt-0.5 text-xs italic text-muted-foreground sm:text-sm">{word.romanized}</p>
+                    {(() => {
+                      const ex = getExample(word);
+                      if (!ex) return null;
+                      return (
+                        <div className="mt-3 w-full rounded-xl bg-background/50 p-3 text-left ring-1 ring-border/50">
+                          <div className="mb-1 flex items-center justify-between">
+                            <span className="text-[10px] font-bold text-muted-foreground">예문</span>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const actualLessonId = word.lessonId ?? lessonId;
+                                const itemId = `vocab-example-${actualLessonId}-${word.romanized}`;
+                                const src = `/audio/lesson_${actualLessonId}/${word.romanized}_example.mp3`;
+                                void audioPlayer.play(itemId, src, { silentError: true });
+                              }}
+                              className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+                              aria-label="예문 음성 재생"
+                            >
+                              <Volume2 className="h-3 w-3" />
+                            </button>
+                          </div>
+                          <p className="text-sm font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>{ex.nepali}</p>
+                          {ex.romanized && <p className="mt-0.5 text-[11px] italic text-muted-foreground">{ex.romanized}</p>}
+                          {ex.korean && <p className="mt-1 text-xs text-foreground/80">{ex.korean}</p>}
+                        </div>
+                      );
+                    })()}
                   </div>
                 ) : (
                   <div className="animate-in fade-in duration-300">
@@ -344,6 +393,35 @@ export function VocabLearningSystem({
                   <div className="absolute inset-0 flex flex-col items-center justify-center rounded-3xl border-2 border-border bg-[#F5EBE0] p-6 text-center shadow-sm [backface-visibility:hidden] [transform:rotateY(180deg)]">
                     <p className="text-3xl font-bold text-[#333D29]">{currentReviewWord.korean}</p>
                     <p className="mt-3 text-base italic text-[#6B5D4F]">{currentReviewWord.romanized}</p>
+                      {(() => {
+                        const ex = getExample(currentReviewWord);
+                        if (!ex) return null;
+                        return (
+                          <div className="mt-4 w-full rounded-xl bg-background/60 p-4 text-left shadow-sm ring-1 ring-border/50">
+                            <div className="mb-2 flex items-center justify-between">
+                              <span className="text-xs font-bold text-muted-foreground">예문</span>
+                              <button
+                                type="button"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  e.stopPropagation();
+                                  const actualLessonId = currentReviewWord.lessonId ?? lessonId;
+                                  const itemId = `vocab-modal-example-${actualLessonId}-${currentReviewWord.romanized}`;
+                                  const src = `/audio/lesson_${actualLessonId}/${currentReviewWord.romanized}_example.mp3`;
+                                  void audioPlayer.play(itemId, src, { silentError: true });
+                                }}
+                                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+                                aria-label="예문 음성 재생"
+                              >
+                                <Volume2 className="h-4 w-4" />
+                              </button>
+                            </div>
+                            <p className="text-sm font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>{ex.nepali}</p>
+                            {ex.romanized && <p className="mt-1 text-[11px] italic text-muted-foreground">{ex.romanized}</p>}
+                            {ex.korean && <p className="mt-1.5 text-xs text-foreground/80">{ex.korean}</p>}
+                          </div>
+                        );
+                      })()}
                     <p className="absolute bottom-5 text-xs text-[#6B5D4F]/80">터치하여 앞면으로</p>
                   </div>
                 </div>

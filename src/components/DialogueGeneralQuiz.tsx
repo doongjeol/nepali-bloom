@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+﻿import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 import { CheckCircle2, XCircle } from "lucide-react";
 import globalVocab from "@/data/vocabulary.json";
+import type { UseAudioPlayerResult } from "@/hooks/useAudioPlayer";
 
 type DialogueLineWithMeta = {
   dIdx: number;
@@ -12,6 +13,16 @@ type DialogueLineWithMeta = {
   nepali: string;
   romanized: string;
   parsedWords: string[];
+};
+
+type DialogueLine = {
+  korean: string;
+  nepali: string;
+  romanized: string;
+};
+
+type Dialogue = {
+  lines: DialogueLine[];
 };
 
 type WordToken = {
@@ -25,8 +36,11 @@ type VocabularyItem = {
 };
 
 function normalizeRomanizedWord(word: string) {
-  // Keep unicode letters (ā ī ū ñ etc.), remove punctuation/numbers/spaces.
-  return word.normalize("NFKD").replace(/[^\p{L}]/gu, "").toLowerCase();
+  // Keep unicode letters (훮 카 큰 챰 etc.), remove punctuation/numbers/spaces.
+  return word
+    .normalize("NFKD")
+    .replace(/[^\p{L}]/gu, "")
+    .toLowerCase();
 }
 
 // 유틸리티: 배열 랜덤 셔플
@@ -40,10 +54,10 @@ export function shuffleArray<T>(arr: T[]): T[] {
 }
 
 // 유틸리티: 전체 대화문에서 로마자 단어가 2개 이상인 문장만 추출 후 최대 10개 랜덤 선택
-export function extractQuizLines(dialogues: any[]): DialogueLineWithMeta[] {
+export function extractQuizLines(dialogues: Dialogue[]): DialogueLineWithMeta[] {
   const allLines: DialogueLineWithMeta[] = [];
   dialogues.forEach((d, dIdx) => {
-    d.lines.forEach((l: any, lIdx: number) => {
+    d.lines.forEach((l: DialogueLine, lIdx: number) => {
       // 구두점 제거 후 공백 기준으로 로마자 단어 추출
       const clean = l.romanized.replace(/[?!.,;:]/g, "").trim();
       const words = clean.split(/\s+/).filter(Boolean);
@@ -62,10 +76,10 @@ export function DialogueGeneralQuiz({
   audioPlayer,
   onClose,
 }: {
-  dialogues: any[];
+  dialogues: Dialogue[];
   lessonId: number | string;
   vocabulary?: VocabularyItem[];
-  audioPlayer: any;
+  audioPlayer: UseAudioPlayerResult;
   onClose: () => void;
 }) {
   const [status, setStatus] = useState<"idle" | "playing" | "finished">("idle");
@@ -77,6 +91,7 @@ export function DialogueGeneralQuiz({
   const [answer, setAnswer] = useState<WordToken[]>([]);
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [didScoreOnCurrent, setDidScoreOnCurrent] = useState(false);
   const [hasErrorOnCurrent, setHasErrorOnCurrent] = useState(false); // 현재 문제에서 틀린 적이 있는지 추적
   const [clickedTokenId, setClickedTokenId] = useState<string | null>(null);
 
@@ -107,10 +122,11 @@ export function DialogueGeneralQuiz({
     setIsError(false);
     setIsSuccess(false);
     setHasErrorOnCurrent(false);
+    setDidScoreOnCurrent(false);
   };
 
   const playTokenAudio = (token: WordToken) => {
-    // 3. 시각적 피로도 고려: 미세한 팝(Pop) 애니메이션 피드백
+    // 시각적 피드백 제공 (애니메이션)
     setClickedTokenId(token.id);
     setTimeout(() => setClickedTokenId(null), 150);
 
@@ -121,7 +137,7 @@ export function DialogueGeneralQuiz({
       const itemId = `token-${token.id}`;
       const src = getVocabAudioPath(lessonId, cleanWord);
 
-      // 1 & 2. 로마자 단어 클릭 시 오디오 즉시 재생 (이전 소리는 자동 중단됨)
+      // 1 & 2. 로마자 단어 클릭 시 오디오 즉시 재생 (이전 소리는 자동 중단)
       void audioPlayer.play(itemId, src, { silentError: true });
 
       /* 
@@ -160,8 +176,8 @@ export function DialogueGeneralQuiz({
   };
 
   const handleReset = () => {
-    if (isSuccess) return;
     setIsError(false);
+    setIsSuccess(false);
     const line = quizLines[currentStep];
     const tokens = line.parsedWords.map((word, i) => ({ id: `${i}-${word}`, word }));
     setPool(shuffleArray(tokens));
@@ -174,8 +190,9 @@ export function DialogueGeneralQuiz({
       const isCorrect = currentAnswer.map((t) => t.word).join(" ") === line.parsedWords.join(" ");
       if (isCorrect) {
         setIsSuccess(true);
-        if (!hasErrorOnCurrent) {
+        if (!hasErrorOnCurrent && !didScoreOnCurrent) {
           setScore((s) => s + 1);
+          setDidScoreOnCurrent(true);
         }
         // 정답 시 오디오 자동 재생은 하지 않음 (파일 누락/소음 방지)
       } else {
@@ -211,7 +228,7 @@ export function DialogueGeneralQuiz({
             다시 하기
           </Button>
           <Button onClick={onClose} size="lg" variant="secondary">
-            대화문으로 돌아가기
+            대화문으로 돌아가기{" "}
           </Button>
         </div>
       </div>
@@ -220,9 +237,11 @@ export function DialogueGeneralQuiz({
 
   const line = quizLines[currentStep];
   const vocabMap = new Map<string, string>();
-  for (const v of globalVocab as any[]) {
-    if (!v?.romanized || !v?.korean) continue;
-    vocabMap.set(normalizeRomanizedWord(String(v.romanized)), String(v.korean));
+  for (const v of globalVocab as Array<Record<string, unknown>>) {
+    const romanized = typeof v.romanized === "string" ? v.romanized : null;
+    const korean = typeof v.korean === "string" ? v.korean : null;
+    if (!romanized || !korean) continue;
+    vocabMap.set(normalizeRomanizedWord(romanized), korean);
   }
   for (const v of vocabulary ?? []) {
     vocabMap.set(normalizeRomanizedWord(v.romanized), v.korean);
@@ -232,7 +251,7 @@ export function DialogueGeneralQuiz({
 
   return (
     <div className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
-      {/* 스테퍼 */}
+      {/* 스텝 */}
       <div className="mb-5 flex items-center justify-between">
         <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground sm:text-sm">
           문제 {currentStep + 1} / {quizLines.length}
@@ -245,14 +264,40 @@ export function DialogueGeneralQuiz({
       {/* 프롬프트 (한국어 해석) */}
       <div className="mb-6 text-center">
         <h3 className="text-lg font-bold text-foreground sm:text-xl">{line.korean}</h3>
-        <p className="mt-1.5 text-xs text-muted-foreground sm:text-sm">로마자 조각을 순서대로 선택해 문장을 완성하세요.</p>
+        <p className="mt-1.5 text-xs text-muted-foreground sm:text-sm">
+          로마자 조각을 순서대로 선택해 문장을 완성하세요.
+        </p>
       </div>
 
       {/* 정답 조립 영역 */}
-      <div className={cn("mb-5 flex min-h-[3.5rem] flex-wrap items-center gap-2 rounded-xl p-3 transition-colors", isError ? "border-2 border-destructive/50 bg-destructive/5" : "border border-border bg-muted/30", isSuccess ? "border-2 border-success/50 bg-success/5" : "")}>
-        {answer.length === 0 && !isSuccess && <span className="ml-1 text-xs sm:text-sm text-muted-foreground">이곳에 단어가 배열됩니다.</span>}
+      <div
+        className={cn(
+          "mb-5 flex min-h-[3.5rem] flex-wrap items-center gap-2 rounded-xl p-3 transition-colors",
+          isError
+            ? "border-2 border-destructive/50 bg-destructive/5"
+            : "border border-border bg-muted/30",
+          isSuccess ? "border-2 border-success/50 bg-success/5" : "",
+        )}
+      >
+        {answer.length === 0 && !isSuccess && (
+          <span className="ml-1 text-xs sm:text-sm text-muted-foreground">
+            단어를 눌러 문장을 완성해보세요.
+          </span>
+        )}
         {answer.map((t) => (
-          <button key={t.id} onClick={() => handleRemove(t)} disabled={isSuccess} className={cn("rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200 active:scale-95", isError ? "animate-shake bg-destructive text-destructive-foreground" : "bg-primary text-primary-foreground hover:opacity-90", isSuccess ? "bg-success text-success-foreground" : "", clickedTokenId === t.id && "scale-110 brightness-110 ring-2 ring-primary/40")}>
+          <button
+            key={t.id}
+            onClick={() => handleRemove(t)}
+            disabled={isSuccess}
+            className={cn(
+              "rounded-lg px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200 active:scale-95",
+              isError
+                ? "animate-shake bg-destructive text-destructive-foreground"
+                : "bg-primary text-primary-foreground hover:opacity-90",
+              isSuccess ? "bg-success text-success-foreground" : "",
+              clickedTokenId === t.id && "scale-110 brightness-110 ring-2 ring-primary/40",
+            )}
+          >
             {t.word}
           </button>
         ))}
@@ -268,9 +313,9 @@ export function DialogueGeneralQuiz({
               return (
                 <span key={raw} className="rounded-lg border bg-card px-3 py-1.5 text-sm">
                   <span className="font-semibold text-foreground">{raw}</span>
-                <span className="mx-1 text-muted-foreground">·</span>
-                <span className="text-muted-foreground">{meaning}</span>
-              </span>
+                  <span className="mx-1 text-muted-foreground">·</span>
+                  <span className="text-muted-foreground">{meaning}</span>
+                </span>
               );
             })}
           </div>
@@ -280,7 +325,15 @@ export function DialogueGeneralQuiz({
       {/* 단어 풀 영역 */}
       <div className="mb-6 flex flex-wrap justify-center gap-2">
         {pool.map((t) => (
-          <button key={t.id} onClick={() => handleAdd(t)} className={cn("rounded-lg border bg-card px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200 hover:bg-accent active:scale-95", clickedTokenId === t.id && "scale-110 border-primary bg-primary/10 text-primary ring-2 ring-primary/30")}>
+          <button
+            key={t.id}
+            onClick={() => handleAdd(t)}
+            className={cn(
+              "rounded-lg border bg-card px-3 py-1.5 text-sm font-medium shadow-sm transition-all duration-200 hover:bg-accent active:scale-95",
+              clickedTokenId === t.id &&
+                "scale-110 border-primary bg-primary/10 text-primary ring-2 ring-primary/30",
+            )}
+          >
             {t.word}
           </button>
         ))}
@@ -289,12 +342,35 @@ export function DialogueGeneralQuiz({
       {/* 컨트롤 패널 */}
       <div className="flex items-center justify-between border-t pt-4 min-h-[3.5rem]">
         <div className="flex items-center gap-2">
-          {isError && !isSuccess && <><XCircle className="h-5 w-5 text-destructive" /><span className="text-sm font-semibold text-destructive">순서가 맞지 않습니다</span></>}
-          {isSuccess && <><CheckCircle2 className="h-5 w-5 text-success" /><span className="text-sm font-semibold text-success">정답입니다!</span></>}
+          {isError && !isSuccess && (
+            <>
+              <XCircle className="h-5 w-5 text-destructive" />
+              <span className="text-sm font-semibold text-destructive">순서가 맞지 않습니다</span>
+            </>
+          )}
+          {isSuccess && (
+            <>
+              <CheckCircle2 className="h-5 w-5 text-success" />
+              <span className="text-sm font-semibold text-success">정답입니다</span>
+            </>
+          )}
         </div>
         <div className="flex gap-2">
-          {isError && !isSuccess && <Button variant="secondary" size="sm" onClick={handleReset}>초기화</Button>}
-          {isSuccess && <Button onClick={handleNext}>{currentStep === quizLines.length - 1 ? "결과 보기" : "다음 문제"}</Button>}
+          {isError && !isSuccess && (
+            <Button variant="secondary" size="sm" onClick={handleReset}>
+              초기화
+            </Button>
+          )}
+          {isSuccess && (
+            <>
+              <Button variant="secondary" size="sm" onClick={handleReset}>
+                다시 풀기
+              </Button>
+              <Button onClick={handleNext}>
+                {currentStep === quizLines.length - 1 ? "결과 보기" : "다음 문제"}
+              </Button>
+            </>
+          )}
         </div>
       </div>
       <style>{`

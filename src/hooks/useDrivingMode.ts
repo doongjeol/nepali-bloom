@@ -5,12 +5,9 @@ export type VocabularyItem = {
   nepali: string;
   romanized: string;
   korean: string;
-  example?: {
-    nepali: string;
-    romanized: string;
-    korean: string;
-  };
+  example?: any;
   lessonId?: string | number;
+  type?: string;
 };
 
 type TaskType = "audio" | "speech" | "delay";
@@ -148,6 +145,7 @@ export function useDrivingMode(
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const isPlayingRef = useRef(false); // 이벤트 콜백에서 최신 재생 상태 참조용
 
   // 운전 중 화면 꺼짐 방지 (best-effort)
@@ -166,10 +164,19 @@ export function useDrivingMode(
     setIsPlaying(false);
     isPlayingRef.current = false;
 
-    if (audioRef.current) audioRef.current.pause();
+    if (audioRef.current) {
+      audioRef.current.onended = null;
+      audioRef.current.onerror = null;
+      audioRef.current.pause();
+    }
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    if (typeof window !== "undefined" && "speechSynthesis" in window)
+    if (utteranceRef.current) {
+      utteranceRef.current.onend = null;
+      utteranceRef.current.onerror = null;
+    }
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
       window.speechSynthesis.cancel();
+    }
   }, []);
 
   const processNextTask = useCallback(
@@ -198,14 +205,22 @@ export function useDrivingMode(
         const audio = audioRef.current ?? new Audio();
         audioRef.current = audio;
         audio.src = task.payload as string;
-        audio.onended = () => processNextTask(index + 1);
+        
+        let isDone = false;
+        const finish = () => {
+          if (isDone) return;
+          isDone = true;
+          processNextTask(index + 1);
+        };
+
+        audio.onended = finish;
         audio.onerror = () => {
           console.warn("오디오 파일을 찾을 수 없습니다:", task.payload);
-          processNextTask(index + 1);
+          finish();
         };
         audio.play().catch((e) => {
           console.error("자동 재생이 차단되었습니다:", e);
-          pause();
+          finish(); // pause() 대신 다음 태스크로 자연스럽게 넘어감
         });
         return;
       }
@@ -213,11 +228,28 @@ export function useDrivingMode(
       // speech
       if (typeof window !== "undefined" && "speechSynthesis" in window) {
         const utterance = new SpeechSynthesisUtterance(task.payload as string);
+        utteranceRef.current = utterance;
         utterance.lang = "ko-KR";
         utterance.rate = 1.0;
-        utterance.onend = () => processNextTask(index + 1);
-        utterance.onerror = () => processNextTask(index + 1);
+        
+        let isDone = false;
+        const finish = () => {
+          if (isDone) return;
+          isDone = true;
+          if (timeoutRef.current) clearTimeout(timeoutRef.current);
+          processNextTask(index + 1);
+        };
+
+        utterance.onend = finish;
+        utterance.onerror = finish;
         window.speechSynthesis.speak(utterance);
+        
+        // 브라우저의 TTS onend 버그로 인해 멈추는 현상 대비 fallback 타이머
+        const estimatedDuration = Math.max(2000, (task.payload as string).length * 200 + 1500);
+        timeoutRef.current = setTimeout(() => {
+          window.speechSynthesis.cancel();
+          finish();
+        }, estimatedDuration);
       } else {
         timeoutRef.current = setTimeout(() => processNextTask(index + 1), 1000);
       }
@@ -234,7 +266,24 @@ export function useDrivingMode(
       if (typeof taskIdx !== "number") return;
 
       setCurrentTaskIndex(taskIdx);
-      if (isPlayingRef.current) processNextTask(taskIdx);
+      if (audioRef.current) {
+        audioRef.current.onended = null;
+        audioRef.current.onerror = null;
+        audioRef.current.pause();
+      }
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      if (utteranceRef.current) {
+        utteranceRef.current.onend = null;
+        utteranceRef.current.onerror = null;
+      }
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+      
+      // 이전/다음 이동 시 무조건 자동 재생 시작
+      setIsPlaying(true);
+      isPlayingRef.current = true;
+      processNextTask(taskIdx);
     },
     [processNextTask, vocabulary.length, wordStartTaskIndex],
   );
@@ -259,53 +308,62 @@ export function useDrivingMode(
     const newTasks: PlaybackTask[] = [];
 
     vocabulary.forEach((word, index) => {
+      const type = word.type || "vocab";
+      let label = "단어";
+      if (type === "grammar") label = "문법";
+      else if (type === "dialogue") label = "대화문";
+      else if (type === "quiz") label = "퀴즈";
+
       newTasks.push({
         type: "speech",
-        payload: `단어 ${index + 1}번`,
-        description: `단어 ${index + 1}번 안내`,
+        payload: `${label} ${index + 1}번`,
+        description: `${label} ${index + 1}번 안내`,
         wordIndex: index,
       });
 
-      newTasks.push({
-        type: "audio",
-        payload: getVocabAudioPath(word.lessonId ?? lessonId, word.romanized),
-        description: `네팔어 발음: ${word.nepali}`,
-        wordIndex: index,
-      });
-
-      newTasks.push({ type: "delay", payload: 2000, description: "2초 대기", wordIndex: index });
-
-      // 일부 데이터는 `mother (엄마)` 형태로 들어있어서 괄호 안만 읽도록 처리.
-      const meaningText = word.korean.split("(")[1]?.replace(")", "") || word.korean;
-      newTasks.push({
-        type: "speech",
-        payload: meaningText,
-        description: `뜻: ${meaningText}`,
-        wordIndex: index,
-      });
-
-      newTasks.push({ type: "delay", payload: 3000, description: "3초 대기", wordIndex: index });
-
-      if (word.example) {
-        const actualLessonId = word.lessonId ?? lessonId;
+      if (type === "vocab") {
         newTasks.push({
           type: "audio",
-          payload: `/audio/lesson_${actualLessonId}/${word.romanized}_example.mp3`,
-          description: `예문: ${word.example.nepali}`,
+          payload: getVocabAudioPath(word.lessonId ?? lessonId, word.romanized),
+          description: `네팔어 발음: ${word.nepali}`,
           wordIndex: index,
         });
+        newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
+
+        const meaningText = word.korean.split("(")[1]?.replace(")", "") || word.korean;
         newTasks.push({
-          type: "delay",
-          payload: 2000,
-          description: "예문 후 대기",
+          type: "speech",
+          payload: meaningText,
+          description: `뜻: ${meaningText}`,
           wordIndex: index,
         });
+        newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
+
+        if (word.example) {
+          const actualLessonId = word.lessonId ?? lessonId;
+          const exRomanized = typeof word.example === 'string' ? '' : word.example.romanized || word.romanized;
+          newTasks.push({
+            type: "audio",
+            payload: `/audio/lesson_${actualLessonId}/${exRomanized}_example.mp3`,
+            description: `예문: ${typeof word.example === 'string' ? word.example : word.example.nepali}`,
+            wordIndex: index,
+          });
+          newTasks.push({ type: "delay", payload: 2000, description: "예문 후 대기", wordIndex: index });
+        }
+      } else {
+        newTasks.push({
+          type: "speech",
+          payload: word.korean,
+          description: `내용: ${word.korean}`,
+          wordIndex: index,
+        });
+        newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
       }
     });
 
     newTasks.push({
       type: "speech",
-      payload: "선택한 범위의 단어 학습이 모두 끝났습니다. 다시 시작하려면 재생 버튼을 누르세요.",
+      payload: "학습이 모두 끝났습니다. 처음부터 다시 시작하려면 이전 버튼을 눌러주세요.",
       description: "세션 종료 안내",
     });
 

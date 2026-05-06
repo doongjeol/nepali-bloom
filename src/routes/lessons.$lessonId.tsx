@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { availableLessonIds, loadLesson } from "@/data/lessonLoader";
@@ -50,6 +50,7 @@ export const Route = createFileRoute("/lessons/$lessonId")({
 });
 
 type Tab = "vocabulary" | "examples" | "grammar" | "quiz" | "dialogues";
+type QuizMode = null | "multiple" | "speaking";
 
 function LessonDetailPage() {
   const { lessonId } = Route.useParams();
@@ -60,12 +61,23 @@ function LessonDetailPage() {
   const audioPlayer = useAudioPlayer();
 
   // Quiz state
+  const [quizMode, setQuizMode] = useState<QuizMode>(null);
   const [qIdx, setQIdx] = useState(0);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [answered, setAnswered] = useState(false);
   const [finished, setFinished] = useState(false);
   const [quizOrder, setQuizOrder] = useState<number[]>([]);
+  const [showAllQuizPicker, setShowAllQuizPicker] = useState(false);
+  const [quizSelections, setQuizSelections] = useState<(number | null)[]>([]);
+
+  // Speaking practice (Active Recall) state
+  const [spkIdx, setSpkIdx] = useState(0);
+  const [spkOrder, setSpkOrder] = useState<number[]>([]);
+  const [spkRevealed, setSpkRevealed] = useState(false);
+  const [spkScore, setSpkScore] = useState(0);
+  const [spkFinished, setSpkFinished] = useState(false);
+  const lastSpokenKeyRef = useRef<string | null>(null);
 
   // Dialogue state
   const [showRomanized, setShowRomanized] = useState(true);
@@ -162,7 +174,45 @@ function LessonDetailPage() {
     setScore(0);
     setAnswered(false);
     setFinished(false);
+    setShowAllQuizPicker(false);
+    setQuizSelections(Array(lesson.quiz.length).fill(null));
+    setQuizMode(null);
+
+    setSpkOrder(shuffle([...Array(lesson.examples.length)].map((_, i) => i)));
+    setSpkIdx(0);
+    setSpkRevealed(false);
+    setSpkScore(0);
+    setSpkFinished(false);
+    lastSpokenKeyRef.current = null;
   }, [lessonId, lesson]);
+
+  const speakKorean = (text: string) => {
+    if (typeof window === "undefined") return;
+    const synth = window.speechSynthesis;
+    if (!synth) return;
+    try {
+      synth.cancel();
+      const utter = new SpeechSynthesisUtterance(text);
+      utter.lang = "ko-KR";
+      utter.rate = 0.95;
+      synth.speak(utter);
+    } catch {
+      // Some browsers block speech without a user gesture
+    }
+  };
+
+  useEffect(() => {
+    if (quizMode !== "speaking") return;
+    if (spkFinished) return;
+    if (spkRevealed) return;
+    const vocabIndex = spkOrder[spkIdx] ?? spkIdx;
+    const card = lesson.examples[vocabIndex];
+    if (!card) return;
+    const key = `spk-${lesson.id}-${vocabIndex}-${card.korean}`;
+    if (lastSpokenKeyRef.current === key) return;
+    lastSpokenKeyRef.current = key;
+    speakKorean(card.korean);
+  }, [lesson.id, lesson.examples, quizMode, spkFinished, spkIdx, spkOrder, spkRevealed]);
 
   const currentIndex = availableLessonIds.indexOf(Number(lessonId));
   const prevId = currentIndex > 0 ? availableLessonIds[currentIndex - 1] : null;
@@ -180,8 +230,8 @@ function LessonDetailPage() {
     { key: "vocabulary", label: "단어장", icon: "📖", count: lesson.vocabulary.length },
     { key: "examples", label: "예문", icon: "💡", count: lesson.examples.length },
     { key: "grammar", label: "문법", icon: "📏", count: grammarItemCount },
-    { key: "quiz", label: "퀴즈", icon: "✏️", count: lesson.quiz.length },
     { key: "dialogues", label: "대화문", icon: "💬", count: lesson.dialogues.length },
+    { key: "quiz", label: "퀴즈", icon: "✏️", count: lesson.quiz.length },
   ];
 
   const tabs = allTabs.filter((t) => t.key !== "examples" || t.count > 0);
@@ -201,10 +251,15 @@ function LessonDetailPage() {
   };
 
   const handleSelect = (idx: number) => {
-    if (answered) return;
+    const currentQuizIndex = quizOrder[qIdx] ?? qIdx;
+    if (quizSelections[currentQuizIndex] !== null) return;
+    setQuizSelections((prev) => {
+      const next = [...prev];
+      next[currentQuizIndex] = idx;
+      return next;
+    });
     setSelectedOption(idx);
     setAnswered(true);
-    const currentQuizIndex = quizOrder[qIdx] ?? qIdx;
     if (idx === lesson.quiz[currentQuizIndex].answer) setScore((s) => s + 1);
   };
 
@@ -212,20 +267,87 @@ function LessonDetailPage() {
     if (qIdx + 1 >= lesson.quiz.length) {
       setFinished(true);
     } else {
-      setQIdx((c) => c + 1);
-      setSelectedOption(null);
-      setAnswered(false);
+      const nextIdx = qIdx + 1;
+      const nextQuizIndex = quizOrder[nextIdx] ?? nextIdx;
+      const nextSelection = quizSelections[nextQuizIndex] ?? null;
+      setQIdx(nextIdx);
+      setSelectedOption(nextSelection);
+      setAnswered(nextSelection !== null);
     }
   };
 
-  const resetQuiz = () => {
+  const resetMultipleQuiz = () => {
     setQIdx(0);
     setSelectedOption(null);
     setScore(0);
     setAnswered(false);
     setFinished(false);
     setQuizOrder(shuffle([...Array(lesson.quiz.length)].map((_, i) => i)));
+    setQuizSelections(Array(lesson.quiz.length).fill(null));
+    setShowAllQuizPicker(false);
   };
+
+  const resetSpeakingPractice = () => {
+    setSpkOrder(shuffle([...Array(lesson.examples.length)].map((_, i) => i)));
+    setSpkIdx(0);
+    setSpkRevealed(false);
+    setSpkScore(0);
+    setSpkFinished(false);
+    lastSpokenKeyRef.current = null;
+  };
+
+  const backToQuizModeSelect = () => {
+    setQuizMode(null);
+    resetMultipleQuiz();
+    resetSpeakingPractice();
+  };
+
+  const markSpeakingAnswer = (isCorrect: boolean) => {
+    if (isCorrect) setSpkScore((s) => s + 1);
+    if (spkIdx + 1 >= lesson.examples.length) {
+      setSpkFinished(true);
+      setSpkRevealed(false);
+      return;
+    }
+    setSpkIdx((c) => c + 1);
+    setSpkRevealed(false);
+    lastSpokenKeyRef.current = null;
+  };
+
+  const allLessonItems = useMemo(() => {
+    if (!lesson) return [];
+    const items: any[] = [];
+
+    if (lesson.vocabulary) {
+      lesson.vocabulary.forEach((v: any) => items.push({ ...v, type: "vocab" }));
+    }
+
+    const grammarCards = parseGrammarCards(lesson.grammar ?? []);
+    grammarCards.forEach((g) => {
+      g.lines.forEach((line) => {
+        items.push({ nepali: line, romanized: "문법 설명", korean: g.title, type: "grammar" });
+      });
+      g.examples?.forEach((ex) => {
+        items.push({ nepali: ex, romanized: "문법 예문", korean: g.title, type: "grammar" });
+      });
+    });
+
+    if (lesson.dialogues) {
+      lesson.dialogues.forEach((d: any) => {
+        d.lines.forEach((l: any) => {
+          items.push({ nepali: l.nepali, romanized: l.romanized, korean: `[${l.speaker}] ${l.korean}`, type: "dialogue" });
+        });
+      });
+    }
+
+    if (lesson.quiz) {
+      lesson.quiz.forEach((q: any) => {
+        items.push({ nepali: q.options[q.answer], romanized: "퀴즈 정답", korean: `[Q] ${q.question}`, type: "quiz" });
+      });
+    }
+
+    return items;
+  }, [lesson]);
 
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
@@ -239,18 +361,29 @@ function LessonDetailPage() {
           >
             ← 레슨 목록
           </Link>
-          <div className="mt-2 flex items-center gap-3">
-            <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-              {lesson.id}
+          <div className="mt-2 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
+                {lesson.id}
+              </div>
+              <div className="min-w-0">
+                <h1 className="text-xl sm:text-2xl font-bold text-foreground truncate">
+                  {lesson.titleKo}
+                </h1>
+                <p className="text-xs sm:text-sm text-muted-foreground break-words sm:truncate">
+                  {lesson.title} · {lesson.description}
+                </p>
+              </div>
             </div>
-            <div className="min-w-0">
-              <h1 className="text-xl sm:text-2xl font-bold text-foreground truncate">
-                {lesson.titleKo}
-              </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground break-words sm:truncate">
-                {lesson.title} · {lesson.description}
-              </p>
-            </div>
+            
+            <button
+              type="button"
+              onClick={() => setShowDrivingMode(true)}
+              className="inline-flex w-full sm:w-auto items-center justify-center gap-1.5 rounded-xl bg-primary/10 px-4 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary/20 active:scale-95"
+            >
+              <Car className="h-4 w-4" />
+              레슨 전체 운전 모드
+            </button>
           </div>
         </div>
 
@@ -285,23 +418,11 @@ function LessonDetailPage() {
             (lesson.vocabulary.length === 0 ? (
               <EmptyState message="아직 단어가 준비되지 않았습니다." />
             ) : (
-              <div className="space-y-4">
-                <div className="flex justify-end">
-                  <button
-                    type="button"
-                    onClick={() => setShowDrivingMode(true)}
-                    className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/20 active:scale-95"
-                  >
-                    <Car className="h-4 w-4" />
-                    운전 모드 시작하기
-                  </button>
-                </div>
                 <VocabLearningSystem
                   lessonId={lesson.id}
                   vocabulary={lesson.vocabulary}
                   audioPlayer={audioPlayer}
                 />
-              </div>
             ))}
 
           {tab === "examples" &&
@@ -374,7 +495,252 @@ function LessonDetailPage() {
             ))}
 
           {tab === "quiz" &&
-            (lesson.quiz.length === 0 ? (
+            (quizMode === null ? (
+              <div className="rounded-2xl border bg-[#F7F3F0] p-6 sm:p-8 shadow-sm">
+                <h2 className="mb-2 text-center text-lg sm:text-xl font-bold text-foreground">
+                  학습 모드 선택
+                </h2>
+                <p className="mb-6 text-center text-sm text-muted-foreground">
+                  퀴즈 시작 전에 원하는 모드를 골라주세요.
+                </p>
+                <div className="mx-auto grid max-w-md gap-4">
+                  <button
+                    type="button"
+                    disabled={lesson.quiz.length === 0}
+                    onClick={() => {
+                      resetMultipleQuiz();
+                      setQuizMode("multiple");
+                    }}
+                    className={cn(
+                      "rounded-3xl border bg-white/70 px-5 py-5 text-left shadow-sm transition-all hover:scale-105 active:scale-[1.02]",
+                      "hover:border-[#6B7A5A]/50 hover:bg-white",
+                      lesson.quiz.length === 0 && "cursor-not-allowed opacity-60 hover:scale-100",
+                    )}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <div className="text-base font-semibold text-foreground">객관식 퀴즈</div>
+                        <div className="mt-1 text-sm text-muted-foreground">
+                          4지선다로 빠르게 복습해요.
+                        </div>
+                        {lesson.quiz.length === 0 && (
+                          <div className="mt-2 text-xs text-muted-foreground">
+                            이 레슨은 객관식 퀴즈가 아직 없어요.
+                          </div>
+                        )}
+                      </div>
+                      <div className="mt-0.5 rounded-full bg-[#6B7A5A]/10 px-2 py-1 text-xs font-medium text-[#4E5A41]">
+                        Multiple
+                      </div>
+                    </div>
+                  </button>
+
+                  <button
+                    type="button"
+                    disabled={lesson.examples.length === 0}
+                    onClick={() => {
+                      resetSpeakingPractice();
+                      setQuizMode("speaking");
+                    }}
+                    className={cn(
+                      "rounded-3xl border bg-white/70 px-5 py-5 text-left shadow-sm transition-all hover:scale-105 active:scale-[1.02]",
+                      "hover:border-[#7A5C45]/40 hover:bg-white",
+                      lesson.examples.length === 0 && "cursor-not-allowed opacity-60 hover:scale-100",
+                    )}
+                  >
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <div className="text-base font-semibold text-foreground">
+                          낭독 연습 (문장 Active Recall)
+                        </div>
+                        <div className="mt-1 text-sm text-muted-foreground">
+                          한국어 문장을 듣고 네팔어로 떠올려요.
+                        </div>
+                      </div>
+                      <div className="mt-0.5 rounded-full bg-[#7A5C45]/10 px-2 py-1 text-xs font-medium text-[#6A4D3A]">
+                        Speaking
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            ) : quizMode === "speaking" ? (
+              (() => {
+                const vocabIndex = spkOrder[spkIdx] ?? spkIdx;
+                const card = lesson.examples[vocabIndex];
+                const total = lesson.examples.length;
+
+                if (total === 0) {
+                  return (
+                    <div className="space-y-3">
+                      <EmptyState message="이 레슨은 단어가 없어서 낭독 연습을 할 수 없어요." />
+                      <div className="flex justify-center">
+                        <Button variant="secondary" onClick={backToQuizModeSelect}>
+                          모드 선택으로
+                        </Button>
+                      </div>
+                    </div>
+                  );
+                }
+
+                if (spkFinished) {
+                  return (
+                    <div className="rounded-2xl border bg-[#F7F3F0] p-8 sm:p-10 text-center shadow-sm">
+                      <div className="mb-3 sm:mb-4 text-4xl sm:text-5xl">?럦</div>
+                      <h2 className="mb-2 text-xl sm:text-2xl font-bold text-foreground">
+                        낭독 연습 완료!
+                      </h2>
+                      <p className="mb-4 sm:mb-6 text-base sm:text-lg text-muted-foreground">
+                        <span className="font-semibold text-[#6B7A5A]">{spkScore}</span> / {total}{" "}
+                        맞혔어요
+                      </p>
+                      <div className="flex flex-col gap-2 sm:flex-row sm:justify-center">
+                        <Button
+                          onClick={resetSpeakingPractice}
+                          size="lg"
+                          className="w-full sm:w-auto"
+                        >
+                          다시 하기
+                        </Button>
+                        <Button
+                          variant="secondary"
+                          onClick={backToQuizModeSelect}
+                          size="lg"
+                          className="w-full sm:w-auto"
+                        >
+                          모드 선택
+                        </Button>
+                      </div>
+                    </div>
+                  );
+                }
+
+                return (
+                  <div className="relative rounded-2xl border bg-[#F7F3F0] p-4 sm:p-6 shadow-sm">
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className="text-xs sm:text-sm text-muted-foreground">
+                        {spkIdx + 1} / {total}
+                      </span>
+                      <span className="rounded-full bg-[#6B7A5A]/10 px-2.5 py-1 text-xs sm:text-sm font-medium text-[#4E5A41]">
+                        점수: {spkScore}
+                      </span>
+                    </div>
+
+                    <div className="rounded-2xl border bg-white/70 p-5 sm:p-6">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <div className="text-xs font-medium tracking-wide text-[#6A4D3A]">
+                            한국어 뜻
+                          </div>
+                          <div className="mt-1 text-lg sm:text-xl font-bold text-foreground">
+                            {card?.korean ?? ""}
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => card?.korean && speakKorean(card.korean)}
+                          className="inline-flex h-10 w-10 items-center justify-center rounded-full border bg-white text-[#6A4D3A] shadow-sm transition-all hover:bg-[#6B7A5A]/10 active:scale-95"
+                          aria-label="한국어 뜻 다시 듣기"
+                        >
+                          <Volume2 className="h-5 w-5" />
+                        </button>
+                      </div>
+
+                      {spkRevealed ? (
+                        <div className="mt-5 space-y-3">
+                          <div className="rounded-xl border bg-white/80 p-4">
+                            <div className="text-xs font-medium tracking-wide text-[#4E5A41]">
+                              네팔어 정답
+                            </div>
+                            <div
+                              className="mt-1 text-xl sm:text-2xl font-bold text-foreground"
+                              style={{ fontFamily: "var(--font-nepali)" }}
+                            >
+                              {card?.nepali ?? ""}
+                            </div>
+                            <div className="mt-1 text-sm text-muted-foreground italic">
+                              {card?.romanized ?? ""}
+                            </div>
+                          </div>
+
+                          {(card?.example || card?.exampleKo) && (
+                            <div className="rounded-xl border bg-white/80 p-4">
+                              <div className="text-xs font-medium tracking-wide text-[#4E5A41]">
+                                예문
+                              </div>
+                              {card?.example && (
+                                <div
+                                  className="mt-1 text-lg font-semibold text-foreground"
+                                  style={{ fontFamily: "var(--font-nepali)" }}
+                                >
+                                  {typeof (card as any)?.example === "string"
+                                    ? (card as any).example
+                                    : (card as any)?.example?.nepali ?? ""}
+                                </div>
+                              )}
+                              {((card as any)?.exampleKo || (card as any)?.example?.korean) && (
+                                <div className="mt-1 text-sm text-muted-foreground">
+                                  {typeof (card as any)?.exampleKo === "string"
+                                    ? (card as any).exampleKo
+                                    : (card as any)?.exampleKo?.korean ??
+                                      (card as any)?.example?.korean ??
+                                      ""}
+                                </div>
+                              )}
+                            </div>
+                          )}
+
+                          <div className="grid grid-cols-2 gap-2 pt-1">
+                            <Button
+                              onClick={() => markSpeakingAnswer(true)}
+                              className="h-12 rounded-2xl bg-[#6B7A5A] text-white hover:bg-[#5E6C4F]"
+                            >
+                              맞혔어요
+                            </Button>
+                            <Button
+                              onClick={() => markSpeakingAnswer(false)}
+                              variant="secondary"
+                              className="h-12 rounded-2xl"
+                            >
+                              틀렸어요
+                            </Button>
+                          </div>
+                          <div className="flex justify-center">
+                            <button
+                              type="button"
+                              onClick={backToQuizModeSelect}
+                              className="text-xs text-muted-foreground underline-offset-4 hover:underline"
+                            >
+                              모드 선택으로
+                            </button>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="mt-4 text-sm text-muted-foreground">
+                          네팔어로 먼저 말해본 뒤, 아래 버튼으로 정답을 확인하세요.
+                        </div>
+                      )}
+                    </div>
+
+                    {!spkRevealed && (
+                      <div className="sticky bottom-0 -mx-4 mt-5 border-t bg-[#F7F3F0] px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
+                        <Button
+                          onClick={() => setSpkRevealed(true)}
+                          className="h-16 w-full rounded-3xl bg-[#7A5C45] text-base font-bold text-white shadow-md hover:bg-[#6A4D3A] active:scale-[0.99]"
+                        >
+                          정답 확인
+                        </Button>
+                        <div className="mt-2 flex justify-center">
+                          <Button variant="secondary" size="sm" onClick={backToQuizModeSelect}>
+                            모드 선택
+                          </Button>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })()
+            ) : lesson.quiz.length === 0 ? (
               <EmptyState message="아직 퀴즈가 준비되지 않았습니다." />
             ) : finished ? (
               <div className="rounded-2xl border bg-card p-8 sm:p-10 text-center shadow-sm">
@@ -390,7 +756,7 @@ function LessonDetailPage() {
                     style={{ width: `${(score / lesson.quiz.length) * 100}%` }}
                   />
                 </div>
-                <Button onClick={resetQuiz} size="lg" className="w-full sm:w-auto">
+                <Button onClick={resetMultipleQuiz} size="lg" className="w-full sm:w-auto">
                   다시 풀기
                 </Button>
               </div>
@@ -400,9 +766,19 @@ function LessonDetailPage() {
                   <span className="text-xs sm:text-sm text-muted-foreground">
                     {qIdx + 1} / {lesson.quiz.length}
                   </span>
-                  <span className="rounded-full bg-warm/50 px-2.5 py-1 text-xs sm:text-sm font-medium text-warm-foreground">
-                    점수: {score}
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <Button
+                      variant="secondary"
+                      size="sm"
+                      onClick={() => setShowAllQuizPicker(true)}
+                      className="h-8 rounded-full px-3"
+                    >
+                      모든 문제 선택
+                    </Button>
+                    <span className="rounded-full bg-warm/50 px-2.5 py-1 text-xs sm:text-sm font-medium text-warm-foreground">
+                      점수: {score}
+                    </span>
+                  </div>
                 </div>
                 <div className="mb-3 sm:mb-4 h-2 overflow-hidden rounded-full bg-secondary">
                   <div
@@ -442,12 +818,80 @@ function LessonDetailPage() {
                   })}
                 </div>
                 {answered && (
-                  <div className="mt-4 sm:mt-5">
+                  <div className="mt-4 sm:mt-5 flex flex-col gap-2 sm:flex-row sm:items-center">
                     <Button onClick={handleNext} className="w-full sm:w-auto">
                       {qIdx + 1 >= lesson.quiz.length ? "결과 보기" : "다음 →"}
                     </Button>
+                    <Button
+                      variant="secondary"
+                      onClick={backToQuizModeSelect}
+                      className="w-full sm:w-auto"
+                    >
+                      모드 선택
+                    </Button>
                   </div>
                 )}
+
+                <Dialog open={showAllQuizPicker} onOpenChange={setShowAllQuizPicker}>
+                  <DialogContent className="max-w-md">
+                    <DialogHeader>
+                      <DialogTitle>모든 문제 선택하기</DialogTitle>
+                      <DialogDescription>원하는 문제로 바로 이동할 수 있어요.</DialogDescription>
+                    </DialogHeader>
+                    <div className="max-h-[60vh] space-y-2 overflow-auto pr-1">
+                      {(quizOrder.length === lesson.quiz.length
+                        ? quizOrder
+                        : [...Array(lesson.quiz.length)].map((_, i) => i)
+                      ).map((quizIndex, orderIndex) => {
+                        const q = lesson.quiz[quizIndex];
+                        const picked = quizSelections[quizIndex];
+                        return (
+                          <button
+                            key={`${quizIndex}-${orderIndex}`}
+                            type="button"
+                            onClick={() => {
+                              setQIdx(orderIndex);
+                              const selection = quizSelections[quizIndex];
+                              setSelectedOption(selection);
+                              setAnswered(selection !== null);
+                              setShowAllQuizPicker(false);
+                            }}
+                            className={cn(
+                              "w-full rounded-xl border bg-white/70 px-4 py-3 text-left text-sm transition-colors hover:bg-white",
+                              orderIndex === qIdx && "border-primary bg-white",
+                            )}
+                          >
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="min-w-0">
+                                <div className="text-xs font-semibold text-muted-foreground">
+                                  {orderIndex + 1}번
+                                </div>
+                                <div className="mt-0.5 line-clamp-2 font-medium text-foreground">
+                                  {q?.question ?? ""}
+                                </div>
+                              </div>
+                              <div
+                                className={cn(
+                                  "shrink-0 rounded-full px-2 py-1 text-xs font-medium",
+                                  picked === null
+                                    ? "bg-secondary text-secondary-foreground"
+                                    : "bg-[#6B7A5A]/10 text-[#4E5A41]",
+                                )}
+                              >
+                                {picked === null ? "미응답" : "응답함"}
+                              </div>
+                            </div>
+                          </button>
+                        );
+                      })}
+                    </div>
+                    <div className="flex justify-end">
+                      <DialogClose asChild>
+                        <Button variant="secondary">닫기</Button>
+                      </DialogClose>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             ))}
 
@@ -470,12 +914,14 @@ function LessonDetailPage() {
                   <p className="mb-4 text-sm text-muted-foreground">
                     이번 레슨의 대화문 문장들을 직접 조립해보며 실력을 점검해보세요.
                   </p>
-                  <button
-                    onClick={() => setIsQuizMode(true)}
-                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 active:scale-95"
-                  >
-                    🧩 전체 대화문 퀴즈 도전하기
-                  </button>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <button
+                      onClick={() => setIsQuizMode(true)}
+                      className="inline-flex w-full sm:w-auto items-center justify-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 active:scale-95"
+                    >
+                      🧩 대화문 퀴즈 도전하기
+                    </button>
+                  </div>
                 </div>
 
                 {lesson.dialogues.map((dialogue: any, dIdx: number) => (
@@ -558,7 +1004,7 @@ function LessonDetailPage() {
         {showDrivingMode && lesson && (
           <DrivingModePlayer
             lessonId={lesson.id}
-            vocabulary={lesson.vocabulary}
+            vocabulary={allLessonItems}
             onClose={() => setShowDrivingMode(false)}
           />
         )}

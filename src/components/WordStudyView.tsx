@@ -62,6 +62,7 @@ export function WordStudyView({
     return items.map((item) => ({
       ...item.word,
       lessonId: item.lessonId,
+      type: "vocab",
     }));
   }, [items]);
 

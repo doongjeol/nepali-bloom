@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+﻿import { useEffect, useMemo, useState } from "react";
 import { toast } from "sonner";
 
 type PlayerState = {
@@ -27,6 +27,7 @@ let audio: HTMLAudioElement | null = null;
 let initialized = false;
 let lastErrorToastAt = 0;
 const ERROR_TOAST_DEDUP_MS = 1200;
+let playSeq = 0; // incremented for each play/stop to cancel in-flight play attempts
 
 function toastMissingAudioOnce() {
   const now = Date.now();
@@ -65,10 +66,12 @@ function initOnce() {
   );
   el.addEventListener("canplay", () => setState({ isLoading: false }));
   el.addEventListener("waiting", () => setState({ isLoading: true }));
-  // 5. 디버깅용 로그 강화: error 이벤트에서 상세 로깅, 상태 변경은 playItem 훅 내에서 제어하도록 위임
+  // 5. ?붾쾭源낆슜 濡쒓렇 媛뺥솕: error ?대깽?몄뿉???곸꽭 濡쒓퉭, ?곹깭 蹂寃쎌? playItem ???댁뿉???쒖뼱?섎룄濡??꾩엫
   el.addEventListener("error", (e) => {
     const target = e.target as HTMLAudioElement;
-    console.warn(`[오디오 미디어 에러] 브라우저 파일 로드 실패. (에러 코드: ${target.error?.code}) 요청 경로: ${target.src}`);
+    console.warn(
+      `[?ㅻ뵒??誘몃뵒???먮윭] 釉뚮씪?곗? ?뚯씪 濡쒕뱶 ?ㅽ뙣. (?먮윭 肄붾뱶: ${target.error?.code}) ?붿껌 寃쎈줈: ${target.src}`,
+    );
   });
 }
 
@@ -76,6 +79,8 @@ async function playItem(itemId: string, src: string, options?: { silentError?: b
   initOnce();
   const el = ensureAudio();
   if (!el) return;
+
+  const seq = ++playSeq;
 
   setState({ error: null, silentError: options?.silentError ?? false });
 
@@ -85,19 +90,20 @@ async function playItem(itemId: string, src: string, options?: { silentError?: b
     return;
   }
 
-  // 4. 다중 시도 로직 (Fallback): 확장자 대문자 변경 또는 원본 복구 시도
+  // 4. ?ㅼ쨷 ?쒕룄 濡쒖쭅 (Fallback): ?뺤옣???臾몄옄 蹂寃??먮뒗 ?먮낯 蹂듦뎄 ?쒕룄
   const fallbacks = Array.from(
     new Set([
       src,
       src.replace(/\.mp3$/i, ".MP3"),
       src.replace(/\.mp3$/i, ".mp3"),
-      decodeURI(src) // 인코딩 관련 서버 이슈 대비 디코딩된 버전 추가 시도
-    ])
+      decodeURI(src), // ?몄퐫??愿???쒕쾭 ?댁뒋 ?鍮??붿퐫?⑸맂 踰꾩쟾 異붽? ?쒕룄
+    ]),
   );
 
   let playSuccess = false;
 
   for (const targetSrc of fallbacks) {
+    if (seq !== playSeq) return; // cancelled (stop pressed or another item started)
     try {
       el.pause();
       el.currentTime = 0;
@@ -105,16 +111,21 @@ async function playItem(itemId: string, src: string, options?: { silentError?: b
       setState({ currentItemId: itemId, currentSrc: targetSrc, isLoading: true, isPlaying: false });
       el.load();
       await el.play();
+      if (seq !== playSeq) return;
       playSuccess = true;
-      break; // 성공하면 루프 탈출
+      break; // ?깃났?섎㈃ 猷⑦봽 ?덉텧
     } catch (e) {
-      console.warn(`[오디오 Fallback 시도 실패] 요청 경로: ${targetSrc}`, e);
+      if (seq !== playSeq) return;
+      console.warn(`[?ㅻ뵒??Fallback ?쒕룄 ?ㅽ뙣] ?붿껌 寃쎈줈: ${targetSrc}`, e);
     }
   }
 
   if (!playSuccess) {
+    if (seq !== playSeq) return;
     const message = "음성 파일을 찾을 수 없습니다";
-    console.error(`[오디오 최종 실패] 모든 Fallback 경로에서 파일을 찾지 못했습니다. 원본 경로: ${src}`);
+    console.error(
+      `[?ㅻ뵒??理쒖쥌 ?ㅽ뙣] 紐⑤뱺 Fallback 寃쎈줈?먯꽌 ?뚯씪??李얠? 紐삵뻽?듬땲?? ?먮낯 寃쎈줈: ${src}`,
+    );
     setState({
       error: message,
       isPlaying: false,
@@ -132,6 +143,7 @@ function stop() {
   initOnce();
   const el = ensureAudio();
   if (!el) return;
+  playSeq++; // cancel any in-flight playItem attempts
   el.pause();
   el.currentTime = 0;
   el.src = "";
