@@ -216,11 +216,11 @@ function StudyQuizPage() {
         )}
 
         {range && (
-          <div className="mb-4 flex items-center justify-between gap-2">
+          <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-sm text-muted-foreground">
               범위: <span className="font-semibold text-foreground">{range.start} ~ {range.end}</span>
             </div>
-            <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
               <span>
                 문제: <span className="font-semibold text-foreground">{Math.min(score.total + 1, quizLimit)}</span> /{" "}
                 {quizLimit}
@@ -231,7 +231,7 @@ function StudyQuizPage() {
               <select
                 value={quizLimit}
                 onChange={(e) => setQuizLimit(Number(e.target.value))}
-                className="rounded-lg border bg-card px-2 py-1 text-xs text-foreground"
+                className="rounded-lg border bg-card px-2 py-1.5 text-xs text-foreground"
                 aria-label="문제 수 선택"
                 disabled={score.total > 0}
               >

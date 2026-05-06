@@ -364,7 +364,7 @@ export function RangeVocabCard({
   }
 
   return (
-    <div className="mx-auto flex w-full max-w-sm flex-col items-center">
+    <div className="mx-auto flex w-full max-w-full flex-col items-center sm:max-w-sm">
       {/* 필터 탭 */}
       <div className="mb-4 w-full rounded-2xl border bg-card p-1 shadow-sm">
         <div className="flex w-full">

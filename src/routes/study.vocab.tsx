@@ -44,7 +44,7 @@ function StudyVocabPage() {
   const allVocab = useMemo(() => {
     if (!data?.lessons) return [];
     return data.lessons.flatMap((l) =>
-      (l.vocabulary ?? []).map((w) => ({ ...w, lessonId: l.id }))
+      (l.vocabulary ?? []).map((w) => ({ ...w, lessonId: l.id, example: typeof w.example === 'string' ? undefined : w.example }))
     );
   }, [data?.lessons]);
 
