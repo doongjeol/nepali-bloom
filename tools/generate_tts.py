@@ -18,11 +18,11 @@ Google Cloud Text-to-Speech API 설정 및 실행 방법:
      set GOOGLE_APPLICATION_CREDENTIALS="C:\경로\파일명.json"
 """
 
-import json
 import argparse
 import os
 import time
 from pathlib import Path
+import json
 
 # gRPC DNS 오류 해결을 위한 환경 변수 설정
 os.environ["GRPC_DNS_RESOLVER"] = "native"

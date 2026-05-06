@@ -40,7 +40,7 @@
       "korean": "to close, to shut (닫다)",
       "example": {
         "nepali": "ढोका बन्द गर्नुस्।",
-        "romanized": "dhokaa banda garnos.",
+        "romanized": "Dhokaa banda garnos.",
         "korean": "문을 닫으세요."
       }
     },
@@ -76,11 +76,11 @@
     },
     {
       "nepali": "ढोका",
-      "romanized": "dhokaa",
+      "romanized": "Dhokaa",
       "korean": "door (문)",
       "example": {
         "nepali": "त्यो ढोका हो।",
-        "romanized": "tyo dhokaa ho.",
+        "romanized": "tyo Dhokaa ho.",
         "korean": "저것은 문입니다."
       }
     },
@@ -120,7 +120,7 @@
       "korean": "I (과거 시제 타동사와 함께 쓰일 때)",
       "example": {
         "nepali": "मैले ढोका खोलेको।",
-        "romanized": "maile dhokaa kholeko.",
+        "romanized": "maile Dhokaa kholeko.",
         "korean": "제가 문을 열었습니다."
       }
     },
@@ -210,7 +210,7 @@
       "korean": "that (저것, 그것)",
       "example": {
         "nepali": "त्यो ढोका हो।",
-        "romanized": "tyo dhokaa ho.",
+        "romanized": "tyo Dhokaa ho.",
         "korean": "저것은 문입니다."
       }
     },
@@ -260,7 +260,7 @@
       "korean": "to open (열다)",
       "example": {
         "nepali": "ढोका खोल्नुहोस्।",
-        "romanized": "dhokaa kholnos.",
+        "romanized": "Dhokaa kholnos.",
         "korean": "문을 여세요."
       }
     },
@@ -448,19 +448,19 @@
         {
           "speaker": "B",
           "nepali": "त्यो ढोका हो ।",
-          "romanized": "tyo dhokaa ho.",
+          "romanized": "tyo Dhokaa ho.",
           "korean": "저것은 문입니다."
         },
         {
           "speaker": "A",
           "nepali": "ढोका खोल्नुहोस् ।",
-          "romanized": "dhokaa kholnos.",
+          "romanized": "Dhokaa kholnos.",
           "korean": "문을 여세요."
         },
         {
           "speaker": "B",
           "nepali": "मैले ढोका खोलेको ।",
-          "romanized": "maile dhokaa kholeko.",
+          "romanized": "maile Dhokaa kholeko.",
           "korean": "제가 문을 열었습니다."
         },
         {
@@ -472,19 +472,19 @@
         {
           "speaker": "B",
           "nepali": "वहाँले ढोका खोलेको ।",
-          "romanized": "wahããle dhokaa kholeko.",
+          "romanized": "wahããle Dhokaa kholeko.",
           "korean": "그분이 문을 열었습니다."
         },
         {
           "speaker": "A",
           "nepali": "ढोका बन्द गर्नुहोस् ।",
-          "romanized": "dhokaa banda garnos.",
+          "romanized": "Dhokaa banda garnos.",
           "korean": "문을 닫으세요."
         },
         {
           "speaker": "B",
           "nepali": "मैले ढोका बन्द गरेको ।",
-          "romanized": "maile dhokaa banda gareko.",
+          "romanized": "maile Dhokaa banda gareko.",
           "korean": "제가 문을 닫았습니다."
         }
       ]

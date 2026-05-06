@@ -204,16 +204,20 @@ export function RangeVocabCard({
       return;
     }
 
-    setIsFlipped(false);
-    const isLastBefore = currentIndex >= studyQueue.length - 1;
-    // 현재 카드가 제거되면(필터 조건에 안 맞게 되면) 다음 카드는 같은 index로 당겨집니다.
-    // 마지막 카드였다면 1개 줄어든 새 큐가 0개가 되거나, 이전 카드로 이동해야 합니다.
-    if (studyQueue.length <= 1) {
-      setIsFinished(true);
-      return;
+    const willBeRemoved = (filter === "unknown" && status !== "unknown") || (filter === "known" && status !== "known");
+
+    if (willBeRemoved) {
+      setIsFlipped(false);
+      const isLastBefore = currentIndex >= studyQueue.length - 1;
+      if (studyQueue.length <= 1) {
+        setIsFinished(true);
+        return;
+      }
+      const nextIndex = isLastBefore ? Math.max(0, currentIndex - 1) : currentIndex;
+      setPage([nextIndex, 1]);
+    } else {
+      handleNext();
     }
-    const nextIndex = isLastBefore ? Math.max(0, currentIndex - 1) : currentIndex;
-    setPage([nextIndex, 1]);
   };
 
   useEffect(() => {

@@ -6,7 +6,7 @@ BASIC COURSE IN SPOKEN NEPALI - LESSON 2 (Corrected)
 --------------------------------------------------
 आमा (aamaa)          : 어머니
 बा (baa)            : 아버지
-ढोका (dhokaa)       : 문
+ढोका (Dhokaa)       : 문
 स्या우 (syaau)       : 사과
 सुन्तला (suntalaa)   : 오렌지/귤
 चिया (chiyaa)       : 차
@@ -59,19 +59,19 @@ BASIC COURSE IN SPOKEN NEPALI - LESSON 2 (Corrected)
 --------------------------------------------------
 (a) 문 열고 닫기 (Opening and Closing the Door)
 1. त्यो के हो ? / त्यो ढोका हो ।
-   (tyo ke ho ? / tyo dhokaa ho.)
+   (tyo ke ho ? / tyo Dhokaa ho.)
    저것은 무엇입니까? / 저것은 문입니다.
 
 2. ढोका खोल्नुहोस् । / मैले ढोका खोलेको ।
-   (dhokaa kholnos. / maile dhokaa kholeko.)
+   (Dhokaa kholnos. / maile Dhokaa kholeko.)
    문을 여세요. / 제가 문을 열었습니다.
 
 3. वहाँले के गरेको ? / वहाँले ढोका खोलेको ।
-   (wahããle ke gareko ? / wahããle dhokaa kholeko.)
+   (wahããle ke gareko ? / wahããle Dhokaa kholeko.)
    그분은 무엇을 했습니까? / 그분이 문을 열었습니다.
 
 4. ढोका बन्द गर्नुहोस् । / मैले ढोका बन्द गरेको ।
-   (dhokaa banda garnos. / maile dhokaa banda gareko.)
+   (Dhokaa banda garnos. / maile Dhokaa banda gareko.)
    문을 닫으세요. / 제가 문을 닫았습니다.
 
 (b) 과일 먹기 (Eating Fruit)
