@@ -187,7 +187,7 @@ function LessonDetailPage() {
     setQuizSelections(Array(lesson.quiz.length).fill(null));
     setQuizMode(null);
 
-    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)));
+    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)).slice(0, 10));
     setSpkIdx(0);
     setSpkRevealed(false);
     setSpkScore(0);
@@ -296,7 +296,7 @@ function LessonDetailPage() {
   };
 
   const resetSpeakingPractice = () => {
-    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)));
+    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)).slice(0, 10));
     setSpkIdx(0);
     setSpkRevealed(false);
     setSpkScore(0);
@@ -312,7 +312,7 @@ function LessonDetailPage() {
 
   const markSpeakingAnswer = (isCorrect: boolean) => {
     if (isCorrect) setSpkScore((s) => s + 1);
-    if (spkIdx + 1 >= speakingPracticeItems.length) {
+    if (spkIdx + 1 >= spkOrder.length) {
       setSpkFinished(true);
       setSpkRevealed(false);
       return;
@@ -562,7 +562,7 @@ function LessonDetailPage() {
                           낭독 연습 (문장 Active Recall)
                         </div>
                         <div className="mt-1 text-sm text-muted-foreground">
-                          한국어 문장을 듣고 네팔어로 떠올려요.
+                          한국어 문장을 듣고 네팔어로 떠올려요. (랜덤 최대 10문제)
                         </div>
                       </div>
                       <div className="mt-0.5 rounded-full bg-[#7A5C45]/10 px-2 py-1 text-xs font-medium text-[#6A4D3A]">
@@ -576,7 +576,7 @@ function LessonDetailPage() {
               (() => {
                 const vocabIndex = spkOrder[spkIdx] ?? spkIdx;
                 const card = speakingPracticeItems[vocabIndex];
-                const total = speakingPracticeItems.length;
+                const total = spkOrder.length;
 
                 if (total === 0) {
                   return (
