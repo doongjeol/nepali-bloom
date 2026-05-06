@@ -65,7 +65,10 @@ function buildExercise(card: GrammarPracticeCard): Exercise {
     validExamples = validExamples.filter((ex) => {
       const nepaliMatch = ex.match(/^[^(]+/);
       const nepaliText = nepaliMatch ? nepaliMatch[0].trim() : ex;
-      const words = nepaliText.split(/\s+/).filter((w) => w.replace(/[^a-zA-Z]/g, "").length >= 2);
+        const words = nepaliText
+          .split(/\s+/)
+          .map((w) => w.replace(/[?!.,;:'"()\[\]]/g, ""))
+          .filter((w) => w.length >= 2 && /^[a-zA-Z]+$/.test(w));
       return words.length > 0;
     });
   }
@@ -166,10 +169,13 @@ function buildExercise(card: GrammarPracticeCard): Exercise {
   if (kind === "generic" && pickedExample) {
     const nepaliMatch = pickedExample.match(/^[^(]+/);
     const nepaliText = nepaliMatch ? nepaliMatch[0].trim() : pickedExample;
-    const words = nepaliText.split(/\s+/).filter((w) => w.replace(/[^a-zA-Z]/g, "").length >= 2);
+      const words = nepaliText
+        .split(/\s+/)
+        .map((w) => w.replace(/[?!.,;:'"()\[\]]/g, ""))
+        .filter((w) => w.length >= 2 && /^[a-zA-Z]+$/.test(w));
     if (words.length > 0) {
       const answer = pick(words);
-      const blanked = pickedExample.replace(answer, "____");
+        const blanked = pickedExample.replace(new RegExp(`\\b${answer}\\b`), "____");
       const distractors = shuffle(["ho", "chha", "mero", "ramro", "dherai", "ali", "tapaaïko", "tyo", "yo", "kasto", "kasko"])
         .filter((w) => w !== answer)
         .slice(0, 3);

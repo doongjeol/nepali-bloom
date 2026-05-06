@@ -537,9 +537,6 @@ function LessonDetailPage() {
                           </div>
                         )}
                       </div>
-                      <div className="mt-0.5 rounded-full bg-[#6B7A5A]/10 px-2 py-1 text-xs font-medium text-[#4E5A41]">
-                        Multiple
-                      </div>
                     </div>
                   </button>
 
@@ -564,9 +561,6 @@ function LessonDetailPage() {
                         <div className="mt-1 text-sm text-muted-foreground">
                           한국어 문장을 듣고 네팔어로 떠올려요. (랜덤 최대 10문제)
                         </div>
-                      </div>
-                      <div className="mt-0.5 rounded-full bg-[#7A5C45]/10 px-2 py-1 text-xs font-medium text-[#6A4D3A]">
-                        Speaking
                       </div>
                     </div>
                   </button>

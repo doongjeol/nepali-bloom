@@ -596,7 +596,10 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
     for (const ex of examples) {
       const nepaliMatch = ex.match(/^[^(]+/);
       const nepaliText = nepaliMatch ? nepaliMatch[0].trim() : ex;
-      const words = nepaliText.split(/\s+/).filter((w) => w.replace(/[^a-zA-Z]/g, "").length >= 2);
+        const words = nepaliText
+          .split(/\s+/)
+          .map((w) => w.replace(/[?!.,;:'"()\[\]]/g, ""))
+          .filter((w) => w.length >= 2 && /^[a-zA-Z]+$/.test(w));
       if (words.length > 0) return true;
     }
     return false;
