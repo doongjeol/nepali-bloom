@@ -874,6 +874,7 @@ function LessonDetailPage() {
                       </h2>
                       <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap sm:items-center sm:justify-end">
                         <button
+                          onMouseDown={(e) => e.preventDefault()}
                           onClick={() => {
                             if (playDialogueIndex === dIdx) stopPlayAll();
                             else startPlayAllForDialogue(dIdx);
@@ -888,6 +889,7 @@ function LessonDetailPage() {
                           {playDialogueIndex === dIdx ? "재생 중지" : "전체 재생"}
                         </button>
                         <button
+                          onMouseDown={(e) => e.preventDefault()}
                           onClick={() => setShowRomanized(!showRomanized)}
                           className="inline-flex h-10 w-full items-center justify-center whitespace-nowrap rounded-lg bg-secondary px-3 text-xs font-medium text-secondary-foreground hover:bg-accent active:scale-95 transition-all sm:h-9 sm:w-auto sm:px-3 sm:text-sm"
                         >
