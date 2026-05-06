@@ -315,7 +315,6 @@ function RangeDialogueQuiz({
   };
 
   const handleReset = () => {
-    if (isSuccess) return;
     setIsError(false);
     const line = quizLines[currentStep];
     setPool(shuffleArray([...line.parsedWords]));
@@ -409,8 +408,13 @@ function RangeDialogueQuiz({
           {isSuccess && <><CheckCircle2 className="h-5 w-5 text-success" /><span className="text-sm font-semibold text-success">정답입니다!</span></>}
         </div>
         <div className="flex gap-2">
-          {answer.length > 0 && !isSuccess && <Button variant="secondary" size="sm" onClick={handleReset}>초기화</Button>}
-          {isSuccess && <Button onClick={handleNext}>{currentStep === quizLines.length - 1 ? "결과 보기" : "다음 문제"}</Button>}
+          {!isSuccess && <Button variant="secondary" size="sm" onClick={handleReset}>초기화</Button>}
+          {isSuccess && (
+            <>
+              <Button variant="secondary" size="sm" onClick={() => { setIsSuccess(false); handleReset(); }}>다시 풀기</Button>
+              <Button onClick={handleNext}>{currentStep === quizLines.length - 1 ? "결과 보기" : "다음 문제"}</Button>
+            </>
+          )}
         </div>
       </div>
       <style>{`
