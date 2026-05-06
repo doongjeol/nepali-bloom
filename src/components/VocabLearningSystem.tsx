@@ -138,19 +138,16 @@ export function VocabLearningSystem({
   }, [vocabulary, statuses, filter]);
 
   const unknownWords = useMemo(() => {
-    return vocabulary.filter((w) => (statuses[w.romanized] || "none") !== "known");
+    return vocabulary.filter((w) => statuses[w.romanized] === "unknown");
   }, [vocabulary, statuses]);
 
   const handleStartReview = () => {
     if (unknownWords.length === 0) {
-      toast("현재 '몰라요'로 체크된 단어가 없어요!", {
+      toast("현재 '아직 몰라요'로 체크된 단어가 없어요!", {
         duration: 3000,
         position: "top-center",
         className: "bg-[#E8EDDF] text-[#2F4F2F] border border-[#C9D3B8] shadow-lg",
       });
-      setFilter("all");
-      setReviewBtnShake(true);
-      window.setTimeout(() => setReviewBtnShake(false), 450);
       return;
     }
 
@@ -173,6 +170,7 @@ export function VocabLearningSystem({
   };
 
   const currentReviewWord = reviewQueue[flashcardIdx];
+  const currentReviewEx = currentReviewWord ? getExample(currentReviewWord) : null;
 
   return (
     <div className="space-y-4 sm:space-y-6">
@@ -392,38 +390,38 @@ export function VocabLearningSystem({
                     <p className="absolute bottom-5 text-xs text-muted-foreground">터치하여 뒤집기</p>
                   </div>
                   <div className="absolute inset-0 flex flex-col items-center justify-center rounded-3xl border-2 border-border bg-[#F5EBE0] p-6 text-center shadow-sm [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                    <p className="text-3xl font-bold text-[#333D29]">{currentReviewWord.korean}</p>
-                    <p className="mt-3 text-base italic text-[#6B5D4F]">{currentReviewWord.romanized}</p>
-                      {(() => {
-                        const ex = getExample(currentReviewWord);
-                        if (!ex) return null;
-                        return (
-                          <div className="mt-4 w-full rounded-xl bg-background/60 p-4 text-left shadow-sm ring-1 ring-border/50">
-                            <div className="mb-2 flex items-center justify-between">
-                              <span className="text-xs font-bold text-muted-foreground">예문</span>
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  e.stopPropagation();
-                                  const actualLessonId = currentReviewWord.lessonId ?? lessonId;
-                                  const itemId = `vocab-modal-example-${actualLessonId}-${currentReviewWord.romanized}`;
-                                  const src = `/audio/lesson_${actualLessonId}/${currentReviewWord.romanized}_example.mp3`;
-                                  void audioPlayer.play(itemId, src, { silentError: true });
-                                }}
-                                className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20"
-                                aria-label="예문 음성 재생"
-                              >
-                                <Volume2 className="h-4 w-4" />
-                              </button>
-                            </div>
-                            <p className="text-sm font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>{ex.nepali}</p>
-                            {ex.romanized && <p className="mt-1 text-[11px] italic text-muted-foreground">{ex.romanized}</p>}
-                            {ex.korean && <p className="mt-1.5 text-xs text-foreground/80">{ex.korean}</p>}
+                    <div className={cn("flex flex-col items-center justify-center w-full", currentReviewEx ? "mb-auto mt-auto" : "my-auto")}>
+                      <p className="text-2xl font-bold text-[#333D29]">{currentReviewWord.korean}</p>
+                      <p className="mt-2 text-sm italic text-[#6B5D4F]">{currentReviewWord.romanized}</p>
+                      {currentReviewEx && (
+                        <div className="mt-3 w-full rounded-xl bg-background/60 p-3 text-left shadow-sm ring-1 ring-border/50">
+                          <div className="mb-1 flex items-center justify-between">
+                            <span className="text-[10px] font-bold text-muted-foreground">예문</span>
+                            <button
+                              type="button"
+                              onClick={(e) => {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                const actualLessonId = currentReviewWord.lessonId ?? lessonId;
+                                const itemId = `vocab-modal-example-${actualLessonId}-${currentReviewWord.romanized}`;
+                                const src = `/audio/lesson_${actualLessonId}/${currentReviewWord.romanized}_example.mp3`;
+                                void audioPlayer.play(itemId, src, { silentError: true });
+                              }}
+                              className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+                              aria-label="예문 음성 재생"
+                            >
+                              <Volume2 className="h-4 w-4" />
+                            </button>
                           </div>
-                        );
-                      })()}
-                    <p className="absolute bottom-5 text-xs text-[#6B5D4F]/80">터치하여 앞면으로</p>
+                          <p className="text-sm font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>{currentReviewEx.nepali}</p>
+                          {currentReviewEx.romanized && <p className="mt-0.5 text-[11px] italic text-muted-foreground">{currentReviewEx.romanized}</p>}
+                          {currentReviewEx.korean && <p className="mt-1 text-xs text-foreground/80">{currentReviewEx.korean}</p>}
+                        </div>
+                      )}
+                    </div>
+                    <p className={cn("text-[#6B5D4F]/80 transition-all", currentReviewEx ? "mt-2 text-[10px]" : "absolute bottom-5 text-xs")}>
+                      터치하여 앞면으로
+                    </p>
                   </div>
                 </div>
               </div>

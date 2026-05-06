@@ -4,8 +4,7 @@ function formatAudioUrl(path: string) {
   const normalized = encodeURI(path.toLowerCase());
   // Ensure public assets respect Vite base path in production builds.
   // If BASE_URL is "/", keep absolute paths as-is.
-  const base = (import.meta as any)?.env?.BASE_URL as string | undefined;
-  const baseUrl = typeof base === "string" ? base : "/";
+  const baseUrl = import.meta.env.BASE_URL || "/";
   if (baseUrl !== "/" && normalized.startsWith("/")) {
     return `${baseUrl.replace(/\/$/, "")}${normalized}`;
   }

@@ -82,11 +82,11 @@ export function FlashCard({ item, className }: { item: StudyWord; className?: st
           "bg-[#f6f1e6] text-foreground",
         )}
       >
-        <div className="relative h-56 w-full rounded-3xl p-5">
+        <div className="relative w-full rounded-3xl">
           <button
             type="button"
             aria-label="단어 오디오 재생"
-            className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border bg-white/60 text-foreground shadow-sm backdrop-blur transition-colors hover:bg-white/80"
+            className="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full border bg-white/60 text-foreground shadow-sm backdrop-blur transition-colors hover:bg-white/80"
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -96,45 +96,43 @@ export function FlashCard({ item, className }: { item: StudyWord; className?: st
             <Volume2 className="h-4 w-4" />
           </button>
 
-          {/* Default state */}
-          <div
-            className={cn(
-              "absolute inset-0 rounded-3xl p-5 transition-opacity duration-200 ease-in-out",
-              showMeaning ? "opacity-0" : "opacity-100",
-            )}
-            aria-hidden={showMeaning}
-          >
-            <div className="flex h-full flex-col items-center justify-center text-center">
-              <p
-                className="text-4xl font-bold text-[#333D29] sm:text-5xl"
-                style={{ fontFamily: "var(--font-nepali)" }}
-              >
-                {item.word.nepali}
-              </p>
-              <p className="mt-3 text-base italic text-[#6B5D4F] sm:text-lg">
-                {item.word.romanized}
-              </p>
-              <p className="mt-3 text-[11px] text-muted-foreground/70">
+          <div className="grid w-full min-h-[14rem]">
+            {/* Default state */}
+            <div
+              className={cn(
+                "col-start-1 row-start-1 flex flex-col justify-center rounded-3xl p-5 pb-10 transition-opacity duration-200 ease-in-out",
+                showMeaning ? "opacity-0" : "opacity-100",
+              )}
+              aria-hidden={showMeaning}
+            >
+              <div className="my-auto flex flex-col items-center justify-center text-center">
+                <p className="text-4xl font-bold text-[#333D29] sm:text-5xl" style={{ fontFamily: "var(--font-nepali)" }}>
+                  {item.word.nepali}
+                </p>
+                <p className="mt-3 text-base italic text-[#6B5D4F] sm:text-lg">
+                  {item.word.romanized}
+                </p>
+              </div>
+              <p className="absolute bottom-4 left-0 right-0 mx-auto text-center text-[11px] text-muted-foreground/70">
                 카드를 클릭하면 뜻이 표시돼요
               </p>
             </div>
-          </div>
 
-          {/* Toggle state */}
-          <div
-            className={cn(
-              "absolute inset-0 rounded-3xl p-5 transition-opacity duration-200 ease-in-out",
-              showMeaning ? "opacity-100" : "opacity-0 pointer-events-none",
-            )}
-            aria-hidden={!showMeaning}
-          >
-            <div className="flex h-full flex-col justify-center">
-              <p className="text-center text-2xl font-bold text-[#333D29] sm:text-3xl">
-                {item.word.korean}
-              </p>
+            {/* Toggle state */}
+            <div
+              className={cn(
+                "col-start-1 row-start-1 flex flex-col justify-center rounded-3xl p-5 pb-10 transition-opacity duration-200 ease-in-out",
+                showMeaning ? "opacity-100" : "opacity-0 pointer-events-none",
+              )}
+              aria-hidden={!showMeaning}
+            >
+              <div className="my-auto flex flex-col justify-center">
+                <p className="text-center text-xl sm:text-2xl font-bold text-[#333D29] break-keep">
+                  {item.word.korean}
+                </p>
 
-              {example && (
-                <div className="mt-5">
+                {example && (
+                  <div className="mt-4">
                   <div className="border-t border-black/10 pt-4">
                     <div className="mb-2 flex items-center justify-between">
                       <span className="text-xs font-semibold text-muted-foreground">예문</span>
@@ -166,10 +164,10 @@ export function FlashCard({ item, className }: { item: StudyWord; className?: st
                     )}
                   </div>
                 </div>
-              )}
-
+                )}
+              </div>
               {!example && (
-                <p className="mt-5 text-center text-[11px] text-muted-foreground/70">
+                <p className="absolute bottom-4 left-0 right-0 mx-auto text-center text-[11px] text-[#6B5D4F]/80">
                   다시 클릭하면 단어로 돌아가요
                 </p>
               )}
