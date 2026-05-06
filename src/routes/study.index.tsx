@@ -56,7 +56,7 @@ function StudyHomePage() {
           onSubmit={({ start, end }) => navigate({ search: { start, end } })}
         />
 
-        <div className="mt-6 grid gap-3 sm:grid-cols-2">
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <Link
             to="/study/vocab"
             search={rangeReady ? { start: search.start, end: search.end } : { start: undefined, end: undefined }}
@@ -92,18 +92,6 @@ function StudyHomePage() {
             <div className="text-xl">💬</div>
             <h2 className="mt-2 font-semibold text-foreground">대화문</h2>
             <p className="mt-1 text-sm text-muted-foreground">슬라이드로 넘기며 보기</p>
-          </Link>
-          <Link
-            to="/study/driving"
-            search={rangeReady ? { start: search.start, end: search.end } : { start: undefined, end: undefined }}
-            className={cn(
-              "rounded-2xl border border-amber-500/30 bg-[#1a1a2e] p-5 shadow-sm transition-all hover:shadow-sm active:scale-[0.99]",
-              !rangeReady && "opacity-60",
-            )}
-          >
-            <div className="text-xl">🚗</div>
-            <h2 className="mt-2 font-semibold text-amber-300">운전 모드</h2>
-            <p className="mt-1 text-sm text-white/50">큰 글씨 · 자동 재생 · 다크 화면</p>
           </Link>
         </div>
 

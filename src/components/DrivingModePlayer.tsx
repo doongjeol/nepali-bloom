@@ -110,7 +110,6 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           <div className="grid gap-3 sm:grid-cols-2">
             {[
               { id: "vocab", icon: BookOpen, label: "단어", desc: "단어와 뜻을 반복 재생합니다." },
-              { id: "grammar", icon: BookOpen, label: "문법", desc: "문법 설명과 예문을 재생합니다." },
               { id: "dialogue", icon: MessageCircle, label: "대화문", desc: "대화문 문장을 순서대로 재생합니다." },
               { id: "quiz", icon: FileQuestion, label: "퀴즈", desc: "퀴즈 문제와 정답을 재생합니다." },
             ].map((opt) => {

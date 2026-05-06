@@ -1,4 +1,4 @@
-﻿import { createFileRoute, Link } from "@tanstack/react-router";
+﻿﻿import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Header } from "@/components/Header";
 import { availableLessonIds, loadLesson } from "@/data/lessonLoader";
@@ -1102,10 +1102,7 @@ function inferGrammarCategory(card: GrammarCardData) {
 
 function toPracticeCard(card: GrammarCardData): GrammarPracticeCard {
   const details = card.lines.map((l) => l.trim()).filter(Boolean);
-  const examples =
-    (card.examples ?? []).map((l) => l.trim()).filter(Boolean).length > 0
-      ? (card.examples ?? []).map((l) => l.trim()).filter(Boolean)
-      : details.filter((l) => /예:|->|\([^)]+\)/.test(l) && /[a-zA-Z]/.test(l));
+  const examples = (card.examples ?? []).map((l) => l.trim()).filter(Boolean);
   const hasComparisonTable = hasHoChhaHunchhaText(` ${details.join(" ").toLowerCase()} `);
   return {
     title: card.title.replace(/^\d+\.\s*/, "").trim(),

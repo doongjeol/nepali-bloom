@@ -60,7 +60,7 @@ function Index() {
         </section>
 
         {/* 하단 카드 그리드: 모바일에서 가로가 좁으므로 수직/수평 정렬 조합 변경 */}
-        <section className="grid gap-3 sm:grid-cols-3 sm:gap-4">
+        <section className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
           <Link
             to="/study/vocab"
             className="flex items-center gap-4 rounded-xl border bg-card p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99] sm:flex-col sm:justify-center sm:text-center sm:p-6"
@@ -91,6 +91,17 @@ function Index() {
             <div className="text-left sm:text-center">
               <h3 className="text-sm font-semibold text-foreground sm:text-base">대화문</h3>
               <p className="text-xs text-muted-foreground sm:text-sm">실생활 대화 연습</p>
+            </div>
+          </Link>
+
+          <Link
+            to="/study/driving"
+            className="flex items-center gap-4 rounded-xl border border-amber-500/30 bg-[#1a1a2e] p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99] sm:flex-col sm:justify-center sm:text-center sm:p-6"
+          >
+            <div className="text-xl sm:mb-1">🚗</div>
+            <div className="text-left sm:text-center">
+              <h3 className="text-sm font-semibold text-amber-300 sm:text-base">운전 모드</h3>
+              <p className="text-xs text-white/50 sm:text-sm">자동 재생 · 다크</p>
             </div>
           </Link>
         </section>
