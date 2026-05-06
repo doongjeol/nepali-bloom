@@ -228,6 +228,13 @@ export function VocabLearningSystem({
               모두 <RefreshCw className="h-3 w-3" />
             </Button>
             <Button
+              onClick={handleStartReview}
+              className={cn("rounded-xl text-xs sm:text-sm", reviewBtnShake && "animate-shake")}
+              variant="default"
+            >
+              복습
+            </Button>
+            <Button
               type="button"
               onClick={markAllUnknown}
               variant="outline"
@@ -243,13 +250,7 @@ export function VocabLearningSystem({
             >
               모두 <CheckCircle className="h-3 w-3" />
             </Button>
-            <Button
-              onClick={handleStartReview}
-              className={cn("rounded-xl text-xs sm:text-sm", reviewBtnShake && "animate-shake")}
-              variant="default"
-            >
-              복습
-            </Button>
+            
             <Button type="button" onClick={resetStatuses} className="col-span-2 sm:col-auto rounded-xl text-xs sm:text-sm" variant="secondary">
               초기화
             </Button>

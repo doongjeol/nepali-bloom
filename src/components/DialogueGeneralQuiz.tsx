@@ -356,7 +356,7 @@ export function DialogueGeneralQuiz({
           )}
         </div>
         <div className="flex gap-2">
-          {isError && !isSuccess && (
+          {answer.length > 0 && !isSuccess && (
             <Button variant="secondary" size="sm" onClick={handleReset}>
               초기화
             </Button>
