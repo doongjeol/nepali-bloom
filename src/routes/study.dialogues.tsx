@@ -98,7 +98,7 @@ function StudyDialoguesPage() {
         )}
 
         {range && (
-          <div className="mb-4 flex items-center justify-between gap-2">
+          <div className="mb-4 flex flex-wrap items-center justify-between gap-2">
             <div className="text-sm text-muted-foreground">
               범위: <span className="font-semibold text-foreground">{range.start} ~ {range.end}</span>
             </div>
