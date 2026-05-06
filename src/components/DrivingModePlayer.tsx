@@ -12,6 +12,7 @@ interface DrivingModePlayerProps {
 export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingModePlayerProps) {
   const [hasStarted, setHasStarted] = useState(false);
   const [selectedTypes, setSelectedTypes] = useState<Set<string>>(new Set(["vocab", "grammar", "dialogue", "quiz"]));
+  const [ttsSpeed, setTtsSpeed] = useState(0.9);
 
   const toggleType = (type: string) => {
     setSelectedTypes((prev) => {
@@ -38,7 +39,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     nextWord,
     prevWord,
     swipeHandlers,
-  } = useDrivingMode(lessonId, filteredVocab);
+  } = useDrivingMode(lessonId, filteredVocab, { ttsSpeed });
 
   useEffect(() => {
     if (hasStarted) {
@@ -70,6 +71,24 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
         {/* Options */}
         <div className="flex-1 overflow-y-auto pb-4">
+          <div className="mb-6">
+            <h2 className="mb-3 text-lg font-bold text-foreground">음성(TTS) 읽기 속도</h2>
+            <div className="flex gap-2">
+              {[0.7, 0.9, 1.0, 1.2, 1.5].map((speed) => (
+                <button
+                  key={speed}
+                  onClick={() => setTtsSpeed(speed)}
+                  className={cn(
+                    "flex-1 rounded-xl border py-2 text-sm font-medium transition-colors",
+                    ttsSpeed === speed ? "border-primary bg-primary/10 text-primary" : "border-border bg-card text-muted-foreground"
+                  )}
+                >
+                  {speed}x
+                </button>
+              ))}
+            </div>
+          </div>
+          
           <h2 className="mb-4 text-lg font-bold text-foreground">어떤 내용을 학습할까요?</h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {[
@@ -138,13 +157,29 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           <Car className="h-6 w-6" />
           <span className="text-lg sm:text-xl">운전 모드</span>
         </div>
-        <button
-          type="button"
-          onClick={onClose}
-          className="rounded-full bg-secondary p-2 text-secondary-foreground transition-colors hover:bg-accent"
-        >
-          <X className="h-6 w-6" />
-        </button>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1 rounded-full border bg-secondary/50 px-2 py-1">
+            <span className="pl-2 text-xs font-semibold text-muted-foreground">속도</span>
+            <select
+              value={ttsSpeed}
+              onChange={(e) => setTtsSpeed(Number(e.target.value))}
+              className="bg-transparent text-sm font-bold text-foreground outline-none"
+            >
+              <option value={0.7}>0.7x</option>
+              <option value={0.9}>0.9x</option>
+              <option value={1.0}>1.0x</option>
+              <option value={1.2}>1.2x</option>
+              <option value={1.5}>1.5x</option>
+            </select>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="rounded-full bg-secondary p-2 text-secondary-foreground transition-colors hover:bg-accent"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
       </div>
 
       {/* Content */}

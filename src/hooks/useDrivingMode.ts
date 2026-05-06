@@ -19,6 +19,7 @@ export interface PlaybackTask {
   payload: string | number; // audio src, speech text, or delay ms
   description?: string; // UI 표시용 설명
   wordIndex?: number; // 해당 task가 속한 단어 인덱스
+  isNepaliTTS?: boolean; // 네팔어를 TTS로 읽어야 할 경우
 }
 
 type SwipeHandlers = {
@@ -138,7 +139,7 @@ function useSwipeNavigation({
 export function useDrivingMode(
   lessonId: string | number,
   vocabulary: VocabularyItem[],
-  options?: { enableWakeLock?: boolean; enableSwipe?: boolean },
+  options?: { enableWakeLock?: boolean; enableSwipe?: boolean; ttsSpeed?: number },
 ) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(-1);
@@ -149,6 +150,11 @@ export function useDrivingMode(
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const isPlayingRef = useRef(false); // 이벤트 콜백에서 최신 재생 상태 참조용
+
+  const ttsSpeedRef = useRef(options?.ttsSpeed ?? 0.9);
+  useEffect(() => {
+    ttsSpeedRef.current = options?.ttsSpeed ?? 0.9;
+  }, [options?.ttsSpeed]);
 
   // 운전 중 화면 꺼짐 방지 (best-effort)
   useWakeLock(Boolean(options?.enableWakeLock ?? true) && isPlaying);
@@ -207,6 +213,7 @@ export function useDrivingMode(
         const audio = audioRef.current ?? new Audio();
         audioRef.current = audio;
         audio.src = task.payload as string;
+        audio.volume = 1.0; // 네팔어 원어민 오디오는 항상 최대 음량 유지
         
         let isDone = false;
         const finish = () => {
@@ -232,7 +239,11 @@ export function useDrivingMode(
         const utterance = new SpeechSynthesisUtterance(task.payload as string);
         utteranceRef.current = utterance;
         utterance.lang = "ko-KR";
-        utterance.rate = 0.9;
+        utterance.rate = ttsSpeedRef.current;
+        
+        // 음량 조절: 네팔어 오디오(mp3)가 상대적으로 작게 들리는 것을 막기 위해 한국어 TTS 볼륨을 0.5로 낮춥니다.
+        // 네팔어를 TTS로 직접 읽어야 하는 예외적인 경우에는 볼륨을 1.0으로 유지합니다.
+        utterance.volume = task.isNepaliTTS ? 1.0 : 0.5;
         
         let isDone = false;
         const finish = () => {
@@ -375,6 +386,7 @@ export function useDrivingMode(
             payload: word.nepali,
             description: `네팔어: ${word.nepali}`,
             wordIndex: index,
+            isNepaliTTS: true,
           });
         }
         newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
