@@ -60,6 +60,17 @@ function LessonDetailPage() {
   const [grammarPractice, setGrammarPractice] = useState<GrammarCardData | null>(null);
   const audioPlayer = useAudioPlayer();
 
+  const speakingPracticeItems = useMemo(() => {
+    if (lesson.examples && lesson.examples.length > 0) {
+      return lesson.examples;
+    }
+    // 대화문이 있으면 예문 대신 사용
+    if (lesson.dialogues && lesson.dialogues.length > 0) {
+      return lesson.dialogues.flatMap(d => d.lines);
+    }
+    return [];
+  }, [lesson.examples, lesson.dialogues]);
+
   // Quiz state
   const [quizMode, setQuizMode] = useState<QuizMode>(null);
   const [qIdx, setQIdx] = useState(0);
@@ -68,7 +79,6 @@ function LessonDetailPage() {
   const [answered, setAnswered] = useState(false);
   const [finished, setFinished] = useState(false);
   const [quizOrder, setQuizOrder] = useState<number[]>([]);
-  const [showAllQuizPicker, setShowAllQuizPicker] = useState(false);
   const [quizSelections, setQuizSelections] = useState<(number | null)[]>([]);
 
   // Speaking practice (Active Recall) state
@@ -174,17 +184,16 @@ function LessonDetailPage() {
     setScore(0);
     setAnswered(false);
     setFinished(false);
-    setShowAllQuizPicker(false);
     setQuizSelections(Array(lesson.quiz.length).fill(null));
     setQuizMode(null);
 
-    setSpkOrder(shuffle([...Array(lesson.examples.length)].map((_, i) => i)));
+    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)));
     setSpkIdx(0);
     setSpkRevealed(false);
     setSpkScore(0);
     setSpkFinished(false);
     lastSpokenKeyRef.current = null;
-  }, [lessonId, lesson]);
+  }, [lessonId, lesson, speakingPracticeItems]);
 
   const speakKorean = (text: string) => {
     if (typeof window === "undefined") return;
@@ -206,13 +215,13 @@ function LessonDetailPage() {
     if (spkFinished) return;
     if (spkRevealed) return;
     const vocabIndex = spkOrder[spkIdx] ?? spkIdx;
-    const card = lesson.examples[vocabIndex];
+    const card = speakingPracticeItems[vocabIndex];
     if (!card) return;
     const key = `spk-${lesson.id}-${vocabIndex}-${card.korean}`;
     if (lastSpokenKeyRef.current === key) return;
     lastSpokenKeyRef.current = key;
     speakKorean(card.korean);
-  }, [lesson.id, lesson.examples, quizMode, spkFinished, spkIdx, spkOrder, spkRevealed]);
+  }, [lesson.id, speakingPracticeItems, quizMode, spkFinished, spkIdx, spkOrder, spkRevealed]);
 
   const currentIndex = availableLessonIds.indexOf(Number(lessonId));
   const prevId = currentIndex > 0 ? availableLessonIds[currentIndex - 1] : null;
@@ -284,11 +293,10 @@ function LessonDetailPage() {
     setFinished(false);
     setQuizOrder(shuffle([...Array(lesson.quiz.length)].map((_, i) => i)));
     setQuizSelections(Array(lesson.quiz.length).fill(null));
-    setShowAllQuizPicker(false);
   };
 
   const resetSpeakingPractice = () => {
-    setSpkOrder(shuffle([...Array(lesson.examples.length)].map((_, i) => i)));
+    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)));
     setSpkIdx(0);
     setSpkRevealed(false);
     setSpkScore(0);
@@ -304,7 +312,7 @@ function LessonDetailPage() {
 
   const markSpeakingAnswer = (isCorrect: boolean) => {
     if (isCorrect) setSpkScore((s) => s + 1);
-    if (spkIdx + 1 >= lesson.examples.length) {
+    if (spkIdx + 1 >= speakingPracticeItems.length) {
       setSpkFinished(true);
       setSpkRevealed(false);
       return;
@@ -537,7 +545,7 @@ function LessonDetailPage() {
 
                   <button
                     type="button"
-                    disabled={lesson.examples.length === 0}
+                    disabled={speakingPracticeItems.length === 0}
                     onClick={() => {
                       resetSpeakingPractice();
                       setQuizMode("speaking");
@@ -545,7 +553,7 @@ function LessonDetailPage() {
                     className={cn(
                       "rounded-3xl border bg-white/70 px-5 py-5 text-left shadow-sm transition-all hover:scale-105 active:scale-[1.02]",
                       "hover:border-[#7A5C45]/40 hover:bg-white",
-                      lesson.examples.length === 0 && "cursor-not-allowed opacity-60 hover:scale-100",
+                      speakingPracticeItems.length === 0 && "cursor-not-allowed opacity-60 hover:scale-100",
                     )}
                   >
                     <div className="flex items-start justify-between gap-4">
@@ -567,8 +575,8 @@ function LessonDetailPage() {
             ) : quizMode === "speaking" ? (
               (() => {
                 const vocabIndex = spkOrder[spkIdx] ?? spkIdx;
-                const card = lesson.examples[vocabIndex];
-                const total = lesson.examples.length;
+                const card = speakingPracticeItems[vocabIndex];
+                const total = speakingPracticeItems.length;
 
                 if (total === 0) {
                   return (
@@ -770,10 +778,10 @@ function LessonDetailPage() {
                     <Button
                       variant="secondary"
                       size="sm"
-                      onClick={() => setShowAllQuizPicker(true)}
+                    onClick={backToQuizModeSelect}
                       className="h-8 rounded-full px-3"
                     >
-                      모든 문제 선택
+                    모드 선택
                     </Button>
                     <span className="rounded-full bg-warm/50 px-2.5 py-1 text-xs sm:text-sm font-medium text-warm-foreground">
                       점수: {score}
@@ -832,66 +840,6 @@ function LessonDetailPage() {
                   </div>
                 )}
 
-                <Dialog open={showAllQuizPicker} onOpenChange={setShowAllQuizPicker}>
-                  <DialogContent className="max-w-md">
-                    <DialogHeader>
-                      <DialogTitle>모든 문제 선택하기</DialogTitle>
-                      <DialogDescription>원하는 문제로 바로 이동할 수 있어요.</DialogDescription>
-                    </DialogHeader>
-                    <div className="max-h-[60vh] space-y-2 overflow-auto pr-1">
-                      {(quizOrder.length === lesson.quiz.length
-                        ? quizOrder
-                        : [...Array(lesson.quiz.length)].map((_, i) => i)
-                      ).map((quizIndex, orderIndex) => {
-                        const q = lesson.quiz[quizIndex];
-                        const picked = quizSelections[quizIndex];
-                        return (
-                          <button
-                            key={`${quizIndex}-${orderIndex}`}
-                            type="button"
-                            onClick={() => {
-                              setQIdx(orderIndex);
-                              const selection = quizSelections[quizIndex];
-                              setSelectedOption(selection);
-                              setAnswered(selection !== null);
-                              setShowAllQuizPicker(false);
-                            }}
-                            className={cn(
-                              "w-full rounded-xl border bg-white/70 px-4 py-3 text-left text-sm transition-colors hover:bg-white",
-                              orderIndex === qIdx && "border-primary bg-white",
-                            )}
-                          >
-                            <div className="flex items-start justify-between gap-3">
-                              <div className="min-w-0">
-                                <div className="text-xs font-semibold text-muted-foreground">
-                                  {orderIndex + 1}번
-                                </div>
-                                <div className="mt-0.5 line-clamp-2 font-medium text-foreground">
-                                  {q?.question ?? ""}
-                                </div>
-                              </div>
-                              <div
-                                className={cn(
-                                  "shrink-0 rounded-full px-2 py-1 text-xs font-medium",
-                                  picked === null
-                                    ? "bg-secondary text-secondary-foreground"
-                                    : "bg-[#6B7A5A]/10 text-[#4E5A41]",
-                                )}
-                              >
-                                {picked === null ? "미응답" : "응답함"}
-                              </div>
-                            </div>
-                          </button>
-                        );
-                      })}
-                    </div>
-                    <div className="flex justify-end">
-                      <DialogClose asChild>
-                        <Button variant="secondary">닫기</Button>
-                      </DialogClose>
-                    </div>
-                  </DialogContent>
-                </Dialog>
               </div>
             ))}
 

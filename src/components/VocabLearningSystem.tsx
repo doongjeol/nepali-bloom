@@ -1,5 +1,5 @@
 ﻿﻿import { useState, useEffect, useMemo } from "react";
-import { Volume2, X, BrainCircuit, Pause, Check } from "lucide-react";
+import { Volume2, X, BrainCircuit, Pause, Check, RefreshCw, HelpCircle, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { getVocabAudioPath } from "@/lib/getAudioPath";
@@ -223,25 +223,25 @@ export function VocabLearningSystem({
               type="button"
               onClick={toggleAllFlip}
               variant="outline"
-              className="rounded-xl bg-background text-xs sm:text-sm"
+              className="rounded-xl bg-background text-xs sm:text-sm gap-1"
             >
-              모두🔄 
+              모두 <RefreshCw className="h-3 w-3" />
             </Button>
             <Button
               type="button"
               onClick={markAllUnknown}
               variant="outline"
-              className="rounded-xl bg-background text-xs sm:text-sm"
+              className="rounded-xl bg-background text-xs sm:text-sm gap-1"
             >
-              모두❓
+              모두 <HelpCircle className="h-3 w-3" />
             </Button>
             <Button
               type="button"
               onClick={markAllKnown}
               variant="outline"
-              className="rounded-xl bg-background text-xs sm:text-sm"
+              className="rounded-xl bg-background text-xs sm:text-sm gap-1"
             >
-              모두✅
+              모두 <CheckCircle className="h-3 w-3" />
             </Button>
             <Button
               onClick={handleStartReview}
