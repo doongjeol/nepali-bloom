@@ -363,6 +363,56 @@
         "romanized": "tapaaïle ke gareko ?",
         "korean": "당신은 무엇을 했습니까?"
       }
+    },
+    {
+      "nepali": "खानु",
+      "romanized": "khaanu",
+      "korean": "to eat, to drink (먹다, 마시다)",
+      "example": {
+        "nepali": "मैले सुन्तला खाएको।",
+        "romanized": "maile suntalaa khaaeko.",
+        "korean": "제가 오렌지를 먹었습니다."
+      }
+    },
+    {
+      "nepali": "बन्द गर्नु",
+      "romanized": "banda garnu",
+      "korean": "to close, to shut (닫다)",
+      "example": {
+        "nepali": "ढोका बन्द गर्नुस्।",
+        "romanized": "Dhokaa banda garnos.",
+        "korean": "문을 닫으세요."
+      }
+    },
+    {
+      "nepali": "सुत्नु",
+      "romanized": "sutnu",
+      "korean": "to sleep (자다)",
+      "example": {
+        "nepali": "ऊ सुत्यो।",
+        "romanized": "u sutyo.",
+        "korean": "그는 잤습니다."
+      }
+    },
+    {
+      "nepali": "जानु",
+      "romanized": "jaanu",
+      "korean": "to go (가다)",
+      "example": {
+        "nepali": "बाहिर जाऊ।",
+        "romanized": "baahira jaau.",
+        "korean": "밖으로 나가라."
+      }
+    },
+    {
+      "nepali": "सुन्तला",
+      "romanized": "suntalaa",
+      "korean": "orange (오렌지/귤)",
+      "example": {
+        "nepali": "यो सुन्तला हो।",
+        "romanized": "yo suntalaa ho.",
+        "korean": "이것은 오렌지입니다."
+      }
     }
   ],
   "examples": [],
@@ -434,14 +484,16 @@
       "title": "8. -eko 형태 (비격식 시제)",
       "details": [
         "- 비격식적인 상황에서 단순 과거, 과거 완료, 현재 진행 등을 나타낼 때 흔히 쓰임.",
-        "- 예: maaikle ke gareko? (마이크는 무엇을 했습니까?)",
-        "- 예: ke paDheko? (무엇을 읽고 있습니까?)"
+        "- 동사 원형의 어미 '-nu'를 제거하고 '-eko'를 붙여 만듭니다. (예: kholnu → kholeko)",
+        "- 대화문의 'maile kitaab kholeko'는 '내가 책을 열었다'는 의미입니다.",
+        "- 예: maile paDheko. (제가 읽었습니다.)"
       ]
     },
     {
       "title": "9. 접미사 '-le' (타동사 주어 마커)",
       "details": [
         "- 과거 시제에서 문장의 동사가 타동사(목적어를 필요로 하는 동사)일 때 주어 뒤에 붙음.",
+        "- 대화문의 'maile kitaab kholeko'에서 'kholnu(열다)'는 타동사이고 시제가 과거이므로, 주어 'ma(나)'가 'maile(내가)'로 바뀐 것입니다.",
         "- 타동사 예: khaanu (먹다), banda garnu (닫다), garnu (하다)",
         "- 자동사 예 (le가 붙지 않음): sutnu (자다), jaanu (가다)"
       ]
@@ -469,10 +521,12 @@
     {
       "title": "12. 'kasto'의 다양한 의미",
       "details": [
-        "- 뒤에 오는 맥락에 따라 맛, 상태, 안부 등을 물음.",
-        "- suntalaa kasto chha? (오렌지 맛이 어떻습니까?)",
-        "- tapaaïko kamij kasto chha? (당신의 셔츠는 어떤 스타일/상태입니까?)",
-        "- tapaaïlaai kasto chha? (어떻게 지내세요? / 기분이 어떠세요?)"
+        "- 뒤에 오는 맥락에 따라 맛, 상태, 안부 등을 물음."
+      ],
+      "examples": [
+        "सुन्तला कस्तो छ? (suntalaa kasto chha?) - 오렌지 맛이 어떻습니까?",
+        "तपाईंको कमिज कस्तो छ? (tapaaïko kamij kasto chha?) - 당신의 셔츠는 어떤 스타일/상태입니까?",
+        "तपाईंलाई कस्तो छ? (tapaaïlaai kasto chha?) - 어떻게 지내세요? / 기분이 어떠세요?"
       ]
     }
   ],

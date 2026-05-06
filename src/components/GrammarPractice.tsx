@@ -207,16 +207,21 @@ function PossessiveDrill({ card }: { card: GrammarPracticeCard }) {
     answer: string;
   }>(null);
 
-  const generateQuestion = () => {
+  const generateQuestion = useCallback((excludeTarget?: string) => {
     const pronouns = Object.keys(possessiveMap);
-    const target = pick(pronouns);
+    let target = pick(pronouns);
+    if (excludeTarget && pronouns.length > 1) {
+      while (target === excludeTarget) {
+        target = pick(pronouns);
+      }
+    }
     const answer = possessiveMap[target]!;
     const distractors = shuffle(
       pronouns.map((p) => possessiveMap[p]!).filter((v) => v !== answer),
     ).slice(0, 3);
     const options = shuffle([answer, ...distractors]).slice(0, 4);
     return { target, answer, options };
-  };
+  }, []);
   const [question, setQuestion] = useState(() => generateQuestion());
 
   const excerpt = useNoteExcerpt(card, ["-ko", "소유", "mero", "tapaaïko"]);
@@ -225,7 +230,7 @@ function PossessiveDrill({ card }: { card: GrammarPracticeCard }) {
   const reset = () => {
     setWrongCount(0);
     setAnswered(null);
-    setQuestion(generateQuestion());
+    setQuestion(generateQuestion(question.target));
   };
 
   const onPickOption = (picked: string) => {
@@ -586,7 +591,7 @@ export function GrammarPractice({ card }: { card: GrammarPracticeCard }) {
   const hasPossessive = kind === "possessive-ko";
   const hasErgative = kind === "ergative-le";
   const hasCopula = kind === "copula-contrast";
-  const hasExercise = hasPossessive || hasErgative || hasCopula || (() => {
+  const hasExercise = (() => {
     const examples = (card.examples ?? []).filter(Boolean);
     for (const ex of examples) {
       const nepaliMatch = ex.match(/^[^(]+/);
