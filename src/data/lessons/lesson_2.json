@@ -40,7 +40,7 @@
       "korean": "to close, to shut (닫다)",
       "example": {
         "nepali": "ढोका बन्द गर्नुस्।",
-        "romanized": "Dhokaa banda garnos.",
+        "romanized": "dhokaa banda garnos.",
         "korean": "문을 닫으세요."
       }
     },
@@ -76,11 +76,11 @@
     },
     {
       "nepali": "ढोका",
-      "romanized": "Dhokaa",
+      "romanized": "dhokaa",
       "korean": "door (문)",
       "example": {
         "nepali": "त्यो ढोका हो।",
-        "romanized": "tyo Dhokaa ho.",
+        "romanized": "tyo dhokaa ho.",
         "korean": "저것은 문입니다."
       }
     },
@@ -120,7 +120,7 @@
       "korean": "I (과거 시제 타동사와 함께 쓰일 때)",
       "example": {
         "nepali": "मैले ढोका खोलेको।",
-        "romanized": "maile Dhokaa kholeko.",
+        "romanized": "maile dhokaa kholeko.",
         "korean": "제가 문을 열었습니다."
       }
     },
@@ -192,6 +192,86 @@
         "nepali": "छैन, तातो छ।",
         "romanized": "chhaina, taato chha.",
         "korean": "아니요, 뜨겁습니다."
+      }
+    },
+    {
+      "nepali": "गुलियो",
+      "romanized": "guliyo",
+      "korean": "sweet (단)",
+      "example": {
+        "nepali": "सुन्तला गुलियो छ।",
+        "romanized": "suntalaa guliyo chha.",
+        "korean": "오렌지가 답니다."
+      }
+    },
+    {
+      "nepali": "त्यो",
+      "romanized": "tyo",
+      "korean": "that (저것, 그것)",
+      "example": {
+        "nepali": "त्यो ढोका हो।",
+        "romanized": "tyo dhokaa ho.",
+        "korean": "저것은 문입니다."
+      }
+    },
+    {
+      "nepali": "लिनुहोस्",
+      "romanized": "linuhos",
+      "korean": "take, please take (받으세요, 드세요 - 존댓말)",
+      "example": {
+        "nepali": "चिया लिनुहोस्।",
+        "romanized": "chiyaa linus.",
+        "korean": "차 드세요."
+      }
+    },
+    {
+      "nepali": "के",
+      "romanized": "ke",
+      "korean": "what (무엇)",
+      "example": {
+        "nepali": "त्यो के हो ?",
+        "romanized": "tyo ke ho ?",
+        "korean": "저것은 무엇입니까?"
+      }
+    },
+    {
+      "nepali": "यो",
+      "romanized": "yo",
+      "korean": "this (이것)",
+      "example": {
+        "nepali": "यो सुन्तला हो।",
+        "romanized": "yo suntalaa ho.",
+        "korean": "이것은 ओ렌지입니다."
+      }
+    },
+    {
+      "nepali": "मिठो",
+      "romanized": "mitho",
+      "korean": "delicious, tasty (맛있는)",
+      "example": {
+        "nepali": "स्याउ मिठो छ।",
+        "romanized": "syaau mitho chha.",
+        "korean": "사과가 맛있습니다."
+      }
+    },
+    {
+      "nepali": "खोल्नु",
+      "romanized": "kholnu",
+      "korean": "to open (열다)",
+      "example": {
+        "nepali": "ढोका खोल्नुहोस्।",
+        "romanized": "dhokaa kholnos.",
+        "korean": "문을 여세요."
+      }
+    },
+    {
+      "nepali": "छ",
+      "romanized": "chha",
+      "korean": "is (있다, 이다 - 3인칭 단수)",
+      "example": {
+        "nepali": "स्याउ अमिलो छ ?",
+        "romanized": "syaau amilo chha ?",
+        "korean": "사과가 십니까?"
       }
     }
   ],
@@ -320,73 +400,25 @@
       "lines": [
         {
           "speaker": "A",
-          "nepali": "नमस्ते!",
+          "nepali": "नमस्ते !",
           "romanized": "namaste !",
           "korean": "안녕하세요!"
         },
         {
           "speaker": "B",
-          "nepali": "नमस्ते!",
+          "nepali": "नमस्ते !",
           "romanized": "namaste !",
           "korean": "안녕하세요!"
-        },
-        {
-          "speaker": "A",
-          "nepali": "सन्चै ?",
-          "romanized": "sanchai ?",
-          "korean": "잘 지내세요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "सन्चै।",
-          "romanized": "sanchai.",
-          "korean": "잘 지냅니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको घर कहाँ हो ?",
-          "romanized": "tapaaïko ghar kahãã ho ?",
-          "korean": "고향이 어디입니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो घर अमेरिका हो।",
-          "romanized": "mero ghar amerikaa ho.",
-          "korean": "제 고향은 미국입니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको बाको नाम के हो ?",
-          "romanized": "tapaaïko baako naam ke ho ?",
-          "korean": "아버님 성함이 무엇입니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो बाको नाम बिल हो।",
-          "romanized": "mero baako naam bil ho.",
-          "korean": "저희 아버지 성함은 Bill입니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको आमाको नाम के हो ?",
-          "romanized": "tapaaïko aamaako naam ke ho ?",
-          "korean": "어머님 성함이 무엇입니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो आमाको नाम बार्बरा हो।",
-          "romanized": "mero aamaako naam baarbaraa ho.",
-          "korean": "저희 어머니 성함은 Barbara입니다."
         },
         {
           "speaker": "A",
           "nepali": "तपाईंलाई कस्तो छ ?",
           "romanized": "tapaallaai kasto chha ?",
-          "korean": "어떻게 지내세요?"
+          "korean": "어떻게 지내세요? (상태가 어떠세요?)"
         },
         {
           "speaker": "B",
-          "nepali": "मलाई सन्चै छ।",
+          "nepali": "मलाई सन्चै छ ।",
           "romanized": "malaai sanchai chha.",
           "korean": "저는 잘 지냅니다."
         },
@@ -398,7 +430,7 @@
         },
         {
           "speaker": "B",
-          "nepali": "मलाई पनि सन्चै छ।",
+          "nepali": "मलाई पनि सन्चै छ ।",
           "romanized": "malaai pani sanchai chha.",
           "korean": "저도 잘 지냅니다."
         }
@@ -415,44 +447,44 @@
         },
         {
           "speaker": "B",
-          "nepali": "त्यो ढोका हो।",
-          "romanized": "tyo Dhokaa ho.",
+          "nepali": "त्यो ढोका हो ।",
+          "romanized": "tyo dhokaa ho.",
           "korean": "저것은 문입니다."
         },
         {
           "speaker": "A",
-          "nepali": "ढोका खोल्नुस्।",
-          "romanized": "Dhokaa kholnos.",
+          "nepali": "ढोका खोल्नुहोस् ।",
+          "romanized": "dhokaa kholnos.",
           "korean": "문을 여세요."
         },
         {
           "speaker": "B",
-          "nepali": "मैले ढोका खोलेको।",
-          "romanized": "maile Dhokaa kholeko.",
+          "nepali": "मैले ढोका खोलेको ।",
+          "romanized": "maile dhokaa kholeko.",
           "korean": "제가 문을 열었습니다."
         },
         {
           "speaker": "A",
-          "nepali": "उहाँले के गरेको ?",
+          "nepali": "वहाँले के गरेको ?",
           "romanized": "wahããle ke gareko ?",
           "korean": "그분은 무엇을 했습니까?"
         },
         {
           "speaker": "B",
-          "nepali": "उहाँले ढोका खोलेको।",
-          "romanized": "wahããle Dhokaa kholeko.",
+          "nepali": "वहाँले ढोका खोलेको ।",
+          "romanized": "wahããle dhokaa kholeko.",
           "korean": "그분이 문을 열었습니다."
         },
         {
           "speaker": "A",
-          "nepali": "ढोका बन्द गर्नुस्।",
-          "romanized": "Dhokaa banda garnos.",
+          "nepali": "ढोका बन्द गर्नुहोस् ।",
+          "romanized": "dhokaa banda garnos.",
           "korean": "문을 닫으세요."
         },
         {
           "speaker": "B",
-          "nepali": "मैले ढोका बन्द गरेको।",
-          "romanized": "maile Dhokaa banda gareko.",
+          "nepali": "मैले ढोका बन्द गरेको ।",
+          "romanized": "maile dhokaa banda gareko.",
           "korean": "제가 문을 닫았습니다."
         }
       ]
@@ -468,19 +500,19 @@
         },
         {
           "speaker": "B",
-          "nepali": "यो सुन्तला हो।",
+          "nepali": "यो सुन्तला हो ।",
           "romanized": "yo suntalaa ho.",
           "korean": "이것은 오렌지입니다."
         },
         {
           "speaker": "A",
-          "nepali": "खानुस्।",
+          "nepali": "खानुहोस् ।",
           "romanized": "khaanos.",
           "korean": "드세요."
         },
         {
           "speaker": "B",
-          "nepali": "मैले सुन्तला खाएको।",
+          "nepali": "मैले सुन्तला खाएको ।",
           "romanized": "maile suntalaa khaaeko.",
           "korean": "제가 오렌지를 먹었습니다."
         },
@@ -492,7 +524,7 @@
         },
         {
           "speaker": "B",
-          "nepali": "सुन्तला गुलियो छ।",
+          "nepali": "सुन्तला गुलियो छ ।",
           "romanized": "suntalaa guliyo chha.",
           "korean": "오렌지가 답니다."
         },
@@ -504,7 +536,7 @@
         },
         {
           "speaker": "B",
-          "nepali": "छैन, गुलियो छ।",
+          "nepali": "छैन, गुलियो छ ।",
           "romanized": "chhaina, guliyo chha.",
           "korean": "아니요, 답니다."
         }
@@ -515,51 +547,39 @@
       "lines": [
         {
           "speaker": "A",
-          "nepali": "चिया खानुस्।",
-          "romanized": "chiyaa khaanus.",
-          "korean": "차를 마시세요."
+          "nepali": "चिया लिनुहोस् ।",
+          "romanized": "chiyaa linus.",
+          "korean": "차 드세요."
         },
         {
           "speaker": "B",
-          "nepali": "मैले चिया खाएको।",
-          "romanized": "maile chiyaa khaaeko.",
-          "korean": "제가 차를 마셨습니다."
+          "nepali": "हस्, मैले चिया लिएँ ।",
+          "romanized": "has, maile chiyaa liẽ.",
+          "korean": "네, 제가 차를 마셨습니다(받았습니다)."
         },
         {
           "speaker": "A",
           "nepali": "चिया चिसो छ ?",
-          "romanized": "chiyaa chiso chha ?",
-          "korean": "차가 차갑습니까?"
+          "romanized": "chiyaa taato chha ?",
+          "korean": "차가 뜨겁습니까?"
         },
         {
           "speaker": "B",
-          "nepali": "छैन, तातो छ।",
-          "romanized": "chhaina, taato chha.",
-          "korean": "아니요, 뜨겁습니다."
+          "nepali": "छ, चिया तातो छ ।",
+          "romanized": "chha, chiyaa taato chha.",
+          "korean": "네, 차가 뜨겁습니다."
         },
         {
           "speaker": "A",
-          "nepali": "पानी लिनुस्।",
-          "romanized": "paani linus.",
-          "korean": "물을 드세요/받으세요."
+          "nepali": "पानी चिसो छ ?",
+          "romanized": "paani chiso chha ?",
+          "korean": "물이 차갑습니까?"
         },
         {
           "speaker": "B",
-          "nepali": "मैले पानी लिएको।",
-          "romanized": "maile paani lieko.",
-          "korean": "제가 물을 받았습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंले के गरेको ?",
-          "romanized": "tapaaïle ke gareko ?",
-          "korean": "당신은 무엇을 했습니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मैले पानी लिएको।",
-          "romanized": "maile paani lieko.",
-          "korean": "제가 물을 받았습니다."
+          "nepali": "छ, पानी धेरै चिसो छ ।",
+          "romanized": "chha, paani dherai chiso chha.",
+          "korean": "네, 물이 아주 차갑습니다."
         }
       ]
     }
