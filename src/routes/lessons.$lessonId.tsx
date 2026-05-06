@@ -24,9 +24,10 @@ import {
 } from "@/components/ui/table";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { getDialogueAudioPath, getVocabAudioPath, getExampleAudioPath } from "@/lib/getAudioPath";
-import { ChevronDown, Pause, Play, Volume2 } from "lucide-react";
+import { ChevronDown, Pause, Play, Volume2, Car } from "lucide-react";
 import { DialogueGeneralQuiz } from "@/components/DialogueGeneralQuiz";
 import { VocabLearningSystem } from "@/components/VocabLearningSystem";
+import { DrivingModePlayer } from "@/components/DrivingModePlayer";
 
 export const Route = createFileRoute("/lessons/$lessonId")({
   loader: async ({ params }) => {
@@ -70,6 +71,7 @@ function LessonDetailPage() {
   const [showRomanized, setShowRomanized] = useState(true);
   const [playDialogueIndex, setPlayDialogueIndex] = useState<number | null>(null);
   const [isQuizMode, setIsQuizMode] = useState(false);
+  const [showDrivingMode, setShowDrivingMode] = useState(false);
 
   const playNextLineRef = useRef<number>(0);
   const playWasPlayingRef = useRef(false);
@@ -283,11 +285,23 @@ function LessonDetailPage() {
             (lesson.vocabulary.length === 0 ? (
               <EmptyState message="아직 단어가 준비되지 않았습니다." />
             ) : (
-              <VocabLearningSystem
-                lessonId={lesson.id}
-                vocabulary={lesson.vocabulary}
-                audioPlayer={audioPlayer}
-              />
+              <div className="space-y-4">
+                <div className="flex justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowDrivingMode(true)}
+                    className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary/20 active:scale-95"
+                  >
+                    <Car className="h-4 w-4" />
+                    운전 모드 시작하기
+                  </button>
+                </div>
+                <VocabLearningSystem
+                  lessonId={lesson.id}
+                  vocabulary={lesson.vocabulary}
+                  audioPlayer={audioPlayer}
+                />
+              </div>
             ))}
 
           {tab === "examples" &&
@@ -540,6 +554,14 @@ function LessonDetailPage() {
             )}
           </DialogContent>
         </Dialog>
+
+        {showDrivingMode && lesson && (
+          <DrivingModePlayer
+            lessonId={lesson.id}
+            vocabulary={lesson.vocabulary}
+            onClose={() => setShowDrivingMode(false)}
+          />
+        )}
       </main>
     </div>
   );

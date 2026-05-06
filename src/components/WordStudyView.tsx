@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { Lesson, Vocabulary } from "@/data/lesson";
 import { FlashCard, type StudyWord } from "@/components/FlashCard";
+import { Car } from "lucide-react";
+import { DrivingModePlayer } from "@/components/DrivingModePlayer";
 
 const STORAGE_KEY = "nepali-bloom:knewWords:v1";
 
@@ -34,6 +36,7 @@ export function WordStudyView({
 }) {
   const [index, setIndex] = useState(0);
   const [knew, setKnew] = useState<Set<string>>(() => (typeof window === "undefined" ? new Set() : loadKnewSet()));
+  const [showDrivingMode, setShowDrivingMode] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -54,6 +57,13 @@ export function WordStudyView({
     }
     return out;
   }, [lessons]);
+
+  const drivingVocab = useMemo(() => {
+    return items.map((item) => ({
+      ...item.word,
+      lessonId: item.lessonId,
+    }));
+  }, [items]);
 
   const activeItems = useMemo(() => items.filter((it) => !knew.has(it.id)), [items, knew]);
   const totalCount = items.length;
@@ -94,8 +104,18 @@ export function WordStudyView({
             범위: <span className="font-semibold text-foreground">{range.start} ~ {range.end}</span> · 총 {totalCount}개
           </p>
         </div>
+      <div className="flex flex-col items-end gap-2">
         <div className="text-xs text-muted-foreground">
           외웠어요: <span className="font-semibold text-foreground">{learnedCount}</span> / {totalCount} ({progressPct}%)
+        </div>
+        <button
+          type="button"
+          onClick={() => setShowDrivingMode(true)}
+          className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1.5 text-xs font-semibold text-primary transition-colors hover:bg-primary/20 active:scale-95"
+        >
+          <Car className="h-4 w-4" />
+          운전 모드
+        </button>
         </div>
       </div>
 
@@ -177,6 +197,14 @@ export function WordStudyView({
             </button>
           </div>
         </>
+      )}
+
+      {showDrivingMode && (
+        <DrivingModePlayer
+          lessonId={range.start}
+          vocabulary={drivingVocab}
+          onClose={() => setShowDrivingMode(false)}
+        />
       )}
     </div>
   );
