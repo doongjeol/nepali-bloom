@@ -421,7 +421,8 @@
       "title": "7. 존칭 명령형 (Honorific Commands)",
       "details": [
         "- 상대와의 친밀도나 존중에 따라 다른 동사 형태를 사용함.",
-        "- 'kholnos/kholnus'(여세요), 'dinos/dinus'(주세요) 등은 정중한 존칭 표현임."
+        "- 'kholnos/kholnus'(여세요), 'dinos/dinus'(주세요) 등은 정중한 존칭 표현임.",
+        "- '-nos(नोस्)'와 '-nus(नुस्)'는 발음과 표기의 차이일 뿐 의미와 존칭의 정도는 동일합니다. 원래 형태인 '~nu hos(नु होस्)'가 축약된 것으로 일상 회화에서 자유롭게 혼용됩니다."
       ],
       "examples": [
         "ढोका खोल्नुस्। (Dhokaa kholnus.) - 문을 여세요.",

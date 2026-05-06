@@ -1217,6 +1217,18 @@ function GrammarCard({
               </p>
             ))}
           </div>
+          {card.examples && card.examples.length > 0 && (
+            <div className="mt-4 space-y-2 rounded-xl bg-background/50 p-3.5 shadow-sm ring-1 ring-border/50">
+              <p className="text-xs font-bold text-muted-foreground">예문</p>
+              <div className="space-y-2">
+                {card.examples.map((ex, i) => (
+                  <p key={i} className="text-sm font-medium leading-relaxed text-foreground">
+                    {ex}
+                  </p>
+                ))}
+              </div>
+            </div>
+          )}
           {practicable && (
             <div className="mt-4 flex justify-end">
               <Button variant="secondary" size="sm" onClick={onPractice}>
