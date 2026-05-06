@@ -17,6 +17,7 @@ import { Route as LessonsIndexRouteImport } from './routes/lessons.index'
 import { Route as StudyVocabRouteImport } from './routes/study.vocab'
 import { Route as StudyQuizRouteImport } from './routes/study.quiz'
 import { Route as StudyPronunciationRouteImport } from './routes/study.pronunciation'
+import { Route as StudyDrivingRouteImport } from './routes/study.driving'
 import { Route as StudyDialoguesRouteImport } from './routes/study.dialogues'
 import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 
@@ -60,6 +61,11 @@ const StudyPronunciationRoute = StudyPronunciationRouteImport.update({
   path: '/pronunciation',
   getParentRoute: () => StudyRoute,
 } as any)
+const StudyDrivingRoute = StudyDrivingRouteImport.update({
+  id: '/driving',
+  path: '/driving',
+  getParentRoute: () => StudyRoute,
+} as any)
 const StudyDialoguesRoute = StudyDialoguesRouteImport.update({
   id: '/dialogues',
   path: '/dialogues',
@@ -77,6 +83,7 @@ export interface FileRoutesByFullPath {
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
+  '/study/driving': typeof StudyDrivingRoute
   '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/feed': typeof FeedRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
+  '/study/driving': typeof StudyDrivingRoute
   '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/dialogues': typeof StudyDialoguesRoute
+  '/study/driving': typeof StudyDrivingRoute
   '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/study'
     | '/lessons/$lessonId'
     | '/study/dialogues'
+    | '/study/driving'
     | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
@@ -126,6 +136,7 @@ export interface FileRouteTypes {
     | '/feed'
     | '/lessons/$lessonId'
     | '/study/dialogues'
+    | '/study/driving'
     | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
@@ -138,6 +149,7 @@ export interface FileRouteTypes {
     | '/study'
     | '/lessons/$lessonId'
     | '/study/dialogues'
+    | '/study/driving'
     | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
@@ -211,6 +223,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StudyPronunciationRouteImport
       parentRoute: typeof StudyRoute
     }
+    '/study/driving': {
+      id: '/study/driving'
+      path: '/driving'
+      fullPath: '/study/driving'
+      preLoaderRoute: typeof StudyDrivingRouteImport
+      parentRoute: typeof StudyRoute
+    }
     '/study/dialogues': {
       id: '/study/dialogues'
       path: '/dialogues'
@@ -230,6 +249,7 @@ declare module '@tanstack/react-router' {
 
 interface StudyRouteChildren {
   StudyDialoguesRoute: typeof StudyDialoguesRoute
+  StudyDrivingRoute: typeof StudyDrivingRoute
   StudyPronunciationRoute: typeof StudyPronunciationRoute
   StudyQuizRoute: typeof StudyQuizRoute
   StudyVocabRoute: typeof StudyVocabRoute
@@ -238,6 +258,7 @@ interface StudyRouteChildren {
 
 const StudyRouteChildren: StudyRouteChildren = {
   StudyDialoguesRoute: StudyDialoguesRoute,
+  StudyDrivingRoute: StudyDrivingRoute,
   StudyPronunciationRoute: StudyPronunciationRoute,
   StudyQuizRoute: StudyQuizRoute,
   StudyVocabRoute: StudyVocabRoute,
@@ -256,3 +277,12 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
