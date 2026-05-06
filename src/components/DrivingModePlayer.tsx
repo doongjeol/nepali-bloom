@@ -1,6 +1,6 @@
 import { useEffect, useState, useMemo } from "react";
 import { useDrivingMode, type VocabularyItem } from "@/hooks/useDrivingMode";
-import { Play, Pause, ChevronLeft, ChevronRight, X, Car, BookOpen, MessageCircle, FileQuestion } from "lucide-react";
+import { Play, Pause, ChevronLeft, ChevronRight, X, Car, BookOpen, MessageCircle, FileQuestion, RefreshCw } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DrivingModePlayerProps {
@@ -11,8 +11,9 @@ interface DrivingModePlayerProps {
 
 export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingModePlayerProps) {
   const [hasStarted, setHasStarted] = useState(false);
-  const [selectedTypes, setSelectedTypes] = useState<Set<string>>(new Set(["vocab", "grammar", "dialogue", "quiz"]));
+  const [selectedTypes, setSelectedTypes] = useState<Set<string>>(new Set());
   const [ttsSpeed, setTtsSpeed] = useState(0.9);
+  const [autoRepeat, setAutoRepeat] = useState(true);
 
   const toggleType = (type: string) => {
     setSelectedTypes((prev) => {
@@ -39,7 +40,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     nextWord,
     prevWord,
     swipeHandlers,
-  } = useDrivingMode(lessonId, filteredVocab, { ttsSpeed });
+  } = useDrivingMode(lessonId, filteredVocab, { ttsSpeed, autoRepeat, nepaliVolume: 1.0 });
 
   useEffect(() => {
     if (hasStarted) {
@@ -89,6 +90,22 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             </div>
           </div>
           
+          <div className="mb-6">
+            <h2 className="mb-3 text-lg font-bold text-foreground">재생 설정</h2>
+            <label className="flex cursor-pointer items-center justify-between rounded-2xl border p-4 bg-card hover:bg-accent/50 transition-all">
+              <div className="flex items-center gap-3">
+                <RefreshCw className={cn("h-5 w-5", autoRepeat ? "text-primary" : "text-muted-foreground")} />
+                <span className="font-semibold text-foreground">전체 항목 무한 반복</span>
+              </div>
+              <input
+                type="checkbox"
+                checked={autoRepeat}
+                onChange={(e) => setAutoRepeat(e.target.checked)}
+                className="h-6 w-6 rounded-full border-primary text-primary accent-primary"
+              />
+            </label>
+          </div>
+
           <h2 className="mb-4 text-lg font-bold text-foreground">어떤 내용을 학습할까요?</h2>
           <div className="grid gap-3 sm:grid-cols-2">
             {[
