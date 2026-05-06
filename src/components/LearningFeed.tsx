@@ -27,7 +27,8 @@ interface DialogueLine {
 }
 
 interface GrammarItem {
-  text: string;
+  title?: string;
+  details?: string[];
 }
 
 interface FeedPost {
@@ -62,6 +63,28 @@ function seededRandom(seed: number) {
     s = (s * 16807) % 2147483647;
     return (s - 1) / 2147483646;
   };
+}
+
+function asNonEmptyString(value: unknown): string | null {
+  if (typeof value !== "string") return null;
+  const trimmed = value.trim();
+  return trimmed.length > 0 ? trimmed : null;
+}
+
+function formatGrammar(item: unknown): string {
+  const direct = asNonEmptyString(item);
+  if (direct) return direct;
+
+  if (!item || typeof item !== "object") return String(item ?? "");
+
+  const maybe = item as GrammarItem & Record<string, unknown>;
+  const title = asNonEmptyString(maybe.title) ?? "";
+  const details =
+    Array.isArray(maybe.details)
+      ? maybe.details.map(asNonEmptyString).filter((v): v is string => v !== null)
+      : [];
+
+  return [title, ...details.slice(0, 2)].filter((s) => s.length > 0).join("\n");
 }
 
 function generateFeedData(lessons: any[]): { posts: FeedPost[]; stories: StoryItem[] } {
@@ -108,7 +131,8 @@ function generateFeedData(lessons: any[]): { posts: FeedPost[]; stories: StoryIt
     });
 
     // grammar posts
-    const grammars = (lesson.grammar || []) as string[];
+    const grammarsRaw = (lesson.grammar || []) as unknown[];
+    const grammars = grammarsRaw.map(formatGrammar).filter((g) => g.trim().length > 0);
     grammars.forEach((g, gIdx) => {
       posts.push({
         id: `g-${lid}-${gIdx}`,
@@ -139,7 +163,7 @@ function generateFeedData(lessons: any[]): { posts: FeedPost[]; stories: StoryIt
         type: "grammar",
         label: `문법 ${lid}`,
         char: "📝",
-        content: { nepali: g.slice(0, 30), romanized: "", korean: g },
+        content: { nepali: String(g ?? "").slice(0, 30), romanized: "", korean: String(g ?? "") },
         lessonId: lid,
       });
     });

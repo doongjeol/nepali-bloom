@@ -117,11 +117,19 @@ def generate_vocab_audio(target_lesson=None, start_from=None):
             output_file_path = output_dir / f"{romanized_text}.mp3"
             if output_file_path.exists():
                 print(f"  -> 건너뜀 (이미 존재): {output_file_path.name}")
-                continue
-
-            print(f"  -> '{nepali_text}' ({romanized_text}) 변환 중...")
-
-            synthesize_with_retry(client, nepali_text, output_file_path)
+            else:
+                print(f"  -> '{nepali_text}' ({romanized_text}) 변환 중...")
+                synthesize_with_retry(client, nepali_text, output_file_path)
+                
+            # 단어에 예문이 있다면 예문 오디오도 함께 생성
+            example = item.get("example")
+            if example and example.get("nepali"):
+                ex_output_file = output_dir / f"{romanized_text}_example.mp3"
+                if ex_output_file.exists():
+                    print(f"  -> 예문 건너뜀 (이미 존재): {ex_output_file.name}")
+                else:
+                    print(f"  -> 예문 '{example.get('nepali')}' 변환 중...")
+                    synthesize_with_retry(client, example.get("nepali"), ex_output_file)
 
         # 5. 각 대화문을 순회하며 음성 파일 생성
         dialogues = lesson_data.get("dialogues", [])

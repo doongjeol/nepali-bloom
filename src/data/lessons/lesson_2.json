@@ -7,97 +7,192 @@
     {
       "nepali": "आमा",
       "romanized": "aamaa",
-      "korean": "mother (어머니)"
+      "korean": "mother (어머니)",
+      "example": {
+        "nepali": "मेरो आमाको नाम बार्बरा हो।",
+        "romanized": "mero aamaako naam baarbaraa ho.",
+        "korean": "저희 어머니 성함은 Barbara입니다."
+      }
     },
     {
       "nepali": "अमिलो",
       "romanized": "amilo",
-      "korean": "sour (신, 시큼한)"
+      "korean": "sour (신, 시큼한)",
+      "example": {
+        "nepali": "स्याउ अमिलो छ ?",
+        "romanized": "syaau amilo chha ?",
+        "korean": "사과가 십니까?"
+      }
     },
     {
       "nepali": "बा",
       "romanized": "baa",
-      "korean": "father (아버지)"
+      "korean": "father (아버지)",
+      "example": {
+        "nepali": "तपाईंको बाको नाम के हो ?",
+        "romanized": "tapaaïko baako naam ke ho ?",
+        "korean": "아버님 성함이 무엇입니까?"
+      }
     },
     {
       "nepali": "बन्द गर्नु",
       "romanized": "banda garnu",
-      "korean": "to close, to shut (닫다)"
+      "korean": "to close, to shut (닫다)",
+      "example": {
+        "nepali": "ढोका बन्द गर्नुस्।",
+        "romanized": "Dhokaa banda garnos.",
+        "korean": "문을 닫으세요."
+      }
     },
     {
       "nepali": "छैन",
       "romanized": "chhaina",
-      "korean": "isn't (없다, 아니다 - chha의 부정)"
+      "korean": "isn't (없다, 아니다 - chha의 부정)",
+      "example": {
+        "nepali": "छैन, गुलियो छ।",
+        "romanized": "chhaina, guliyo chha.",
+        "korean": "아니요, 답니다."
+      }
     },
     {
       "nepali": "चिसो",
       "romanized": "chiso",
-      "korean": "cold (차가운 - 물, 음료 등)"
+      "korean": "cold (차가운 - 물, 음료 등)",
+      "example": {
+        "nepali": "चिया चिसो छ ?",
+        "romanized": "chiyaa chiso chha ?",
+        "korean": "차가 차갑습니까?"
+      }
     },
     {
       "nepali": "चिया",
       "romanized": "chiyaa",
-      "korean": "tea (차)"
+      "korean": "tea (차)",
+      "example": {
+        "nepali": "चिया खानुस्।",
+        "romanized": "chiyaa khaanus.",
+        "korean": "차를 마시세요."
+      }
     },
     {
       "nepali": "ढोका",
       "romanized": "Dhokaa",
-      "korean": "door (문)"
+      "korean": "door (문)",
+      "example": {
+        "nepali": "त्यो ढोका हो।",
+        "romanized": "tyo Dhokaa ho.",
+        "korean": "저것은 문입니다."
+      }
     },
     {
       "nepali": "खानु",
       "romanized": "khaanu",
-      "korean": "to eat, to drink (먹다, 마시다)"
+      "korean": "to eat, to drink (먹다, 마시다)",
+      "example": {
+        "nepali": "मैले सुन्तला खाएको।",
+        "romanized": "maile suntalaa khaaeko.",
+        "korean": "제가 오렌지를 먹었습니다."
+      }
     },
     {
       "nepali": "लिनु",
       "romanized": "linu",
-      "korean": "to take (취하다, 가지다)"
+      "korean": "to take (취하다, 가지다)",
+      "example": {
+        "nepali": "पानी लिनुस्।",
+        "romanized": "paani linus.",
+        "korean": "물을 받으세요."
+      }
     },
     {
       "nepali": "म",
       "romanized": "ma",
-      "korean": "I (나)"
+      "korean": "I (나)",
+      "example": {
+        "nepali": "मलाई पनि सन्चै छ।",
+        "romanized": "malaai pani sanchai chha.",
+        "korean": "저도 잘 지냅니다."
+      }
     },
     {
       "nepali": "मैले",
       "romanized": "maile",
-      "korean": "I (과거 시제 타동사와 함께 쓰일 때)"
+      "korean": "I (과거 시제 타동사와 함께 쓰일 때)",
+      "example": {
+        "nepali": "मैले ढोका खोलेको।",
+        "romanized": "maile Dhokaa kholeko.",
+        "korean": "제가 문을 열었습니다."
+      }
     },
     {
       "nepali": "मलाई",
       "romanized": "malaai",
-      "korean": "to me, for me (나에게, 나를)"
+      "korean": "to me, for me (나에게, 나를)",
+      "example": {
+        "nepali": "मलाई सन्चै छ।",
+        "romanized": "malaai sanchai chha.",
+        "korean": "저는 잘 지냅니다."
+      }
     },
     {
       "nepali": "पानी",
       "romanized": "paani",
-      "korean": "water (물)"
+      "korean": "water (물)",
+      "example": {
+        "nepali": "मैले पानी लिएको।",
+        "romanized": "maile paani lieko.",
+        "korean": "제가 물을 받았습니다."
+      }
     },
     {
       "nepali": "पनि",
       "romanized": "pani",
-      "korean": "also (또한, 역시)"
+      "korean": "also (또한, 역시)",
+      "example": {
+        "nepali": "मलाई पनि सन्चै छ।",
+        "romanized": "malaai pani sanchai chha.",
+        "korean": "저도 잘 지냅니다."
+      }
     },
     {
       "nepali": "सन्चै",
       "romanized": "sanchai",
-      "korean": "fine, well (잘 지내는, 건강한)"
+      "korean": "fine, well (잘 지내는, 건강한)",
+      "example": {
+        "nepali": "सन्चै ?",
+        "romanized": "sanchai ?",
+        "korean": "잘 지내세요?"
+      }
     },
     {
       "nepali": "सुन्तला",
       "romanized": "suntalaa",
-      "korean": "orange (오렌지/귤)"
+      "korean": "orange (오렌지/귤)",
+      "example": {
+        "nepali": "यो सुन्तला हो।",
+        "romanized": "yo suntalaa ho.",
+        "korean": "이것은 오렌지입니다."
+      }
     },
     {
       "nepali": "स्याउ",
       "romanized": "syaau",
-      "korean": "apple (사과)"
+      "korean": "apple (사과)",
+      "example": {
+        "nepali": "स्याउ अमिलो छ ?",
+        "romanized": "syaau amilo chha ?",
+        "korean": "사과가 십니까?"
+      }
     },
     {
       "nepali": "तातो",
       "romanized": "taato",
-      "korean": "hot (뜨거운)"
+      "korean": "hot (뜨거운)",
+      "example": {
+        "nepali": "छैन, तातो छ।",
+        "romanized": "chhaina, taato chha.",
+        "korean": "아니요, 뜨겁습니다."
+      }
     }
   ],
   "examples": [],

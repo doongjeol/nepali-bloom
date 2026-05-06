@@ -7,182 +7,362 @@
     {
       "nepali": "छ",
       "romanized": "chha",
-      "korean": "is (있다/이다)"
+      "korean": "is (있다/이다)",
+      "example": {
+        "nepali": "मेरो कलम कालो छ।",
+        "romanized": "mero kalam kaalo chha.",
+        "korean": "제 펜은 검은색입니다."
+      }
     },
     {
       "nepali": "खोल्नु",
       "romanized": "kholnu",
-      "korean": "to open (열다)"
+      "korean": "to open (열다)",
+      "example": {
+        "nepali": "किताब खोल्नुस्।",
+        "romanized": "kitaab kholnus.",
+        "korean": "책을 펴세요."
+      }
     },
     {
       "nepali": "दिनु",
       "romanized": "dinu",
-      "korean": "to give (주다)"
+      "korean": "to give (주다)",
+      "example": {
+        "nepali": "कलम दिनोस्।",
+        "romanized": "kalam dinos.",
+        "korean": "펜을 주세요."
+      }
     },
     {
       "nepali": "किताब",
       "romanized": "kitaab",
-      "korean": "book (책)"
+      "korean": "book (책)",
+      "example": {
+        "nepali": "त्यो किताब हो।",
+        "romanized": "tyo kitaab ho.",
+        "korean": "저것은 책입니다."
+      }
     },
     {
       "nepali": "गर्नु",
       "romanized": "garnu",
-      "korean": "to do (하다)"
+      "korean": "to do (하다)",
+      "example": {
+        "nepali": "तपाईंले के गरेको ?",
+        "romanized": "tapaaïle ke gareko ?",
+        "korean": "당신은 무엇을 했습니까?"
+      }
     },
     {
       "nepali": "मेरो",
       "romanized": "mero",
-      "korean": "my, mine (나의, 내 것)"
+      "korean": "my, mine (나의, 내 것)",
+      "example": {
+        "nepali": "मेरो नाम राम हो।",
+        "romanized": "mero naam raam ho.",
+        "korean": "제 이름은 Ram입니다."
+      }
     },
     {
       "nepali": "घर",
       "romanized": "ghar",
-      "korean": "home, house (집)"
+      "korean": "home, house (집)",
+      "example": {
+        "nepali": "तपाईंको घर कहाँ हो ?",
+        "romanized": "tapaaïko ghar kahãã ho ?",
+        "korean": "당신의 집(고향)은 어디입니까?"
+      }
     },
     {
       "nepali": "नाम",
       "romanized": "naam",
-      "korean": "name (이름)"
+      "korean": "name (이름)",
+      "example": {
+        "nepali": "तपाईंको नाम के हो ?",
+        "romanized": "tapaaïko naam ke ho ?",
+        "korean": "당신의 이름은 무엇입니까?"
+      }
     },
     {
       "nepali": "हजुर",
       "romanized": "hajur",
-      "korean": "yes (polite) (네 - 공손한 대답)"
+      "korean": "yes (polite) (네 - 공손한 대답)",
+      "example": {
+        "nepali": "जिम ! - हजुर !",
+        "romanized": "jim ! - hajur !",
+        "korean": "Jim! - 네!"
+      }
     },
     {
       "nepali": "नमस्ते",
       "romanized": "namaste",
-      "korean": "hello, goodbye (인사)"
+      "korean": "hello, goodbye (인사)",
+      "example": {
+        "nepali": "नमस्ते!",
+        "romanized": "Namaste!",
+        "korean": "안녕하세요!"
+      }
     },
     {
       "nepali": "हो",
       "romanized": "ho",
-      "korean": "is (definitive) (~이다 - 단정적)"
+      "korean": "is (definitive) (~이다 - 단정적)",
+      "example": {
+        "nepali": "यो कलम हो।",
+        "romanized": "yo kalam ho.",
+        "korean": "이것은 펜입니다."
+      }
     },
     {
       "nepali": "होइन",
       "romanized": "hoina",
-      "korean": "is not (~이 아니다)"
+      "korean": "is not (~이 아니다)",
+      "example": {
+        "nepali": "त्यो कलम हो ? - होइन।",
+        "romanized": "tyo kalam ho ? - hoina.",
+        "korean": "저것은 펜입니까? - 아니요, 그렇지 않습니다."
+      }
     },
     {
       "nepali": "नि",
       "romanized": "ni",
-      "korean": "and how about (~는요?)"
+      "korean": "and how about (~는요?)",
+      "example": {
+        "nepali": "यो नि ?",
+        "romanized": "yo ni ?",
+        "korean": "이것은요?"
+      }
     },
     {
       "nepali": "झोला",
       "romanized": "jholaa",
-      "korean": "shoulder bag (가방)"
+      "korean": "shoulder bag (가방)",
+      "example": {
+        "nepali": "यो झोला हो।",
+        "romanized": "yo jholaa ho.",
+        "korean": "이것은 가방입니다."
+      }
     },
     {
       "nepali": "कालो",
       "romanized": "kaalo",
-      "korean": "black (검은색)"
+      "korean": "black (검은색)",
+      "example": {
+        "nepali": "मेरो कलम कालो छ।",
+        "romanized": "mero kalam kaalo chha.",
+        "korean": "제 펜은 검은색입니다."
+      }
     },
     {
       "nepali": "कापी",
       "romanized": "kaapi",
-      "korean": "note book (공책)"
+      "korean": "note book (공책)",
+      "example": {
+        "nepali": "यो कापी हो।",
+        "romanized": "yo kaapi ho.",
+        "korean": "이것은 공책입니다."
+      }
     },
     {
       "nepali": "पढ्नु",
       "romanized": "paDhnu",
-      "korean": "to read (읽다)"
+      "korean": "to read (읽다)",
+      "example": {
+        "nepali": "पढ्नोस्।",
+        "romanized": "paDhnos.",
+        "korean": "읽으세요."
+      }
     },
     {
       "nepali": "सेतो",
       "romanized": "seto",
-      "korean": "white (흰색)"
+      "korean": "white (흰색)",
+      "example": {
+        "nepali": "यो झोला सेतो छ।",
+        "romanized": "yo jholaa seto chha.",
+        "korean": "이 가방은 흰색입니다."
+      }
     },
     {
       "nepali": "कहाँ",
       "romanized": "kahãã",
-      "korean": "where (어디)"
+      "korean": "where (어디)",
+      "example": {
+        "nepali": "तपाईंको घर कहाँ हो ?",
+        "romanized": "tapaaïko ghar kahãã ho ?",
+        "korean": "당신의 집(고향)은 어디입니까?"
+      }
     },
     {
       "nepali": "कलम",
       "romanized": "kalam",
-      "korean": "pen (펜)"
+      "korean": "pen (펜)",
+      "example": {
+        "nepali": "यो मेरो कलम हो।",
+        "romanized": "yo mero kalam ho.",
+        "korean": "이것은 제 펜입니다."
+      }
     },
     {
       "nepali": "कमिज",
       "romanized": "kamij",
-      "korean": "shirt (셔츠)"
+      "korean": "shirt (셔츠)",
+      "example": {
+        "nepali": "तपाईंको कमिज कस्तो छ ?",
+        "romanized": "tapaaïko kamij kasto chha ?",
+        "korean": "당신의 셔츠는 어떤 스타일/상태입니까?"
+      }
     },
     {
       "nepali": "कसको",
       "romanized": "kasko",
-      "korean": "whose (누구의)"
+      "korean": "whose (누구의)",
+      "example": {
+        "nepali": "त्यो कसको किताब हो ?",
+        "romanized": "tyo kasko kitaab ho ?",
+        "korean": "저것은 누구의 책입니까?"
+      }
     },
     {
       "nepali": "तपाईंको",
       "romanized": "tapaaïko",
-      "korean": "your, yours (당신의)"
+      "korean": "your, yours (당신의)",
+      "example": {
+        "nepali": "त्यो तपाईंको किताब हो।",
+        "romanized": "tyo tapaaïko kitaab ho.",
+        "korean": "저것은 당신의 책입니다."
+      }
     },
     {
       "nepali": "त्यो",
       "romanized": "tyo",
-      "korean": "that (저것/그것)"
+      "korean": "that (저것/그것)",
+      "example": {
+        "nepali": "त्यो के हो ?",
+        "romanized": "tyo ke ho ?",
+        "korean": "저것은 무엇입니까?"
+      }
     },
     {
       "nepali": "उहाँको",
       "romanized": "wahããko",
-      "korean": "his, her, hers (그/그녀의 - 존칭)"
+      "korean": "his, her, hers (그/그녀의 - 존칭)",
+      "example": {
+        "nepali": "उहाँको नाम कृष्ण हो।",
+        "romanized": "wahããko naam krishna ho.",
+        "korean": "그분의 이름은 Krishna입니다."
+      }
     },
     {
       "nepali": "यो",
       "romanized": "yo",
-      "korean": "this (이것)"
+      "korean": "this (이것)",
+      "example": {
+        "nepali": "यो के हो ?",
+        "romanized": "yo ke ho ?",
+        "korean": "이것은 무엇입니까?"
+      }
     },
     {
       "nepali": "कस्तो",
       "romanized": "kasto",
-      "korean": "what color, how (어떤, 어떤색의)"
+      "korean": "what color, how (어떤, 어떤색의)",
+      "example": {
+        "nepali": "त्यो झोला कस्तो छ ?",
+        "romanized": "tyo jholaa kasto chha ?",
+        "korean": "저 가방은 어떤 색입니까?"
+      }
     },
     {
       "nepali": "के",
       "romanized": "ke",
-      "korean": "what (무엇)"
+      "korean": "what (무엇)",
+      "example": {
+        "nepali": "त्यो के हो ?",
+        "romanized": "tyo ke ho ?",
+        "korean": "저것은 무엇입니까?"
+      }
     },
     {
       "nepali": "त",
       "romanized": "ta",
-      "korean": "then (그러면)"
+      "korean": "then (그러면)",
+      "example": {
+        "nepali": "त्यो के हो त ?",
+        "romanized": "tyo ke ho ta ?",
+        "korean": "그러면 저것은 무엇입니까?"
+      }
     },
     {
       "nepali": "मैले",
       "romanized": "maile",
-      "korean": "I (내가 - 과거 타동사 주어)"
+      "korean": "I (내가 - 과거 타동사 주어)",
+      "example": {
+        "nepali": "मैले किताब खोलेको।",
+        "romanized": "maile kitaab kholeko.",
+        "korean": "제가 책을 폈습니다."
+      }
     },
     {
       "nepali": "तपाईंले",
       "romanized": "tapaaïle",
-      "korean": "you (당신이 - 과거 타동사 주어)"
+      "korean": "you (당신이 - 과거 타동사 주어)",
+      "example": {
+        "nepali": "तपाईंले के गरेको ?",
+        "romanized": "tapaaïle ke gareko ?",
+        "korean": "당신은 무엇을 했습니까?"
+      }
     },
     {
       "nepali": "उहाँले",
       "romanized": "wahããle",
-      "korean": "he/she (그분이 - 과거 타동사 주어)"
+      "korean": "he/she (그분이 - 과거 타동사 주어)",
+      "example": {
+        "nepali": "उहाँले किताब खोलेको।",
+        "romanized": "wahããle kitaab kholeko.",
+        "korean": "그분이 책을 폈습니다."
+      }
     },
     {
       "nepali": "पढेको",
       "romanized": "paDheko",
-      "korean": "read (읽었다 - paDhnu의 변형)"
+      "korean": "read (읽었다 - paDhnu의 변형)",
+      "example": {
+        "nepali": "मैले पढेको।",
+        "romanized": "maile paDheko.",
+        "korean": "제가 읽었습니다."
+      }
     },
     {
       "nepali": "खोलेको",
       "romanized": "kholeko",
-      "korean": "opened (열었다 - kholnu의 변형)"
+      "korean": "opened (열었다 - kholnu의 변형)",
+      "example": {
+        "nepali": "मैले किताब खोलेको।",
+        "romanized": "maile kitaab kholeko.",
+        "korean": "제가 책을 폈습니다."
+      }
     },
     {
       "nepali": "दिएको",
       "romanized": "dieko",
-      "korean": "gave (주었다 - dinu의 변형)"
+      "korean": "gave (주었다 - dinu의 변형)",
+      "example": {
+        "nepali": "मैले कलम दिएको।",
+        "romanized": "maile kalam dieko.",
+        "korean": "제가 펜을 주었습니다."
+      }
     },
     {
       "nepali": "गरेको",
       "romanized": "gareko",
-      "korean": "did (했다 - garnu의 변형)"
+      "korean": "did (했다 - garnu의 변형)",
+      "example": {
+        "nepali": "तपाईंले के गरेको ?",
+        "romanized": "tapaaïle ke gareko ?",
+        "korean": "당신은 무엇을 했습니까?"
+      }
     }
   ],
   "examples": [],

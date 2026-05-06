@@ -7,102 +7,202 @@
     {
       "nepali": "आँप",
       "romanized": "aap",
-      "korean": "mango (망고)"
+      "korean": "mango (망고)",
+      "example": {
+        "nepali": "त्यहाँ आँप सस्तो हुन्छ कि महँगो हुन्छ ?",
+        "romanized": "tyahãã aap sasto hunchha ki mahango hunchha ?",
+        "korean": "그곳은 망고가 싼가요, बि싼가요?"
+      }
     },
     {
       "nepali": "अलिअलि",
       "romanized": "aliali",
-      "korean": "a little, a few (조금, 약간)"
+      "korean": "a little, a few (조금, 약간)",
+      "example": {
+        "nepali": "अलि अलि महँगो हुन्छ।",
+        "romanized": "ali ali mahango hunchha.",
+        "korean": "조금 비쌉니다."
+      }
     },
     {
       "nepali": "चाहिँदैन",
       "romanized": "chaahīdaina",
-      "korean": "isn't needed (필요 없다)"
+      "korean": "isn't needed (필요 없다)",
+      "example": {
+        "nepali": "मलाई स्याउ चाहिँदैन।",
+        "romanized": "malaai syaau chaahīdaina.",
+        "korean": "저는 सा과가 필요하지 않습니다."
+      }
     },
     {
       "nepali": "डट पेन",
       "romanized": "DaT pen",
-      "korean": "ball point pen (볼펜)"
+      "korean": "ball point pen (볼펜)",
+      "example": {
+        "nepali": "मलाई डट पेन चाहिन्छ।",
+        "romanized": "malaai DaT pen chaahinchha.",
+        "korean": "저는 볼펜이 필요합니다."
+      }
     },
     {
       "nepali": "धेरै",
       "romanized": "dherai",
-      "korean": "many, a lot of (많은)"
+      "korean": "many, a lot of (많은)",
+      "example": {
+        "nepali": "यो धेरै महँगो छ।",
+        "romanized": "yo dherai mahango chha.",
+        "korean": "이것은 아주 비쌉니다."
+      }
     },
     {
       "nepali": "खुकुरी",
       "romanized": "khukuri",
-      "korean": "a brand of cigarettes (네팔 담배 브랜드)"
+      "korean": "a brand of cigarettes (네팔 담배 브랜드)",
+      "example": {
+        "nepali": "मलाई खुकुरी चुरोट चाहिन्छ।",
+        "romanized": "malaai khukuri churoT chaahinchha.",
+        "korean": "저는 쿠쿠리 담배가 필요합니다."
+      }
     },
     {
       "nepali": "केही",
       "romanized": "kehi",
-      "korean": "any, some (thing) (무엇인가, 조금의)"
+      "korean": "any, some (thing) (무엇인가, 조금의)",
+      "example": {
+        "nepali": "तपाईंलाई केही चाहिन्छ ?",
+        "romanized": "tapaaïlaai kehi chaahinchha ?",
+        "korean": "무엇이 필요하세요?"
+      }
     },
     {
       "nepali": "खाम",
       "romanized": "khaam",
-      "korean": "envelope (봉투)"
+      "korean": "envelope (봉투)",
+      "example": {
+        "nepali": "खाम पनि पाइन्छ ?",
+        "romanized": "khaam pani paainchha ?",
+        "korean": "봉투도 있나요?"
+      }
     },
     {
       "nepali": "ल्याइदिनु",
       "romanized": "lyaaidinu",
-      "korean": "to bring for some one (~를 위해 가져다주다)"
+      "korean": "to bring for some one (~를 위해 가져다주다)",
+      "example": {
+        "nepali": "म ल्याइदिन्छु।",
+        "romanized": "ma lyaaidinchhu.",
+        "korean": "제가 사다 줄게요."
+      }
     },
     {
       "nepali": "मात्र",
       "romanized": "maatra",
-      "korean": "only (오직, ~만)"
+      "korean": "only (오직, ~만)",
+      "example": {
+        "nepali": "एउटाको पचास रुपैयाँ मात्र पर्छ।",
+        "romanized": "euTaako paanchaas rupiyaa maatra parchha.",
+        "korean": "하나에 겨우 50루피입니다."
+      }
     },
     {
       "nepali": "प्याकेट",
       "romanized": "paakeT",
-      "korean": "packet (갑, 팩)"
+      "korean": "packet (갑, 팩)",
+      "example": {
+        "nepali": "एक प्याकेट चुरोट दिनोस्।",
+        "romanized": "ek paakeT churoT dinos.",
+        "korean": "담배 한 갑 주세요."
+      }
     },
     {
       "nepali": "पैसा",
       "romanized": "paisaa",
-      "korean": "paisa (네팔 화폐 단위 / 돈)"
+      "korean": "paisa (네팔 화폐 단위 / 돈)",
+      "example": {
+        "nepali": "पैसा दिनोस्।",
+        "romanized": "paisaa dinos.",
+        "korean": "돈을 주세요."
+      }
     },
     {
       "nepali": "पर्छ",
       "romanized": "parchha",
-      "korean": "costs (비용이 들다)"
+      "korean": "costs (비용이 들다)",
+      "example": {
+        "nepali": "एउटाको कति पर्छ ?",
+        "romanized": "euTaako kati parchha ?",
+        "korean": "한 개에 얼마인가요?"
+      }
     },
     {
       "nepali": "पर्दैन",
       "romanized": "pardaina",
-      "korean": "does not cost (비용이 들지 않다)"
+      "korean": "does not cost (비용이 들지 않다)",
+      "example": {
+        "nepali": "यसको पैसा पर्दैन।",
+        "romanized": "yasko paisaa pardaina.",
+        "korean": "이것은 돈이 들지 않습니다."
+      }
     },
     {
       "nepali": "साढे",
       "romanized": "saaDhe",
-      "korean": "half (절반 / 시간의 '30분')"
+      "korean": "half (절반 / 시간의 '30분')",
+      "example": {
+        "nepali": "छवटाको साढे चार रुपैयाँ पर्छ।",
+        "romanized": "chhawaTaako saaDhe chaar rupiyaa parchha.",
+        "korean": "6개에 4.5루피입니다."
+      }
     },
     {
       "nepali": "सिसा कलम",
       "romanized": "sisaa kalam",
-      "korean": "pencil (연필)"
+      "korean": "pencil (연필)",
+      "example": {
+        "nepali": "यो पसलमा सिसाकलम पाइन्छ ?",
+        "romanized": "yo pasalmaa sisaakalam paainchha ?",
+        "korean": "이 가게에 연필 있나요?"
+      }
     },
     {
       "nepali": "सिसी",
       "romanized": "sisi",
-      "korean": "bottle (병)"
+      "korean": "bottle (병)",
+      "example": {
+        "nepali": "एक सिसी पानी दिनोस्।",
+        "romanized": "ek sisi paani dinos.",
+        "korean": "물 한 병 주세요."
+      }
     },
     {
       "nepali": "स्याउ",
       "romanized": "syaau",
-      "korean": "apple (사과)"
+      "korean": "apple (사과)",
+      "example": {
+        "nepali": "मलाई स्याउ चाहिन्छ।",
+        "romanized": "malaai syaau chaahinchha.",
+        "korean": "저는 사과가 필요합니다."
+      }
     },
     {
       "nepali": "तिब्बती",
       "romanized": "tibbati",
-      "korean": "Tibetan (티베트의)"
+      "korean": "Tibetan (티베트의)",
+      "example": {
+        "nepali": "तिब्बती झोला किन्ने ?",
+        "romanized": "tibbati jholaa kinne ?",
+        "korean": "티베트 가방 살래요?"
+      }
     },
     {
       "nepali": "ठीक",
       "romanized": "Thik",
-      "korean": "O.K., all right (좋다, 괜찮다)"
+      "korean": "O.K., all right (좋다, 괜찮다)",
+      "example": {
+        "nepali": "ठीक छ, दिनोस्।",
+        "romanized": "Thik chha, dinos.",
+        "korean": "좋습니다, 주세요."
+      }
     }
   ],
   "examples": [],

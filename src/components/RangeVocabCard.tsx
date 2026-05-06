@@ -15,6 +15,11 @@ type Vocabulary = {
   romanized: string;
   korean: string;
   lessonId?: number | string;
+  example?: {
+    nepali: string;
+    romanized: string;
+    korean: string;
+  };
 };
 
 export function RangeVocabCard({
@@ -131,6 +136,17 @@ export function RangeVocabCard({
     const actualLessonId = word.lessonId ?? lessonId;
     const itemId = `slide-vocab-${actualLessonId}-${word.romanized}`;
     const src = getVocabAudioPath(actualLessonId, word.romanized);
+    void play(itemId, src, { silentError: true });
+  }, [currentIndex, studyQueue, lessonId, play]);
+
+  // 예문 오디오 수동 재생 로직
+  const playExampleAudio = useCallback(() => {
+    if (currentIndex >= studyQueue.length || !studyQueue[currentIndex]) return;
+    const word = studyQueue[currentIndex];
+    if (!word.example) return;
+    const actualLessonId = word.lessonId ?? lessonId;
+    const itemId = `slide-vocab-example-${actualLessonId}-${word.romanized}`;
+    const src = `/audio/lesson_${actualLessonId}/${word.romanized}_example.mp3`;
     void play(itemId, src, { silentError: true });
   }, [currentIndex, studyQueue, lessonId, play]);
 
@@ -453,14 +469,40 @@ export function RangeVocabCard({
                 <Volume2 className="h-5 w-5" />
               </span>
 
-              <div className="flex h-full flex-col items-center justify-center">
+              <div className="flex h-full w-full flex-col items-center justify-center pb-4">
                 {isFlipped ? (
-                  <div className="animate-in fade-in duration-200">
-                    <p className="text-2xl font-bold text-[#333D29] sm:text-3xl">{currentWord.korean}</p>
-                    <p className="mt-3 text-sm italic text-[#6B5D4F] sm:text-base">{currentWord.romanized}</p>
+                  <div className="flex h-full w-full flex-col items-center justify-center animate-in fade-in duration-200">
+                    <div className="flex flex-1 flex-col items-center justify-center">
+                      <p className="text-2xl font-bold text-[#333D29] sm:text-3xl">{currentWord.korean}</p>
+                      <p className="mt-2 text-sm italic text-[#6B5D4F] sm:text-base">{currentWord.romanized}</p>
+                    </div>
+                    {currentWord.example && (
+                      <div className="mt-2 w-full rounded-xl bg-background/60 p-4 text-left shadow-sm ring-1 ring-border/50">
+                        <div className="mb-2 flex items-center justify-between">
+                          <span className="text-xs font-bold text-muted-foreground">예문 (Example)</span>
+                          <button
+                            type="button"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              playExampleAudio();
+                            }}
+                            className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20"
+                            aria-label="예문 음성 재생"
+                          >
+                            <Volume2 className="h-4 w-4" />
+                          </button>
+                        </div>
+                        <p className="text-sm font-bold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
+                          {currentWord.example.nepali}
+                        </p>
+                        <p className="mt-1 text-[11px] italic text-muted-foreground">{currentWord.example.romanized}</p>
+                        <p className="mt-1.5 text-xs text-foreground/80">{currentWord.example.korean}</p>
+                      </div>
+                    )}
                   </div>
                 ) : (
-                  <div className="animate-in fade-in duration-200">
+                  <div className="flex h-full w-full flex-col items-center justify-center animate-in fade-in duration-200">
                     <p
                       className="text-4xl font-bold text-[#333D29] sm:text-5xl"
                       style={{ fontFamily: "var(--font-nepali)" }}
@@ -470,8 +512,8 @@ export function RangeVocabCard({
                     <p className="mt-3 text-base italic text-muted-foreground sm:text-lg">{currentWord.romanized}</p>
                   </div>
                 )}
-                <p className="mt-6 text-[11px] text-muted-foreground/70">터치하거나 스페이스바를 눌러 뒤집기</p>
               </div>
+              <p className="absolute bottom-4 left-0 right-0 mx-auto text-[11px] text-muted-foreground/70">터치하거나 스페이스바를 눌러 뒤집기</p>
             </button>
           </motion.div>
         </AnimatePresence>

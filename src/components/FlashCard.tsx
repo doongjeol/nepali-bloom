@@ -1,8 +1,8 @@
 import { useMemo, useState } from "react";
-import { Volume2 } from "lucide-react";
+import { Play, Volume2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
-import { getVocabAudioPath } from "@/lib/getAudioPath";
+import { getExampleAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 import type { Vocabulary } from "@/data/lesson";
 
 export type StudyWord = {
@@ -12,68 +12,171 @@ export type StudyWord = {
   word: Vocabulary;
 };
 
-export function FlashCard({
-  item,
-  className,
-}: {
-  item: StudyWord;
-  className?: string;
-}) {
-  const [flipped, setFlipped] = useState(false);
+type ExampleLike = { nepali: string; romanized: string; korean: string };
+
+function getExample(word: Vocabulary): ExampleLike | null {
+  const maybe = word as unknown as { example?: unknown; exampleKo?: unknown };
+
+  // Supports object-shaped examples used elsewhere in the app.
+  if (maybe.example && typeof maybe.example === "object") {
+    const ex = maybe.example as Partial<ExampleLike>;
+    if (typeof ex.nepali === "string" && typeof ex.korean === "string") {
+      return {
+        nepali: ex.nepali,
+        romanized: typeof ex.romanized === "string" ? ex.romanized : "",
+        korean: ex.korean,
+      };
+    }
+  }
+
+  // Supports legacy lesson JSON shape: example/exampleKo as strings.
+  if (typeof maybe.example === "string" && maybe.example.trim().length > 0) {
+    return {
+      nepali: maybe.example,
+      romanized: "",
+      korean: typeof maybe.exampleKo === "string" ? maybe.exampleKo : "",
+    };
+  }
+
+  return null;
+}
+
+function getExampleAudio(word: Vocabulary, lessonId: number): string | null {
+  const maybe = word as unknown as { example_audio?: unknown; exampleAudioIndex?: unknown };
+
+  if (typeof maybe.example_audio === "string" && maybe.example_audio.trim().length > 0) {
+    return maybe.example_audio;
+  }
+
+  if (typeof maybe.exampleAudioIndex === "number" && Number.isFinite(maybe.exampleAudioIndex)) {
+    return getExampleAudioPath(lessonId, maybe.exampleAudioIndex);
+  }
+
+  return null;
+}
+
+export function FlashCard({ item, className }: { item: StudyWord; className?: string }) {
+  const [showMeaning, setShowMeaning] = useState(false);
   const audioPlayer = useAudioPlayer();
 
-  const audioSrc = useMemo(() => getVocabAudioPath(item.lessonId, String(item.vocabIndex)), [item.lessonId, item.vocabIndex]);
-  const audioItemId = `study-vocab-${item.id}`;
+  const wordAudioSrc = useMemo(
+    () => getVocabAudioPath(item.lessonId, item.word.romanized),
+    [item.lessonId, item.word.romanized],
+  );
+  const wordAudioId = `flash-word-${item.id}`;
+
+  const example = useMemo(() => getExample(item.word), [item.word]);
+  const exampleAudioSrc = useMemo(
+    () => getExampleAudio(item.word, item.lessonId),
+    [item.lessonId, item.word],
+  );
+  const exampleAudioId = `flash-example-${item.id}`;
 
   return (
     <div className={cn("w-full", className)}>
       <button
         type="button"
-        onClick={() => setFlipped((v) => !v)}
-        className="group relative w-full rounded-3xl border bg-card p-0 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0"
-        style={{ perspective: "1000px" }}
+        onClick={() => setShowMeaning((v) => !v)}
+        className={cn(
+          "group relative w-full rounded-3xl border p-0 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-sm active:translate-y-0",
+          "bg-[#f6f1e6] text-foreground",
+        )}
       >
-        <div
-          className={cn(
-            "relative h-48 w-full rounded-3xl transition-transform duration-500 [transform-style:preserve-3d]",
-            flipped ? "[transform:rotateY(180deg)]" : "[transform:rotateY(0deg)]",
-          )}
-        >
-          {/* Front */}
-          <div className="absolute inset-0 rounded-3xl p-5 [backface-visibility:hidden]">
-            <div className="flex items-start justify-between gap-3">
-              <div className="min-w-0">
-                <p className="text-xs font-medium text-muted-foreground">Lesson {item.lessonId}</p>
-                <p className="mt-2 text-2xl font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
-                  {item.word.nepali}
-                </p>
-                <p className="mt-1 text-sm text-muted-foreground italic">{item.word.romanized}</p>
-              </div>
-              <button
-                type="button"
-                aria-label="단어 음성 재생"
-                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-background/60 text-foreground shadow-sm transition-colors hover:bg-accent"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  void audioPlayer.play(audioItemId, audioSrc);
-                }}
+        <div className="relative h-56 w-full rounded-3xl p-5">
+          <button
+            type="button"
+            aria-label="단어 오디오 재생"
+            className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full border bg-white/60 text-foreground shadow-sm backdrop-blur transition-colors hover:bg-white/80"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              void audioPlayer.play(wordAudioId, wordAudioSrc, { silentError: true });
+            }}
+          >
+            <Volume2 className="h-4 w-4" />
+          </button>
+
+          {/* Default state */}
+          <div
+            className={cn(
+              "absolute inset-0 rounded-3xl p-5 transition-opacity duration-200 ease-in-out",
+              showMeaning ? "opacity-0" : "opacity-100",
+            )}
+            aria-hidden={showMeaning}
+          >
+            <div className="flex h-full flex-col items-center justify-center text-center">
+              <p
+                className="text-4xl font-bold text-[#333D29] sm:text-5xl"
+                style={{ fontFamily: "var(--font-nepali)" }}
               >
-                <Volume2 className="h-4 w-4" />
-              </button>
+                {item.word.nepali}
+              </p>
+              <p className="mt-3 text-base italic text-[#6B5D4F] sm:text-lg">
+                {item.word.romanized}
+              </p>
+              <p className="mt-3 text-[11px] text-muted-foreground/70">
+                카드를 클릭하면 뜻이 표시돼요
+              </p>
             </div>
-            <p className="absolute bottom-4 left-5 text-xs text-muted-foreground">카드를 눌러 뒤집기</p>
           </div>
 
-          {/* Back */}
-          <div className="absolute inset-0 rounded-3xl p-5 [backface-visibility:hidden] [transform:rotateY(180deg)]">
-            <p className="text-xs font-medium text-muted-foreground">뜻</p>
-            <p className="mt-3 text-xl font-semibold text-foreground">{item.word.korean}</p>
-            <p className="mt-2 text-sm text-muted-foreground italic">{item.word.romanized}</p>
-            <p className="absolute bottom-4 left-5 text-xs text-muted-foreground">카드를 눌러 앞면으로</p>
+          {/* Toggle state */}
+          <div
+            className={cn(
+              "absolute inset-0 rounded-3xl p-5 transition-opacity duration-200 ease-in-out",
+              showMeaning ? "opacity-100" : "opacity-0 pointer-events-none",
+            )}
+            aria-hidden={!showMeaning}
+          >
+            <div className="flex h-full flex-col justify-center">
+              <p className="text-center text-2xl font-bold text-[#333D29] sm:text-3xl">
+                {item.word.korean}
+              </p>
+
+              {example && (
+                <div className="mt-5">
+                  <div className="border-t border-black/10 pt-4">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="text-xs font-semibold text-muted-foreground">예문</span>
+                      {exampleAudioSrc && (
+                        <button
+                          type="button"
+                          aria-label="예문 오디오 재생"
+                          className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-black/5 text-foreground transition-colors hover:bg-black/10"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            void audioPlayer.play(exampleAudioId, exampleAudioSrc, {
+                              silentError: true,
+                            });
+                          }}
+                        >
+                          <Play className="h-4 w-4" />
+                        </button>
+                      )}
+                    </div>
+                    <p
+                      className="text-sm font-bold text-foreground"
+                      style={{ fontFamily: "var(--font-nepali)" }}
+                    >
+                      {example.nepali}
+                    </p>
+                    {example.korean.trim().length > 0 && (
+                      <p className="mt-1.5 text-xs text-foreground/80">{example.korean}</p>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {!example && (
+                <p className="mt-5 text-center text-[11px] text-muted-foreground/70">
+                  다시 클릭하면 단어로 돌아가요
+                </p>
+              )}
+            </div>
           </div>
         </div>
       </button>
     </div>
   );
 }
-
