@@ -1,16 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useMemo, useState } from "react";
 import { useLessonRangeData } from "@/hooks/useLessonRangeData";
-import { useAudioPlayer } from "@/hooks/useAudioPlayer";
-import { getVocabAudioPath } from "@/lib/getAudioPath";
 import { MAX_LESSON_ID, MIN_LESSON_ID } from "@/data/lessonsMeta";
-import { cn } from "@/lib/utils";
-import type { Vocabulary } from "@/data/lesson";
+import { DrivingModePlayer } from "@/components/DrivingModePlayer";
 
 const MIN = MIN_LESSON_ID;
 const MAX = MAX_LESSON_ID;
-
-type DrivingWord = Vocabulary & { lessonId: number };
 
 export const Route = createFileRoute("/study/driving")({
   validateSearch: (search: Record<string, unknown>) => {
@@ -83,6 +78,31 @@ function DrivingRangePicker({ onSubmit }: { onSubmit: (s: number, e: number) => 
   );
 }
 
+function parseGrammarCards(grammar: any[]) {
+  if (!grammar || grammar.length === 0) return [];
+  if (typeof grammar[0] === "object") {
+    return grammar.map((g: any) => ({
+      title: g.title,
+      lines: g.details || [],
+      examples: g.examples || [],
+    }));
+  }
+  const cards: any[] = [];
+  let currentCard: any = null;
+  for (const line of grammar) {
+    if (typeof line === "string" && line.match(/^\d+\./)) {
+      if (currentCard) cards.push(currentCard);
+      currentCard = { title: line, lines: [] };
+    } else if (currentCard && typeof line === "string") {
+      if (line.trim() || currentCard.lines.length > 0) {
+        currentCard.lines.push(line);
+      }
+    }
+  }
+  if (currentCard) cards.push(currentCard);
+  return cards;
+}
+
 /* ─── Main Driving UI ─── */
 function DrivingModePage() {
   const navigate = Route.useNavigate();
@@ -92,68 +112,43 @@ function DrivingModePage() {
   const range = typeof start === "number" && typeof end === "number" ? { start, end } : null;
 
   const { isLoading, data } = useLessonRangeData(range, { minLessonId: MIN, maxLessonId: MAX });
-  const audioPlayer = useAudioPlayer();
 
-  const words = useMemo<DrivingWord[]>(() => {
+  const allItems = useMemo(() => {
     if (!data?.lessons) return [];
-    return data.lessons.flatMap((l) =>
-      (l.vocabulary ?? []).map((w) => ({ ...w, lessonId: l.id })),
-    );
-  }, [data?.lessons]);
+    const items: any[] = [];
 
-  const [index, setIndex] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const [showKorean, setShowKorean] = useState(false);
-  const autoTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    data.lessons.forEach((lesson) => {
+      if (lesson.vocabulary) {
+        lesson.vocabulary.forEach((v: any) => items.push({ ...v, lessonId: lesson.id, type: "vocab" }));
+      }
 
-  const current = words[index] ?? null;
-  const total = words.length;
-  const progress = total > 0 ? ((index + 1) / total) * 100 : 0;
+      const grammarCards = parseGrammarCards(lesson.grammar ?? []);
+      grammarCards.forEach((g) => {
+        g.lines.forEach((line: string) => {
+          items.push({ nepali: line, romanized: "문법 설명", korean: g.title, lessonId: lesson.id, type: "grammar" });
+        });
+        g.examples?.forEach((ex: string) => {
+          items.push({ nepali: ex, romanized: "문법 예문", korean: g.title, lessonId: lesson.id, type: "grammar" });
+        });
+      });
 
-  // Play audio for current word
-  const playAudio = useCallback(() => {
-    if (!current) return;
-    const itemId = `driving-${current.lessonId}-${current.romanized}`;
-    const src = getVocabAudioPath(current.lessonId, current.romanized);
-    void audioPlayer.play(itemId, src, { silentError: true });
-  }, [current, audioPlayer]);
+      if (lesson.dialogues) {
+        lesson.dialogues.forEach((d: any) => {
+          d.lines.forEach((l: any) => {
+            items.push({ nepali: l.nepali, romanized: l.romanized, korean: `[${l.speaker}] ${l.korean}`, lessonId: lesson.id, type: "dialogue" });
+          });
+        });
+      }
 
-  // Auto-advance timer
-  useEffect(() => {
-    if (paused || !current || total === 0) return;
-
-    // Play audio on each new word
-    playAudio();
-    setShowKorean(false);
-
-    // Show Korean after 2s
-    const koreanTimer = setTimeout(() => setShowKorean(true), 2000);
-
-    // Move to next after 5s
-    autoTimerRef.current = setTimeout(() => {
-      setIndex((i) => (i < total - 1 ? i + 1 : i));
-    }, 5000);
-
-    return () => {
-      clearTimeout(koreanTimer);
-      if (autoTimerRef.current) clearTimeout(autoTimerRef.current);
-    };
-  }, [index, paused, current, total, playAudio]);
-
-  const prev = useCallback(() => {
-    setIndex((i) => Math.max(0, i - 1));
-  }, []);
-
-  const next = useCallback(() => {
-    setIndex((i) => Math.min(total - 1, i + 1));
-  }, [total]);
-
-  const togglePause = useCallback(() => {
-    setPaused((p) => {
-      if (!p) audioPlayer.stop();
-      return !p;
+      if (lesson.quiz) {
+        lesson.quiz.forEach((q: any) => {
+          items.push({ nepali: q.options[q.answer], romanized: "퀴즈 정답", korean: `[Q] ${q.question}`, lessonId: lesson.id, type: "quiz" });
+        });
+      }
     });
-  }, [audioPlayer]);
+
+    return items;
+  }, [data?.lessons]);
 
   // If no range selected, show range picker
   if (!range) {
@@ -170,160 +165,17 @@ function DrivingModePage() {
       <div className="flex min-h-[100dvh] items-center justify-center bg-[#0f1117] text-white">
         <div className="text-center">
           <div className="mb-4 text-4xl animate-pulse">🚗</div>
-          <p className="text-lg text-white/60">단어를 불러오는 중...</p>
-        </div>
-      </div>
-    );
-  }
-
-  // No words
-  if (total === 0) {
-    return (
-      <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#0f1117] px-6 text-white">
-        <p className="mb-4 text-xl">선택한 범위에 단어가 없어요.</p>
-        <button
-          type="button"
-          onClick={() => navigate({ search: { start: undefined, end: undefined } })}
-          className="rounded-2xl bg-white/10 px-6 py-3 text-base font-semibold text-white"
-        >
-          범위 다시 선택
-        </button>
-      </div>
-    );
-  }
-
-  // Finished
-  if (index >= total) {
-    return (
-      <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-[#0f1117] px-6 text-white">
-        <div className="mb-4 text-6xl">🎉</div>
-        <h2 className="mb-2 text-2xl font-bold">학습 완료!</h2>
-        <p className="mb-8 text-base text-white/60">{total}개의 단어를 모두 학습했어요.</p>
-        <div className="flex gap-3">
-          <button
-            type="button"
-            onClick={() => { setIndex(0); setPaused(false); }}
-            className="rounded-2xl bg-white px-6 py-3 text-base font-bold text-[#0f1117] active:scale-95 transition-transform"
-          >
-            처음부터 다시
-          </button>
-          <Link
-            to="/study"
-            className="rounded-2xl bg-white/10 px-6 py-3 text-base font-semibold text-white active:scale-95 transition-transform"
-          >
-            나가기
-          </Link>
+            <p className="text-lg text-white/60">데이터를 불러오는 중...</p>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="relative flex min-h-[100dvh] flex-col bg-[#0f1117] text-white select-none overflow-hidden">
-      {/* Top bar: exit + status */}
-      <div className="relative z-20 flex items-center justify-between px-4 py-3">
-        <Link
-          to="/study"
-          search={{ start, end }}
-          className="rounded-xl bg-white/10 px-3 py-2 text-xs font-medium text-white/60 active:bg-white/20"
-        >
-          ✕ 나가기
-        </Link>
-        <div className="text-sm font-semibold text-white/50">
-          {index + 1} / {total}
-        </div>
-        <button
-          type="button"
-          onClick={() => navigate({ search: { start: undefined, end: undefined } })}
-          className="rounded-xl bg-white/10 px-3 py-2 text-xs font-medium text-white/60 active:bg-white/20"
-        >
-          범위 변경
-        </button>
-      </div>
-
-      {/* Center: word display — tap to pause/resume */}
-      <button
-        type="button"
-        onClick={togglePause}
-        className="relative z-10 flex flex-1 flex-col items-center justify-center gap-3 px-6 active:bg-white/5 transition-colors landscape:gap-2"
-      >
-        {/* Paused indicator */}
-        {paused && (
-          <div className="absolute inset-0 z-30 flex items-center justify-center bg-black/40">
-            <div className="rounded-full bg-white/20 p-6 backdrop-blur-sm">
-              <svg className="h-16 w-16 text-white" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M8 5v14l11-7z" />
-              </svg>
-            </div>
-          </div>
-        )}
-
-        {/* Nepali word */}
-        <p
-          className="text-[clamp(2.5rem,10vw,5rem)] font-extrabold leading-tight tracking-wide"
-          style={{ fontFamily: "var(--font-nepali)" }}
-        >
-          {current?.nepali}
-        </p>
-
-        {/* Romanized */}
-        <p className="text-[clamp(1.25rem,4vw,2rem)] font-medium italic text-white/50">
-          {current?.romanized}
-        </p>
-
-        {/* Korean meaning — fades in */}
-        <p
-          className={cn(
-            "mt-2 text-[clamp(1.5rem,5vw,2.5rem)] font-bold text-amber-300 transition-all duration-700",
-            showKorean ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2",
-          )}
-        >
-          {current?.korean}
-        </p>
-
-        {/* Lesson tag */}
-        <p className="mt-4 text-sm text-white/30">
-          Lesson {current?.lessonId}
-        </p>
-      </button>
-
-      {/* Bottom: navigation buttons + progress */}
-      <div className="relative z-20 flex flex-col">
-        {/* Nav buttons */}
-        <div className="grid grid-cols-2">
-          <button
-            type="button"
-            onClick={(e) => { e.stopPropagation(); prev(); }}
-            disabled={index === 0}
-            className={cn(
-              "flex items-center justify-center py-5 text-lg font-bold transition-all active:bg-white/10 landscape:py-4",
-              "border-r border-white/10",
-              index === 0 ? "text-white/20" : "text-white/70",
-            )}
-          >
-            ◀ 이전
-          </button>
-          <button
-            type="button"
-            onClick={(e) => { e.stopPropagation(); next(); }}
-            disabled={index >= total - 1}
-            className={cn(
-              "flex items-center justify-center py-5 text-lg font-bold transition-all active:bg-white/10 landscape:py-4",
-              index >= total - 1 ? "text-white/20" : "text-white/70",
-            )}
-          >
-            다음 ▶
-          </button>
-        </div>
-
-        {/* Progress bar */}
-        <div className="h-2 w-full bg-white/10">
-          <div
-            className="h-full bg-amber-400 transition-all duration-500 ease-out"
-            style={{ width: `${progress}%` }}
-          />
-        </div>
-      </div>
-    </div>
+    <DrivingModePlayer
+      lessonId={`${start}-${end}`}
+      vocabulary={allItems}
+      onClose={() => navigate({ to: "/study", search: { start, end } })}
+    />
   );
 }
