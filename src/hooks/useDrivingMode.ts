@@ -826,6 +826,12 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       };
 
       try {
+        // Ensure voices are loaded (Safari sometimes needs an explicit getVoices call right before speaking).
+        try {
+          void window.speechSynthesis.getVoices?.();
+        } catch {
+          // ignore
+        }
         window.speechSynthesis.cancel();
         window.speechSynthesis.speak(utterance);
       } catch (e) {
