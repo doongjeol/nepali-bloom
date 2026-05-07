@@ -260,12 +260,12 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             </button>
           </div>
         ) : (
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 px-6">
-            <p className="text-2xl text-muted-foreground">모든 단어를 마스터했습니다! 🎉</p>
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
+            <p className="text-xl text-muted-foreground landscape:text-lg">모든 단어를 마스터했습니다! 🎉</p>
             <button
               type="button"
               onClick={onClose}
-              className="w-full max-w-md rounded-3xl bg-primary px-8 py-8 text-2xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
+              className="w-full max-w-md rounded-3xl bg-primary px-8 py-6 text-xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 landscape:py-4 landscape:text-lg"
             >
               완료
             </button>
