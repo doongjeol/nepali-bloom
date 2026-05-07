@@ -603,7 +603,7 @@ function LessonDetailPage() {
                 if (spkFinished) {
                   return (
                     <div className="rounded-2xl border bg-[#F7F3F0] p-8 sm:p-10 text-center shadow-sm">
-                      <div className="mb-3 sm:mb-4 text-4xl sm:text-5xl">?럦</div>
+                      <div className="mb-3 sm:mb-4 text-4xl sm:text-5xl">🎉</div>
                       <h2 className="mb-2 text-xl sm:text-2xl font-bold text-foreground">
                         낭독 연습 완료!
                       </h2>

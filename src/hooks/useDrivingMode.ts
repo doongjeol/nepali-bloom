@@ -140,6 +140,7 @@ type UseDrivingModeOptions = {
   enableSwipe?: boolean;
   ttsSpeed?: number;
   onSessionComplete?: () => void;
+  studyMode?: "word" | "dialogue";
 };
 
 export function useDrivingMode(lessonId: string | number, vocabulary: VocabularyItem[], options?: UseDrivingModeOptions) {
@@ -329,6 +330,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     vocabulary.forEach((word, index) => {
       const type = word.type || "vocab";
+      const mode = options?.studyMode;
       let label = "단어";
       if (type === "grammar") label = "문법";
       else if (type === "dialogue") label = "대화문";
@@ -374,31 +376,63 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         }
       } else if (type === "dialogue") {
         const cleanKorean = word.korean.replace(/^\[.*?\]\s*/, "");
-        newTasks.push({
-          type: "speech",
-          payload: cleanKorean,
-          description: `뜻: ${cleanKorean}`,
-          wordIndex: index,
-        });
-        newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
+        const speakerPrefixMatch = word.korean.match(/^\[(.*?)\]\s*/);
+        const speaker = speakerPrefixMatch?.[1];
 
-        if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
-          newTasks.push({
-            type: "audio",
-            payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
-            description: `네팔어: ${word.nepali}`,
-            wordIndex: index,
-          });
-        } else {
+        // dialogue 모드에서는 [네팔어 문장 -> 한국어 해석] 순으로 재생
+        if (mode === "dialogue") {
+          if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
+            newTasks.push({
+              type: "audio",
+              payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
+              description: speaker ? `[${speaker}] 네팔어` : "네팔어",
+              wordIndex: index,
+            });
+          } else {
+            newTasks.push({
+              type: "speech",
+              payload: word.nepali,
+              description: speaker ? `[${speaker}] 네팔어` : "네팔어",
+              wordIndex: index,
+              isNepaliTTS: true,
+            });
+          }
+          newTasks.push({ type: "delay", payload: 1000, description: "대기", wordIndex: index });
           newTasks.push({
             type: "speech",
-            payload: word.nepali,
-            description: `네팔어: ${word.nepali}`,
+            payload: cleanKorean,
+            description: speaker ? `[${speaker}] 해석` : "해석",
             wordIndex: index,
-            isNepaliTTS: true,
           });
+          newTasks.push({ type: "delay", payload: 2000, description: "대기", wordIndex: index });
+        } else {
+          // 기본(혼합) 흐름은 기존대로 [한국어 -> 네팔어] 유지
+          newTasks.push({
+            type: "speech",
+            payload: cleanKorean,
+            description: `뜻: ${cleanKorean}`,
+            wordIndex: index,
+          });
+          newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
+
+          if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
+            newTasks.push({
+              type: "audio",
+              payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
+              description: `네팔어: ${word.nepali}`,
+              wordIndex: index,
+            });
+          } else {
+            newTasks.push({
+              type: "speech",
+              payload: word.nepali,
+              description: `네팔어: ${word.nepali}`,
+              wordIndex: index,
+              isNepaliTTS: true,
+            });
+          }
+          newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
         }
-        newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
       } else {
         newTasks.push({
           type: "speech",
@@ -427,7 +461,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     clearTimer();
     stopAudio();
     stopSpeech();
-  }, [clearTimer, lessonId, stopAudio, stopSpeech, vocabulary]);
+  }, [clearTimer, lessonId, options?.studyMode, stopAudio, stopSpeech, vocabulary]);
 
   // 규칙 1/2/3을 만족하는 재생 엔진:
   // - effect는 현재 index의 task를 "시작만" 한다.
