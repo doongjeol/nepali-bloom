@@ -141,6 +141,7 @@ type UseDrivingModeOptions = {
   ttsSpeed?: number;
   onSessionComplete?: () => void;
   studyMode?: "word" | "dialogue";
+  audioOnly?: boolean;
 };
 
 export function useDrivingMode(lessonId: string | number, vocabulary: VocabularyItem[], options?: UseDrivingModeOptions) {
@@ -327,6 +328,14 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     onPrev: prevWord,
   });
 
+  const isIOS = useMemo(() => {
+    if (typeof navigator === "undefined") return false;
+    const ua = navigator.userAgent || "";
+    const iOSDevice = /iPad|iPhone|iPod/.test(ua);
+    const iPadOS13Plus = navigator.platform === "MacIntel" && (navigator as any).maxTouchPoints > 1;
+    return iOSDevice || iPadOS13Plus;
+  }, []);
+
   // Build playback tasks whenever vocabulary changes
   useEffect(() => {
     const newTasks: PlaybackTask[] = [];
@@ -334,12 +343,13 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     vocabulary.forEach((word, index) => {
       const type = word.type || "vocab";
       const mode = options?.studyMode;
+      const audioOnly = Boolean(options?.audioOnly);
       let label = "단어";
       if (type === "grammar") label = "문법";
       else if (type === "dialogue") label = "대화문";
       else if (type === "quiz") label = "퀴즈";
 
-      newTasks.push({
+      if (!audioOnly) newTasks.push({
         type: "speech",
         payload: `${label} ${index + 1}번`,
         description: `${label} ${index + 1}번 안내`,
@@ -506,12 +516,17 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     if (task.type === "delay") {
       clearTimer();
+      const rawMs = task.payload as number;
+      // iOS Safari는 user-gesture 컨텍스트가 setTimeout 지연에 매우 민감해서
+      // 긴 대기 후 다음 오디오 재생이 차단될 수 있습니다.
+      // 안전하게 900ms 이하로 클램프합니다.
+      const ms = isIOS ? Math.min(rawMs, 900) : rawMs;
       timerRef.current = setTimeout(() => {
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
-        console.log(`[DM] delay done idx=${index} ms=${task.payload}`);
+        console.log(`[DM] delay done idx=${index} ms=${ms}`);
         advanceIndex(index, "delay");
-      }, task.payload as number);
+      }, ms);
       return cleanup;
     }
 
@@ -599,8 +614,11 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         })
         .catch((e) => {
           console.log(`[DM] audio play rejected idx=${index}`, e);
-          // autoplay 정책 등으로 재생이 거부될 수 있어, 세션이 멈추지 않도록 다음 task로 진행
-          advanceIndex(index, "audio-play-rejected");
+          // autoplay 정책 등으로 재생이 거부될 수 있음.
+          // 이 경우 "다음으로 스킵"하면 이후 음성이 전부 건너뛰어질 수 있으므로,
+          // 세션을 일시정지 상태로 두고 사용자의 재생/다음 입력을 기다립니다.
+          setIsPlaying(false);
+          isPlayingRef.current = false;
         });
     };
 

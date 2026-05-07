@@ -45,7 +45,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     ttsSpeed,
     enableSwipe: false,
     studyMode: studyMode === "dialogue" ? "dialogue" : "word",
-    onSessionComplete: () => {
+    onSessionComplete: () => { setIsFinished(true);
       // 종료는 마지막 클릭에서만 처리
     },
   });
@@ -63,6 +63,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     }
 
     startTimerRef.current = setTimeout(() => {
+      void unlockAudio();
       play();
     }, 200);
 
@@ -80,6 +81,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
       // 클릭 시 현재 재생 즉시 정지 + 다음 오디오 중복 방지
       pause();
+      void unlockAudio();
 
       if (vote === "unknown") {
         // 1) 오답 누적 로직 (함수형 업데이트 필수) - 요청 스니펫을 그대로 구현
@@ -101,7 +103,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
       nextWord();
     },
-    [currentWord, isLastItem, lessonId, nextWord, pause],
+    [currentWord, isLastItem, lessonId, nextWord, pause, unlockAudio],
   );
 
   const handleRestart = useCallback(() => {
@@ -383,7 +385,10 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
         <div className="flex items-center justify-center gap-6 sm:gap-10">
           <button
             type="button"
-            onClick={prevWord}
+            onClick={() => {
+              void unlockAudio();
+              prevWord();
+            }}
             className="rounded-full bg-secondary p-4 text-secondary-foreground transition-colors hover:bg-accent active:scale-95"
           >
             <ChevronLeft className="h-8 w-8" />
@@ -412,7 +417,15 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
           <button
             type="button"
-            onClick={nextWord}
+            onClick={() => {
+              void unlockAudio();
+              if (isLastItem) {
+                pause();
+                setIsFinished(true);
+                return;
+              }
+              nextWord();
+            }}
             className="rounded-full bg-secondary p-4 text-secondary-foreground transition-colors hover:bg-accent active:scale-95"
           >
             <ChevronRight className="h-8 w-8" />
