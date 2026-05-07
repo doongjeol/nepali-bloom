@@ -168,6 +168,8 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const didUnlockSpeechRef = useRef(false);
   const unlockAudioElRef = useRef<HTMLAudioElement | null>(null);
   const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
+  const processingKeyRef = useRef<string | null>(null);
+  const pendingAutoplayRef = useRef(false);
   useEffect(() => {
     currentTaskIndexRef.current = currentTaskIndex;
   }, [currentTaskIndex]);
@@ -296,6 +298,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     isPlayingRef.current = false;
     setIsFinished(false);
     setAutoplayBlocked(false);
+    pendingAutoplayRef.current = false;
     clearTimer();
     stopAudio();
     stopSpeech();
@@ -306,6 +309,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     setCurrentTaskIndex(-1);
     setCurrentWordIndex(0);
     setIsFinished(false);
+    processingKeyRef.current = null;
   }, [pause]);
 
   useEffect(() => () => pause(), [pause]);
@@ -384,8 +388,15 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   );
 
   const play = useCallback(() => {
-    if (tasks.length === 0) return;
+    // If tasks haven't been built yet for the current vocabulary, defer start until tasks are ready.
+    if (tasks.length <= 1) {
+      pendingAutoplayRef.current = true;
+      console.log(`[DM] play() deferred (tasks not ready) tasks=${tasks.length} vocab=${vocabulary.length}`);
+      return;
+    }
+    pendingAutoplayRef.current = false;
     runIdRef.current += 1;
+    processingKeyRef.current = null;
     setIsFinished(false);
     setIsPlaying(true);
     isPlayingRef.current = true;
@@ -393,7 +404,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     const startIndex = currentTaskIndexRef.current > -1 ? currentTaskIndexRef.current : 0;
     console.log(`[DM] play() startIndex=${startIndex} totalTasks=${tasks.length}`);
     setCurrentTaskIndex(startIndex);
-  }, [tasks.length]);
+  }, [tasks.length, vocabulary.length]);
 
   const jumpToWord = useCallback(
     (nextWordIndex: number) => {
@@ -683,6 +694,19 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     clearTimer();
     stopAudio();
     stopSpeech();
+
+    // If a play was requested before tasks were ready, start now.
+    if (pendingAutoplayRef.current && newTasks.length > 1) {
+      pendingAutoplayRef.current = false;
+      runIdRef.current += 1;
+      processingKeyRef.current = null;
+      setIsFinished(false);
+      setIsPlaying(true);
+      isPlayingRef.current = true;
+      setAutoplayBlocked(false);
+      console.log(`[DM] autoplay resumed after tasks built totalTasks=${newTasks.length}`);
+      setCurrentTaskIndex(0);
+    }
   }, [clearTimer, lessonId, options?.studyMode, stopAudio, stopSpeech, vocabulary]);
 
   // 규칙 1/2/3을 만족하는 재생 엔진:
@@ -695,6 +719,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     const runId = runIdRef.current;
     const index = currentTaskIndex;
+    const processingKey = `${runId}:${index}`;
+    if (processingKeyRef.current === processingKey) return;
+    processingKeyRef.current = processingKey;
 
     // 종료 판정은 "마지막 인덱스로 advance 된 후"에만
     if (index >= tasks.length) {
@@ -722,6 +749,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       clearTimer();
       stopSpeech();
       stopAudio();
+      if (processingKeyRef.current === processingKey) processingKeyRef.current = null;
       // 규칙 1: 오디오 새로 만들면 기존 pause+null 처리(우리는 재사용하지만 cleanup에서 확실히 멈춤)
       // audioRef.current는 유지하되, 다음 effect에서 src 변경 전 상태 누수 방지
     };
@@ -743,9 +771,10 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       return cleanup;
     }
 
-    if (task.type === "speech") {
-      stopAudio();
-      if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+	    if (task.type === "speech") {
+	      stopAudio();
+	      console.log(`[DM] speech task payload="${String(task.payload ?? "")}" isNepaliTTS=${Boolean(task.isNepaliTTS)}`);
+	      if (typeof window === "undefined" || !("speechSynthesis" in window)) {
         clearTimer();
         timerRef.current = setTimeout(() => {
           if (cancelled) return;
@@ -754,97 +783,159 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           advanceIndex(index, "speech-fallback");
         }, 800);
         return cleanup;
-      }
+	      }
 
-      const utterance = new SpeechSynthesisUtterance(task.payload as string);
-      utteranceRef.current = utterance;
-      const chosenVoice = task.isNepaliTTS ? pickNepaliCapableVoice() : pickTtsVoice("ko-KR");
-      if (chosenVoice) {
-        try {
-          utterance.voice = chosenVoice;
-          utterance.lang = chosenVoice.lang || (task.isNepaliTTS ? "ne-NP" : "ko-KR");
-        } catch {
-          utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
-        }
-      } else {
-        utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
-      }
-      utterance.rate = ttsSpeedRef.current;
-      utterance.volume = 1.0;
-      // iOS Safari에서 spoken audio가 media volume을 과하게 ducking시키는 케이스가 있어 pitch를 약간 올려
-      // 시스템이 "통화/내비 안내"처럼 처리하는 확률을 낮춘다(효과는 기기별로 다름).
-      try {
-        utterance.pitch = 1.05;
-      } catch {
-        // ignore
-      }
+	      const synth = window.speechSynthesis;
+	      const speechState = {
+	        attempt: 1 as 1 | 2,
+	        didStart: false,
+	        didFinish: false,
+	        startWatchdog: null as ReturnType<typeof setTimeout> | null,
+	        hardWatchdog: null as ReturnType<typeof setTimeout> | null,
+	      };
 
-      // iOS Safari에서는 speak()가 조용히 무시되면서 onstart/onend/onerror가 아예 안 오는 경우가 있다.
-      // 이 경우 세션이 "멈춘 것처럼" 보이므로, 이벤트 미발생을 감지하는 타임아웃을 둔다.
-      let didStart = false;
-      let didFinish = false;
-      const text = String(task.payload ?? "");
-      const startWatchdog = setTimeout(() => {
-        if (cancelled) return;
-        if (runIdRef.current !== runId) return;
-        if (didStart) return;
-        if (typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.speaking) return;
-        console.log(`[DM] speech start TIMEOUT idx=${index}`);
-        // TTS can be silently ignored without any events on some browsers.
-        // Don't stall the session; skip this speech task.
-        advanceIndex(index, "speech-start-timeout");
-      }, 1200);
-      const hardWatchdogMs = Math.min(10000, 2000 + text.length * 80);
-      const hardWatchdog = setTimeout(() => {
-        if (cancelled) return;
-        if (runIdRef.current !== runId) return;
-        if (didFinish) return;
-        console.log(`[DM] speech hard TIMEOUT idx=${index} ms=${hardWatchdogMs}`);
-        didFinish = true;
-        // TTS can be unavailable (missing voices) or silently blocked on some browsers.
-        // Don't stall the entire session; skip this speech task.
-        advanceIndex(index, "speech-hard-timeout");
-      }, hardWatchdogMs);
+	      const clearSpeechWatchdogs = () => {
+	        if (speechState.startWatchdog) clearTimeout(speechState.startWatchdog);
+	        if (speechState.hardWatchdog) clearTimeout(speechState.hardWatchdog);
+	        speechState.startWatchdog = null;
+	        speechState.hardWatchdog = null;
+	      };
 
-      utterance.onend = () => {
-        if (cancelled) return;
-        if (runIdRef.current !== runId) return;
-        didFinish = true;
-        console.log(`[DM] speech end idx=${index}`);
-        advanceIndex(index, "speech-end");
-      };
-      utterance.onerror = (e) => {
-        if (cancelled) return;
-        if (runIdRef.current !== runId) return;
-        didFinish = true;
-        console.log(`[DM] speech error idx=${index}`, e);
-        advanceIndex(index, "speech-error");
-      };
-      utterance.onstart = () => {
-        didStart = true;
-        console.log(`[DM] speech start idx=${index}`);
-      };
+	      const startSpeechAttempt = (attempt: 1 | 2) => {
+	        if (cancelled) return;
+	        if (runIdRef.current !== runId) return;
+	        if (speechState.didFinish) return;
+	        if (speechState.attempt === 2 && attempt === 2) return; // prevent duplicate attempt-2 starts
 
-      try {
-        // Ensure voices are loaded (Safari sometimes needs an explicit getVoices call right before speaking).
-        try {
-          void window.speechSynthesis.getVoices?.();
-        } catch {
-          // ignore
-        }
-        window.speechSynthesis.cancel();
-        window.speechSynthesis.speak(utterance);
-      } catch (e) {
-        didFinish = true;
-        console.log(`[DM] speech speak threw idx=${index}`, e);
-        advanceIndex(index, "speech-throw");
-      }
-      return () => {
-        clearTimeout(startWatchdog);
-        clearTimeout(hardWatchdog);
-        cleanup();
-      };
-    }
+	        speechState.attempt = attempt;
+	        speechState.didStart = false;
+	        clearSpeechWatchdogs();
+
+	        console.log(`[DM] speech attempt start idx=${index} attempt=${attempt}`);
+
+	        const utterance = new SpeechSynthesisUtterance(task.payload as string);
+	        utteranceRef.current = utterance;
+
+	        const chosenVoice = task.isNepaliTTS ? pickNepaliCapableVoice() : pickTtsVoice("ko-KR");
+	        if (chosenVoice) {
+	          try {
+	            utterance.voice = chosenVoice;
+	            utterance.lang = chosenVoice.lang || (task.isNepaliTTS ? "ne-NP" : "ko-KR");
+	          } catch {
+	            utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
+	          }
+	        } else {
+	          utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
+	        }
+
+	        utterance.rate = ttsSpeedRef.current;
+	        utterance.volume = 1.0;
+	        try {
+	          utterance.pitch = 1.05;
+	        } catch {
+	          // ignore
+	        }
+
+	        const text = String(task.payload ?? "");
+	        const hardWatchdogMs = Math.min(10000, 2000 + text.length * 80);
+
+	        speechState.startWatchdog = setTimeout(() => {
+	          if (cancelled) return;
+	          if (runIdRef.current !== runId) return;
+	          if (speechState.didStart) return;
+	          if (synth.speaking) return;
+	          console.log(`[DM] speech start TIMEOUT idx=${index} attempt=${attempt}`);
+	          if (attempt === 1) {
+	            try {
+	              void synth.getVoices?.();
+	            } catch {
+	              // ignore
+	            }
+	            startSpeechAttempt(2);
+	          } else {
+	            speechState.didFinish = true;
+	            advanceIndex(index, "speech-start-timeout");
+	          }
+	        }, attempt === 1 ? 1200 : 800);
+
+	        speechState.hardWatchdog = setTimeout(() => {
+	          if (cancelled) return;
+	          if (runIdRef.current !== runId) return;
+	          if (speechState.didFinish) return;
+	          console.log(`[DM] speech hard TIMEOUT idx=${index} ms=${hardWatchdogMs} attempt=${attempt}`);
+	          if (attempt === 1) {
+	            try {
+	              void synth.getVoices?.();
+	            } catch {
+	              // ignore
+	            }
+	            startSpeechAttempt(2);
+	          } else {
+	            speechState.didFinish = true;
+	            advanceIndex(index, "speech-hard-timeout");
+	          }
+	        }, hardWatchdogMs);
+
+	        utterance.onstart = () => {
+	          if (cancelled) return;
+	          if (runIdRef.current !== runId) return;
+	          speechState.didStart = true;
+	          console.log(`[DM] speech start idx=${index} attempt=${attempt}`);
+	        };
+	        utterance.onend = () => {
+	          if (cancelled) return;
+	          if (runIdRef.current !== runId) return;
+	          if (speechState.didFinish) return;
+	          speechState.didFinish = true;
+	          clearSpeechWatchdogs();
+	          console.log(`[DM] speech end idx=${index} attempt=${attempt}`);
+	          advanceIndex(index, "speech-end");
+	        };
+	        utterance.onerror = (e) => {
+	          if (cancelled) return;
+	          if (runIdRef.current !== runId) return;
+	          if (speechState.didFinish) return;
+	          clearSpeechWatchdogs();
+	          console.log(`[DM] speech error idx=${index} attempt=${attempt}`, e);
+	          // "canceled" is common when we cancel during retry; treat as retryable once.
+	          if (attempt === 1) {
+	            startSpeechAttempt(2);
+	          } else {
+	            speechState.didFinish = true;
+	            advanceIndex(index, "speech-error");
+	          }
+	        };
+
+	        try {
+	          try {
+	            void synth.getVoices?.();
+	          } catch {
+	            // ignore
+	          }
+	          // Avoid cancel-storm: only cancel if something is currently speaking/pending.
+	          try {
+	            if (synth.speaking || (synth as any).pending) synth.cancel();
+	          } catch {
+	            // ignore
+	          }
+	          synth.speak(utterance);
+	        } catch (e) {
+	          clearSpeechWatchdogs();
+	          console.log(`[DM] speech speak threw idx=${index} attempt=${attempt}`, e);
+	          if (attempt === 1) startSpeechAttempt(2);
+	          else {
+	            speechState.didFinish = true;
+	            advanceIndex(index, "speech-throw");
+	          }
+	        }
+	      };
+
+	      startSpeechAttempt(1);
+	      return () => {
+	        clearSpeechWatchdogs();
+	        cleanup();
+	      };
+	    }
 
     // audio
     stopSpeech();

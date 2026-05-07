@@ -16,6 +16,29 @@ function getWordId(lessonId: string | number, v: VocabularyItem) {
   return `${v.lessonId ?? lessonId}::${v.romanized || v.nepali || v.korean}`;
 }
 
+function unlockBrowserAutoplayBridge() {
+  if (typeof window === "undefined") return;
+  try {
+    const a = new Audio();
+    a.src = "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA=";
+    a.preload = "auto";
+    a.muted = true;
+    a.volume = 0;
+    const p = a.play();
+    if (p && typeof (p as any).catch === "function") (p as Promise<void>).catch(() => {});
+    a.pause();
+    a.currentTime = 0;
+  } catch {
+    // ignore
+  }
+
+  try {
+    void window.speechSynthesis?.getVoices?.();
+  } catch {
+    // ignore
+  }
+}
+
 export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingModePlayerProps) {
   // displayData
   const [displayData, setDisplayData] = useState<VocabularyItem[]>([]);
@@ -147,13 +170,13 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           <button
             type="button"
             onClick={() => {
+              unlockBrowserAutoplayBridge();
               void unlockAudio();
               setFailedList([]);
               setIsFinished(false);
               setStudyMode("word");
               setDisplayData(vocabOnly);
-              // iOS Safari requires play() to be initiated from a user gesture.
-              // Kick off immediately here (the effect also triggers, but this helps ensure audio/TTS is unblocked).
+              // Kick off inside the user gesture; useDrivingMode will defer until tasks are ready if needed.
               didKickoffPlayRef.current = true;
               play();
             }}
@@ -167,6 +190,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           <button
             type="button"
             onClick={() => {
+              unlockBrowserAutoplayBridge();
               void unlockAudio();
               setFailedList([]);
               setIsFinished(false);
@@ -227,19 +251,20 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
         </div>
 
         <div className="border-t pt-4">
-          <button
-            type="button"
-            disabled={vocabOnly.length === 0}
-            onClick={() => {
-              void unlockAudio();
-              setFailedList([]);
-              setIsFinished(false);
-              setDisplayData(studyMode === "dialogue" ? dialogueOnly : vocabOnly);
-              didKickoffPlayRef.current = true;
-              play();
-            }}
-            className="w-full rounded-2xl bg-primary px-6 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 disabled:opacity-50"
-          >
+	          <button
+	            type="button"
+	            disabled={vocabOnly.length === 0}
+	            onClick={() => {
+	              unlockBrowserAutoplayBridge();
+	              void unlockAudio();
+	              setFailedList([]);
+	              setIsFinished(false);
+	              setDisplayData(studyMode === "dialogue" ? dialogueOnly : vocabOnly);
+	              didKickoffPlayRef.current = true;
+	              play();
+	            }}
+	            className="w-full rounded-2xl bg-primary px-6 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 disabled:opacity-50"
+	          >
             {studyMode === "dialogue"
               ? dialogueOnly.length === 0
                 ? "학습할 대화문이 없습니다"
