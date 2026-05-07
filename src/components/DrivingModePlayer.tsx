@@ -243,19 +243,19 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   if (isFinished) {
     return (
       <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col items-center justify-center overflow-hidden bg-background text-center" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
-        <h2 className="mb-4 text-4xl font-bold text-foreground sm:text-5xl">학습 종료</h2>
+        <h2 className="mb-3 text-3xl font-bold text-foreground landscape:text-2xl">학습 종료</h2>
 
         {failedList.length > 0 ? (
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 px-6">
-            <p className="text-2xl text-muted-foreground">미암기 {failedList.length}개가 남았습니다.</p>
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
+            <p className="text-xl text-muted-foreground landscape:text-lg">미암기 {failedList.length}개가 남았습니다.</p>
             <button
               type="button"
               onClick={handleRestart}
-              className="w-full max-w-md rounded-3xl bg-primary px-8 py-8 text-2xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
+              className="w-full max-w-md rounded-3xl bg-primary px-8 py-6 text-xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 landscape:py-4 landscape:text-lg"
             >
               미암기 복습하기
             </button>
-            <button onClick={onClose} className="w-full max-w-md rounded-3xl border border-border px-8 py-6 text-xl font-semibold text-muted-foreground transition-transform active:scale-95">
+            <button onClick={onClose} className="w-full max-w-md rounded-3xl border border-border px-8 py-4 text-lg font-semibold text-muted-foreground transition-transform active:scale-95 landscape:py-3 landscape:text-base">
               종료하기
             </button>
           </div>
