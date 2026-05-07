@@ -1,3 +1,5 @@
+import plugin from "tailwindcss/plugin";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
@@ -33,5 +35,9 @@ export default {
       },
     },
   },
+  plugins: [
+    plugin(function ({ addVariant }) {
+      addVariant("landscape", "@media (orientation: landscape)");
+    }),
+  ],
 };
-
