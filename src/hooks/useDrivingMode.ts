@@ -157,6 +157,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
+  const audioBufferCacheRef = useRef<Map<string, AudioBuffer>>(new Map());
   const bufferSourceRef = useRef<AudioBufferSourceNode | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
 
@@ -620,7 +621,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     newTasks.push({
       type: "speech",
-      payload: "학습이 모두 끝났습니다. 처음부터 다시 시작하려면 이전 버튼을 눌러주세요.",
+      payload: "학습이 모두 끝났습니다.",
       description: "세션 종료 안내",
     });
 
@@ -666,8 +667,11 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     // Cleanup: effect 중복 실행/StrictMode 재실행에서도 안전하게 이전 오브젝트 정리
     let cancelled = false;
+    let webAudioStartTimeout: ReturnType<typeof setTimeout> | null = null;
     const cleanup = () => {
       cancelled = true;
+      if (webAudioStartTimeout) clearTimeout(webAudioStartTimeout);
+      webAudioStartTimeout = null;
       clearTimer();
       stopSpeech();
       stopAudio();
@@ -789,6 +793,12 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     // iOS에서는 TTS 직후 media element 오디오가 "ducking"된 상태로 시작해 점점 커지는 듯 들리는 경우가 있어,
     // 드라이브 모드는 모바일 잠금화면에서도 안정적으로 이어지는 "media element" 경로를 우선한다.
     // (레슨 대화문 전체재생과 동일한 HTMLAudioElement 기반)
+    //
+    // 다만 iOS에서는 SpeechSynthesis 직후 media element 오디오가 "작게 시작했다가 커지는" 현상이 종종 있어,
+    // 화면이 켜져(visible) 있는 동안에는 WebAudio로 재생해 볼륨 램프를 줄이고,
+    // 잠금화면/백그라운드(visibilityState=hidden)에서는 HTMLAudioElement로 폴백한다.
+    const canUseWebAudioInForeground =
+      isIOS && typeof document !== "undefined" && document.visibilityState === "visible" && audioContextRef.current;
 
     const startHtmlAudio = (src: string) => {
       const audio = getSharedAudioElement() ?? audioRef.current ?? new Audio();
@@ -907,7 +917,69 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     };
 
     const src = task.payload as string;
-    startHtmlAudio(src);
+
+    if (canUseWebAudioInForeground) {
+      const audioCtx = audioContextRef.current!;
+      console.log(`[DM] webaudio(fg) try idx=${index} src=${src}`);
+
+      webAudioStartTimeout = setTimeout(() => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        console.log(`[DM] webaudio(fg) start TIMEOUT idx=${index} src=${src}`);
+        startHtmlAudio(src);
+      }, 2500);
+
+      void (async () => {
+        try {
+          if (audioCtx.state === "suspended") await audioCtx.resume();
+
+          let buffer = audioBufferCacheRef.current.get(src);
+          if (!buffer) {
+            const res = await fetch(src);
+            const arr = await res.arrayBuffer();
+            buffer = await audioCtx.decodeAudioData(arr.slice(0));
+            audioBufferCacheRef.current.set(src, buffer);
+          }
+
+          if (cancelled) return;
+          if (runIdRef.current !== runId) return;
+
+          if (webAudioStartTimeout) clearTimeout(webAudioStartTimeout);
+          webAudioStartTimeout = null;
+
+          stopAudio();
+          const gain = audioCtx.createGain();
+          gain.gain.value = 1.0;
+          gain.connect(audioCtx.destination);
+          gainNodeRef.current = gain;
+
+          const source = audioCtx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(gain);
+          bufferSourceRef.current = source;
+
+          source.onended = () => {
+            if (cancelled) return;
+            if (runIdRef.current !== runId) return;
+            console.log(`[DM] webaudio(fg) ended idx=${index} src=${src}`);
+            advanceIndex(index, "webaudio-fg-ended");
+          };
+
+          setAutoplayBlocked(false);
+          console.log(`[DM] webaudio(fg) start idx=${index} src=${src}`);
+          source.start(0);
+        } catch (e) {
+          if (cancelled) return;
+          if (runIdRef.current !== runId) return;
+          console.log(`[DM] webaudio(fg) error idx=${index} src=${src}`, e);
+          if (webAudioStartTimeout) clearTimeout(webAudioStartTimeout);
+          webAudioStartTimeout = null;
+          startHtmlAudio(src);
+        }
+      })();
+    } else {
+      startHtmlAudio(src);
+    }
     return cleanup;
   }, [advanceIndex, clearTimer, currentTaskIndex, isPlaying, pause, stopAudio, stopSpeech, tasks]);
 
