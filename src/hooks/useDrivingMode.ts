@@ -357,16 +357,12 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       }
     }
 
-    // 3) SpeechSynthesis unlock (iOS Safari는 최초 utterance가 user gesture 안에서 필요할 때가 있음)
+    // 3) SpeechSynthesis unlock
+    // NOTE: 무음 utterance를 speak()하면 일부 환경(데스크톱/모바일)에서 이후 media/WebAudio 볼륨이
+    // 잠깐 ducking 되었다가 1~2초 후 올라오는 현상이 발생할 수 있어 speak()는 하지 않는다.
     if (!didUnlockSpeechRef.current && "speechSynthesis" in window) {
       try {
         void window.speechSynthesis.getVoices?.();
-        const u = new SpeechSynthesisUtterance(" ");
-        u.lang = "ko-KR";
-        u.volume = 0;
-        window.speechSynthesis.speak(u);
-        // iOS에서 "unlock"만 목적이므로 즉시 cancel
-        window.speechSynthesis.cancel();
         didUnlockSpeechRef.current = true;
       } catch {
         // ignore
@@ -542,7 +538,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
             description: `내용: ${word.korean}`,
             wordIndex: index,
           });
-          newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
+          // speechSynthesis 이후 일부 환경에서 다음 오디오가 1.5~2초 정도 작게 시작했다가 커지는(ducking 복구) 현상이 있어
+          // 충분히 회복 시간을 준 뒤 네팔어를 재생한다.
+          newTasks.push({ type: "delay", payload: 2200, description: "대기", wordIndex: index });
         }
       });
 
@@ -564,6 +562,17 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     const iPadOS13Plus = navigator.platform === "MacIntel" && (navigator as any).maxTouchPoints > 1;
     return iOSDevice || iPadOS13Plus;
   }, []);
+
+  useEffect(() => {
+    try {
+      if (typeof navigator === "undefined") return;
+      console.log(
+        `[DM] platform ua=${navigator.userAgent} platform=${(navigator as any).platform ?? "n/a"} maxTouchPoints=${(navigator as any).maxTouchPoints ?? "n/a"} isIOS=${isIOS}`,
+      );
+    } catch {
+      // ignore
+    }
+  }, [isIOS]);
 
   // Build playback tasks whenever vocabulary changes
   useEffect(() => {
@@ -646,7 +655,8 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
             description: `뜻: ${cleanKorean}`,
             wordIndex: index,
           });
-          newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
+          // speechSynthesis 이후 오디오 볼륨 램프(ducking 복구) 방지용 여유
+          newTasks.push({ type: "delay", payload: 2200, description: "대기", wordIndex: index });
 
           if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
             newTasks.push({
@@ -816,16 +826,44 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 	        const utterance = new SpeechSynthesisUtterance(task.payload as string);
 	        utteranceRef.current = utterance;
 
-	        const chosenVoice = task.isNepaliTTS ? pickNepaliCapableVoice() : pickTtsVoice("ko-KR");
-	        if (chosenVoice) {
-	          try {
-	            utterance.voice = chosenVoice;
-	            utterance.lang = chosenVoice.lang || (task.isNepaliTTS ? "ne-NP" : "ko-KR");
-	          } catch {
-	            utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
+	        if (task.isNepaliTTS) {
+	          const chosenVoice = pickNepaliCapableVoice();
+	          if (chosenVoice) {
+	            try {
+	              utterance.voice = chosenVoice;
+	              utterance.lang = chosenVoice.lang || "ne-NP";
+	            } catch {
+	              utterance.lang = "ne-NP";
+	            }
+	          } else {
+	            utterance.lang = "ne-NP";
 	          }
 	        } else {
-	          utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
+	          // Korean: let the browser choose the best available voice.
+	          // Forcing a specific voice can be silent/buggy on some devices.
+	          const allVoices = voicesRef.current ?? synth.getVoices?.() ?? [];
+	          const koVoice = allVoices.find((v) => (v.lang || "").toLowerCase().startsWith("ko"));
+	          if (koVoice) {
+	            utterance.lang = "ko-KR";
+	            // do not force utterance.voice unless we have a matching ko voice
+	            try {
+	              utterance.voice = koVoice;
+	            } catch {
+	              // ignore
+	            }
+	          } else if (allVoices.length > 0) {
+	            // No Korean voice installed: force *some* voice so it is at least audible.
+	            const fallbackVoice = allVoices[0]!;
+	            try {
+	              utterance.voice = fallbackVoice;
+	            } catch {
+	              // ignore
+	            }
+	            utterance.lang = fallbackVoice.lang || "en-US";
+	          } else {
+	            // As a last resort, don't set voice; allow browser defaults.
+	            utterance.lang = "ko-KR";
+	          }
 	        }
 
 	        utterance.rate = ttsSpeedRef.current;
@@ -834,6 +872,18 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 	          utterance.pitch = 1.05;
 	        } catch {
 	          // ignore
+	        }
+
+	        if (!task.isNepaliTTS) {
+	          try {
+	            const allVoices = synth.getVoices?.() ?? [];
+	            const koVoices = allVoices.filter((v) => (v.lang || "").toLowerCase().startsWith("ko"));
+	            console.log(
+	              `[DM] speech config idx=${index} attempt=${attempt} lang=${utterance.lang} voice=${utterance.voice?.name ?? "auto"} voices=${allVoices.length} koVoices=${koVoices.length}`,
+	            );
+	          } catch {
+	            // ignore
+	          }
 	        }
 
 	        const text = String(task.payload ?? "");
@@ -958,7 +1008,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     // 잠금화면/백그라운드(visibilityState=hidden)에서는 HTMLAudioElement로 폴백한다.
     // AudioContext는 user gesture에서 unlockAudio()로 열리는 것이 가장 좋지만,
     // 여기서도 존재하지 않으면 생성만 해둬서(WebAudio decode/play 경로) HTMLAudioElement 폴백 비율을 줄인다.
-    if (isIOS && !audioContextRef.current && typeof window !== "undefined") {
+    if (!audioContextRef.current && typeof window !== "undefined") {
       try {
         const AudioCtx = (window.AudioContext || (window as any).webkitAudioContext) as typeof AudioContext | undefined;
         if (AudioCtx) audioContextRef.current = new AudioCtx();
@@ -968,7 +1018,17 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     }
 
     const canUseWebAudioInForeground =
-      isIOS && typeof document !== "undefined" && document.visibilityState === "visible" && audioContextRef.current;
+      Boolean(audioContextRef.current) &&
+      (typeof document === "undefined" || document.visibilityState === "visible");
+    if (isIOS) {
+      try {
+        console.log(
+          `[DM] webaudio gate idx=${index} isIOS=${isIOS} hasCtx=${Boolean(audioContextRef.current)} ctxState=${audioContextRef.current?.state ?? "n/a"} vis=${typeof document !== "undefined" ? document.visibilityState : "n/a"} canUseWebAudio=${canUseWebAudioInForeground}`,
+        );
+      } catch {
+        // ignore
+      }
+    }
 
     const startHtmlAudio = (src: string) => {
       const audio = getSharedAudioElement() ?? audioRef.current ?? new Audio();
@@ -1098,11 +1158,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
         console.log(`[DM] webaudio(fg) start TIMEOUT idx=${index} src=${src}`);
-        // timeout 시에도 HTML로 폴백하지 않고(볼륨 페이드업 재발),
-        // 다음 태스크로 넘어가 세션이 멈춘 것처럼 보이는 것을 방지한다.
-        setIsPlaying(false);
-        isPlayingRef.current = false;
-        setAutoplayBlocked(true);
+        // WebAudio가 너무 늦어지면 HTMLAudioElement로 폴백한다.
+        // (볼륨 램프가 재발할 수 있지만, 소리가 안 나는 것보다는 낫다)
+        startHtmlAudio(src);
       }, 10000);
 
       void (async () => {
@@ -1150,7 +1208,8 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           console.log(`[DM] webaudio(fg) error idx=${index} src=${src}`, e);
           if (webAudioStartTimeout) clearTimeout(webAudioStartTimeout);
           webAudioStartTimeout = null;
-          // WebAudio가 실패하면 그때만 HTMLAudioElement로 폴백
+          // WebAudio가 실패하면 HTMLAudioElement로 폴백.
+          // (iOS에서는 볼륨 램프가 재발할 수 있지만, "소리가 안 나는 것"보다는 낫다고 보고 폴백을 허용한다)
           startHtmlAudio(src);
         }
       })();
