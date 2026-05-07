@@ -137,7 +137,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           </button>
         </div>
 
-        <div className="flex flex-1 flex-col gap-4">
+        <div className="flex min-h-0 flex-1 flex-col gap-4 landscape:flex-row landscape:items-center landscape:gap-4">
           <button
             type="button"
             onClick={() => {
@@ -147,11 +147,11 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
               setStudyMode("word");
               setDisplayData(vocabOnly);
             }}
-            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-10 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99]"
+            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99] landscape:py-4"
           >
-            <div className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">단어만 듣기</div>
-            <div className="mt-3 text-lg font-semibold text-muted-foreground sm:text-xl">단어 → 뜻</div>
-            <div className="mt-2 text-sm text-muted-foreground">총 {vocabOnly.length}개</div>
+            <div className="text-2xl font-black tracking-tight text-foreground sm:text-3xl landscape:text-xl">단어만 듣기</div>
+            <div className="mt-2 text-base font-semibold text-muted-foreground sm:text-lg landscape:mt-1 landscape:text-sm">단어 → 뜻</div>
+            <div className="mt-1 text-sm text-muted-foreground">총 {vocabOnly.length}개</div>
           </button>
 
           <button
