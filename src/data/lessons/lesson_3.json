@@ -34,7 +34,11 @@
     { "nepali": "तिमी", "romanized": "timi", "korean": "너 - 친근한 형태 (you - familiar)" },
     { "nepali": "उसको", "romanized": "usko", "korean": "그/그녀의 (his, hers)", "example": { "nepali": "उसको नाम के हो ? / उसको नाम राम हो ।", "romanized": "usko naam ke ho ? / usko naam raam ho.", "korean": "그의 이름은 무엇입니까? / 그의 이름은 Ram입니다." } },
     { "nepali": "उसले", "romanized": "usle", "korean": "그/그녀가 - 과거 타동사 주어 (he, she)", "example": { "nepali": "उसले ढोका खोलेको ? / होइन, उसले झ्याल खोलेको ।", "romanized": "usle Dhokaa kholeko ? / hoina, usle jhyaal kholeko.", "korean": "그가 문을 열었나요? / 아니요, 창문을 열었습니다." } },
-    { "nepali": "यी", "romanized": "yi", "korean": "이것들 (these)" }
+    { "nepali": "यी", "romanized": "yi", "korean": "이것들 (these)" },
+    { "nepali": "भाइ", "romanized": "bhaai", "korean": "younger brother (남동생)" },
+    { "nepali": "हुनुहुन्छ", "romanized": "hunuhunchha", "korean": "to be, to exist - honorific (계시다/있으시다)" },
+    { "nepali": "बल्याकबोर्ड", "romanized": "blyaakborD", "korean": "blackboard (칠판)" },
+    { "nepali": "लेख्नु", "romanized": "lekhnu", "korean": "to write (쓰다)" }
   ],
   "dialogues": [
     {

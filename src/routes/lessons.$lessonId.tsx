@@ -87,9 +87,11 @@ function LessonDetailPage() {
   const [spkIdx, setSpkIdx] = useState(0);
   const [spkOrder, setSpkOrder] = useState<number[]>([]);
   const [spkRevealed, setSpkRevealed] = useState(false);
+  const [spkAnswers, setSpkAnswers] = useState<(boolean | null)[]>([]);
   const [spkScore, setSpkScore] = useState(0);
   const [spkFinished, setSpkFinished] = useState(false);
   const lastSpokenKeyRef = useRef<string | null>(null);
+  const spkScoreRef = useRef(0);
 
   // Dialogue state
   const [showRomanized, setShowRomanized] = useState(true);
@@ -189,10 +191,13 @@ function LessonDetailPage() {
     setQuizSelections(Array(lesson.quiz.length).fill(null));
     setQuizMode(null);
 
-    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)).slice(0, 10));
+    const initialSpkOrder = shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)).slice(0, 10);
+    setSpkOrder(initialSpkOrder);
+    setSpkAnswers(Array(initialSpkOrder.length).fill(null));
     setSpkIdx(0);
     setSpkRevealed(false);
     setSpkScore(0);
+    spkScoreRef.current = 0;
     setSpkFinished(false);
     lastSpokenKeyRef.current = null;
   }, [lessonId, lesson, speakingPracticeItems]);
@@ -298,10 +303,32 @@ function LessonDetailPage() {
   };
 
   const resetSpeakingPractice = () => {
-    setSpkOrder(shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)).slice(0, 10));
+    const nextOrder = shuffle([...Array(speakingPracticeItems.length)].map((_, i) => i)).slice(0, 10);
+    setSpkOrder(nextOrder);
+    setSpkAnswers(Array(nextOrder.length).fill(null));
     setSpkIdx(0);
     setSpkRevealed(false);
     setSpkScore(0);
+    spkScoreRef.current = 0;
+    setSpkFinished(false);
+    lastSpokenKeyRef.current = null;
+  };
+
+  const retryWrongSpeakingPractice = () => {
+    const wrongIdxes = spkAnswers
+      .map((ans, idx) => ({ ans, idx }))
+      .filter((x) => x.ans === false)
+      .map((x) => x.idx);
+
+    if (wrongIdxes.length === 0) return;
+
+    const nextOrder = wrongIdxes.map((i) => spkOrder[i]!).filter((x) => typeof x === "number");
+    setSpkOrder(nextOrder);
+    setSpkAnswers(Array(nextOrder.length).fill(null));
+    setSpkIdx(0);
+    setSpkRevealed(false);
+    setSpkScore(0);
+    spkScoreRef.current = 0;
     setSpkFinished(false);
     lastSpokenKeyRef.current = null;
   };
@@ -313,13 +340,38 @@ function LessonDetailPage() {
   };
 
   const markSpeakingAnswer = (isCorrect: boolean) => {
-    if (isCorrect) setSpkScore((s) => s + 1);
+    setSpkAnswers((prev) => {
+      const next = prev.length === spkOrder.length ? [...prev] : Array(spkOrder.length).fill(null);
+      const prevVal = next[spkIdx] ?? null;
+      next[spkIdx] = isCorrect;
+
+      if (prevVal === true && !isCorrect) spkScoreRef.current -= 1;
+      if (prevVal !== true && isCorrect) spkScoreRef.current += 1;
+      setSpkScore(spkScoreRef.current);
+
+      return next;
+    });
+
     if (spkIdx + 1 >= spkOrder.length) {
       setSpkFinished(true);
       setSpkRevealed(false);
       return;
     }
     setSpkIdx((c) => c + 1);
+    setSpkRevealed(false);
+    lastSpokenKeyRef.current = null;
+  };
+
+  const goSpeakingPrev = () => {
+    if (spkIdx <= 0) return;
+    setSpkIdx((c) => Math.max(0, c - 1));
+    setSpkRevealed(false);
+    lastSpokenKeyRef.current = null;
+  };
+
+  const goSpeakingNext = () => {
+    if (spkIdx + 1 >= spkOrder.length) return;
+    setSpkIdx((c) => Math.min(spkOrder.length - 1, c + 1));
     setSpkRevealed(false);
     lastSpokenKeyRef.current = null;
   };
@@ -601,6 +653,7 @@ function LessonDetailPage() {
                 }
 
                 if (spkFinished) {
+                  const wrongCount = spkAnswers.filter((x) => x === false).length;
                   return (
                     <div className="rounded-2xl border bg-[#F7F3F0] p-8 sm:p-10 text-center shadow-sm">
                       <div className="mb-3 sm:mb-4 text-4xl sm:text-5xl">🎉</div>
@@ -612,6 +665,15 @@ function LessonDetailPage() {
                         맞혔어요
                       </p>
                       <div className="flex flex-col gap-2 sm:flex-row sm:justify-center">
+                        <Button
+                          onClick={retryWrongSpeakingPractice}
+                          size="lg"
+                          variant="secondary"
+                          disabled={wrongCount === 0}
+                          className="w-full sm:w-auto"
+                        >
+                          틀린 것만 다시하기
+                        </Button>
                         <Button
                           onClick={resetSpeakingPractice}
                           size="lg"
@@ -628,6 +690,11 @@ function LessonDetailPage() {
                           모드 선택
                         </Button>
                       </div>
+                      {wrongCount === 0 && (
+                        <p className="mt-3 text-xs text-muted-foreground">
+                          모두 맞혀서 다시할 문제가 없어요.
+                        </p>
+                      )}
                     </div>
                   );
                 }
@@ -737,6 +804,25 @@ function LessonDetailPage() {
                               틀렸어요
                             </Button>
                           </div>
+
+                          <div className="grid grid-cols-2 gap-2">
+                            <Button
+                              variant="secondary"
+                              onClick={goSpeakingPrev}
+                              disabled={spkIdx === 0}
+                              className="h-11 rounded-2xl"
+                            >
+                              이전
+                            </Button>
+                            <Button
+                              variant="secondary"
+                              onClick={goSpeakingNext}
+                              disabled={spkIdx + 1 >= total}
+                              className="h-11 rounded-2xl"
+                            >
+                              다음
+                            </Button>
+                          </div>
                           <div className="flex justify-center">
                             <button
                               type="button"
@@ -756,6 +842,19 @@ function LessonDetailPage() {
 
                     {!spkRevealed && (
                       <div className="sticky bottom-0 -mx-4 mt-5 border-t bg-[#F7F3F0] px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
+                        <div className="mb-2 grid grid-cols-2 gap-2">
+                          <Button variant="secondary" onClick={goSpeakingPrev} disabled={spkIdx === 0} className="h-10 rounded-2xl">
+                            이전
+                          </Button>
+                          <Button
+                            variant="secondary"
+                            onClick={goSpeakingNext}
+                            disabled={spkIdx + 1 >= total}
+                            className="h-10 rounded-2xl"
+                          >
+                            다음
+                          </Button>
+                        </div>
                         <Button
                           onClick={handleReveal}
                           className="h-16 w-full rounded-3xl bg-[#7A5C45] text-base font-bold text-white shadow-md hover:bg-[#6A4D3A] active:scale-[0.99]"
