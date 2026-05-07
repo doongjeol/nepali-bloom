@@ -242,34 +242,34 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   // Finished (failedList.length 기반으로 UI 결정)
   if (isFinished) {
     return (
-      <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background p-6 text-center">
-        <h2 className="mb-4 text-3xl font-bold text-foreground">학습 종료</h2>
+      <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col items-center justify-center overflow-hidden bg-background text-center" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <h2 className="mb-4 text-4xl font-bold text-foreground sm:text-5xl">학습 종료</h2>
 
         {failedList.length > 0 ? (
-          <>
-            <p className="mb-6 text-lg text-muted-foreground">미암기 {failedList.length}개가 남았습니다.</p>
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 px-6">
+            <p className="text-2xl text-muted-foreground">미암기 {failedList.length}개가 남았습니다.</p>
             <button
               type="button"
               onClick={handleRestart}
-              className="rounded-2xl bg-primary px-8 py-5 text-xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
+              className="w-full max-w-md rounded-3xl bg-primary px-8 py-8 text-2xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
             >
               미암기 복습하기
             </button>
-            <button onClick={onClose} className="mt-4 text-sm text-muted-foreground underline underline-offset-4">
+            <button onClick={onClose} className="w-full max-w-md rounded-3xl border border-border px-8 py-6 text-xl font-semibold text-muted-foreground transition-transform active:scale-95">
               종료하기
             </button>
-          </>
+          </div>
         ) : (
-          <>
-            <p className="mb-6 text-lg text-muted-foreground">모든 단어를 마스터했습니다!</p>
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 px-6">
+            <p className="text-2xl text-muted-foreground">모든 단어를 마스터했습니다! 🎉</p>
             <button
               type="button"
               onClick={onClose}
-              className="rounded-2xl bg-primary px-8 py-5 text-xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
+              className="w-full max-w-md rounded-3xl bg-primary px-8 py-8 text-2xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
             >
               완료
             </button>
-          </>
+          </div>
         )}
       </div>
     );
@@ -282,56 +282,61 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     studyMode === "dialogue" && currentWord?.korean ? currentWord.korean.replace(/^\[.*?\]\s*/, "") : null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex flex-col bg-background">
-      <div className="relative z-50 flex items-center justify-between border-b bg-background/80 p-4 backdrop-blur-sm sm:p-6">
-        <div className="flex items-center gap-2 font-bold text-primary">
-          <Car className="h-6 w-6" />
-          <span className="text-lg sm:text-xl">드라이브 모드</span>
-        </div>
-        <button
-          type="button"
-          onClick={onClose}
-          className="rounded-full bg-secondary p-2 text-secondary-foreground transition-colors hover:bg-accent"
-        >
-          <X className="h-6 w-6" />
-        </button>
-      </div>
-
-      <div className="relative flex flex-1 flex-col items-center justify-center p-6 text-center sm:p-10">
-        <div className="absolute inset-0 z-20 flex w-full">
-          <button
-            type="button"
-            className="flex-1 outline-none transition-colors hover:bg-success/5 active:bg-success/10"
-            onClick={() => handleVote("known")}
-            aria-label={isLastItem ? "외웠어요 - 종료" : "외웠어요 - 다음"}
-          />
-          <button
-            type="button"
-            className="flex-1 outline-none transition-colors hover:bg-destructive/5 active:bg-destructive/10"
-            onClick={() => handleVote("unknown")}
-            aria-label={isLastItem ? "몰라요 - 종료" : "몰라요 - 다음"}
-          />
-        </div>
-
-        {/* 좌/우 터치 영역 안내 텍스트 (클릭 로직 영향 없도록 pointer-events-none) */}
-        <div className="pointer-events-none absolute inset-0 z-20 flex w-full">
-          <div className="flex flex-1 items-center justify-center">
-            <span className="text-3xl font-bold text-slate-600 opacity-40 sm:text-4xl">외웠어요</span>
+    <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background landscape:flex-row" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)', paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
+      {/* ── Content Area (top in portrait, left in landscape) ── */}
+      <div className="relative flex flex-[4] flex-col items-center justify-center overflow-hidden landscape:flex-[5]">
+        {/* Header overlay */}
+        <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-3">
+          <div className="flex items-center gap-2 font-bold text-primary">
+            <Car className="h-5 w-5" />
+            <span className="text-base">드라이브</span>
           </div>
-          <div className="flex flex-1 items-center justify-center">
-            <span className="text-3xl font-bold text-slate-600 opacity-40 sm:text-4xl">몰라요</span>
+          <div className="flex items-center gap-3">
+            {/* Play/Pause small toggle */}
+            <button
+              type="button"
+              onClick={() => { void unlockAudio(); isPlaying ? pause() : play(); }}
+              className="rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm"
+            >
+              {isPlaying ? <Pause className="h-5 w-5 fill-current" /> : <Play className="h-5 w-5 translate-x-0.5 fill-current" />}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm"
+            >
+              <X className="h-5 w-5" />
+            </button>
           </div>
         </div>
 
-        <div className="relative z-30 pointer-events-none flex max-w-full flex-col items-center">
+        {/* Progress bar at top */}
+        <div className="absolute top-14 left-3 right-3 z-40">
+          <div className="flex items-center justify-between text-xs font-semibold text-muted-foreground mb-1">
+            <span>{currentWordIndex + 1} / {displayData.length}</span>
+            <span>{Math.round(progress * 100)}%</span>
+          </div>
+          <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
+            <div className="h-full bg-primary transition-all duration-300" style={{ width: `${progress * 100}%` }} />
+          </div>
+        </div>
+
+        {autoplayBlocked ? (
+          <div className="absolute top-24 left-3 right-3 z-40 rounded-2xl border border-destructive/20 bg-destructive/5 p-2 text-center text-sm font-semibold text-destructive">
+            재생이 차단되었습니다. ▶ 버튼을 눌러주세요.
+          </div>
+        ) : null}
+
+        {/* Word content */}
+        <div className="relative z-30 flex flex-col items-center px-4 text-center">
           {currentWord ? (
             <div className="animate-in fade-in duration-200">
               {studyMode === "dialogue" ? (
-                <div className="w-full max-w-4xl">
-                  <div className="mb-4 flex items-center justify-center gap-3">
+                <div className="w-full">
+                  <div className="mb-3 flex items-center justify-center">
                     <div
                       className={cn(
-                        "rounded-full border px-4 py-2 text-xl font-black tracking-wide sm:text-2xl",
+                        "rounded-full border px-3 py-1.5 text-lg font-black tracking-wide",
                         dialogueSpeaker === "A"
                           ? "border-[#C9B8A6] bg-[#FFFDF9] text-[#6B5D4F]"
                           : "border-[#C9B8A6] bg-[#FFFDF9] text-[#4B5563]",
@@ -341,103 +346,58 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
                     </div>
                   </div>
                   <p
-                    className="mb-6 break-keep text-5xl font-black text-foreground sm:text-7xl"
+                    className="mb-4 break-keep text-4xl font-black leading-tight text-foreground sm:text-5xl landscape:text-3xl"
                     style={{ fontFamily: "var(--font-nepali)" }}
                   >
                     {currentWord.nepali}
                   </p>
                   {dialogueKorean ? (
-                    <p className="mb-3 break-keep text-3xl font-black text-foreground/90 sm:text-4xl">{dialogueKorean}</p>
+                    <p className="break-keep text-2xl font-black text-foreground/90 sm:text-3xl landscape:text-xl">{dialogueKorean}</p>
                   ) : null}
                 </div>
               ) : (
                 <>
                   <p
-                    className="mb-6 break-keep text-5xl font-black text-foreground sm:text-7xl"
+                    className="mb-4 break-keep text-5xl font-black leading-tight text-foreground sm:text-6xl landscape:text-4xl"
                     style={{ fontFamily: "var(--font-nepali)" }}
                   >
                     {currentWord.nepali}
                   </p>
-                  <p className="mb-3 break-keep text-3xl font-black text-foreground/90 sm:text-4xl">{currentWord.korean}</p>
+                  <p className="break-keep text-3xl font-black text-foreground/90 sm:text-4xl landscape:text-2xl">{currentWord.korean}</p>
                 </>
               )}
-
             </div>
           ) : (
             <div className="text-2xl font-bold text-muted-foreground">재생 준비 중...</div>
           )}
 
-          <div className="mt-6 flex min-h-12 items-center justify-center break-keep text-lg font-medium text-primary sm:text-xl">
+          <div className="mt-4 flex min-h-8 items-center justify-center break-keep text-base font-medium text-primary">
             {currentTask?.description ?? ""}
           </div>
         </div>
       </div>
 
-      <div className="relative z-50 border-t bg-card p-6 pb-10 sm:p-10 sm:pb-12">
-        {autoplayBlocked ? (
-          <div className="mb-4 rounded-2xl border border-destructive/20 bg-destructive/5 p-3 text-center text-sm font-semibold text-destructive">
-            재생이 차단되었습니다. 아래 재생 버튼을 한 번 눌러주세요.
-          </div>
-        ) : null}
-        <div className="mb-3 flex items-center justify-between text-sm font-semibold text-muted-foreground">
-          <span>
-            {currentWordIndex + 1} / {displayData.length}
-          </span>
-          <span>{Math.round(progress * 100)}%</span>
-        </div>
-        <div className="mb-8 h-3 w-full overflow-hidden rounded-full bg-secondary">
-          <div className="h-full bg-primary transition-all duration-300" style={{ width: `${progress * 100}%` }} />
-        </div>
+      {/* ── Touch Sections (bottom in portrait, right in landscape) ── */}
+      <div className="flex flex-[6] landscape:flex-[5] landscape:flex-col">
+        {/* Known (left in portrait / top in landscape) */}
+        <button
+          type="button"
+          className="flex flex-1 items-center justify-center bg-green-500/[0.07] outline-none transition-colors active:bg-green-500/20"
+          onClick={() => handleVote("known")}
+          aria-label={isLastItem ? "외웠어요 - 종료" : "외웠어요 - 다음"}
+        >
+          <span className="text-3xl font-bold text-green-700/50 sm:text-4xl">✓ 외웠어요</span>
+        </button>
 
-        <div className="flex items-center justify-center gap-6 sm:gap-10">
-          <button
-            type="button"
-            onClick={() => {
-              void unlockAudio();
-              prevWord();
-            }}
-            className="rounded-full bg-secondary p-4 text-secondary-foreground transition-colors hover:bg-accent active:scale-95"
-          >
-            <ChevronLeft className="h-8 w-8" />
-          </button>
-
-          {isPlaying ? (
-            <button
-              type="button"
-              onClick={pause}
-              className="rounded-full bg-primary p-6 text-primary-foreground shadow-lg transition-all hover:opacity-90 active:scale-95"
-            >
-              <Pause className="h-10 w-10 fill-current" />
-            </button>
-          ) : (
-            <button
-              type="button"
-              onClick={() => {
-                void unlockAudio();
-                play();
-              }}
-              className="rounded-full bg-primary p-6 text-primary-foreground shadow-lg transition-all hover:opacity-90 active:scale-95"
-            >
-              <Play className="h-10 w-10 translate-x-0.5 fill-current" />
-            </button>
-          )}
-
-          <button
-            type="button"
-            onClick={() => {
-              void unlockAudio();
-              if (isLastItem) {
-                pause();
-                setIsFinished(true);
-                return;
-              }
-              nextWord();
-            }}
-            className="rounded-full bg-secondary p-4 text-secondary-foreground transition-colors hover:bg-accent active:scale-95"
-          >
-            <ChevronRight className="h-8 w-8" />
-          </button>
-        </div>
+        {/* Unknown (right in portrait / bottom in landscape) */}
+        <button
+          type="button"
+          className="flex flex-1 items-center justify-center bg-red-500/[0.07] outline-none transition-colors active:bg-red-500/20"
+          onClick={() => handleVote("unknown")}
+          aria-label={isLastItem ? "몰라요 - 종료" : "몰라요 - 다음"}
+        >
+          <span className="text-3xl font-bold text-red-700/50 sm:text-4xl">✗ 몰라요</span>
+        </button>
       </div>
     </div>
   );
