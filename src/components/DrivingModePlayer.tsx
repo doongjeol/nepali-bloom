@@ -122,8 +122,8 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   // Setup (문법 UI 제거, 단어/예문 중심)
   if (studyMode === "select") {
     return (
-      <div className="fixed inset-0 z-[100] flex flex-col bg-background p-4 sm:p-6">
-        <div className="mb-6 flex items-center justify-between">
+      <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background p-4 landscape:p-3" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <div className="mb-4 flex shrink-0 items-center justify-between landscape:mb-2">
           <div className="flex items-center gap-2 font-bold text-primary">
             <Car className="h-6 w-6" />
             <span className="text-xl sm:text-2xl">드라이브 모드</span>
@@ -137,7 +137,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           </button>
         </div>
 
-        <div className="flex flex-1 flex-col gap-4">
+        <div className="flex min-h-0 flex-1 flex-col gap-4 landscape:flex-row landscape:items-center landscape:gap-4">
           <button
             type="button"
             onClick={() => {
@@ -147,11 +147,11 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
               setStudyMode("word");
               setDisplayData(vocabOnly);
             }}
-            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-10 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99]"
+            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99] landscape:py-4"
           >
-            <div className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">단어만 듣기</div>
-            <div className="mt-3 text-lg font-semibold text-muted-foreground sm:text-xl">단어 → 뜻</div>
-            <div className="mt-2 text-sm text-muted-foreground">총 {vocabOnly.length}개</div>
+            <div className="text-2xl font-black tracking-tight text-foreground sm:text-3xl landscape:text-xl">단어만 듣기</div>
+            <div className="mt-2 text-base font-semibold text-muted-foreground sm:text-lg landscape:mt-1 landscape:text-sm">단어 → 뜻</div>
+            <div className="mt-1 text-sm text-muted-foreground">총 {vocabOnly.length}개</div>
           </button>
 
           <button
@@ -163,14 +163,14 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
               setStudyMode("dialogue");
               setDisplayData(dialogueOnly);
             }}
-            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-10 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99]"
+            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99] landscape:py-4"
           >
-            <div className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">대화문만 듣기</div>
-            <div className="mt-3 text-lg font-semibold text-muted-foreground sm:text-xl">네팔어 → 한국어 해석</div>
-            <div className="mt-2 text-sm text-muted-foreground">총 {dialogueOnly.length}문장</div>
+            <div className="text-2xl font-black tracking-tight text-foreground sm:text-3xl landscape:text-xl">대화문만 듣기</div>
+            <div className="mt-2 text-base font-semibold text-muted-foreground sm:text-lg landscape:mt-1 landscape:text-sm">네팔어 → 한국어 해석</div>
+            <div className="mt-1 text-sm text-muted-foreground">총 {dialogueOnly.length}문장</div>
           </button>
 
-          <div className="rounded-2xl border bg-[#FFFDF9] p-4 text-sm text-muted-foreground ring-1 ring-border/60">
+          <div className="shrink-0 rounded-2xl border bg-[#FFFDF9] p-3 text-sm text-muted-foreground ring-1 ring-border/60 landscape:hidden">
             운전 중 사용을 고려해 텍스트/버튼이 크게 표시됩니다.
           </div>
         </div>
@@ -180,7 +180,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
   if (displayData.length === 0 && !isFinished) {
     return (
-      <div className="fixed inset-0 z-[100] flex flex-col bg-background p-4 sm:p-6">
+      <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background p-4 landscape:p-3" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold text-primary">
             <Car className="h-6 w-6" />
@@ -243,29 +243,29 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   if (isFinished) {
     return (
       <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col items-center justify-center overflow-hidden bg-background text-center" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
-        <h2 className="mb-4 text-4xl font-bold text-foreground sm:text-5xl">학습 종료</h2>
+        <h2 className="mb-3 text-3xl font-bold text-foreground landscape:text-2xl">학습 종료</h2>
 
         {failedList.length > 0 ? (
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 px-6">
-            <p className="text-2xl text-muted-foreground">미암기 {failedList.length}개가 남았습니다.</p>
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
+            <p className="text-xl text-muted-foreground landscape:text-lg">미암기 {failedList.length}개가 남았습니다.</p>
             <button
               type="button"
               onClick={handleRestart}
-              className="w-full max-w-md rounded-3xl bg-primary px-8 py-8 text-2xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
+              className="w-full max-w-md rounded-3xl bg-primary px-8 py-6 text-xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 landscape:py-4 landscape:text-lg"
             >
               미암기 복습하기
             </button>
-            <button onClick={onClose} className="w-full max-w-md rounded-3xl border border-border px-8 py-6 text-xl font-semibold text-muted-foreground transition-transform active:scale-95">
+            <button onClick={onClose} className="w-full max-w-md rounded-3xl border border-border px-8 py-4 text-lg font-semibold text-muted-foreground transition-transform active:scale-95 landscape:py-3 landscape:text-base">
               종료하기
             </button>
           </div>
         ) : (
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-6 px-6">
-            <p className="text-2xl text-muted-foreground">모든 단어를 마스터했습니다! 🎉</p>
+          <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
+            <p className="text-xl text-muted-foreground landscape:text-lg">모든 단어를 마스터했습니다! 🎉</p>
             <button
               type="button"
               onClick={onClose}
-              className="w-full max-w-md rounded-3xl bg-primary px-8 py-8 text-2xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
+              className="w-full max-w-md rounded-3xl bg-primary px-8 py-6 text-xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 landscape:py-4 landscape:text-lg"
             >
               완료
             </button>
@@ -311,7 +311,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
         </div>
 
         {/* Progress bar at top */}
-        <div className="absolute top-14 left-3 right-3 z-40">
+        <div className="absolute top-12 left-3 right-3 z-40 landscape:top-10">
           <div className="flex items-center justify-between text-xs font-semibold text-muted-foreground mb-1">
             <span>{currentWordIndex + 1} / {displayData.length}</span>
             <span>{Math.round(progress * 100)}%</span>
@@ -371,7 +371,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             <div className="text-2xl font-bold text-muted-foreground">재생 준비 중...</div>
           )}
 
-          <div className="mt-4 flex min-h-8 items-center justify-center break-keep text-base font-medium text-primary">
+          <div className="mt-2 flex min-h-6 items-center justify-center break-keep text-sm font-medium text-primary landscape:mt-1 landscape:text-xs">
             {currentTask?.description ?? ""}
           </div>
         </div>
