@@ -930,7 +930,13 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 	          if (cancelled) return;
 	          if (runIdRef.current !== runId) return;
 	          speechState.didStart = true;
-	          console.log(`[DM] speech start idx=${index} attempt=${attempt}`);
+	          try {
+	            console.log(
+	              `[DM] speech start idx=${index} attempt=${attempt} speaking=${synth.speaking} pending=${(synth as any).pending ?? "n/a"}`,
+	            );
+	          } catch {
+	            console.log(`[DM] speech start idx=${index} attempt=${attempt}`);
+	          }
 	        };
 	        utterance.onend = () => {
 	          if (cancelled) return;
@@ -938,7 +944,13 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 	          if (speechState.didFinish) return;
 	          speechState.didFinish = true;
 	          clearSpeechWatchdogs();
-	          console.log(`[DM] speech end idx=${index} attempt=${attempt}`);
+	          try {
+	            console.log(
+	              `[DM] speech end idx=${index} attempt=${attempt} speaking=${synth.speaking} pending=${(synth as any).pending ?? "n/a"}`,
+	            );
+	          } catch {
+	            console.log(`[DM] speech end idx=${index} attempt=${attempt}`);
+	          }
 	          advanceIndex(index, "speech-end");
 	        };
 	        utterance.onerror = (e) => {
@@ -962,9 +974,10 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 	          } catch {
 	            // ignore
 	          }
-	          // Avoid cancel-storm: only cancel if something is currently speaking/pending.
+	          // Always cancel before speak to avoid queued/pending utterances causing silent/no-op behavior
+	          // on some browsers/devices.
 	          try {
-	            if (synth.speaking || (synth as any).pending) synth.cancel();
+	            synth.cancel();
 	          } catch {
 	            // ignore
 	          }
