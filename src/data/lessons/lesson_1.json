@@ -797,12 +797,6 @@
           "korean": "책을 펴세요."
         },
         {
-          "speaker": "B",
-          "nepali": "मैले किताब खोलेको।",
-          "romanized": "maile kitaab kholeko.",
-          "korean": "제가 책을 폈습니다."
-        },
-        {
           "speaker": "A",
           "nepali": "तपाईंले के गरेको ?",
           "romanized": "tapaaïle ke gareko ?",
@@ -810,9 +804,9 @@
         },
         {
           "speaker": "B",
-          "nepali": "उहाँले किताब खोलेको।",
-          "romanized": "wahããle kitaab kholeko.",
-          "korean": "그분이 책을 폈습니다."
+          "nepali": "मैले किताब खोलेको।",
+          "romanized": "maile kitaab kholeko.",
+          "korean": "제가 책을 폈습니다."
         }
       ]
     },
@@ -913,6 +907,12 @@
           "nepali": "कलम दिनोस्।",
           "romanized": "kalam dinos.",
           "korean": "펜을 주세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले के गरेको ?",
+          "romanized": "tapaaïle ke gareko ?",
+          "korean": "당신은 무엇을 했습니까?"
         },
         {
           "speaker": "B",

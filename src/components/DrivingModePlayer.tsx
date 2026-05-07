@@ -282,38 +282,66 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     studyMode === "dialogue" && currentWord?.korean ? currentWord.korean.replace(/^\[.*?\]\s*/, "") : null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background landscape:flex-row" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)', paddingLeft: 'env(safe-area-inset-left)', paddingRight: 'env(safe-area-inset-right)' }}>
-      {/* ── Content Area (top in portrait, left in landscape) ── */}
-      <div className="relative flex flex-[4] flex-col items-center justify-center overflow-hidden landscape:flex-[5]">
-        {/* Header overlay */}
-        <div className="absolute top-0 left-0 right-0 z-50 flex items-center justify-between p-3">
+    <div
+      className="fixed inset-0 z-[100] h-[100dvh] overflow-hidden bg-background"
+      style={{
+        paddingTop: "env(safe-area-inset-top)",
+        paddingBottom: "env(safe-area-inset-bottom)",
+        paddingLeft: "env(safe-area-inset-left)",
+        paddingRight: "env(safe-area-inset-right)",
+      }}
+    >
+      {/* Full-screen overlay hit areas (must not cover header/control bar) */}
+      <div className="absolute inset-0 z-30 grid grid-cols-2">
+        <button
+          type="button"
+          onClick={() => handleVote("known")}
+          aria-label={isLastItem ? "외웠어요 - 종료" : "외웠어요 - 다음"}
+          className={cn(
+            "relative h-full w-full outline-none",
+            "bg-green-500/[0.03] active:bg-green-500/[0.06]",
+          )}
+        >
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6 text-center">
+            <span className="text-3xl font-black text-green-800/25 sm:text-4xl landscape:text-2xl">외웠어요</span>
+          </div>
+        </button>
+        <button
+          type="button"
+          onClick={() => handleVote("unknown")}
+          aria-label={isLastItem ? "몰라요 - 종료" : "몰라요 - 다음"}
+          className={cn(
+            "relative h-full w-full outline-none",
+            "bg-red-500/[0.03] active:bg-red-500/[0.06]",
+          )}
+        >
+          <div className="pointer-events-none absolute inset-0 flex items-center justify-center px-6 text-center">
+            <span className="text-3xl font-black text-red-800/25 sm:text-4xl landscape:text-2xl">몰라요</span>
+          </div>
+        </button>
+      </div>
+
+      {/* Header + progress (always visible) */}
+      <div className="absolute top-0 left-0 right-0 z-50">
+        <div className="flex items-center justify-between p-3">
           <div className="flex items-center gap-2 font-bold text-primary">
             <Car className="h-5 w-5" />
             <span className="text-base">드라이브</span>
           </div>
-          <div className="flex items-center gap-3">
-            {/* Play/Pause small toggle */}
-            <button
-              type="button"
-              onClick={() => { void unlockAudio(); isPlaying ? pause() : play(); }}
-              className="rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm"
-            >
-              {isPlaying ? <Pause className="h-5 w-5 fill-current" /> : <Play className="h-5 w-5 translate-x-0.5 fill-current" />}
-            </button>
-            <button
-              type="button"
-              onClick={onClose}
-              className="rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            className="pointer-events-auto rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm"
+          >
+            <X className="h-5 w-5" />
+          </button>
         </div>
 
-        {/* Progress bar at top */}
-        <div className="absolute top-12 left-3 right-3 z-40 landscape:top-10">
-          <div className="flex items-center justify-between text-xs font-semibold text-muted-foreground mb-1">
-            <span>{currentWordIndex + 1} / {displayData.length}</span>
+        <div className="px-3 pb-2">
+          <div className="mb-1 flex items-center justify-between text-xs font-semibold text-muted-foreground">
+            <span>
+              {currentWordIndex + 1} / {displayData.length}
+            </span>
             <span>{Math.round(progress * 100)}%</span>
           </div>
           <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">
@@ -322,82 +350,104 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
         </div>
 
         {autoplayBlocked ? (
-          <div className="absolute top-24 left-3 right-3 z-40 rounded-2xl border border-destructive/20 bg-destructive/5 p-2 text-center text-sm font-semibold text-destructive">
-            재생이 차단되었습니다. ▶ 버튼을 눌러주세요.
+          <div className="mx-3 mb-2 rounded-2xl border border-destructive/20 bg-destructive/5 p-2 text-center text-sm font-semibold text-destructive">
+            재생이 차단되었습니다. 아래 ▶ 버튼을 눌러주세요.
           </div>
         ) : null}
+      </div>
 
-        {/* Word content */}
-        <div className="relative z-30 flex flex-col items-center px-4 text-center">
-          {currentWord ? (
-            <div className="animate-in fade-in duration-200">
-              {studyMode === "dialogue" ? (
-                <div className="w-full">
-                  <div className="mb-3 flex items-center justify-center">
-                    <div
-                      className={cn(
-                        "rounded-full border px-3 py-1.5 text-lg font-black tracking-wide",
-                        dialogueSpeaker === "A"
-                          ? "border-[#C9B8A6] bg-[#FFFDF9] text-[#6B5D4F]"
-                          : "border-[#C9B8A6] bg-[#FFFDF9] text-[#4B5563]",
-                      )}
-                    >
-                      {dialogueSpeaker ? `Speaker ${dialogueSpeaker}` : "Dialogue"}
-                    </div>
+      {/* Center content (keeps room for bottom bar) */}
+      <div className="pointer-events-none relative z-20 flex h-full flex-col items-center justify-center px-4 text-center pt-24 pb-28 sm:pt-28 sm:pb-32 landscape:pt-20 landscape:pb-24">
+        {currentWord ? (
+          <div className="animate-in fade-in duration-200">
+            {studyMode === "dialogue" ? (
+              <div className="w-full max-w-3xl">
+                <div className="mb-3 flex items-center justify-center">
+                  <div
+                    className={cn(
+                      "rounded-full border px-3 py-1.5 text-lg font-black tracking-wide landscape:text-sm",
+                      dialogueSpeaker === "A"
+                        ? "border-[#C9B8A6] bg-[#FFFDF9] text-[#6B5D4F]"
+                        : "border-[#C9B8A6] bg-[#FFFDF9] text-[#4B5563]",
+                    )}
+                  >
+                    {dialogueSpeaker ? `Speaker ${dialogueSpeaker}` : "Dialogue"}
                   </div>
-                  <p
-                    className="mb-4 break-keep text-4xl font-black leading-tight text-foreground sm:text-5xl landscape:text-3xl"
-                    style={{ fontFamily: "var(--font-nepali)" }}
-                  >
-                    {currentWord.nepali}
-                  </p>
-                  {dialogueKorean ? (
-                    <p className="break-keep text-2xl font-black text-foreground/90 sm:text-3xl landscape:text-xl">{dialogueKorean}</p>
-                  ) : null}
                 </div>
-              ) : (
-                <>
-                  <p
-                    className="mb-4 break-keep text-5xl font-black leading-tight text-foreground sm:text-6xl landscape:text-4xl"
-                    style={{ fontFamily: "var(--font-nepali)" }}
-                  >
-                    {currentWord.nepali}
+                <p
+                  className="mb-4 break-keep text-4xl font-black leading-tight text-foreground sm:text-5xl landscape:text-3xl"
+                  style={{ fontFamily: "var(--font-nepali)" }}
+                >
+                  {currentWord.nepali}
+                </p>
+                {dialogueKorean ? (
+                  <p className="break-keep text-2xl font-black text-foreground/90 sm:text-3xl landscape:text-xl">
+                    {dialogueKorean}
                   </p>
-                  <p className="break-keep text-3xl font-black text-foreground/90 sm:text-4xl landscape:text-2xl">{currentWord.korean}</p>
-                </>
-              )}
-            </div>
-          ) : (
-            <div className="text-2xl font-bold text-muted-foreground">재생 준비 중...</div>
-          )}
-
-          <div className="mt-2 flex min-h-6 items-center justify-center break-keep text-sm font-medium text-primary landscape:mt-1 landscape:text-xs">
-            {currentTask?.description ?? ""}
+                ) : null}
+              </div>
+            ) : (
+              <div className="w-full max-w-3xl">
+                <p
+                  className="mb-4 break-keep text-5xl font-black leading-tight text-foreground sm:text-6xl landscape:text-4xl"
+                  style={{ fontFamily: "var(--font-nepali)" }}
+                >
+                  {currentWord.nepali}
+                </p>
+                <p className="break-keep text-3xl font-black text-foreground/90 sm:text-4xl landscape:text-2xl">
+                  {currentWord.korean}
+                </p>
+              </div>
+            )}
           </div>
+        ) : (
+          <div className="text-2xl font-bold text-muted-foreground">재생 준비 중...</div>
+        )}
+
+        <div className="mt-4 flex min-h-8 items-center justify-center break-keep text-base font-medium text-primary landscape:text-sm">
+          {currentTask?.description ?? ""}
         </div>
       </div>
 
-      {/* ── Touch Sections (bottom in portrait, right in landscape) ── */}
-      <div className="flex flex-[6] landscape:flex-[5] landscape:flex-col">
-        {/* Known (left in portrait / top in landscape) */}
-        <button
-          type="button"
-          className="flex flex-1 items-center justify-center bg-green-500/[0.07] outline-none transition-colors active:bg-green-500/20"
-          onClick={() => handleVote("known")}
-          aria-label={isLastItem ? "외웠어요 - 종료" : "외웠어요 - 다음"}
-        >
-          <span className="text-3xl font-bold text-green-700/50 sm:text-4xl">✓ 외웠어요</span>
-        </button>
+      {/* Bottom control bar (always visible, above overlay) */}
+      <div className="absolute bottom-0 left-0 right-0 z-50 pointer-events-none px-3 pb-3">
+        <div className="pointer-events-auto flex items-center justify-center gap-2 rounded-2xl border bg-background/90 p-2 shadow-lg backdrop-blur">
+          <button
+            type="button"
+            onClick={() => {
+              void unlockAudio();
+              prevWord();
+            }}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground transition-colors hover:bg-accent active:scale-95"
+            aria-label="이전"
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </button>
 
-        {/* Unknown (right in portrait / bottom in landscape) */}
-        <button
-          type="button"
-          className="flex flex-1 items-center justify-center bg-red-500/[0.07] outline-none transition-colors active:bg-red-500/20"
-          onClick={() => handleVote("unknown")}
-          aria-label={isLastItem ? "몰라요 - 종료" : "몰라요 - 다음"}
-        >
-          <span className="text-3xl font-bold text-red-700/50 sm:text-4xl">✗ 몰라요</span>
-        </button>
+          <button
+            type="button"
+            onClick={() => {
+              void unlockAudio();
+              isPlaying ? pause() : play();
+            }}
+            className="inline-flex h-12 w-14 items-center justify-center rounded-xl bg-primary text-primary-foreground shadow-sm transition-transform active:scale-95"
+            aria-label={isPlaying ? "일시정지" : "재생"}
+          >
+            {isPlaying ? <Pause className="h-6 w-6 fill-current" /> : <Play className="h-6 w-6 translate-x-0.5 fill-current" />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              void unlockAudio();
+              nextWord();
+            }}
+            className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-secondary-foreground transition-colors hover:bg-accent active:scale-95"
+            aria-label="다음"
+          >
+            <ChevronRight className="h-6 w-6" />
+          </button>
+        </div>
       </div>
     </div>
   );
