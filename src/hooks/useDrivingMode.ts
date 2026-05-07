@@ -167,6 +167,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const didUnlockHtmlAudioRef = useRef(false);
   const didUnlockSpeechRef = useRef(false);
   const unlockAudioElRef = useRef<HTMLAudioElement | null>(null);
+  const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
   useEffect(() => {
     currentTaskIndexRef.current = currentTaskIndex;
   }, [currentTaskIndex]);
@@ -175,6 +176,52 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   useEffect(() => {
     ttsSpeedRef.current = options?.ttsSpeed ?? 0.9;
   }, [options?.ttsSpeed]);
+
+  useEffect(() => {
+    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
+    const synth = window.speechSynthesis;
+    const updateVoices = () => {
+      try {
+        voicesRef.current = synth.getVoices?.() ?? [];
+      } catch {
+        voicesRef.current = [];
+      }
+    };
+    updateVoices();
+    try {
+      synth.addEventListener?.("voiceschanged", updateVoices);
+    } catch {
+      // ignore
+    }
+    return () => {
+      try {
+        synth.removeEventListener?.("voiceschanged", updateVoices);
+      } catch {
+        // ignore
+      }
+    };
+  }, []);
+
+  const pickTtsVoice = useCallback((preferredLang: string) => {
+    const voices = voicesRef.current ?? [];
+    if (!voices.length) return null;
+    const exact = voices.find((v) => v.lang === preferredLang);
+    if (exact) return exact;
+    const prefix = preferredLang.split("-")[0]!;
+    const starts = voices.find((v) => v.lang?.toLowerCase?.().startsWith(prefix.toLowerCase()));
+    return starts ?? null;
+  }, []);
+
+  const pickNepaliCapableVoice = useCallback(() => {
+    // Nepali voices are often missing on mobile browsers; fall back to Devanagari-friendly voices (e.g. hi-IN).
+    return (
+      pickTtsVoice("ne-NP") ??
+      pickTtsVoice("ne") ??
+      pickTtsVoice("hi-IN") ??
+      pickTtsVoice("hi") ??
+      null
+    );
+  }, [pickTtsVoice]);
 
   const onSessionCompleteRef = useRef(options?.onSessionComplete);
   useEffect(() => {
@@ -711,7 +758,17 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
       const utterance = new SpeechSynthesisUtterance(task.payload as string);
       utteranceRef.current = utterance;
-      utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
+      const chosenVoice = task.isNepaliTTS ? pickNepaliCapableVoice() : pickTtsVoice("ko-KR");
+      if (chosenVoice) {
+        try {
+          utterance.voice = chosenVoice;
+          utterance.lang = chosenVoice.lang || (task.isNepaliTTS ? "ne-NP" : "ko-KR");
+        } catch {
+          utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
+        }
+      } else {
+        utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
+      }
       utterance.rate = ttsSpeedRef.current;
       utterance.volume = 1.0;
       // iOS Safari에서 spoken audio가 media volume을 과하게 ducking시키는 케이스가 있어 pitch를 약간 올려
