@@ -122,8 +122,8 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   // Setup (문법 UI 제거, 단어/예문 중심)
   if (studyMode === "select") {
     return (
-      <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background p-4 sm:p-6">
-        <div className="mb-6 flex items-center justify-between">
+      <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background p-4 landscape:p-3" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <div className="mb-4 flex shrink-0 items-center justify-between landscape:mb-2">
           <div className="flex items-center gap-2 font-bold text-primary">
             <Car className="h-6 w-6" />
             <span className="text-xl sm:text-2xl">드라이브 모드</span>
