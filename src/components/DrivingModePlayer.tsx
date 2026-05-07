@@ -311,7 +311,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
         </div>
 
         {/* Progress bar at top */}
-        <div className="absolute top-14 left-3 right-3 z-40">
+        <div className="absolute top-12 left-3 right-3 z-40 landscape:top-10">
           <div className="flex items-center justify-between text-xs font-semibold text-muted-foreground mb-1">
             <span>{currentWordIndex + 1} / {displayData.length}</span>
             <span>{Math.round(progress * 100)}%</span>
