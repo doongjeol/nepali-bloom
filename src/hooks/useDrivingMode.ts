@@ -193,6 +193,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     audio.onended = null;
     audio.onerror = null;
     audio.oncanplaythrough = null;
+    // canplaythrough가 안 뜨는 브라우저(모바일) 대응
+    (audio as any).oncanplay = null;
+    (audio as any).onloadeddata = null;
     try {
       audio.pause();
       audio.currentTime = 0;
@@ -567,7 +570,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     console.log(`[DM] audio load try idx=${index} src=${src}`);
 
     let didStartPlay = false;
-    audio.oncanplaythrough = () => {
+    const handleCanPlay = () => {
       if (cancelled) return;
       if (runIdRef.current !== runId) return;
       if (didStartPlay) return;
@@ -601,9 +604,28 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         });
     };
 
+    audio.oncanplaythrough = handleCanPlay;
+    (audio as any).oncanplay = handleCanPlay;
+    (audio as any).onloadeddata = handleCanPlay;
+
+    try {
+      audio.pause();
+      audio.currentTime = 0;
+    } catch {
+      // ignore
+    }
+
+    audio.preload = "auto";
     audio.src = src;
     audio.volume = 1.0;
     audio.load();
+
+    queueMicrotask(() => {
+      if (cancelled) return;
+      if (runIdRef.current !== runId) return;
+      if (didStartPlay) return;
+      if (audio.readyState >= 2) handleCanPlay();
+    });
 
     const loadTimeoutMs = 5000;
     clearTimer();
