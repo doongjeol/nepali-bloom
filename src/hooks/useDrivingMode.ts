@@ -361,7 +361,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         });
         newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
 
-        if (word.example) {
+        if (false && word.example) {
           const actualLessonId = word.lessonId ?? lessonId;
           const exRomanized =
             typeof word.example === "string" ? word.romanized : word.example.romanized || word.romanized;
@@ -596,8 +596,8 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         })
         .catch((e) => {
           console.log(`[DM] audio play rejected idx=${index}`, e);
-          // autoplay 정책이면 여기서 멈출 수 있는데, 종료로 흐르지 않게 pause + 인덱스는 고정
-          pause();
+          // autoplay 정책 등으로 재생이 거부될 수 있어, 세션이 멈추지 않도록 다음 task로 진행
+          advanceIndex(index, "audio-play-rejected");
         });
     };
 

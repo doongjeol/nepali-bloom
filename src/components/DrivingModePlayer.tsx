@@ -146,7 +146,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-10 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99]"
           >
             <div className="text-3xl font-black tracking-tight text-foreground sm:text-4xl">단어만 듣기</div>
-            <div className="mt-3 text-lg font-semibold text-muted-foreground sm:text-xl">단어 → 뜻 → 예문</div>
+            <div className="mt-3 text-lg font-semibold text-muted-foreground sm:text-xl">단어 → 뜻</div>
             <div className="mt-2 text-sm text-muted-foreground">총 {vocabOnly.length}개</div>
           </button>
 
@@ -271,13 +271,6 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     );
   }
 
-  const exampleText =
-    currentWord?.example && typeof currentWord.example === "object"
-      ? currentWord.example.nepali
-      : typeof currentWord?.example === "string"
-        ? currentWord.example
-        : null;
-
   const dialogueSpeaker =
     studyMode === "dialogue" ? (currentWord?.korean?.match(/^\[(.*?)\]\s*/)?.[1] ?? null) : null;
 
@@ -364,14 +357,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
                   <p className="mb-3 break-keep text-3xl font-black text-foreground/90 sm:text-4xl">{currentWord.korean}</p>
                 </>
               )}
-              {studyMode === "word" && exampleText ? (
-                <p
-                  className="mt-6 max-w-3xl break-keep rounded-2xl border bg-card p-5 text-xl font-semibold text-foreground sm:text-2xl"
-                  style={{ fontFamily: "var(--font-nepali)" }}
-                >
-                  {exampleText}
-                </p>
-              ) : null}
+
             </div>
           ) : (
             <div className="text-2xl font-bold text-muted-foreground">재생 준비 중...</div>
