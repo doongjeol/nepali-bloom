@@ -531,6 +531,11 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     }
 
     if (task.type === "speech") {
+      // 운전 모드에서 "오디오만" 재생 옵션이면 TTS는 모두 스킵
+      if (options?.audioOnly) {
+        advanceIndex(index, "speech-skip-audioOnly");
+        return cleanup;
+      }
       stopAudio();
       if (typeof window === "undefined" || !("speechSynthesis" in window)) {
         clearTimer();

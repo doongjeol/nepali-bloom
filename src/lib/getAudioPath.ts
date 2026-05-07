@@ -1,7 +1,8 @@
 export type AudioItemKind = "vocab" | "dial" | "example";
 
 function formatAudioUrl(path: string) {
-  const normalized = encodeURI(path.toLowerCase());
+  // Do not force lowercase: audio filenames are case-sensitive in many deployments (and even in some dev servers).
+  const normalized = encodeURI(path);
   // Ensure public assets respect Vite base path in production builds.
   // If BASE_URL is "/", keep absolute paths as-is.
   const baseUrl = import.meta.env.BASE_URL || "/";

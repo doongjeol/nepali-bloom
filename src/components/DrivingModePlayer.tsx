@@ -45,6 +45,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     ttsSpeed,
     enableSwipe: false,
     studyMode: studyMode === "dialogue" ? "dialogue" : "word",
+    audioOnly: true,
     onSessionComplete: () => { setIsFinished(true);
       // 종료는 마지막 클릭에서만 처리
     },
