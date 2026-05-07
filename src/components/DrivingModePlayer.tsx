@@ -180,7 +180,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
   if (displayData.length === 0 && !isFinished) {
     return (
-      <div className="fixed inset-0 z-[100] flex flex-col bg-background p-4 sm:p-6">
+      <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background p-4 landscape:p-3" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
         <div className="mb-6 flex items-center justify-between">
           <div className="flex items-center gap-2 font-bold text-primary">
             <Car className="h-6 w-6" />
