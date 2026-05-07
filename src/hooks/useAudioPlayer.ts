@@ -53,6 +53,13 @@ function ensureAudio() {
   return audio;
 }
 
+// Expose the shared HTMLAudioElement so other playback systems (e.g. Driving Mode)
+// can reuse the same media pipeline that works reliably on mobile lock screen.
+export function getSharedAudioElement(): HTMLAudioElement | null {
+  initOnce();
+  return ensureAudio();
+}
+
 function initOnce() {
   if (initialized) return;
   initialized = true;

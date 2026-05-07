@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getDialogueAudioPath, getPronunciationAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
+import { getSharedAudioElement } from "@/hooks/useAudioPlayer";
 
 export type VocabularyItem = {
   nepali: string;
@@ -156,7 +157,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
-  const audioBufferCacheRef = useRef<Map<string, AudioBuffer>>(new Map());
   const bufferSourceRef = useRef<AudioBufferSourceNode | null>(null);
   const gainNodeRef = useRef<GainNode | null>(null);
 
@@ -787,80 +787,11 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     }
 
     // iOS에서는 TTS 직후 media element 오디오가 "ducking"된 상태로 시작해 점점 커지는 듯 들리는 경우가 있어,
-    // 가능하면 WebAudio로 직접 재생한다(볼륨이 더 일관적).
-    const audioCtx = audioContextRef.current;
-    if (isIOS && audioCtx) {
-      const src = task.payload as string;
-      console.log(`[DM] webaudio try idx=${index} src=${src}`);
-
-      let didStart = false;
-      const startTimeout = setTimeout(() => {
-        if (cancelled) return;
-        if (runIdRef.current !== runId) return;
-        if (didStart) return;
-        console.log(`[DM] webaudio start TIMEOUT idx=${index} src=${src}`);
-        // WebAudio 경로가 막히면 HTMLAudioElement 경로로 폴백(아래)
-      }, 2500);
-
-      const playViaWebAudio = async () => {
-        try {
-          if (audioCtx.state === "suspended") await audioCtx.resume();
-
-          let buffer = audioBufferCacheRef.current.get(src);
-          if (!buffer) {
-            const res = await fetch(src);
-            const arr = await res.arrayBuffer();
-            buffer = await audioCtx.decodeAudioData(arr.slice(0));
-            audioBufferCacheRef.current.set(src, buffer);
-          }
-
-          if (cancelled) return;
-          if (runIdRef.current !== runId) return;
-
-          stopAudio();
-          const gain = audioCtx.createGain();
-          gain.gain.value = 1.0;
-          gain.connect(audioCtx.destination);
-          gainNodeRef.current = gain;
-
-          const source = audioCtx.createBufferSource();
-          source.buffer = buffer;
-          source.connect(gain);
-          bufferSourceRef.current = source;
-
-          source.onended = () => {
-            if (cancelled) return;
-            if (runIdRef.current !== runId) return;
-            console.log(`[DM] webaudio ended idx=${index} src=${src}`);
-            advanceIndex(index, "webaudio-ended");
-          };
-
-          didStart = true;
-          setAutoplayBlocked(false);
-          console.log(`[DM] webaudio start idx=${index} src=${src}`);
-          source.start(0);
-        } catch (e) {
-          console.log(`[DM] webaudio error idx=${index} src=${src}`, e);
-          // WebAudio 실패 시 아래 HTMLAudioElement 로직으로 폴백
-          didStart = false;
-        } finally {
-          clearTimeout(startTimeout);
-        }
-      };
-
-      void playViaWebAudio();
-
-      // WebAudio가 시작되면 onended로 advance되므로 여기서 종료.
-      if (didStart) {
-        return () => {
-          clearTimeout(startTimeout);
-          cleanup();
-        };
-      }
-    }
+    // 드라이브 모드는 모바일 잠금화면에서도 안정적으로 이어지는 "media element" 경로를 우선한다.
+    // (레슨 대화문 전체재생과 동일한 HTMLAudioElement 기반)
 
     const startHtmlAudio = (src: string) => {
-      const audio = audioRef.current ?? new Audio();
+      const audio = getSharedAudioElement() ?? audioRef.current ?? new Audio();
       audioRef.current = audio;
       audio.onended = null;
       audio.onerror = null;
@@ -868,7 +799,15 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
       console.log(`[DM] audio load try idx=${index} src=${src}`);
 
-    let didStartPlay = false;
+      // iOS Safari에서 잠금화면/백그라운드 재생 안정성을 높이기 위해 가능한 한 동일한 element를 재사용한다.
+      try {
+        (audio as any).playsInline = true;
+        audio.setAttribute?.("playsinline", "true");
+      } catch {
+        // ignore
+      }
+
+      let didStartPlay = false;
       const handleCanPlay = () => {
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
@@ -890,14 +829,14 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           if (runIdRef.current !== runId) return;
           console.log(`[DM] audio ended idx=${index} src=${src}`);
           advanceIndex(index, "audio-ended");
-      };
-      audio.onerror = (e) => {
-        if (cancelled) return;
-        if (runIdRef.current !== runId) return;
-        console.log(`[DM] audio error idx=${index} src=${src}`, e);
-        // 규칙 3: onerror는 건너뛰되 루프는 진행
-        advanceIndex(index, "audio-error");
-      };
+        };
+        audio.onerror = (e) => {
+          if (cancelled) return;
+          if (runIdRef.current !== runId) return;
+          console.log(`[DM] audio error idx=${index} src=${src}`, e);
+          // 규칙 3: onerror는 건너뛰되 루프는 진행
+          advanceIndex(index, "audio-error");
+        };
 
         audio
           .play()
@@ -919,51 +858,51 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
             }
             setAutoplayBlocked(false);
           })
-        .catch((e) => {
-          console.log(`[DM] audio play rejected idx=${index}`, e);
-          // autoplay 정책 등으로 재생이 거부될 수 있음.
-          // 이 경우 "다음으로 스킵"하면 이후 음성이 전부 건너뛰어질 수 있으므로,
-          // 세션을 일시정지 상태로 두고 사용자의 재생/다음 입력을 기다립니다.
-          setIsPlaying(false);
-          isPlayingRef.current = false;
-          setAutoplayBlocked(true);
-        });
-    };
+          .catch((e) => {
+            console.log(`[DM] audio play rejected idx=${index}`, e);
+            // autoplay 정책 등으로 재생이 거부될 수 있음.
+            // 이 경우 "다음으로 스킵"하면 이후 음성이 전부 건너뛰어질 수 있으므로,
+            // 세션을 일시정지 상태로 두고 사용자의 재생/다음 입력을 기다립니다.
+            setIsPlaying(false);
+            isPlayingRef.current = false;
+            setAutoplayBlocked(true);
+          });
+      };
 
-    audio.oncanplaythrough = handleCanPlay;
-    (audio as any).oncanplay = handleCanPlay;
-    (audio as any).onloadeddata = handleCanPlay;
+      audio.oncanplaythrough = handleCanPlay;
+      (audio as any).oncanplay = handleCanPlay;
+      (audio as any).onloadeddata = handleCanPlay;
 
-    try {
-      audio.pause();
-      audio.currentTime = 0;
-    } catch {
-      // ignore
-    }
+      try {
+        audio.pause();
+        audio.currentTime = 0;
+      } catch {
+        // ignore
+      }
 
-    audio.preload = "auto";
-    audio.src = src;
-    audio.muted = false;
-    audio.volume = 1.0;
-    audio.load();
+      audio.preload = "auto";
+      audio.src = src;
+      audio.muted = false;
+      audio.volume = 1.0;
+      audio.load();
 
-    queueMicrotask(() => {
-      if (cancelled) return;
-      if (runIdRef.current !== runId) return;
-      if (didStartPlay) return;
-      if (audio.readyState >= 2) handleCanPlay();
-    });
+      queueMicrotask(() => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        if (didStartPlay) return;
+        if (audio.readyState >= 2) handleCanPlay();
+      });
 
-    const loadTimeoutMs = 5000;
-    clearTimer();
-    timerRef.current = setTimeout(() => {
-      if (cancelled) return;
-      if (runIdRef.current !== runId) return;
-      if (didStartPlay) return;
-      console.log(`[DM] audio load TIMEOUT idx=${index} src=${src}`);
-      // 규칙 2: 5초 내 로드 안되면 로그 + 다음 단어로(다음 인덱스로) 진행
-      advanceIndex(index, "audio-load-timeout");
-    }, loadTimeoutMs);
+      const loadTimeoutMs = 5000;
+      clearTimer();
+      timerRef.current = setTimeout(() => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        if (didStartPlay) return;
+        console.log(`[DM] audio load TIMEOUT idx=${index} src=${src}`);
+        // 규칙 2: 5초 내 로드 안되면 로그 + 다음 단어로(다음 인덱스로) 진행
+        advanceIndex(index, "audio-load-timeout");
+      }, loadTimeoutMs);
 
     };
 
