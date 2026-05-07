@@ -1,6 +1,6 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useCallback } from "react";
 import { useDrivingMode, type VocabularyItem } from "@/hooks/useDrivingMode";
-import { Play, Pause, ChevronLeft, ChevronRight, X, Car, BookOpen, MessageCircle, FileQuestion, RefreshCw } from "lucide-react";
+import { Play, Pause, ChevronLeft, ChevronRight, X, Car, BookOpen, MessageCircle, FileQuestion } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface DrivingModePlayerProps {
@@ -10,10 +10,11 @@ interface DrivingModePlayerProps {
 }
 
 export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingModePlayerProps) {
-  const [hasStarted, setHasStarted] = useState(false);
+  const [sessionState, setSessionState] = useState<"setup" | "playing" | "finished">("setup");
+  const [studyQueue, setStudyQueue] = useState<VocabularyItem[]>([]);
+  const [failedItems, setFailedItems] = useState<Set<string>>(new Set());
   const [selectedTypes, setSelectedTypes] = useState<Set<string>>(new Set());
   const [ttsSpeed, setTtsSpeed] = useState(0.9);
-  const [autoRepeat, setAutoRepeat] = useState(true);
 
   const toggleType = (type: string) => {
     setSelectedTypes((prev) => {
@@ -28,31 +29,65 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     return vocabulary.filter((v) => selectedTypes.has(v.type || "vocab"));
   }, [vocabulary, selectedTypes]);
 
+  const handleSessionComplete = useCallback(() => {
+    setSessionState("finished");
+    if (failedItems.size > 0) {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance(`학습이 끝났습니다. 외우지 못한 ${failedItems.size}개의 단어를 다시 학습할까요?`);
+        u.lang = "ko-KR";
+        window.speechSynthesis.speak(u);
+      }
+    } else {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance("모든 단어를 마스터했습니다!");
+        u.lang = "ko-KR";
+        u.onend = () => {
+          onClose();
+        };
+        window.speechSynthesis.speak(u);
+      } else {
+        onClose();
+      }
+    }
+  }, [failedItems.size, onClose]);
+
   const {
     isPlaying,
     currentTask,
     progress,
     currentWordIndex,
     currentWord,
+    unlockAudio,
     play,
     pause,
     stop,
     nextWord,
     prevWord,
-    swipeHandlers,
-  } = useDrivingMode(lessonId, filteredVocab, { ttsSpeed, autoRepeat, nepaliVolume: 1.0 });
+  } = useDrivingMode(lessonId, studyQueue, { 
+    ttsSpeed, 
+    enableSwipe: false, // 좌우 터치 영역을 사용하므로 기존 스와이프 기능 충돌 방지
+    onSessionComplete: handleSessionComplete 
+  });
 
   useEffect(() => {
-    if (hasStarted) {
-      play();
+    if (sessionState === "playing") {
+      // 약간의 지연을 주어 모달 애니메이션 및 tasks 생성이 완료된 후 재생되도록 함
+      const timer = setTimeout(() => {
+        play();
+      }, 300);
+      return () => clearTimeout(timer);
     }
     return () => {
       stop();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasStarted]);
+  }, [sessionState, studyQueue]);
 
-  if (!hasStarted) {
+  const getItemKey = (v: VocabularyItem, idx: number) => `${v.type}-${v.lessonId}-${v.romanized || idx}`;
+
+  if (sessionState === "setup") {
     return (
       <div className="fixed inset-0 z-[100] flex flex-col bg-background p-4 sm:p-6 animate-in fade-in zoom-in-95 duration-200">
         {/* Header */}
@@ -88,22 +123,6 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
                 </button>
               ))}
             </div>
-          </div>
-          
-          <div className="mb-6">
-            <h2 className="mb-3 text-lg font-bold text-foreground">재생 설정</h2>
-            <label className="flex cursor-pointer items-center justify-between rounded-2xl border p-4 bg-card hover:bg-accent/50 transition-all">
-              <div className="flex items-center gap-3">
-                <RefreshCw className={cn("h-5 w-5", autoRepeat ? "text-primary" : "text-muted-foreground")} />
-                <span className="font-semibold text-foreground">전체 항목 무한 반복</span>
-              </div>
-              <input
-                type="checkbox"
-                checked={autoRepeat}
-                onChange={(e) => setAutoRepeat(e.target.checked)}
-                className="h-6 w-6 rounded-full border-primary text-primary accent-primary"
-              />
-            </label>
           </div>
 
           <h2 className="mb-4 text-lg font-bold text-foreground">어떤 내용을 학습할까요?</h2>
@@ -155,7 +174,12 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           <button
             type="button"
             disabled={filteredVocab.length === 0}
-            onClick={() => setHasStarted(true)}
+            onClick={() => {
+              void unlockAudio();
+              setStudyQueue(filteredVocab);
+              setFailedItems(new Set());
+              setSessionState("playing");
+            }}
             className="w-full rounded-2xl bg-primary px-6 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 disabled:opacity-50"
           >
             {filteredVocab.length === 0 ? "학습할 항목을 선택해주세요" : `${filteredVocab.length}개 항목 학습 시작`}
@@ -164,6 +188,67 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
       </div>
     );
   }
+
+  if (sessionState === "finished") {
+    const startRetrySession = () => {
+      if (typeof window !== "undefined" && "speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+        const u = new SpeechSynthesisUtterance("복습을 시작합니다");
+        u.lang = "ko-KR";
+        window.speechSynthesis.speak(u);
+      }
+      const nextQueue = studyQueue.filter((v, i) => failedItems.has(getItemKey(v, i)));
+      setStudyQueue(nextQueue);
+      setFailedItems(new Set());
+      setSessionState("playing");
+    };
+
+    return (
+      <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-background p-6 text-center animate-in zoom-in-95 duration-300">
+        <h2 className="mb-4 text-3xl font-bold text-foreground">학습 세션 종료</h2>
+        {failedItems.size > 0 ? (
+          <>
+            <p className="mb-8 text-lg text-muted-foreground">
+              외우지 못한 <span className="font-bold text-destructive">{failedItems.size}</span>개의 항목이 남았습니다.
+            </p>
+            <button 
+              onClick={startRetrySession} 
+              className="mb-4 rounded-2xl bg-primary px-8 py-6 text-2xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95"
+            >
+              다시 학습하기 (터치)
+            </button>
+            <button onClick={onClose} className="mt-4 text-sm text-muted-foreground underline underline-offset-4">
+              종료하기
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="mb-6 text-6xl">🎉</div>
+            <p className="mb-8 text-xl text-foreground">모든 항목을 마스터했습니다!</p>
+            <button onClick={onClose} className="rounded-2xl bg-primary px-8 py-4 text-xl font-bold text-primary-foreground shadow-lg transition-transform active:scale-95">
+              완료
+            </button>
+          </>
+        )}
+      </div>
+    );
+  }
+
+  const handleMarkUnknown = () => {
+    if (!currentWord) return;
+    setFailedItems((prev) => new Set(prev).add(getItemKey(currentWord, currentWordIndex)));
+    nextWord();
+  };
+
+  const handleMarkKnown = () => {
+    if (!currentWord) return;
+    setFailedItems((prev) => {
+      const next = new Set(prev);
+      next.delete(getItemKey(currentWord, currentWordIndex));
+      return next;
+    });
+    nextWord();
+  };
 
   return (
     <div className="fixed inset-0 z-[100] flex flex-col bg-background animate-in fade-in duration-300">
@@ -201,31 +286,58 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
       {/* Content */}
       <div 
         className="relative z-10 flex flex-1 flex-col items-center justify-center p-6 text-center sm:p-10"
-        {...swipeHandlers}
       >
-        {currentWord ? (
-          <div className="max-w-full duration-300 animate-in fade-in">
-            <p
-              className="mb-4 break-keep text-4xl font-bold text-foreground sm:text-6xl"
-              style={{ fontFamily: "var(--font-nepali)" }}
-            >
-              {currentWord.nepali}
-            </p>
-            <p className="mb-2 break-keep text-xl italic text-muted-foreground sm:text-2xl">
-              {currentWord.romanized}
-            </p>
-            <p className="mb-8 break-keep text-2xl font-bold text-foreground/80 sm:text-3xl">
-              {currentWord.korean}
-            </p>
-          </div>
-        ) : (
-          <div className="text-2xl font-bold text-muted-foreground">
-            {filteredVocab.length === 0 ? "학습할 항목이 없습니다." : "재생 대기 중..."}
-          </div>
-        )}
+        {/* 좌/우 터치 오버레이 */}
+        <div className="absolute inset-0 z-20 flex w-full">
+          <button 
+            type="button" 
+            className="flex-1 outline-none transition-colors hover:bg-success/5 active:bg-success/10" 
+            onClick={handleMarkKnown}
+            aria-label="외웠음 (제외)"
+          />
+          <button 
+            type="button" 
+            className="flex-1 outline-none transition-colors hover:bg-destructive/5 active:bg-destructive/10" 
+            onClick={handleMarkUnknown}
+            aria-label="몰라요 (복습 목록 추가)"
+          />
+        </div>
 
-        <div className="flex min-h-12 items-center justify-center break-keep text-lg font-medium text-primary sm:text-xl">
-          {currentTask?.description ?? ""}
+        {/* 시각적 힌트 */}
+        <div className="pointer-events-none absolute inset-0 z-10 flex w-full opacity-10 select-none">
+          <div className="flex flex-1 items-center justify-center border-r border-foreground/10">
+            <span className="text-3xl font-black tracking-widest text-success sm:text-5xl">외웠음<br/><span className="text-base sm:text-xl">Got it</span></span>
+          </div>
+          <div className="flex flex-1 items-center justify-center">
+            <span className="text-3xl font-black tracking-widest text-destructive sm:text-5xl">몰라요<br/><span className="text-base sm:text-xl">Keep</span></span>
+          </div>
+        </div>
+
+        <div className="relative z-30 pointer-events-none flex max-w-full flex-col items-center">
+          {currentWord ? (
+            <div className="duration-300 animate-in fade-in">
+              <p
+                className="mb-4 break-keep text-4xl font-bold text-foreground sm:text-6xl"
+                style={{ fontFamily: "var(--font-nepali)" }}
+              >
+                {currentWord.nepali}
+              </p>
+              <p className="mb-2 break-keep text-xl italic text-muted-foreground sm:text-2xl">
+                {currentWord.romanized}
+              </p>
+              <p className="mb-8 break-keep text-2xl font-bold text-foreground/80 sm:text-3xl">
+                {currentWord.korean}
+              </p>
+            </div>
+          ) : (
+            <div className="text-2xl font-bold text-muted-foreground">
+              {studyQueue.length === 0 ? "학습할 항목이 없습니다." : "재생 대기 중..."}
+            </div>
+          )}
+
+          <div className="flex min-h-12 items-center justify-center break-keep text-lg font-medium text-primary sm:text-xl">
+            {currentTask?.description ?? ""}
+          </div>
         </div>
       </div>
 
@@ -233,7 +345,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
       <div className="relative z-50 border-t bg-card p-6 pb-10 sm:p-10 sm:pb-12">
         <div className="mb-3 flex items-center justify-between text-sm font-semibold text-muted-foreground">
           <span>
-            {currentWordIndex + 1} / {vocabulary.length}
+            {currentWordIndex + 1} / {studyQueue.length}
           </span>
           <span>{Math.round(progress * 100)}%</span>
         </div>
@@ -264,7 +376,10 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           ) : (
             <button
               type="button"
-              onClick={play}
+              onClick={() => {
+                void unlockAudio();
+                play();
+              }}
               className="rounded-full bg-primary p-6 text-primary-foreground shadow-lg transition-all hover:opacity-90 active:scale-95"
             >
               <Play className="h-10 w-10 translate-x-0.5 fill-current" />

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { getVocabAudioPath, getDialogueAudioPath } from "@/lib/getAudioPath";
+import { getDialogueAudioPath, getPronunciationAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 
 export type VocabularyItem = {
   nepali: string;
@@ -17,9 +17,9 @@ type TaskType = "audio" | "speech" | "delay";
 export interface PlaybackTask {
   type: TaskType;
   payload: string | number; // audio src, speech text, or delay ms
-  description?: string; // UI 표시용 설명
-  wordIndex?: number; // 해당 task가 속한 단어 인덱스
-  isNepaliTTS?: boolean; // 네팔어를 TTS로 읽어야 할 경우
+  description?: string;
+  wordIndex?: number;
+  isNepaliTTS?: boolean;
 }
 
 type SwipeHandlers = {
@@ -58,7 +58,7 @@ function useWakeLock(enabled: boolean) {
     try {
       sentinelRef.current = await wakeLockApi.request("screen");
     } catch {
-      // ignore (permission, unsupported, etc.)
+      // ignore
     }
   }, [enabled]);
 
@@ -122,7 +122,6 @@ function useSwipeNavigation({
       if (Math.abs(dy) > maxOffAxisPx) return;
       if (Math.abs(dx) < thresholdPx) return;
 
-      // Swipe left -> next, swipe right -> prev
       if (dx < 0) onNext();
       else onPrev();
     },
@@ -136,30 +135,44 @@ function useSwipeNavigation({
   return { onPointerDown, onPointerMove, onPointerUp, onPointerCancel };
 }
 
-export function useDrivingMode(
-  lessonId: string | number,
-  vocabulary: VocabularyItem[],
-  options?: { enableWakeLock?: boolean; enableSwipe?: boolean; ttsSpeed?: number },
-) {
+type UseDrivingModeOptions = {
+  enableWakeLock?: boolean;
+  enableSwipe?: boolean;
+  ttsSpeed?: number;
+  onSessionComplete?: () => void;
+};
+
+export function useDrivingMode(lessonId: string | number, vocabulary: VocabularyItem[], options?: UseDrivingModeOptions) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTaskIndex, setCurrentTaskIndex] = useState(-1);
   const [tasks, setTasks] = useState<PlaybackTask[]>([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-  const isPlayingRef = useRef(false); // 이벤트 콜백에서 최신 재생 상태 참조용
+  const audioContextRef = useRef<AudioContext | null>(null);
+
+  const isPlayingRef = useRef(false);
+  const runIdRef = useRef(0);
+  const currentTaskIndexRef = useRef(-1);
+  useEffect(() => {
+    currentTaskIndexRef.current = currentTaskIndex;
+  }, [currentTaskIndex]);
 
   const ttsSpeedRef = useRef(options?.ttsSpeed ?? 0.9);
   useEffect(() => {
     ttsSpeedRef.current = options?.ttsSpeed ?? 0.9;
   }, [options?.ttsSpeed]);
 
-  // 운전 중 화면 꺼짐 방지 (best-effort)
+  const onSessionCompleteRef = useRef(options?.onSessionComplete);
+  useEffect(() => {
+    onSessionCompleteRef.current = options?.onSessionComplete;
+  }, [options?.onSessionComplete]);
+
   useWakeLock(Boolean(options?.enableWakeLock ?? true) && isPlaying);
 
-  // 단어 인덱스 -> 해당 단어의 첫 task 인덱스
   const wordStartTaskIndex = useMemo(() => {
     const map = new Map<number, number>();
     tasks.forEach((t, idx) => {
@@ -168,107 +181,115 @@ export function useDrivingMode(
     return map;
   }, [tasks]);
 
-  const pause = useCallback(() => {
-    setIsPlaying(false);
-    isPlayingRef.current = false;
+  const clearTimer = useCallback(() => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = null;
+  }, []);
 
-    if (audioRef.current) {
-      audioRef.current.onended = null;
-      audioRef.current.onerror = null;
-      audioRef.current.pause();
+  const stopAudio = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.onended = null;
+    audio.onerror = null;
+    audio.oncanplaythrough = null;
+    try {
+      audio.pause();
+      audio.currentTime = 0;
+    } catch {
+      // ignore
     }
-    if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    if (utteranceRef.current) {
-      utteranceRef.current.onend = null;
-      utteranceRef.current.onerror = null;
+    audioRef.current = null;
+  }, []);
+
+  const stopSpeech = useCallback(() => {
+    const u = utteranceRef.current;
+    if (u) {
+      u.onstart = null;
+      u.onend = null;
+      u.onerror = null;
     }
+    utteranceRef.current = null;
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      window.speechSynthesis.cancel();
+      try {
+        window.speechSynthesis.cancel();
+      } catch {
+        // ignore
+      }
     }
   }, []);
 
-  const processNextTask = useCallback(
-    (index: number) => {
-      if (!isPlayingRef.current) return;
+  const pause = useCallback(() => {
+    runIdRef.current += 1; // cancel in-flight awaits
+    setIsPlaying(false);
+    isPlayingRef.current = false;
+    setIsFinished(false);
+    clearTimer();
+    stopAudio();
+    stopSpeech();
+  }, [clearTimer, stopAudio, stopSpeech]);
 
-      if (index >= tasks.length) {
-        setIsPlaying(false);
-        isPlayingRef.current = false;
-        setCurrentTaskIndex(-1);
-        return;
+  const stop = useCallback(() => {
+    pause();
+    setCurrentTaskIndex(-1);
+    setCurrentWordIndex(0);
+    setIsFinished(false);
+  }, [pause]);
+
+  useEffect(() => () => pause(), [pause]);
+
+  const unlockAudio = useCallback(async () => {
+    if (typeof window === "undefined") return;
+    const AudioCtx = (window.AudioContext || (window as any).webkitAudioContext) as typeof AudioContext | undefined;
+    if (!AudioCtx) return;
+
+    try {
+      const ctx = audioContextRef.current ?? new AudioCtx();
+      audioContextRef.current = ctx;
+      if (ctx.state === "suspended") await ctx.resume();
+
+      // play 1-frame silent buffer to "unlock" audio output under autoplay policy (must be called in user gesture)
+      const buffer = ctx.createBuffer(1, 1, ctx.sampleRate);
+      const source = ctx.createBufferSource();
+      source.buffer = buffer;
+      source.connect(ctx.destination);
+      source.start(0);
+      source.stop(0);
+    } catch {
+      // ignore
+    }
+
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch {
+        // ignore
       }
+    }
+  }, []);
 
-      setCurrentTaskIndex(index);
-      const task = tasks[index];
-      if (typeof task.wordIndex === "number") setCurrentWordIndex(task.wordIndex);
-
-      if (task.type === "delay") {
-        timeoutRef.current = setTimeout(() => {
-          processNextTask(index + 1);
-        }, task.payload as number);
-        return;
-      }
-
-      if (task.type === "audio") {
-        const audio = audioRef.current ?? new Audio();
-        audioRef.current = audio;
-        audio.src = task.payload as string;
-        audio.volume = 1.0; // 네팔어 원어민 오디오는 항상 최대 음량 유지
-        
-        let isDone = false;
-        const finish = () => {
-          if (isDone) return;
-          isDone = true;
-          processNextTask(index + 1);
-        };
-
-        audio.onended = finish;
-        audio.onerror = () => {
-          console.warn("오디오 파일을 찾을 수 없습니다:", task.payload);
-          finish();
-        };
-        audio.play().catch((e) => {
-          console.error("자동 재생이 차단되었습니다:", e);
-          finish(); // pause() 대신 다음 태스크로 자연스럽게 넘어감
-        });
-        return;
-      }
-
-      // speech
-      if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        const utterance = new SpeechSynthesisUtterance(task.payload as string);
-        utteranceRef.current = utterance;
-        utterance.lang = "ko-KR";
-        utterance.rate = ttsSpeedRef.current;
-        
-        // 음량 조절: 네팔어 오디오(mp3)가 상대적으로 작게 들리는 것을 막기 위해 한국어 TTS 볼륨을 0.5로 낮춥니다.
-        // 네팔어를 TTS로 직접 읽어야 하는 예외적인 경우에는 볼륨을 1.0으로 유지합니다.
-        utterance.volume = task.isNepaliTTS ? 1.0 : 0.5;
-        
-        let isDone = false;
-        const finish = () => {
-          if (isDone) return;
-          isDone = true;
-          if (timeoutRef.current) clearTimeout(timeoutRef.current);
-          processNextTask(index + 1);
-        };
-
-        utterance.onend = finish;
-        utterance.onerror = finish;
-        window.speechSynthesis.speak(utterance);
-        
-        // 브라우저의 TTS onend 버그로 인해 멈추는 현상 대비 fallback 타이머
-        const estimatedDuration = Math.max(2000, (task.payload as string).length * 200 + 1500);
-        timeoutRef.current = setTimeout(() => {
-          window.speechSynthesis.cancel();
-          finish();
-        }, estimatedDuration);
-      } else {
-        timeoutRef.current = setTimeout(() => processNextTask(index + 1), 1000);
-      }
+  const advanceIndex = useCallback(
+    (fromIndex: number, reason: string) => {
+      // 규칙 1: 인덱스 증가는 "완료 이벤트 핸들러"에서만 발생
+      setCurrentTaskIndex((prev) => {
+        if (prev !== fromIndex) return prev;
+        const next = fromIndex + 1;
+        console.log(`[DM] index++ ${fromIndex} -> ${next} (${reason})`);
+        return next;
+      });
     },
-    [pause, tasks],
+    [],
   );
+
+  const play = useCallback(() => {
+    if (tasks.length === 0) return;
+    runIdRef.current += 1;
+    setIsFinished(false);
+    setIsPlaying(true);
+    isPlayingRef.current = true;
+    const startIndex = currentTaskIndexRef.current > -1 ? currentTaskIndexRef.current : 0;
+    console.log(`[DM] play() startIndex=${startIndex} totalTasks=${tasks.length}`);
+    setCurrentTaskIndex(startIndex);
+  }, [tasks.length]);
 
   const jumpToWord = useCallback(
     (nextWordIndex: number) => {
@@ -279,36 +300,22 @@ export function useDrivingMode(
       if (typeof taskIdx !== "number") return;
 
       setCurrentTaskIndex(taskIdx);
-      if (audioRef.current) {
-        audioRef.current.onended = null;
-        audioRef.current.onerror = null;
-        audioRef.current.pause();
-      }
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      if (utteranceRef.current) {
-        utteranceRef.current.onend = null;
-        utteranceRef.current.onerror = null;
-      }
-      if (typeof window !== "undefined" && "speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-      }
-      
-      // 이전/다음 이동 시 무조건 자동 재생 시작
+      clearTimer();
+      stopAudio();
+      stopSpeech();
+
+      runIdRef.current += 1;
+      setIsFinished(false);
       setIsPlaying(true);
       isPlayingRef.current = true;
-      processNextTask(taskIdx);
+      console.log(`[DM] jumpToWord word=${clamped} taskIdx=${taskIdx}`);
+      setCurrentTaskIndex(taskIdx);
     },
-    [processNextTask, vocabulary.length, wordStartTaskIndex],
+    [clearTimer, stopAudio, stopSpeech, vocabulary.length, wordStartTaskIndex],
   );
 
-  const nextWord = useCallback(
-    () => jumpToWord(currentWordIndex + 1),
-    [currentWordIndex, jumpToWord],
-  );
-  const prevWord = useCallback(
-    () => jumpToWord(currentWordIndex - 1),
-    [currentWordIndex, jumpToWord],
-  );
+  const nextWord = useCallback(() => jumpToWord(currentWordIndex + 1), [currentWordIndex, jumpToWord]);
+  const prevWord = useCallback(() => jumpToWord(currentWordIndex - 1), [currentWordIndex, jumpToWord]);
 
   const swipeHandlers = useSwipeNavigation({
     enabled: Boolean(options?.enableSwipe ?? true),
@@ -316,7 +323,7 @@ export function useDrivingMode(
     onPrev: prevWord,
   });
 
-  // 1) 학습 큐(Playback Queue) 생성
+  // Build playback tasks whenever vocabulary changes
   useEffect(() => {
     const newTasks: PlaybackTask[] = [];
 
@@ -354,17 +361,19 @@ export function useDrivingMode(
 
         if (word.example) {
           const actualLessonId = word.lessonId ?? lessonId;
-          const exRomanized = typeof word.example === 'string' ? '' : word.example.romanized || word.romanized;
+          const exRomanized =
+            typeof word.example === "string" ? word.romanized : word.example.romanized || word.romanized;
+          const exampleText = typeof word.example === "string" ? word.example : word.example.nepali;
           newTasks.push({
             type: "audio",
-            payload: `/audio/lesson_${actualLessonId}/${exRomanized}_example.mp3`,
-            description: `예문: ${typeof word.example === 'string' ? word.example : word.example.nepali}`,
+            payload: getPronunciationAudioPath(`/audio/lesson_${actualLessonId}/${exRomanized}_example.mp3`),
+            description: `예문: ${exampleText}`,
             wordIndex: index,
           });
           newTasks.push({ type: "delay", payload: 2000, description: "예문 후 대기", wordIndex: index });
         }
       } else if (type === "dialogue") {
-        const cleanKorean = word.korean.replace(/^\[.*?\]\s*/, ""); // '[A] ' 와 같은 화자 표시 제거
+        const cleanKorean = word.korean.replace(/^\[.*?\]\s*/, "");
         newTasks.push({
           type: "speech",
           payload: cleanKorean,
@@ -410,31 +419,180 @@ export function useDrivingMode(
     setTasks(newTasks);
     setCurrentWordIndex(0);
     setCurrentTaskIndex(newTasks.length > 0 ? 0 : -1);
-  }, [lessonId, vocabulary]);
+    // 큐가 바뀌면 재생은 중단(중복 effect 방지)
+    runIdRef.current += 1;
+    isPlayingRef.current = false;
+    setIsPlaying(false);
+    setIsFinished(false);
+    clearTimer();
+    stopAudio();
+    stopSpeech();
+  }, [clearTimer, lessonId, stopAudio, stopSpeech, vocabulary]);
 
-  const play = useCallback(() => {
+  // 규칙 1/2/3을 만족하는 재생 엔진:
+  // - effect는 현재 index의 task를 "시작만" 한다.
+  // - 다음 index로의 전환은 delay/tts/audio의 완료 핸들러에서만 수행한다.
+  useEffect(() => {
+    if (!isPlaying) return;
     if (tasks.length === 0) return;
-    setIsPlaying(true);
-    isPlayingRef.current = true;
+    if (currentTaskIndex < 0) return;
 
-    const startIndex = currentTaskIndex > -1 ? currentTaskIndex : 0;
-    processNextTask(startIndex);
-  }, [currentTaskIndex, processNextTask, tasks.length]);
+    const runId = runIdRef.current;
+    const index = currentTaskIndex;
 
-  const stop = useCallback(() => {
-    pause();
-    setCurrentTaskIndex(-1);
-    setCurrentWordIndex(0);
-  }, [pause]);
+    // 종료 판정은 "마지막 인덱스로 advance 된 후"에만
+    if (index >= tasks.length) {
+      console.log(`[DM] finished trigger index=${index} tasks=${tasks.length}`);
+      setIsPlaying(false);
+      isPlayingRef.current = false;
+      setIsFinished(true);
+      setCurrentTaskIndex(-1);
+      onSessionCompleteRef.current?.();
+      return;
+    }
 
-  useEffect(() => () => pause(), [pause]);
+    const task = tasks[index];
+    if (typeof task.wordIndex === "number") setCurrentWordIndex(task.wordIndex);
+
+    console.log(`[DM] task start idx=${index} type=${task.type} wordIndex=${task.wordIndex ?? "n/a"}`);
+
+    // Cleanup: effect 중복 실행/StrictMode 재실행에서도 안전하게 이전 오브젝트 정리
+    let cancelled = false;
+    const cleanup = () => {
+      cancelled = true;
+      clearTimer();
+      stopSpeech();
+      stopAudio();
+      // 규칙 1: 오디오 새로 만들면 기존 pause+null 처리(우리는 재사용하지만 cleanup에서 확실히 멈춤)
+      // audioRef.current는 유지하되, 다음 effect에서 src 변경 전 상태 누수 방지
+    };
+
+    if (task.type === "delay") {
+      clearTimer();
+      timerRef.current = setTimeout(() => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        console.log(`[DM] delay done idx=${index} ms=${task.payload}`);
+        advanceIndex(index, "delay");
+      }, task.payload as number);
+      return cleanup;
+    }
+
+    if (task.type === "speech") {
+      stopAudio();
+      if (typeof window === "undefined" || !("speechSynthesis" in window)) {
+        clearTimer();
+        timerRef.current = setTimeout(() => {
+          if (cancelled) return;
+          if (runIdRef.current !== runId) return;
+          console.log(`[DM] speech fallback done idx=${index}`);
+          advanceIndex(index, "speech-fallback");
+        }, 800);
+        return cleanup;
+      }
+
+      const utterance = new SpeechSynthesisUtterance(task.payload as string);
+      utteranceRef.current = utterance;
+      utterance.lang = "ko-KR";
+      utterance.rate = ttsSpeedRef.current;
+      utterance.volume = task.isNepaliTTS ? 1.0 : 0.5;
+
+      utterance.onstart = () => console.log(`[DM] speech start idx=${index}`);
+      utterance.onend = () => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        console.log(`[DM] speech end idx=${index}`);
+        advanceIndex(index, "speech-end");
+      };
+      utterance.onerror = (e) => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        console.log(`[DM] speech error idx=${index}`, e);
+        advanceIndex(index, "speech-error");
+      };
+
+      try {
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+      } catch (e) {
+        console.log(`[DM] speech speak threw idx=${index}`, e);
+        advanceIndex(index, "speech-throw");
+      }
+      return cleanup;
+    }
+
+    // audio
+    stopSpeech();
+    const audio = audioRef.current ?? new Audio();
+    audioRef.current = audio;
+    audio.onended = null;
+    audio.onerror = null;
+    audio.oncanplaythrough = null;
+
+    const src = task.payload as string;
+    console.log(`[DM] audio load try idx=${index} src=${src}`);
+
+    let didStartPlay = false;
+    audio.oncanplaythrough = () => {
+      if (cancelled) return;
+      if (runIdRef.current !== runId) return;
+      if (didStartPlay) return;
+      didStartPlay = true;
+      clearTimer();
+      console.log(`[DM] audio canplaythrough idx=${index} src=${src}`);
+
+      audio.onended = () => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        console.log(`[DM] audio ended idx=${index} src=${src}`);
+        advanceIndex(index, "audio-ended");
+      };
+      audio.onerror = (e) => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        console.log(`[DM] audio error idx=${index} src=${src}`, e);
+        // 규칙 3: onerror는 건너뛰되 루프는 진행
+        advanceIndex(index, "audio-error");
+      };
+
+      audio
+        .play()
+        .then(() => {
+          console.log(`[DM] audio play started idx=${index}`);
+        })
+        .catch((e) => {
+          console.log(`[DM] audio play rejected idx=${index}`, e);
+          // autoplay 정책이면 여기서 멈출 수 있는데, 종료로 흐르지 않게 pause + 인덱스는 고정
+          pause();
+        });
+    };
+
+    audio.src = src;
+    audio.volume = 1.0;
+    audio.load();
+
+    const loadTimeoutMs = 5000;
+    clearTimer();
+    timerRef.current = setTimeout(() => {
+      if (cancelled) return;
+      if (runIdRef.current !== runId) return;
+      if (didStartPlay) return;
+      console.log(`[DM] audio load TIMEOUT idx=${index} src=${src}`);
+      // 규칙 2: 5초 내 로드 안되면 로그 + 다음 단어로(다음 인덱스로) 진행
+      advanceIndex(index, "audio-load-timeout");
+    }, loadTimeoutMs);
+
+    return cleanup;
+  }, [advanceIndex, clearTimer, currentTaskIndex, isPlaying, pause, stopAudio, stopSpeech, tasks]);
 
   return {
     isPlaying,
+    isFinished,
     currentTask: currentTaskIndex > -1 ? tasks[currentTaskIndex] : null,
     progress: tasks.length > 0 ? Math.max(0, currentTaskIndex) / tasks.length : 0,
     currentWordIndex,
     currentWord: vocabulary[currentWordIndex] ?? null,
+    unlockAudio,
     play,
     pause,
     stop,
@@ -443,12 +601,3 @@ export function useDrivingMode(
     swipeHandlers,
   };
 }
-
-/*
-Background audio notes (mobile):
-- 화면이 꺼져도 오디오를 계속 재생하려면 결국 "미디어 재생"으로 인식되어야 합니다.
-  `new Audio()`도 가능하지만, iOS/Android 정책상 최초 사용자 제스처(탭)로 재생을 시작해야 하고,
-  PWA(홈 화면 설치) + Media Session API 설정이 가장 안정적입니다.
-- Service Worker는 오디오를 '대신' 재생할 수 없습니다. (SW는 UI 없는 백그라운드 스레드)
-  SW는 캐싱/오프라인 지원에 도움을 주지만, 백그라운드 재생의 핵심은 <audio> 재생 + OS 정책입니다.
-*/

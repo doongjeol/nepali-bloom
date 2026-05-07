@@ -62,11 +62,13 @@ function LessonDetailPage() {
 
   const speakingPracticeItems = useMemo(() => {
     if (lesson.examples && lesson.examples.length > 0) {
-      return lesson.examples;
+      return lesson.examples.map((ex: any, idx: number) => ({ ...ex, _type: "example", _idx: idx }));
     }
     // 대화문이 있으면 예문 대신 사용
     if (lesson.dialogues && lesson.dialogues.length > 0) {
-      return lesson.dialogues.flatMap(d => d.lines);
+      return lesson.dialogues.flatMap((d: any, dIdx: number) =>
+        d.lines.map((l: any, lIdx: number) => ({ ...l, _type: "dialogue", _dIdx: dIdx, _lIdx: lIdx }))
+      );
     }
     return [];
   }, [lesson.examples, lesson.dialogues]);
@@ -320,6 +322,19 @@ function LessonDetailPage() {
     setSpkIdx((c) => c + 1);
     setSpkRevealed(false);
     lastSpokenKeyRef.current = null;
+  };
+
+  const handleReveal = () => {
+    setSpkRevealed(true);
+    const vocabIndex = spkOrder[spkIdx] ?? spkIdx;
+    const card = speakingPracticeItems[vocabIndex];
+    if (card) {
+      if (card._type === "example") {
+        void audioPlayer.play(`example-${lesson.id}-${card._idx}`, getExampleAudioPath(lesson.id, card._idx));
+      } else if (card._type === "dialogue") {
+        void audioPlayer.play(`dial-${lesson.id}-${card._dIdx}-${card._lIdx}`, getDialogueAudioPath(lesson.id, card._dIdx, card._lIdx));
+      }
+    }
   };
 
   const allLessonItems = useMemo(() => {
@@ -651,14 +666,29 @@ function LessonDetailPage() {
                       {spkRevealed ? (
                         <div className="mt-5 space-y-3">
                           <div className="rounded-xl border bg-white/80 p-4">
-                            <div className="text-xs font-medium tracking-wide text-[#4E5A41]">
-                              네팔어 정답
-                            </div>
-                            <div
-                              className="mt-1 text-xl sm:text-2xl font-bold text-foreground"
-                              style={{ fontFamily: "var(--font-nepali)" }}
-                            >
-                              {card?.nepali ?? ""}
+                            <div className="flex items-start justify-between gap-3">
+                              <div className="min-w-0">
+                                <div className="text-xs font-medium tracking-wide text-[#4E5A41]">
+                                  네팔어 정답
+                                </div>
+                                <div
+                                  className="mt-1 text-xl sm:text-2xl font-bold text-foreground"
+                                  style={{ fontFamily: "var(--font-nepali)" }}
+                                >
+                                  {card?.nepali ?? ""}
+                                </div>
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() => {
+                                  if (card?._type === "example") void audioPlayer.play(`example-${lesson.id}-${card._idx}`, getExampleAudioPath(lesson.id, card._idx));
+                                  else if (card?._type === "dialogue") void audioPlayer.play(`dial-${lesson.id}-${card._dIdx}-${card._lIdx}`, getDialogueAudioPath(lesson.id, card._dIdx, card._lIdx));
+                                }}
+                                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border bg-white text-[#6B7A5A] shadow-sm transition-all hover:bg-[#6B7A5A]/10 active:scale-95"
+                                aria-label="네팔어 정답 다시 듣기"
+                              >
+                                <Volume2 className="h-5 w-5" />
+                              </button>
                             </div>
                             <div className="mt-1 text-sm text-muted-foreground italic">
                               {card?.romanized ?? ""}
@@ -727,7 +757,7 @@ function LessonDetailPage() {
                     {!spkRevealed && (
                       <div className="sticky bottom-0 -mx-4 mt-5 border-t bg-[#F7F3F0] px-4 pt-4 pb-2 sm:-mx-6 sm:px-6">
                         <Button
-                          onClick={() => setSpkRevealed(true)}
+                          onClick={handleReveal}
                           className="h-16 w-full rounded-3xl bg-[#7A5C45] text-base font-bold text-white shadow-md hover:bg-[#6A4D3A] active:scale-[0.99]"
                         >
                           정답 확인
