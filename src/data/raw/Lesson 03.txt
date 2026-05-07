@@ -4,141 +4,169 @@ BASIC COURSE IN SPOKEN NEPALI - LESSON 3
 
 1. VOCABULARY (어휘)
 --------------------------------------------------
-aaphno         : own (자신의) 
-aaunu          : to come (오다) 
-baahira        : outside (밖) 
-bahini         : sister (younger) (여동생) 
-bhitra         : in, inside (안) 
-chaahi         : one (specifies) (것 - 특정함) 
-chaar          : four (4) 
-chhan          : are (있다 - 복수/친근) 
-daai           : brother (elder) (형/오빠) 
-dui            : two (2) 
-ek             : one (1) 
-hun            : are (이다 - 복수/사물) 
-tin            : three (3) 
-jaanu          : to go (가다) 
-jhyaal         : window (창문) 
-kaslaai        : whom (누구에게) 
-kati           : how much (얼마나) 
-katiwaTaa      : how many (몇 개 - 사물) 
-khalti         : pocket (주머니) 
-ko             : who (누구) 
-kun            : which (어느 것) 
-nira           : near (근처) 
-raajya         : state (주/State) 
-raakhnu        : to put (두다/놓다) 
-raato          : red (빨간색) 
-shahar         : town, city (도시) 
-ti             : those (저것들) 
-timi           : you (familiar) (너 - 친근한 형태) 
-usko           : his, hers (그/그녀의) 
-usle           : he, she (그/그녀가 - 과거 타동사 주어) 
-yi             : these (이것들) 
-
+aaphno      : own (자신의)
+aaunu       : to come (오다)
+baahira     : outside (밖)
+bahini      : sister (younger) (여동생)
+bhitra      : in, inside (안)
+chaahI      : one (specifies) (것 - 특정함)
+chaar       : four (4)
+chhan       : are (있다 - 복수/친근)
+daai        : brother (elder) (형/오빠)
+dui         : two (2)
+ek          : one (1)
+hun         : are (이다 - 복수/사물)
+tin         : three (3)
+jaanu       : to go (가다)
+jhyaal      : window (창문)
+kaslaai     : whom (누구에게)
+kati        : how much (얼마나)
+katiwaTaa   : how many (몇 개 - 사물)
+khalti      : pocket (주머니)
+ko          : who (누구)
+kun         : which (어느 것)
+nira        : near (근처)
+raajya      : state (주/State)
+raakhnu     : to put (두다/놓다)
+raato       : red (빨간색)
+shahar      : town, city (도시)
+ti          : those (저것들)
+timi        : you (familiar) (너 - 친근한 형태)
+usko        : his, hers (그/그녀의)
+usle        : he, she (그/그녀가 - 과거 타동사 주어)
+yi          : these (이것들)
 
 2. PART I: DIALOGUE (대화문)
 --------------------------------------------------
 (a) 이름 및 출신지 상세
-1. tapaaïko naam ke ho ? / mero naam maaik ho. 
-   (당신의 이름은 무엇입니까? / 제 이름은 Mike입니다.) 
-2. wahããko ni ? / wahããko naam piTar ho. 
-   (그분은요? / 그분의 이름은 Peter입니다.) 
-3. tapaaïko ghar kahãã ho ? / amerikaamaa. 
-   (고향이 어디입니까? / 미국입니다.) 
-4. kun raajyamaa ? / washingTanmaa. 
-   (어느 주입니까? / 워싱턴 주입니다.) 
-5. tapaaïko shaharko naam ke ho ? / siyaaTal. 
-   (도시 이름이 무엇입니까? / 시애틀입니다.) 
+1. tapaaIko naam ke ho ? / mero naam maaik ho.
+   (당신의 이름은 무엇입니까? / 제 이름은 Mike입니다.)
+2. wahããko ni ? / wahããko naam piTar ho.
+   (그분은요? / 그분의 이름은 Peter입니다.)
+3. tapaaIko ghar kahãã ho ? / amerikaamaa.
+   (고향이 어디입니까? / 미국입니다.)
+4. kun raajyamaa ? / washingTanmaa.
+   (어느 주입니까? / 워싱턴 주입니다.)
+5. tapaaIko shaharko naam ke ho ? / siyaaTal.
+   (도시 이름이 무엇입니까? / 시애틀입니다.)
 
 (b) 가족 관계 (인사)
-1. namaste ! / namaste ! 
-2. u ko ho? / u mero bhaai ho. 
-   (그는 누구입니까? / 그는 제 남동생입니다.) 
-3. usko naam ke ho ? / usko naam raam ho. 
-   (그의 이름은 무엇입니까? / 그의 이름은 Ram입니다.) 
-4. tapaaïko daai hunuhunchha ? / hunuhunna. 
-   (형/오빠가 있습니까? / 아니요, 없습니다.) 
-5. didi ni? / didi pani hunuhunna. 
-   (누나/언니는요? / 누나도 없습니다.) 
-6. bahini chha ta ? / chha. 
-   (그러면 여동생은 있나요? / 네, 있습니다.) 
-7. tapaaïko bahiniko naam ke ho? / mero bahiniko naam sitaa ho. 
-   (여동생 이름이 무엇입니까? / 제 여동생 이름은 Sita입니다.) 
-
+1. namaste ! / namaste !
+2. u ko ho? / u mero bhaai ho.
+   (그는 누구입니까? / 그는 제 남동생입니다.)
+3. usko naam ke ho ? / usko naam raam ho.
+   (그의 이름은 무엇입니까? / 그의 이름은 Ram입니다.)
+4. tapaaIko daai hunuhunchha ? / hunuhunna.
+   (형/오빠가 있습니까? / 아니요, 없습니다.)
+5. didi ni? / didi pani hunuhunna.
+   (누나/언니는요? / 누나도 없습니다.)
+6. bahini chha ta ? / chha.
+   (그러면 여동생은 있나요? / 네, 있습니다.)
+7. tapaaIko bahiniko naam ke ho? / mero bahiniko naam sitaa ho.
+   (여동생 이름이 무엇입니까? / 제 여동생 이름은 Sita입니다.)
 
 3. PART II: PRACTICE (연습)
 --------------------------------------------------
 (a) 책 읽기
-1. tyo ke ho ? / yo kitaab ho. 
-2. tyo kasko kitaab ho? / yo mero kitaab ho. 
-3. tyo kitaabko naam ke ho ? / yo kitaabko naam Basic Course in Spoken Nepali ho. 
-4. paDhnos. tapaaïle ke gareko ? / maile kitaab paDheko. 
-5. wahããle ke gareko ? / wahããle kitaab paDheko. 
+1. tyo ke ho ? / yo kitaab ho.
+2. tyo kasko kitaab ho? / yo mero kitaab ho.
+3. tyo kitaabko naam ke ho ? / yo kitaabko naam Basic Course in Spoken Nepali ho.
+4. paDhnos. tapaaIle ke gareko ? / maile kitaab paDheko.
+5. wahããle ke gareko ? / wahããle kitaab paDheko.
 
 (b) 펜 주기
-1. tyo ke ho ? / yo kalam ho. 
-2. tyo kasko kalam ho? / yo mero kalam ho. 
-3. tyo kalam wahããlaai dinos. 
-   (그 펜을 그분에게 주세요.) 
-   - tapaaïle kalam kaslaai dieko ? / maile kalam wahããlaai dieko. 
-     (누구에게 펜을 주었습니까? / 그분에게 주었습니다.) 
-4. tapaaïle wahããlaai kasko kalam dieko ? / maile wahããlaai mero kalam dieko. 
-   (그분에게 누구의 펜을 주었습니까? / 제 펜을 주었습니다.) 
+1. tyo ke ho ? / yo kalam ho.
+2. tyo kasko kalam ho? / yo mero kalam ho.
+3. tyo kalam wahããlaai dinos.
+   (그 펜을 그분에게 주세요.)
+   - tapaaIle kalam kaslaai dieko ? / maile kalam wahããlaai dieko.
+     (누구에게 펜을 주었습니까? / 그분에게 주었습니다.)
+4. tapaaIle wahããlaai kasko kalam dieko ? / maile wahããlaai mero kalam dieko.
+   (그분에게 누구의 펜을 주었습니까? / 제 펜을 주었습니다.)
 
 (c) 창문 (친근한 형태 'Timi' 사용)
-1. jhyaal banda gara. / maile jhyaal banda gareko. 
-   (창문을 닫아라. / 제가 창문을 닫았습니다.) 
-2. jhyaal khola. / usle jhyaal kholeko. 
-   (창문을 열어라. / 그가 창문을 열었습니다.) 
-3. usle Dhokaa kholeko ? / hoina, usle jhyaal kholeko. 
-   (그가 문을 열었나요? / 아니요, 창문을 열었습니다.) 
+1. jhyaal banda gara. / maile jhyaal banda gareko.
+   (창문을 닫아라. / 제가 창문을 닫았습니다.)
+2. jhyaal khola. / usle jhyaal kholeko.
+   (창문을 열어라. / 그가 창문을 열었습니다.)
+3. usle Dhokaa kholeko ? / hoina, usle jhyaal kholeko.
+   (그가 문을 열었나요? / 아니요, 창문을 열었습니다.)
 
 (d) 이동하기 (안과 밖)
-1. baahira jaau. / ma baahira gaeko. 
-   (밖으로 나가라. / 저는 밖으로 나갔습니다.) 
-2. u kahãã gaeko ? / u baahira gaeko. 
-3. bhitra aau. / ma bhitra aaeko. 
-   (안으로 들어와라. / 저는 안으로 들어왔습니다.) 
-4. usle ke gareko ? / u bhitra aaeko. 
+1. baahira jaau. / ma baahira gaeko.
+   (밖으로 나가라. / 저는 밖으로 나갔습니다.)
+2. u kahãã gaeko ? / u baahira gaeko.
+3. bhitra aau. / ma bhitra aaeko.
+   (안으로 들어와라. / 저는 안으로 들어왔습니다.)
+4. usle ke gareko ? / u bhitra aaeko.
 
 (e) 칠판
-1. blyaakborDnira jaanos. / ma blyaakborDnira gaeko. 
-2. wahããle ke gareko ? / wahãã blyaakborDnira gaeko. 
-3. blyaakborDmaa tapaaïko naam lekhnus. / maile blyaakborDmaa aaphno naam lekheko. 
+1. blyaakborDnira jaanos. / ma blyaakborDnira gaeko.
+2. wahããle ke gareko ? / wahãã blyaakborDnira gaeko.
+3. blyaakborDmaa tapaaIko naam lekhnus. / maile blyaakborDmaa aaphno naam lekheko.
 
 (f) 숫자 쓰기
-1. yo kati ho ? / ek. 
-2. yo ni ? / dui. 
-3. blyaakborDmaa tin lekhnos. / maile tin lekheko. 
-4. wahããle chaar lekheko ? / hoina, tin lekheko. 
+1. yo kati ho ? / ek.
+2. yo ni ? / dui.
+3. blyaakborDmaa tin lekhnos. / maile tin lekheko.
+4. wahããle chaar lekheko ? / hoina, tin lekheko.
 
 (g) 사물 개수 및 소유
-1. ti ke hun ? / ti kalam hun. 
-2. tyahaa katiwaTaa kalam chhan ? / tyahaa tinwaTaa kalam chhan. 
-3. tapaaïko kalam kunchaahi ho ? / mero kalam raatochaahi ho. 
-   (당신의 펜은 어느 것입니까? / 빨간 것이 제 펜입니다.) 
-4. tapaaïko kalam khaltimaa raakhnos. / maile kalam mero khaltimaa raakheko. 
+1. ti ke hun ? / ti kalam hun.
+2. tyahaa katiwaTaa kalam chhan ? / tyahaa tinwaTaa kalam chhan.
+3. tapaaIko kalam kunchaahi ho ? / mero kalam raatochaahi ho.
+   (당신의 펜은 어느 것입니까? / 빨간 것이 제 펜입니다.)
+4. tapaaIko kalam khaltimaa raakhnos. / maile kalam mero khaltimaa raakheko.
 
 
-4. GRAMMAR NOTES (문법 정리)
+4. GRAMMAR NOTES (Lesson 3)
 --------------------------------------------------
-1. 분류사 (Classifiers): 셀 수 있는 명사 뒤에 붙음. 
-   - waTaa: 사물에 사용 (e.g., duiwaTaa - 2개). 
-   - janaa: 사람에 사용 (e.g., ek janaa - 1명). 
-2. nira: ~근처, ~옆 (nera라고도 표기함). 
-3. hun / chhan: 복수형 동사. 
-   - hun: ho의 복수. 
-   - chhan: chha의 복수. 
-4. 후치사 (Postpositions): 영어의 전치사와 달리 명사 뒤에 위치함 (e.g., nepaalmaa = 네팔에). 
-5. aaphno: 소유를 강조할 때 사용 (나 자신의, 그 자신의). 
-6. chaahi: 식별 상황에서 '것' 또는 '것들'을 의미 (e.g., yochaahi = 이 것). 
-7. 존칭에 따른 be동사 변형: 
-   - hunuhunchha (부정: hunuhunna): 존경을 표하는 대상에게 사용. 
-   - chha: 동생이나 친숙한 사이에서 사용. 
-8. 'You'의 네 가지 형태: 
-   - ta: 가장 낮은 형태 (아이, 동물, 매우 친한 친구). 
-   - timi: 친숙한 사이, 아랫사람 (명령형은 'gara!', 'khaau'). 
-   - tapaaï: 일반적인 존칭 (대부분의 경우 권장). 
-   - hajur: 가장 높은 존칭. 
+1. 분류사 (Classifiers): waTaa 및 janaa
+   - 셀 수 있는 명사와 함께 사용되며, 숫자 뒤에 붙어 명사를 수식함.
+   - waTaa: 사물이나 동물에 사용.
+     * eutaa (1개), duiwaTaa/duiTaa (2개), tinwaTaa/tinTaa (3개), chaarwaTaa/chaaroTaa (4개), 
+       pããchwaTaa/pããchoTaa (5개), chhawaTaa (6개), saatwaTaa/saatoTaa (7개), 
+       aaThwaTaa/aaThoTaa (8개), nauwaTaa (9개), DaswaTaa/DasoTaa (10개)
+   - janaa: 사람에게만 사용.
+     * ek janaa (1명), dui janaa (2명) 등.
+
+2. nira / nera: '~에', '~ 근처에'라는 뜻으로, nera는 nira의 변형된 철자임.
+
+3. hun / hoinan:
+   - hun: 'ho'의 복수형.
+   - hoinan: 'hoina'의 복수형 부정.
+
+4. chhan / chhainan:
+   - chhan: 'chha'의 복수형.
+   - chhainan: 'chhaina'의 복수형 부정.
+
+5. 후치사 (Postpositions):
+   - 영어의 전치사와 달리 명사 뒤에 위치함.
+   - nepaalmaa (네팔에서/네팔에), blyaakborDmaa (칠판에)
+
+6. aaphno: 소유 대명사와 결합하여 '자기 자신의(own)'를 강조함.
+   - maile aaphno naam lekheko. (나는 내 자신의 이름을 썼다.)
+   - sitaale aaphno kitaab paDheko. (시타는 그녀 자신의 책을 읽었다.)
+
+7. chaahĩ: 식별을 요구하는 상황에서 '것(one/ones)'을 의미함.
+   - kunchaahĩ? (어떤 것?), yochaahĩ (이것)
+
+8. 존재 동사 'be'의 존칭 수준:
+   - hunuhunchha (부정: hunuhunna): 존경을 표할 때 사용. (예: 아버지, 의사 등)
+     * tapaaïko baa kahãã hunuhunchha? (당신의 아버지는 어디 계십니까?)
+   - chha (부정: chhaina): 동생이나 아주 친한 사이(familiarity)에 사용.
+     * mero ekjanaa bhaai chha. (나에게는 남동생이 한 명 있다.)
+
+9. timi 및 동사 변화:
+   - timi: 나이가 어리거나 지위가 낮은 사람, 또는 친구 사이에 사용되는 '너'.
+   - 명령형 변화: 'garnus'가 'gara!'(해!)로 변함.
+     * khaanuns -> khaau, paDhnus -> paDha, sutnus -> suta, jaanus -> jaau
+
+10. 네팔어의 '너/당신(you)'의 4가지 형태:
+   - tã: 가장 낮은 형태. 자신의 자녀, 동물, 매우 친한 친구에게 사용.
+   - timi: 친숙한 관계(동생, 친구 등)에서 사용.
+   - tapaaï: 존경을 표할 때 사용. (외국인은 대개 이 표현 사용을 권장함)
+   - hajur: 가장 높은 최상위 존칭 형태.
+
+참고: 외국인 화자는 대부분의 경우 'tapaaï'를 사용하는 것이 좋으며, 어린 아이나 학생에게는 'timi', 동물에게는 'tã'를 사용합니다.
 ==================================================

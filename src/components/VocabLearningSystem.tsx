@@ -1,10 +1,11 @@
 ﻿﻿import { useState, useEffect, useMemo } from "react";
-import { Volume2, X, BrainCircuit, Pause, Check, RefreshCw, HelpCircle, CheckCircle } from "lucide-react";
+import { Volume2, BrainCircuit, Pause, Check, RefreshCw, HelpCircle, CheckCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { getVocabAudioPath } from "@/lib/getAudioPath";
 import type { UseAudioPlayerResult } from "@/hooks/useAudioPlayer";
 import { toast } from "sonner";
+import { ReviewStudyModal, type ReviewWord } from "@/components/ReviewStudyModal";
 
 export type VocabStatus = "known" | "unknown" | "none";
 
@@ -67,10 +68,8 @@ export function VocabLearningSystem({
       // ignore
     }
     setGridFlipped(new Set());
-    setReviewQueue([]);
-    setFlashcardIdx(0);
-    setIsFlipped(false);
-    setIsFlashcardOpen(false);
+    setReviewData([]);
+    setIsReviewOpen(false);
     setFilter("all");
     toast("학습 상태를 초기화했어요.", { duration: 2000, position: "top-center", className: "text-center" });
   };
@@ -98,10 +97,8 @@ export function VocabLearningSystem({
   };
 
   const [filter, setFilter] = useState<"all" | "unknown" | "known">("all");
-  const [isFlashcardOpen, setIsFlashcardOpen] = useState(false);
-  const [reviewQueue, setReviewQueue] = useState<Vocabulary[]>([]);
-  const [flashcardIdx, setFlashcardIdx] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
+  const [reviewData, setReviewData] = useState<ReviewWord[]>([]);
   const [gridFlipped, setGridFlipped] = useState<Set<string>>(new Set());
   const [reviewBtnShake, setReviewBtnShake] = useState(false);
 
@@ -152,25 +149,15 @@ export function VocabLearningSystem({
     }
 
     setFilter("unknown");
-    setReviewQueue([...unknownWords].sort(() => Math.random() - 0.5));
-    setFlashcardIdx(0);
-    setIsFlipped(false);
-    setIsFlashcardOpen(true);
+    const shuffled = [...unknownWords].sort(() => Math.random() - 0.5);
+    setReviewData(
+      shuffled.map((w, idx) => ({
+        id: `${w.lessonId ?? lessonId}::${w.romanized || w.nepali || w.korean}::${idx}`,
+        ...w,
+      })),
+    );
+    setIsReviewOpen(true);
   };
-
-  const handleFlashcardAnswer = (status: VocabStatus) => {
-    const currentWord = reviewQueue[flashcardIdx];
-    setStatus(currentWord.romanized, status);
-    if (flashcardIdx < reviewQueue.length - 1) {
-      setIsFlipped(false);
-      setFlashcardIdx((c) => c + 1);
-    } else {
-      setIsFlashcardOpen(false);
-    }
-  };
-
-  const currentReviewWord = reviewQueue[flashcardIdx];
-  const currentReviewEx = currentReviewWord ? getExample(currentReviewWord) : null;
 
   return (
     <div className="space-y-4 sm:space-y-6">
@@ -370,69 +357,16 @@ export function VocabLearningSystem({
         })}
       </div>
 
-      {/* 플래시카드 집중 학습 모달 */}
-      {isFlashcardOpen && currentReviewWord && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm animate-in fade-in duration-200">
-          <div className="flex w-full max-w-sm flex-col overflow-hidden rounded-[2rem] bg-background shadow-2xl animate-in zoom-in-95 duration-300">
-            <div className="flex items-center justify-between border-b px-5 py-4">
-              <span className="text-sm font-semibold text-muted-foreground">단어 복습 ({flashcardIdx + 1} / {reviewQueue.length})</span>
-              <button onClick={() => setIsFlashcardOpen(false)} className="rounded-full p-1 text-muted-foreground hover:bg-accent hover:text-foreground">
-                <X className="h-5 w-5" />
-              </button>
-            </div>
-            <div className="p-6">
-              <div className="relative h-64 w-full cursor-pointer [perspective:1000px]" onClick={() => setIsFlipped(!isFlipped)}>
-                <div className={cn("absolute inset-0 h-full w-full rounded-3xl transition-all duration-500 [transform-style:preserve-3d]", isFlipped ? "[transform:rotateY(180deg)]" : "")}>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center rounded-3xl border-2 border-border bg-card p-6 text-center shadow-sm [backface-visibility:hidden]">
-                    <button type="button" onClick={(e) => { e.stopPropagation(); const actualLessonId = currentReviewWord.lessonId ?? lessonId; audioPlayer.play(`modal-vocab-${actualLessonId}-${currentReviewWord.romanized}`, getVocabAudioPath(actualLessonId, currentReviewWord.romanized), { silentError: true }); }} className="absolute right-4 top-4 rounded-full bg-secondary p-2 text-secondary-foreground hover:bg-accent"><Volume2 className="h-5 w-5" /></button>
-                    <p className="text-4xl font-bold" style={{ fontFamily: "var(--font-nepali)" }}>{currentReviewWord.nepali}</p>
-                    <p className="mt-3 text-lg italic text-muted-foreground">{currentReviewWord.romanized}</p>
-                    <p className="absolute bottom-5 text-xs text-muted-foreground">터치하여 뒤집기</p>
-                  </div>
-                  <div className="absolute inset-0 flex flex-col items-center justify-center rounded-3xl border-2 border-border bg-[#F5EBE0] p-6 text-center shadow-sm [backface-visibility:hidden] [transform:rotateY(180deg)]">
-                    <div className={cn("flex flex-col items-center justify-center w-full", currentReviewEx ? "mb-auto mt-auto" : "my-auto")}>
-                      <p className="text-2xl font-bold text-[#333D29]">{currentReviewWord.korean}</p>
-                      <p className="mt-2 text-sm italic text-[#6B5D4F]">{currentReviewWord.romanized}</p>
-                      {currentReviewEx && (
-                        <div className="mt-3 w-full rounded-xl bg-background/60 p-3 text-left shadow-sm ring-1 ring-border/50">
-                          <div className="mb-1 flex items-center justify-between">
-                            <span className="text-[10px] font-bold text-muted-foreground">예문</span>
-                            <button
-                              type="button"
-                              onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                const actualLessonId = currentReviewWord.lessonId ?? lessonId;
-                                const itemId = `vocab-modal-example-${actualLessonId}-${currentReviewWord.romanized}`;
-                                const src = `/audio/lesson_${actualLessonId}/${currentReviewWord.romanized}_example.mp3`;
-                                void audioPlayer.play(itemId, src, { silentError: true });
-                              }}
-                              className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 text-primary transition-colors hover:bg-primary/20"
-                              aria-label="예문 음성 재생"
-                            >
-                              <Volume2 className="h-4 w-4" />
-                            </button>
-                          </div>
-                          <p className="text-sm font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>{currentReviewEx.nepali}</p>
-                          {currentReviewEx.romanized && <p className="mt-0.5 text-[11px] italic text-muted-foreground">{currentReviewEx.romanized}</p>}
-                          {currentReviewEx.korean && <p className="mt-1 text-xs text-foreground/80">{currentReviewEx.korean}</p>}
-                        </div>
-                      )}
-                    </div>
-                    <p className={cn("text-[#6B5D4F]/80 transition-all", currentReviewEx ? "mt-2 text-[10px]" : "absolute bottom-5 text-xs")}>
-                      터치하여 앞면으로
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="mt-6 flex gap-3">
-                <button onClick={() => handleFlashcardAnswer("unknown")} className="flex-1 rounded-2xl bg-secondary py-4 text-sm font-bold text-secondary-foreground transition-all hover:bg-secondary/80 active:scale-95">아직 몰라요</button>
-                <button onClick={() => handleFlashcardAnswer("known")} className="flex-1 rounded-2xl bg-primary py-4 text-sm font-bold text-primary-foreground transition-all hover:bg-primary/90 active:scale-95">외웠어요</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      <ReviewStudyModal
+        open={isReviewOpen}
+        onOpenChange={setIsReviewOpen}
+        lessonId={lessonId}
+        data={reviewData}
+        audioPlayer={audioPlayer}
+        onKnown={(word) => setStatus(word.romanized, "known")}
+        onUnknown={(word) => setStatus(word.romanized, "unknown")}
+        title="단어 복습"
+      />
     </div>
   );
 }

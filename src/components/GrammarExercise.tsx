@@ -270,22 +270,23 @@ export function GrammarExercise({ card }: { card: GrammarPracticeCard }) {
 
   return (
     <div className="space-y-3">
-      <div className="flex items-center justify-end gap-2">
-        <Button
-          type="button"
-          variant="secondary"
-          size="sm"
-          className="rounded-xl"
-          onClick={() => {
-            setExercise(buildExercise(card));
-            setPicked(null);
-            setRevealed(false);
-          }}
-          disabled={!hasNext}
-        >
-          새로 만들기
-        </Button>
-      </div>
+      {hasNext && (
+        <div className="flex items-center justify-end gap-2">
+          <Button
+            type="button"
+            variant="secondary"
+            size="sm"
+            className="rounded-xl"
+            onClick={() => {
+              setExercise(buildExercise(card));
+              setPicked(null);
+              setRevealed(false);
+            }}
+          >
+            새로 만들기
+          </Button>
+        </div>
+      )}
 
       {questionView}
 

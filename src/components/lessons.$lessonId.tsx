@@ -176,7 +176,7 @@ function LessonDetailPage() {
 
   const allTabs: { key: Tab; label: string; icon: string; count: number }[] = [
     { key: "vocabulary", label: "단어장", icon: "📖", count: lesson.vocabulary.length },
-    { key: "examples", label: "예문", icon: "💡", count: lesson.examples.length },
+    { key: "examples", label: "예문", icon: "💡", count: lesson.examples?.length || 0 },
     { key: "grammar", label: "문법", icon: "📏", count: grammarItemCount },
     { key: "quiz", label: "퀴즈", icon: "✏️", count: lesson.quiz.length },
     { key: "dialogues", label: "대화문", icon: "💬", count: lesson.dialogues.length },
@@ -237,15 +237,15 @@ function LessonDetailPage() {
           >
             ← 레슨 목록
           </Link>
-          <div className="mt-2 flex items-center gap-3">
-            <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
+        <div className="mt-2 flex min-w-0 flex-1 items-center gap-3">
+          <div className="flex h-9 w-9 shrink-0 sm:h-10 sm:w-10 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
               {lesson.id}
             </div>
-            <div className="min-w-0">
-              <h1 className="text-xl sm:text-2xl font-bold text-foreground truncate">
+          <div className="min-w-0 flex-1">
+            <h1 className="truncate text-xl font-bold text-foreground sm:text-2xl">
                 {lesson.titleKo}
               </h1>
-              <p className="text-xs sm:text-sm text-muted-foreground break-words sm:truncate">
+            <p className="truncate text-xs text-muted-foreground sm:text-sm">
                 {lesson.title} · {lesson.description}
               </p>
             </div>
@@ -291,7 +291,7 @@ function LessonDetailPage() {
             ))}
 
           {tab === "examples" &&
-            (lesson.examples.length === 0 ? (
+            (!lesson.examples || lesson.examples.length === 0 ? (
               <EmptyState message="아직 예문이 준비되지 않았습니다." />
             ) : (
               <div className="space-y-3 sm:space-y-4">
@@ -737,6 +737,9 @@ function parseGrammarCards(grammar: any[]): GrammarCardData[] {
 
 function isPracticable(card: GrammarCardData) {
   const blob = [card.title, ...card.lines].join(" ").toLowerCase();
+  
+  if (blob.includes("aaphno")) return false;
+  
   const hasPossessive = blob.includes("'-ko'") || blob.includes("-ko") || blob.includes("소유");
   const hasErgative = blob.includes("'-le'") || blob.includes("-le") || blob.includes("타동사");
   const hasCopula = hasHoChhaHunchhaText(` ${card.lines.join(" ").toLowerCase()} `) || (blob.includes(" ho ") && blob.includes(" chha ") && blob.includes(" hunchha "));
