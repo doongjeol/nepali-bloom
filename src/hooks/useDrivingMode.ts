@@ -790,6 +790,8 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         if (didStart) return;
         if (typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.speaking) return;
         console.log(`[DM] speech start TIMEOUT idx=${index}`);
+        // TTS can be silently ignored without any events on some browsers.
+        // Don't stall the session; skip this speech task.
         advanceIndex(index, "speech-start-timeout");
       }, 1200);
       const hardWatchdogMs = Math.min(10000, 2000 + text.length * 80);
@@ -798,6 +800,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         if (runIdRef.current !== runId) return;
         if (didFinish) return;
         console.log(`[DM] speech hard TIMEOUT idx=${index} ms=${hardWatchdogMs}`);
+        didFinish = true;
+        // TTS can be unavailable (missing voices) or silently blocked on some browsers.
+        // Don't stall the entire session; skip this speech task.
         advanceIndex(index, "speech-hard-timeout");
       }, hardWatchdogMs);
 

@@ -54,6 +54,10 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
   const isLastItem = displayData.length > 0 && currentWordIndex >= displayData.length - 1;
 
+  // Auto-start guard: on some browsers (notably iOS Safari) play() must originate from a user gesture.
+  // We still auto-start after displayData is set, but we avoid re-triggering if play was already kicked off.
+  const didKickoffPlayRef = useRef(false);
+
   // 4) 코드 클린업: useEffect 내 중복 재생 방지 + cleanup에서 stop() 보장
   useEffect(() => {
     if (startTimerRef.current) clearTimeout(startTimerRef.current);
@@ -61,18 +65,20 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
     if (displayData.length === 0 || isFinished) {
       stop();
+      didKickoffPlayRef.current = false;
       return;
     }
 
     startTimerRef.current = setTimeout(() => {
       void unlockAudio();
-      play();
+      if (!didKickoffPlayRef.current) play();
     }, 200);
 
     return () => {
       if (startTimerRef.current) clearTimeout(startTimerRef.current);
       startTimerRef.current = null;
       stop();
+      didKickoffPlayRef.current = false;
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayData, isFinished]);
@@ -146,6 +152,10 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
               setIsFinished(false);
               setStudyMode("word");
               setDisplayData(vocabOnly);
+              // iOS Safari requires play() to be initiated from a user gesture.
+              // Kick off immediately here (the effect also triggers, but this helps ensure audio/TTS is unblocked).
+              didKickoffPlayRef.current = true;
+              play();
             }}
             className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99] landscape:py-4"
           >
@@ -162,6 +172,8 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
               setIsFinished(false);
               setStudyMode("dialogue");
               setDisplayData(dialogueOnly);
+              didKickoffPlayRef.current = true;
+              play();
             }}
             className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99] landscape:py-4"
           >
@@ -223,6 +235,8 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
               setFailedList([]);
               setIsFinished(false);
               setDisplayData(studyMode === "dialogue" ? dialogueOnly : vocabOnly);
+              didKickoffPlayRef.current = true;
+              play();
             }}
             className="w-full rounded-2xl bg-primary px-6 py-4 text-lg font-bold text-primary-foreground shadow-lg transition-transform active:scale-95 disabled:opacity-50"
           >
