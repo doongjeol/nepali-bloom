@@ -956,6 +956,17 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     // 다만 iOS에서는 SpeechSynthesis 직후 media element 오디오가 "작게 시작했다가 커지는" 현상이 종종 있어,
     // 화면이 켜져(visible) 있는 동안에는 WebAudio로 재생해 볼륨 램프를 줄이고,
     // 잠금화면/백그라운드(visibilityState=hidden)에서는 HTMLAudioElement로 폴백한다.
+    // AudioContext는 user gesture에서 unlockAudio()로 열리는 것이 가장 좋지만,
+    // 여기서도 존재하지 않으면 생성만 해둬서(WebAudio decode/play 경로) HTMLAudioElement 폴백 비율을 줄인다.
+    if (isIOS && !audioContextRef.current && typeof window !== "undefined") {
+      try {
+        const AudioCtx = (window.AudioContext || (window as any).webkitAudioContext) as typeof AudioContext | undefined;
+        if (AudioCtx) audioContextRef.current = new AudioCtx();
+      } catch {
+        // ignore
+      }
+    }
+
     const canUseWebAudioInForeground =
       isIOS && typeof document !== "undefined" && document.visibilityState === "visible" && audioContextRef.current;
 
@@ -1081,12 +1092,18 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       const audioCtx = audioContextRef.current!;
       console.log(`[DM] webaudio(fg) try idx=${index} src=${src}`);
 
+      // WebAudio가 iOS에서 볼륨 "페이드업" 현상을 줄이는 핵심 경로라서,
+      // 로딩이 조금 느려도 HTMLAudioElement로 빠르게 폴백하지 않도록 타임아웃을 넉넉히 잡는다.
       webAudioStartTimeout = setTimeout(() => {
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
         console.log(`[DM] webaudio(fg) start TIMEOUT idx=${index} src=${src}`);
-        startHtmlAudio(src);
-      }, 2500);
+        // timeout 시에도 HTML로 폴백하지 않고(볼륨 페이드업 재발),
+        // 다음 태스크로 넘어가 세션이 멈춘 것처럼 보이는 것을 방지한다.
+        setIsPlaying(false);
+        isPlayingRef.current = false;
+        setAutoplayBlocked(true);
+      }, 10000);
 
       void (async () => {
         try {
@@ -1133,6 +1150,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           console.log(`[DM] webaudio(fg) error idx=${index} src=${src}`, e);
           if (webAudioStartTimeout) clearTimeout(webAudioStartTimeout);
           webAudioStartTimeout = null;
+          // WebAudio가 실패하면 그때만 HTMLAudioElement로 폴백
           startHtmlAudio(src);
         }
       })();
