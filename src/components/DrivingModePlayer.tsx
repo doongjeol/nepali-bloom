@@ -371,7 +371,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             <div className="text-2xl font-bold text-muted-foreground">재생 준비 중...</div>
           )}
 
-          <div className="mt-4 flex min-h-8 items-center justify-center break-keep text-base font-medium text-primary">
+          <div className="mt-2 flex min-h-6 items-center justify-center break-keep text-sm font-medium text-primary landscape:mt-1 landscape:text-xs">
             {currentTask?.description ?? ""}
           </div>
         </div>
