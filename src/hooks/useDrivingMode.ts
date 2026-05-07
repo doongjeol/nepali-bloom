@@ -150,6 +150,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const [tasks, setTasks] = useState<PlaybackTask[]>([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
+  const [autoplayBlocked, setAutoplayBlocked] = useState(false);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -228,6 +229,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     setIsPlaying(false);
     isPlayingRef.current = false;
     setIsFinished(false);
+    setAutoplayBlocked(false);
     clearTimer();
     stopAudio();
     stopSpeech();
@@ -265,6 +267,8 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     if (typeof window !== "undefined" && "speechSynthesis" in window) {
       try {
+        // iOS/Safari에서 voices 로딩 트리거 역할을 하기도 함
+        void window.speechSynthesis.getVoices?.();
         window.speechSynthesis.cancel();
       } catch {
         // ignore
@@ -291,6 +295,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     setIsFinished(false);
     setIsPlaying(true);
     isPlayingRef.current = true;
+    setAutoplayBlocked(false);
     const startIndex = currentTaskIndexRef.current > -1 ? currentTaskIndexRef.current : 0;
     console.log(`[DM] play() startIndex=${startIndex} totalTasks=${tasks.length}`);
     setCurrentTaskIndex(startIndex);
@@ -531,11 +536,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     }
 
     if (task.type === "speech") {
-      // 운전 모드에서 "오디오만" 재생 옵션이면 TTS는 모두 스킵
-      if (options?.audioOnly) {
-        advanceIndex(index, "speech-skip-audioOnly");
-        return cleanup;
-      }
       stopAudio();
       if (typeof window === "undefined" || !("speechSynthesis" in window)) {
         clearTimer();
@@ -550,9 +550,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
       const utterance = new SpeechSynthesisUtterance(task.payload as string);
       utteranceRef.current = utterance;
-      utterance.lang = "ko-KR";
+      utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
       utterance.rate = ttsSpeedRef.current;
-      utterance.volume = task.isNepaliTTS ? 1.0 : 0.5;
+      utterance.volume = 1.0;
 
       utterance.onstart = () => console.log(`[DM] speech start idx=${index}`);
       utterance.onend = () => {
@@ -616,6 +616,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         .play()
         .then(() => {
           console.log(`[DM] audio play started idx=${index}`);
+          setAutoplayBlocked(false);
         })
         .catch((e) => {
           console.log(`[DM] audio play rejected idx=${index}`, e);
@@ -624,6 +625,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           // 세션을 일시정지 상태로 두고 사용자의 재생/다음 입력을 기다립니다.
           setIsPlaying(false);
           isPlayingRef.current = false;
+          setAutoplayBlocked(true);
         });
     };
 
@@ -667,6 +669,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   return {
     isPlaying,
     isFinished,
+    autoplayBlocked,
     currentTask: currentTaskIndex > -1 ? tasks[currentTaskIndex] : null,
     progress: tasks.length > 0 ? Math.max(0, currentTaskIndex) / tasks.length : 0,
     currentWordIndex,
