@@ -156,10 +156,16 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
+  const audioBufferCacheRef = useRef<Map<string, AudioBuffer>>(new Map());
+  const bufferSourceRef = useRef<AudioBufferSourceNode | null>(null);
+  const gainNodeRef = useRef<GainNode | null>(null);
 
   const isPlayingRef = useRef(false);
   const runIdRef = useRef(0);
   const currentTaskIndexRef = useRef(-1);
+  const didUnlockHtmlAudioRef = useRef(false);
+  const didUnlockSpeechRef = useRef(false);
+  const unlockAudioElRef = useRef<HTMLAudioElement | null>(null);
   useEffect(() => {
     currentTaskIndexRef.current = currentTaskIndex;
   }, [currentTaskIndex]);
@@ -190,6 +196,19 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   }, []);
 
   const stopAudio = useCallback(() => {
+    try {
+      bufferSourceRef.current?.stop?.();
+    } catch {
+      // ignore
+    }
+    bufferSourceRef.current = null;
+    try {
+      gainNodeRef.current?.disconnect?.();
+    } catch {
+      // ignore
+    }
+    gainNodeRef.current = null;
+
     const audio = audioRef.current;
     if (!audio) return;
     audio.onended = null;
@@ -204,7 +223,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     } catch {
       // ignore
     }
-    audioRef.current = null;
   }, []);
 
   const stopSpeech = useCallback(() => {
@@ -244,32 +262,60 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
   useEffect(() => () => pause(), [pause]);
 
-  const unlockAudio = useCallback(async () => {
+  const unlockAudio = useCallback(() => {
     if (typeof window === "undefined") return;
-    const AudioCtx = (window.AudioContext || (window as any).webkitAudioContext) as typeof AudioContext | undefined;
-    if (!AudioCtx) return;
 
-    try {
-      const ctx = audioContextRef.current ?? new AudioCtx();
-      audioContextRef.current = ctx;
-      if (ctx.state === "suspended") await ctx.resume();
-
-      // play 1-frame silent buffer to "unlock" audio output under autoplay policy (must be called in user gesture)
-      const buffer = ctx.createBuffer(1, 1, ctx.sampleRate);
-      const source = ctx.createBufferSource();
-      source.buffer = buffer;
-      source.connect(ctx.destination);
-      source.start(0);
-      source.stop(0);
-    } catch {
-      // ignore
+    // 1) HTMLAudioElement "gesture lock" 해제:
+    // iOS Safari는 user gesture 안에서 생성/재생된 audio 인스턴스를 이후에도 재생 가능한 경우가 많다.
+    // (setTimeout/Promise 체인에서 만들어진 audio는 play()가 계속 reject될 수 있음)
+    if (!didUnlockHtmlAudioRef.current) {
+      try {
+        const a = new Audio();
+        unlockAudioElRef.current = a;
+        a.preload = "auto";
+        a.src =
+          "data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAESsAACJWAAACABAAZGF0YQAAAAA=";
+        a.volume = 1.0;
+        const p = a.play();
+        if (p && typeof (p as any).catch === "function") (p as Promise<void>).catch(() => {});
+        a.pause();
+        a.currentTime = 0;
+        didUnlockHtmlAudioRef.current = true;
+      } catch {
+        // ignore
+      }
     }
 
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+    // 2) WebAudio unlock (mute switch 대응 포함)
+    const AudioCtx = (window.AudioContext || (window as any).webkitAudioContext) as typeof AudioContext | undefined;
+    if (AudioCtx) {
       try {
-        // iOS/Safari에서 voices 로딩 트리거 역할을 하기도 함
+        const ctx = audioContextRef.current ?? new AudioCtx();
+        audioContextRef.current = ctx;
+        if (ctx.state === "suspended") void ctx.resume();
+
+        const buffer = ctx.createBuffer(1, 1, ctx.sampleRate);
+        const source = ctx.createBufferSource();
+        source.buffer = buffer;
+        source.connect(ctx.destination);
+        source.start(0);
+        source.stop(0);
+      } catch {
+        // ignore
+      }
+    }
+
+    // 3) SpeechSynthesis unlock (iOS Safari는 최초 utterance가 user gesture 안에서 필요할 때가 있음)
+    if (!didUnlockSpeechRef.current && "speechSynthesis" in window) {
+      try {
         void window.speechSynthesis.getVoices?.();
+        const u = new SpeechSynthesisUtterance(" ");
+        u.lang = "ko-KR";
+        u.volume = 0;
+        window.speechSynthesis.speak(u);
+        // iOS에서 "unlock"만 목적이므로 즉시 cancel
         window.speechSynthesis.cancel();
+        didUnlockSpeechRef.current = true;
       } catch {
         // ignore
       }
@@ -309,7 +355,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       const taskIdx = wordStartTaskIndex.get(clamped);
       if (typeof taskIdx !== "number") return;
 
-      setCurrentTaskIndex(taskIdx);
       clearTimer();
       stopAudio();
       stopSpeech();
@@ -318,6 +363,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       setIsFinished(false);
       setIsPlaying(true);
       isPlayingRef.current = true;
+      setAutoplayBlocked(false);
       console.log(`[DM] jumpToWord word=${clamped} taskIdx=${taskIdx}`);
       setCurrentTaskIndex(taskIdx);
     },
@@ -332,6 +378,125 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     onNext: nextWord,
     onPrev: prevWord,
   });
+
+  const buildTasks = useCallback(
+    (words: VocabularyItem[]): PlaybackTask[] => {
+      const newTasks: PlaybackTask[] = [];
+
+      words.forEach((word, index) => {
+        const type = word.type || "vocab";
+        const mode = options?.studyMode;
+        let label = "단어";
+        if (type === "grammar") label = "문법";
+        else if (type === "dialogue") label = "대화문";
+        else if (type === "quiz") label = "퀴즈";
+
+        newTasks.push({
+          type: "speech",
+          payload: `${label} ${index + 1}번`,
+          description: `${label} ${index + 1}번 안내`,
+          wordIndex: index,
+        });
+
+        if (type === "vocab") {
+          newTasks.push({
+            type: "audio",
+            payload: getVocabAudioPath(word.lessonId ?? lessonId, word.romanized),
+            description: `네팔어 발음: ${word.nepali}`,
+            wordIndex: index,
+          });
+          newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
+
+          const meaningText = word.korean.split("(")[1]?.replace(")", "") || word.korean;
+          newTasks.push({
+            type: "speech",
+            payload: meaningText,
+            description: `뜻: ${meaningText}`,
+            wordIndex: index,
+          });
+          newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
+        } else if (type === "dialogue") {
+          const cleanKorean = word.korean.replace(/^\[.*?\]\s*/, "");
+          const speakerPrefixMatch = word.korean.match(/^\[(.*?)\]\s*/);
+          const speaker = speakerPrefixMatch?.[1];
+
+          if (mode === "dialogue") {
+            // 요구사항: 대화문은 한글을 먼저 재생하고 네팔어를 재생
+            newTasks.push({
+              type: "speech",
+              payload: cleanKorean,
+              description: speaker ? `[${speaker}] 해석` : "해석",
+              wordIndex: index,
+            });
+            // 한글 TTS 직후 iOS에서 오디오가 "ducking" 된 상태로 시작해 점점 커지는 것처럼 들릴 수 있어
+            // 약간 더 쉬었다가 네팔어를 재생한다.
+            newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
+
+            if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
+              newTasks.push({
+                type: "audio",
+                payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
+                description: speaker ? `[${speaker}] 네팔어` : "네팔어",
+                wordIndex: index,
+              });
+            } else {
+              newTasks.push({
+                type: "speech",
+                payload: word.nepali,
+                description: speaker ? `[${speaker}] 네팔어` : "네팔어",
+                wordIndex: index,
+                isNepaliTTS: true,
+              });
+            }
+            newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
+          } else {
+            newTasks.push({
+              type: "speech",
+              payload: cleanKorean,
+              description: `뜻: ${cleanKorean}`,
+              wordIndex: index,
+            });
+            newTasks.push({ type: "delay", payload: 900, description: "대기", wordIndex: index });
+
+            if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
+              newTasks.push({
+                type: "audio",
+                payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
+                description: `네팔어: ${word.nepali}`,
+                wordIndex: index,
+              });
+            } else {
+              newTasks.push({
+                type: "speech",
+                payload: word.nepali,
+                description: `네팔어: ${word.nepali}`,
+                wordIndex: index,
+                isNepaliTTS: true,
+              });
+            }
+            newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
+          }
+        } else {
+          newTasks.push({
+            type: "speech",
+            payload: word.korean,
+            description: `내용: ${word.korean}`,
+            wordIndex: index,
+          });
+          newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
+        }
+      });
+
+      newTasks.push({
+        type: "speech",
+        payload: "학습을 모두 마쳤습니다. 처음부터 다시 시작하려면 이전 버튼을 눌러주세요.",
+        description: "세션 종료 안내",
+      });
+
+      return newTasks;
+    },
+    [lessonId, options?.studyMode],
+  );
 
   const isIOS = useMemo(() => {
     if (typeof navigator === "undefined") return false;
@@ -348,18 +513,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     vocabulary.forEach((word, index) => {
       const type = word.type || "vocab";
       const mode = options?.studyMode;
-      const audioOnly = Boolean(options?.audioOnly);
-      let label = "단어";
-      if (type === "grammar") label = "문법";
-      else if (type === "dialogue") label = "대화문";
-      else if (type === "quiz") label = "퀴즈";
-
-      if (!audioOnly) newTasks.push({
-        type: "speech",
-        payload: `${label} ${index + 1}번`,
-        description: `${label} ${index + 1}번 안내`,
-        wordIndex: index,
-      });
 
       if (type === "vocab") {
         newTasks.push({
@@ -397,8 +550,18 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         const speakerPrefixMatch = word.korean.match(/^\[(.*?)\]\s*/);
         const speaker = speakerPrefixMatch?.[1];
 
-        // dialogue 모드에서는 [네팔어 문장 -> 한국어 해석] 순으로 재생
+        // 대화문만 듣기(dialogue)에서는 [한국어 해석 -> 네팔어] 순으로 재생
         if (mode === "dialogue") {
+          newTasks.push({
+            type: "speech",
+            payload: cleanKorean,
+            description: speaker ? `[${speaker}] 해석` : "해석",
+            wordIndex: index,
+          });
+          // 한글 TTS 직후 iOS에서 오디오가 "ducking" 된 상태로 시작해 점점 커지는 것처럼 들릴 수 있어
+          // 약간 더 쉬었다가 네팔어를 재생한다.
+          newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
+
           if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
             newTasks.push({
               type: "audio",
@@ -415,14 +578,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
               isNepaliTTS: true,
             });
           }
-          newTasks.push({ type: "delay", payload: 1000, description: "대기", wordIndex: index });
-          newTasks.push({
-            type: "speech",
-            payload: cleanKorean,
-            description: speaker ? `[${speaker}] 해석` : "해석",
-            wordIndex: index,
-          });
-          newTasks.push({ type: "delay", payload: 2000, description: "대기", wordIndex: index });
+          newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
         } else {
           // 기본(혼합) 흐름은 기존대로 [한국어 -> 네팔어] 유지
           newTasks.push({
@@ -523,9 +679,10 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       clearTimer();
       const rawMs = task.payload as number;
       // iOS Safari는 user-gesture 컨텍스트가 setTimeout 지연에 매우 민감해서
-      // 긴 대기 후 다음 오디오 재생이 차단될 수 있습니다.
-      // 안전하게 900ms 이하로 클램프합니다.
-      const ms = isIOS ? Math.min(rawMs, 900) : rawMs;
+      // iOS Safari에서 user-gesture 컨텍스트가 지연(setTimeout) 후 약해지면 다음 play()가 막힐 수 있습니다.
+      // 하지만 너무 짧게 자르면(TTS 직후) 오디오가 "ducking" 상태에서 시작해 볼륨이 점점 커지는 듯 들릴 수 있어
+      // 상한을 1.5s로 완화합니다.
+      const ms = isIOS ? Math.min(rawMs, 1500) : rawMs;
       timerRef.current = setTimeout(() => {
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
@@ -553,56 +710,186 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       utterance.lang = task.isNepaliTTS ? "ne-NP" : "ko-KR";
       utterance.rate = ttsSpeedRef.current;
       utterance.volume = 1.0;
+      // iOS Safari에서 spoken audio가 media volume을 과하게 ducking시키는 케이스가 있어 pitch를 약간 올려
+      // 시스템이 "통화/내비 안내"처럼 처리하는 확률을 낮춘다(효과는 기기별로 다름).
+      try {
+        utterance.pitch = 1.05;
+      } catch {
+        // ignore
+      }
 
-      utterance.onstart = () => console.log(`[DM] speech start idx=${index}`);
+      // iOS Safari에서는 speak()가 조용히 무시되면서 onstart/onend/onerror가 아예 안 오는 경우가 있다.
+      // 이 경우 세션이 "멈춘 것처럼" 보이므로, 이벤트 미발생을 감지하는 타임아웃을 둔다.
+      let didStart = false;
+      let didFinish = false;
+      const text = String(task.payload ?? "");
+      const startWatchdog = setTimeout(() => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        if (didStart) return;
+        if (typeof window !== "undefined" && "speechSynthesis" in window && window.speechSynthesis.speaking) return;
+        console.log(`[DM] speech start TIMEOUT idx=${index}`);
+        advanceIndex(index, "speech-start-timeout");
+      }, 1200);
+      const hardWatchdogMs = Math.min(10000, 2000 + text.length * 80);
+      const hardWatchdog = setTimeout(() => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        if (didFinish) return;
+        console.log(`[DM] speech hard TIMEOUT idx=${index} ms=${hardWatchdogMs}`);
+        advanceIndex(index, "speech-hard-timeout");
+      }, hardWatchdogMs);
+
       utterance.onend = () => {
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
+        didFinish = true;
         console.log(`[DM] speech end idx=${index}`);
         advanceIndex(index, "speech-end");
       };
       utterance.onerror = (e) => {
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
+        didFinish = true;
         console.log(`[DM] speech error idx=${index}`, e);
         advanceIndex(index, "speech-error");
+      };
+      utterance.onstart = () => {
+        didStart = true;
+        console.log(`[DM] speech start idx=${index}`);
       };
 
       try {
         window.speechSynthesis.cancel();
         window.speechSynthesis.speak(utterance);
       } catch (e) {
+        didFinish = true;
         console.log(`[DM] speech speak threw idx=${index}`, e);
         advanceIndex(index, "speech-throw");
       }
-      return cleanup;
+      return () => {
+        clearTimeout(startWatchdog);
+        clearTimeout(hardWatchdog);
+        cleanup();
+      };
     }
 
     // audio
     stopSpeech();
-    const audio = audioRef.current ?? new Audio();
-    audioRef.current = audio;
-    audio.onended = null;
-    audio.onerror = null;
-    audio.oncanplaythrough = null;
+    // iOS Safari에서 SpeechSynthesis 이후 media element 볼륨이 "작게 시작했다가 점점 커지는" 현상을 줄이기 위해
+    // audio 재생 직전에 speechSynthesis를 확실히 종료한다.
+    if (typeof window !== "undefined" && "speechSynthesis" in window) {
+      try {
+        window.speechSynthesis.cancel();
+      } catch {
+        // ignore
+      }
+    }
 
-    const src = task.payload as string;
-    console.log(`[DM] audio load try idx=${index} src=${src}`);
+    // iOS에서는 TTS 직후 media element 오디오가 "ducking"된 상태로 시작해 점점 커지는 듯 들리는 경우가 있어,
+    // 가능하면 WebAudio로 직접 재생한다(볼륨이 더 일관적).
+    const audioCtx = audioContextRef.current;
+    if (isIOS && audioCtx) {
+      const src = task.payload as string;
+      console.log(`[DM] webaudio try idx=${index} src=${src}`);
 
-    let didStartPlay = false;
-    const handleCanPlay = () => {
-      if (cancelled) return;
-      if (runIdRef.current !== runId) return;
-      if (didStartPlay) return;
-      didStartPlay = true;
-      clearTimer();
-      console.log(`[DM] audio canplaythrough idx=${index} src=${src}`);
-
-      audio.onended = () => {
+      let didStart = false;
+      const startTimeout = setTimeout(() => {
         if (cancelled) return;
         if (runIdRef.current !== runId) return;
-        console.log(`[DM] audio ended idx=${index} src=${src}`);
-        advanceIndex(index, "audio-ended");
+        if (didStart) return;
+        console.log(`[DM] webaudio start TIMEOUT idx=${index} src=${src}`);
+        // WebAudio 경로가 막히면 HTMLAudioElement 경로로 폴백(아래)
+      }, 2500);
+
+      const playViaWebAudio = async () => {
+        try {
+          if (audioCtx.state === "suspended") await audioCtx.resume();
+
+          let buffer = audioBufferCacheRef.current.get(src);
+          if (!buffer) {
+            const res = await fetch(src);
+            const arr = await res.arrayBuffer();
+            buffer = await audioCtx.decodeAudioData(arr.slice(0));
+            audioBufferCacheRef.current.set(src, buffer);
+          }
+
+          if (cancelled) return;
+          if (runIdRef.current !== runId) return;
+
+          stopAudio();
+          const gain = audioCtx.createGain();
+          gain.gain.value = 1.0;
+          gain.connect(audioCtx.destination);
+          gainNodeRef.current = gain;
+
+          const source = audioCtx.createBufferSource();
+          source.buffer = buffer;
+          source.connect(gain);
+          bufferSourceRef.current = source;
+
+          source.onended = () => {
+            if (cancelled) return;
+            if (runIdRef.current !== runId) return;
+            console.log(`[DM] webaudio ended idx=${index} src=${src}`);
+            advanceIndex(index, "webaudio-ended");
+          };
+
+          didStart = true;
+          setAutoplayBlocked(false);
+          console.log(`[DM] webaudio start idx=${index} src=${src}`);
+          source.start(0);
+        } catch (e) {
+          console.log(`[DM] webaudio error idx=${index} src=${src}`, e);
+          // WebAudio 실패 시 아래 HTMLAudioElement 로직으로 폴백
+          didStart = false;
+        } finally {
+          clearTimeout(startTimeout);
+        }
+      };
+
+      void playViaWebAudio();
+
+      // WebAudio가 시작되면 onended로 advance되므로 여기서 종료.
+      if (didStart) {
+        return () => {
+          clearTimeout(startTimeout);
+          cleanup();
+        };
+      }
+    }
+
+    const startHtmlAudio = (src: string) => {
+      const audio = audioRef.current ?? new Audio();
+      audioRef.current = audio;
+      audio.onended = null;
+      audio.onerror = null;
+      audio.oncanplaythrough = null;
+
+      console.log(`[DM] audio load try idx=${index} src=${src}`);
+
+    let didStartPlay = false;
+      const handleCanPlay = () => {
+        if (cancelled) return;
+        if (runIdRef.current !== runId) return;
+        if (didStartPlay) return;
+        didStartPlay = true;
+        clearTimer();
+        console.log(`[DM] audio canplaythrough idx=${index} src=${src}`);
+
+        // iOS에서 시작 볼륨이 낮게 붙는 경우가 있어 재생 직전에 한 번 더 명시
+        try {
+          audio.muted = false;
+          audio.volume = 1.0;
+        } catch {
+          // ignore
+        }
+
+        audio.onended = () => {
+          if (cancelled) return;
+          if (runIdRef.current !== runId) return;
+          console.log(`[DM] audio ended idx=${index} src=${src}`);
+          advanceIndex(index, "audio-ended");
       };
       audio.onerror = (e) => {
         if (cancelled) return;
@@ -612,12 +899,26 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         advanceIndex(index, "audio-error");
       };
 
-      audio
-        .play()
-        .then(() => {
-          console.log(`[DM] audio play started idx=${index}`);
-          setAutoplayBlocked(false);
-        })
+        audio
+          .play()
+          .then(() => {
+            console.log(`[DM] audio play started idx=${index}`);
+            try {
+              audio.muted = false;
+              audio.volume = 1.0;
+              setTimeout(() => {
+                try {
+                  audio.muted = false;
+                  audio.volume = 1.0;
+                } catch {
+                  // ignore
+                }
+              }, 50);
+            } catch {
+              // ignore
+            }
+            setAutoplayBlocked(false);
+          })
         .catch((e) => {
           console.log(`[DM] audio play rejected idx=${index}`, e);
           // autoplay 정책 등으로 재생이 거부될 수 있음.
@@ -642,6 +943,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     audio.preload = "auto";
     audio.src = src;
+    audio.muted = false;
     audio.volume = 1.0;
     audio.load();
 
@@ -663,6 +965,10 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       advanceIndex(index, "audio-load-timeout");
     }, loadTimeoutMs);
 
+    };
+
+    const src = task.payload as string;
+    startHtmlAudio(src);
     return cleanup;
   }, [advanceIndex, clearTimer, currentTaskIndex, isPlaying, pause, stopAudio, stopSpeech, tasks]);
 

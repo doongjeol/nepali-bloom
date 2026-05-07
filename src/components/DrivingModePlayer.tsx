@@ -46,8 +46,8 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     ttsSpeed,
     enableSwipe: false,
     studyMode: studyMode === "dialogue" ? "dialogue" : "word",
-    audioOnly: false,
-    onSessionComplete: () => { setIsFinished(true);
+    onSessionComplete: () => {
+      setIsFinished(true);
       // 종료는 마지막 클릭에서만 처리
     },
   });
@@ -374,6 +374,11 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
       </div>
 
       <div className="relative z-50 border-t bg-card p-6 pb-10 sm:p-10 sm:pb-12">
+        {autoplayBlocked ? (
+          <div className="mb-4 rounded-2xl border border-destructive/20 bg-destructive/5 p-3 text-center text-sm font-semibold text-destructive">
+            재생이 차단되었습니다. 아래 재생 버튼을 한 번 눌러주세요.
+          </div>
+        ) : null}
         <div className="mb-3 flex items-center justify-between text-sm font-semibold text-muted-foreground">
           <span>
             {currentWordIndex + 1} / {displayData.length}
