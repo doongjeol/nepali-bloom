@@ -12,6 +12,13 @@ interface DrivingModePlayerProps {
 type Vote = "known" | "unknown";
 type StudyMode = "select" | "word" | "dialogue";
 
+function formatTime(ms: number) {
+  const totalSeconds = Math.max(0, Math.floor(ms / 1000));
+  const m = Math.floor(totalSeconds / 60);
+  const s = totalSeconds % 60;
+  return `${m.toString().padStart(2, "0")}:${s.toString().padStart(2, "0")}`;
+}
+
 function getWordId(lessonId: string | number, v: VocabularyItem) {
   return `${v.lessonId ?? lessonId}::${v.romanized || v.nepali || v.korean}`;
 }
@@ -66,6 +73,9 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     stop,
     nextWord,
     prevWord,
+    jumpToWord,
+    totalEstimatedMs,
+    currentEstimatedMs,
   } = useDrivingMode(lessonId, displayData, {
     ttsSpeed,
     enableSwipe: false,
@@ -286,7 +296,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
         <h2 className="mb-3 text-3xl font-bold text-foreground landscape:text-2xl">학습 종료</h2>
 
         {failedList.length > 0 ? (
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
+          <div className="flex w-full flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
             <p className="text-xl text-muted-foreground landscape:text-lg">미암기 {failedList.length}개가 남았습니다.</p>
             <button
               type="button"
@@ -300,7 +310,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             </button>
           </div>
         ) : (
-          <div className="flex w-full flex-1 flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
+          <div className="flex w-full flex-col items-center justify-center gap-4 px-6 landscape:gap-3">
             <p className="text-xl text-muted-foreground landscape:text-lg">모든 단어를 마스터했습니다! 🎉</p>
             <button
               type="button"
@@ -388,9 +398,31 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
         <div className="px-3 pb-2">
           <div className="mb-1 flex items-center justify-between text-xs font-semibold text-muted-foreground">
-            <span>
-              {currentWordIndex + 1} / {displayData.length}
-            </span>
+            <div className="flex items-center gap-2">
+              <div className="relative flex cursor-pointer items-center justify-center rounded bg-secondary/80 px-2 py-1 text-secondary-foreground transition-colors hover:bg-secondary">
+                <select
+                  value={currentWordIndex}
+                  onChange={(e) => {
+                    void unlockAudio();
+                    jumpToWord(Number(e.target.value));
+                  }}
+                  className="absolute inset-0 w-full cursor-pointer opacity-0"
+                >
+                  {displayData.map((_, i) => (
+                    <option key={i} value={i}>
+                      {i + 1}번으로 이동
+                    </option>
+                  ))}
+                </select>
+                <span>
+                  {currentWordIndex + 1} / {displayData.length}
+                </span>
+                <span className="ml-1 text-[10px] opacity-60">▼</span>
+              </div>
+              <span className="text-[11px] tabular-nums tracking-wider opacity-80">
+                {formatTime(currentEstimatedMs)} / {formatTime(totalEstimatedMs)}
+              </span>
+            </div>
             <span>{Math.round(progress * 100)}%</span>
           </div>
           <div className="h-2 w-full overflow-hidden rounded-full bg-secondary">

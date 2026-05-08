@@ -180,6 +180,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFinished, setIsFinished] = useState(false);
   const [autoplayBlocked, setAutoplayBlocked] = useState(false);
+  const [totalEstimatedMs, setTotalEstimatedMs] = useState(0);
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -618,6 +619,13 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
     pushKoreanAudio("학습이 모두 끝났습니다.", "세션 종료 안내");
 
+    let totalMs = 0;
+    newTasks.forEach((t) => {
+      if (t.type === "delay") totalMs += t.payload as number;
+      else totalMs += 2500; // 음성 파일 1개당 평균 재생 시간(약 2.5초)으로 추정
+    });
+    setTotalEstimatedMs(totalMs);
+
     setTasks(newTasks);
     setCurrentWordIndex(0);
     setCurrentTaskIndex(newTasks.length > 0 ? 0 : -1);
@@ -642,6 +650,17 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       setCurrentTaskIndex(0);
     }
   }, [clearTimer, lessonId, options?.studyMode, stopAudio, vocabulary]);
+
+  const currentEstimatedMs = useMemo(() => {
+    if (currentTaskIndex < 0) return 0;
+    let ms = 0;
+    for (let i = 0; i < currentTaskIndex; i++) {
+      const t = tasks[i];
+      if (t.type === "delay") ms += t.payload as number;
+      else ms += 2500;
+    }
+    return ms;
+  }, [currentTaskIndex, tasks]);
 
   // 규칙 1/2/3을 만족하는 재생 엔진:
   // - effect는 현재 index의 task를 "시작만" 한다.
@@ -992,6 +1011,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     stop,
     nextWord,
     prevWord,
+    jumpToWord,
     swipeHandlers,
+    totalEstimatedMs,
+    currentEstimatedMs,
   };
 }

@@ -23,8 +23,13 @@
 ## 2단계: 1차 자동 분리 실행 (Python)
 잘라낸 레슨 파일을 문장 단위로 쪼갭니다. `split_lesson_audio.py`
 *   **PyCharm Parameters**:
+    회사 로컬
     ```text
-    --input audio_raw/lesson1_raw.mp3 --output raw/lesson1_split_done --start-index 0 --pad 1 --silence-only --min-silence-len 500 --silence-thresh -38 --keep-silence 150 --ffmpeg "C:\Users\kimdain\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1-full_build\bin\ffmpeg.exe" --ffprobe "C:\Users\kimdain\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1-full_build\bin\ffprobe.exe"
+    --input audio_raw/lesson1_raw.mp3 --output raw/lesson1_split_done --start-index 0 --pad 1 --silence-only --min-silence-len 520 --silence-thresh -38 --keep-silence 150 --ffmpeg "C:\Users\kimdain\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1-full_build\bin\ffmpeg.exe" --ffprobe "C:\Users\kimdain\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1-full_build\bin\ffprobe.exe"
+    ```
+    집 로컬
+    ```
+    --input audio_raw/lesson1_raw.mp3 --output raw/lesson1_split_done --start-index 0 --pad 1 --silence-only --min-silence-len 500 --silence-thresh -38 --keep-silence 150 --ffmpeg "C:\util\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe" --ffprobe "C:\util\ffmpeg-8.1.1-full_build\bin\ffprobe.exe"
     ```
 *   **조정 팁**:
     *   문장이 중간에 잘림 ➔ `--min-silence-len`을 **700**으로 상향

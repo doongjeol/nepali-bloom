@@ -103,21 +103,17 @@ yi          : these (이것들)
 (d) 이동하기 (안과 밖)
 1. बाहिर जाऊ ।
    (baahira jaau.)
-   밖으로 나가라.
+   밖으로 나가라. (Go outside.)
 
-   तिमी कहाँ गएको ? / म बाहिर गएको ।
-   (timi kahãã gaeko ? / ma baahira gaeko.)
+   तिमी कहाँ गए고 ? / म बाहिर गएको ।
+   (timi kahãã gaeko ? ? / ma baahira gaeko.)
    너 어디에 갔었니? / 나 밖에 갔었어.
 
-2. उ कहाँ गए코 ? / उ बाहिर गएको ।
+2. ऊ कहाँ गएको ? / उ बाहिर गएको ।
    (u kahãã gaeko ? / u baahira gaeko.)
-   그는 어디에 갔었니? / 그는 밖에 갔었어.
+   그는 어디로 갔습니까? / 그는 밖에 갔었어.
 
-3. भित्र आऊ ।
-   (bhitra aau.)
-   안으로 들어와라.
-
-   तिमीले के गरेको ? / म भित्र आएको ।
+3.   तिमीले के गरेको ? / म भित्र आएको ।
    (timile ke gareko ? / ma bhitra aaeko.)
    너 무엇을 했니? / 나 안으로 들어왔어.
 
@@ -125,22 +121,46 @@ yi          : these (이것들)
    (usle ke gareko ? / u bhitra aaeko.)
    그는 무엇을 했니? / 그는 안으로 들어왔어.
 
-(f)
+(d) 칠판
+1. ब्ल्याकबोर्डतिर जानुहोस्। / 
+   (blyaakborDnira jaanos. / )
+   Please go to the blackboard. / 
 
-1. तपाईंले के गरेको ? / म ब्ल्याकबोर्डनिर गएको ।
-   (tapaaïle ke gareko ? / ma blyaakborDnira gaeko.)
+   तपाईंले के गरेको ? / म ब्ल्याकबोर्डतिर गएको।
+   (tapaaīle ke gareko ? / ma blyaakborDnira gaeko.)
    What did you do ? / I went to the blackboard.
 
-2. वहाँले के गरेको ? / वहाँ ब्ल्याकबोर्डनिर गएको ।
-   (wahããle ke gareko ? / wahãã blyaakborDnira gaeko.)
+2. वहाँले के गरेको ? / वहाँ ब्ल्याकबोर्डतिर गएको।
+   (wahā̃le ke gareko ? / wahā̃ blyaakborDnira gaeko.)
    What did he do ? / He went to the blackboard.
 
-3. ब्ल्याकबोर्ड마 तपाईंको नाम लेख्नुस् ।
-   (blyaakborDmaa tapaaïko naam lekhnus.)
-   Please write your name on the blackboard.
+3. ब्ल्याकबोर्डमा तपाईंको नाम लेख्नुहोस्। / 
+   (blyaakborDmaa tapaaīko naam lekhnus. / )
+   Please write your name on the blackboard. / 
 
-   तपाईंले के गरेको ? / मैले ब्ल्याकबोर्डमा आफ्नो नाम लेखेको ।
-   (tapaaïle ke gareko ? / maile blyaakborDmaa aaphno naam lekheko.)
+   तपाईंले के गरेको ? / मैले ब्ल्याकबोर्ड마 आफ्नो नाम लेखेको।
+   (tapaaīle ke gareko ? / maile blyaakborDmaa aaphno naam lekheko.)
+   What did you do ? / I wrote my name on the blackboard.
+
+(e)
+1. ब्ल्याकबोर्डतिर जानुहोस्। / 
+   (blyaakborDnira jaanos. / )
+   Please go to the blackboard. / 
+
+   तपाईंले के गरेको ? / म ब्ल्याकबोर्डतिर गएको।
+   (tapaaīle ke gareko ? / ma blyaakborDnira gaeko.)
+   What did you do ? / I went to the blackboard.
+
+2. वहाँले के गरेको ? / वहाँ ब्ल्याकबोर्डतिर गएको।
+   (wahā̃le ke gareko ? / wahā̃ā̃ blyaakborDnira gaeko.)
+   What did he do ? / He went to the blackboard.
+
+3. ब्ल्याकबोर्डमा तपाईंको नाम लेख्नुहोस्। / 
+   (blyaakborDmaa tapaaīko naam lekhnus. / )
+   Please write your name on the blackboard. / 
+
+   तपाईंले के गरेको ? / मैले ब्ल्याकबोर्ड마 आफ्नो नाम लेखेको।
+   (tapaaīle ke gareko ? / maile blyaakborDmaa aaphno naam lekheko.)
    What did you do ? / I wrote my name on the blackboard.
 
 (f) 숫자 쓰기
