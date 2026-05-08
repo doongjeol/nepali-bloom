@@ -125,7 +125,6 @@ yi          : these (이것들)
    (usle ke gareko ? / u bhitra aaeko.)
    그는 무엇을 했니? / 그는 안으로 들어왔어.
 
-(e) 칠판
 (f)
 
 1. तपाईंले के गरेको ? / म ब्ल्याकबोर्डनिर गएको ।
@@ -145,7 +144,6 @@ yi          : these (이것들)
    What did you do ? / I wrote my name on the blackboard.
 
 (f) 숫자 쓰기
-(f)
 
 1. यो कति हो ? / एक ।
    (yo kati ho ? / ek.)

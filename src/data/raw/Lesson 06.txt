@@ -31,13 +31,11 @@ Thik           : O.K., all right (좋다, 괜찮다) [cite: 860]
 (a) 시장 심부름
 1. ma bajaar jaane. / tapaaïlaai kehi chaahinchha / chaahinchha ? [cite: 863, 864]
    (저 시장에 가요. /뭐 필요한 거 있어요?/ 네, 필요해요.)
-2. chaahinchha. ek baTTaa churoT. [cite: 871, 873]
-   (네, 필요해요. 담배 한 갑요.)
-3. ke ke chaahinchha ? / kun churoT ? [cite: 865, 866]
-   (뭐뭐가 필요한가요? / 어떤 브랜드 담배요?)
-4. khukuri. [cite: 874]
-   (Khukuri 브랜드요.)
-5. paisaa dinos. ma lyaai dinchhu. / linos. das rupiyãã chha. [cite: 868, 869, 875]
+2. ke ke chaahinchha ? / ek baTTaa churoT. ? [cite: 865, 866]
+   (뭐뭐가 필요한가요? / 담배 한 갑요.)
+3. kun churoT ? / khukuri.
+   (어떤 브랜드 담배요? / Khukuri 브랜드요.)
+4. paisaa dinos. ma lyaai dinchhu. / linos. das rupiyãã chha. [cite: 868, 869, 875]
    (돈을 주세요. 제가 사다 줄게요. / 여기요. 10루피 여기 있습니다.)
 
 
@@ -50,34 +48,64 @@ Thik           : O.K., all right (좋다, 괜찮다) [cite: 860]
    (몇 개 살 건가요? / 6개 살 거예요.)
 3. chhawaTaako saaDhe chaar rupiyaa parchha. / Thik chha, dinos. [cite: 883, 890]
    (6개에 4.5루피입니다. / 좋습니다, 주세요.)
+4. linos.
+   (Here, take them please.)
 
 (b) 티베트 가방 흥정
 1. tibbati jholaa kinne ? / na kinne. [cite: 894, 902]
    (티베트 가방 살래요? / 안 살래요.)
 2. kina ? / tapaaïko pasalamaa mahango chha. [cite: 897, 904]
    (왜요? / 당신네 가게는 비싸요.)
-3. mahango chhaina. euTaako paanchaas rupiyaa maatra parchha. [cite: 900, 908, 909]
-   (비싸지 않아요. 하나에 겨우 50루피입니다.)
-4. chaalis rupiyaamaa dine ? / dine, la linos. [cite: 908, 911]
-   (40루피에 줄 수 있어요? / 네, 드릴게요. 여기 있습니다.)
+3. mahango chhaina. 
+   (비싸지 않아요. )
+   euTaako paanchaas rupiyaa maatra parchha. chaalis rupiyaamaa dine ?
+   (하나에 겨우 50루피입니다. 40루피에 줄 수 있어요?)
+4. dine, la linos. [cite: 908, 911]
+   (네, 드릴게요. 여기 있습니다.)
 
 (c) 학용품 구매
-1. yo pasalmaa sisaakalam paainchha ? / paainchha. [cite: 915, 923]
-   (이 가게에 연필 있나요? / 네, 있습니다.)
+1. yo pasalmaa sisaakalam paainchha ? / paainchha. katiwaTaa Iine ? [cite: 915, 923]
+   (이 가게에 연필 있나요? / 네, 있습니다. How many do you want?)
 2. euTaako kati parchha ? / euTaako paanch sukaa parchha. [cite: 917, 926]
    (한 자루에 얼마인가요? / 한 자루에 1루피 25파이사(5 sukaa)입니다.)
 3. tinwaTaa dinos. khaam pani paainchha ? / paainchha. [cite: 919, 929]
    (세 자루 주세요. 봉투도 있나요? / 네, 있습니다.)
-4. jammaa kati bhayo ? / saadhe chaar rupiyãã bhayo. [cite: 921, 933]
+4. khaam daswaTaa dinos. / la, linos.
+   (Give me ten, please. / Here, please take them.)
+5. jammaa kati bhayo ? / saadhe chaar rupiyãã bhayo. [cite: 921, 933]
    (전부 얼마인가요? / 4.5루피입니다.)
 
-(d) 망고 비교 (미국 vs 네팔)
-1. tyahãã aap sasto hunchha ki mahango hunchha ? / ali ali mahango hunchha. [cite: 936]
-   (그곳(미국)은 망고가 싼가요, 비싼가요? / 조금 비쌉니다.)
-2. euTaako kati parchha ? / euTaako das rupiyää parchha. [cite: 938, 942]
-   (한 개에 얼마인가요? / 하나에 10루피입니다.)
-3. yahãã ni ? / yahaa deDh rupiyaa parchha. [cite: 940, 944]
-   (여기는요? / 여기는 1.5루피(deDh)입니다.)
+(d)
+
+1. अमेरिकामा आँप पाइन्छ ? / पाइन्छ ।
+   (amerikaamaa āāp paainchha ? / paainchha.)
+   Are mangoes available in America ? / Yes.
+
+2. त्यहाँ आँप सस्तो हुन्छ कि महँगो हुन्छ ? / अलि अलि महँगो हुन्छ ।
+   (tyahāā āāp sasto hunchha ki mahango hunchha ? / ali ali mahango hunchha.)
+   Are mangoes cheap or expensive there ? / A little expensive.
+
+3. एउटाको कति पर्छ ? / एउटाको दश रुपियाँ पर्छ ।
+   (euTaako kati parchha ? / euTaako das rupiyāā parchha.)
+   How much does one cost ? / They are ten rupees a piece.
+
+4. यहाँ नि ? / यहाँ डेढ रुपियाँ पर्छ ।
+   (yahāā ni ? / yahāā deDh rupiyāā parchha.)
+   How about here ? / It costs one and half rupees here.
+
+(e)
+
+1. तपाईंलाई सिसाकलम चाहिन्छ ? / चाहिँदैन ।
+   (tapaaīlaai sisaakalam chaahinchha ? / chaahīdaina.)
+   Do you need any pencils ? / No, I do not need any.
+
+2. डट पेन नि ? / डट पेन चाहिन्छ ।
+   (Dat pen ni ? / DaT pen chaahinchha.)
+   How about ballpoint pens ? / Yes, I need those.
+
+3. अरू के चाहिन्छ ? / अरू केही चाहिँदैन ।
+   (aru ke chaahinchha ? / aru kehi chaahīdaina.)
+   What else do you need ? / I don't need anything else.
 
 
 4. GRAMMAR NOTES (문법 정리)

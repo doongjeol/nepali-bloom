@@ -1,493 +1,166 @@
 {
-  "id": 5,
-  "title": "Lesson 5",
-  "titleKo": "제5과",
-  "description": "가게에서 옷감을 사며 가격을 묻고 흥정하는 표현과 단위를 배웁니다.",
+  "title": "BASIC COURSE IN SPOKEN NEPALI - LESSON 5",
   "vocabulary": [
-    {
-      "nepali": "अलि",
-      "romanized": "ali",
-      "korean": "a little (조금)"
-    },
-    {
-      "nepali": "अर्को",
-      "romanized": "arkho",
-      "korean": "another (다른 것, 다음의)"
-    },
-    {
-      "nepali": "बरुण",
-      "romanized": "barun",
-      "korean": "Barun (인명)"
-    },
-    {
-      "nepali": "भयो",
-      "romanized": "bhaayo",
-      "korean": "became / it is enough (되었다 / 충분하다)"
-    },
-    {
-      "nepali": "धन्यवाद",
-      "romanized": "dhanyabaad",
-      "korean": "thank you (감사합니다)"
-    },
-    {
-      "nepali": "हेर्नु",
-      "romanized": "hernu",
-      "korean": "to look, to see (보다)"
-    },
-    {
-      "nepali": "हुन्छ",
-      "romanized": "hunchha",
-      "korean": "okay / it is (좋습니다 / 그렇습니다)"
-    },
-    {
-      "nepali": "जाऔं",
-      "romanized": "jaaű",
-      "korean": "let's go (갑시다)"
-    },
-    {
-      "nepali": "जम्मा",
-      "romanized": "jammaa",
-      "korean": "in total (전부, 합계)"
-    },
-    {
-      "nepali": "कपडा",
-      "romanized": "kaparaa",
-      "korean": "cloth, clothes (옷, 천)"
-    },
-    {
-      "nepali": "कति",
-      "romanized": "kati",
-      "korean": "how much (얼마나)"
-    },
-    {
-      "nepali": "खुसी",
-      "romanized": "khusi",
-      "korean": "happy (기쁜)"
-    },
-    {
-      "nepali": "किनमेल",
-      "romanized": "kinmel",
-      "korean": "shopping (쇼핑)"
-    },
-    {
-      "nepali": "लौ",
-      "romanized": "lau",
-      "korean": "well / okay (자 / 여기요)"
-    },
-    {
-      "nepali": "लिन",
-      "romanized": "lina",
-      "korean": "to take / to buy (사러, 가지러)"
-    },
-    {
-      "nepali": "महँगो",
-      "romanized": "mahanago",
-      "korean": "expensive (비싼)"
-    },
-    {
-      "nepali": "मान्छे",
-      "romanized": "manchhe",
-      "korean": "person (사람)"
-    },
-    {
-      "nepali": "मिटर",
-      "romanized": "miTar",
-      "korean": "meter (미터)"
-    },
-    {
-      "nepali": "पैसा",
-      "romanized": "paisa",
-      "korean": "money / paisa (돈 / 화폐 단위)"
-    },
-    {
-      "nepali": "पसल",
-      "romanized": "pasal",
-      "korean": "shop (가게)"
-    },
-    {
-      "nepali": "पसले",
-      "romanized": "pasale",
-      "korean": "shopkeeper (가게 주인)"
-    },
-    {
-      "nepali": "फेरि",
-      "romanized": "pheri",
-      "korean": "again (다시)"
-    },
-    {
-      "nepali": "रुपियाँ",
-      "romanized": "rupiyaa",
-      "korean": "rupees (루피 - 네팔 화폐 단위)"
-    },
-    {
-      "nepali": "सस्तो",
-      "romanized": "sasto",
-      "korean": "cheap (싼)"
-    },
-    {
-      "nepali": "तयार",
-      "romanized": "tayaar",
-      "korean": "ready (준비된)"
-    }
-  ],
-  "examples": [],
-  "grammar": [
-    {
-      "title": "1. mahanago / sasto",
-      "details": [
-        "가격이 비싸고 쌈을 나타내는 형용사입니다."
-      ]
-    },
-    {
-      "title": "2. miTar",
-      "details": [
-        "옷감 등을 잴 때 사용하는 단위입니다."
-      ]
-    },
-    {
-      "title": "3. ali",
-      "details": [
-        "'조금', '약간'이라는 뜻으로 형용사를 수식합니다. (예: ali sasto - 조금 더 싼)"
-      ]
-    },
-    {
-      "title": "4. jammaa",
-      "details": [
-        "합계를 나타낼 때 사용합니다."
-      ]
-    },
-    {
-      "title": "5. bhaayo",
-      "details": [
-        "'되었다'는 뜻으로, 합계 금액을 말할 때 \"전부 ~원입니다(되었습니다)\"의 맥락으로 쓰입니다."
-      ]
-    },
-    {
-      "title": "6. -aa/-o ending adjectives",
-      "details": [
-        "네팔어 형용사 중 'o'나 'aa'로 끝나는 것들은 수식하는 명사의 성/수에 따라 변하기도 하지만, 구어체에서는 주로 기본형을 많이 사용합니다."
-      ]
-    }
-  ],
-  "quiz": [
-    {
-      "question": "'쇼핑'을 의미하는 네팔어 단어는?",
-      "options": [
-        "पसल (pasal)",
-        "किनमेल (kinmel)",
-        "कपडा (kaparaa)",
-        "पैसा (paisa)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "'비싼'을 의미하는 네팔어 형용사는?",
-      "options": [
-        "सस्तो (sasto)",
-        "खुसी (khusi)",
-        "तयार (tayaar)",
-        "महँगो (mahanago)"
-      ],
-      "answer": 3
-    },
-    {
-      "question": "'조금' 또는 '약간'을 뜻하며 형용사 앞에서 정도를 수식하는 단어는?",
-      "options": [
-        "अलि (ali)",
-        "जम्मा (jammaa)",
-        "फेरि (pheri)",
-        "लौ (lau)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'전부' 또는 '합계'를 나타낼 때 사용하는 단어는?",
-      "options": [
-        "जम्मा (jammaa)",
-        "कति (kati)",
-        "अर्को (arkho)",
-        "धेरै (dherai)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "네팔어로 '감사합니다'를 바르게 표현한 것은?",
-      "options": [
-        "नमस्ते (namaste)",
-        "धन्यवाद (dhanyabaad)",
-        "हुन्छ (hunchha)",
-        "लौ (lau)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "물건 가격을 물어볼 때 사용하는 '얼마나'의 뜻을 가진 단어는?",
-      "options": [
-        "किन (kina)",
-        "कहाँ (kahaa)",
-        "कति (kati)",
-        "के (ke)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "'다른 것' 또는 '다음의'를 뜻하는 단어는?",
-      "options": [
-        "तयार (tayaar)",
-        "अर्को (arkho)",
-        "फेरि (pheri)",
-        "पैसा (paisa)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "'가게 주인'을 부르는 네팔어 단어는?",
-      "options": [
-        "मान्छे (manchhe)",
-        "बरुण (barun)",
-        "पसले (pasale)",
-        "विद्यार्थी (bidyaarthi)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "'전부 얼마입니까?'를 네팔어로 바르게 표현한 것은?",
-      "options": [
-        "तपाईंलाई कस्तो छ ? (tapaaïlaai kasto chha ?)",
-        "जम्मा कति भयो ? (jammaa kati bhaayo ?)",
-        "कहाँ जाने ? (kahãã jaane ?)",
-        "के किन्ने ? (ke kinne ?)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "물건을 건네주면서 '여기요' 또는 '자'라는 의미로 쓰는 감탄사는?",
-      "options": [
-        "लौ (lau)",
-        "अलि (ali)",
-        "हुन्छ (hunchha)",
-        "फेरि (pheri)"
-      ],
-      "answer": 0
-    }
+    { "nepali": "ali", "english": "a little", "korean": "조금" },
+    { "nepali": "arkho", "english": "another", "korean": "다른 것, 다음의" },
+    { "nepali": "barun", "english": "Barun", "korean": "인명" },
+    { "nepali": "bhaayo", "english": "became / it is enough", "korean": "되었다 / 충분하다" },
+    { "nepali": "dhanyabaad", "english": "thank you", "korean": "감사합니다" },
+    { "nepali": "hernu", "english": "to look, to see", "korean": "보다" },
+    { "nepali": "hunchha", "english": "okay / it is", "korean": "좋습니다 / 그렇습니다" },
+    { "nepali": "jaaű", "english": "let's go", "korean": "갑시다" },
+    { "nepali": "jammaa", "english": "in total", "korean": "전부, 합계" },
+    { "nepali": "kaparaa", "english": "cloth, clothes", "korean": "옷, 천" },
+    { "nepali": "kati", "english": "how much", "korean": "얼마나" },
+    { "nepali": "khusi", "english": "happy", "korean": "기쁜" },
+    { "nepali": "kinmel", "english": "shopping", "korean": "쇼핑" },
+    { "nepali": "lau", "english": "well / okay", "korean": "자 / 여기요" },
+    { "nepali": "lina", "english": "to take / to buy", "korean": "사러, 가지러" },
+    { "nepali": "mahanago", "english": "expensive", "korean": "비싼" },
+    { "nepali": "manchhe", "english": "person", "korean": "사람" },
+    { "nepali": "miTar", "english": "meter", "korean": "미터" },
+    { "nepali": "paisa", "english": "money / paisa", "korean": "돈 / 화폐 단위" },
+    { "nepali": "pasal", "english": "shop", "korean": "가게" },
+    { "nepali": "pasale", "english": "shopkeeper", "korean": "가게 주인" },
+    { "nepali": "pheri", "english": "again", "korean": "다시" },
+    { "nepali": "rupiyaa", "english": "rupees", "korean": "루피 - 네팔 화폐 단위" },
+    { "nepali": "sasto", "english": "cheap", "korean": "싼" },
+    { "nepali": "tayaar", "english": "ready", "korean": "준비된" }
   ],
   "dialogues": [
     {
-      "title": "PART I: DIALOGUE (a) 쇼핑 가기",
-      "lines": [
+      "part": "a",
+      "title": "쇼핑 가기",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "नमस्ते !",
-          "romanized": "namaste !",
-          "korean": "안녕하세요!"
+          "id": 1,
+          "nepali": "नमस्ते । / नमस्ते ।",
+          "pronunciation": "(namaste.! / namaste.)",
+          "translation": "Hello.! / Hello."
         },
         {
-          "speaker": "B",
-          "nepali": "नमस्ते !",
-          "romanized": "namaste !",
-          "korean": "안녕하세요!"
+          "id": 2,
+          "nepali": "कहाँ जाने ? / बजार जाने ।",
+          "pronunciation": "(kahãã jaane ? / bajaar jaane.)",
+          "translation": "Where are you going ? / I'm going to the bazaar."
         },
         {
-          "speaker": "A",
-          "nepali": "कहाँ जाने ?",
-          "romanized": "kahãã jaane ?",
-          "korean": "어디 가세요?"
+          "id": 3,
+          "nepali": "बजारमा किन जाने ? / तरकारी किन्न जाने ।",
+          "pronunciation": "(bajaarmaa kina jaane ? / tarkaari kinna jaane.)",
+          "translation": "Why are you going to the bazaar ? / I'm going to buy vegetables."
         },
         {
-          "speaker": "B",
-          "nepali": "किनमेल गर्न बजार जाने।",
-          "romanized": "kinmel garna bajaar jaane.",
-          "korean": "쇼핑하러 시장에 가요."
+          "id": 4,
+          "nepali": "अनि कहाँ जाने ? / डेरामा फर्कने ।",
+          "pronunciation": "(ani kahãã jaane ? / Deraamaa pharkane.)",
+          "translation": "Where are you going then ? / I'm going to go back to my place."
         },
         {
-          "speaker": "A",
-          "nepali": "के किन्ने ?",
-          "romanized": "ke kinne ?",
-          "korean": "무엇을 사나요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो लागि कपडा किन्ने।",
-          "romanized": "mero laagi kaparaa kinne.",
-          "korean": "저를 위한 옷을 살 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "एकै छिन पर्खनुस्, म पनि जाने।",
-          "romanized": "ekai chhin parkhanus, ma pani jaane.",
-          "korean": "잠깐만 기다리세요, 저도 갈게요."
-        },
-        {
-          "speaker": "B",
-          "nepali": "हुन्छ, जाऔं।",
-          "romanized": "hunchha, jaaű.",
-          "korean": "좋아요, 갑시다."
+          "id": 5,
+          "nepali": "कति बजे फर्कने ? / पाँच बजे होला ।",
+          "pronunciation": "(kati baje pharkane ? / pããch baje holaa.)",
+          "translation": "What time are you heading back ? / Probably, at five o'clock."
         }
       ]
     },
     {
-      "title": "PART I: DIALOGUE (b) 가게에서",
-      "lines": [
+      "part": "b",
+      "title": "가게에서",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "पसले जी, यो कपडाको कति ?",
-          "romanized": "pasale ji, yo kaparaako kati ?",
-          "korean": "주인장님, 이 옷감 얼마인가요?"
+          "id": 1,
+          "nepali": "yahãã suntalaa chha ? / chha.",
+          "pronunciation": "(yahãã suntalaa chha ?) / (chha.)",
+          "translation": "Do you have oranges ? / Yes, I do."
         },
         {
-          "speaker": "B",
-          "nepali": "मिटरको बीस रुपियाँ।",
-          "romanized": "miTarko bis rupiyaa.",
-          "korean": "미터당 20루피입니다."
+          "id": 2,
+          "nepali": "ek kiloko kati ? / tis rupiyãã.",
+          "pronunciation": "(ek kiloko kati ?) / (tis rupiyãã.)",
+          "translation": "How much for a kilo ? / Thirty."
         },
         {
-          "speaker": "A",
-          "nepali": "कस्तो महँगो ! अलि सस्तो छैन ?",
-          "romanized": "kasto mahanago ! ali sasto chhaina ?",
-          "korean": "정말 비싸네요! 좀 더 싼 건 없나요?"
+          "id": 3,
+          "nepali": "mahango bhayo. pachchismaa dinos. / hunchha. kati kilo line ?",
+          "pronunciation": "(mahango bhayo. pachchismaa dinos.) / (hunchha. kati kilo line ?)",
+          "translation": "They're expensive. I'll give you twenty five rupees. / O.K. How many kilos do you want ?"
         },
         {
-          "speaker": "B",
-          "nepali": "छैन, यो धेरै राम्रो छ।",
-          "romanized": "chhaina, yo dherai raamro chha.",
-          "korean": "없어요, 이건 아주 좋은 겁니다."
-        },
-        {
-          "speaker": "B",
-          "nepali": "अर्को हेर्नुस्, त्यो सस्तो छ।",
-          "romanized": "arkho hernos, tyo sasto chha.",
-          "korean": "다른 걸 보세요, 저건 싸요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "त्यो कस्तो छ ?",
-          "romanized": "tyo kasto chha ?",
-          "korean": "저건 어떤가요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "त्यो मिटरको पन्ध्र रुपियाँ।",
-          "romanized": "tyo miTarko pandhra rupiyaa.",
-          "korean": "저건 미터당 15루피입니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "त्यो तयार गर्नुस्।",
-          "romanized": "tyo tayaar garnus.",
-          "korean": "그걸로 준비해 주세요."
+          "id": 4,
+          "nepali": "dui kilo line. / la, linos.",
+          "pronunciation": "(dui kilo line.) / (la, linos.)",
+          "translation": "I'll take two kilos / Here, take them."
         }
       ]
     },
     {
-      "title": "PART II: PRACTICE (a) 옷감 사기 (계속)",
-      "lines": [
+      "part": "c",
+      "title": "",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "कति मिटर लिन ?",
-          "romanized": "kati miTar lina ?",
-          "korean": "몇 미터 살 건가요?"
+          "id": 1,
+          "nepali": "asan Tolmaa phalphul paainchha ? / paainchha.",
+          "pronunciation": "(asan Tolmaa phalphul paainchha ?) / (paainchha.)",
+          "translation": "Are fruits available in Asan Tole ? / Yes, they are."
         },
         {
-          "speaker": "B",
-          "nepali": "पाँच मिटर।",
-          "romanized": "paach miTar.",
-          "korean": "5미터요."
+          "id": 2,
+          "nepali": "chij ni ? / chij ta paaïdaina.",
+          "pronunciation": "(chij ni ?) / (chij ta paaïdaina.)",
+          "translation": "How about cheese ? / No, cheese is not available."
         },
         {
-          "speaker": "B",
-          "nepali": "जम्मा कति भयो ?",
-          "romanized": "jammaa kati bhaayo ?",
-          "korean": "전부 얼마인가요?"
+          "id": 3,
+          "nepali": "chij kahãã paainchha ta ? / niuroDmaa paainchha.",
+          "pronunciation": "(chij kahãã paainchha ta ?) / (niuroDmaa paainchha.)",
+          "translation": "Where is cheese found then ? / It's found in New Road."
         },
         {
-          "speaker": "A",
-          "nepali": "जम्मा पचहत्तर रुपियाँ भयो।",
-          "romanized": "jammaa pachhattar rupiyaa bhaayo.",
-          "korean": "전부 75루피입니다."
-        },
-        {
-          "speaker": "B",
-          "nepali": "लौ पैसा।",
-          "romanized": "lau paisa.",
-          "korean": "여기 돈 있습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "धन्यवाद।",
-          "romanized": "dhanyabaad.",
-          "korean": "감사합니다."
+          "id": 4,
+          "nepali": "ek kiloko kati parchha ? / ek saya chaalis rupiyãã parchha.",
+          "pronunciation": "(ek kiloko kati parchha ?) / (ek saya chaalis rupiyãã parchha.)",
+          "translation": "How much is a kilo ? / It costs 140 rupees."
         }
       ]
     },
     {
-      "title": "PART II: PRACTICE (b) 물건 확인",
-      "lines": [
+      "part": "d",
+      "title": "",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "यो के हो ?",
-          "romanized": "yo ke ho ?",
-          "korean": "이것은 무엇입니까?"
+          "id": 1,
+          "nepali": "e saahuji ! phul chha ? / chha. katiwaTaa line ?",
+          "pronunciation": "(e saahuji ! phul chha ?) / (chha. katiwaTaa line ?)",
+          "translation": "Oh shopkeeper ! Do you have eggs ? / Yes, I do. How many would you like ?"
         },
         {
-          "speaker": "B",
-          "nepali": "यो कपडा हो।",
-          "romanized": "yo kaparaa ho.",
-          "korean": "이것은 옷감입니다."
+          "id": 2,
+          "nepali": "euTaako kati ho ? / pããch mohor.",
+          "pronunciation": "(euTaako kati ho ?) / (pããch mohor.)",
+          "translation": "How much are they a piece ? / Two and a half rupees."
         },
         {
-          "speaker": "A",
-          "nepali": "तपाईंले कति मिटर कपडा किनेको ?",
-          "romanized": "tapaaïle kati miTar kaparaa kineko ?",
-          "korean": "옷감을 몇 미터 샀습니까?"
+          "id": 3,
+          "nepali": "chaarwaTaa dinos. / linos.",
+          "pronunciation": "(chaarwaTaa dinos.) / (linos.)",
+          "translation": "Give me four, please. / Here, take them, please."
         },
         {
-          "speaker": "B",
-          "nepali": "मैले पाँच मिटर किनेको।",
-          "romanized": "maile paach miTar kineko.",
-          "korean": "5미터 샀습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "मिटरको कति पैसा ?",
-          "romanized": "miTarko kati paisa ?",
-          "korean": "미터당 얼마입니까?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मिटरको पन्ध्र रुपियाँ।",
-          "romanized": "miTarko pandhra rupiyaa.",
-          "korean": "미터당 15루피입니다."
-        }
-      ]
-    },
-    {
-      "title": "PART II: PRACTICE (c) 기분 표현",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "तपाईंलाई कस्तो छ ?",
-          "romanized": "tapaaïlaai kasto chha ?",
-          "korean": "기분이 어떠세요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मलाई धेरै खुसी छ।",
-          "romanized": "malaai dherai khusi chha.",
-          "korean": "아주 기쁩니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "किन ?",
-          "romanized": "kina ?",
-          "korean": "왜요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मैले सस्तो कपडा किने।",
-          "romanized": "maile sasto kaparaa kine.",
-          "korean": "싼 옷감을 샀거든요."
+          "id": 4,
+          "nepali": "jammaa kati bhayo ? / das rupiyãã.",
+          "pronunciation": "(jammaa kati bhayo ?) / (das rupiyãã.)",
+          "translation": "How much does it come to ? / Ten rupees."
         }
       ]
     }
+  ],
+  "grammar_notes": [
+    "1. mahanago / sasto: 가격이 비싸고 쌈을 나타내는 형용사입니다.",
+    "2. miTar: 옷감 등을 잴 때 사용하는 단위입니다.",
+    "3. ali: '조금', '약간'이라는 뜻으로 형용사를 수식합니다. (예: ali sasto - 조금 더 싼)",
+    "4. jammaa: 합계를 나타낼 때 사용합니다.",
+    "5. bhaayo: '되었다'는 뜻으로, 합계 금액을 말할 때 \"전부 ~원입니다(되었습니다)\"의 맥락으로 쓰입니다.",
+    "6. -aa/-o ending adjectives: 네팔어 형용사 중 'o'나 'aa'로 끝나는 것들은 수식하는 명사의 성/수에 따라 변하기도 하지만, 구어체에서는 주로 기본형을 많이 사용합니다."
   ]
 }

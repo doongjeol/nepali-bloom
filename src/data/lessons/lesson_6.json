@@ -1,550 +1,213 @@
 {
-  "id": 6,
-  "title": "Lesson 6",
-  "titleKo": "제6과",
-  "description": "물건의 필요 여부, 가격 묻기 및 흥정하기와 관련된 표현을 배웁니다.",
+  "title": "BASIC COURSE IN SPOKEN NEPALI - LESSON 6",
   "vocabulary": [
-    {
-      "nepali": "आँप",
-      "romanized": "aap",
-      "korean": "mango (망고)",
-      "example": {
-        "nepali": "त्यहाँ आँप सस्तो हुन्छ कि महँगो हुन्छ ?",
-        "romanized": "tyahãã aap sasto hunchha ki mahango hunchha ?",
-        "korean": "그곳은 망고가 싼가요, बि싼가요?"
-      }
-    },
-    {
-      "nepali": "अलिअलि",
-      "romanized": "aliali",
-      "korean": "a little, a few (조금, 약간)",
-      "example": {
-        "nepali": "अलि अलि महँगो हुन्छ।",
-        "romanized": "ali ali mahango hunchha.",
-        "korean": "조금 비쌉니다."
-      }
-    },
-    {
-      "nepali": "चाहिँदैन",
-      "romanized": "chaahīdaina",
-      "korean": "isn't needed (필요 없다)",
-      "example": {
-        "nepali": "मलाई स्याउ चाहिँदैन।",
-        "romanized": "malaai syaau chaahīdaina.",
-        "korean": "저는 सा과가 필요하지 않습니다."
-      }
-    },
-    {
-      "nepali": "डट पेन",
-      "romanized": "DaT pen",
-      "korean": "ball point pen (볼펜)",
-      "example": {
-        "nepali": "मलाई डट पेन चाहिन्छ।",
-        "romanized": "malaai DaT pen chaahinchha.",
-        "korean": "저는 볼펜이 필요합니다."
-      }
-    },
-    {
-      "nepali": "धेरै",
-      "romanized": "dherai",
-      "korean": "many, a lot of (많은)",
-      "example": {
-        "nepali": "यो धेरै महँगो छ।",
-        "romanized": "yo dherai mahango chha.",
-        "korean": "이것은 아주 비쌉니다."
-      }
-    },
-    {
-      "nepali": "खुकुरी",
-      "romanized": "khukuri",
-      "korean": "a brand of cigarettes (네팔 담배 브랜드)",
-      "example": {
-        "nepali": "मलाई खुकुरी चुरोट चाहिन्छ।",
-        "romanized": "malaai khukuri churoT chaahinchha.",
-        "korean": "저는 쿠쿠리 담배가 필요합니다."
-      }
-    },
-    {
-      "nepali": "केही",
-      "romanized": "kehi",
-      "korean": "any, some (thing) (무엇인가, 조금의)",
-      "example": {
-        "nepali": "तपाईंलाई केही चाहिन्छ ?",
-        "romanized": "tapaaïlaai kehi chaahinchha ?",
-        "korean": "무엇이 필요하세요?"
-      }
-    },
-    {
-      "nepali": "खाम",
-      "romanized": "khaam",
-      "korean": "envelope (봉투)",
-      "example": {
-        "nepali": "खाम पनि पाइन्छ ?",
-        "romanized": "khaam pani paainchha ?",
-        "korean": "봉투도 있나요?"
-      }
-    },
-    {
-      "nepali": "ल्याइदिनु",
-      "romanized": "lyaaidinu",
-      "korean": "to bring for some one (~를 위해 가져다주다)",
-      "example": {
-        "nepali": "म ल्याइदिन्छु।",
-        "romanized": "ma lyaaidinchhu.",
-        "korean": "제가 사다 줄게요."
-      }
-    },
-    {
-      "nepali": "मात्र",
-      "romanized": "maatra",
-      "korean": "only (오직, ~만)",
-      "example": {
-        "nepali": "एउटाको पचास रुपैयाँ मात्र पर्छ।",
-        "romanized": "euTaako paanchaas rupiyaa maatra parchha.",
-        "korean": "하나에 겨우 50루피입니다."
-      }
-    },
-    {
-      "nepali": "प्याकेट",
-      "romanized": "paakeT",
-      "korean": "packet (갑, 팩)",
-      "example": {
-        "nepali": "एक प्याकेट चुरोट दिनोस्।",
-        "romanized": "ek paakeT churoT dinos.",
-        "korean": "담배 한 갑 주세요."
-      }
-    },
-    {
-      "nepali": "पैसा",
-      "romanized": "paisaa",
-      "korean": "paisa (네팔 화폐 단위 / 돈)",
-      "example": {
-        "nepali": "पैसा दिनोस्।",
-        "romanized": "paisaa dinos.",
-        "korean": "돈을 주세요."
-      }
-    },
-    {
-      "nepali": "पर्छ",
-      "romanized": "parchha",
-      "korean": "costs (비용이 들다)",
-      "example": {
-        "nepali": "एउटाको कति पर्छ ?",
-        "romanized": "euTaako kati parchha ?",
-        "korean": "한 개에 얼마인가요?"
-      }
-    },
-    {
-      "nepali": "पर्दैन",
-      "romanized": "pardaina",
-      "korean": "does not cost (비용이 들지 않다)",
-      "example": {
-        "nepali": "यसको पैसा पर्दैन।",
-        "romanized": "yasko paisaa pardaina.",
-        "korean": "이것은 돈이 들지 않습니다."
-      }
-    },
-    {
-      "nepali": "साढे",
-      "romanized": "saaDhe",
-      "korean": "half (절반 / 시간의 '30분')",
-      "example": {
-        "nepali": "छवटाको साढे चार रुपैयाँ पर्छ।",
-        "romanized": "chhawaTaako saaDhe chaar rupiyaa parchha.",
-        "korean": "6개에 4.5루피입니다."
-      }
-    },
-    {
-      "nepali": "सिसा कलम",
-      "romanized": "sisaa kalam",
-      "korean": "pencil (연필)",
-      "example": {
-        "nepali": "यो पसलमा सिसाकलम पाइन्छ ?",
-        "romanized": "yo pasalmaa sisaakalam paainchha ?",
-        "korean": "이 가게에 연필 있나요?"
-      }
-    },
-    {
-      "nepali": "सिसी",
-      "romanized": "sisi",
-      "korean": "bottle (병)",
-      "example": {
-        "nepali": "एक सिसी पानी दिनोस्।",
-        "romanized": "ek sisi paani dinos.",
-        "korean": "물 한 병 주세요."
-      }
-    },
-    {
-      "nepali": "स्याउ",
-      "romanized": "syaau",
-      "korean": "apple (사과)",
-      "example": {
-        "nepali": "मलाई स्याउ चाहिन्छ।",
-        "romanized": "malaai syaau chaahinchha.",
-        "korean": "저는 사과가 필요합니다."
-      }
-    },
-    {
-      "nepali": "तिब्बती",
-      "romanized": "tibbati",
-      "korean": "Tibetan (티베트의)",
-      "example": {
-        "nepali": "तिब्बती झोला किन्ने ?",
-        "romanized": "tibbati jholaa kinne ?",
-        "korean": "티베트 가방 살래요?"
-      }
-    },
-    {
-      "nepali": "ठीक",
-      "romanized": "Thik",
-      "korean": "O.K., all right (좋다, 괜찮다)",
-      "example": {
-        "nepali": "ठीक छ, दिनोस्।",
-        "romanized": "Thik chha, dinos.",
-        "korean": "좋습니다, 주세요."
-      }
-    }
-  ],
-  "examples": [],
-  "grammar": [
-    {
-      "title": "1. chaahinchha",
-      "details": [
-        "'필요하다'는 뜻의 무인칭 동사입니다. 부정형은 'chaahīdaina'(필요 없다)입니다."
-      ]
-    },
-    {
-      "title": "2. 주격 조사 'laai'",
-      "details": [
-        "'chaahinchha'를 사용할 때, 필요로 하는 주체(사람) 뒤에 'laai'를 붙입니다. (예: malaai... chaahinchha - 나는 ...이 필요하다)"
-      ]
-    },
-    {
-      "title": "3. parchha",
-      "details": [
-        "가격이 '얼마이다', '비용이 들다'는 의미로 쓰입니다."
-      ]
-    },
-    {
-      "title": "4. deDh / saaDhe",
-      "details": [
-        "'deDh'는 1과 1/2(1.5)을 의미하며, 'saaDhe'는 2 이상의 숫자와 결합하여 '반(0.5)'을 의미합니다."
-      ]
-    }
-  ],
-  "quiz": [
-    {
-      "question": "'사과'를 뜻하는 단어는?",
-      "options": [
-        "आँप (aap)",
-        "स्याउ (syaau)",
-        "खाम (khaam)",
-        "सिसी (sisi)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "'필요하다'를 의미하는 무인칭 동사는?",
-      "options": [
-        "पर्छ (parchha)",
-        "चाहिँदैन (chaahīdaina)",
-        "चाहिन्छ (chaahinchha)",
-        "ल्याइदिनु (lyaaidinu)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "'오직, ~만'을 의미하는 단어는?",
-      "options": [
-        "धेरै (dherai)",
-        "अलिअलि (aliali)",
-        "मात्र (maatra)",
-        "केही (kehi)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "가격이 '얼마이다', '비용이 들다'는 의미의 단어는?",
-      "options": [
-        "पर्छ (parchha)",
-        "चाहिन्छ (chaahinchha)",
-        "पर्दैन (pardaina)",
-        "ठीक (Thik)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'망고'를 뜻하는 단어는?",
-      "options": [
-        "स्याउ (syaau)",
-        "सिसा कलम (sisaa kalam)",
-        "आँप (aap)",
-        "डट पेन (DaT pen)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "숫자 앞에 쓰여 '절반(0.5)'을 나타내는 단어는?",
-      "options": [
-        "धेरै (dherai)",
-        "डेढ (deDh)",
-        "साढे (saaDhe)",
-        "मात्र (maatra)"
-      ],
-      "answer": 2
-    },
-    {
-      "question": "'돈' 또는 네팔의 작은 화폐 단위를 뜻하는 말은?",
-      "options": [
-        "खाम (khaam)",
-        "पैसा (paisaa)",
-        "सिसी (sisi)",
-        "प्याकेट (paakeT)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "필요로 하는 주체 뒤에 붙이는 주격 조사는?",
-      "options": [
-        "लाई (laai)",
-        "ले (le)",
-        "मा (maa)",
-        "को (ko)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'무엇이 필요하세요?'의 올바른 네팔어 표현은?",
-      "options": [
-        "तपाईंलाई के चाहिन्छ ? (tapaaïlaai ke chaahinchha ?)",
-        "मलाई स्याउ चाहिन्छ। (malaai syaau chaahinchha.)",
-        "एउटाको कति पर्छ ? (euTaako kati parchha ?)",
-        "जम्मा कति भयो ? (jammaa kati bhayo ?)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'이 가게에 연필 있나요?'의 올바른 표현은?",
-      "options": [
-        "यो पसलमा खाम पाइन्छ ? (yo pasalmaa khaam paainchha ?)",
-        "यो पसलमा सिसाकलम पाइन्छ ? (yo pasalmaa sisaakalam paainchha ?)",
-        "कति लिने ? (kati line ?)",
-        "के के चाहिन्छ ? (ke ke chaahinchha ?)"
-      ],
-      "answer": 1
-    }
+    { "nepali": "aap", "english": "mango", "korean": "망고" },
+    { "nepali": "aliali", "english": "a little, a few", "korean": "조금, 약간" },
+    { "nepali": "chaahīdaina", "english": "isn't needed", "korean": "필요 없다" },
+    { "nepali": "DaT pen", "english": "ball point pen", "korean": "볼펜" },
+    { "nepali": "dherai", "english": "many, a lot of", "korean": "많은" },
+    { "nepali": "khukuri", "english": "a brand of cigarettes", "korean": "네팔 담배 브랜드" },
+    { "nepali": "kehi", "english": "any, some (thing)", "korean": "무엇인가, 조금의" },
+    { "nepali": "khaam", "english": "envelope", "korean": "봉투" },
+    { "nepali": "lyaaidinu", "english": "to bring for some one", "korean": "~를 위해 가져다주다" },
+    { "nepali": "maatra", "english": "only", "korean": "오직, ~만" },
+    { "nepali": "paakeT", "english": "packet", "korean": "갑, 팩" },
+    { "nepali": "paisaa", "english": "paisa", "korean": "네팔 화폐 단위 / 돈" },
+    { "nepali": "parchha", "english": "costs", "korean": "비용이 들다" },
+    { "nepali": "pardaina", "english": "does not cost", "korean": "비용이 들지 않다" },
+    { "nepali": "saaDhe", "english": "half", "korean": "절반 / 시간의 '30분'" },
+    { "nepali": "sisaa kalam", "english": "pencil", "korean": "연필" },
+    { "nepali": "sisi", "english": "bottle", "korean": "병" },
+    { "nepali": "syaau", "english": "apple", "korean": "사과" },
+    { "nepali": "tibbati", "english": "Tibetan", "korean": "티베트의" },
+    { "nepali": "Thik", "english": "O.K., all right", "korean": "좋다, 괜찮다" }
   ],
   "dialogues": [
     {
-      "title": "PART I: DIALOGUE (a) 시장 심부름",
-      "lines": [
+      "part": "a",
+      "title": "시장 심부름",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "म बजार जाने। तपाईंलाई केही चाहिन्छ ?",
-          "romanized": "ma bajaar jaane. tapaaïlaai kehi chaahinchha ?",
-          "korean": "저 시장에 가요. 뭐 필요한 거 있어요?"
+          "id": 1,
+          "nepali": "ma bajaar jaane. / tapaaïlaai kehi chaahinchha / chaahinchha ?",
+          "pronunciation": "",
+          "translation": "(저 시장에 가요. /뭐 필요한 거 있어요?/ 네, 필요해요.)"
         },
         {
-          "speaker": "B",
-          "nepali": "चाहिन्छ। एक बट्टा चुरोट।",
-          "romanized": "chaahinchha. ek baTTaa churoT.",
-          "korean": "네, 필요해요. 담배 한 갑요."
+          "id": 2,
+          "nepali": "ke ke chaahinchha ? / ek baTTaa churoT. ?",
+          "pronunciation": "",
+          "translation": "(뭐뭐가 필요한가요? / 담배 한 갑요.)"
         },
         {
-          "speaker": "A",
-          "nepali": "के के चाहिन्छ ? / कुन चुरोट ?",
-          "romanized": "ke ke chaahinchha ? / kun churoT ?",
-          "korean": "뭐뭐가 필요한가요? / 어떤 브랜드 담배요?"
+          "id": 3,
+          "nepali": "kun churoT ? / khukuri.",
+          "pronunciation": "",
+          "translation": "(어떤 브랜드 담배요? / Khukuri 브랜드요.)"
         },
         {
-          "speaker": "B",
-          "nepali": "खुकुरी।",
-          "romanized": "khukuri.",
-          "korean": "Khukuri 브랜드요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "पैसा दिनोस्। म ल्याइदिन्छु। / लिनोस्। दस रुपैयाँ छ।",
-          "romanized": "paisaa dinos. ma lyaai dinchhu. / linos. das rupiyãã chha.",
-          "korean": "돈을 주세요. 제가 사다 줄게요. / 여기요. 10루피 여기 있습니다."
+          "id": 4,
+          "nepali": "paisaa dinos. ma lyaai dinchhu. / linos. das rupiyãã chha.",
+          "pronunciation": "",
+          "translation": "(돈을 주세요. 제가 사다 줄게요. / 여기요. 10루피 여기 있습니다.)"
         }
       ]
     },
     {
-      "title": "PART II: PRACTICE (a) 사과 사기",
-      "lines": [
+      "part": "b",
+      "title": "사과 사기",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "तपाईंलाई के चाहिन्छ ?",
-          "romanized": "tapaaïlaai ke chaahinchha ?",
-          "korean": "무엇이 필요하세요?"
+          "id": 1,
+          "nepali": "tapaaïlaai ke chaahinchha ? / malaai syaau chaahinchha.",
+          "pronunciation": "",
+          "translation": "(무엇이 필요하세요? / 저는 사과가 필요합니다.)"
         },
         {
-          "speaker": "B",
-          "nepali": "मलाई स्याउ चाहिन्छ।",
-          "romanized": "malaai syaau chaahinchha.",
-          "korean": "저는 사과가 필요합니다."
+          "id": 2,
+          "nepali": "kati line ? / chhawaTaa line.",
+          "pronunciation": "",
+          "translation": "(몇 개 살 건가요? / 6개 살 거예요.)"
         },
         {
-          "speaker": "A",
-          "nepali": "कति लिने ?",
-          "romanized": "kati line ?",
-          "korean": "몇 개 살 건가요?"
+          "id": 3,
+          "nepali": "chhawaTaako saaDhe chaar rupiyaa parchha. / Thik chha, dinos.",
+          "pronunciation": "",
+          "translation": "(6개에 4.5루피입니다. / 좋습니다, 주세요.)"
         },
         {
-          "speaker": "B",
-          "nepali": "छवटा लिने।",
-          "romanized": "chhawaTaa line.",
-          "korean": "6개 살 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "छवटाको साढे चार रुपैयाँ पर्छ।",
-          "romanized": "chhawaTaako saaDhe chaar rupiyaa parchha.",
-          "korean": "6개에 4.5루피입니다."
-        },
-        {
-          "speaker": "B",
-          "nepali": "ठीक छ, दिनोस्।",
-          "romanized": "Thik chha, dinos.",
-          "korean": "좋습니다, 주세요."
+          "id": 4,
+          "nepali": "linos.",
+          "pronunciation": "",
+          "translation": "(Here, take them please.)"
         }
       ]
     },
     {
-      "title": "PART II: PRACTICE (b) 티베트 가방 흥정",
-      "lines": [
+      "part": "c",
+      "title": "티베트 가방 흥정",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "तिब्बती झोला किन्ने ?",
-          "romanized": "tibbati jholaa kinne ?",
-          "korean": "티베트 가방 살래요?"
+          "id": 1,
+          "nepali": "tibbati jholaa kinne ? / na kinne.",
+          "pronunciation": "",
+          "translation": "(티베트 가방 살래요? / 안 살래요.)"
         },
         {
-          "speaker": "B",
-          "nepali": "नकिन्ने।",
-          "romanized": "na kinne.",
-          "korean": "안 살래요."
+          "id": 2,
+          "nepali": "kina ? / tapaaïko pasalamaa mahango chha.",
+          "pronunciation": "",
+          "translation": "(왜요? / 당신네 가게는 비싸요.)"
         },
         {
-          "speaker": "A",
-          "nepali": "किन ?",
-          "romanized": "kina ?",
-          "korean": "왜요?"
+          "id": 3,
+          "nepali": "mahango chhaina. euTaako paanchaas rupiyaa maatra parchha. chaalis rupiyaamaa dine ?",
+          "pronunciation": "",
+          "translation": "(비싸지 않아요. 하나에 겨우 50루피입니다. 40루피에 줄 수 있어요?)"
         },
         {
-          "speaker": "B",
-          "nepali": "तपाईंको पसलमा महँगो छ।",
-          "romanized": "tapaaïko pasalamaa mahango chha.",
-          "korean": "당신네 가게는 비싸요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "महँगो छैन। एउटाको पचास रुपैयाँ मात्र पर्छ।",
-          "romanized": "mahango chhaina. euTaako paanchaas rupiyaa maatra parchha.",
-          "korean": "비싸지 않아요. 하나에 겨우 50루피입니다."
-        },
-        {
-          "speaker": "B",
-          "nepali": "चालीस रुपैयाँमा दिने ? / दिने, ल लिनोस्।",
-          "romanized": "chaalis rupiyaamaa dine ? / dine, la linos.",
-          "korean": "40루피에 줄 수 있어요? / 네, 드릴게요. 여기 있습니다."
+          "id": 4,
+          "nepali": "dine, la linos.",
+          "pronunciation": "",
+          "translation": "(네, 드릴게요. 여기 있습니다.)"
         }
       ]
     },
     {
-      "title": "PART II: PRACTICE (c) 학용품 구매",
-      "lines": [
+      "part": "d",
+      "title": "학용품 구매",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "यो पसलमा सिसाकलम पाइन्छ ?",
-          "romanized": "yo pasalmaa sisaakalam paainchha ?",
-          "korean": "이 가게에 연필 있나요?"
+          "id": 1,
+          "nepali": "yo pasalmaa sisaakalam paainchha ? / paainchha. katiwaTaa line ?",
+          "pronunciation": "",
+          "translation": "(이 가게에 연필 있나요? / 네, 있습니다. How many do you want?)"
         },
         {
-          "speaker": "B",
-          "nepali": "पाइन्छ।",
-          "romanized": "paainchha.",
-          "korean": "네, 있습니다."
+          "id": 2,
+          "nepali": "euTaako kati parchha ? / euTaako paanch sukaa parchha.",
+          "pronunciation": "",
+          "translation": "(한 자루에 얼마인가요? / 한 자루에 1루피 25파이사(5 sukaa)입니다.)"
         },
         {
-          "speaker": "A",
-          "nepali": "एउटाको कति पर्छ ?",
-          "romanized": "euTaako kati parchha ?",
-          "korean": "한 자루에 얼마인가요?"
+          "id": 3,
+          "nepali": "tinwaTaa dinos. khaam pani paainchha ? / paainchha.",
+          "pronunciation": "",
+          "translation": "(세 자루 주세요. 봉투도 있나요? / 네, 있습니다.)"
         },
         {
-          "speaker": "B",
-          "nepali": "एउटाको पाँच सुका पर्छ।",
-          "romanized": "euTaako paanch sukaa parchha.",
-          "korean": "한 자루에 1루피 25파이사(5 sukaa)입니다."
+          "id": 4,
+          "nepali": "khaam daswaTaa dinos. / la, linos.",
+          "pronunciation": "",
+          "translation": "(Give me ten, please. / Here, please take them.)"
         },
         {
-          "speaker": "A",
-          "nepali": "तीनवटा दिनोस्। खाम पनि पाइन्छ ?",
-          "romanized": "tinwaTaa dinos. khaam pani paainchha ?",
-          "korean": "세 자루 주세요. 봉투도 있나요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "पाइन्छ।",
-          "romanized": "paainchha.",
-          "korean": "네, 있습니다."
-        },
-        {
-          "speaker": "A",
-          "nepali": "जम्मा कति भयो ?",
-          "romanized": "jammaa kati bhayo ?",
-          "korean": "전부 얼마인가요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "साढे चार रुपैयाँ भयो।",
-          "romanized": "saadhe chaar rupiyãã bhayo.",
-          "korean": "4.5루피입니다."
+          "id": 5,
+          "nepali": "jammaa kati bhayo ? / saadhe chaar rupiyãã bhayo.",
+          "pronunciation": "",
+          "translation": "(전부 얼마인가요? / 4.5루피입니다.)"
         }
       ]
     },
     {
-      "title": "PART II: PRACTICE (d) 망고 비교 (미국 vs 네팔)",
-      "lines": [
+      "part": "e",
+      "title": "",
+      "conversations": [
         {
-          "speaker": "A",
-          "nepali": "त्यहाँ आँप सस्तो हुन्छ कि महँगो हुन्छ ?",
-          "romanized": "tyahãã aap sasto hunchha ki mahango hunchha ?",
-          "korean": "그곳(미국)은 망고가 싼가요, 비싼가요?"
+          "id": 1,
+          "nepali": "अमेरिकामा आँप पाइन्छ ? / पाइन्छ ।",
+          "pronunciation": "(amerikaamaa āāp paainchha ? / paainchha.)",
+          "translation": "Are mangoes available in America ? / Yes."
         },
         {
-          "speaker": "B",
-          "nepali": "अलि अलि महँगो हुन्छ।",
-          "romanized": "ali ali mahango hunchha.",
-          "korean": "조금 비쌉니다."
+          "id": 2,
+          "nepali": "त्यहाँ आँप सस्तो हुन्छ कि महँगो हुन्छ ? / अलि अलि महँगो हुन्छ ।",
+          "pronunciation": "(tyahāā āāp sasto hunchha ki mahango hunchha ? / ali ali mahango hunchha.)",
+          "translation": "Are mangoes cheap or expensive there ? / A little expensive."
         },
         {
-          "speaker": "A",
-          "nepali": "एउटाको कति पर्छ ?",
-          "romanized": "euTaako kati parchha ?",
-          "korean": "한 개에 얼마인가요?"
+          "id": 3,
+          "nepali": "एउटाको कति पर्छ ? / एउटाको दश रुपियाँ पर्छ ।",
+          "pronunciation": "(euTaako kati parchha ? / euTaako das rupiyāā parchha.)",
+          "translation": "How much does one cost ? / They are ten rupees a piece."
         },
         {
-          "speaker": "B",
-          "nepali": "एउटाको दस रुपैयाँ पर्छ।",
-          "romanized": "euTaako das rupiyää parchha.",
-          "korean": "하나에 10루피입니다."
+          "id": 4,
+          "nepali": "यहाँ नि ? / यहाँ डेढ रुपियाँ पर्छ ।",
+          "pronunciation": "(yahāā ni ? / yahāā deDh rupiyāā parchha.)",
+          "translation": "How about here ? / It costs one and half rupees here."
+        }
+      ]
+    },
+    {
+      "part": "f",
+      "title": "",
+      "conversations": [
+        {
+          "id": 1,
+          "nepali": "तपाईंलाई सिसाकलम चाहिन्छ ? / चाहिँदैन ।",
+          "pronunciation": "(tapaaīlaai sisaakalam chaahinchha ? / chaahīdaina.)",
+          "translation": "Do you need any pencils ? / No, I do not need any."
         },
         {
-          "speaker": "A",
-          "nepali": "यहाँ नि ?",
-          "romanized": "yahãã ni ?",
-          "korean": "여기는요?"
+          "id": 2,
+          "nepali": "डट पेन नि ? / डट पेन चाहिन्छ ।",
+          "pronunciation": "(Dat pen ni ? / DaT pen chaahinchha.)",
+          "translation": "How about ballpoint pens ? / Yes, I need those."
         },
         {
-          "speaker": "B",
-          "nepali": "यहाँ डेढ रुपैयाँ पर्छ।",
-          "romanized": "yahaa deDh rupiyaa parchha.",
-          "korean": "여기는 1.5루피(deDh)입니다."
+          "id": 3,
+          "nepali": "अरू के चाहिन्छ ? / अरू केही चाहिँदैन ।",
+          "pronunciation": "(aru ke chaahinchha ? / aru kehi chaahīdaina.)",
+          "translation": "What else do you need ? / I don't need anything else."
         }
       ]
     }
+  ],
+  "grammar_notes": [
+    "1. chaahinchha: '필요하다'는 뜻의 무인칭 동사입니다. 부정형은 'chaahīdaina'(필요 없다)입니다.",
+    "2. 주격 조사 'laai': 'chaahinchha'를 사용할 때, 필요로 하는 주체(사람) 뒤에 'laai'를 붙입니다. (예: malaai... chaahinchha - 나는 ...이 필요하다)",
+    "3. parchha: 가격이 '얼마이다', '비용이 들다'는 의미로 쓰입니다.",
+    "4. deDh / saaDhe: 'deDh'는 1과 1/2(1.5)을 의미하며, 'saaDhe'는 2 이상의 숫자와 결합하여 '반(0.5)'을 의미합니다."
   ]
 }
