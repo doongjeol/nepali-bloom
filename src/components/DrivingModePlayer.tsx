@@ -46,6 +46,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   const [isFinished, setIsFinished] = useState(false);
   const [ttsSpeed, setTtsSpeed] = useState(0.9);
   const [studyMode, setStudyMode] = useState<StudyMode>("select");
+  const [showRomanization, setShowRomanization] = useState(true);
 
   const startTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -367,13 +368,22 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             <Car className="h-5 w-5" />
             <span className="text-base">드라이브</span>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="pointer-events-auto rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm"
-          >
-            <X className="h-5 w-5" />
-          </button>
+          <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={() => setShowRomanization(!showRomanization)}
+              className="pointer-events-auto rounded-full bg-secondary/80 px-3 py-1.5 text-xs font-semibold text-secondary-foreground backdrop-blur-sm"
+            >
+              로마자 {showRomanization ? "숨기기" : "보기"}
+            </button>
+            <button
+              type="button"
+              onClick={onClose}
+              className="pointer-events-auto rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm"
+            >
+              <X className="h-5 w-5" />
+            </button>
+          </div>
         </div>
 
         <div className="px-3 pb-2">
@@ -414,11 +424,16 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
                   </div>
                 </div>
                 <p
-                  className="mb-4 break-keep text-4xl font-black leading-tight text-foreground sm:text-5xl landscape:text-3xl"
+                  className="mb-2 break-keep text-3xl font-black leading-tight text-foreground sm:text-4xl landscape:text-2xl"
                   style={{ fontFamily: "var(--font-nepali)" }}
                 >
                   {currentWord.nepali}
                 </p>
+                {showRomanization && currentWord.romanized && (
+                  <p className="mb-4 break-keep text-lg font-bold italic text-muted-foreground sm:text-xl landscape:text-base">
+                    {currentWord.romanized}
+                  </p>
+                )}
                 {dialogueKorean ? (
                   <p className="break-keep text-2xl font-black text-foreground/90 sm:text-3xl landscape:text-xl">
                     {dialogueKorean}
@@ -428,11 +443,16 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             ) : (
               <div className="w-full max-w-3xl">
                 <p
-                  className="mb-4 break-keep text-5xl font-black leading-tight text-foreground sm:text-6xl landscape:text-4xl"
+                  className="mb-2 break-keep text-4xl font-black leading-tight text-foreground sm:text-5xl landscape:text-3xl"
                   style={{ fontFamily: "var(--font-nepali)" }}
                 >
                   {currentWord.nepali}
                 </p>
+                {showRomanization && currentWord.romanized && (
+                  <p className="mb-4 break-keep text-xl font-bold italic text-muted-foreground sm:text-2xl landscape:text-lg">
+                    {currentWord.romanized}
+                  </p>
+                )}
                 <p className="break-keep text-3xl font-black text-foreground/90 sm:text-4xl landscape:text-2xl">
                   {currentWord.korean}
                 </p>

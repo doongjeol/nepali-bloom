@@ -87,6 +87,7 @@ def generate_tts(
     start_from: Optional[int] = None,
     vocab_examples_only: bool = False,
     dry_run: bool = False,
+    ko_a_male: bool = False,
 ):
     global texttospeech
     try:
@@ -197,7 +198,12 @@ def generate_tts(
                 speaker = line.get("speaker")
                 
                 # 화자가 B이면 남성 목소리, 그 외(A 등)는 여성 목소리로 설정
-                speaker_gender = texttospeech.SsmlVoiceGender.MALE if speaker == "B" else texttospeech.SsmlVoiceGender.FEMALE
+                nepali_gender = texttospeech.SsmlVoiceGender.MALE if speaker == "B" else texttospeech.SsmlVoiceGender.FEMALE
+                
+                if ko_a_male:
+                    ko_gender = texttospeech.SsmlVoiceGender.MALE if speaker == "A" else texttospeech.SsmlVoiceGender.FEMALE
+                else:
+                    ko_gender = nepali_gender
 
                 if nepali_text:
                     out = output_dir / f"dial_{d_idx}_{l_idx}.mp3"
@@ -208,7 +214,7 @@ def generate_tts(
                         if dry_run:
                             print(f"     [dry-run] {out}")
                         else:
-                            synthesize_with_retry(client, nepali_text, out, gender=speaker_gender)
+                            synthesize_with_retry(client, nepali_text, out, gender=nepali_gender)
 
                 if korean_text:
                     out_ko = output_dir / f"dial_{d_idx}_{l_idx}_ko.mp3"
@@ -221,7 +227,7 @@ def generate_tts(
                         if dry_run:
                             print(f"     [dry-run] {out_ko}")
                         else:
-                            synthesize_with_retry(client, clean_korean, out_ko, language_code="ko-KR", gender=speaker_gender)
+                            synthesize_with_retry(client, clean_korean, out_ko, language_code="ko-KR", gender=ko_gender)
 
         examples = lesson_data.get("examples", []) or []
         for e_idx, ex in enumerate(examples):
@@ -257,6 +263,11 @@ if __name__ == "__main__":
         action="store_true",
         help="Print what would be generated, but do not call the TTS API or write files.",
     )
+    parser.add_argument(
+        "--ko-a-male",
+        action="store_true",
+        help="Korean TTS: set Speaker A to Male and Speaker B to Female.",
+    )
     args = parser.parse_args()
 
     generate_tts(
@@ -264,6 +275,8 @@ if __name__ == "__main__":
         start_from=None if args.lesson is not None else args.start_from,
         vocab_examples_only=args.vocab_examples_only,
         dry_run=args.dry_run,
+        ko_a_male=args.ko_a_male,
     )
 
 # --lesson 1 --vocab-examples-only
+# --lesson 2 --ko-a-male

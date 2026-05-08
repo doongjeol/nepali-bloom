@@ -411,6 +411,18 @@
           "korean": "안녕하세요!"
         },
         {
+        "speaker": "A",
+        "nepali": "सन्चै ?",
+        "romanized": "sanchai ?",
+        "korean": "잘 지내세요?"
+        },
+        {
+        "speaker": "B",
+        "nepali": "सन्चै ।",
+        "romanized": "sanchai.",
+        "korean": "잘 지냅니다."
+        },
+        {
           "speaker": "A",
           "nepali": "तपाईंको घर कहाँ हो ?",
           "romanized": "tapaaïko ghar kahãã ho ?",
@@ -420,7 +432,7 @@
           "speaker": "B",
           "nepali": "मेरो घर अमेरिका हो।",
           "romanized": "mero ghar amerikaa ho.",
-          "korean": "제 고향은 미국입니다.."
+          "korean": "제 고향은 미국입니다."
         },
         {
           "speaker": "A",
@@ -563,6 +575,18 @@
           "nepali": "मैले ढोका बन्द गरेको ।",
           "romanized": "maile Dhokaa banda gareko.",
           "korean": "제가 문을 닫았습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "वहाँले के गरेको ?",
+          "romanized": "wahããle ke gareko ?",
+          "korean": "그분은 무엇을 했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "वहाँले ढोका बन्द गरेको ।",
+          "romanized": "wahããle Dhokaa banda gareko.",
+          "korean": "그분이 문을 닫았습니다."
         }
       ]
     },
@@ -622,6 +646,65 @@
           "nepali": "लिनुहोस् ।",
           "romanized": "linus.",
           "korean": "받으세요."
+        }
+      ]
+    },
+    {
+      "title": "사과 먹기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "त्यो सुन्तला हो ?",
+          "romanized": "tyo suntalaa ho ?",
+          "korean": "저것은 오렌지입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "होइन ।",
+          "romanized": "hoina.",
+          "korean": "아니요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "के हो, त ?",
+          "romanized": "ke ho, ta ?",
+          "korean": "그럼, 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "स्याउ हो ।",
+          "romanized": "syaau ho.",
+          "korean": "사과입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "खानुहोस् ।",
+          "romanized": "khaanos.",
+          "korean": "드세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले के गरेको ?",
+          "romanized": "tapaaïle ke gareko ?",
+          "korean": "당신은 무엇을 했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "मैले स्याउ खाएको ।",
+          "romanized": "maile syaau khaaeko.",
+          "korean": "제가 사과를 먹었습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "स्याउ अमिलो छ ?",
+          "romanized": "syaau amilo chha ?",
+          "korean": "사과가 십니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छैन, गुलियो छ ।",
+          "romanized": "chhaina, guliyo chha.",
+          "korean": "아니요, 답니다."
         }
       ]
     },
