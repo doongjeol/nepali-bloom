@@ -34,47 +34,79 @@ tayaar         : ready (준비된)
 2. PART I: DIALOGUE (대화문)
 --------------------------------------------------
 (a) 쇼핑 가기
-1. namaste ! / namaste !
-2. kahãã jaane ? / kinmel garna bajaar jaane.
-   (어디 가세요? / 쇼핑하러 시장에 가요.)
-3. ke kinne ? / mero laagi kaparaa kinne.
-   (무엇을 사나요? / 저를 위한 옷을 살 거예요.)
-4. ekai chhin parkhanus, ma pani jaane. / hunchha, jaaű.
-   (잠깐만 기다리세요, 저도 갈게요. / 좋아요, 갑시다.)
+1. नमस्ते । / नमस्ते ।
+   (namaste.! / namaste.)
+   Hello.! / Hello.
+
+2. कहाँ जाने ? / बजार जाने ।
+   (kahãã jaane ? / bajaar jaane.)
+   Where are you going ? / I'm going to the bazaar.
+
+3. बजारमा किन जाने ? / तरकारी किन्न जाने ।
+   (bajaarmaa kina jaane ? / tarkaari kinna jaane.)
+   Why are you going to the bazaar ? / I'm going to buy vegetables.
+
+4. अनि कहाँ जाने ? / डेरामा फर्कने ।
+   (ani kahãã jaane ? / Deraamaa pharkane.)
+   Where are you going then ? / I'm going to go back to my place.
+
+5. कति बजे फर्कने ? / पाँच बजे होला ।
+   (kati baje pharkane ? / pããch baje holaa.)
+   What time are you heading back ? / Probably, at five o'clock.
 
 (b) 가게에서
-1. pasale ji, yo kaparaako kati ? / miTarko bis rupiyaa.
-   (주인장님, 이 옷감 얼마인가요? / 미터당 20루피입니다.)
-2. kasto mahanago ! ali sasto chhaina ? / chhaina, yo dherai raamro chha.
-   (정말 비싸네요! 좀 더 싼 건 없나요? / 없어요, 이건 아주 좋은 겁니다.)
-3. arkho hernos, tyo sasto chha. / tyo kasto chha ?
-   (다른 걸 보세요, 저건 싸요. / 저건 어떤가요?)
-4. tyo miTarko pandhra rupiyaa. / tyo tayaar garnus.
-   (저건 미터당 15루피입니다. / 그걸로 준비해 주세요.)
+1. yahãã suntalaa chha ? / chha.
+   (yahãã suntalaa chha ?) / (chha.)
+   Do you have oranges ? / Yes, I do.
+
+2. ek kiloko kati ? / tis rupiyãã.
+   (ek kiloko kati ?) / (tis rupiyãã.)
+   How much for a kilo ? / Thirty.
+
+3. mahango bhayo. pachchismaa dinos. / hunchha. kati kilo line ?
+   (mahango bhayo. pachchismaa dinos.) / (hunchha. kati kilo line ?)
+   They're expensive. I'll give you twenty five rupees. / O.K. How many kilos do you want ?
+
+4. dui kilo line. / la, linos.
+   (dui kilo line.) / (la, linos.)
+   I'll take two kilos / Here, take them.
 
 
-3. PART II: PRACTICE (연습)
---------------------------------------------------
-(a) 옷감 사기 (계속)
-1. kati miTar lina ? / paach miTar.
-   (몇 미터 살 건가요? / 5미터요.)
-2. jammaa kati bhaayo ? / jammaa pachhattar rupiyaa bhaayo.
-   (전부 얼마인가요? / 전부 75루피입니다.)
-3. lau paisa. / dhanyabaad.
-   (여기 돈 있습니다. / 감사합니다.)
+(c)
 
-(b) 물건 확인
-1. yo ke ho ? / yo kaparaa ho.
-2. tapaaïle kati miTar kaparaa kineko ? / maile paach miTar kineko.
-   (옷감을 몇 미터 샀습니까? / 5미터 샀습니다.)
-3. miTarko kati paisa ? / miTarko pandhra rupiyaa.
-   (미터당 얼마입니까? / 미터당 15루피입니다.)
+1. asan Tolmaa phalphul paainchha ? / paainchha.
+   (asan Tolmaa phalphul paainchha ?) / (paainchha.)
+   Are fruits available in Asan Tole ? / Yes, they are.
 
-(c) 기분 표현
-1. tapaaïlaai kasto chha ? / malaai dherai khusi chha.
-   (기분이 어떠세요? / 아주 기쁩니다.)
-2. kina ? / maile sasto kaparaa kine.
-   (왜요? / 싼 옷감을 샀거든요.)
+2. chij ni ? / chij ta paaïdaina.
+   (chij ni ?) / (chij ta paaïdaina.)
+   How about cheese ? / No, cheese is not available.
+
+3. chij kahãã paainchha ta ? / niuroDmaa paainchha.
+   (chij kahãã paainchha ta ?) / (niuroDmaa paainchha.)
+   Where is cheese found then ? / It's found in New Road.
+
+4. ek kiloko kati parchha ? / ek saya chaalis rupiyãã parchha.
+   (ek kiloko kati parchha ?) / (ek saya chaalis rupiyãã parchha.)
+   How much is a kilo ? / It costs 140 rupees.
+
+(d)
+
+1. e saahuji ! phul chha ? / chha. katiwaTaa line ?
+   (e saahuji ! phul chha ?) / (chha. katiwaTaa line ?)
+   Oh shopkeeper ! Do you have eggs ? / Yes, I do. How many would you like ?
+
+2. euTaako kati ho ? / pããch mohor.
+   (euTaako kati ho ?) / (pããch mohor.)
+   How much are they a piece ? / Two and a half rupees.
+
+3. chaarwaTaa dinos. / linos.
+   (chaarwaTaa dinos.) / (linos.)
+   Give me four, please. / Here, take them, please.
+
+4. jammaa kati bhayo ? / das rupiyãã.
+   (jammaa kati bhayo ?) / (das rupiyãã.)
+   How much does it come to ? / Ten rupees.
 
 
 4. GRAMMAR NOTES (문법 정리)

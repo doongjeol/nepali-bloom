@@ -2,853 +2,242 @@
   "id": 4,
   "title": "Lesson 4",
   "titleKo": "제4과",
-  "description": "시간에 따른 일과와 미래의 계획을 묻고 답하는 표현을 배웁니다.",
+  "description": "미래/의도 표현(-ne)과 시간, 목적을 묻고 답하며 일상적인 일과와 계획을 말하는 방법을 배웁니다.",
   "vocabulary": [
+    { "nepali": "आज", "romanized": "aaja", "korean": "오늘 (today)", "example": { "nepali": "आज बेलुका कहाँ जाने ?", "romanized": "aaja belukaa kahãã jaane ?", "korean": "오늘 저녁에 어디 가요?" } },
+    { "nepali": "अनि", "romanized": "ani", "korean": "그리고 나서 (and then)", "example": { "nepali": "अनि के गर्ने ?", "romanized": "ani ke garne ?", "korean": "그러고 나서 뭐 할 거예요?" } },
+    { "nepali": "बाट", "romanized": "baaTa", "korean": "~로부터 (from)", "example": { "nepali": "बजारबाट कति बजे फर्कने ?", "romanized": "bajaarbaaTa kati baje pharkane ?", "korean": "시장에서 몇 시에 돌아와요?" } },
+    { "nepali": "बजार", "romanized": "bajaar", "korean": "시장 (market)", "example": { "nepali": "बजारमा किन जाने ?", "romanized": "bajaarmaa kina jaane ?", "korean": "시장에 왜 가요?" } },
+    { "nepali": "बजे", "romanized": "baje", "korean": "시 - 시각 (o'clock)", "example": { "nepali": "दस बजे सुत्ने ।", "romanized": "das baje sutne.", "korean": "10시에 잘 거예요." } },
+    { "nepali": "बेलुका", "romanized": "belukaa", "korean": "저녁 (evening)", "example": { "nepali": "आज बेलुका कहाँ जाने ?", "romanized": "aaja belukaa kahãã jaane ?", "korean": "오늘 저녁에 어디 가요?" } },
+    { "nepali": "भोलि", "romanized": "bholi", "korean": "내일 (tomorrow)", "example": { "nepali": "भोलि बिहान कति बजे उठ्ने ?", "romanized": "bholi bihaana kati baje uThne ?", "korean": "내일 아침 몇 시에 일어날 거예요?" } },
+    { "nepali": "बिदा", "romanized": "bidaa", "korean": "휴일 (holiday)", "example": { "nepali": "भोलि बिदा हो ।", "romanized": "bholi bidaa ho.", "korean": "내일은 휴일이니까요." } },
+    { "nepali": "चामल", "romanized": "chaamal", "korean": "쌀 (uncooked rice)", "example": { "nepali": "चामल, दाल र तरकारी किन्न जाने ।", "romanized": "chaamal, daal ra tarkaari kinna jaane.", "korean": "쌀, 달(렌틸), 채소를 사러 가요." } },
+    { "nepali": "चिनी", "romanized": "chini", "korean": "설탕 (sugar)", "example": { "nepali": "चियामा चिनी राख्ने ?", "romanized": "chiyaamaa chini raakhne ?", "korean": "차에 설탕 넣을까요?" } },
+    { "nepali": "दाल भात", "romanized": "daal-bhaat", "korean": "달밧 - 네팔 주식 (lentils & cooked rice)" },
+    { "nepali": "दस", "romanized": "das", "korean": "10 (ten)", "example": { "nepali": "दस बजे सुत्ने ।", "romanized": "das baje sutne.", "korean": "10시에 잘 거예요." } },
+    { "nepali": "डेरा", "romanized": "Deraa", "korean": "거처/숙소 (apartment)", "example": { "nepali": "तपाईंको डेरा कहाँ छ ?", "romanized": "tapaaIko Deraa kahãã chha ?", "korean": "숙소가 어디에 있나요?" } },
+    { "nepali": "दिउँसो", "romanized": "diűso", "korean": "낮/오후 (day time/afternoon)", "example": { "nepali": "आज दिउँसो नेपाली पढ्ने कि नपढ्ने ?", "romanized": "aaja diűso nepaali paDhne ki napaDhne ?", "korean": "오늘 오후에 네팔어 공부 할 거예요, 안 할 거예요?" } },
+    { "nepali": "दूध", "romanized": "dudh", "korean": "우유 (milk)", "example": { "nepali": "दूध पनि राख्ने ।", "romanized": "dudh pani raakhne.", "korean": "우유도 넣어주세요." } },
+    { "nepali": "होला", "romanized": "holaa", "korean": "아마도 (maybe, probably)", "example": { "nepali": "दस बजे होला ।", "romanized": "das baje holaa.", "korean": "아마 10시쯤요." } },
+    { "nepali": "कफी", "romanized": "kaphi", "korean": "커피 (coffee)", "example": { "nepali": "म कफी खाने ।", "romanized": "ma kaphi khaane.", "korean": "저는 커피 마실래요." } },
+    { "nepali": "खाना", "romanized": "khaanaa", "korean": "음식/식사 (food, meal)", "example": { "nepali": "खाना कति बजे खाने ?", "romanized": "khaanaa kati baje khaane ?", "korean": "식사는 몇 시에 할 거예요?" } },
+    { "nepali": "किन", "romanized": "kina", "korean": "왜 (why)", "example": { "nepali": "बजारमा किन जाने ?", "romanized": "bajaarmaa kina jaane ?", "korean": "시장에 왜 가요?" } },
+    { "nepali": "किन्नु", "romanized": "kinnu", "korean": "사다 (to buy)", "example": { "nepali": "चामल, दाल र तरकारी किन्न जाने ।", "romanized": "chaamal, daal ra tarkaari kinna jaane.", "korean": "쌀, 달(렌틸), 채소를 사러 가요." } },
+    { "nepali": "कि", "romanized": "ki", "korean": "또는 (or)", "example": { "nepali": "तपाईं चिया खाने कि कफी खाने ?", "romanized": "tapaaI chiyaa khaane ki kaphi khaane ?", "korean": "차 마실래요, 커피 마실래요?" } },
+    { "nepali": "क्लास", "romanized": "klaas", "korean": "수업 (class)", "example": { "nepali": "क्लासमा कति बजे जाने ?", "romanized": "klaasmaa kati baje jaane ?", "korean": "수업에 몇 시에 가요?" } },
+    { "nepali": "को को", "romanized": "ko ko", "korean": "누구누구 - 복수 (who plural)", "example": { "nepali": "तपाईंको डेरामा को को छन् ?", "romanized": "tapaaIko Deraamaa ko ko chhan ?", "korean": "숙소에 누구누구 있나요?" } },
+    { "nepali": "नजाने", "romanized": "najaane", "korean": "안 가다 (will not go)", "example": { "nepali": "तपाईं पनि जाने ? / नजाने ।", "romanized": "tapaaI pani jaane ? / najaane.", "korean": "당신도 갈래요? / 안 가요." } },
+    { "nepali": "नपढ्ने", "romanized": "napaDhne", "korean": "안 읽다/안 배우다 (will not read)", "example": { "nepali": "भोलि नेपाली नपढ्ने ।", "romanized": "bholi nepaali napaDhne.", "korean": "내일 네팔어 공부 안 할 거예요." } },
+    { "nepali": "नराख्ने", "romanized": "naraakhne", "korean": "안 넣다/안 두다 (will not put)", "example": { "nepali": "दूध नि ? / नराख्ने ।", "romanized": "dudh ni ? / naraakhne.", "korean": "우유는요? / 넣지 마세요." } },
+    { "nepali": "पाँच", "romanized": "paach", "korean": "5 (five)", "example": { "nepali": "तपाईं पाँच बजे कहाँ जाने ?", "romanized": "tapaaI pããch baje kahãã jaane ?", "korean": "5시에 어디 가세요?" } },
+    { "nepali": "पौने सात", "romanized": "paune saat", "korean": "7시 15분 전 / 6시 45분 (quarter to seven)", "example": { "nepali": "पौने सात बजे होला ।", "romanized": "paaune saat baje holaa.", "korean": "아마 6시 45분쯤요." } },
+    { "nepali": "फर्कनु", "romanized": "pharkanu", "korean": "돌아오다 (to return)", "example": { "nepali": "बजारबाट कति बजे फर्कने ?", "romanized": "bajaarbaaTa kati baje pharkane ?", "korean": "시장에서 몇 시에 돌아와요?" } },
+    { "nepali": "फुटबल", "romanized": "phuTbal", "korean": "축구 (football)", "example": { "nepali": "अनि फुटबल खेल्ने ।", "romanized": "ani phuTbal khelne.", "korean": "그리고 축구를 할 거예요." } },
+    { "nepali": "रक्सी", "romanized": "raksi", "korean": "술/락시 (home made spirit)", "example": { "nepali": "शहरमा जाने र रक्सी खाने ।", "romanized": "shaharmaa jaane ra raksi khaane.", "korean": "시내에 가서 술을 마실 거예요." } },
+    { "nepali": "साढे दस", "romanized": "saaDhe das", "korean": "10시 반 (half past ten)", "example": { "nepali": "साढे दस बजे फर्कने ।", "romanized": "saaDhe das baje pharkane.", "korean": "10시 반에 돌아올 거예요." } },
+    { "nepali": "सात", "romanized": "saat", "korean": "7 (seven)" },
+    { "nepali": "सम्म", "romanized": "samma", "korean": "까지 (until, as far as)", "example": { "nepali": "कति बजेसम्म लेख्ने ?", "romanized": "kati bajesamma lekhne ?", "korean": "몇 시까지 쓸 거예요?" } },
+    { "nepali": "साथी", "romanized": "saathi", "korean": "친구 (friend)", "example": { "nepali": "म र मेरो साथी ।", "romanized": "ma ra mero saathi.", "korean": "저랑 제 친구요." } },
+    { "nepali": "सवा पाँच", "romanized": "sawaa paach", "korean": "5시 15분 (quarter past five)", "example": { "nepali": "सवा पाँच बजेसम्म ।", "romanized": "sawaa pããch bajesamma .", "korean": "5시 15분까지요." } },
+    { "nepali": "सिनेमा", "romanized": "sinemaa", "korean": "영화 (movie)", "example": { "nepali": "सिनेमा हेर्न जाने ।", "romanized": "sinemaa herna jaane.", "korean": "영화 보러 가요." } },
+    { "nepali": "तरकारी", "romanized": "tarkaari", "korean": "채소/커리 (vegetables)" }
+  ],
+  "dialogues": [
     {
-      "nepali": "आज",
-      "romanized": "aaja",
-      "korean": "today (오늘)",
-      "example": {
-        "nepali": "आज दिउँसो नेपाली पढ्ने कि नपढ्ने ?",
-        "romanized": "aaja diűso nepaali paDhne ki napaDhne ?",
-        "korean": "오늘 오후에 네팔어 공부 할 거예요, 안 할 거예요?"
-      }
+      "title": "거처 및 동거인",
+      "lines": [
+        { "speaker": "A", "nepali": "सन्चै ?", "romanized": "sanchai ?", "korean": "잘 지내요?" },
+        { "speaker": "B", "nepali": "सन्चै छ, तपाईंलाई नि ?", "romanized": "sanchai chha, tapaaIlaai ni ?", "korean": "잘 지내요, 당신은요?" },
+        { "speaker": "A", "nepali": "सन्चै छ । तपाईं कहाँ जाने ?", "romanized": "sanchai chha. tapaaI kahãã jaane ?", "korean": "잘 지내요. 어디 가세요?" },
+        { "speaker": "B", "nepali": "मेरो डेरामा ।", "romanized": "mero Deraamaa.", "korean": "제 숙소에 가요." },
+        { "speaker": "A", "nepali": "तपाईंको डेरा कहाँ छ ?", "romanized": "tapaaIko Deraa kahãã chha ?", "korean": "숙소가 कहाँ에 있나요?" },
+        { "speaker": "B", "nepali": "मेरो डेरा कमल पोखरीमा छ ।", "romanized": "mero Deraa kamal pokharimaa chha.", "korean": "카말 포카리에 있어요." },
+        { "speaker": "A", "nepali": "तपाईंको डेरामा को को छन् ?", "romanized": "tapaaIko Deraamaa ko ko chhan ?", "korean": "숙소에 누구누구 있나요?" },
+        { "speaker": "B", "nepali": "म र मेरो साथी ।", "romanized": "ma ra mero saathi.", "korean": "저랑 제 친구요." }
+      ]
     },
     {
-      "nepali": "अनि",
-      "romanized": "ani",
-      "korean": "and then (그리고 나서)",
-      "example": {
-        "nepali": "अनि के गर्ने ?",
-        "romanized": "ani ke garne ?",
-        "korean": "그러고 나서 뭐 할 거예요?"
-      }
+      "title": "차 또는 커피",
+      "lines": [
+        { "speaker": "A", "nepali": "तपाईं चिया खाने कि कफी खाने ?", "romanized": "tapaaI chiyaa khaane ki kaphi khaane ?", "korean": "차 마실래요, 커피 마실래요?" },
+        { "speaker": "B", "nepali": "म कफी खाने ।", "romanized": "ma kaphi khaane.", "korean": "저는 커피 마실래요." },
+        { "speaker": "A", "nepali": "तपाईं नि ?", "romanized": "tapaaI ni ?", "korean": "당신은요?" },
+        { "speaker": "B", "nepali": "म चिया खाने ।", "romanized": "ma chiyaa khaane.", "korean": "저는 차 마실래요." },
+        { "speaker": "A", "nepali": "कफीमा चिनी राख्ने ?", "romanized": "kaphimaa chini raakhne ?", "korean": "커피에 설탕 넣을까요?" },
+        { "speaker": "B", "nepali": "राख्ने ।", "romanized": "raakhne.", "korean": "네, 넣어주세요." },
+        { "speaker": "A", "nepali": "दूध नि ?", "romanized": "dudh ni ?", "korean": "우유는요?" },
+        { "speaker": "B", "nepali": "नराख्ने ।", "romanized": "naraakhne.", "korean": "넣지 मा세요." }
+      ]
     },
     {
-      "nepali": "बाट",
-      "romanized": "baaTa",
-      "korean": "from (~로부터)",
-      "example": {
-        "nepali": "बजारबाट कति बजे फर्कने ?",
-        "romanized": "bajaarbaaTa kati baje pharkane ?",
-        "korean": "시장에서 몇 시에 돌아वा요?"
-      }
+      "title": "식사와 일과",
+      "lines": [
+        { "speaker": "A", "nepali": "चिया खाने ?", "romanized": "chiyaa khaane ?", "korean": "차 마실래요?" },
+        { "speaker": "B", "nepali": "खाने ।", "romanized": "khaane.", "korean": "마실게요." },
+        { "speaker": "A", "nepali": "तपाईं नि ?", "romanized": "tapaaI ni ?", "korean": "당신은요?" },
+        { "speaker": "B", "nepali": "म पनि खाने ।", "romanized": "ma pani khaane.", "korean": "저도 마실게요." },
+        { "speaker": "A", "nepali": "चियामा चिनी राख्ने ?", "romanized": "chiyaamaa chini raakhne ?", "korean": "차에 설탕 넣을까요?" },
+        { "speaker": "B", "nepali": "राख्ने ।", "romanized": "raakhne.", "korean": "네, 넣어주세요." },
+        { "speaker": "A", "nepali": "दूध नि ?", "romanized": "dudh ni ?", "korean": "우유는요?" },
+        { "speaker": "B", "nepali": "दूध पनि राख्ने ।", "romanized": "dudh pani raakhne.", "korean": "우유도 넣어주세요." }
+      ]
     },
     {
-      "nepali": "बजार",
-      "romanized": "bajaar",
-      "korean": "market (시장)",
-      "example": {
-        "nepali": "बजारमा किन जाने ?",
-        "romanized": "bajaarmaa kina jaane ?",
-        "korean": "시장에 왜 가요?"
-      }
+      "title": "일과 계획",
+      "lines": [
+        { "speaker": "A", "nepali": "तपाईं पाँच बजे कहाँ जाने ?", "romanized": "tapaaI pããch baje kahãã jaane ?", "korean": "5시에 어디 가세요?" },
+        { "speaker": "B", "nepali": "म आफ्नो डेरामा जाने ।", "romanized": "ma aaphno Deraamaa jaane.", "korean": "제 숙소에 가요." },
+        { "speaker": "A", "nepali": "डेरामा के गर्ने ?", "romanized": "Deraamaa ke garne ?", "korean": "숙소에서 뭐 할 거예요?" },
+        { "speaker": "B", "nepali": "दाल भात खाने ।", "romanized": "daal bhaat khaane.", "korean": "달밧을 먹을 거예요." },
+        { "speaker": "A", "nepali": "अनि के गर्ने ?", "romanized": "ani ke garne ?", "korean": "그러고 나서 뭐 할 거예요?" },
+        { "speaker": "B", "nepali": "नेपाली टेप सुन्ने ।", "romanized": "nepaali Tep sunne.", "korean": "네팔어 테이프를 들을 거예요." },
+        { "speaker": "A", "nepali": "कति बजे सुत्ने ?", "romanized": "kati baje sutne ?", "korean": "몇 시에 잘 거예요?" },
+        { "speaker": "B", "nepali": "दस बजे सुत्ने ।", "romanized": "das baje sutne.", "korean": "10시에 잘 거예요." }
+      ]
     },
     {
-      "nepali": "बजे",
-      "romanized": "baje",
-      "korean": "o'clock (시 - 시각을 말할 때)",
-      "example": {
-        "nepali": "तपाईं पाँच बजे कहाँ जाने ?",
-        "romanized": "tapaaï pããch baje kahãã jaane ?",
-        "korean": "5시에 어디 가세요?"
-      }
+      "title": "시장 보기",
+      "lines": [
+        { "speaker": "A", "nepali": "कहाँ जाने ?", "romanized": "kahãã jaane ?", "korean": "어디 가세요?" },
+        { "speaker": "B", "nepali": "बजारमा जाने ।", "romanized": "bajaarmaa jaane.", "korean": "시장에 가요." },
+        { "speaker": "A", "nepali": "बजारमा किन जाने ?", "romanized": "bajaarmaa kina jaane ?", "korean": "시장에 क्यों 가요?" },
+        { "speaker": "B", "nepali": "चामल, दाल र तरकारी किन्न जाने ।", "romanized": "chaamal, daal ra tarkaari kinna jaane.", "korean": "쌀, 달(렌틸), 채소를 사러 가요." },
+        { "speaker": "A", "nepali": "बजारबाट कति बजे फर्कने ?", "romanized": "bajaarbaaTa kati baje pharkane ?", "korean": "시장에서 몇 시에 돌아와요?" },
+        { "speaker": "B", "nepali": "चार बजे होला ।", "romanized": "chaar baje holaa.", "korean": "아마 4시쯤요." }
+      ]
     },
     {
-      "nepali": "बेलुका",
-      "romanized": "belukaa",
-      "korean": "evening (저녁)",
-      "example": {
-        "nepali": "आज बेलुका के गर्ने ?",
-        "romanized": "aaja belukaa ke garne ?",
-        "korean": "오늘 저녁에 뭐 할 거예요?"
-      }
+      "title": "내일 계획",
+      "lines": [
+        { "speaker": "A", "nepali": "भोलि बिहान कति बजे उठ्ने ?", "romanized": "bholi bihaana kati baje uThne ?", "korean": "내일 아침 몇 시에 일어날 거예요?" },
+        { "speaker": "B", "nepali": "छ बजे उठ्ने ।", "romanized": "chha baje uThne.", "korean": "6시에 일어날 거예요." },
+        { "speaker": "A", "nepali": "क्लासमा कति बजे जाने ?", "romanized": "klaasmaa kati baje jaane ?", "korean": "수업에 몇 시에 가요?" },
+        { "speaker": "B", "nepali": "क्लासमा सात बजे जाने ।", "romanized": "klaasmaa saat baje jaane.", "korean": "수업에 7시에 가요." },
+        { "speaker": "A", "nepali": "खाना कति बजे खाने ?", "romanized": "khaanaa kati baje khaane ?", "korean": "식사는 몇 시에 할 거예요?" },
+        { "speaker": "B", "nepali": "दस बजे होला ।", "romanized": "das baje holaa.", "korean": "아마 10시쯤요." },
+        { "speaker": "A", "nepali": "अनि के गर्ने ?", "romanized": "ani ke garne ?", "korean": "그러고 나서 뭐 할 거예요?" },
+        { "speaker": "B", "nepali": "अनि किताब पढ्ने ।", "romanized": "ani kitaab paDhne.", "korean": "그리고 책을 읽을 거예요." }
+      ]
     },
     {
-      "nepali": "भोलि",
-      "romanized": "bholi",
-      "korean": "tomorrow (내일)",
-      "example": {
-        "nepali": "भोलि बिहान कति बजे उठ्ने ?",
-        "romanized": "bholi bihaana kati baje uThne ?",
-        "korean": "내일 아침 몇 시에 일어날 거예요?"
-      }
+      "title": "공부와 운동",
+      "lines": [
+        { "speaker": "A", "nepali": "आज दिउँसो नेपाली पढ्ने कि नपढ्ने ?", "romanized": "aaja diűso nepaali paDhne ki napaDhne ?", "korean": "오늘 오후에 네팔어 공부 할 거예요, 안 할 거예요?" },
+        { "speaker": "B", "nepali": "नपढ्ने ।", "romanized": "napaDhne.", "korean": "안 할 거예요." },
+        { "speaker": "A", "nepali": "के गर्ने त ?", "romanized": "ke garne ta ?", "korean": "그럼 뭐 할 거예요?" },
+        { "speaker": "B", "nepali": "नेपाली लेख्ने ।", "romanized": "nepaali lekhne.", "korean": "네팔어를 쓸 거예요." },
+        { "speaker": "A", "nepali": "कति बजेसम्म लेख्ने ?", "romanized": "kati bajesamma lekhne ?", "korean": "몇 시까지 쓸 거예요?" },
+        { "speaker": "B", "nepali": "सवा पाँच बजेसम्म ।", "romanized": "sawaa pããch bajesamma .", "korean": "5시 15분까지요." },
+        { "speaker": "A", "nepali": "अनि के गर्ने ?", "romanized": "ani ke garne ?", "korean": "그러고 나서 뭐 할 거예요?" },
+        { "speaker": "B", "nepali": "अनि फुटबल खेल्ने ।", "romanized": "ani phuTbal khelne.", "korean": "그리고 축구를 할 거예요." }
+      ]
     },
     {
-      "nepali": "बिदा",
-      "romanized": "bidaa",
-      "korean": "holiday (휴일)",
-      "example": {
-        "nepali": "भोलि बिदा हो।",
-        "romanized": "bholi bidaa ho.",
-        "korean": "내일은 휴일이니까요."
-      }
+      "title": "저녁 계획",
+      "lines": [
+        { "speaker": "A", "nepali": "आज बेलुका कहाँ जाने ?", "romanized": "aaja belukaa kahãã jaane ?", "korean": "오늘 저녁에 어디 가요?" },
+        { "speaker": "B", "nepali": "सिनेमा हेर्न जाने ।", "romanized": "sinemaa herna jaane.", "korean": "영화 보러 가요." },
+        { "speaker": "A", "nepali": "तपाईं पनि जाने ?", "romanized": "tapaaI pani jaane ?", "korean": "당신도 갈래요?" },
+        { "speaker": "B", "nepali": "नजाने ।", "romanized": "najaane.", "korean": "안 가요." },
+        { "speaker": "A", "nepali": "तपाईं कहाँ जाने त ?", "romanized": "tapaaI kahãã jaane ta ?", "korean": "그럼 어디 갈 거예요?" },
+        { "speaker": "B", "nepali": "साथीको घरमा जाने ।", "romanized": "saathiko gharmaa jaane.", "korean": "친구 집에 가요." },
+        { "speaker": "A", "nepali": "साथीको घरबाट कति बजे फर्कने ?", "romanized": "saathiko gharbaaTa kati baje pharkane ?", "korean": "친구 집에서 몇 시에 돌아와요?" },
+        { "speaker": "B", "nepali": "पौने सात बजे होला ।", "romanized": "paaune saat baje holaa.", "korean": "아마 6시 45분쯤요." }
+      ]
     },
     {
-      "nepali": "चामल",
-      "romanized": "chaamal",
-      "korean": "uncooked rice (쌀)",
-      "example": {
-        "nepali": "चामल, दाल र तरकारी किन्न जाने।",
-        "romanized": "chaamal, daal ra tarkaari kinna jaane.",
-        "korean": "쌀, 달(렌틸), 채소를 사러 가요."
-      }
-    },
-    {
-      "nepali": "चिनी",
-      "romanized": "chini",
-      "korean": "sugar (설탕)",
-      "example": {
-        "nepali": "कफीमा चिनी राख्ने ?",
-        "romanized": "kaphimaa chini raakhne ?",
-        "korean": "커피에 설탕 넣을까요?"
-      }
-    },
-    {
-      "nepali": "दाल-भात",
-      "romanized": "daal-bhaat",
-      "korean": "lentils & cooked rice (달밧 - 네팔 주식)",
-      "example": {
-        "nepali": "दाल भात खाने।",
-        "romanized": "daal bhaat khaane.",
-        "korean": "달밧을 먹을 거예요."
-      }
-    },
-    {
-      "nepali": "दस",
-      "romanized": "das",
-      "korean": "ten (10)",
-      "example": {
-        "nepali": "दस बजे सुत्ने।",
-        "romanized": "das baje sutne.",
-        "korean": "10시에 잘 거예요."
-      }
-    },
-    {
-      "nepali": "डेरा",
-      "romanized": "Deraa",
-      "korean": "apartment (거처/숙소)",
-      "example": {
-        "nepali": "मेरो डेरामा।",
-        "romanized": "mero Deraamaa.",
-        "korean": "제 숙소에 가요."
-      }
-    },
-    {
-      "nepali": "दिउँसो",
-      "romanized": "diűso",
-      "korean": "day time/afternoon (낮/오후)",
-      "example": {
-        "nepali": "आज दिउँसो नेपाली पढ्ने कि नपढ्ने ?",
-        "romanized": "aaja diűso nepaali paDhne ki napaDhne ?",
-        "korean": "오늘 오후에 네팔어 공부 할 거예요, 안 할 거예요?"
-      }
-    },
-    {
-      "nepali": "दूध",
-      "romanized": "dudh",
-      "korean": "milk (우유)",
-      "example": {
-        "nepali": "दूध नि ?",
-        "romanized": "dudh ni ?",
-        "korean": "우유는요?"
-      }
-    },
-    {
-      "nepali": "होला",
-      "romanized": "holaa",
-      "korean": "maybe, probably (아마도)",
-      "example": {
-        "nepali": "चार बजे होला।",
-        "romanized": "chaar baje holaa.",
-        "korean": "아마 4시쯤요."
-      }
-    },
-    {
-      "nepali": "कफी",
-      "romanized": "kaphi",
-      "korean": "coffee (커피)",
-      "example": {
-        "nepali": "म कफी खाने।",
-        "romanized": "ma kaphi khaane.",
-        "korean": "저는 커피 마실래요."
-      }
-    },
-    {
-      "nepali": "खाना",
-      "romanized": "khaanaa",
-      "korean": "food, meal (음식/식사)",
-      "example": {
-        "nepali": "खाना कति बजे खाने ?",
-        "romanized": "khaanaa kati baje khaane ?",
-        "korean": "식사는 몇 시에 할 거예요?"
-      }
-    },
-    {
-      "nepali": "किन",
-      "romanized": "kina",
-      "korean": "why (왜)",
-      "example": {
-        "nepali": "बजारमा किन जाने ?",
-        "romanized": "bajaarmaa kina jaane ?",
-        "korean": "시장에 왜 가요?"
-      }
-    },
-    {
-      "nepali": "किन्नु",
-      "romanized": "kinnu",
-      "korean": "to buy (사다)",
-      "example": {
-        "nepali": "तरकारी किन्न जाने।",
-        "romanized": "tarkaari kinna jaane.",
-        "korean": "채소를 사러 가요."
-      }
-    },
-    {
-      "nepali": "कि",
-      "romanized": "ki",
-      "korean": "or (또는)",
-      "example": {
-        "nepali": "तपाईं चिया खाने कि कफी खाने ?",
-        "romanized": "tapaaï chiyaa khaane ki kaphi khaane ?",
-        "korean": "차 마실래요, 커피 마실래요?"
-      }
-    },
-    {
-      "nepali": "क्लास",
-      "romanized": "klaas",
-      "korean": "class (수업)",
-      "example": {
-        "nepali": "क्लासमा कति बजे जाने ?",
-        "romanized": "klaasmaa kati baje jaane ?",
-        "korean": "수업에 몇 시에 갈 거예요?"
-      }
-    },
-    {
-      "nepali": "को को",
-      "romanized": "ko ko",
-      "korean": "who (plural) (누구누구 - 복수)",
-      "example": {
-        "nepali": "तपाईंको डेरामा को को छन् ?",
-        "romanized": "tapaaïko Deraamaa ko ko chhan ?",
-        "korean": "숙소에 누구누구 있나요?"
-      }
-    },
-    {
-      "nepali": "नजाने",
-      "romanized": "najaane",
-      "korean": "will not go (안 가다)",
-      "example": {
-        "nepali": "म भोलि नजाने।",
-        "romanized": "ma bholi najaane.",
-        "korean": "저는 내일 안 가요."
-      }
-    },
-    {
-      "nepali": "नपढ्ने",
-      "romanized": "napaDhne",
-      "korean": "will not read (안 읽다/안 배우다)",
-      "example": {
-        "nepali": "भोलि नेपाली नपढ्ने।",
-        "romanized": "bholi nepaali napaDhne.",
-        "korean": "내일 네팔어 공부 안 할 거예요."
-      }
-    },
-    {
-      "nepali": "नराख्ने",
-      "romanized": "naraakhne",
-      "korean": "will not put (안 넣다/안 두다)",
-      "example": {
-        "nepali": "कफीमा दूध नराख्ने।",
-        "romanized": "kaphimaa dudh naraakhne.",
-        "korean": "커피에 우유는 넣지 마세요."
-      }
-    },
-    {
-      "nepali": "पाँच",
-      "romanized": "paach",
-      "korean": "five (5)",
-      "example": {
-        "nepali": "तपाईं पाँच बजे कहाँ जाने ?",
-        "romanized": "tapaaï pããch baje kahãã jaane ?",
-        "korean": "5시에 어디 가세요?"
-      }
-    },
-    {
-      "nepali": "पौने सात",
-      "romanized": "paune saat",
-      "korean": "quarter to seven (7시 15분 전 / 6시 45분)",
-      "example": {
-        "nepali": "म पौने सात बजे उठ्ने।",
-        "romanized": "ma paune saat baje uThne.",
-        "korean": "저는 6시 45분에 일어날 거예요."
-      }
-    },
-    {
-      "nepali": "फर्कनु",
-      "romanized": "pharkanu",
-      "korean": "to return (돌아오다)",
-      "example": {
-        "nepali": "बजारबाट कति बजे फर्कने ?",
-        "romanized": "bajaarbaaTa kati baje pharkane ?",
-        "korean": "시장에서 몇 시에 돌아वा요?"
-      }
-    },
-    {
-      "nepali": "फुटबल",
-      "romanized": "phuTbal",
-      "korean": "football (축구)",
-      "example": {
-        "nepali": "अनि फुटबल खेल्ने।",
-        "romanized": "ani phuTbal khelne.",
-        "korean": "그리고 축구를 할 거예요."
-      }
-    },
-    {
-      "nepali": "रक्सी",
-      "romanized": "raksi",
-      "korean": "home made spirit (술/락시)",
-      "example": {
-        "nepali": "शहरमा जाने र रक्सी खाने।",
-        "romanized": "shaharmaa jaane ra raksi khaane.",
-        "korean": "시내에 가서 술을 마실 거예요."
-      }
-    },
-    {
-      "nepali": "साढे दस",
-      "romanized": "saaDhe das",
-      "korean": "half past ten (10시 반)",
-      "example": {
-        "nepali": "साढे दस बजे फर्कने।",
-        "romanized": "saaDhe das baje pharkane.",
-        "korean": "10시 반에 돌아올 거예요."
-      }
-    },
-    {
-      "nepali": "सात",
-      "romanized": "saat",
-      "korean": "seven (7)",
-      "example": {
-        "nepali": "क्लासमा सात बजे जाने।",
-        "romanized": "klaasmaa saat baje jaane.",
-        "korean": "수업에 7시에 갈 거예요."
-      }
-    },
-    {
-      "nepali": "सम्म",
-      "romanized": "samma",
-      "korean": "until, as far as (까지)",
-      "example": {
-        "nepali": "सवा पाँच बजेसम्म नेपाली लेख्ने।",
-        "romanized": "sawaa paach bajesamma nepaali lekhne.",
-        "korean": "5시 15분까지 네팔어를 쓸 거예요."
-      }
-    },
-    {
-      "nepali": "साथी",
-      "romanized": "saathi",
-      "korean": "friend (친구)",
-      "example": {
-        "nepali": "म र मेरो साथी।",
-        "romanized": "ma ra mero saathi.",
-        "korean": "저랑 제 친구요."
-      }
-    },
-    {
-      "nepali": "सवा पाँच",
-      "romanized": "sawaa paach",
-      "korean": "quarter past five (5시 15분)",
-      "example": {
-        "nepali": "सवा पाँच बजेसम्म नेपाली लेख्ने।",
-        "romanized": "sawaa paach bajesamma nepaali lekhne.",
-        "korean": "5시 15분까지 네팔어를 쓸 거예요."
-      }
-    },
-    {
-      "nepali": "सिनेमा",
-      "romanized": "sinemaa",
-      "korean": "movie (영화)",
-      "example": {
-        "nepali": "भोलि सिनेमा हेर्न जाने।",
-        "romanized": "bholi sinemaa herna jaane.",
-        "korean": "내일 영화 보러 갈 거예요."
-      }
-    },
-    {
-      "nepali": "तरकारी",
-      "romanized": "tarkaari",
-      "korean": "vegetables (채소/커리)",
-      "example": {
-        "nepali": "चामल, दाल र तरकारी किन्न जाने।",
-        "romanized": "chaamal, daal ra tarkaari kinna jaane.",
-        "korean": "쌀, 달(렌틸), 채소를 사러 가요."
-      }
+      "title": "휴일 계획",
+      "lines": [
+        { "speaker": "A", "nepali": "भोलि नेपाली पढ्ने ?", "romanized": "bholi nepaali paDhne ?", "korean": "내일 네팔어 공부 할 거예요?" },
+        { "speaker": "B", "nepali": "भोलि नेपाली नपढ्ने ।", "romanized": "bholi nepaali napaDhne.", "korean": "내일 네팔어 공부 안 할 거예요." },
+        { "speaker": "A", "nepali": "किन ?", "romanized": "kina ?", "korean": "왜요?" },
+        { "speaker": "B", "nepali": "भोलि बिदा हो ।", "romanized": "bholi bidaa ho.", "korean": "내일은 휴일이니까요." },
+        { "speaker": "A", "nepali": "बिदामा के गर्ने ?", "romanized": "bidaamaa ke garne ?", "korean": "휴일에 뭐 할 거예요?" },
+        { "speaker": "B", "nepali": "शहरमा जाने र रक्सी खाने ।", "romanized": "shaharmaa jaane ra raksi khaane.", "korean": "시내에 가서 술을 마실 거예요." },
+        { "speaker": "A", "nepali": "तपाईं पनि आउने ?", "romanized": "tapaaI pani aaune ?", "korean": "당신도 올래요?" },
+        { "speaker": "B", "nepali": "आउने ।", "romanized": "aaune.", "korean": "갈게요." },
+        { "speaker": "A", "nepali": "शहरबाट कति बजे फर्कने ?", "romanized": "shaharbaaTa kati baje pharkane ?", "korean": "시내에서 몇 시에 돌아올 거예요?" },
+        { "speaker": "B", "nepali": "साढे दस बजे फर्कने ।", "romanized": "saaDhe das baje pharkane.", "korean": "10시 반에 돌아올 거예요." }
+      ]
     }
   ],
-  "examples": [],
   "grammar": [
     {
       "title": "1. 미래/의도 표현 (-ne)",
       "details": [
         "'jaane', 'khaane' 등 '-ne'로 끝나는 동사 형태는 비격식 상황에서 미래의 일이나 의도를 나타냅니다."
+      ],
+      "examples": [
+        "तपाईं पाँच बजे कहाँ जाने ? (5시에 어디 갈 거예요?)",
+        "म कफी खाने । (저는 커피를 마실게요.)"
       ]
     },
     {
-      "title": "2. 부정 접두사 'na-'",
+      "title": "2. 부정 접두사 (na-)",
       "details": [
-        "동사 앞에 'na-'를 붙여 부정형을 만듭니다 (예: najaane = 안 가다)."
+        "동사 어간 앞에 'na-'를 붙여 부정형을 만듭니다."
+      ],
+      "examples": [
+        "najaane = 안 가다 (na + jaane)",
+        "napaDhne = 안 배우다/안 읽다 (na + paDhne)"
       ]
     },
     {
       "title": "3. 의문사 반복 (ko ko, ke ke)",
       "details": [
-        "의문사를 반복하면 복수(Plurality)를 나타냅니다 (예: ke ke = 무엇무엇)."
+        "의문사를 반복하여 사용하면 복수(Plurality)의 의미를 나타냅니다."
+      ],
+      "examples": [
+        "ko ko = 누구누구 (who plural)",
+        "ke ke = 무엇무엇 (what plural)"
       ]
     },
     {
       "title": "4. 목적 표현 (-na)",
       "details": [
-        "동사 원형의 'nu'를 'na'로 바꾸면 목적(~하러)을 나타냅니다 (예: kinna jaane = 사러 가다)."
+        "동사 원형의 'nu'를 'na'로 바꾸면 '~하러'라는 목적의 의미를 나타냅니다."
+      ],
+      "examples": [
+        "kinna jaane = 사러 가다 (kinnu -> kinna)",
+        "herna jaane = 보러 가다 (hernu -> herna)"
       ]
     },
     {
-      "title": "5. holaa",
+      "title": "5. 추측 표현 (holaa)",
       "details": [
-        "'아마도', '일지도 모른다'는 의미로 추측을 나타낼 때 문장 끝에 사용합니다."
+        "'아마도', '일지도 모른다'는 의미로 불확실한 추측을 나타낼 때 문장 끝에 사용합니다."
+      ],
+      "examples": [
+        "दस बजे होला । (아마 10시쯤이 될 거예요.)"
       ]
     }
   ],
   "quiz": [
     {
-      "question": "'오늘'을 뜻하는 네팔어 단어는?",
-      "options": [
-        "भोलि (bholi)",
-        "आज (aaja)",
-        "बेलुका (belukaa)",
-        "दिउँसो (diűso)"
-      ],
+      "question": "비격식 상황에서 미래나 의도를 나타낼 때 사용하는 동사의 어미 형태는 무엇입니까?",
+      "options": ["-eko", "-ne", "-na", "-ko"],
       "answer": 1
     },
     {
-      "question": "시간을 나타낼 때 '시(o'clock)'를 뜻하는 단어는?",
-      "options": [
-        "बजे (baje)",
-        "सम्म (samma)",
-        "बाट (baaTa)",
-        "बिदा (bidaa)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'사러 가다'의 올바른 네팔어 표현은?",
-      "options": [
-        "किन्नु जानु (kinnu jaanu)",
-        "किन्न जाने (kinna jaane)",
-        "किनेको (kineko)",
-        "नकिन्ने (nakinne)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "'안 가다(will not go)'를 뜻하는 단어는?",
-      "options": [
-        "जाने (jaane)",
-        "नजाने (najaane)",
-        "खाँदैन (khaandaina)",
-        "होला (holaa)"
-      ],
-      "answer": 1
-    },
-    {
-      "question": "네팔어로 '왜'를 뜻하는 의문사는?",
-      "options": [
-        "किन (kina)",
-        "कसरी (kasari)",
-        "कहिले (kahile)",
-        "कहाँ (kahaa)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'10시 반(10:30)'을 네팔어로 표현하면?",
-      "options": [
-        "सवा दस (sawaa das)",
-        "पौने दस (paune das)",
-        "साढे दस (saaDhe das)",
-        "दस बजे (das baje)"
-      ],
+      "question": "미래/의도 표현의 부정을 만들 때 동사 앞에 붙이는 접두사는 무엇입니까?",
+      "options": ["ma-", "ta-", "na-", "ho-"],
       "answer": 2
     },
     {
-      "question": "'~까지'를 뜻하는 전치사/후치사는?",
-      "options": [
-        "बाट (baaTa)",
-        "सम्म (samma)",
-        "मा (maa)",
-        "को (ko)"
-      ],
+      "question": "'~하러 가다'처럼 목적을 나타낼 때 동사 원형의 'nu'는 어떤 형태로 바뀌나요?",
+      "options": ["-ne", "-na", "-le", "-ko"],
       "answer": 1
     },
     {
-      "question": "'누구누구'와 같이 복수의 대상을 물어보는 표현은?",
-      "options": [
-        "को (ko)",
-        "के के (ke ke)",
-        "को को (ko ko)",
-        "कहाँ कहाँ (kahaa kahaa)"
-      ],
+      "question": "'아마도', '일지도 모른다'를 뜻하며 문장 끝에 붙이는 단어는 무엇입니까?",
+      "options": ["ani", "kina", "holaa", "samma"],
       "answer": 2
     },
     {
-      "question": "'아마도'를 뜻하며 문장 끝에 자주 붙는 단어는?",
-      "options": [
-        "होला (holaa)",
-        "अनि (ani)",
-        "तर (tara)",
-        "कि (ki)"
-      ],
-      "answer": 0
-    },
-    {
-      "question": "'돌아오다'를 뜻하는 동사는?",
-      "options": [
-        "फर्कनु (pharkanu)",
-        "खानु (khaanu)",
-        "सिक्नु (siknu)",
-        "राख्नु (raakhnu)"
-      ],
-      "answer": 0
-    }
-  ],
-  "dialogues": [
-    {
-      "title": "PART I: DIALOGUE (a) 거처 및 동거인",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "सन्चै ?",
-          "romanized": "sanchai ?",
-          "korean": "잘 지내요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "सन्चै छ, तपाईंलाई नि ?",
-          "romanized": "sanchai chha, tapaallaai ni ?",
-          "korean": "잘 지내요, 당신은요?"
-        },
-        {
-          "speaker": "A",
-          "nepali": "सन्चै छ। तपाईं कहाँ जाने ?",
-          "romanized": "sanchai chha. tapaaï kahaa jaane ?",
-          "korean": "잘 지내요. 어디 가세요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो डेरामा।",
-          "romanized": "mero Deraamaa.",
-          "korean": "제 숙소에 가요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको डेरा कहाँ छ ?",
-          "romanized": "tapaaïko Deraa kahãã chha ?",
-          "korean": "숙소가 कहाँ(어디에) 있나요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "मेरो डेरा कमल पोखरीमा छ।",
-          "romanized": "mero Deraa kamal pokharimaa chha.",
-          "korean": "카말 पोखरी(포카리)에 있어요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईंको डेरामा को को छन् ?",
-          "romanized": "tapaaïko Deraamaa ko ko chhan ?",
-          "korean": "숙소에 누구누구 있나요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "म र मेरो साथी।",
-          "romanized": "ma ra mero saathi.",
-          "korean": "저랑 제 친구요."
-        }
-      ]
-    },
-    {
-      "title": "PART I: DIALOGUE (b) 차 वा(또는) 커피",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "तपाईं चिया खाने कि कफी खाने ?",
-          "romanized": "tapaaï chiyaa khaane ki kaphi khaane ?",
-          "korean": "차 마실래요, 커피 마실래요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "म कफी खाने।",
-          "romanized": "ma kaphi khaane.",
-          "korean": "저는 커피 마실래요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "तपाईं नि ?",
-          "romanized": "tapaaï ni ?",
-          "korean": "당신은요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "म चिया खाने।",
-          "romanized": "ma chiyaa khaane.",
-          "korean": "저는 차 마실래요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "कफीमा चिनी राख्ने ?",
-          "romanized": "kaphimaa chini raakhne ?",
-          "korean": "커피에 설탕 넣을까요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "राख्ने।",
-          "romanized": "raakhne.",
-          "korean": "네, 넣어주세요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "दूध नि ?",
-          "romanized": "dudh ni ?",
-          "korean": "우유는요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "नराख्ने।",
-          "romanized": "naraakhne.",
-          "korean": "넣지 मा세요(마세요)."
-        }
-      ]
-    },
-    {
-      "title": "PART II: PRACTICE (a) 식사와 일과",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "तपाईं पाँच बजे कहाँ जाने ?",
-          "romanized": "tapaaï pããch baje kahãã jaane ?",
-          "korean": "5시에 어디 가세요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "म आफ्नो डेरामा जाने।",
-          "romanized": "ma aaphno Deraamaa jaane.",
-          "korean": "제 숙소에 가요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "डेरामा के गर्ने ?",
-          "romanized": "Deraamaa ke garne ?",
-          "korean": "숙소에서 뭐 할 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "दाल भात खाने।",
-          "romanized": "daal bhaat khaane.",
-          "korean": "달밧을 먹을 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "अनि के गर्ने ?",
-          "romanized": "ani ke garne ?",
-          "korean": "그러고 나서 뭐 할 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "नेपाली टेप सुन्ने।",
-          "romanized": "nepaali Tep sunne.",
-          "korean": "네팔어 테이프를 들을 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "कति बजे सुत्ने ?",
-          "romanized": "kati baje sutne ?",
-          "korean": "몇 시에 잘 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "दस बजे सुत्ने।",
-          "romanized": "das baje sutne.",
-          "korean": "10시에 잘 거예요."
-        }
-      ]
-    },
-    {
-      "title": "PART II: PRACTICE (b) 시장 보기",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "कहाँ जाने ?",
-          "romanized": "kahãã jaane ?",
-          "korean": "어디 가세요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "बजारमा जाने।",
-          "romanized": "bajaarmaa jaane.",
-          "korean": "시장에 가요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "बजारमा किन जाने ?",
-          "romanized": "bajaarmaa kina jaane ?",
-          "korean": "시장에 왜 가요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "चामल, दाल र तरकारी किन्न जाने।",
-          "romanized": "chaamal, daal ra tarkaari kinna jaane.",
-          "korean": "쌀, 달(렌틸), 채소를 사러 가요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "बजारबाट कति बजे फर्कने ?",
-          "romanized": "bajaarbaaTa kati baje pharkane ?",
-          "korean": "시장에서 몇 시에 돌아वा요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "चार बजे होला।",
-          "romanized": "chaar baje holaa.",
-          "korean": "아마 4시쯤요."
-        }
-      ]
-    },
-    {
-      "title": "PART II: PRACTICE (c) 내일 계획",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "भोलि बिहान कति बजे उठ्ने ?",
-          "romanized": "bholi bihaana kati baje uThne ?",
-          "korean": "내일 아침 몇 시에 일어날 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "छ बजे उठ्ने।",
-          "romanized": "chha baje uThne.",
-          "korean": "6시에 일어날 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "क्लासमा कति बजे जाने ?",
-          "romanized": "klaasmaa kati baje jaane ?",
-          "korean": "수업에 몇 시에 갈 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "क्लासमा सात बजे जाने।",
-          "romanized": "klaasmaa saat baje jaane.",
-          "korean": "수업에 7시에 갈 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "खाना कति बजे खाने ?",
-          "romanized": "khaanaa kati baje khaane ?",
-          "korean": "식사는 몇 시에 할 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "दस बजे होला।",
-          "romanized": "das baje holaa.",
-          "korean": "아마 10시쯤요."
-        }
-      ]
-    },
-    {
-      "title": "PART II: PRACTICE (d) 공부와 운동",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "आज दिउँसो नेपाली पढ्ने कि नपढ्ने ?",
-          "romanized": "aaja diűso nepaali paDhne ki napaDhne ?",
-          "korean": "오늘 오후에 네팔어 공부 할 거예요, 안 할 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "नपढ्ने।",
-          "romanized": "napaDhne.",
-          "korean": "안 할 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "के गर्ने त ?",
-          "romanized": "ke garne ta ?",
-          "korean": "그럼 뭐 할 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "नेपाली लेख्ने।",
-          "romanized": "nepaali lekhne.",
-          "korean": "네팔어를 쓸 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "सवा पाँच बजेसम्म नेपाली लेख्ने, अनि फुटबल खेल्ने।",
-          "romanized": "sawaa paach bajesamma nepaali lekhne, ani phuTbal khelne.",
-          "korean": "5시 15분까지 네팔어를 쓰고, 그다음에 축구를 할 거예요."
-        }
-      ]
-    },
-    {
-      "title": "PART II: PRACTICE (e) 휴일 계획",
-      "lines": [
-        {
-          "speaker": "A",
-          "nepali": "भोलि नेपाली पढ्ने ?",
-          "romanized": "bholi nepaali paDhne ?",
-          "korean": "내일 네팔어 공부 할 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "भोलि नेपाली नपढ्ने।",
-          "romanized": "bholi nepaali napaDhne.",
-          "korean": "내일 네팔어 공부 안 할 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "किन ?",
-          "romanized": "kina ?",
-          "korean": "왜요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "भोलि बिदा हो।",
-          "romanized": "bholi bidaa ho.",
-          "korean": "내일은 휴일이니까요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "बिदामा के गर्ने ?",
-          "romanized": "bidaamaa ke garne ?",
-          "korean": "휴일에 뭐 할 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "शहरमा जाने र रक्सी खाने।",
-          "romanized": "shaharmaa jaane ra raksi khaane.",
-          "korean": "시내에 가서 술을 마실 거예요."
-        },
-        {
-          "speaker": "A",
-          "nepali": "शहरबाट कति बजे फर्कने ?",
-          "romanized": "shaharbaaTa kati baje pharkane ?",
-          "korean": "시내에서 몇 시에 돌아올 거예요?"
-        },
-        {
-          "speaker": "B",
-          "nepali": "साढे दस बजे फर्कने।",
-          "romanized": "saaDhe das baje pharkane.",
-          "korean": "10시 반에 돌아올 거예요."
-        }
-      ]
+      "question": "의문사를 두 번 반복하여(예: ko ko) 말할 때 나타내는 의미는 무엇인가요?",
+      "options": ["강조 (Emphasis)", "복수 (Plurality)", "부정 (Negation)", "과거 (Past)"],
+      "answer": 1
     }
   ]
 }

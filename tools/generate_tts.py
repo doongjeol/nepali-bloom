@@ -50,11 +50,15 @@ def get_vocab_example_nepali(item: dict) -> Optional[str]:
     return None
 
 
-def synthesize_with_retry(client, text: str, output_file_path: Path, *, language_code: str = "ne-NP"):
+def synthesize_with_retry(client, text: str, output_file_path: Path, *, language_code: str = "ne-NP", gender=None):
     synthesis_input = texttospeech.SynthesisInput(text=text)
+    
+    if gender is None:
+        gender = texttospeech.SsmlVoiceGender.FEMALE
+        
     voice = texttospeech.VoiceSelectionParams(
         language_code=language_code,
-        ssml_gender=texttospeech.SsmlVoiceGender.FEMALE,
+        ssml_gender=gender,
     )
     audio_config = texttospeech.AudioConfig(audio_encoding=texttospeech.AudioEncoding.MP3)
 
@@ -153,6 +157,22 @@ def generate_tts(
                     else:
                         synthesize_with_retry(client, nepali_text, vocab_out)
 
+                # 단어 한국어 뜻 추출 추가
+                korean_text = item.get("korean")
+                if korean_text:
+                    # "own (자신의)" 같은 형태에서 괄호 안의 한글 뜻("자신의")만 추출. 괄호가 없으면 전체 텍스트 사용.
+                    match = re.search(r'\(([^)]+)\)', korean_text)
+                    clean_korean = match.group(1).strip() if match else korean_text.strip()
+                    vocab_ko_out = output_dir / f"{safe_romanized}_ko.mp3"
+                    if vocab_ko_out.exists():
+                        print(f"  -> 단어(한국어) 스킵(존재): {vocab_ko_out.name}")
+                    else:
+                        print(f"  -> 단어(한국어) 생성: {safe_romanized}_ko")
+                        if dry_run:
+                            print(f"     [dry-run] {vocab_ko_out}")
+                        else:
+                            synthesize_with_retry(client, clean_korean, vocab_ko_out, language_code="ko-KR")
+
             example_nepali = get_vocab_example_nepali(item)
             if example_nepali:
                 ex_out = output_dir / f"{safe_romanized}_example.mp3"
@@ -173,16 +193,35 @@ def generate_tts(
             lines = dialogue.get("lines", []) or []
             for l_idx, line in enumerate(lines):
                 nepali_text = line.get("nepali")
-                if not nepali_text:
-                    continue
-                out = output_dir / f"dial_{d_idx}_{l_idx}.mp3"
-                if out.exists():
-                    continue
-                print(f"  -> 대화문 생성: dial_{d_idx}_{l_idx}")
-                if dry_run:
-                    print(f"     [dry-run] {out}")
-                else:
-                    synthesize_with_retry(client, nepali_text, out)
+                korean_text = line.get("korean")
+                speaker = line.get("speaker")
+                
+                # 화자가 B이면 남성 목소리, 그 외(A 등)는 여성 목소리로 설정
+                speaker_gender = texttospeech.SsmlVoiceGender.MALE if speaker == "B" else texttospeech.SsmlVoiceGender.FEMALE
+
+                if nepali_text:
+                    out = output_dir / f"dial_{d_idx}_{l_idx}.mp3"
+                    if out.exists():
+                        print(f"  -> 대화문(네팔어) 스킵(존재): {out.name}")
+                    else:
+                        print(f"  -> 대화문(네팔어) 생성: dial_{d_idx}_{l_idx} (화자: {speaker})")
+                        if dry_run:
+                            print(f"     [dry-run] {out}")
+                        else:
+                            synthesize_with_retry(client, nepali_text, out, gender=speaker_gender)
+
+                if korean_text:
+                    out_ko = output_dir / f"dial_{d_idx}_{l_idx}_ko.mp3"
+                    if out_ko.exists():
+                        print(f"  -> 대화문(한국어) 스킵(존재): {out_ko.name}")
+                    else:
+                        # "[A] ", "[B] "와 같은 화자 표시가 음성으로 읽히지 않도록 제거
+                        clean_korean = re.sub(r'^\[.*?\]\s*', '', korean_text)
+                        print(f"  -> 대화문(한국어) 생성: dial_{d_idx}_{l_idx}_ko (화자: {speaker})")
+                        if dry_run:
+                            print(f"     [dry-run] {out_ko}")
+                        else:
+                            synthesize_with_retry(client, clean_korean, out_ko, language_code="ko-KR", gender=speaker_gender)
 
         examples = lesson_data.get("examples", []) or []
         for e_idx, ex in enumerate(examples):

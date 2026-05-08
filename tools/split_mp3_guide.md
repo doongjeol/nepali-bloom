@@ -17,14 +17,14 @@
 *   **명령어**:
     ```bash
     # 예: Lesson 1 구간 (0초 ~ 3분 6초) 추출
-    ffmpeg -i "원본파일.mp3" -ss 00:00:00 -to 00:03:06 -c copy audio_raw/lesson1_raw.mp3
+    ffmpeg -i "Basic Course in Spoken Nepali-1.mp3" -ss 00:00:00 -to 00:03:06 -c copy lesson1_raw.mp3
     ```
 
 ## 2단계: 1차 자동 분리 실행 (Python)
-잘라낸 레슨 파일을 문장 단위로 쪼갭니다.
+잘라낸 레슨 파일을 문장 단위로 쪼갭니다. `split_lesson_audio.py`
 *   **PyCharm Parameters**:
     ```text
-    --input audio_raw/lesson1_raw.mp3 --output public/audio/lesson1 --start-index 0 --pad 1 --silence-only --min-silence-len 500 --silence-thresh -38 --keep-silence 150 --ffmpeg "C:\경로\ffmpeg.exe" --ffprobe "C:\경로\ffprobe.exe"
+    --input audio_raw/lesson1_raw.mp3 --output raw/lesson1_split_done --start-index 0 --pad 1 --silence-only --min-silence-len 500 --silence-thresh -38 --keep-silence 150 --ffmpeg "C:\Users\kimdain\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1-full_build\bin\ffmpeg.exe" --ffprobe "C:\Users\kimdain\AppData\Local\Microsoft\WinGet\Packages\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\ffmpeg-8.1-full_build\bin\ffprobe.exe"
     ```
 *   **조정 팁**:
     *   문장이 중간에 잘림 ➔ `--min-silence-len`을 **700**으로 상향

@@ -71,7 +71,7 @@ yi          : these (이것들)
 1. tyo ke ho ? / yo kitaab ho.
 2. tyo kasko kitaab ho? / yo mero kitaab ho.
 3. tyo kitaabko naam ke ho ? / yo kitaabko naam Basic Course in Spoken Nepali ho.
-4. paDhnos. tapaaIle ke gareko ? / maile kitaab paDheko.
+4. paDhnos. / tapaaIle ke gareko ? / maile kitaab paDheko.
 5. wahããle ke gareko ? / wahããle kitaab paDheko.
 
 (b) 펜 주기
@@ -85,38 +85,109 @@ yi          : these (이것들)
    (그분에게 누구의 펜을 주었습니까? / 제 펜을 주었습니다.)
 
 (c) 창문 (친근한 형태 'Timi' 사용)
-1. jhyaal banda gara. / maile jhyaal banda gareko.
-   (창문을 닫아라. / 제가 창문을 닫았습니다.)
-2. jhyaal khola. / usle jhyaal kholeko.
-   (창문을 열어라. / 그가 창문을 열었습니다.)
-3. usle Dhokaa kholeko ? / hoina, usle jhyaal kholeko.
-   (그가 문을 열었나요? / 아니요, 창문을 열었습니다.)
+1. झ्याल बन्द गर । (jhyaal banda gara.)
+   Shut the window.
+
+   तिमीले के गरेको ? (timile ke gareko ?) / मैले झ्याल बन्द गरेको । (maile jhyaal banda gareko.)
+   What did you do ? / I shut the window.
+
+2. झ्याल खोल । (jhyaal khola.)
+   Open the window.
+
+   उसले के खोलेको ? (usle ke kholeko ?) / उसले झ्याल खोलेको । (usle jhyaal kholeko.)
+   What did he open ? / He opened the window.
+
+3. उसले ढोका खोलेको ? (usle Dhokaa kholeko ?) / होइन, उसले झ्याल खोलेको । (hoina, usle jhyaal kholeko.)
+   Did he open the door ? / No, he opened the window.
 
 (d) 이동하기 (안과 밖)
-1. baahira jaau. / ma baahira gaeko.
-   (밖으로 나가라. / 저는 밖으로 나갔습니다.)
-2. u kahãã gaeko ? / u baahira gaeko.
-3. bhitra aau. / ma bhitra aaeko.
-   (안으로 들어와라. / 저는 안으로 들어왔습니다.)
-4. usle ke gareko ? / u bhitra aaeko.
+1. बाहिर जाऊ ।
+   (baahira jaau.)
+   밖으로 나가라.
+
+   तिमी कहाँ गएको ? / म बाहिर गएको ।
+   (timi kahãã gaeko ? / ma baahira gaeko.)
+   너 어디에 갔었니? / 나 밖에 갔었어.
+
+2. उ कहाँ गए코 ? / उ बाहिर गएको ।
+   (u kahãã gaeko ? / u baahira gaeko.)
+   그는 어디에 갔었니? / 그는 밖에 갔었어.
+
+3. भित्र आऊ ।
+   (bhitra aau.)
+   안으로 들어와라.
+
+   तिमीले के गरेको ? / म भित्र आएको ।
+   (timile ke gareko ? / ma bhitra aaeko.)
+   너 무엇을 했니? / 나 안으로 들어왔어.
+
+4. उसने के गरेको ? / उ भित्र आएको ।
+   (usle ke gareko ? / u bhitra aaeko.)
+   그는 무엇을 했니? / 그는 안으로 들어왔어.
 
 (e) 칠판
-1. blyaakborDnira jaanos. / ma blyaakborDnira gaeko.
-2. wahããle ke gareko ? / wahãã blyaakborDnira gaeko.
-3. blyaakborDmaa tapaaIko naam lekhnus. / maile blyaakborDmaa aaphno naam lekheko.
+(f)
+
+1. तपाईंले के गरेको ? / म ब्ल्याकबोर्डनिर गएको ।
+   (tapaaïle ke gareko ? / ma blyaakborDnira gaeko.)
+   What did you do ? / I went to the blackboard.
+
+2. वहाँले के गरेको ? / वहाँ ब्ल्याकबोर्डनिर गएको ।
+   (wahããle ke gareko ? / wahãã blyaakborDnira gaeko.)
+   What did he do ? / He went to the blackboard.
+
+3. ब्ल्याकबोर्ड마 तपाईंको नाम लेख्नुस् ।
+   (blyaakborDmaa tapaaïko naam lekhnus.)
+   Please write your name on the blackboard.
+
+   तपाईंले के गरेको ? / मैले ब्ल्याकबोर्डमा आफ्नो नाम लेखेको ।
+   (tapaaïle ke gareko ? / maile blyaakborDmaa aaphno naam lekheko.)
+   What did you do ? / I wrote my name on the blackboard.
 
 (f) 숫자 쓰기
-1. yo kati ho ? / ek.
-2. yo ni ? / dui.
-3. blyaakborDmaa tin lekhnos. / maile tin lekheko.
-4. wahããle chaar lekheko ? / hoina, tin lekheko.
+(f)
+
+1. यो कति हो ? / एक ।
+   (yo kati ho ? / ek.)
+   How much is this ? / One.
+
+2. यो नि ? / दुई ।
+   (yo ni ? / dui.)
+   And this / Two.
+
+3. ब्ल्याकबोर्डमा तिन लेख्नुस् ।
+   (blyaakborDmaa tin lekhnus.)
+   Please write the number '3' on the blackboard.
+
+   तपाईंले के लेखेको ? / मैले तिन लेखेको ।
+   (tapaaïle ke lekheko ? / maile tin lekheko.)
+   What did you write ? / I wrote the number '3'.
+
+4. वहाँले चार लेखेको ? / होइन, तिन लेखेको ।
+   (wahããle chaar lekheko ? / hoina, tin lekheko.)
+   Did he write the number '4' ? / No, he wrote '3'.
 
 (g) 사물 개수 및 소유
 1. ti ke hun ? / ti kalam hun.
-2. tyahaa katiwaTaa kalam chhan ? / tyahaa tinwaTaa kalam chhan.
-3. tapaaIko kalam kunchaahi ho ? / mero kalam raatochaahi ho.
-   (당신의 펜은 어느 것입니까? / 빨간 것이 제 펜입니다.)
-4. tapaaIko kalam khaltimaa raakhnos. / maile kalam mero khaltimaa raakheko.
+2. त्यहाँ कतिवटा कलम छन् ? / त्यहाँ तिनवटा कलम छन् ।
+   (tyahãã katiwaTaa kalam chhan ? / tyahãã tinwaTaa kalam chhan.)
+   How many pens are there ? / There are three pens.
+
+3. तपाईंको कलम कुनचाहीं हो ? / मेरो कलम रातोचाहीं हो ।
+   (tapaaïko kalam kunchaahĩ ho ? / mero kalam raatochaahĩ ho.)
+   Which one is your pen ? / The red one is my pen.
+
+4. तपाईंको कलम खल्तीमा राख्नुस् ।
+   (tapaaïko kalam khaltimaa raakhnos.)
+   Please put your pen in your pocket.
+
+   तपाईंले के गरेको ? / मैले कलम मे로 खल्तीमा राखेको ।
+   (tapaaïle ke gareko ? / maile kalam mero khaltimaa raakheko.)
+   What did you do ? / I put my pen in my pocket.
+
+5. तपाईंले कसको कलम खल्तीमा राखेको ? / मैले मेरो कलम खल्तीमा राखेको ।
+   (tapaaïle kasko kalam khaltimaa raakheko ? / maile mero kalam khaltimaa raakheko.)
+   Whose pen did you put in your pocket ? / I put my pen in my pocket.
 
 
 4. GRAMMAR NOTES (Lesson 3)

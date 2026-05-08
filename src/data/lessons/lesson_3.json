@@ -84,7 +84,8 @@
         { "speaker": "B", "nepali": "यो मेरो किताब हो ।", "romanized": "yo mero kitaab ho.", "korean": "이것은 제 책입니다." },
         { "speaker": "A", "nepali": "त्यो किताबको नाम के हो ?", "romanized": "tyo kitaabko naam ke ho ?", "korean": "그 책의 이름은 무엇입니까?" },
         { "speaker": "B", "nepali": "यो किताबको नाम Basic Course in Spoken Nepali हो ।", "romanized": "yo kitaabko naam Basic Course in Spoken Nepali ho.", "korean": "이 책의 이름은 Basic Course in Spoken Nepali입니다." },
-        { "speaker": "A", "nepali": "पढ्नोस् । तपाईंले के गरेको ?", "romanized": "paDhnos. tapaaIle ke gareko ?", "korean": "읽으세요. 당신은 무엇을 했습니까?" },
+        { "speaker": "A", "nepali": "पढ्नोस् ।", "romanized": "paDhnos.", "korean": "읽으세요." },
+        { "speaker": "A", "nepali": "तपाईंले के गरेको ?", "romanized": "tapaaIle ke gareko ?", "korean": "당신은 무엇을 했습니까?" },
         { "speaker": "B", "nepali": "मैले किताब पढेको ।", "romanized": "maile kitaab paDheko.", "korean": "저는 책을 읽었습니다." },
         { "speaker": "A", "nepali": "वहाँले के गरेको ?", "romanized": "wahããle ke gareko ?", "korean": "그분은 무엇을 했습니까?" },
         { "speaker": "B", "nepali": "वहाँले किताब पढेको ।", "romanized": "wahããle kitaab paDheko.", "korean": "그분은 책을 읽었습니다." }
@@ -108,35 +109,40 @@
       "title": "창문 (친근한 형태 'Timi' 사용)",
       "lines": [
         { "speaker": "A", "nepali": "झ्याल बन्द गर ।", "romanized": "jhyaal banda gara.", "korean": "창문을 닫아라." },
-        { "speaker": "B", "nepali": "मैले झ्याल बन्द गरेको ।", "romanized": "maile jhyaal banda gareko.", "korean": "제가 창문을 닫았습니다." },
+        { "speaker": "A", "nepali": "तिमीले के गरेको ?", "romanized": "timile ke gareko ?", "korean": "너는 무엇을 했니?" },
+        { "speaker": "B", "nepali": "मैले झ्याल बन्द गरेको ।", "romanized": "maile jhyaal banda gareko.", "korean": "내가 창문을 닫았어." },
         { "speaker": "A", "nepali": "झ्याल खोल ।", "romanized": "jhyaal khola.", "korean": "창문을 열어라." },
-        { "speaker": "B", "nepali": "उसले झ्याल खोलेको ।", "romanized": "usle jhyaal kholeko.", "korean": "그가 창문을 열었습니다." },
+        { "speaker": "A", "nepali": "उसले के खोलेको ?", "romanized": "usle ke kholeko ?", "korean": "그는 무엇을 열었니?" },
+        { "speaker": "B", "nepali": "उसले झ्याल खोलेको ।", "romanized": "usle jhyaal kholeko.", "korean": "그가 창문을 열었어." },
         { "speaker": "A", "nepali": "उसले ढोका खोलेको ?", "romanized": "usle Dhokaa kholeko ?", "korean": "그가 문을 열었나요?" },
-        { "speaker": "B", "nepali": "होइन, उसले झ्याल खोलेको ।", "romanized": "hoina, usle jhyaal kholeko.", "korean": "아니요, 그가 창문을 열었습니다." }
+        { "speaker": "B", "nepali": "होइन, उसले झ्याल खोलेको ।", "romanized": "hoina, usle jhyaal kholeko.", "korean": "아니, 그가 창문을 열었어." }
       ]
     },
     {
       "title": "이동하기 (안과 밖)",
       "lines": [
         { "speaker": "A", "nepali": "बाहिर जाऊ ।", "romanized": "baahira jaau.", "korean": "밖으로 나가라." },
-        { "speaker": "B", "nepali": "म बाहिर गएको ।", "romanized": "ma baahira gaeko.", "korean": "저는 밖으로 나갔습니다." },
+        { "speaker": "A", "nepali": "तिमी कहाँ गएको ?", "romanized": "timi kahãã gaeko ?", "korean": "너 어디에 갔었니?" },
+        { "speaker": "B", "nepali": "म बाहिर गएको ।", "romanized": "ma baahira gaeko.", "korean": "나 밖에 갔었어." },
         { "speaker": "A", "nepali": "ऊ कहाँ गएको ?", "romanized": "u kahãã gaeko ?", "korean": "그는 어디로 갔습니까?" },
-        { "speaker": "B", "nepali": "ऊ बाहिर गएको ।", "romanized": "u baahira gaeko.", "korean": "그는 밖으로 나갔습니다." },
+        { "speaker": "B", "nepali": "उ बाहिर गएको ।", "romanized": "u baahira gaeko.", "korean": "그는 밖에 갔었어." },
         { "speaker": "A", "nepali": "भित्र आऊ ।", "romanized": "bhitra aau.", "korean": "안으로 들어와라." },
-        { "speaker": "B", "nepali": "म भित्र आएको ।", "romanized": "ma bhitra aaeko.", "korean": "저는 안으로 들어왔습니다." },
+        { "speaker": "A", "nepali": "तिमीले के गरेको ?", "romanized": "timile ke gareko ?", "korean": "너 무엇을 했니?" },
+        { "speaker": "B", "nepali": "म भित्र आएको ।", "romanized": "ma bhitra aaeko.", "korean": "나 안으로 들어왔어." },
         { "speaker": "A", "nepali": "उसले के गरेको ?", "romanized": "usle ke gareko ?", "korean": "그는 무엇을 했습니까?" },
-        { "speaker": "B", "nepali": "ऊ भित्र आएको ।", "romanized": "u bhitra aaeko.", "korean": "그는 안으로 들어왔습니다." }
+        { "speaker": "B", "nepali": "उ भित्र आएको ।", "romanized": "u bhitra aaeko.", "korean": "그는 안으로 들어왔어." }
       ]
     },
     {
       "title": "칠판",
       "lines": [
-        { "speaker": "A", "nepali": "बल्याकबोर्डनिर जानोस् ।", "romanized": "blyaakborDnira jaanos.", "korean": "칠판 근처로 가세요." },
-        { "speaker": "B", "nepali": "म बल्याकबोर्डनिर गएको ।", "romanized": "ma blyaakborDnira gaeko.", "korean": "저는 칠판 근처로 갔습니다." },
+        { "speaker": "A", "nepali": "तपाईंले के गरेको ?", "romanized": "tapaaïle ke gareko ?", "korean": "당신은 무엇을 했습니까?" },
+        { "speaker": "B", "nepali": "म ब्ल्याकबोर्डनिर गएको ।", "romanized": "ma blyaakborDnira gaeko.", "korean": "저는 칠판 근처로 갔습니다." },
         { "speaker": "A", "nepali": "वहाँले के गरेको ?", "romanized": "wahããle ke gareko ?", "korean": "그분은 무엇을 했습니까?" },
-        { "speaker": "B", "nepali": "वहाँ बल्याकबोर्डनिर गएको ।", "romanized": "wahãã blyaakborDnira gaeko.", "korean": "그분은 칠판 근처로 갔습니다." },
-        { "speaker": "A", "nepali": "बल्याकबोर्डमा तपाईंको नाम लेख्नुस् ।", "romanized": "blyaakborDmaa tapaaIko naam lekhnus.", "korean": "칠판에 당신의 이름을 쓰세요." },
-        { "speaker": "B", "nepali": "मैले बल्याकबोर्डमा आफ्नो नाम लेखेको ।", "romanized": "maile blyaakborDmaa aaphno naam lekheko.", "korean": "저는 칠판에 제 자신의 이름을 썼습니다." }
+        { "speaker": "B", "nepali": "वहाँ ब्ल्याकबोर्डनिर गएको ।", "romanized": "wahãã blyaakborDnira gaeko.", "korean": "그분은 칠판 근처로 갔습니다." },
+        { "speaker": "A", "nepali": "ब्ल्याकबोर्डमा तपाईंको नाम लेख्नुस् ।", "romanized": "blyaakborDmaa tapaaïko naam lekhnus.", "korean": "칠판에 당신의 이름을 쓰세요." },
+        { "speaker": "A", "nepali": "तपाईंले के गरेको ?", "romanized": "tapaaïle ke gareko ?", "korean": "당신은 무엇을 했습니까?" },
+        { "speaker": "B", "nepali": "मैले ब्ल्याकबोर्डमा आफ्नो नाम लेखेको ।", "romanized": "maile blyaakborDmaa aaphno naam lekheko.", "korean": "제가 칠판에 제 이름을 썼습니다." }
       ]
     },
     {
@@ -146,10 +152,11 @@
         { "speaker": "B", "nepali": "एक ।", "romanized": "ek.", "korean": "1입니다." },
         { "speaker": "A", "nepali": "यो नि ?", "romanized": "yo ni ?", "korean": "이것은요?" },
         { "speaker": "B", "nepali": "दुई ।", "romanized": "dui.", "korean": "2입니다." },
-        { "speaker": "A", "nepali": "बल्याकबोर्डमा तीन लेख्नोस् ।", "romanized": "blyaakborDmaa tin lekhnos.", "korean": "칠판에 3을 쓰세요." },
-        { "speaker": "B", "nepali": "मैले तीन लेखेको ।", "romanized": "maile tin lekheko.", "korean": "저는 3을 썼습니다." },
+        { "speaker": "A", "nepali": "ब्ल्याकबोर्डमा तिन लेख्नुस् ।", "romanized": "blyaakborDmaa tin lekhnus.", "korean": "칠판에 3을 쓰세요." },
+        { "speaker": "A", "nepali": "तपाईंले के लेखेको ?", "romanized": "tapaaïle ke lekheko ?", "korean": "당신은 무엇을 썼습니까?" },
+        { "speaker": "B", "nepali": "मैले तिन लेखेको ।", "romanized": "maile tin lekheko.", "korean": "제가 3을 썼습니다." },
         { "speaker": "A", "nepali": "वहाँले चार लेखेको ?", "romanized": "wahããle chaar lekheko ?", "korean": "그분이 4를 썼나요?" },
-        { "speaker": "B", "nepali": "होइन, तीन लेखेको ।", "romanized": "hoina, tin lekheko.", "korean": "아니요, 3을 썼습니다." }
+        { "speaker": "B", "nepali": "होइन, तिन लेखेको ।", "romanized": "hoina, tin lekheko.", "korean": "아니요, 3을 썼습니다." }
       ]
     },
     {
@@ -157,12 +164,15 @@
       "lines": [
         { "speaker": "A", "nepali": "ती के हुन् ?", "romanized": "ti ke hun ?", "korean": "저것들은 무엇입니까?" },
         { "speaker": "B", "nepali": "ती कलम हुन् ।", "romanized": "ti kalam hun.", "korean": "저것들은 펜입니다." },
-        { "speaker": "A", "nepali": "त्यहाँ कतिवटा कलम छन् ?", "romanized": "tyahaa katiwaTaa kalam chhan ?", "korean": "거기 펜이 몇 개 있습니까?" },
-        { "speaker": "B", "nepali": "त्यहाँ तीनवटा कलम छन् ।", "romanized": "tyahaa tinwaTaa kalam chhan.", "korean": "거기 펜이 3개 있습니다." },
-        { "speaker": "A", "nepali": "तपाईंको कलम कुनचाहिँ हो ?", "romanized": "tapaaIko kalam kunchaahi ho ?", "korean": "당신의 펜은 어느 것입니까?" },
-        { "speaker": "B", "nepali": "मेरो कलम रातोचाहिँ हो ।", "romanized": "mero kalam raatochaahi ho.", "korean": "제 펜은 빨간 것입니다." },
-        { "speaker": "A", "nepali": "तपाईंको कलम खल्तीमा राख्नोस् ।", "romanized": "tapaaIko kalam khaltimaa raakhnos.", "korean": "당신의 펜을 주머니에 넣으세요." },
-        { "speaker": "B", "nepali": "मैले कलम मेरो खल्तीमा राखेको ।", "romanized": "maile kalam mero khaltimaa raakheko.", "korean": "저는 펜을 제 주머니에 넣었습니다." }
+        { "speaker": "A", "nepali": "त्यहाँ कतिवटा कलम छन् ?", "romanized": "tyahãã katiwaTaa kalam chhan ?", "korean": "거기 펜이 몇 개 있습니까?" },
+        { "speaker": "B", "nepali": "त्यहाँ तिनवटा कलम छन् ।", "romanized": "tyahãã tinwaTaa kalam chhan.", "korean": "거기 펜이 3개 있습니다." },
+        { "speaker": "A", "nepali": "तपाईंको कलम कुनचाहीं हो ?", "romanized": "tapaaïko kalam kunchaahĩ ho ?", "korean": "당신의 펜은 어느 것입니까?" },
+        { "speaker": "B", "nepali": "मेरो कलम रातोचाहीं हो ।", "romanized": "mero kalam raatochaahĩ ho.", "korean": "빨간 것이 제 펜입니다." },
+        { "speaker": "A", "nepali": "तपाईंको कलम खल्तीमा राख्नुस् ।", "romanized": "tapaaïko kalam khaltimaa raakhnos.", "korean": "당신의 펜을 주머니에 넣으세요." },
+        { "speaker": "A", "nepali": "तपाईंले के गरेको ?", "romanized": "tapaaïle ke gareko ?", "korean": "당신은 무엇을 했습니까?" },
+        { "speaker": "B", "nepali": "मैले कलम मेरो खल्तीमा राखेको ।", "romanized": "maile kalam mero khaltimaa raakheko.", "korean": "제가 제 주머니에 펜을 넣었습니다." },
+        { "speaker": "A", "nepali": "तपाईंले कसको कलम खल्तीमा राखेको ?", "romanized": "tapaaïle kasko kalam khaltimaa raakheko ?", "korean": "누구의 펜을 주머니에 넣었습니까?" },
+        { "speaker": "B", "nepali": "मैले मेरो कलम खल्तीमा राखेको ।", "romanized": "maile mero kalam khaltimaa raakheko.", "korean": "제 펜을 제 주머니에 넣었습니다." }
       ]
     }
   ],

@@ -69,6 +69,23 @@ tarkaari       : vegetables (채소/커리) [cite: 550]
 3. PART II: PRACTICE (연습)
 --------------------------------------------------
 (a) 식사와 일과
+1. चिया खाने ? / खाने ।
+   (chiyaa khaane ? / khaane.)
+   Would you like to have tea ? / I'll have some.
+
+2. तपाईं नि ? / म पनि खाने ।
+   (tapaaï ni ? / ma pani khaane.)
+   And you ? / I'll drink some, too.
+
+3. चियामा चिनी राख्ने ? / राख्ने ।
+   (chiyaamaa chini raakhne ? / raakhne.)
+   Do you want sugar in your tea ? / Sure, put some in, please.
+
+4. दूध नि ? / दूध पनि राख्ने ।
+   (dudh ni ? / dudh pani raakhne.)
+   How about milk ? / Yes, put some milk in, too.
+
+(b) 
 1. tapaaï pããch baje kahãã jaane ? / ma aaphno Deraamaa jaane. [cite: 595]
    (5시에 어디 가세요? / 제 숙소에 가요.) [cite: 595]
 2. Deraamaa ke garne ? / daal bhaat khaane. [cite: 595]
@@ -78,35 +95,71 @@ tarkaari       : vegetables (채소/커리) [cite: 550]
 4. kati baje sutne ? / das baje sutne. [cite: 595]
    (몇 시에 잘 거예요? / 10시에 잘 거예요.) [cite: 595]
 
-(b) 시장 보기
+(c) 시장 보기
 1. kahãã jaane ? / bajaarmaa jaane. [cite: 602, 606]
 2. bajaarmaa kina jaane ? / chaamal, daal ra tarkaari kinna jaane. [cite: 604, 608]
    (시장에 왜 가요? / 쌀, 달(렌틸), 채소를 사러 가요.) [cite: 605, 609]
 3. bajaarbaaTa kati baje pharkane ? / chaar baje holaa. [cite: 611, 613]
    (시장에서 몇 시에 돌아와요? / 아마 4시쯤요.) [cite: 612, 614]
 
-(c) 내일 계획
-1. bholi bihaana kati baje uThne ? / chha baje uThne. [cite: 616, 627]
-   (내일 아침 몇 시에 일어날 거예요? / 6시에 일어날 거예요.) [cite: 617, 627]
-2. klaasmaa kati baje jaane ? / klaasmaa saat baje jaane. [cite: 618, 629]
-3. khaanaa kati baje khaane ? / das baje holaa. [cite: 619, 630]
+(d) 내일 계획
+1. भोलि बिहान कति बजे उठ्ने ? / छ बजे उठ्ने ।
+   (bholi bihaana kati baje uThne ? / chha baje uThne.)
+   What time are you going to get up tomorrow morning? / I'm going to get up at six o'clock.
 
-(d) 공부와 운동
+2. क्लास마 कति बजे जाने ? / क्लासमा सात बजे जाने ।
+   (klaasmaa kati baje jaane ? / klaasmaa saat baje jaane.)
+   When will you go to class ? / I'll go at seven.
+
+3. खाना कति बजे खाने ? / दस बजे होला ।
+   (khaanaa kati baje khaane ? / das baje holaa.)
+   What time are you going to eat? / Probably at ten o'clock.
+
+4. अनि के गर्ने ? / अनि किताब पढ्ने ।
+   (ani ke garne ? / ani kitaab paDhne.)
+   What will you do then? / And then I'll read a book.
+
+(e) 공부와 운동
 1. aaja diűso nepaali paDhne ki napaDhne ? / napaDhne. [cite: 621, 632]
    (오늘 오후에 네팔어 공부 할 거예요, 안 할 거예요? / 안 할 거예요.) [cite: 621, 633]
 2. ke garne ta ? / nepaali lekhne. [cite: 622, 634]
    (그럼 뭐 할 거예요? / 네팔어를 쓸 거예요.) [cite: 624, 634]
-3. sawaa paach bajesamma nepaali lekhne, ani phuTbal khelne. [cite: 635, 652]
-   (5시 15분까지 네팔어를 쓰고, 그다음에 축구를 할 거예요.) [cite: 636, 652]
+3. कति बजेसम्म लेख्ने ? / सवा पाँच बजेसम्म ।
+   (kati bajesamma lekhne ? / sawaa pããch bajesamma .)
+   Until what time are you going to write? / Until quarter after five.
+4. अनि के गर्ने ? / अनि फुटबल खेल्ने ।
+   (ani ke garne ? / ani phuTbal kheIne.)
+   And then what will you do ? / And then I'll play football.
 
-(e) 휴일 계획
+(f)
+1. आज बेलुका कहाँ जाने ? / सिनेमा हेर्न जाने ।
+   (aaja belukaa kahãã jaane ? / sinemaa herna jaane.)
+   Where are you going later on this evening ? / I'm going to the movie.
+
+2. तपाईं पनि जाने ? / नजाने ।
+   (tapaaï pani jaane ? / najaane.)
+   Are you going, too ? / No, I'm not going to go.
+
+3. तपाईं कहाँ जाने त ? / साथीको घर마 जाने ।
+   (tapaaï kahãã jaane ta ? / saathiko gharmaa jaane.)
+   Where are you going to go then ? / I'm going over to my friend's house.
+
+4. साथीको घरबाट कति बजे फर्कने ? / पौने सात बजे होला ।
+   (saathiko gharbaaTa kati baje pharkane ? / paaune saat baje holaa.)
+   What time will you come back from your friend's ? / Probably at quarter to seven.
+
+(g) 휴일 계획
 1. bholi nepaali paDhne ? / bholi nepaali napaDhne. [cite: 644, 659]
 2. kina ? / bholi bidaa ho. [cite: 645, 660]
    (왜요? / 내일은 휴일이니까요.) [cite: 646, 661]
 3. bidaamaa ke garne ? / shaharmaa jaane ra raksi khaane. [cite: 647, 662]
    (휴일에 뭐 할 거예요? / 시내에 가서 술을 마실 거예요.) [cite: 648, 663]
-4. shaharbaaTa kati baje pharkane ? / saaDhe das baje pharkane. [cite: 667, 668]
-
+4. तपाईं पनि आउने ? / आउने ।
+   (tapaaï pani aaune ? / aaune.)
+   Do you want to come, too ? / Sure, I'll come.
+5. शहरबाट कति बजे फर्कने ? / साढे दस बजे फर्कने ।
+   (shaharbaaTa kati baje pharkane ? / saaDhe das baje pharkane.)
+   What time are you coming back from town? / I'll come back at half past ten.
 
 4. GRAMMAR NOTES (문법 정리)
 --------------------------------------------------

@@ -175,7 +175,7 @@ function DrivingModePage() {
     <DrivingModePlayer
       lessonId={`${start}-${end}`}
       vocabulary={allItems}
-      onClose={() => navigate({ to: "/study", search: { start, end } })}
+      onClose={() => navigate({ search: {} })}
     />
   );
 }

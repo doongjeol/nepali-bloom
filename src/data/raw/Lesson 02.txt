@@ -34,26 +34,34 @@ BASIC COURSE IN SPOKEN NEPALI - LESSON 2 (Corrected)
 
 2. PART I: DIALOGUE (대화문)
 --------------------------------------------------
-1. नमस्ते ! / नमस्ते !
-   (namaste ! / namaste !)
-   안녕하세요! / 안녕하세요!
+(a) 기본 인사
+1. namaste ! / namaste !
+   (안녕하세요! / 안녕하세요!)
 
-2. तपाईंलाई कस्तो छ ?
-   (tapaallaai kasto chha ?)
-   어떻게 지내세요? (상태가 어떠세요?)
+2. sanchai ? / sanchai.
+   (잘 지내세요? / 잘 지냅니다.)
 
-3. मलाई सन्चै छ ।
-   (malaai sanchai chha.)
-   저는 잘 지냅니다.
+3. tapaaïko ghar kahãã ho ? / mero ghar amerikaa ho.
+   (고향이 어디입니까? / 제 고향은 미국입니다.)
 
-4. तपाईंलाई नि ?
-   (tapaallaai ni ?)
-   당신은요?
+4. tapaaïko baako naam ke ho ? / mero baako naam bil ho.
+   (아버님 성함이 무엇입니까? / 저희 아버지 성함은 Bill입니다.)
 
-5. मलाई पनि सन्चै छ ।
-   (malaai pani sanchai chha.)
-   저도 잘 지냅니다.
+5. tapaaïko aamaako naam ke ho ? / mero aamaako naam baarbaraa ho.
+   (어머님 성함이 무엇입니까? / 저희 어머니 성함은 Barbara입니다.)
 
+(b) 상세 인사 및 출신지
+1. tapaaïlaai kasto chha ? / malaai sanchai chha.
+   (어떻게 지내세요? / 저는 잘 지냅니다.)
+
+2. tapaaïlaai ni ? / malaai pani sanchai chha.
+   (당신은요? / 저도 잘 지냅니다.)
+
+3. tapaaïko ghar amerikaa ho ? / ho, mero ghar amerikaa ho.
+   (고향이 미국입니까? / 네, 제 고향은 미국입니다.)
+
+4. amerikaamaa kahãã ? / kyaaliphorniyaamaa.
+   (미국 어디인가요? / 캘리포니아입니다.)
 
 3. PART II: PRACTICE (연습)
 --------------------------------------------------
@@ -62,47 +70,73 @@ BASIC COURSE IN SPOKEN NEPALI - LESSON 2 (Corrected)
    (tyo ke ho ? / tyo Dhokaa ho.)
    저것은 무엇입니까? / 저것은 문입니다.
 
-2. ढोका खोल्नुहोस् । / मैले ढोका खोलेको ।
-   (Dhokaa kholnos. / maile Dhokaa kholeko.)
-   문을 여세요. / 제가 문을 열었습니다.
+2. ढोका खोल्नुहोस्  
+   (Dhokaa kholnos.)
+   문을 여세요. 
+
+   तपाईंले के गरेको / मैले ढोका खोलेको ।
+   (tapaaïle ke gareko ? / maile Dhokaa kholeko.)
+   당신은 무엇을 했습니까? / 제가 문을 열었습니다.
 
 3. वहाँले के गरेको ? / वहाँले ढोका खोलेको ।
    (wahããle ke gareko ? / wahããle Dhokaa kholeko.)
    그분은 무엇을 했습니까? / 그분이 문을 열었습니다.
 
-4. ढोका बन्द गर्नुहोस् । / मैले ढोका बन्द गरेको ।
-   (Dhokaa banda garnos. / maile Dhokaa banda gareko.)
-   문을 닫으세요. / 제가 문을 닫았습니다.
+4. ढोका बन्द गर्नुहोस् । 
+   (Dhokaa banda garnos.)
+   문을 닫으세요.
+
+   तपाईंले के गरेको । / मैले ढोका बन्द गरेको ।
+   (tapaaïle ke gareko ? / maile Dhokaa banda gareko.)
+   당신은 무엇을 했습니까? . / 제가 문을 닫았습니다.
+
+5. वहाँले के गरेको ? । / वहाँले ढोका बन्द गरेको ।
+   (wahããle ke gareko ? / wahããle Dhokaa banda gareko.)
+   그분은 무엇을 했습니까? . / 그분이 문을 닫았습니다.
 
 (b) 과일 먹기 (Eating Fruit)
+
 1. त्यो के हो ? / यो सुन्तला हो ।
    (tyo ke ho ? / yo suntalaa ho.)
    저것은 무엇입니까? / 이것은 오렌지입니다.
 
-2. खानुहोस् । / मैले सुन्तला खाएको ।
-   (khaanos. / maile suntalaa khaaeko.)
-   드세요. / 제가 오렌지를 먹었습니다.
+2. खानुहोस् ।
+   (khaanos.)
+   드세요.
 
-3. सुन्तला कस्तो छ ? / सुन्तला गुलियो छ ।
+3. तपाईंले के गरेको ? / मैले सुन्तला खाएको ।
+   (tapaaïle ke gareko ? / maile suntalaa khaaeko.)
+   당신은 무엇을 했습니까? / 제가 오렌지를 먹었습니다.
+
+4. सुन्तला कस्तो छ ? / सुन्तला गुलियो छ ।
    (suntalaa kasto chha ? / suntalaa guliyo chha.)
    오렌지 맛이 어떻습니까? / 오렌지가 답니다.
 
-4. स्या우 अमिलो छ ? / छैन, गुलियो छ ।
-   (syaau amilo chha ? / chhaina, guliyo chha.)
-   사과가 십니까? / 아니요, 답니다.
+5. मलाई पानी दिनुहोस् । / लिनुहोस् ।
+   (malaai paani dinos. / linus.)
+   저에게 물을 주세요. / 받으세요.
 
 (c) 차 마시기 (Drinking Tea)
-1. चिया लिनुहोस् । / हस्, मैले चिया लिएँ ।
-   (chiyaa linus. / has, maile chiyaa liẽ.)
-   차 드세요. / 네, 제가 차를 마셨습니다(받았습니다).
 
-2. चिया तातो छ ? / छ, चिया तातो छ ।
-   (chiyaa taato chha ? / chha, chiyaa taato chha.)
-   차가 뜨겁습니까? / 네, 차가 뜨겁습니다.
+1. चिया खानुहोस् । 
+   (chiyaa khaanus.)
+   차 드세요.
 
-3. पानी चिसो छ ? / छ, पानी धेरै चिसो छ ।
-   (paani chiso chha ? / chha, paani dherai chiso chha.)
-   물이 차갑습니까? / 네, 물이 아주 차갑습니다.
+   तपाईंले के गरेको ? / मैले चिया खाएको ।
+   (tapaaïle ke gareko ? / maile chiyaa khaaeko.)
+   당신은 무엇을 했습니까? / 제가 차를 마셨습니다.
+
+2. वहाँले पानी खाएको ? / होइन, वहाँले पनि चिया खाएको ।
+   (wahããle paani khaaeko ? / hoina, wahããle pani chiyaa khaaeko.)
+   그분은 물을 마셨습니까? / 아니요, 그분도 차를 마셨습니다.
+
+3. चिया चिसो छ ? / छैन ।
+   (chiyaa chiso chha ? / chhaina.)
+   차가 차갑습니까? / 아니요.
+
+4. कस्तो छ, त ? / तातो छ ।
+    (kasto chha, ta ? / taato chha.)
+    그럼, 어떻습니까? / 뜨겁습니다.
 
 
 4. GRAMMAR NOTES (Lesson 2)

@@ -1,5 +1,34 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { getDialogueAudioPath, getPronunciationAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
+
+function ttsHash(text: string): string {
+  // Fast stable hash for filenames (djb2-ish).
+  let hash = 5381;
+  for (let i = 0; i < text.length; i += 1) {
+    hash = (hash * 33) ^ text.charCodeAt(i);
+  }
+  // convert to unsigned base36
+  return (hash >>> 0).toString(36);
+}
+
+// 파이썬 스크립트의 safe_filename과 동일한 치환 로직
+function safeFilename(name: string): string {
+  return (name || "").trim().replace(/\.\./g, ".").replace(/[<>:"/\\|?*]/g, "_");
+}
+
+function getKoreanTtsAudioPath(lessonId: string | number, text: string, word?: VocabularyItem): string {
+  if (word) {
+    if (word.type === "dialogue" && typeof word.dIdx === "number" && typeof word.lIdx === "number") {
+      return getPronunciationAudioPath(`/audio/lesson_${lessonId}/dial_${word.dIdx}_${word.lIdx}_ko.mp3`);
+    }
+    if ((!word.type || word.type === "vocab") && word.romanized) {
+      return getPronunciationAudioPath(`/audio/lesson_${lessonId}/${safeFilename(word.romanized)}_ko.mp3`);
+    }
+  }
+  // 단어 데이터가 없는 시스템 안내(예: "학습이 모두 끝났습니다")는 해시명 유지
+  const id = ttsHash(text.trim());
+  return getPronunciationAudioPath(`/audio/lesson_${lessonId}/ko_${id}.mp3`);
+}
 import { getSharedAudioElement } from "@/hooks/useAudioPlayer";
 
 export type VocabularyItem = {
@@ -13,14 +42,13 @@ export type VocabularyItem = {
   lIdx?: number;
 };
 
-type TaskType = "audio" | "speech" | "delay";
+type TaskType = "audio" | "delay";
 
 export interface PlaybackTask {
   type: TaskType;
-  payload: string | number; // audio src, speech text, or delay ms
+  payload: string | number; // audio src or delay ms
   description?: string;
   wordIndex?: number;
-  isNepaliTTS?: boolean;
 }
 
 type SwipeHandlers = {
@@ -155,7 +183,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioBufferCacheRef = useRef<Map<string, AudioBuffer>>(new Map());
   const bufferSourceRef = useRef<AudioBufferSourceNode | null>(null);
@@ -164,66 +191,14 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   const isPlayingRef = useRef(false);
   const runIdRef = useRef(0);
   const currentTaskIndexRef = useRef(-1);
+  const lastAdvanceKeyRef = useRef<string | null>(null);
   const didUnlockHtmlAudioRef = useRef(false);
-  const didUnlockSpeechRef = useRef(false);
   const unlockAudioElRef = useRef<HTMLAudioElement | null>(null);
-  const voicesRef = useRef<SpeechSynthesisVoice[]>([]);
   const processingKeyRef = useRef<string | null>(null);
   const pendingAutoplayRef = useRef(false);
   useEffect(() => {
     currentTaskIndexRef.current = currentTaskIndex;
   }, [currentTaskIndex]);
-
-  const ttsSpeedRef = useRef(options?.ttsSpeed ?? 0.9);
-  useEffect(() => {
-    ttsSpeedRef.current = options?.ttsSpeed ?? 0.9;
-  }, [options?.ttsSpeed]);
-
-  useEffect(() => {
-    if (typeof window === "undefined" || !("speechSynthesis" in window)) return;
-    const synth = window.speechSynthesis;
-    const updateVoices = () => {
-      try {
-        voicesRef.current = synth.getVoices?.() ?? [];
-      } catch {
-        voicesRef.current = [];
-      }
-    };
-    updateVoices();
-    try {
-      synth.addEventListener?.("voiceschanged", updateVoices);
-    } catch {
-      // ignore
-    }
-    return () => {
-      try {
-        synth.removeEventListener?.("voiceschanged", updateVoices);
-      } catch {
-        // ignore
-      }
-    };
-  }, []);
-
-  const pickTtsVoice = useCallback((preferredLang: string) => {
-    const voices = voicesRef.current ?? [];
-    if (!voices.length) return null;
-    const exact = voices.find((v) => v.lang === preferredLang);
-    if (exact) return exact;
-    const prefix = preferredLang.split("-")[0]!;
-    const starts = voices.find((v) => v.lang?.toLowerCase?.().startsWith(prefix.toLowerCase()));
-    return starts ?? null;
-  }, []);
-
-  const pickNepaliCapableVoice = useCallback(() => {
-    // Nepali voices are often missing on mobile browsers; fall back to Devanagari-friendly voices (e.g. hi-IN).
-    return (
-      pickTtsVoice("ne-NP") ??
-      pickTtsVoice("ne") ??
-      pickTtsVoice("hi-IN") ??
-      pickTtsVoice("hi") ??
-      null
-    );
-  }, [pickTtsVoice]);
 
   const onSessionCompleteRef = useRef(options?.onSessionComplete);
   useEffect(() => {
@@ -275,23 +250,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     }
   }, []);
 
-  const stopSpeech = useCallback(() => {
-    const u = utteranceRef.current;
-    if (u) {
-      u.onstart = null;
-      u.onend = null;
-      u.onerror = null;
-    }
-    utteranceRef.current = null;
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      try {
-        window.speechSynthesis.cancel();
-      } catch {
-        // ignore
-      }
-    }
-  }, []);
-
   const pause = useCallback(() => {
     runIdRef.current += 1; // cancel in-flight awaits
     setIsPlaying(false);
@@ -299,10 +257,15 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     setIsFinished(false);
     setAutoplayBlocked(false);
     pendingAutoplayRef.current = false;
+    try {
+      const ms = (navigator as any)?.mediaSession as MediaSession | undefined;
+      if (ms) ms.playbackState = "paused";
+    } catch {
+      // ignore
+    }
     clearTimer();
     stopAudio();
-    stopSpeech();
-  }, [clearTimer, stopAudio, stopSpeech]);
+  }, [clearTimer, stopAudio]);
 
   const stop = useCallback(() => {
     pause();
@@ -357,27 +320,18 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       }
     }
 
-    // 3) SpeechSynthesis unlock
-    // NOTE: 무음 utterance를 speak()하면 일부 환경(데스크톱/모바일)에서 이후 media/WebAudio 볼륨이
-    // 잠깐 ducking 되었다가 1~2초 후 올라오는 현상이 발생할 수 있어 speak()는 하지 않는다.
-    if (!didUnlockSpeechRef.current && "speechSynthesis" in window) {
-      try {
-        void window.speechSynthesis.getVoices?.();
-        didUnlockSpeechRef.current = true;
-      } catch {
-        // ignore
-      }
-    }
   }, []);
 
   const advanceIndex = useCallback(
     (fromIndex: number, reason: string) => {
       // 규칙 1: 인덱스 증가는 "완료 이벤트 핸들러"에서만 발생
+      const key = `${runIdRef.current}:${fromIndex}`;
+      if (lastAdvanceKeyRef.current === key) return;
+      lastAdvanceKeyRef.current = key;
+      console.log(`[DM] index++ ${fromIndex} -> ${fromIndex + 1} (${reason})`);
       setCurrentTaskIndex((prev) => {
         if (prev !== fromIndex) return prev;
-        const next = fromIndex + 1;
-        console.log(`[DM] index++ ${fromIndex} -> ${next} (${reason})`);
-        return next;
+        return fromIndex + 1;
       });
     },
     [],
@@ -412,7 +366,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
       clearTimer();
       stopAudio();
-      stopSpeech();
 
       runIdRef.current += 1;
       setIsFinished(false);
@@ -422,7 +375,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       console.log(`[DM] jumpToWord word=${clamped} taskIdx=${taskIdx}`);
       setCurrentTaskIndex(taskIdx);
     },
-    [clearTimer, stopAudio, stopSpeech, vocabulary.length, wordStartTaskIndex],
+    [clearTimer, stopAudio, vocabulary.length, wordStartTaskIndex],
   );
 
   const nextWord = useCallback(() => jumpToWord(currentWordIndex + 1), [currentWordIndex, jumpToWord]);
@@ -434,6 +387,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     onPrev: prevWord,
   });
 
+  /*
   const buildTasks = useCallback(
     (words: VocabularyItem[]): PlaybackTask[] => {
       const newTasks: PlaybackTask[] = [];
@@ -463,16 +417,11 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
 
           const meaningText = word.korean.split("(")[1]?.replace(")", "") || word.korean;
-          newTasks.push({
-            type: "speech",
-            payload: meaningText,
-            description: `뜻: ${meaningText}`,
-            wordIndex: index,
-          });
+        pushKoAudio(meaningText, `뜻: ${meaningText}`, index);
           newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
         } else if (type === "dialogue") {
-          const cleanKorean = word.korean.replace(/^\[.*?\]\s*/, "");
-          const speakerPrefixMatch = word.korean.match(/^\[(.*?)\]\s*/);
+          const cleanKorean = word.korean.replace(/^\[.*?\]\s* /, "");
+          const speakerPrefixMatch = word.korean.match(/^\[(.*?)\]\s* /);
           const speaker = speakerPrefixMatch?.[1];
 
           if (mode === "dialogue") {
@@ -513,22 +462,14 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
             });
             newTasks.push({ type: "delay", payload: 900, description: "대기", wordIndex: index });
 
-            if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
-              newTasks.push({
-                type: "audio",
-                payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
-                description: `네팔어: ${word.nepali}`,
-                wordIndex: index,
-              });
-            } else {
-              newTasks.push({
-                type: "speech",
-                payload: word.nepali,
-                description: `네팔어: ${word.nepali}`,
-                wordIndex: index,
-                isNepaliTTS: true,
-              });
-            }
+          if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
+            newTasks.push({
+              type: "audio",
+              payload: getDialogueAudioPath(word.lessonId ?? lessonId, word.dIdx, word.lIdx),
+              description: `네팔어: ${word.nepali}`,
+              wordIndex: index,
+            });
+          }
             newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
           }
         } else {
@@ -554,6 +495,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     },
     [lessonId, options?.studyMode],
   );
+  */
 
   const isIOS = useMemo(() => {
     if (typeof navigator === "undefined") return false;
@@ -578,6 +520,30 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
   useEffect(() => {
     const newTasks: PlaybackTask[] = [];
 
+    const pushKoreanAudio = (
+      text: string,
+      description: string,
+      wordIndex?: number,
+      lessonIdOverride?: string | number,
+    ) => {
+      const actualLessonId =
+        lessonIdOverride ??
+        (typeof vocabulary[wordIndex ?? -1]?.lessonId !== "undefined"
+          ? (vocabulary[wordIndex ?? -1] as any).lessonId
+          : undefined) ??
+        vocabulary.find((v) => typeof (v as any).lessonId !== "undefined")?.lessonId ??
+        lessonId;
+
+      const word = typeof wordIndex === "number" ? vocabulary[wordIndex] : undefined;
+
+      newTasks.push({
+        type: "audio",
+        payload: getKoreanTtsAudioPath(actualLessonId ?? lessonId, text, word),
+        description,
+        wordIndex,
+      });
+    };
+
     vocabulary.forEach((word, index) => {
       const type = word.type || "vocab";
       const mode = options?.studyMode;
@@ -592,12 +558,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
         newTasks.push({ type: "delay", payload: 1500, description: "대기", wordIndex: index });
 
         const meaningText = word.korean.split("(")[1]?.replace(")", "") || word.korean;
-        newTasks.push({
-          type: "speech",
-          payload: meaningText,
-          description: `뜻: ${meaningText}`,
-          wordIndex: index,
-        });
+        pushKoreanAudio(meaningText, `뜻: ${meaningText}`, index, word.lessonId ?? lessonId);
         newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
 
         if (false && word.example) {
@@ -620,12 +581,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
 
         // 대화문만 듣기(dialogue)에서는 [한국어 해석 -> 네팔어] 순으로 재생
         if (mode === "dialogue") {
-          newTasks.push({
-            type: "speech",
-            payload: cleanKorean,
-            description: speaker ? `[${speaker}] 해석` : "해석",
-            wordIndex: index,
-          });
+          pushKoreanAudio(cleanKorean, speaker ? `[${speaker}] 해석` : "해석", index, word.lessonId ?? lessonId);
           // 한글 TTS 직후 iOS에서 오디오가 "ducking" 된 상태로 시작해 점점 커지는 것처럼 들릴 수 있어
           // 약간 더 쉬었다가 네팔어를 재생한다.
           newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
@@ -637,25 +593,11 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
               description: speaker ? `[${speaker}] 네팔어` : "네팔어",
               wordIndex: index,
             });
-          } else {
-            newTasks.push({
-              type: "speech",
-              payload: word.nepali,
-              description: speaker ? `[${speaker}] 네팔어` : "네팔어",
-              wordIndex: index,
-              isNepaliTTS: true,
-            });
           }
           newTasks.push({ type: "delay", payload: 1200, description: "대기", wordIndex: index });
         } else {
           // 기본(혼합) 흐름은 기존대로 [한국어 -> 네팔어] 유지
-          newTasks.push({
-            type: "speech",
-            payload: cleanKorean,
-            description: `뜻: ${cleanKorean}`,
-            wordIndex: index,
-          });
-          // speechSynthesis 이후 오디오 볼륨 램프(ducking 복구) 방지용 여유
+          pushKoreanAudio(cleanKorean, `뜻: ${cleanKorean}`, index, word.lessonId ?? lessonId);
           newTasks.push({ type: "delay", payload: 2200, description: "대기", wordIndex: index });
 
           if (typeof word.dIdx === "number" && typeof word.lIdx === "number") {
@@ -665,33 +607,16 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
               description: `네팔어: ${word.nepali}`,
               wordIndex: index,
             });
-          } else {
-            newTasks.push({
-              type: "speech",
-              payload: word.nepali,
-              description: `네팔어: ${word.nepali}`,
-              wordIndex: index,
-              isNepaliTTS: true,
-            });
           }
           newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
         }
       } else {
-        newTasks.push({
-          type: "speech",
-          payload: word.korean,
-          description: `내용: ${word.korean}`,
-          wordIndex: index,
-        });
+        pushKoreanAudio(word.korean, `내용: ${word.korean}`, index, word.lessonId ?? lessonId);
         newTasks.push({ type: "delay", payload: 2500, description: "대기", wordIndex: index });
       }
     });
 
-    newTasks.push({
-      type: "speech",
-      payload: "학습이 모두 끝났습니다.",
-      description: "세션 종료 안내",
-    });
+    pushKoreanAudio("학습이 모두 끝났습니다.", "세션 종료 안내");
 
     setTasks(newTasks);
     setCurrentWordIndex(0);
@@ -703,7 +628,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     setIsFinished(false);
     clearTimer();
     stopAudio();
-    stopSpeech();
 
     // If a play was requested before tasks were ready, start now.
     if (pendingAutoplayRef.current && newTasks.length > 1) {
@@ -717,7 +641,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       console.log(`[DM] autoplay resumed after tasks built totalTasks=${newTasks.length}`);
       setCurrentTaskIndex(0);
     }
-  }, [clearTimer, lessonId, options?.studyMode, stopAudio, stopSpeech, vocabulary]);
+  }, [clearTimer, lessonId, options?.studyMode, stopAudio, vocabulary]);
 
   // 규칙 1/2/3을 만족하는 재생 엔진:
   // - effect는 현재 index의 task를 "시작만" 한다.
@@ -757,7 +681,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       if (webAudioStartTimeout) clearTimeout(webAudioStartTimeout);
       webAudioStartTimeout = null;
       clearTimer();
-      stopSpeech();
       stopAudio();
       if (processingKeyRef.current === processingKey) processingKeyRef.current = null;
       // 규칙 1: 오디오 새로 만들면 기존 pause+null 처리(우리는 재사용하지만 cleanup에서 확실히 멈춤)
@@ -781,237 +704,7 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       return cleanup;
     }
 
-	    if (task.type === "speech") {
-	      stopAudio();
-	      console.log(`[DM] speech task payload="${String(task.payload ?? "")}" isNepaliTTS=${Boolean(task.isNepaliTTS)}`);
-	      if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-        clearTimer();
-        timerRef.current = setTimeout(() => {
-          if (cancelled) return;
-          if (runIdRef.current !== runId) return;
-          console.log(`[DM] speech fallback done idx=${index}`);
-          advanceIndex(index, "speech-fallback");
-        }, 800);
-        return cleanup;
-	      }
-
-	      const synth = window.speechSynthesis;
-	      const speechState = {
-	        attempt: 1 as 1 | 2,
-	        didStart: false,
-	        didFinish: false,
-	        startWatchdog: null as ReturnType<typeof setTimeout> | null,
-	        hardWatchdog: null as ReturnType<typeof setTimeout> | null,
-	      };
-
-	      const clearSpeechWatchdogs = () => {
-	        if (speechState.startWatchdog) clearTimeout(speechState.startWatchdog);
-	        if (speechState.hardWatchdog) clearTimeout(speechState.hardWatchdog);
-	        speechState.startWatchdog = null;
-	        speechState.hardWatchdog = null;
-	      };
-
-	      const startSpeechAttempt = (attempt: 1 | 2) => {
-	        if (cancelled) return;
-	        if (runIdRef.current !== runId) return;
-	        if (speechState.didFinish) return;
-	        if (speechState.attempt === 2 && attempt === 2) return; // prevent duplicate attempt-2 starts
-
-	        speechState.attempt = attempt;
-	        speechState.didStart = false;
-	        clearSpeechWatchdogs();
-
-	        console.log(`[DM] speech attempt start idx=${index} attempt=${attempt}`);
-
-	        const utterance = new SpeechSynthesisUtterance(task.payload as string);
-	        utteranceRef.current = utterance;
-
-	        if (task.isNepaliTTS) {
-	          const chosenVoice = pickNepaliCapableVoice();
-	          if (chosenVoice) {
-	            try {
-	              utterance.voice = chosenVoice;
-	              utterance.lang = chosenVoice.lang || "ne-NP";
-	            } catch {
-	              utterance.lang = "ne-NP";
-	            }
-	          } else {
-	            utterance.lang = "ne-NP";
-	          }
-	        } else {
-	          // Korean: let the browser choose the best available voice.
-	          // Forcing a specific voice can be silent/buggy on some devices.
-	          const allVoices = voicesRef.current ?? synth.getVoices?.() ?? [];
-	          const koVoice = allVoices.find((v) => (v.lang || "").toLowerCase().startsWith("ko"));
-	          if (koVoice) {
-	            utterance.lang = "ko-KR";
-	            // do not force utterance.voice unless we have a matching ko voice
-	            try {
-	              utterance.voice = koVoice;
-	            } catch {
-	              // ignore
-	            }
-	          } else if (allVoices.length > 0) {
-	            // No Korean voice installed: force *some* voice so it is at least audible.
-	            const fallbackVoice = allVoices[0]!;
-	            try {
-	              utterance.voice = fallbackVoice;
-	            } catch {
-	              // ignore
-	            }
-	            utterance.lang = fallbackVoice.lang || "en-US";
-	          } else {
-	            // As a last resort, don't set voice; allow browser defaults.
-	            utterance.lang = "ko-KR";
-	          }
-	        }
-
-	        utterance.rate = ttsSpeedRef.current;
-	        utterance.volume = 1.0;
-	        try {
-	          utterance.pitch = 1.05;
-	        } catch {
-	          // ignore
-	        }
-
-	        if (!task.isNepaliTTS) {
-	          try {
-	            const allVoices = synth.getVoices?.() ?? [];
-	            const koVoices = allVoices.filter((v) => (v.lang || "").toLowerCase().startsWith("ko"));
-	            console.log(
-	              `[DM] speech config idx=${index} attempt=${attempt} lang=${utterance.lang} voice=${utterance.voice?.name ?? "auto"} voices=${allVoices.length} koVoices=${koVoices.length}`,
-	            );
-	          } catch {
-	            // ignore
-	          }
-	        }
-
-	        const text = String(task.payload ?? "");
-	        const hardWatchdogMs = Math.min(10000, 2000 + text.length * 80);
-
-	        speechState.startWatchdog = setTimeout(() => {
-	          if (cancelled) return;
-	          if (runIdRef.current !== runId) return;
-	          if (speechState.didStart) return;
-	          if (synth.speaking) return;
-	          console.log(`[DM] speech start TIMEOUT idx=${index} attempt=${attempt}`);
-	          if (attempt === 1) {
-	            try {
-	              void synth.getVoices?.();
-	            } catch {
-	              // ignore
-	            }
-	            startSpeechAttempt(2);
-	          } else {
-	            speechState.didFinish = true;
-	            advanceIndex(index, "speech-start-timeout");
-	          }
-	        }, attempt === 1 ? 1200 : 800);
-
-	        speechState.hardWatchdog = setTimeout(() => {
-	          if (cancelled) return;
-	          if (runIdRef.current !== runId) return;
-	          if (speechState.didFinish) return;
-	          console.log(`[DM] speech hard TIMEOUT idx=${index} ms=${hardWatchdogMs} attempt=${attempt}`);
-	          if (attempt === 1) {
-	            try {
-	              void synth.getVoices?.();
-	            } catch {
-	              // ignore
-	            }
-	            startSpeechAttempt(2);
-	          } else {
-	            speechState.didFinish = true;
-	            advanceIndex(index, "speech-hard-timeout");
-	          }
-	        }, hardWatchdogMs);
-
-	        utterance.onstart = () => {
-	          if (cancelled) return;
-	          if (runIdRef.current !== runId) return;
-	          speechState.didStart = true;
-	          try {
-	            console.log(
-	              `[DM] speech start idx=${index} attempt=${attempt} speaking=${synth.speaking} pending=${(synth as any).pending ?? "n/a"}`,
-	            );
-	          } catch {
-	            console.log(`[DM] speech start idx=${index} attempt=${attempt}`);
-	          }
-	        };
-	        utterance.onend = () => {
-	          if (cancelled) return;
-	          if (runIdRef.current !== runId) return;
-	          if (speechState.didFinish) return;
-	          speechState.didFinish = true;
-	          clearSpeechWatchdogs();
-	          try {
-	            console.log(
-	              `[DM] speech end idx=${index} attempt=${attempt} speaking=${synth.speaking} pending=${(synth as any).pending ?? "n/a"}`,
-	            );
-	          } catch {
-	            console.log(`[DM] speech end idx=${index} attempt=${attempt}`);
-	          }
-	          advanceIndex(index, "speech-end");
-	        };
-	        utterance.onerror = (e) => {
-	          if (cancelled) return;
-	          if (runIdRef.current !== runId) return;
-	          if (speechState.didFinish) return;
-	          clearSpeechWatchdogs();
-	          console.log(`[DM] speech error idx=${index} attempt=${attempt}`, e);
-	          // "canceled" is common when we cancel during retry; treat as retryable once.
-	          if (attempt === 1) {
-	            startSpeechAttempt(2);
-	          } else {
-	            speechState.didFinish = true;
-	            advanceIndex(index, "speech-error");
-	          }
-	        };
-
-	        try {
-	          try {
-	            void synth.getVoices?.();
-	          } catch {
-	            // ignore
-	          }
-	          // Always cancel before speak to avoid queued/pending utterances causing silent/no-op behavior
-	          // on some browsers/devices.
-	          try {
-	            synth.cancel();
-	          } catch {
-	            // ignore
-	          }
-	          synth.speak(utterance);
-	        } catch (e) {
-	          clearSpeechWatchdogs();
-	          console.log(`[DM] speech speak threw idx=${index} attempt=${attempt}`, e);
-	          if (attempt === 1) startSpeechAttempt(2);
-	          else {
-	            speechState.didFinish = true;
-	            advanceIndex(index, "speech-throw");
-	          }
-	        }
-	      };
-
-	      startSpeechAttempt(1);
-	      return () => {
-	        clearSpeechWatchdogs();
-	        cleanup();
-	      };
-	    }
-
     // audio
-    stopSpeech();
-    // iOS Safari에서 SpeechSynthesis 이후 media element 볼륨이 "작게 시작했다가 점점 커지는" 현상을 줄이기 위해
-    // audio 재생 직전에 speechSynthesis를 확실히 종료한다.
-    if (typeof window !== "undefined" && "speechSynthesis" in window) {
-      try {
-        window.speechSynthesis.cancel();
-      } catch {
-        // ignore
-      }
-    }
-
     // iOS에서는 TTS 직후 media element 오디오가 "ducking"된 상태로 시작해 점점 커지는 듯 들리는 경우가 있어,
     // 드라이브 모드는 모바일 잠금화면에서도 안정적으로 이어지는 "media element" 경로를 우선한다.
     // (레슨 대화문 전체재생과 동일한 HTMLAudioElement 기반)
@@ -1030,9 +723,9 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       }
     }
 
-    const canUseWebAudioInForeground =
-      Boolean(audioContextRef.current) &&
-      (typeof document === "undefined" || document.visibilityState === "visible");
+    // Lock-screen / background playback works most reliably with a single shared HTMLAudioElement.
+    // WebAudio playback is intentionally disabled here to keep MediaSession + lockscreen controls stable.
+    const canUseWebAudioInForeground = false;
     if (isIOS) {
       try {
         console.log(
@@ -1087,7 +780,6 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           if (cancelled) return;
           if (runIdRef.current !== runId) return;
           console.log(`[DM] audio error idx=${index} src=${src}`, e);
-          // 규칙 3: onerror는 건너뛰되 루프는 진행
           advanceIndex(index, "audio-error");
         };
 
@@ -1095,6 +787,12 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
           .play()
           .then(() => {
             console.log(`[DM] audio play started idx=${index}`);
+            try {
+              const ms = (navigator as any)?.mediaSession as MediaSession | undefined;
+              if (ms) ms.playbackState = "playing";
+            } catch {
+              // ignore
+            }
             try {
               audio.muted = false;
               audio.volume = 1.0;
@@ -1230,7 +928,55 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
       startHtmlAudio(src);
     }
     return cleanup;
-  }, [advanceIndex, clearTimer, currentTaskIndex, isPlaying, pause, stopAudio, stopSpeech, tasks]);
+  }, [advanceIndex, clearTimer, currentTaskIndex, isPlaying, pause, stopAudio, tasks]);
+
+  // MediaSession: lockscreen / headset controls
+  useEffect(() => {
+    if (typeof navigator === "undefined") return;
+    const ms = (navigator as any).mediaSession as MediaSession | undefined;
+    if (!ms || typeof ms.setActionHandler !== "function") return;
+
+    const onPlay = () => {
+      try {
+        void unlockAudio();
+      } catch {
+        // ignore
+      }
+      play();
+    };
+    const onPause = () => pause();
+    const onNext = () => nextWord();
+    const onPrev = () => prevWord();
+
+    try {
+      ms.setActionHandler("play", onPlay);
+      ms.setActionHandler("pause", onPause);
+      ms.setActionHandler("nexttrack", onNext);
+      ms.setActionHandler("previoustrack", onPrev);
+    } catch {
+      // ignore
+    }
+
+    try {
+      const title = currentTaskIndex > -1 ? tasks[currentTaskIndex]?.description : "Driving Mode";
+      ms.metadata = new MediaMetadata({
+        title: typeof title === "string" ? title : "Driving Mode",
+      });
+    } catch {
+      // ignore
+    }
+
+    return () => {
+      try {
+        ms.setActionHandler("play", null);
+        ms.setActionHandler("pause", null);
+        ms.setActionHandler("nexttrack", null);
+        ms.setActionHandler("previoustrack", null);
+      } catch {
+        // ignore
+      }
+    };
+  }, [currentTaskIndex, nextWord, pause, play, prevWord, tasks, unlockAudio]);
 
   return {
     isPlaying,
