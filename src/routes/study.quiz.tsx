@@ -320,7 +320,6 @@ function StudyQuizPage() {
                       <p className="text-base font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
                         {opt.nepali}
                       </p>
-                      <p className="mt-0.5 text-sm italic text-muted-foreground">{opt.romanized}</p>
                     </div>
                   </button>
                 );

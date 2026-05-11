@@ -91,6 +91,7 @@ export function DialogueGeneralQuiz({
   const [answer, setAnswer] = useState<WordToken[]>([]);
   const [isError, setIsError] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [didRevealAnswer, setDidRevealAnswer] = useState(false);
   const [didScoreOnCurrent, setDidScoreOnCurrent] = useState(false);
   const [hasErrorOnCurrent, setHasErrorOnCurrent] = useState(false); // 현재 문제에서 틀린 적이 있는지 추적
   const [clickedTokenId, setClickedTokenId] = useState<string | null>(null);
@@ -121,6 +122,7 @@ export function DialogueGeneralQuiz({
     setAnswer([]);
     setIsError(false);
     setIsSuccess(false);
+    setDidRevealAnswer(false);
     setHasErrorOnCurrent(false);
     setDidScoreOnCurrent(false);
   };
@@ -178,10 +180,22 @@ export function DialogueGeneralQuiz({
   const handleReset = () => {
     setIsError(false);
     setIsSuccess(false);
+    setDidRevealAnswer(false);
     const line = quizLines[currentStep];
     const tokens = line.parsedWords.map((word, i) => ({ id: `${i}-${word}`, word }));
     setPool(shuffleArray(tokens));
     setAnswer([]);
+  };
+
+  const handleRevealAnswer = () => {
+    const line = quizLines[currentStep];
+    const correctTokens = line.parsedWords.map((word, i) => ({ id: `${i}-${word}`, word }));
+    setPool([]);
+    setAnswer(correctTokens);
+    setIsError(false);
+    setIsSuccess(true);
+    setDidRevealAnswer(true);
+    setHasErrorOnCurrent(true);
   };
 
   const checkAnswer = (currentAnswer: WordToken[]) => {
@@ -351,7 +365,7 @@ export function DialogueGeneralQuiz({
           {isSuccess && (
             <>
               <CheckCircle2 className="h-5 w-5 text-success" />
-              <span className="text-sm font-semibold text-success">정답입니다</span>
+              <span className="text-sm font-semibold text-success">{didRevealAnswer ? "정답 공개" : "정답입니다"}</span>
             </>
           )}
         </div>
@@ -359,6 +373,11 @@ export function DialogueGeneralQuiz({
           {!isSuccess && (
             <Button variant="secondary" size="sm" onClick={handleReset}>
               초기화
+            </Button>
+          )}
+          {isError && !isSuccess && (
+            <Button variant="outline" size="sm" onClick={handleRevealAnswer}>
+              정답 보기
             </Button>
           )}
           {isSuccess && (

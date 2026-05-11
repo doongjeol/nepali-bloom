@@ -413,6 +413,46 @@
         "romanized": "yo suntalaa ho.",
         "korean": "이것은 오렌지입니다."
       }
+    },
+    {
+      "nepali": "अमेरिका",
+      "romanized": "amerikaa",
+      "korean": "America (미국)",
+      "example": {
+        "nepali": "मेरो घर अमेरिका हो।",
+        "romanized": "mero ghar amerikaa ho.",
+        "korean": "제 고향은 미국입니다."
+      }
+    },
+    {
+      "nepali": "नेपाल",
+      "romanized": "nepaal",
+      "korean": "Nepal (네팔)",
+      "example": {
+        "nepali": "उहाँको घर नेपाल हो।",
+        "romanized": "wahããko ghar nepaal ho.",
+        "korean": "그분의 고향은 네팔입니다."
+      }
+    },
+    {
+      "nepali": "टेबुल",
+      "romanized": "tebul",
+      "korean": "table (책상/테이블)",
+      "example": {
+        "nepali": "कलम टेबुलमा छ।",
+        "romanized": "kalam tebulmaa chha.",
+        "korean": "펜이 책상 위에 있습니다."
+      }
+    },
+    {
+      "nepali": "दूध",
+      "romanized": "dudh",
+      "korean": "milk (우유)",
+      "example": {
+        "nepali": "दूध सेतो हुन्छ।",
+        "romanized": "dudh seto hunchha.",
+        "korean": "우유는 흰색입니다."
+      }
     }
   ],
   "examples": [],
@@ -476,8 +516,10 @@
       ],
       "examples": [
         "ढोका खोल्नुस्। (Dhokaa kholnus.) - 문을 여세요.",
-        "किताब पढ्नोस्। (kitaab paDhnos.) - 책을 읽으세요.",
-        "कलम दिनोस्। (kalam dinos.) - 펜을 주세요."
+        "कलम दिनोस्। (kalam dinos.) - 펜을 주세요.",
+        "किताब पढ्नुस्। (kitaab paDhnus.) - (어른께) 책을 읽으시오.",
+        "किताब पढ। (kitaab paDha.) - (동료에게) 책을 읽어요.",
+        "किताब पढौं। (kitaab paDhaű.) - (친구에게) 책을 읽자!"
       ]
     },
     {

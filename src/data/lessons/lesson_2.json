@@ -273,6 +273,26 @@
         "romanized": "syaau amilo chha ?",
         "korean": "사과가 십니까?"
       }
+    },
+    {
+      "nepali": "तपाईंलाई",
+      "romanized": "tapaaïlaai",
+      "korean": "to you (당신에게)",
+      "example": {
+        "nepali": "तपाईंलाई कस्तो छ ?",
+        "romanized": "tapaaïlaai kasto chha ?",
+        "korean": "어떻게 지내세요?"
+      }
+    },
+    {
+      "nepali": "क्यालिफोर्निया",
+      "romanized": "kyaaliphorniyaa",
+      "korean": "California (캘리포니아)",
+      "example": {
+        "nepali": "क्यालिफोर्नियामा ।",
+        "romanized": "kyaaliphorniyaamaa.",
+        "korean": "캘리포니아입니다."
+      }
     }
   ],
   "examples": [],
