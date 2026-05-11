@@ -34,19 +34,42 @@ export function RangeVocabCard({
   onFinish: () => void;
 }) {
   const storageKey = `nepali-bloom-vocab-status-${lessonId}`;
-  const [statuses, setStatuses] = useState<Record<string, VocabStatus>>(() => {
-    if (typeof window === "undefined") return {};
-    try {
-      const saved = localStorage.getItem(storageKey);
-      return saved ? JSON.parse(saved) : {};
-    } catch {
-      return {};
-    }
-  });
+  const [statuses, setStatuses] = useState<Record<string, VocabStatus>>({});
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(statuses));
-  }, [statuses, storageKey]);
+    if (typeof window === "undefined") return;
+    setHasLoaded(false);
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (!saved) {
+        setStatuses({});
+        setHasLoaded(true);
+        return;
+      }
+      const parsed = JSON.parse(saved);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        setStatuses({});
+        setHasLoaded(true);
+        return;
+      }
+      setStatuses(parsed as Record<string, VocabStatus>);
+      setHasLoaded(true);
+    } catch {
+      setStatuses({});
+      setHasLoaded(true);
+    }
+  }, [storageKey]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!hasLoaded) return;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(statuses));
+    } catch {
+      // ignore
+    }
+  }, [statuses, storageKey, hasLoaded]);
 
   const [filter, setFilter] = useState<StudyFilter>("all");
   const didAutoSetFilterRef = useRef(false);

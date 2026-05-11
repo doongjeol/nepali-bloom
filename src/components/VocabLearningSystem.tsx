@@ -46,19 +46,47 @@ export function VocabLearningSystem({
   audioPlayer: UseAudioPlayerResult;
 }) {
   const storageKey = `nepali-bloom-vocab-status-${lessonId}`;
-  const [statuses, setStatuses] = useState<Record<string, VocabStatus>>(() => {
-    if (typeof window === "undefined") return {};
-    try {
-      const saved = localStorage.getItem(storageKey);
-      return saved ? JSON.parse(saved) : {};
-    } catch {
-      return {};
-    }
-  });
+  // SSR hydration note:
+  // - The useState initializer may run on the server (no localStorage) and the empty
+  //   value can be locked in on refresh.
+  // - Persisting immediately on mount can overwrite existing saved data.
+  // Load after mount and persist only after that.
+  const [statuses, setStatuses] = useState<Record<string, VocabStatus>>({});
+  const [hasLoaded, setHasLoaded] = useState(false);
 
   useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(statuses));
-  }, [statuses, storageKey]);
+    if (typeof window === "undefined") return;
+    setHasLoaded(false);
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (!saved) {
+        setStatuses({});
+        setHasLoaded(true);
+        return;
+      }
+      const parsed = JSON.parse(saved);
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        setStatuses({});
+        setHasLoaded(true);
+        return;
+      }
+      setStatuses(parsed as Record<string, VocabStatus>);
+      setHasLoaded(true);
+    } catch {
+      setStatuses({});
+      setHasLoaded(true);
+    }
+  }, [storageKey]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!hasLoaded) return;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(statuses));
+    } catch {
+      // ignore
+    }
+  }, [statuses, storageKey, hasLoaded]);
 
   const resetStatuses = () => {
     setStatuses({});
