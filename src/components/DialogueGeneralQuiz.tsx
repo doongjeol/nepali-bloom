@@ -2,7 +2,7 @@
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
-import { CheckCircle2, XCircle } from "lucide-react";
+import { CheckCircle2, Volume2, VolumeX, XCircle } from "lucide-react";
 import globalVocab from "@/data/vocabulary.json";
 import type { UseAudioPlayerResult } from "@/hooks/useAudioPlayer";
 
@@ -95,6 +95,29 @@ export function DialogueGeneralQuiz({
   const [didScoreOnCurrent, setDidScoreOnCurrent] = useState(false);
   const [hasErrorOnCurrent, setHasErrorOnCurrent] = useState(false); // 현재 문제에서 틀린 적이 있는지 추적
   const [clickedTokenId, setClickedTokenId] = useState<string | null>(null);
+  const [isMuted, setIsMuted] = useState(false);
+
+  const muteStorageKey = "nepali-bloom:dialogue-quiz-muted:v1";
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      const saved = localStorage.getItem(muteStorageKey);
+      if (saved === "1") setIsMuted(true);
+    } catch {
+      // ignore
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      localStorage.setItem(muteStorageKey, isMuted ? "1" : "0");
+    } catch {
+      // ignore
+    }
+  }, [isMuted]);
 
   useEffect(() => {
     startQuiz();
@@ -131,6 +154,8 @@ export function DialogueGeneralQuiz({
     // 시각적 피드백 제공 (애니메이션)
     setClickedTokenId(token.id);
     setTimeout(() => setClickedTokenId(null), 150);
+
+    if (isMuted) return;
 
     // 4. 성능 및 예외 처리: 에러를 뱉지 않고 조용히 넘어가도록 try-catch 적용
     try {
@@ -270,9 +295,30 @@ export function DialogueGeneralQuiz({
         <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold text-secondary-foreground sm:text-sm">
           문제 {currentStep + 1} / {quizLines.length}
         </span>
-        <Button variant="ghost" size="sm" onClick={onClose} className="h-8 px-2 text-xs">
-          그만두기
-        </Button>
+        <div className="flex items-center gap-1.5">
+          <Button
+            type="button"
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              setIsMuted((v) => {
+                const next = !v;
+                if (next) audioPlayer.stop?.();
+                return next;
+              });
+            }}
+            className="h-8 px-2 text-xs"
+            aria-pressed={isMuted}
+            aria-label={isMuted ? "음소거 해제" : "음소거"}
+            title={isMuted ? "음소거 해제" : "음소거"}
+          >
+            {isMuted ? <VolumeX className="mr-1 h-4 w-4" /> : <Volume2 className="mr-1 h-4 w-4" />}
+            {isMuted ? "음소거" : "소리"}
+          </Button>
+          <Button variant="ghost" size="sm" onClick={onClose} className="h-8 px-2 text-xs">
+            그만두기
+          </Button>
+        </div>
       </div>
 
       {/* 프롬프트 (한국어 해석) */}

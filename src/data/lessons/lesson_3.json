@@ -91,7 +91,7 @@
       "example": {
         "nepali": "तपाईंको दाइ हुनुहुन्छ ?",
         "romanized": "tapaaIko daai hunuhunchha ?",
-        "korean": "형"
+        "korean": "형/오빠가 있습니까?"
       }
     },
     {
@@ -331,7 +331,7 @@
       "example": {
         "nepali": "तपाईंको दाइ हुनुहुन्छ ?",
         "romanized": "tapaaIko daai hunuhunchha ?",
-        "korean": "형"
+        "korean": "형/오빠가 있습니까?"
       }
     },
     {
@@ -352,6 +352,266 @@
         "nepali": "ब्ल्याकबोर्डमा तपाईंको नाम लेख्नुस्",
         "romanized": "blyaakborDmaa tapaaIko naam lekhnus.",
         "korean": "칠판에 당신의 이름을 쓰세요."
+      }
+    },
+    {
+      "nepali": "ऊ",
+      "romanized": "u",
+      "korean": "he, she (그/그녀)",
+      "example": {
+        "nepali": "ऊ को हो?",
+        "romanized": "u ko ho?",
+        "korean": "그는 누구입니까?"
+      }
+    },
+    {
+      "nepali": "हुनुहुन्न",
+      "romanized": "hunuhunna",
+      "korean": "is not (안 계시다/없다 - 존칭)",
+      "example": {
+        "nepali": "दिदी पनि हुनुहुन्न",
+        "romanized": "didi pani hunuhunna.",
+        "korean": "누나도 없습니다."
+      }
+    },
+    {
+      "nepali": "दिदी",
+      "romanized": "didi",
+      "korean": "elder sister (누나/언니)",
+      "example": {
+        "nepali": "दिदी पनि हुनुहुन्न",
+        "romanized": "didi pani hunuhunna.",
+        "korean": "누나도 없습니다."
+      }
+    },
+    {
+      "nepali": "त्यहाँ",
+      "romanized": "tyahãã",
+      "korean": "there (거기/그곳에)",
+      "example": {
+        "nepali": "त्यहाँ कतिवटा कलम छन् ?",
+        "romanized": "tyahãã katiwaTaa kalam chhan ?",
+        "korean": "거기 펜이 몇 개 있습니까?"
+      }
+    },
+    {
+      "nepali": "गएको",
+      "romanized": "gaeko",
+      "korean": "went (갔다)",
+      "example": {
+        "nepali": "म बाहिर गएको",
+        "romanized": "ma baahira gaeko.",
+        "korean": "저는 밖으로 나갔습니다."
+      }
+    },
+    {
+      "nepali": "आएको",
+      "romanized": "aaeko",
+      "korean": "came (왔다)",
+      "example": {
+        "nepali": "म भित्र आएको",
+        "romanized": "ma bhitra aaeko.",
+        "korean": "나 안으로 들어왔어."
+      }
+    },
+    {
+      "nepali": "लेखेको",
+      "romanized": "lekheko",
+      "korean": "wrote (썼다)",
+      "example": {
+        "nepali": "मैले तिन लेखेको",
+        "romanized": "maile tin lekheko.",
+        "korean": "제가 3을 썼습니다."
+      }
+    },
+    {
+      "nepali": "तिमीले",
+      "romanized": "timile",
+      "korean": "you (네가 - 과거 타동사 주어)",
+      "example": {
+        "nepali": "तिमीले के गरेको ?",
+        "romanized": "timile ke gareko ?",
+        "korean": "너 무엇을 했니?"
+      }
+    },
+    {
+      "nepali": "गर",
+      "romanized": "gara",
+      "korean": "do (해라 - timi에 대한 명령형)",
+      "example": {
+        "nepali": "झ्याल बन्द गर",
+        "romanized": "jhyaal banda gara.",
+        "korean": "창문을 닫아라."
+      }
+    },
+    {
+      "nepali": "खोल",
+      "romanized": "khola",
+      "korean": "open (열어라 - timi에 대한 명령형)",
+      "example": {
+        "nepali": "झ्याल खोल",
+        "romanized": "jhyaal khola.",
+        "korean": "창문을 열어라."
+      }
+    },
+    {
+      "nepali": "जाऊ",
+      "romanized": "jaau",
+      "korean": "go (가라 - timi에 대한 명령형)",
+      "example": {
+        "nepali": "बाहिर जाऊ",
+        "romanized": "baahira jaau.",
+        "korean": "밖으로 나가라."
+      }
+    },
+    {
+      "nepali": "आऊ",
+      "romanized": "aau",
+      "korean": "come (와라 - timi에 대한 명령형)",
+      "example": {
+        "nepali": "भित्र आऊ",
+        "romanized": "bhitra aau.",
+        "korean": "안으로 들어와라."
+      }
+    },
+    {
+      "nepali": "वहाँलाई",
+      "romanized": "wahããlaai",
+      "korean": "to him/her (그분에게)",
+      "example": {
+        "nepali": "त्यो कलम वहाँलाई दिनोस्",
+        "romanized": "tyo kalam wahããlaai dinos.",
+        "korean": "그 펜을 그분에게 주세요."
+      }
+    },
+    {
+      "nepali": "तिनवटा",
+      "romanized": "tinwaTaa",
+      "korean": "three things (3개)",
+      "example": {
+        "nepali": "त्यहाँ तिनवटा कलम छन्",
+        "romanized": "tyahãã tinwaTaa kalam chhan.",
+        "korean": "거기 펜이 3개 있습니다."
+      }
+    },
+    {
+      "nepali": "कुनचाहीं",
+      "romanized": "kunchaahĩ",
+      "korean": "which one (어느 것)",
+      "example": {
+        "nepali": "तपाईंको कलम कुनचाहीं हो ?",
+        "romanized": "tapaaïko kalam kunchaahĩ ho ?",
+        "korean": "당신의 펜은 어느 것입니까?"
+      }
+    },
+    {
+      "nepali": "रातोचाहीं",
+      "romanized": "raatochaahĩ",
+      "korean": "the red one (빨간 것)",
+      "example": {
+        "nepali": "मेरो कलम रातोचाहीं हो",
+        "romanized": "mero kalam raatochaahĩ ho.",
+        "korean": "빨간 것이 제 펜입니다."
+      }
+    },
+    {
+      "nepali": "माइक",
+      "romanized": "maaik",
+      "korean": "Mike (마이크 - 인명)",
+      "example": {
+        "nepali": "मेरो नाम माइक हो",
+        "romanized": "mero naam maaik ho.",
+        "korean": "제 이름은 Mike입니다."
+      }
+    },
+    {
+      "nepali": "पिटर",
+      "romanized": "piTar",
+      "korean": "Peter (피터 - 인명)",
+      "example": {
+        "nepali": "वहाँको नाम पिटर हो",
+        "romanized": "wahããko naam piTar ho.",
+        "korean": "그분의 이름은 Peter입니다."
+      }
+    },
+    {
+      "nepali": "वाशिङटनमा",
+      "romanized": "washingTanmaa",
+      "korean": "in Washington (워싱턴에)",
+      "example": {
+        "nepali": "वाशिङटनमा",
+        "romanized": "washingTanmaa.",
+        "korean": "워싱턴 주입니다."
+      }
+    },
+    {
+      "nepali": "सियाटल",
+      "romanized": "siyaaTal",
+      "korean": "Seattle (시애틀)",
+      "example": {
+        "nepali": "सियाटल",
+        "romanized": "siyaaTal.",
+        "korean": "시애틀입니다."
+      }
+    },
+    {
+      "nepali": "राम",
+      "romanized": "raam",
+      "korean": "Ram (람 - 인명)",
+      "example": {
+        "nepali": "उसको नाम राम हो",
+        "romanized": "usko naam raam ho.",
+        "korean": "그의 이름은 Ram입니다."
+      }
+    },
+    {
+      "nepali": "सीता",
+      "romanized": "sitaa",
+      "korean": "Sita (시타 - 인명)",
+      "example": {
+        "nepali": "मेरो बहिनीको नाम सीता हो",
+        "romanized": "mero bahiniko naam sitaa ho.",
+        "korean": "제 여동생 이름은 Sita입니다."
+      }
+    },
+    {
+      "nepali": "जानुहोस्",
+      "romanized": "jaanos",
+      "korean": "go (가세요 - 존칭)",
+      "example": {
+        "nepali": "ब्ल्याकबोर्डतिर जानुहोस्",
+        "romanized": "blyaakborDnira jaanos.",
+        "korean": "칠판 근처로 가세요."
+      }
+    },
+    {
+      "nepali": "लेख्नुस्",
+      "romanized": "lekhnus",
+      "korean": "write (쓰세요)",
+      "example": {
+        "nepali": "ब्ल्याकबोर्डमा तिन लेख्नुस्",
+        "romanized": "blyaakborDmaa tin lekhnus.",
+        "korean": "칠판에 3을 쓰세요."
+      }
+    },
+    {
+      "nepali": "खल्तीमा",
+      "romanized": "khaltimaa",
+      "korean": "in the pocket (주머니에)",
+      "example": {
+        "nepali": "तपाईंको कलम खल्तीमा राख्नुस्",
+        "romanized": "tapaaïko kalam khaltimaa raakhnos.",
+        "korean": "당신의 펜을 주머니에 넣으세요."
+      }
+    },
+    {
+      "nepali": "ब्ल्याकबोर्डतिर",
+      "romanized": "blyaakborDnira",
+      "korean": "near the blackboard (칠판 근처로)",
+      "example": {
+        "nepali": "ब्ल्याकबोर्डतिर जानुहोस्",
+        "romanized": "blyaakborDnira jaanos.",
+        "korean": "칠판 근처로 가세요."
       }
     }
   ],
