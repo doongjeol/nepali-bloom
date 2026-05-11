@@ -462,7 +462,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
                   {currentWord.nepali}
                 </p>
                 {showRomanization && currentWord.romanized && (
-                  <p className="mb-4 break-keep text-lg font-bold italic text-muted-foreground sm:text-xl landscape:text-base">
+                  <p className="mb-4 max-w-full break-words px-2 pb-0.5 text-lg font-bold italic leading-relaxed text-muted-foreground sm:text-xl landscape:text-base">
                     {currentWord.romanized}
                   </p>
                 )}
@@ -481,7 +481,7 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
                   {currentWord.nepali}
                 </p>
                 {showRomanization && currentWord.romanized && (
-                  <p className="mb-4 break-keep text-xl font-bold italic text-muted-foreground sm:text-2xl landscape:text-lg">
+                  <p className="mb-4 max-w-full break-words px-2 pb-0.5 text-xl font-bold italic leading-relaxed text-muted-foreground sm:text-2xl landscape:text-lg">
                     {currentWord.romanized}
                   </p>
                 )}

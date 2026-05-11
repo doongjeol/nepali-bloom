@@ -109,7 +109,7 @@ export function FlashCard({ item, className }: { item: StudyWord; className?: st
                 <p className="text-4xl font-bold text-[#333D29] sm:text-5xl" style={{ fontFamily: "var(--font-nepali)" }}>
                   {item.word.nepali}
                 </p>
-                <p className="mt-3 text-base italic text-[#6B5D4F] sm:text-lg">
+                <p className="mt-3 max-w-full break-words px-2 pb-0.5 text-base italic leading-relaxed text-[#6B5D4F] sm:text-lg">
                   {item.word.romanized}
                 </p>
               </div>
