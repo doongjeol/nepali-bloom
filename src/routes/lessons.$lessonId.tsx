@@ -24,10 +24,11 @@ import {
 } from "@/components/ui/table";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { getDialogueAudioPath, getVocabAudioPath, getExampleAudioPath } from "@/lib/getAudioPath";
-import { ChevronDown, Pause, Play, Volume2, Car } from "lucide-react";
+import { ChevronDown, Pause, Play, Volume2, Car, Bookmark } from "lucide-react";
 import { DialogueGeneralQuiz } from "@/components/DialogueGeneralQuiz";
 import { VocabLearningSystem } from "@/components/VocabLearningSystem";
 import { DrivingModePlayer } from "@/components/DrivingModePlayer";
+import { useBookmarks } from "@/hooks/useBookmarks";
 
 export const Route = createFileRoute("/lessons/$lessonId")({
   loader: async ({ params }) => {
@@ -1115,11 +1116,14 @@ function DialogueLine({
   playDialogueIndex,
   showRomanized,
 }: DialogueLineProps) {
+  const bookmarks = useBookmarks();
   const itemId = `dial-${lessonId}-${dIdx}-${idx}`;
   const src = getDialogueAudioPath(lessonId, dIdx, idx);
   const isCurrent = audioPlayer.currentItemId === itemId;
   const isPlaying = isCurrent && audioPlayer.isPlaying;
   const isPlayingThisDialogue = playDialogueIndex === dIdx;
+  const bookmarkId = `dialogue:${lessonId}:${dIdx}:${idx}`;
+  const bookmarked = bookmarks.isBookmarked(bookmarkId);
 
 
   const handlePlay = () => {
@@ -1172,6 +1176,33 @@ function DialogueLine({
                   }}
                 >
                   {isPlaying ? <Pause className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                </button>
+                <button
+                  type="button"
+                  aria-label={bookmarked ? "북마크 해제" : "북마크"}
+                  className={cn(
+                    "inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/60 text-foreground transition-colors hover:bg-accent",
+                    bookmarked && "bg-primary/10 text-primary hover:bg-primary/20",
+                    isPlayingThisDialogue && "opacity-70",
+                  )}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    bookmarks.toggle({
+                      id: bookmarkId,
+                      kind: "dialogue",
+                      lessonId,
+                      nepali: line.nepali,
+                      romanized: line.romanized,
+                      korean: line.korean,
+                      speaker: line.speaker,
+                      dIdx,
+                      lIdx: idx,
+                      createdAt: Date.now(),
+                      updatedAt: Date.now(),
+                    });
+                  }}
+                >
+                  <Bookmark className={cn("h-4 w-4", bookmarked && "fill-current")} />
                 </button>
               </div>
 

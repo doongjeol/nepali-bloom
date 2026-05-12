@@ -19,6 +19,7 @@ import { Route as StudyQuizRouteImport } from './routes/study.quiz'
 import { Route as StudyPronunciationRouteImport } from './routes/study.pronunciation'
 import { Route as StudyDrivingRouteImport } from './routes/study.driving'
 import { Route as StudyDialoguesRouteImport } from './routes/study.dialogues'
+import { Route as StudyBookmarksRouteImport } from './routes/study.bookmarks'
 import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 
 const StudyRoute = StudyRouteImport.update({
@@ -71,6 +72,11 @@ const StudyDialoguesRoute = StudyDialoguesRouteImport.update({
   path: '/dialogues',
   getParentRoute: () => StudyRoute,
 } as any)
+const StudyBookmarksRoute = StudyBookmarksRouteImport.update({
+  id: '/bookmarks',
+  path: '/bookmarks',
+  getParentRoute: () => StudyRoute,
+} as any)
 const LessonsLessonIdRoute = LessonsLessonIdRouteImport.update({
   id: '/lessons/$lessonId',
   path: '/lessons/$lessonId',
@@ -82,6 +88,7 @@ export interface FileRoutesByFullPath {
   '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
+  '/study/bookmarks': typeof StudyBookmarksRoute
   '/study/dialogues': typeof StudyDialoguesRoute
   '/study/driving': typeof StudyDrivingRoute
   '/study/pronunciation': typeof StudyPronunciationRoute
@@ -94,6 +101,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/feed': typeof FeedRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
+  '/study/bookmarks': typeof StudyBookmarksRoute
   '/study/dialogues': typeof StudyDialoguesRoute
   '/study/driving': typeof StudyDrivingRoute
   '/study/pronunciation': typeof StudyPronunciationRoute
@@ -108,6 +116,7 @@ export interface FileRoutesById {
   '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
+  '/study/bookmarks': typeof StudyBookmarksRoute
   '/study/dialogues': typeof StudyDialoguesRoute
   '/study/driving': typeof StudyDrivingRoute
   '/study/pronunciation': typeof StudyPronunciationRoute
@@ -123,6 +132,7 @@ export interface FileRouteTypes {
     | '/feed'
     | '/study'
     | '/lessons/$lessonId'
+    | '/study/bookmarks'
     | '/study/dialogues'
     | '/study/driving'
     | '/study/pronunciation'
@@ -135,6 +145,7 @@ export interface FileRouteTypes {
     | '/'
     | '/feed'
     | '/lessons/$lessonId'
+    | '/study/bookmarks'
     | '/study/dialogues'
     | '/study/driving'
     | '/study/pronunciation'
@@ -148,6 +159,7 @@ export interface FileRouteTypes {
     | '/feed'
     | '/study'
     | '/lessons/$lessonId'
+    | '/study/bookmarks'
     | '/study/dialogues'
     | '/study/driving'
     | '/study/pronunciation'
@@ -237,6 +249,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StudyDialoguesRouteImport
       parentRoute: typeof StudyRoute
     }
+    '/study/bookmarks': {
+      id: '/study/bookmarks'
+      path: '/bookmarks'
+      fullPath: '/study/bookmarks'
+      preLoaderRoute: typeof StudyBookmarksRouteImport
+      parentRoute: typeof StudyRoute
+    }
     '/lessons/$lessonId': {
       id: '/lessons/$lessonId'
       path: '/lessons/$lessonId'
@@ -248,6 +267,7 @@ declare module '@tanstack/react-router' {
 }
 
 interface StudyRouteChildren {
+  StudyBookmarksRoute: typeof StudyBookmarksRoute
   StudyDialoguesRoute: typeof StudyDialoguesRoute
   StudyDrivingRoute: typeof StudyDrivingRoute
   StudyPronunciationRoute: typeof StudyPronunciationRoute
@@ -257,6 +277,7 @@ interface StudyRouteChildren {
 }
 
 const StudyRouteChildren: StudyRouteChildren = {
+  StudyBookmarksRoute: StudyBookmarksRoute,
   StudyDialoguesRoute: StudyDialoguesRoute,
   StudyDrivingRoute: StudyDrivingRoute,
   StudyPronunciationRoute: StudyPronunciationRoute,

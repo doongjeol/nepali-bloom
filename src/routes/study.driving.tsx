@@ -71,7 +71,7 @@ function DrivingRangePicker({ onSubmit }: { onSubmit: (s: number, e: number) => 
         학습 시작
       </button>
 
-      <Link to="/study" className="mt-6 text-sm text-white/40 hover:text-white/70 transition-colors">
+      <Link to="/study" search={{ start: undefined, end: undefined }} className="mt-6 text-sm text-white/40 hover:text-white/70 transition-colors">
         ← 범위 학습으로 돌아가기
       </Link>
     </div>
@@ -175,7 +175,7 @@ function DrivingModePage() {
     <DrivingModePlayer
       lessonId={`${start}-${end}`}
       vocabulary={allItems}
-      onClose={() => navigate({ search: {} })}
+      onClose={() => navigate({ search: { start: undefined, end: undefined } })}
     />
   );
 }

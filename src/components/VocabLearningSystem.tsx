@@ -1,11 +1,12 @@
 ﻿﻿import { useState, useEffect, useMemo } from "react";
-import { Volume2, BrainCircuit, Pause, Check, RefreshCw, HelpCircle, CheckCircle } from "lucide-react";
+import { Volume2, Pause, Check, RefreshCw, HelpCircle, CheckCircle, Bookmark } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { getVocabAudioPath } from "@/lib/getAudioPath";
 import type { UseAudioPlayerResult } from "@/hooks/useAudioPlayer";
 import { toast } from "sonner";
 import { ReviewStudyModal, type ReviewWord } from "@/components/ReviewStudyModal";
+import { useBookmarks } from "@/hooks/useBookmarks";
 
 export type VocabStatus = "known" | "unknown" | "none";
 
@@ -45,6 +46,7 @@ export function VocabLearningSystem({
   vocabulary: Vocabulary[];
   audioPlayer: UseAudioPlayerResult;
 }) {
+  const bookmarks = useBookmarks();
   const storageKey = `nepali-bloom-vocab-status-${lessonId}`;
   // SSR hydration note:
   // - The useState initializer may run on the server (no localStorage) and the empty
@@ -283,6 +285,8 @@ export function VocabLearningSystem({
           const itemId = `vocab-${actualLessonId}-${word.romanized}`;
           const src = getVocabAudioPath(actualLessonId, word.romanized);
           const isPlaying = audioPlayer.currentItemId === itemId && audioPlayer.isPlaying;
+          const bookmarkId = `vocab:${actualLessonId}:${word.romanized}`;
+          const bookmarked = bookmarks.isBookmarked(bookmarkId);
 
           return (
             <div
@@ -293,16 +297,47 @@ export function VocabLearningSystem({
                 isKnown ? "border-[#DDE3D2] bg-[#E8EDDF]" : "bg-card hover:shadow-md"
               )}
             >
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  void audioPlayer.play(itemId, src, { silentError: true });
-                }}
-                className="absolute right-3 top-3 z-10 inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/60 text-foreground transition-colors hover:bg-accent"
-              >
-                {isPlaying ? <Pause className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-              </button>
+              <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    bookmarks.toggle({
+                      id: bookmarkId,
+                      kind: "vocab",
+                      lessonId: actualLessonId,
+                      nepali: word.nepali,
+                      romanized: word.romanized,
+                      korean: word.korean,
+                      createdAt: Date.now(),
+                      updatedAt: Date.now(),
+                    });
+                    toast(bookmarked ? "북마크에서 제거했어요." : "북마크에 저장했어요.", {
+                      duration: 1500,
+                      position: "top-center",
+                      className: "text-center",
+                    });
+                  }}
+                  className={cn(
+                    "inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/60 text-foreground transition-colors hover:bg-accent",
+                    bookmarked && "bg-primary/10 text-primary hover:bg-primary/20",
+                  )}
+                  aria-label={bookmarked ? "북마크 해제" : "북마크"}
+                >
+                  <Bookmark className={cn("h-4 w-4", bookmarked && "fill-current")} />
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    void audioPlayer.play(itemId, src, { silentError: true });
+                  }}
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-background/60 text-foreground transition-colors hover:bg-accent"
+                  aria-label="단어 음성 재생"
+                >
+                  {isPlaying ? <Pause className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
+                </button>
+              </div>
 
               {isKnown && (
                 <div className="absolute -right-2 -top-2 z-10 animate-in zoom-in duration-300">
