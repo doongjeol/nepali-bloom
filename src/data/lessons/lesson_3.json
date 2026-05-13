@@ -251,7 +251,7 @@
       "example": {
         "nepali": "मेरो कलम रातोचाहिँ हो",
         "romanized": "mero kalam raatochaahi ho.",
-        "korean": "빨간 것이 제 펜입니다."
+        "korean": "제 펜은 빨간 것입니다."
       }
     },
     {
@@ -261,7 +261,7 @@
       "example": {
         "nepali": "तपाईंको शहरको नाम के हो ?",
         "romanized": "tapaaIko shaharko naam ke ho ?",
-        "korean": "도시 이름이 무엇입니까?"
+        "korean": "당신의 도시 이름이 무엇입니까?"
       }
     },
     {
@@ -1179,13 +1179,13 @@
           "speaker": "B",
           "nepali": "मैले कलम मेरो खल्तीमा राखेको",
           "romanized": "maile kalam mero khaltimaa raakheko.",
-          "korean": "제가 제 주머니에 펜을 넣었습니다."
+          "korean": "제가 펜을 제 주머니에 넣었습니다."
         },
         {
           "speaker": "A",
           "nepali": "तपाईंले कसको कलम खल्तीमा राखेको ?",
           "romanized": "tapaaïle kasko kalam khaltimaa raakheko ?",
-          "korean": "누구의 펜을 주머니에 넣었습니까?"
+          "korean": "당신은 누구의 펜을 주머니에 넣었습니까?"
         },
         {
           "speaker": "B",
