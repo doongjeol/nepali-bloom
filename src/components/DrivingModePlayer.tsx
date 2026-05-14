@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDrivingMode, type VocabularyItem } from "@/hooks/useDrivingMode";
-import { Car, ChevronLeft, ChevronRight, Pause, Play, X } from "lucide-react";
+import { Bookmark, Car, ChevronLeft, ChevronRight, Pause, Play, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useBookmarks } from "@/hooks/useBookmarks";
+import type { BookmarkItem } from "@/lib/bookmarks";
 
 interface DrivingModePlayerProps {
   lessonId: string | number;
@@ -21,6 +23,56 @@ function formatTime(ms: number) {
 
 function getWordId(lessonId: string | number, v: VocabularyItem) {
   return `${v.lessonId ?? lessonId}::${v.romanized || v.nepali || v.korean}`;
+}
+
+function getDrivingBookmarkId(lessonId: string | number, v: VocabularyItem): string | null {
+  const baseLessonId = v.lessonId ?? lessonId;
+  const type = v.type || "vocab";
+  if (type === "dialogue") {
+    if (typeof v.dIdx !== "number" || typeof v.lIdx !== "number") return null;
+    return `dialogue:${baseLessonId}:${v.dIdx}:${v.lIdx}`;
+  }
+  if (!v.romanized) return null;
+  return `vocab:${baseLessonId}:${v.romanized}`;
+}
+
+function buildDrivingBookmarkItem(lessonId: string | number, v: VocabularyItem): BookmarkItem | null {
+  const id = getDrivingBookmarkId(lessonId, v);
+  if (!id) return null;
+
+  const baseLessonId = v.lessonId ?? lessonId;
+  const now = Date.now();
+  const type = v.type || "vocab";
+
+  if (type === "dialogue") {
+    const match = typeof v.korean === "string" ? v.korean.match(/^\[(.*?)\]\s*/) : null;
+    const speaker = match?.[1] ?? undefined;
+    const korean = typeof v.korean === "string" ? v.korean.replace(/^\[.*?\]\s*/, "") : v.korean;
+    return {
+      id,
+      kind: "dialogue",
+      lessonId: baseLessonId,
+      createdAt: now,
+      updatedAt: now,
+      nepali: v.nepali,
+      korean,
+      romanized: v.romanized,
+      speaker,
+      dIdx: v.dIdx,
+      lIdx: v.lIdx,
+    };
+  }
+
+  return {
+    id,
+    kind: "vocab",
+    lessonId: baseLessonId,
+    createdAt: now,
+    updatedAt: now,
+    nepali: v.nepali,
+    korean: v.korean,
+    romanized: v.romanized,
+  };
 }
 
 function unlockBrowserAutoplayBridge() {
@@ -47,6 +99,7 @@ function unlockBrowserAutoplayBridge() {
 }
 
 export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingModePlayerProps) {
+  const bookmarks = useBookmarks();
   // displayData
   const [displayData, setDisplayData] = useState<VocabularyItem[]>([]);
   const [failedList, setFailedList] = useState<Array<VocabularyItem & { id: string }>>([]);
@@ -331,6 +384,17 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   const dialogueKorean =
     studyMode === "dialogue" && currentWord?.korean ? currentWord.korean.replace(/^\[.*?\]\s*/, "") : null;
 
+  const bookmarkId = useMemo(() => (currentWord ? getDrivingBookmarkId(lessonId, currentWord) : null), [currentWord, lessonId]);
+  const isBookmarked = bookmarkId ? bookmarks.isBookmarked(bookmarkId) : false;
+  const canBookmark = Boolean(currentWord && bookmarkId);
+
+  const toggleBookmark = useCallback(() => {
+    if (!currentWord) return;
+    const item = buildDrivingBookmarkItem(lessonId, currentWord);
+    if (!item) return;
+    bookmarks.toggle(item);
+  }, [bookmarks, currentWord, lessonId]);
+
   return (
     <div
       className="fixed inset-0 z-[100] h-[100dvh] overflow-hidden bg-background"
@@ -379,6 +443,19 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
             <span className="text-base">드라이브</span>
           </div>
           <div className="flex items-center gap-2">
+            <button
+              type="button"
+              onClick={toggleBookmark}
+              disabled={!canBookmark}
+              className={cn(
+                "pointer-events-auto rounded-full bg-secondary/80 p-2 text-secondary-foreground backdrop-blur-sm transition-colors",
+                canBookmark ? "hover:bg-accent" : "opacity-50",
+              )}
+              aria-label={isBookmarked ? "북마크 해제" : "북마크"}
+              title={isBookmarked ? "북마크 해제" : "북마크"}
+            >
+              <Bookmark className={cn("h-5 w-5", isBookmarked && "fill-current")} />
+            </button>
             <button
               type="button"
               onClick={() => setShowRomanization(!showRomanization)}
