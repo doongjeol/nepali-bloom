@@ -60,6 +60,9 @@ function BookmarksPage() {
 
   const total = mode === "quiz" ? order.length : filtered.length;
   const current = mode === "quiz" ? filtered[order[idx] ?? 0] : null;
+  const isQuizFinished =
+    mode === "quiz" && total > 0 && answered.length === total && answered.every((v) => v !== null);
+  const wrongCount = isQuizFinished ? answered.filter((v) => v === false).length : 0;
 
   const startQuiz = () => {
     const indices = shuffle(filtered.map((_, i) => i));
@@ -71,6 +74,15 @@ function BookmarksPage() {
     setMode("quiz");
   };
 
+  const startQuizWithOrder = (nextOrder: number[]) => {
+    setOrder(nextOrder);
+    setIdx(0);
+    setRevealed(false);
+    setScore(0);
+    setAnswered(Array(nextOrder.length).fill(null));
+    setMode("quiz");
+  };
+
   const exitQuiz = () => {
     setMode("list");
     setOrder([]);
@@ -78,6 +90,13 @@ function BookmarksPage() {
     setRevealed(false);
     setScore(0);
     setAnswered([]);
+  };
+
+  const retryWrongOnly = () => {
+    if (!isQuizFinished) return;
+    const wrongOrder = order.filter((_, pos) => answered[pos] === false);
+    if (wrongOrder.length === 0) return;
+    startQuizWithOrder(wrongOrder);
   };
 
   const mark = (isCorrect: boolean) => {
@@ -169,6 +188,35 @@ function BookmarksPage() {
             <Button onClick={startQuiz} disabled={filtered.length === 0} className="rounded-xl">
               퀴즈로 복습
             </Button>
+          ) : isQuizFinished ? (
+            <div className="rounded-2xl border bg-card p-6 sm:p-8 shadow-sm">
+              <div className="text-center">
+                <div className="text-sm font-semibold text-muted-foreground">결과</div>
+                <div className="mt-2 text-2xl sm:text-3xl font-black text-foreground">
+                  {score} / {total}
+                </div>
+                <div className="mt-1 text-sm text-muted-foreground">오답 {wrongCount}개</div>
+              </div>
+
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <Button
+                  onClick={retryWrongOnly}
+                  disabled={wrongCount === 0}
+                  className="h-12 rounded-2xl bg-[#6B7A5A] text-white hover:bg-[#5E6C4F]"
+                >
+                  틀린 것만 다시하기
+                </Button>
+                <Button variant="secondary" onClick={startQuiz} className="h-12 rounded-2xl">
+                  전체 다시하기
+                </Button>
+              </div>
+
+              <div className="mt-3 flex justify-center">
+                <Button variant="outline" onClick={exitQuiz} className="rounded-xl">
+                  목록으로
+                </Button>
+              </div>
+            </div>
           ) : (
             <Button variant="secondary" onClick={exitQuiz} className="rounded-xl">
               목록으로
