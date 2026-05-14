@@ -99,7 +99,7 @@ function Index() {
 
           <Link
             to="/study/driving"
-            search={{ start: undefined, end: undefined }}
+            search={{ source: "range", start: undefined, end: undefined }}
             className="flex items-center gap-4 rounded-xl border border-amber-500/30 bg-[#1a1a2e] p-4 shadow-sm transition-all hover:shadow-md active:scale-[0.99] sm:flex-col sm:justify-center sm:text-center sm:p-6"
           >
             <div className="text-xl sm:mb-1">🚗</div>

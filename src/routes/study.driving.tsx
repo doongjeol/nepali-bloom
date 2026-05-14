@@ -3,6 +3,8 @@ import { useMemo, useState } from "react";
 import { useLessonRangeData } from "@/hooks/useLessonRangeData";
 import { MAX_LESSON_ID, MIN_LESSON_ID } from "@/data/lessonsMeta";
 import { DrivingModePlayer } from "@/components/DrivingModePlayer";
+import { useBookmarks } from "@/hooks/useBookmarks";
+import type { VocabularyItem } from "@/hooks/useDrivingMode";
 
 const MIN = MIN_LESSON_ID;
 const MAX = MAX_LESSON_ID;
@@ -11,24 +13,37 @@ export const Route = createFileRoute("/study/driving")({
   validateSearch: (search: Record<string, unknown>) => {
     const s = typeof search.start === "string" || typeof search.start === "number" ? Number(search.start) : undefined;
     const e = typeof search.end === "string" || typeof search.end === "number" ? Number(search.end) : undefined;
+    const source = search.source === "bookmarks" ? "bookmarks" : "range";
     return {
       start: Number.isFinite(s) ? s : undefined,
       end: Number.isFinite(e) ? e : undefined,
+      source,
     };
   },
   component: DrivingModePage,
 });
 
 /* ─── Range Picker (shown before learning starts) ─── */
-function DrivingRangePicker({ onSubmit }: { onSubmit: (s: number, e: number) => void }) {
+function DrivingRangePicker({
+  onSubmitRange,
+  onSubmitBookmarks,
+}: {
+  onSubmitRange: (s: number, e: number) => void;
+  onSubmitBookmarks: () => void;
+}) {
+  const [source, setSource] = useState<"range" | "bookmarks">("range");
   const [startText, setStartText] = useState("1");
   const [endText, setEndText] = useState("5");
 
   const submit = () => {
+    if (source === "bookmarks") {
+      onSubmitBookmarks();
+      return;
+    }
     const s = Number.parseInt(startText, 10);
     const e = Number.parseInt(endText, 10);
     if (!Number.isFinite(s) || !Number.isFinite(e) || s < MIN || e > MAX || s > e) return;
-    onSubmit(s, e);
+    onSubmitRange(s, e);
   };
 
   return (
@@ -36,7 +51,29 @@ function DrivingRangePicker({ onSubmit }: { onSubmit: (s: number, e: number) => 
       <h1 className="mb-2 text-3xl font-extrabold tracking-tight">🚗 운전 모드</h1>
       <p className="mb-8 text-base text-white/60">학습할 레슨 범위를 선택하세요</p>
 
-      <div className="grid w-full max-w-xs grid-cols-2 gap-4">
+      <div className="mb-4 grid w-full max-w-xs grid-cols-2 gap-2 rounded-2xl border border-white/20 bg-white/5 p-2">
+        <button
+          type="button"
+          onClick={() => setSource("range")}
+          className={`rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+            source === "range" ? "bg-white text-[#0f1117]" : "text-white/70 hover:text-white"
+          }`}
+        >
+          범위
+        </button>
+        <button
+          type="button"
+          onClick={() => setSource("bookmarks")}
+          className={`rounded-xl px-3 py-2 text-sm font-semibold transition-colors ${
+            source === "bookmarks" ? "bg-white text-[#0f1117]" : "text-white/70 hover:text-white"
+          }`}
+        >
+          북마크
+        </button>
+      </div>
+
+      {source === "range" ? (
+        <div className="grid w-full max-w-xs grid-cols-2 gap-4">
         <label className="space-y-1.5">
           <span className="text-sm font-medium text-white/50">시작</span>
           <input
@@ -61,7 +98,12 @@ function DrivingRangePicker({ onSubmit }: { onSubmit: (s: number, e: number) => 
             className="w-full rounded-2xl border border-white/20 bg-white/10 px-4 py-3 text-center text-2xl font-bold text-white outline-none focus:ring-2 focus:ring-white/40"
           />
         </label>
-      </div>
+        </div>
+      ) : (
+        <div className="w-full max-w-xs rounded-2xl border border-white/20 bg-white/5 p-4 text-center text-sm text-white/70">
+          저장한 북마크(단어/대화문)만 모아서 학습합니다.
+        </div>
+      )}
 
       <button
         type="button"
@@ -107,13 +149,40 @@ function parseGrammarCards(grammar: any[]) {
 function DrivingModePage() {
   const navigate = Route.useNavigate();
   const search = Route.useSearch();
+  const source = search.source;
   const start = search.start;
   const end = search.end;
-  const range = typeof start === "number" && typeof end === "number" ? { start, end } : null;
+  const range = source === "range" && typeof start === "number" && typeof end === "number" ? { start, end } : null;
+
+  const bookmarks = useBookmarks();
 
   const { isLoading, data } = useLessonRangeData(range, { minLessonId: MIN, maxLessonId: MAX });
 
+  const bookmarkItems = useMemo<VocabularyItem[]>(() => {
+    return bookmarks.list.map((b) => {
+      if (b.kind === "dialogue") {
+        return {
+          nepali: b.nepali,
+          romanized: b.romanized ?? "",
+          korean: b.speaker ? `[${b.speaker}] ${b.korean}` : b.korean,
+          lessonId: b.lessonId,
+          type: "dialogue",
+          dIdx: b.dIdx,
+          lIdx: b.lIdx,
+        };
+      }
+      return {
+        nepali: b.nepali,
+        romanized: b.romanized ?? "",
+        korean: b.korean,
+        lessonId: b.lessonId,
+        type: "vocab",
+      };
+    });
+  }, [bookmarks.list]);
+
   const allItems = useMemo(() => {
+    if (source === "bookmarks") return bookmarkItems;
     if (!data?.lessons) return [];
     const items: any[] = [];
 
@@ -148,19 +217,38 @@ function DrivingModePage() {
     });
 
     return items;
-  }, [data?.lessons]);
+  }, [bookmarkItems, data?.lessons, source]);
 
   // If no range selected, show range picker
-  if (!range) {
+  if (source === "range" && !range) {
     return (
       <DrivingRangePicker
-        onSubmit={(s, e) => navigate({ search: { start: s, end: e } })}
+        onSubmitRange={(s, e) => navigate({ search: { source: "range", start: s, end: e } })}
+        onSubmitBookmarks={() => navigate({ search: { source: "bookmarks", start: undefined, end: undefined } })}
       />
     );
   }
 
+  if (source === "bookmarks" && bookmarkItems.length === 0) {
+    return (
+      <div className="flex min-h-[100dvh] items-center justify-center bg-[#0f1117] text-white px-6">
+        <div className="w-full max-w-xs text-center">
+          <div className="text-2xl font-extrabold">북마크가 없어요</div>
+          <p className="mt-2 text-sm text-white/60">학습 화면에서 북마크를 저장한 뒤 다시 시도해 주세요.</p>
+          <button
+            type="button"
+            onClick={() => navigate({ search: { source: "range", start: undefined, end: undefined } })}
+            className="mt-6 w-full rounded-2xl bg-white px-6 py-4 text-base font-bold text-[#0f1117] active:scale-95 transition-transform"
+          >
+            범위로 학습하기
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // Loading
-  if (isLoading || !data) {
+  if (source === "range" && (isLoading || !data)) {
     return (
       <div className="flex min-h-[100dvh] items-center justify-center bg-[#0f1117] text-white">
         <div className="text-center">
@@ -173,9 +261,9 @@ function DrivingModePage() {
 
   return (
     <DrivingModePlayer
-      lessonId={`${start}-${end}`}
+      lessonId={source === "bookmarks" ? "bookmarks" : `${start}-${end}`}
       vocabulary={allItems}
-      onClose={() => navigate({ search: { start: undefined, end: undefined } })}
+      onClose={() => navigate({ search: { source: "range", start: undefined, end: undefined } })}
     />
   );
 }
