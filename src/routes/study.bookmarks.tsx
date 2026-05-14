@@ -1,12 +1,12 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Header } from "@/components/Header";
 import { useBookmarks } from "@/hooks/useBookmarks";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
-import { Bookmark, Pause, Play, Volume2 } from "lucide-react";
+import { Bookmark, Eye, EyeOff, Pause, Play, Volume2 } from "lucide-react";
 import { type BookmarkItem } from "@/lib/bookmarks";
 
 export const Route = createFileRoute("/study/bookmarks")({
@@ -46,6 +46,9 @@ function BookmarksPage() {
 
   const [kind, setKind] = useState<"all" | "vocab" | "dialogue">("all");
   const [mode, setMode] = useState<"list" | "quiz">("list");
+  const romanizedPrefStorageKey = "nepali-bloom-bookmarks-hide-romanized-v1";
+  const [hideRomanized, setHideRomanized] = useState(false);
+  const [hasLoadedRomanizedPref, setHasLoadedRomanizedPref] = useState(false);
 
   const filtered = useMemo(() => {
     if (kind === "all") return bookmarks.list;
@@ -131,6 +134,34 @@ function BookmarksPage() {
     setRevealed(false);
   };
 
+  // SSR hydration note:
+  // - The useState initializer may run on the server (no localStorage) and the empty
+  //   value can be locked in on refresh.
+  // - Persisting immediately on mount can overwrite existing saved data.
+  // Load after mount and persist only after that.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    setHasLoadedRomanizedPref(false);
+    try {
+      const saved = localStorage.getItem(romanizedPrefStorageKey);
+      setHideRomanized(saved === "1");
+    } catch {
+      setHideRomanized(false);
+    } finally {
+      setHasLoadedRomanizedPref(true);
+    }
+  }, [romanizedPrefStorageKey]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (!hasLoadedRomanizedPref) return;
+    try {
+      localStorage.setItem(romanizedPrefStorageKey, hideRomanized ? "1" : "0");
+    } catch {
+      // ignore
+    }
+  }, [hideRomanized, hasLoadedRomanizedPref, romanizedPrefStorageKey]);
+
   return (
     <div className="min-h-screen pb-16 sm:pb-0">
       <Header />
@@ -151,37 +182,44 @@ function BookmarksPage() {
         </div>
 
         <div className="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex rounded-xl bg-secondary p-1">
-            <button
-              type="button"
-              onClick={() => setKind("all")}
-              className={cn(
-                "flex-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm",
-                kind === "all" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              전체
-            </button>
-            <button
-              type="button"
-              onClick={() => setKind("vocab")}
-              className={cn(
-                "flex-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm",
-                kind === "vocab" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              단어
-            </button>
-            <button
-              type="button"
-              onClick={() => setKind("dialogue")}
-              className={cn(
-                "flex-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm",
-                kind === "dialogue" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              대화문
-            </button>
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
+            <div className="flex rounded-xl bg-secondary p-1">
+              <button
+                type="button"
+                onClick={() => setKind("all")}
+                className={cn(
+                  "flex-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm",
+                  kind === "all" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                전체
+              </button>
+              <button
+                type="button"
+                onClick={() => setKind("vocab")}
+                className={cn(
+                  "flex-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm",
+                  kind === "vocab" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                단어
+              </button>
+              <button
+                type="button"
+                onClick={() => setKind("dialogue")}
+                className={cn(
+                  "flex-1 whitespace-nowrap rounded-lg px-3 py-2 text-xs font-semibold transition-all sm:text-sm",
+                  kind === "dialogue" ? "bg-background text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground",
+                )}
+              >
+                대화문
+              </button>
+            </div>
+
+            <Button variant="secondary" onClick={() => setHideRomanized((v) => !v)} className="rounded-xl gap-2">
+              {hideRomanized ? <Eye className="h-4 w-4" /> : <EyeOff className="h-4 w-4" />}
+              로마자 {hideRomanized ? "표시" : "숨기기"}
+            </Button>
           </div>
 
           {mode === "list" ? (
@@ -259,7 +297,7 @@ function BookmarksPage() {
                         <div className="mt-1 text-2xl sm:text-3xl font-black text-foreground break-keep" style={{ fontFamily: "var(--font-nepali)" }}>
                           {current.nepali}
                         </div>
-                        {current.romanized ? (
+                        {!hideRomanized && current.romanized ? (
                           <div className="mt-1 text-sm italic text-muted-foreground">{current.romanized}</div>
                         ) : null}
                       </div>
@@ -350,7 +388,9 @@ function BookmarksPage() {
                       <div className="mt-1 text-sm text-foreground break-keep" style={{ fontFamily: "var(--font-nepali)" }}>
                         {b.nepali}
                       </div>
-                      {b.romanized ? <div className="mt-0.5 text-xs italic text-muted-foreground">{b.romanized}</div> : null}
+                      {!hideRomanized && b.romanized ? (
+                        <div className="mt-0.5 text-xs italic text-muted-foreground">{b.romanized}</div>
+                      ) : null}
                     </div>
                     <div className="flex shrink-0 items-center gap-2">
                       {canPlay && src ? (
