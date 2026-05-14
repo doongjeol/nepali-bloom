@@ -212,6 +212,18 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
     setIsFinished(false);
   }, [currentWordIndex, failedList, stop]);
 
+  // Keep all hooks above conditional returns; bookmark calculations don't require hooks.
+  const bookmarkId = currentWord ? getDrivingBookmarkId(lessonId, currentWord) : null;
+  const isBookmarked = bookmarkId ? bookmarks.isBookmarked(bookmarkId) : false;
+  const canBookmark = Boolean(currentWord && bookmarkId);
+
+  const toggleBookmark = () => {
+    if (!currentWord) return;
+    const item = buildDrivingBookmarkItem(lessonId, currentWord);
+    if (!item) return;
+    bookmarks.toggle(item);
+  };
+
   // Setup (문법 UI 제거, 단어/예문 중심)
   if (studyMode === "select") {
     return (
@@ -383,17 +395,6 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
   const dialogueKorean =
     studyMode === "dialogue" && currentWord?.korean ? currentWord.korean.replace(/^\[.*?\]\s*/, "") : null;
-
-  const bookmarkId = useMemo(() => (currentWord ? getDrivingBookmarkId(lessonId, currentWord) : null), [currentWord, lessonId]);
-  const isBookmarked = bookmarkId ? bookmarks.isBookmarked(bookmarkId) : false;
-  const canBookmark = Boolean(currentWord && bookmarkId);
-
-  const toggleBookmark = useCallback(() => {
-    if (!currentWord) return;
-    const item = buildDrivingBookmarkItem(lessonId, currentWord);
-    if (!item) return;
-    bookmarks.toggle(item);
-  }, [bookmarks, currentWord, lessonId]);
 
   return (
     <div
