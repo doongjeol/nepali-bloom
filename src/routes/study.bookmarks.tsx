@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import { getDialogueAudioPath, getVocabAudioPath } from "@/lib/getAudioPath";
 import { useAudioPlayer } from "@/hooks/useAudioPlayer";
 import { Bookmark, Pause, Play, Volume2 } from "lucide-react";
+import { type BookmarkItem } from "@/lib/bookmarks";
 
 export const Route = createFileRoute("/study/bookmarks")({
   head: () => ({
@@ -25,6 +26,18 @@ function shuffle<T>(arr: T[]) {
     [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
+}
+
+function getBookmarkAudio(item: BookmarkItem) {
+  const itemId = `bm-${item.id}`;
+  const src =
+    item.kind === "vocab"
+      ? getVocabAudioPath(item.lessonId, item.romanized ?? "")
+      : typeof item.dIdx === "number" && typeof item.lIdx === "number"
+        ? getDialogueAudioPath(item.lessonId, item.dIdx, item.lIdx)
+        : null;
+  const canPlay = Boolean(src && (item.kind !== "vocab" || (item.romanized ?? "").length > 0));
+  return { itemId, src, canPlay };
 }
 
 function BookmarksPage() {
@@ -68,6 +81,12 @@ function BookmarksPage() {
   };
 
   const mark = (isCorrect: boolean) => {
+    if (isCorrect && current) {
+      const { itemId, src, canPlay } = getBookmarkAudio(current);
+      if (canPlay && src) {
+        void audioPlayer.play(itemId, src, { silentError: true });
+      }
+    }
     setAnswered((prev) => {
       const next = prev.length === order.length ? [...prev] : Array(order.length).fill(null);
       const prevVal = next[idx] ?? null;
@@ -197,14 +216,7 @@ function BookmarksPage() {
                         ) : null}
                       </div>
                       {(() => {
-                        const itemId = `bm-${current.id}`;
-                        const src =
-                          current.kind === "vocab"
-                            ? getVocabAudioPath(current.lessonId, current.romanized ?? "")
-                            : typeof current.dIdx === "number" && typeof current.lIdx === "number"
-                              ? getDialogueAudioPath(current.lessonId, current.dIdx, current.lIdx)
-                              : null;
-                        const canPlay = Boolean(src && (current.kind !== "vocab" || (current.romanized ?? "").length > 0));
+                        const { itemId, src, canPlay } = getBookmarkAudio(current);
                         const isPlaying = audioPlayer.currentItemId === itemId && audioPlayer.isPlaying;
                         if (!canPlay) return null;
                         return (
@@ -277,15 +289,7 @@ function BookmarksPage() {
         ) : (
           <div className="space-y-2 sm:space-y-3">
             {filtered.map((b) => {
-              const itemId = `bm-list-${b.id}`;
-              const src =
-                b.kind === "vocab"
-                  ? b.romanized
-                    ? getVocabAudioPath(b.lessonId, b.romanized)
-                    : null
-                  : typeof b.dIdx === "number" && typeof b.lIdx === "number"
-                    ? getDialogueAudioPath(b.lessonId, b.dIdx, b.lIdx)
-                    : null;
+              const { itemId, src, canPlay } = getBookmarkAudio(b);
               const isPlaying = audioPlayer.currentItemId === itemId && audioPlayer.isPlaying;
               return (
                 <div key={b.id} className="rounded-2xl border bg-card p-4 sm:p-5 shadow-sm">
@@ -301,7 +305,7 @@ function BookmarksPage() {
                       {b.romanized ? <div className="mt-0.5 text-xs italic text-muted-foreground">{b.romanized}</div> : null}
                     </div>
                     <div className="flex shrink-0 items-center gap-2">
-                      {src ? (
+                      {canPlay && src ? (
                         <button
                           type="button"
                           onClick={() => src && void audioPlayer.play(itemId, src, { silentError: true })}
@@ -330,4 +334,3 @@ function BookmarksPage() {
     </div>
   );
 }
-
