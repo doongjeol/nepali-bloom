@@ -515,66 +515,6 @@
       }
     },
     {
-      "nepali": "माइक",
-      "romanized": "maaik",
-      "korean": "Mike (마이크 - 인명)",
-      "example": {
-        "nepali": "मेरो नाम माइक हो",
-        "romanized": "mero naam maaik ho.",
-        "korean": "제 이름은 Mike입니다."
-      }
-    },
-    {
-      "nepali": "पिटर",
-      "romanized": "piTar",
-      "korean": "Peter (피터 - 인명)",
-      "example": {
-        "nepali": "वहाँको नाम पिटर हो",
-        "romanized": "wahããko naam piTar ho.",
-        "korean": "그분의 이름은 Peter입니다."
-      }
-    },
-    {
-      "nepali": "वाशिङटनमा",
-      "romanized": "washingTanmaa",
-      "korean": "in Washington (워싱턴에)",
-      "example": {
-        "nepali": "वाशिङटनमा",
-        "romanized": "washingTanmaa.",
-        "korean": "워싱턴 주입니다."
-      }
-    },
-    {
-      "nepali": "सियाटल",
-      "romanized": "siyaaTal",
-      "korean": "Seattle (시애틀)",
-      "example": {
-        "nepali": "सियाटल",
-        "romanized": "siyaaTal.",
-        "korean": "시애틀입니다."
-      }
-    },
-    {
-      "nepali": "राम",
-      "romanized": "raam",
-      "korean": "Ram (람 - 인명)",
-      "example": {
-        "nepali": "उसको नाम राम हो",
-        "romanized": "usko naam raam ho.",
-        "korean": "그의 이름은 Ram입니다."
-      }
-    },
-    {
-      "nepali": "सीता",
-      "romanized": "sitaa",
-      "korean": "Sita (시타 - 인명)",
-      "example": {
-        "nepali": "मेरो बहिनीको नाम सीता हो",
-        "romanized": "mero bahiniko naam sitaa ho.",
-        "korean": "제 여동생 이름은 Sita입니다."
-      }
-    },
-    {
       "nepali": "जानुहोस्",
       "romanized": "jaanos",
       "korean": "go (가세요 - 존칭)",
