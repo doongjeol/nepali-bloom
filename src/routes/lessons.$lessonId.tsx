@@ -1039,6 +1039,7 @@ function LessonDetailPage() {
                             audioPlayer={audioPlayer}
                             playDialogueIndex={playDialogueIndex}
                             showRomanized={showRomanized}
+                            lessonVocab={lesson.vocabulary}
                           />
                         );
                       })}
@@ -1105,6 +1106,7 @@ type DialogueLineProps = {
   audioPlayer: ReturnType<typeof useAudioPlayer>;
   playDialogueIndex: number | null;
   showRomanized: boolean;
+  lessonVocab: Array<{ nepali: string; romanized: string; korean: string }>;
 };
 
 function DialogueLine({
@@ -1115,8 +1117,10 @@ function DialogueLine({
   audioPlayer,
   playDialogueIndex,
   showRomanized,
+  lessonVocab,
 }: DialogueLineProps) {
   const bookmarks = useBookmarks();
+  const [showWordMeanings, setShowWordMeanings] = useState(false);
   const itemId = `dial-${lessonId}-${dIdx}-${idx}`;
   const src = getDialogueAudioPath(lessonId, dIdx, idx);
   const isCurrent = audioPlayer.currentItemId === itemId;
@@ -1124,6 +1128,19 @@ function DialogueLine({
   const isPlayingThisDialogue = playDialogueIndex === dIdx;
   const bookmarkId = `dialogue:${lessonId}:${dIdx}:${idx}`;
   const bookmarked = bookmarks.isBookmarked(bookmarkId);
+
+  const matchedVocab = useMemo(() => {
+    const sentence = (line.nepali ?? "").normalize("NFC");
+    if (!sentence || lessonVocab.length === 0) return [];
+    const hits = lessonVocab.filter((v) => {
+      const needle = (v.nepali ?? "").normalize("NFC").trim();
+      if (!needle) return false;
+      // Basic substring match; works well for Nepali script tokens in this dataset.
+      return sentence.includes(needle);
+    });
+    // Avoid overly long panels: show up to 8 most relevant (longest nepali first).
+    return hits.sort((a, b) => (b.nepali?.length ?? 0) - (a.nepali?.length ?? 0)).slice(0, 8);
+  }, [lessonVocab, line.nepali]);
 
 
   const handlePlay = () => {
@@ -1222,9 +1239,39 @@ function DialogueLine({
                 <p className="mt-1.5 text-sm text-foreground sm:mt-2 sm:text-base">
                   {line.korean}
                 </p>
+
+                {showWordMeanings && matchedVocab.length > 0 && (
+                  <div className="mt-3 rounded-xl border border-border/50 bg-background/60 p-3 text-left">
+                    <div className="mb-2 text-[11px] font-bold text-muted-foreground">단어 뜻</div>
+                    <div className="space-y-1.5">
+                      {matchedVocab.map((v) => (
+                        <div key={`${v.nepali}-${v.romanized}`} className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                          <span className="font-semibold text-foreground" style={{ fontFamily: "var(--font-nepali)" }}>
+                            {v.nepali}
+                          </span>
+                          <span className="text-[11px] italic text-muted-foreground">({v.romanized})</span>
+                          <span className="text-xs text-foreground/80">- {v.korean}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
+
+          {matchedVocab.length > 0 && (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowWordMeanings((p) => !p);
+              }}
+              className="self-start text-[11px] font-semibold text-muted-foreground underline-offset-4 hover:underline"
+            >
+              {showWordMeanings ? "단어 뜻 숨기기" : "단어 뜻 보기"}
+            </button>
+          )}
         </div>
       </div>
     </div>

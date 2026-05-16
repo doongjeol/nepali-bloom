@@ -31,6 +31,10 @@
     ```
     --input audio_raw/lesson1_raw.mp3 --output raw/lesson1_split_done --start-index 0 --pad 1 --silence-only --min-silence-len 500 --silence-thresh -38 --keep-silence 150 --ffmpeg "C:\util\ffmpeg-8.1.1-full_build\bin\ffmpeg.exe" --ffprobe "C:\util\ffmpeg-8.1.1-full_build\bin\ffprobe.exe"
     ```
+    맥 로컬
+    ```
+    --input audio_raw/lesson1_raw.mp3 --output raw/lesson1_split_done --start-index 0 --pad 1 --silence-only --min-silence-len 500 --silence-thresh -38 --keep-silence 150 --ffmpeg "/opt/homebrew/bin/ffmpeg" --ffprobe "/opt/homebrew/bin/ffprobe"
+    ```
 *   **조정 팁**:
     *   문장이 중간에 잘림 ➔ `--min-silence-len`을 **700**으로 상향
     *   두 문장이 합쳐짐 ➔ `--min-silence-len`을 **400**으로 하향
