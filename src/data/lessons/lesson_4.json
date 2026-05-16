@@ -41,7 +41,21 @@
     { "nepali": "साथी", "romanized": "saathi", "korean": "친구 (friend)", "example": { "nepali": "म र मेरो साथी ।", "romanized": "ma ra mero saathi.", "korean": "저랑 제 친구요." } },
     { "nepali": "सवा पाँच", "romanized": "sawaa paach", "korean": "5시 15분 (quarter past five)", "example": { "nepali": "सवा पाँच बजेसम्म ।", "romanized": "sawaa pããch bajesamma .", "korean": "5시 15분까지요." } },
     { "nepali": "सिनेमा", "romanized": "sinemaa", "korean": "영화 (movie)", "example": { "nepali": "सिनेमा हेर्न जाने ।", "romanized": "sinemaa herna jaane.", "korean": "영화 보러 가요." } },
-    { "nepali": "तरकारी", "romanized": "tarkaari", "korean": "채소/커리 (vegetables)" }
+    { "nepali": "तरकारी", "romanized": "tarkaari", "korean": "채소/커리 (vegetables)" },
+    { "nepali": "सवा", "romanized": "sawaa", "korean": "~시 15분 (1/4이 지난 시간)", "example": { "nepali": "सवा चार", "romanized": "sawaa chaar", "korean": "4시 15분" } },
+    { "nepali": "साढे", "romanized": "saaDhe", "korean": "~시 30분 (절반이 지난 시간)", "example": { "nepali": "साढे पाँच", "romanized": "saaDhe paanch", "korean": "5시 30분" } },
+    { "nepali": "पौने", "romanized": "paune", "korean": "~시 45분 / 다음 시 15분 전", "example": { "nepali": "पौने नौ", "romanized": "paune nau", "korean": "8시 45분" } },
+    { "nepali": "डेढ", "romanized": "DeDh", "korean": "1시 30분" },
+    { "nepali": "अढाई", "romanized": "aDhaai", "korean": "2시 30분" },
+    { "nepali": "एक", "romanized": "ek", "korean": "1 (일)", "example": { "nepali": "एक बजे", "romanized": "ek baje", "korean": "1시 정각" } },
+    { "nepali": "दुई", "romanized": "dui", "korean": "2 (이)" },
+    { "nepali": "तीन", "romanized": "tin", "korean": "3 (삼)" },
+    { "nepali": "चार", "romanized": "chaar", "korean": "4 (사)" },
+    { "nepali": "छ", "romanized": "chha", "korean": "6 (육)" },
+    { "nepali": "आठ", "romanized": "aaTh", "korean": "8 (팔)" },
+    { "nepali": "नौ", "romanized": "nau", "korean": "9 (구)" },
+    { "nepali": "एघार", "romanized": "eghaar", "korean": "11 (십일)" },
+    { "nepali": "बाह्र", "romanized": "baahra", "korean": "12 (십이)" }
   ],
   "dialogues": [
     {
@@ -169,8 +183,8 @@
         "'jaane', 'khaane' 등 '-ne'로 끝나는 동사 형태는 비격식 상황에서 미래의 일이나 의도를 나타냅니다."
       ],
       "examples": [
-        "तपाईं पाँच बजे कहाँ जाने ? (5시에 어디 갈 거예요?)",
-        "म कफी खाने । (저는 커피를 마실게요.)"
+        "तपाईं पाँच बजे कहाँ जाने ? (tapaaI pããch baje kahãã jaane ?) - 5시에 어디 갈 거예요?",
+        "म कफी खाने । (ma kaphi khaane.) - 저는 커피를 마실게요."
       ]
     },
     {
@@ -209,7 +223,7 @@
         "'아마도', '일지도 모른다'는 의미로 불확실한 추측을 나타낼 때 문장 끝에 사용합니다."
       ],
       "examples": [
-        "दस बजे होला । (아마 10시쯤이 될 거예요.)"
+        "दस बजे होला । (das baje holaa.) - 아마 10시쯤이 될 거예요."
       ]
     }
   ],
