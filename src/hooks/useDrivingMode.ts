@@ -27,7 +27,7 @@ function getKoreanTtsAudioPath(lessonId: string | number, text: string, word?: V
   }
   // 단어 데이터가 없는 시스템 안내(예: "학습이 모두 끝났습니다")는 해시명 유지
   const id = ttsHash(text.trim());
-  return getPronunciationAudioPath(`/audio/lesson_${lessonId}/ko_${id}.mp3`);
+  return getPronunciationAudioPath(`/audio/ko/sys__${id}.mp3`);
 }
 import { getSharedAudioElement } from "@/hooks/useAudioPlayer";
 
@@ -1002,7 +1002,13 @@ export function useDrivingMode(lessonId: string | number, vocabulary: Vocabulary
     isFinished,
     autoplayBlocked,
     currentTask: currentTaskIndex > -1 ? tasks[currentTaskIndex] : null,
-    progress: tasks.length > 0 ? Math.max(0, currentTaskIndex) / tasks.length : 0,
+    // The last task is a closing Korean TTS ("학습이 모두 끝났습니다.").
+    // Show 100% progress as soon as we enter that closing task.
+    progress: (() => {
+      if (tasks.length === 0) return 0;
+      const denom = Math.max(1, tasks.length - 1);
+      return Math.min(1, Math.max(0, currentTaskIndex) / denom);
+    })(),
     currentWordIndex,
     currentWord: vocabulary[currentWordIndex] ?? null,
     unlockAudio,
