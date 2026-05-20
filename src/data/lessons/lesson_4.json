@@ -9,6 +9,7 @@
     { "nepali": "बाट", "romanized": "baaTa", "korean": "~로부터 (from)", "example": { "nepali": "बजारबाट कति बजे फर्कने ?", "romanized": "bajaarbaaTa kati baje pharkane ?", "korean": "시장에서 몇 시에 돌아와요?" } },
     { "nepali": "बजार", "romanized": "bajaar", "korean": "시장 (market)", "example": { "nepali": "बजारमा किन जाने ?", "romanized": "bajaarmaa kina jaane ?", "korean": "시장에 왜 가요?" } },
     { "nepali": "बजे", "romanized": "baje", "korean": "시 - 시각 (o'clock)", "example": { "nepali": "दस बजे सुत्ने ।", "romanized": "das baje sutne.", "korean": "10시에 잘 거예요." } },
+    { "nepali": "बिहान", "romanized": "bihaana", "korean": "아침 (morning)", "example": { "nepali": "भोलि बिहान कति बजे उठ्네 ?", "romanized": "bholi bihaana kati baje uThne ?", "korean": "내일 아침 몇 시에 일어날 거예요?" } },
     { "nepali": "बेलुका", "romanized": "belukaa", "korean": "저녁 (evening)", "example": { "nepali": "आज बेलुका कहाँ जाने ?", "romanized": "aaja belukaa kahãã jaane ?", "korean": "오늘 저녁에 어디 가요?" } },
     { "nepali": "भोलि", "romanized": "bholi", "korean": "내일 (tomorrow)", "example": { "nepali": "भोलि बिहान कति बजे उठ्ने ?", "romanized": "bholi bihaana kati baje uThne ?", "korean": "내일 아침 몇 시에 일어날 거예요?" } },
     { "nepali": "बिदा", "romanized": "bidaa", "korean": "휴일 (holiday)", "example": { "nepali": "भोलि बिदा हो ।", "romanized": "bholi bidaa ho.", "korean": "내일은 휴일이니까요." } },
@@ -62,7 +63,7 @@
       "title": "거처 및 동거인",
       "lines": [
         { "speaker": "A", "nepali": "सन्चै ?", "romanized": "sanchai ?", "korean": "잘 지내요?" },
-        { "speaker": "B", "nepali": "सन्चै छ, तपाईंलाई नि ?", "romanized": "sanchai chha, tapaaIlaai ni ?", "korean": "잘 지내요, 당신은요?" },
+        { "speaker": "B", "nepali": "सन्चै छ, तपाईंलाई नि ?", "romanized": "sanchai chha, tapaaIlaai ni ?", "korean": "잘 지내요, 당신은요?", "hintKo": "`tapaaI ni?` (당신은요?)도 문법적으로 틀리지는 않지만, 안부를 되물을 때는 `tapaaIlaai ni?`가 훨씬 자연스럽습니다.\n\n- **-laai (~에게)**: 네팔어에서 '배고프다(bhok laagnu)', '춥다(jaado laagnu)', '기쁘다(khusi laagnu)' 등 감정이나 상태를 표현할 때, 그 상태를 느끼는 대상을 `-laai`를 붙여 표현하는 경우가 많습니다. 'sanchai chha' 역시 '건강함(sanchai)이 당신에게(tapaaIlaai) 있다(chha)'는 뉘앙스를 가집니다.\n\n- **자연스러운 되물음**: 따라서 \"저는 잘 지내요\" (malaai sanchai chha) 라고 답한 뒤, 상대방에게 \"당신은 어떠세요?\"라고 되물을 때 `tapaaIlaai ni?`라고 하면 '(나에게 그렇듯) 당신에게는 어떠한가요?'라는 의미가 되어 대화의 흐름이 매우 자연스러워집니다." },
         { "speaker": "A", "nepali": "सन्चै छ । तपाईं कहाँ जाने ?", "romanized": "sanchai chha. tapaaI kahãã jaane ?", "korean": "잘 지내요. 어디 가세요?" },
         { "speaker": "B", "nepali": "मेरो डेरामा ।", "romanized": "mero Deraamaa.", "korean": "제 숙소에 가요." },
         { "speaker": "A", "nepali": "तपाईंको डेरा कहाँ छ ?", "romanized": "tapaaIko Deraa kahãã chha ?", "korean": "당신의 숙소가 어디에 있나요?" },

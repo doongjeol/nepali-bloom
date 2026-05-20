@@ -1099,7 +1099,7 @@ const shuffle = <T,>(arr: T[]) => {
 };
 
 type DialogueLineProps = {
-  line: { speaker: string; nepali: string; romanized: string; korean: string };
+  line: { speaker: string; nepali: string; romanized: string; korean: string; hintKo?: string };
   lessonId: number | string;
   dIdx: number;
   idx: number;
@@ -1143,6 +1143,7 @@ function DialogueLine({
 }: DialogueLineProps) {
   const bookmarks = useBookmarks();
   const [showWordMeanings, setShowWordMeanings] = useState(false);
+  const [showHint, setShowHint] = useState(false);
   const itemId = `dial-${lessonId}-${dIdx}-${idx}`;
   const src = getDialogueAudioPath(lessonId, dIdx, idx);
   const isCurrent = audioPlayer.currentItemId === itemId;
@@ -1263,6 +1264,13 @@ function DialogueLine({
                   {line.korean}
                 </p>
 
+                {showHint && typeof line.hintKo === "string" && line.hintKo.trim() ? (
+                  <div className="mt-3 rounded-xl border border-border/50 bg-background/60 p-3 text-left">
+                    <div className="mb-2 text-[11px] font-bold text-muted-foreground">힌트</div>
+                    <p className="text-xs text-foreground/80 whitespace-pre-wrap">{line.hintKo}</p>
+                  </div>
+                ) : null}
+
                 {showWordMeanings && matchedVocab.length > 0 && (
                   <div className="mt-3 rounded-xl border border-border/50 bg-background/60 p-3 text-left">
                     <div className="mb-2 text-[11px] font-bold text-muted-foreground">단어 뜻</div>
@@ -1295,6 +1303,19 @@ function DialogueLine({
               {showWordMeanings ? "단어 뜻 숨기기" : "단어 뜻 보기"}
             </button>
           )}
+
+          {typeof line.hintKo === "string" && line.hintKo.trim() ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowHint((p) => !p);
+              }}
+              className="self-start text-[11px] font-semibold text-muted-foreground underline-offset-4 hover:underline"
+            >
+              {showHint ? "힌트 숨기기" : "힌트 보기"}
+            </button>
+          ) : null}
         </div>
       </div>
     </div>
