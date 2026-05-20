@@ -1109,6 +1109,28 @@ type DialogueLineProps = {
   lessonVocab: Array<{ nepali: string; romanized: string; korean: string }>;
 };
 
+function normalizeRomanizedWord(word: string) {
+  return word
+    .normalize("NFKD")
+    .replace(/[^\p{L}]/gu, "")
+    .toLowerCase();
+}
+
+function shouldHideDialogueMeaningToken(lessonId: number | string, lineRomanized: string, vocabRomanized: string) {
+  if (String(lessonId) !== "4") return false;
+  const tokenKey = normalizeRomanizedWord(vocabRomanized);
+  if (tokenKey !== "chha" && tokenKey !== "chhan") return false;
+
+  const hiddenPatterns = [
+    /sanchai\s+chha\b/i,
+    /\bderaa\b.*\bchha\b/i,
+    /\bderaamaa\b.*\bchha\b/i,
+    /\bderaamaa\b.*\bchhan\b/i,
+  ];
+
+  return hiddenPatterns.some((re) => re.test(lineRomanized));
+}
+
 function DialogueLine({
   line,
   lessonId,
@@ -1133,6 +1155,7 @@ function DialogueLine({
     const sentence = (line.nepali ?? "").normalize("NFC");
     if (!sentence || lessonVocab.length === 0) return [];
     const hits = lessonVocab.filter((v) => {
+      if (shouldHideDialogueMeaningToken(lessonId, line.romanized ?? "", v.romanized ?? "")) return false;
       const needle = (v.nepali ?? "").normalize("NFC").trim();
       if (!needle) return false;
       // Basic substring match; works well for Nepali script tokens in this dataset.
@@ -1140,7 +1163,7 @@ function DialogueLine({
     });
     // Avoid overly long panels: show up to 8 most relevant (longest nepali first).
     return hits.sort((a, b) => (b.nepali?.length ?? 0) - (a.nepali?.length ?? 0)).slice(0, 8);
-  }, [lessonVocab, line.nepali]);
+  }, [lessonId, lessonVocab, line.nepali, line.romanized]);
 
 
   const handlePlay = () => {

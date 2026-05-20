@@ -43,6 +43,28 @@ function normalizeRomanizedWord(word: string) {
     .toLowerCase();
 }
 
+type HiddenMeaningRule = {
+  tokenKey: string;
+  whenRomanizedMatches: RegExp;
+};
+
+const HIDDEN_MEANING_RULES_BY_LESSON: Record<string, HiddenMeaningRule[]> = {
+  // lesson 4: "sanchai chha"의 chha는 (있다/괜찮다) 용법이라, 단어장(6) 뜻을 보여주면 혼동됨
+  "4": [
+    { tokenKey: "chha", whenRomanizedMatches: /sanchai\s+chha\b/i },
+    { tokenKey: "chha", whenRomanizedMatches: /\bderaa\b.*\bchha\b/i },
+    { tokenKey: "chha", whenRomanizedMatches: /\bderaamaa\b.*\bchha\b/i },
+    { tokenKey: "chhan", whenRomanizedMatches: /\bderaamaa\b.*\bchhan\b/i },
+  ],
+};
+
+function shouldHideMeaningToken(lessonId: number | string, lineRomanized: string, rawToken: string) {
+  const rules = HIDDEN_MEANING_RULES_BY_LESSON[String(lessonId)];
+  if (!rules || rules.length === 0) return false;
+  const tokenKey = normalizeRomanizedWord(rawToken);
+  return rules.some((r) => r.tokenKey === tokenKey && r.whenRomanizedMatches.test(lineRomanized));
+}
+
 // 유틸리티: 배열 랜덤 셔플
 export function shuffleArray<T>(arr: T[]): T[] {
   const out = [...arr];
@@ -286,7 +308,9 @@ export function DialogueGeneralQuiz({
     vocabMap.set(normalizeRomanizedWord(v.romanized), v.korean);
   }
 
-  const uniqueTokens = Array.from(new Set(line.parsedWords.map((w) => w.trim()).filter(Boolean)));
+  const uniqueTokens = Array.from(new Set(line.parsedWords.map((w) => w.trim()).filter(Boolean))).filter(
+    (raw) => !shouldHideMeaningToken(lessonId, line.romanized, raw),
+  );
 
   return (
     <div className="rounded-2xl border bg-card p-5 shadow-sm sm:p-6">
