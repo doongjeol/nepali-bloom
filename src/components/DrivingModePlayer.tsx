@@ -13,6 +13,7 @@ interface DrivingModePlayerProps {
 
 type Vote = "known" | "unknown";
 type StudyMode = "select" | "word" | "dialogue";
+type ItemSource = "all" | "bookmarks";
 
 function formatTime(ms: number) {
   const totalSeconds = Math.max(0, Math.floor(ms / 1000));
@@ -107,11 +108,26 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
   const [ttsSpeed, setTtsSpeed] = useState(0.9);
   const [studyMode, setStudyMode] = useState<StudyMode>("select");
   const [showRomanization, setShowRomanization] = useState(true);
+  const [itemSource, setItemSource] = useState<ItemSource>("all");
 
   const startTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const vocabOnly = useMemo(() => vocabulary.filter((v) => (v.type || "vocab") === "vocab"), [vocabulary]);
   const dialogueOnly = useMemo(() => vocabulary.filter((v) => (v.type || "vocab") === "dialogue"), [vocabulary]);
+
+  const bookmarkedVocabOnly = useMemo(() => {
+    return vocabOnly.filter((v) => {
+      const id = getDrivingBookmarkId(lessonId, v);
+      return id ? bookmarks.isBookmarked(id) : false;
+    });
+  }, [bookmarks.store, lessonId, vocabOnly]);
+
+  const bookmarkedDialogueOnly = useMemo(() => {
+    return dialogueOnly.filter((v) => {
+      const id = getDrivingBookmarkId(lessonId, v);
+      return id ? bookmarks.isBookmarked(id) : false;
+    });
+  }, [bookmarks.store, dialogueOnly, lessonId]);
 
   const {
     isPlaying,
@@ -226,6 +242,9 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
 
   // Setup (문법 UI 제거, 단어/예문 중심)
   if (studyMode === "select") {
+    const vocabCount = itemSource === "bookmarks" ? bookmarkedVocabOnly.length : vocabOnly.length;
+    const dialogueCount = itemSource === "bookmarks" ? bookmarkedDialogueOnly.length : dialogueOnly.length;
+
     return (
       <div className="fixed inset-0 z-[100] flex h-[100dvh] flex-col overflow-hidden bg-background p-4 landscape:p-3" style={{ paddingTop: 'env(safe-area-inset-top)', paddingBottom: 'env(safe-area-inset-bottom)' }}>
         <div className="mb-4 flex shrink-0 items-center justify-between landscape:mb-2">
@@ -242,44 +261,77 @@ export function DrivingModePlayer({ lessonId, vocabulary, onClose }: DrivingMode
           </button>
         </div>
 
+        <div className="mb-3 grid w-full max-w-md grid-cols-2 gap-2 self-center rounded-2xl border bg-card p-1 landscape:mb-2">
+          <button
+            type="button"
+            onClick={() => setItemSource("all")}
+            className={cn(
+              "rounded-xl px-3 py-2 text-sm font-semibold transition-colors",
+              itemSource === "all" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            전체
+          </button>
+          <button
+            type="button"
+            onClick={() => setItemSource("bookmarks")}
+            className={cn(
+              "rounded-xl px-3 py-2 text-sm font-semibold transition-colors",
+              itemSource === "bookmarks" ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:text-foreground",
+            )}
+          >
+            북마크
+          </button>
+        </div>
+
         <div className="flex min-h-0 flex-1 flex-col gap-4 landscape:flex-row landscape:items-center landscape:gap-4">
           <button
             type="button"
+            disabled={vocabCount === 0}
             onClick={() => {
+              if (vocabCount === 0) return;
               unlockBrowserAutoplayBridge();
               void unlockAudio();
               setFailedList([]);
               setIsFinished(false);
               setStudyMode("word");
-              setDisplayData(vocabOnly);
+              setDisplayData(itemSource === "bookmarks" ? bookmarkedVocabOnly : vocabOnly);
               // Kick off inside the user gesture; useDrivingMode will defer until tasks are ready if needed.
               didKickoffPlayRef.current = true;
               play();
             }}
-            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99] landscape:py-4"
+            className={cn(
+              "flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors active:scale-[0.99] landscape:py-4",
+              vocabCount === 0 ? "opacity-50" : "hover:bg-accent/20",
+            )}
           >
             <div className="text-2xl font-black tracking-tight text-foreground sm:text-3xl landscape:text-xl">단어만 듣기</div>
             <div className="mt-2 text-base font-semibold text-muted-foreground sm:text-lg landscape:mt-1 landscape:text-sm">단어 → 뜻</div>
-            <div className="mt-1 text-sm text-muted-foreground">총 {vocabOnly.length}개</div>
+            <div className="mt-1 text-sm text-muted-foreground">총 {vocabCount}개</div>
           </button>
 
           <button
             type="button"
+            disabled={dialogueCount === 0}
             onClick={() => {
+              if (dialogueCount === 0) return;
               unlockBrowserAutoplayBridge();
               void unlockAudio();
               setFailedList([]);
               setIsFinished(false);
               setStudyMode("dialogue");
-              setDisplayData(dialogueOnly);
+              setDisplayData(itemSource === "bookmarks" ? bookmarkedDialogueOnly : dialogueOnly);
               didKickoffPlayRef.current = true;
               play();
             }}
-            className="flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors hover:bg-accent/20 active:scale-[0.99] landscape:py-4"
+            className={cn(
+              "flex-1 rounded-3xl border bg-[#FFFDF9] px-6 py-6 text-left shadow-sm ring-1 ring-border/60 transition-colors active:scale-[0.99] landscape:py-4",
+              dialogueCount === 0 ? "opacity-50" : "hover:bg-accent/20",
+            )}
           >
             <div className="text-2xl font-black tracking-tight text-foreground sm:text-3xl landscape:text-xl">대화문만 듣기</div>
             <div className="mt-2 text-base font-semibold text-muted-foreground sm:text-lg landscape:mt-1 landscape:text-sm">네팔어 → 한국어 해석</div>
-            <div className="mt-1 text-sm text-muted-foreground">총 {dialogueOnly.length}문장</div>
+            <div className="mt-1 text-sm text-muted-foreground">총 {dialogueCount}문장</div>
           </button>
 
           <div className="shrink-0 rounded-2xl border bg-[#FFFDF9] p-3 text-sm text-muted-foreground ring-1 ring-border/60 landscape:hidden">
