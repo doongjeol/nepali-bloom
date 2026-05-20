@@ -7,6 +7,7 @@ Google Cloud Text-to-Speech로 네팔어(mp3) 음성 파일을 생성합니다.
 - 단어 예문(네팔어만): public/audio/lesson_{N}/{romanized}_example.mp3
 - 대화문 라인: public/audio/lesson_{N}/dial_{dIdx}_{lIdx}.mp3
 - 예문 탭(examples): public/audio/lesson_{N}/example_{eIdx}.mp3
+- 한국어(공통 폴더): public/audio/ko/*.mp3
 
 준비:
   pip install google-cloud-texttospeech
@@ -26,6 +27,7 @@ os.environ["GRPC_DNS_RESOLVER"] = "native"
 ROOT = Path(__file__).resolve().parents[1]
 LESSONS_DIR = ROOT / "src" / "data" / "lessons"
 BASE_OUTPUT_DIR = ROOT / "public" / "audio"
+KO_OUTPUT_DIR = BASE_OUTPUT_DIR / "ko"
 
 _INVALID_FILENAME_CHARS = re.compile(r'[<>:"/\\\\|?*]')
 
@@ -33,6 +35,21 @@ _INVALID_FILENAME_CHARS = re.compile(r'[<>:"/\\\\|?*]')
 def safe_filename(name: str) -> str:
     s = (name or "").strip().replace("..", ".")
     return _INVALID_FILENAME_CHARS.sub("_", s)
+
+def tts_hash(text: str) -> str:
+    # Must match src/hooks/useDrivingMode.ts ttsHash() for sys__*.mp3 filenames.
+    h = 5381
+    for ch in text:
+        h = (h * 33) ^ ord(ch)
+    n = h & 0xFFFFFFFF
+    alphabet = "0123456789abcdefghijklmnopqrstuvwxyz"
+    if n == 0:
+        return "0"
+    out = ""
+    while n:
+        n, r = divmod(n, 36)
+        out = alphabet[r] + out
+    return out
 
 
 def get_vocab_example_nepali(item: dict) -> Optional[str]:
@@ -158,7 +175,7 @@ def generate_tts(
                     else:
                         synthesize_with_retry(client, nepali_text, vocab_out)
 
-                # 단어 한국어 뜻 추출 추가
+                # 단어 한국어 뜻 (레슨 폴더로 생성)
                 korean_text = item.get("korean")
                 if korean_text:
                     # "own (자신의)" 같은 형태에서 괄호 안의 한글 뜻("자신의")만 추출. 괄호가 없으면 전체 텍스트 사용.
@@ -228,6 +245,21 @@ def generate_tts(
                             print(f"     [dry-run] {out_ko}")
                         else:
                             synthesize_with_retry(client, clean_korean, out_ko, language_code="ko-KR", gender=ko_gender)
+
+        # System Korean phrases (common hashed files)
+        sys_phrases = [
+            "학습이 모두 끝났습니다.",
+        ]
+        for phrase in sys_phrases:
+            pid = tts_hash(phrase.strip())
+            out_sys = KO_OUTPUT_DIR / f"sys__{pid}.mp3"
+            if out_sys.exists():
+                continue
+            print(f"  -> 시스템(한국어) 생성(공통): sys__{pid}")
+            if dry_run:
+                print(f"     [dry-run] {out_sys}")
+            else:
+                synthesize_with_retry(client, phrase, out_sys, language_code="ko-KR")
 
         examples = lesson_data.get("examples", []) or []
         for e_idx, ex in enumerate(examples):
