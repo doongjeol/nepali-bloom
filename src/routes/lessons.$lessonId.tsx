@@ -113,8 +113,13 @@ function LessonDetailPage() {
   }, [lesson?.dialogues, playDialogueIndex]);
 
   const dialogueResults = useMemo(() => {
-    const qRaw = dialogueQuery.trim();
-    const qLower = qRaw.toLowerCase();
+    const normalizeForSearch = (raw: string) =>
+      String(raw ?? "")
+        .normalize("NFC")
+        .replace(/\s+/g, "")
+        .toLowerCase();
+
+    const qRaw = normalizeForSearch(dialogueQuery);
     if (!qRaw) {
       return (lesson?.dialogues ?? []).map((dialogue: any, dIdx: number) => ({
         dialogue,
@@ -124,10 +129,10 @@ function LessonDetailPage() {
     }
 
     const matchesLine = (line: any) => {
-      const nepali = String(line?.nepali ?? "").normalize("NFC");
-      const romanized = String(line?.romanized ?? "").toLowerCase();
-      const korean = String(line?.korean ?? "").toLowerCase();
-      return nepali.includes(qRaw) || romanized.includes(qLower) || korean.includes(qLower);
+      const nepali = normalizeForSearch(line?.nepali ?? "");
+      const romanized = normalizeForSearch(line?.romanized ?? "");
+      const korean = normalizeForSearch(line?.korean ?? "");
+      return nepali.includes(qRaw) || romanized.includes(qRaw) || korean.includes(qRaw);
     };
 
     return (lesson?.dialogues ?? [])

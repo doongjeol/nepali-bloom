@@ -20,14 +20,21 @@ type Vocabulary = {
   exampleKo?: any;
 };
 
+function normalizeForSearch(raw: string) {
+  return String(raw ?? "")
+    .normalize("NFC")
+    .replace(/\s+/g, "")
+    .toLowerCase();
+}
+
 function matchesQuery(word: Vocabulary, rawQuery: string) {
-  const q = rawQuery.trim().toLowerCase();
+  const q = normalizeForSearch(rawQuery);
   if (!q) return true;
 
-  const nepali = (word.nepali ?? "").normalize("NFC");
-  const romanized = (word.romanized ?? "").toLowerCase();
-  const korean = (word.korean ?? "").toLowerCase();
-  const baseForm = (word.baseForm ?? "").toLowerCase();
+  const nepali = normalizeForSearch(word.nepali);
+  const romanized = normalizeForSearch(word.romanized);
+  const korean = normalizeForSearch(word.korean);
+  const baseForm = normalizeForSearch(word.baseForm ?? "");
 
   return nepali.includes(q) || romanized.includes(q) || korean.includes(q) || baseForm.includes(q);
 }
