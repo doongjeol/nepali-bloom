@@ -102,7 +102,7 @@
     {
       "title": "일과 계획",
       "lines": [
-        { "speaker": "A", "nepali": "तपाईं पाँच बजे कहाँ जाने ?", "romanized": "tapaaI pããch baje kahãã jaane ?", "korean": "5시에 어디 가세요?" },
+        { "speaker": "A", "nepali": "तपाईं पाँच बजे कहाँ जाने ?", "romanized": "tapaaI pããch baje kahãã jaane ?", "korean": "당신은 5시에 어디 가세요?" },
         { "speaker": "B", "nepali": "म आफ्नो डेरामा जाने ।", "romanized": "ma aaphno Deraamaa jaane.", "korean": "제 숙소에 가요." },
         { "speaker": "A", "nepali": "डेरामा के गर्ने ?", "romanized": "Deraamaa ke garne ?", "korean": "숙소에서 뭐 할 거예요?" },
         { "speaker": "B", "nepali": "दाल भात खाने ।", "romanized": "daal bhaat khaane.", "korean": "달밧을 먹을 거예요." },

@@ -178,6 +178,10 @@ export function VocabLearningSystem({
     });
   }, [vocabulary, statuses, filter]);
 
+  const visibleVocab = useMemo(() => {
+    return filteredVocab.filter((w) => matchesQuery(w, query));
+  }, [filteredVocab, query]);
+
   const unknownWords = useMemo(() => {
     return vocabulary.filter((w) => statuses[w.romanized] === "unknown");
   }, [vocabulary, statuses]);
@@ -247,6 +251,16 @@ export function VocabLearningSystem({
               마스터
             </button>
           </div>
+
+          <div className="w-full sm:w-72">
+            <input
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="검색 (네팔어/로마자/뜻/원형)"
+              className="w-full rounded-xl border bg-background px-3 py-2 text-sm outline-none ring-offset-background placeholder:text-muted-foreground focus:ring-2 focus:ring-ring/30"
+            />
+          </div>
+
           <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap">
             <Button
               type="button"
@@ -288,8 +302,13 @@ export function VocabLearningSystem({
       </div>
 
       {/* 단어장 그리드 영역 */}
-      <div className="grid gap-2 sm:grid-cols-2 sm:gap-3">
-        {filteredVocab.map((word) => {
+      {visibleVocab.length === 0 ? (
+        <div className="rounded-2xl border bg-card p-6 text-center text-sm text-muted-foreground shadow-sm">
+          검색 결과가 없어요.
+        </div>
+      ) : (
+        <div className="grid gap-2 sm:grid-cols-2 sm:gap-3">
+        {visibleVocab.map((word) => {
           const actualLessonId = word.lessonId ?? lessonId;
           const uniqueKey = `${actualLessonId}-${word.romanized}`;
           const status = statuses[word.romanized] || "none";
@@ -442,7 +461,8 @@ export function VocabLearningSystem({
             </div>
           );
         })}
-      </div>
+        </div>
+      )}
 
       <ReviewStudyModal
         open={isReviewOpen}
