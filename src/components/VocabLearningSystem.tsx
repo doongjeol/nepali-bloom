@@ -251,16 +251,6 @@ export function VocabLearningSystem({
               마스터
             </button>
           </div>
-
-          <div className="w-full sm:w-72">
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="검색 (네팔어/로마자/뜻/원형)"
-              className="w-full rounded-xl border bg-background px-3 py-2 text-sm outline-none ring-offset-background placeholder:text-muted-foreground focus:ring-2 focus:ring-ring/30"
-            />
-          </div>
-
           <div className="grid w-full grid-cols-2 gap-2 sm:flex sm:w-auto sm:flex-wrap">
             <Button
               type="button"
@@ -299,6 +289,16 @@ export function VocabLearningSystem({
             </Button>
           </div>
         </div>
+      </div>
+
+      {/* 검색 */}
+      <div className="rounded-2xl border bg-card p-3 shadow-sm sm:p-4">
+        <input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="검색 (네팔어/로마자/뜻/원형)"
+          className="w-full rounded-xl border bg-background px-3 py-2 text-sm outline-none ring-offset-background placeholder:text-muted-foreground focus:ring-2 focus:ring-ring/30"
+        />
       </div>
 
       {/* 단어장 그리드 영역 */}
