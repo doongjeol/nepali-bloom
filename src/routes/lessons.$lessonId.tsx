@@ -98,6 +98,7 @@ function LessonDetailPage() {
   const [showRomanized, setShowRomanized] = useState(true);
   const [playDialogueIndex, setPlayDialogueIndex] = useState<number | null>(null);
   const [isQuizMode, setIsQuizMode] = useState(false);
+  const [dialogueQuery, setDialogueQuery] = useState("");
   const [showDrivingMode, setShowDrivingMode] = useState(false);
 
   const playNextLineRef = useRef<number>(0);
@@ -110,6 +111,34 @@ function LessonDetailPage() {
     const dialogues = lesson?.dialogues ?? [];
     return dialogues[playDialogueIndex] ?? null;
   }, [lesson?.dialogues, playDialogueIndex]);
+
+  const dialogueResults = useMemo(() => {
+    const qRaw = dialogueQuery.trim();
+    const qLower = qRaw.toLowerCase();
+    if (!qRaw) {
+      return (lesson?.dialogues ?? []).map((dialogue: any, dIdx: number) => ({
+        dialogue,
+        dIdx,
+        lines: (dialogue.lines ?? []).map((line: any, idx: number) => ({ line, idx })),
+      }));
+    }
+
+    const matchesLine = (line: any) => {
+      const nepali = String(line?.nepali ?? "").normalize("NFC");
+      const romanized = String(line?.romanized ?? "").toLowerCase();
+      const korean = String(line?.korean ?? "").toLowerCase();
+      return nepali.includes(qRaw) || romanized.includes(qLower) || korean.includes(qLower);
+    };
+
+    return (lesson?.dialogues ?? [])
+      .map((dialogue: any, dIdx: number) => {
+        const lines = (dialogue.lines ?? [])
+          .map((line: any, idx: number) => ({ line, idx }))
+          .filter((entry: { line: any; idx: number }) => matchesLine(entry.line));
+        return { dialogue, dIdx, lines };
+      })
+      .filter((d) => d.lines.length > 0);
+  }, [dialogueQuery, lesson?.dialogues]);
 
   const startPlayAllForDialogue = (dIdx: number) => {
     setPlayDialogueIndex(dIdx);
@@ -996,7 +1025,23 @@ function LessonDetailPage() {
                   </div>
                 </div>
 
-                {lesson.dialogues.map((dialogue: any, dIdx: number) => (
+                {/* 검색 */}
+                <div className="rounded-2xl border bg-card p-3 shadow-sm sm:p-4">
+                  <input
+                    value={dialogueQuery}
+                    onChange={(e) => setDialogueQuery(e.target.value)}
+                    placeholder="대화문 검색 (네팔어/로마자/뜻)"
+                    className="w-full rounded-xl border bg-background px-3 py-2 text-sm outline-none ring-offset-background placeholder:text-muted-foreground focus:ring-2 focus:ring-ring/30"
+                  />
+                </div>
+
+                {dialogueQuery.trim() && dialogueResults.length === 0 ? (
+                  <div className="rounded-2xl border bg-card p-6 text-center text-sm text-muted-foreground shadow-sm">
+                    검색 결과가 없어요.
+                  </div>
+                ) : null}
+
+                {dialogueResults.map(({ dialogue, dIdx, lines }) => (
                   <div key={dIdx}>
                     <div className="mb-2 sm:mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <h2 className="text-sm sm:text-base font-semibold text-foreground">
@@ -1028,7 +1073,7 @@ function LessonDetailPage() {
                       </div>
                     </div>
                     <div className="space-y-2.5 sm:space-y-3 rounded-2xl border bg-card p-3 sm:p-5 shadow-sm">
-                      {dialogue.lines.map((line: any, idx: number) => {
+                      {lines.map(({ line, idx }: any) => {
                         return (
                           <DialogueLine
                             key={idx}

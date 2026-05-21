@@ -46,19 +46,17 @@
     { "nepali": "हुन्", "romanized": "hun", "korean": "are (이다 - 복수/사물)", "example": { "nepali": "ती के हुन् ?", "romanized": "ti ke hun ?", "korean": "저것들은 무엇입니까?" } },
     { "nepali": "हुनुहुन्छ", "romanized": "hunuhunchha", "korean": "to be, to exist - honorific (계시다/있으시다)", "example": { "nepali": "तपाईंको दाइ हुनुहुन्छ ?", "romanized": "tapaaIko daai hunuhunchha ?", "korean": "형/오빠가 있습니까?" } },
     { "nepali": "हुनुहुन्न", "romanized": "hunuhunna", "korean": "is not (안 계시다/없다 - 존칭)", "example": { "nepali": "दिदी पनि हुनुहुन्न", "romanized": "didi pani hunuhunna.", "korean": "누나도 없습니다." } },
-    { "nepali": "आउनु", "romanized": "aaunu", "korean": "to come (오다)", "example": { "nepali": "भित्र आऊ", "romanized": "bhitra aau.", "korean": "안으로 들어와라." } },
-    { "nepali": "जानु", "romanized": "jaanu", "korean": "to go (가다)", "example": { "nepali": "ऊ कहाँ गएको ?", "romanized": "u kahãã gaeko ?", "korean": "그는 어디로 갔습니까?" } },
+    { "nepali": "आएको", "romanized": "aaeko", "korean": "came (왔다)", "baseForm": "आउनु (aaunu)", "example": { "nepali": "म भित्र आएको", "romanized": "ma bhitra aaeko.", "korean": "나 안으로 들어왔어." } },
+    { "nepali": "आऊ", "romanized": "aau", "korean": "come (와라 - timi에 대한 명령형)", "baseForm": "आउनु (aaunu)", "example": { "nepali": "भित्र आऊ", "romanized": "bhitra aau.", "korean": "안으로 들어와라." } },
+    { "nepali": "गएको", "romanized": "gaeko", "korean": "went (갔다)", "baseForm": "जानु (jaanu)", "example": { "nepali": "म बाहिर गएको", "romanized": "ma baahira gaeko.", "korean": "저는 밖으로 나갔습니다." } },
+    { "nepali": "जाऊ", "romanized": "jaau", "korean": "go (가라 - timi에 대한 명령형)", "baseForm": "जानु (jaanu)", "example": { "nepali": "बाहिर जाऊ", "romanized": "baahira jaau.", "korean": "밖으로 나가라." } },
+    { "nepali": "जानुहोस्", "romanized": "jaanos", "korean": "go (가세요 - 존칭)", "baseForm": "जानु (jaanu)", "example": { "nepali": "ब्ल्याकबोर्डतिर जानुहोस्", "romanized": "blyaakborDnira jaanos.", "korean": "칠판 근처로 가세요." } },
     { "nepali": "राख्नु", "romanized": "raakhnu", "korean": "to put (두다/놓다)", "example": { "nepali": "तपाईंको कलम खल्तीमा राख्नोस्", "romanized": "tapaaIko kalam khaltimaa raakhnos.", "korean": "당신의 펜을 주머니에 넣으세요." } },
     { "nepali": "लेख्नु", "romanized": "lekhnu", "korean": "to write (쓰다)", "example": { "nepali": "ब्ल्याकबोर्डमा तपाईंको नाम लेख्नुस्", "romanized": "blyaakborDmaa tapaaIko naam lekhnus.", "korean": "칠판에 당신의 이름을 쓰세요." } },
-    { "nepali": "आएको", "romanized": "aaeko", "korean": "came (왔다)", "example": { "nepali": "म भित्र आएको", "romanized": "ma bhitra aaeko.", "korean": "나 안으로 들어왔어." } },
-    { "nepali": "गएको", "romanized": "gaeko", "korean": "went (갔다)", "example": { "nepali": "म बाहिर गएको", "romanized": "ma baahira gaeko.", "korean": "저는 밖으로 나갔습니다." } },
-    { "nepali": "लेखेको", "romanized": "lekheko", "korean": "wrote (썼다)", "example": { "nepali": "मैले तिन लेखेको", "romanized": "maile tin lekheko.", "korean": "제가 3을 썼습니다." } },
-    { "nepali": "आऊ", "romanized": "aau", "korean": "come (와라 - timi에 대한 명령형)", "example": { "nepali": "भित्र आऊ", "romanized": "bhitra aau.", "korean": "안으로 들어와라." } },
-    { "nepali": "जाऊ", "romanized": "jaau", "korean": "go (가라 - timi에 대한 명령형)", "example": { "nepali": "बाहिर जाऊ", "romanized": "baahira jaau.", "korean": "밖으로 나가라." } },
-    { "nepali": "जानुहोस्", "romanized": "jaanos", "korean": "go (가세요 - 존칭)", "example": { "nepali": "ब्ल्याकबोर्डतिर जानुहोस्", "romanized": "blyaakborDnira jaanos.", "korean": "칠판 근처로 가세요." } },
-    { "nepali": "खोल", "romanized": "khola", "korean": "open (열어라 - timi에 대한 명령형)", "example": { "nepali": "झ्याल खोल", "romanized": "jhyaal khola.", "korean": "창문을 열어라." } },
-    { "nepali": "गर", "romanized": "gara", "korean": "do (해라 - timi에 대한 명령형)", "example": { "nepali": "झ्याल बन्द गर", "romanized": "jhyaal banda gara.", "korean": "창문을 닫아라." } },
-    { "nepali": "लेख्नुस्", "romanized": "lekhnus", "korean": "write (쓰세요)", "example": { "nepali": "ब्ल्याकबोर्डमा तिन लेख्नुस्", "romanized": "blyaakborDmaa tin lekhnus.", "korean": "칠판에 3을 쓰세요." } }
+    { "nepali": "लेखेको", "romanized": "lekheko", "korean": "wrote (썼다)", "baseForm": "लेख्नु (lekhnu)", "example": { "nepali": "मैले तिन लेखेको", "romanized": "maile tin lekheko.", "korean": "제가 3을 썼습니다." } },
+    { "nepali": "लेख्नुस्", "romanized": "lekhnus", "korean": "write (쓰세요)", "baseForm": "लेख्नु (lekhnu)", "example": { "nepali": "ब्ल्याकबोर्डमा तिन लेख्नुस्", "romanized": "blyaakborDmaa tin lekhnus.", "korean": "칠판에 3을 쓰세요." } },
+    { "nepali": "खोल", "romanized": "khola", "korean": "open (열어라 - timi에 대한 명령형)", "baseForm": "खोल्नु (kholnu)", "example": { "nepali": "झ्याल खोल", "romanized": "jhyaal khola.", "korean": "창문을 열어라." } },
+    { "nepali": "गर", "romanized": "gara", "korean": "do (해라 - timi에 대한 명령형)", "baseForm": "गर्नु (garnu)", "example": { "nepali": "झ्याल बन्द गर", "romanized": "jhyaal banda gara.", "korean": "창문을 닫아라." } }
   ],
   "dialogues": [
     {
