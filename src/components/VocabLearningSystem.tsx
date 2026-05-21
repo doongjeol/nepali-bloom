@@ -14,10 +14,23 @@ type Vocabulary = {
   nepali: string;
   romanized: string;
   korean: string;
+  baseForm?: string;
   lessonId?: number | string;
   example?: any;
   exampleKo?: any;
 };
+
+function matchesQuery(word: Vocabulary, rawQuery: string) {
+  const q = rawQuery.trim().toLowerCase();
+  if (!q) return true;
+
+  const nepali = (word.nepali ?? "").normalize("NFC");
+  const romanized = (word.romanized ?? "").toLowerCase();
+  const korean = (word.korean ?? "").toLowerCase();
+  const baseForm = (word.baseForm ?? "").toLowerCase();
+
+  return nepali.includes(q) || romanized.includes(q) || korean.includes(q) || baseForm.includes(q);
+}
 
 function getExample(word: any) {
   if (word.example && typeof word.example === "object") {
@@ -127,6 +140,7 @@ export function VocabLearningSystem({
   };
 
   const [filter, setFilter] = useState<"all" | "unknown" | "known">("all");
+  const [query, setQuery] = useState("");
   const [isReviewOpen, setIsReviewOpen] = useState(false);
   const [reviewData, setReviewData] = useState<ReviewWord[]>([]);
   const [gridFlipped, setGridFlipped] = useState<Set<string>>(new Set());
@@ -140,8 +154,8 @@ export function VocabLearningSystem({
   };
 
   const toggleAllFlip = () => {
-    if (filteredVocab.length === 0) return;
-    const allKeys = filteredVocab.map((w) => `${w.lessonId ?? lessonId}-${w.romanized}`);
+    if (visibleVocab.length === 0) return;
+    const allKeys = visibleVocab.map((w) => `${w.lessonId ?? lessonId}-${w.romanized}`);
     const allFlipped = allKeys.every((k) => gridFlipped.has(k));
     const next = new Set(gridFlipped);
     if (allFlipped) {
@@ -352,6 +366,11 @@ export function VocabLearningSystem({
                   <div className="animate-in fade-in duration-300">
                     <p className="text-base font-semibold text-foreground sm:text-lg">{word.korean}</p>
                     <p className="mt-0.5 text-xs italic text-muted-foreground sm:text-sm">{word.romanized}</p>
+                    {typeof word.baseForm === "string" && word.baseForm.trim() ? (
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        원형: <span className="font-medium text-foreground/80">{word.baseForm}</span>
+                      </p>
+                    ) : null}
                     {(() => {
                       const ex = getExample(word);
                       if (!ex) return null;
@@ -391,6 +410,11 @@ export function VocabLearningSystem({
                       {word.nepali}
                     </p>
                     <p className="mt-0.5 text-xs italic text-muted-foreground sm:text-sm">{word.romanized}</p>
+                    {typeof word.baseForm === "string" && word.baseForm.trim() ? (
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        원형: <span className="font-medium text-foreground/80">{word.baseForm}</span>
+                      </p>
+                    ) : null}
                   </div>
                 )}
               </div>

@@ -2,6 +2,7 @@ export interface Vocabulary {
   nepali: string;
   romanized: string;
   korean: string;
+  baseForm?: string;
   example?: string;
   exampleKo?: string;
 }
