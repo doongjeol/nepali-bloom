@@ -4,256 +4,30 @@
   "titleKo": "제5과",
   "description": "물건 가격 묻기, 흥정하기, 수량 표현 등 쇼핑과 관련된 유용한 네팔어 표현을 배웁니다.",
   "vocabulary": [
-    {
-      "nepali": "अलि",
-      "romanized": "ali",
-      "korean": "조금",
-      "example": {
-        "nepali": "अलि सस्तो दिनोस ।",
-        "romanized": "ali sasto dinos.",
-        "korean": "조금 더 싸게 주세요."
-      }
-    },
-    {
-      "nepali": "अर्को",
-      "romanized": "arko",
-      "korean": "다른 것, 다음의",
-      "example": {
-        "nepali": "अर्को पसलमा जाऔं ।",
-        "romanized": "arko pasalmaa jaaű.",
-        "korean": "다른 가게로 갑시다."
-      }
-    },
-    {
-      "nepali": "बरुण",
-      "romanized": "barun",
-      "korean": "인명",
-      "example": {
-        "nepali": "बरुण बजार जान्छ ।",
-        "romanized": "barun bajaar jaanchha.",
-        "korean": "바룬은 시장에 갑니다."
-      }
-    },
-    {
-      "nepali": "भयो",
-      "romanized": "bhayo",
-      "korean": "되었다 / 충분하다",
-      "example": {
-        "nepali": "जम्मा कति भयो ?",
-        "romanized": "jammaa kati bhayo ?",
-        "korean": "전부 얼마인가요?"
-      }
-    },
-    {
-      "nepali": "धन्यवाद",
-      "romanized": "dhanyabaad",
-      "korean": "감사합니다",
-      "example": {
-        "nepali": "साहुजी, धन्यवाद ।",
-        "romanized": "saahuji, dhanyabaad.",
-        "korean": "주인아저씨, 감사합니다."
-      }
-    },
-    {
-      "nepali": "हेर्नु",
-      "romanized": "hernu",
-      "korean": "보다",
-      "example": {
-        "nepali": "यो कपडा हेर्नोस ।",
-        "romanized": "yo kaparaa hernos.",
-        "korean": "이 옷을 보세요."
-      }
-    },
-    {
-      "nepali": "हुन्छ",
-      "romanized": "hunchha",
-      "korean": "좋습니다 / 그렇습니다",
-      "example": {
-        "nepali": "हुन्छ । कति किलो लिने ?",
-        "romanized": "hunchha. kati kilo line ?",
-        "korean": "좋습니다. 몇 킬로 사시겠습니까?"
-      }
-    },
-    {
-      "nepali": "जाऔं",
-      "romanized": "jaaű",
-      "korean": "갑시다",
-      "example": {
-        "nepali": "बजार जाऔं ।",
-        "romanized": "bajaar jaaű.",
-        "korean": "시장에 갑시다."
-      }
-    },
-    {
-      "nepali": "जम्मा",
-      "romanized": "jammaa",
-      "korean": "전부, 합계",
-      "example": {
-        "nepali": "जम्मा कति भयो ?",
-        "romanized": "jammaa kati bhayo ?",
-        "korean": "전부 얼마인가요?"
-      }
-    },
-    {
-      "nepali": "कपडा",
-      "romanized": "kaparaa",
-      "korean": "옷, 천",
-      "example": {
-        "nepali": "मलाई कपडा चाहिन्छ ।",
-        "romanized": "malaai kaparaa chaahinchha.",
-        "korean": "저는 옷이 필요합니다."
-      }
-    },
-    {
-      "nepali": "कति",
-      "romanized": "kati",
-      "korean": "얼마나",
-      "example": {
-        "nepali": "एक किलोको कति ?",
-        "romanized": "ek kiloko kati ?",
-        "korean": "1킬로에 얼마인가요?"
-      }
-    },
-    {
-      "nepali": "खुसी",
-      "romanized": "khusi",
-      "korean": "기쁜",
-      "example": {
-        "nepali": "म धेरै खुसी छु ।",
-        "romanized": "ma dherai khusi chhu.",
-        "korean": "저는 매우 기쁩니다."
-      }
-    },
-    {
-      "nepali": "किनमेल",
-      "romanized": "kinmel",
-      "korean": "쇼핑",
-      "example": {
-        "nepali": "आज किनमेल गर्न जाने ।",
-        "romanized": "aaja kinmel garna jaane.",
-        "korean": "오늘 쇼핑하러 갈 거예요."
-      }
-    },
-    {
-      "nepali": "लौ",
-      "romanized": "lau",
-      "korean": "자 / 여기요",
-      "example": {
-        "nepali": "ल, लिनोस ।",
-        "romanized": "la, linos.",
-        "korean": "자, 여기 있습니다."
-      }
-    },
-    {
-      "nepali": "लिन",
-      "romanized": "lina",
-      "korean": "사러, 가지러",
-      "example": {
-        "nepali": "दुई किलो लिने ।",
-        "romanized": "dui kilo line.",
-        "korean": "2킬로 살게요."
-      }
-    },
-    {
-      "nepali": "महँगो",
-      "romanized": "mahango",
-      "korean": "비싼",
-      "example": {
-        "nepali": "महँगो भयो । पच्चीसमा दिनोस ।",
-        "romanized": "mahango bhayo. pachchismaa dinos.",
-        "korean": "비싸네요. 25루피에 주세요."
-      }
-    },
-    {
-      "nepali": "मान्छे",
-      "romanized": "manchhe",
-      "korean": "사람",
-      "example": {
-        "nepali": "त्यहाँ धेरै मान्छे छन् ।",
-        "romanized": "tyahãã dherai manchhe chhan.",
-        "korean": "거기에 사람이 많습니다."
-      }
-    },
-    {
-      "nepali": "मिटर",
-      "romanized": "miTar",
-      "korean": "미터",
-      "example": {
-        "nepali": "दुई मिटर कपडा दिनोस ।",
-        "romanized": "dui miTar kaparaa dinos.",
-        "korean": "옷감 2미터 주세요."
-      }
-    },
-    {
-      "nepali": "पैसा",
-      "romanized": "paisaa",
-      "korean": "돈 / 화폐 단위",
-      "example": {
-        "nepali": "म सँग पैसा छैन ।",
-        "romanized": "ma sanga paisaa chhaina.",
-        "korean": "저에게 돈이 없습니다."
-      }
-    },
-    {
-      "nepali": "पसल",
-      "romanized": "pasal",
-      "korean": "가게",
-      "example": {
-        "nepali": "यो पसल सस्तो छ ।",
-        "romanized": "yo pasal sasto chha.",
-        "korean": "이 가게는 쌉니다."
-      }
-    },
-    {
-      "nepali": "पसले",
-      "romanized": "pasale",
-      "korean": "가게 주인",
-      "example": {
-        "nepali": "पसले धेरै राम्रो छ ।",
-        "romanized": "pasale dherai raamro chha.",
-        "korean": "가게 주인이 아주 좋습니다."
-      }
-    },
-    {
-      "nepali": "फेरि",
-      "romanized": "pheri",
-      "korean": "다시",
-      "example": {
-        "nepali": "भोलि फेरि आउनुहोस ।",
-        "romanized": "bholi pheri aaunuhos.",
-        "korean": "내일 다시 오세요."
-      }
-    },
-    {
-      "nepali": "रुपियाँ",
-      "romanized": "rupiyaa",
-      "korean": "루피 - 네팔 화폐 단위",
-      "example": {
-        "nepali": "दस रुपियाँ ।",
-        "romanized": "das rupiyãã.",
-        "korean": "10루피입니다."
-      }
-    },
-    {
-      "nepali": "सस्तो",
-      "romanized": "sasto",
-      "korean": "싼",
-      "example": {
-        "nepali": "अलि सस्तो दिनोस ।",
-        "romanized": "ali sasto dinos.",
-        "korean": "조금 더 싸게 주세요."
-      }
-    },
-    {
-      "nepali": "तयार",
-      "romanized": "tayaar",
-      "korean": "준비된",
-      "example": {
-        "nepali": "खाना तयार छ ।",
-        "romanized": "khaanaa tayaar chha.",
-        "korean": "음식이 준비되었습니다."
-      }
-    }
+    { "nepali": "मान्छे", "romanized": "manchhe", "korean": "사람", "example": { "nepali": "त्यहाँ धेरै मान्छे छन् ।", "romanized": "tyahãã dherai manchhe chhan.", "korean": "거기에 사람이 많습니다." } },
+    { "nepali": "पसल", "romanized": "pasal", "korean": "가게", "example": { "nepali": "यो पसल सस्तो छ ।", "romanized": "yo pasal sasto chha.", "korean": "이 가게는 쌉니다." } },
+    { "nepali": "पसले", "romanized": "pasale", "korean": "가게 주인", "example": { "nepali": "पसले धेरै राम्रो छ ।", "romanized": "pasale dherai raamro chha.", "korean": "가게 주인이 아주 좋습니다." } },
+    { "nepali": "किनमेल", "romanized": "kinmel", "korean": "쇼핑", "example": { "nepali": "आज किनमेल गर्न जाने ।", "romanized": "aaja kinmel garna jaane.", "korean": "오늘 쇼핑하러 갈 거예요." } },
+    { "nepali": "कपडा", "romanized": "kaparaa", "korean": "옷, 천", "example": { "nepali": "मलाई कपडा चाहिन्छ ।", "romanized": "malaai kaparaa chaahinchha.", "korean": "저는 옷이 필요합니다." } },
+    { "nepali": "पैसा", "romanized": "paisaa", "korean": "돈 / 화폐 단위", "example": { "nepali": "म सँग पैसा छैन ।", "romanized": "ma sanga paisaa chhaina.", "korean": "저에게 돈이 없습니다." } },
+    { "nepali": "रुपियाँ", "romanized": "rupiyaa", "korean": "루피 - 네팔 화폐 단위", "example": { "nepali": "दस रुपियाँ ।", "romanized": "das rupiyãã.", "korean": "10루피입니다." } },
+    { "nepali": "मिटर", "romanized": "miTar", "korean": "미터", "example": { "nepali": "दुई मिटर कपडा दिनोस ।", "romanized": "dui miTar kaparaa dinos.", "korean": "옷감 2미터 주세요." } },
+    { "nepali": "महँगो", "romanized": "mahango", "korean": "비싼", "example": { "nepali": "महँगो भयो । पच्चीसमा दिनोस ।", "romanized": "mahango bhayo. pachchismaa dinos.", "korean": "비싸네요. 25루피에 주세요." } },
+    { "nepali": "सस्तो", "romanized": "sasto", "korean": "싼", "example": { "nepali": "अलि सस्तो दिनोस ।", "romanized": "ali sasto dinos.", "korean": "조금 더 싸게 주세요." } },
+    { "nepali": "खुसी", "romanized": "khusi", "korean": "기쁜", "example": { "nepali": "म धेरै खुसी छु ।", "romanized": "ma dherai khusi chhu.", "korean": "저는 매우 기쁩니다." } },
+    { "nepali": "तयार", "romanized": "tayaar", "korean": "준비된", "example": { "nepali": "खाना तयार छ ।", "romanized": "khaanaa tayaar chha.", "korean": "음식이 준비되었습니다." } },
+    { "nepali": "अर्को", "romanized": "arko", "korean": "다른 것, 다음의", "example": { "nepali": "अर्को पसलमा जाऔं ।", "romanized": "arko pasalmaa jaaű.", "korean": "다른 가게로 갑시다." } },
+    { "nepali": "अलि", "romanized": "ali", "korean": "조금", "example": { "nepali": "अलि सस्तो दिनोस ।", "romanized": "ali sasto dinos.", "korean": "조금 더 싸게 주세요." } },
+    { "nepali": "जम्मा", "romanized": "jammaa", "korean": "전부, 합계", "example": { "nepali": "जम्मा कति भयो ?", "romanized": "jammaa kati bhayo ?", "korean": "전부 얼마인가요?" } },
+    { "nepali": "कति", "romanized": "kati", "korean": "얼마나", "example": { "nepali": "एक किलोको कति ?", "romanized": "ek kiloko kati ?", "korean": "1킬로에 얼마인가요?" } },
+    { "nepali": "फेरि", "romanized": "pheri", "korean": "다시", "example": { "nepali": "भोलि फेरि आउनुहोस ।", "romanized": "bholi pheri aaunuhos.", "korean": "내일 다시 오세요." } },
+    { "nepali": "धन्यवाद", "romanized": "dhanyabaad", "korean": "감사합니다", "example": { "nepali": "साहुजी, धन्यवाद ।", "romanized": "saahuji, dhanyabaad.", "korean": "주인아저씨, 감사합니다." } },
+    { "nepali": "लौ", "romanized": "lau", "korean": "자 / 여기요", "example": { "nepali": "ल, लिनोस ।", "romanized": "la, linos.", "korean": "자, 여기 있습니다." } },
+    { "nepali": "हेर्नु", "romanized": "hernu", "korean": "보다", "example": { "nepali": "यो कपडा हेर्नोस ।", "romanized": "yo kaparaa hernos.", "korean": "이 옷을 보세요." } },
+    { "nepali": "हुन्छ", "romanized": "hunchha", "korean": "좋습니다 / 그렇습니다", "baseForm": "हुनु (hunu)", "example": { "nepali": "हुन्छ । कति किलो लिने ?", "romanized": "hunchha. kati kilo line ?", "korean": "좋습니다. 몇 킬로 사시겠습니까?" } },
+    { "nepali": "भयो", "romanized": "bhayo", "korean": "되었다 / 충분하다", "baseForm": "हुनु (hunu)", "example": { "nepali": "जम्मा कति भयो ?", "romanized": "jammaa kati bhayo ?", "korean": "전부 얼마인가요?" } },
+    { "nepali": "जाऔं", "romanized": "jaaű", "korean": "갑시다", "baseForm": "जानु (jaanu)", "example": { "nepali": "बजार जाऔं ।", "romanized": "bajaar jaaű.", "korean": "시장에 갑시다." } },
+    { "nepali": "लिन", "romanized": "lina", "korean": "사러, 가지러", "baseForm": "लिनु (linu)", "example": { "nepali": "दुई किलो लिने ।", "romanized": "dui kilo line.", "korean": "2킬로 살게요." } }
   ],
   "dialogues": [
     {
