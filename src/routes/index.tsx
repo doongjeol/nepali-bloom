@@ -43,20 +43,29 @@ function Index() {
 
         {/* 메인 버튼 섹션 */}
         <section className="mb-6 sm:mb-8">
-          <Link
-            to="/lessons"
-            className="group mx-auto block max-w-lg rounded-2xl border bg-card p-6 text-center shadow-sm transition-all active:scale-[0.98] hover:shadow-md sm:p-8"
-          >
-            <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-warm text-2xl">
-              📚
-            </div>
-            <h2 className="mb-1 text-xl font-semibold text-foreground">
-              레슨 시작하기
-            </h2>
-            <p className="text-sm text-muted-foreground">
-              단어장, 퀴즈, 대화문이 포함된 40개 레슨
-            </p>
-          </Link>
+          <div className="mx-auto grid max-w-3xl gap-3 sm:grid-cols-2 sm:gap-4">
+            <Link
+              to="/lessons"
+              className="group block rounded-2xl border bg-card p-6 text-center shadow-sm transition-all active:scale-[0.98] hover:shadow-md sm:p-8"
+            >
+              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-warm text-2xl">
+                📚
+              </div>
+              <h2 className="mb-1 text-xl font-semibold text-foreground">레슨 시작하기</h2>
+              <p className="text-sm text-muted-foreground">단어장, 퀴즈, 대화문이 포함된 40개 레슨</p>
+            </Link>
+
+            <Link
+              to="/extra-lessons"
+              className="group block rounded-2xl border bg-card p-6 text-center shadow-sm transition-all active:scale-[0.98] hover:shadow-md sm:p-8"
+            >
+              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-secondary text-2xl">
+                ✨
+              </div>
+              <h2 className="mb-1 text-xl font-semibold text-foreground">추가 레슨</h2>
+              <p className="text-sm text-muted-foreground">기본 레슨 외 확장 학습</p>
+            </Link>
+          </div>
         </section>
 
         {/* 하단 카드 그리드: 모바일에서 가로가 좁으므로 수직/수평 정렬 조합 변경 */}

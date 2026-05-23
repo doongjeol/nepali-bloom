@@ -96,12 +96,16 @@ export function DialogueGeneralQuiz({
   lessonId,
   vocabulary,
   audioPlayer,
+  resolveDialogueAudioSrc,
+  resolveVocabAudioSrc,
   onClose,
 }: {
   dialogues: Dialogue[];
   lessonId: number | string;
   vocabulary?: VocabularyItem[];
   audioPlayer: UseAudioPlayerResult;
+  resolveDialogueAudioSrc?: (dialogueIndex: number, lineIndex: number) => string;
+  resolveVocabAudioSrc?: (romanized: string) => string | undefined;
   onClose: () => void;
 }) {
   const [status, setStatus] = useState<"idle" | "playing" | "finished">("idle");
@@ -184,7 +188,8 @@ export function DialogueGeneralQuiz({
       // 특수문자 제거 후 파일명 규칙에 맞게 소문자로 변환 (예: /audio/lesson_1/kholnu.mp3)
       const cleanWord = normalizeRomanizedWord(token.word);
       const itemId = `token-${token.id}`;
-      const src = getVocabAudioPath(lessonId, cleanWord);
+      const src = resolveVocabAudioSrc?.(cleanWord) ?? getVocabAudioPath(lessonId, cleanWord);
+      if (!src) return;
 
       // 1 & 2. 로마자 단어 클릭 시 오디오 즉시 재생 (이전 소리는 자동 중단)
       void audioPlayer.play(itemId, src, { silentError: true });
@@ -196,7 +201,7 @@ export function DialogueGeneralQuiz({
         
         const line = quizLines[currentStep];
         const sentenceId = `dial-quiz-${lessonId}-${line.dIdx}-${line.lIdx}`;
-        const sentenceSrc = getDialogueAudioPath(lessonId, line.dIdx, line.lIdx);
+        const sentenceSrc = resolveDialogueAudioSrc?.(line.dIdx, line.lIdx) ?? getDialogueAudioPath(lessonId, line.dIdx, line.lIdx);
         void audioPlayer.play(sentenceId, sentenceSrc, { silentError: true });
       */
     } catch (e) {

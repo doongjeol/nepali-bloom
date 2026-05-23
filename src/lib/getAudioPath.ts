@@ -28,6 +28,14 @@ export function getDialogueAudioPath(
   return formatAudioUrl(`/audio/lesson_${lessonId}/dial_${dialogueIndex}_${lineIndex}.mp3`);
 }
 
+export function getExtraDialogueAudioPath(
+  extraLessonId: number | string,
+  dialogueIndex: number,
+  lineIndex: number,
+): string {
+  return formatAudioUrl(`/audio/extra_lesson_${extraLessonId}/dial_${dialogueIndex}_${lineIndex}.mp3`);
+}
+
 export function getExampleAudioPath(lessonId: number | string, index: number): string {
   return formatAudioUrl(`/audio/lesson_${lessonId}/example_${index}.mp3`);
 }

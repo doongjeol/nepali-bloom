@@ -1,0 +1,391 @@
+{
+  "id": 1,
+  "title": "Nepali Tense Practice #1",
+  "titleKo": "네팔어 시제 연습 #1",
+  "description": "동사 'गर्नु (garnu, 하다)'를 활용하여 네팔어의 현재형, 과거형, 미래형 시제를 배우고, 주어에 따른 어미 변화를 연습합니다.",
+  "vocabulary": [
+    {
+      "nepali": "गर्नु",
+      "romanized": "garnu",
+      "korean": "하다",
+      "example": {
+        "nepali": "म काम गर्छु ।",
+        "romanized": "ma kaam garchhu.",
+        "korean": "저는 일해요."
+      }
+    },
+    {
+      "nepali": "काम",
+      "romanized": "kaam",
+      "korean": "일",
+      "example": {
+        "nepali": "ऊ काम गर्छ ।",
+        "romanized": "u kaam garchha.",
+        "korean": "그가 일해요."
+      }
+    },
+    {
+      "nepali": "म",
+      "romanized": "ma",
+      "korean": "나",
+      "example": {
+        "nepali": "म काम गर्नेछु ।",
+        "romanized": "ma kaam garnechhu.",
+        "korean": "저는 일할 거예요."
+      }
+    },
+    {
+      "nepali": "तिमी",
+      "romanized": "timi",
+      "korean": "너",
+      "example": {
+        "nepali": "तिमी काम गर्छौ ?",
+        "romanized": "timi kaam garchhau ?",
+        "korean": "너는 일하니?"
+      }
+    },
+    {
+      "nepali": "तपाईं",
+      "romanized": "tapaaii",
+      "korean": "당신",
+      "example": {
+        "nepali": "तपाईं काम गर्नुहुन्छ ?",
+        "romanized": "tapaaii kaam garnuhunchha ?",
+        "korean": "당신은 일하세요?"
+      }
+    },
+    {
+      "nepali": "ऊ",
+      "romanized": "u",
+      "korean": "그",
+      "example": {
+        "nepali": "ऊ काम गर्छ ।",
+        "romanized": "u kaam garchha.",
+        "korean": "그가 일해요."
+      }
+    },
+    {
+      "nepali": "वहाँ",
+      "romanized": "wahãã",
+      "korean": "그분",
+      "example": {
+        "nepali": "वहाँ काम गर्नुहुन्छ ।",
+        "romanized": "wahãã kaam garnuhunchha.",
+        "korean": "그분이 일하세요."
+      }
+    },
+    {
+      "nepali": "हामी",
+      "romanized": "haami",
+      "korean": "우리",
+      "example": {
+        "nepali": "हामी काम गर्छौं ।",
+        "romanized": "haami kaam garchhaũ.",
+        "korean": "우리가 일해요."
+      }
+    },
+    {
+      "nepali": "गर्छु",
+      "romanized": "garchhu",
+      "korean": "한다 (현재형)",
+      "baseForm": "गर्नु (garnu)",
+      "example": {
+        "nepali": "म काम गर्छु ।",
+        "romanized": "ma kaam garchhu.",
+        "korean": "저는 일해요."
+      }
+    },
+    {
+      "nepali": "गरेँ",
+      "romanized": "gare",
+      "korean": "했다 (과거형)",
+      "baseForm": "गर्नु (garnu)",
+      "example": {
+        "nepali": "मैले काम गरेँ ।",
+        "romanized": "maile kaam gare.",
+        "korean": "저는 일했어요."
+      }
+    },
+    {
+      "nepali": "गर्नेछु",
+      "romanized": "garnechhu",
+      "korean": "할 것이다 (미래형)",
+      "baseForm": "गर्नु (garnu)",
+      "example": {
+        "nepali": "म काम गर्नेछु ।",
+        "romanized": "ma kaam garnechhu.",
+        "korean": "저는 일할 거예요."
+      }
+    },
+    {
+      "nepali": "ले",
+      "romanized": "le",
+      "korean": "과거형 타동사 주격 조사",
+      "example": {
+        "nepali": "मैले काम गरेँ ।",
+        "romanized": "maile kaam gare.",
+        "korean": "저는 일했어요."
+      }
+    },
+    {
+      "nepali": "ने",
+      "romanized": "ne",
+      "korean": "미래형 표시",
+      "example": {
+        "nepali": "म काम गर्नेछु ।",
+        "romanized": "ma kaam garnechhu.",
+        "korean": "저는 일할 거예요."
+      }
+    }
+  ],
+  "dialogues": [
+    {
+      "title": "나 (म - ma)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "म काम गर्छु ।",
+          "romanized": "ma kaam garchhu.",
+          "korean": "저는 일해요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "मैले काम गरेँ ।",
+          "romanized": "maile kaam gare.",
+          "korean": "저는 일했어요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "म काम गर्नेछु ।",
+          "romanized": "ma kaam garnechhu.",
+          "korean": "저는 일할 거예요."
+        }
+      ]
+    },
+    {
+      "title": "너 (तिमी - timi)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तिमी काम गर्छौ ?",
+          "romanized": "timi kaam garchhau ?",
+          "korean": "너는 일하니?"
+        },
+        {
+          "speaker": "A",
+          "nepali": "तिमीले काम गर्यौ ?",
+          "romanized": "timile kaam garyau ?",
+          "korean": "너는 일했니?"
+        },
+        {
+          "speaker": "A",
+          "nepali": "तिमीले काम गर्नेछौ ?",
+          "romanized": "timile kaam garnechhau ?",
+          "korean": "너는 일할 거니?"
+        }
+      ]
+    },
+    {
+      "title": "당신 (तपाईं - tapaaii)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं काम गर्नुहुन्छ ?",
+          "romanized": "tapaaii kaam garnuhunchha ?",
+          "korean": "당신은 일하세요?"
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले काम गर्नुभयो ?",
+          "romanized": "tapaaiile kaam garnubhayo ?",
+          "korean": "당신은 일하셨어요?"
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंले काम गर्नुहुनेछ ?",
+          "romanized": "tapaaiile kaam garnuhunechha ?",
+          "korean": "당신은 일하실 거예요?"
+        }
+      ]
+    },
+    {
+      "title": "그 (ऊ - u)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "ऊ काम गर्छ ।",
+          "romanized": "u kaam garchha.",
+          "korean": "그가 일해요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उसले काम गर्यो ।",
+          "romanized": "usle kaam garyo.",
+          "korean": "그가 일을 했어요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उसले काम गर्नेछ ।",
+          "romanized": "usle kaam garnechha.",
+          "korean": "그가 일을 할 거예요."
+        }
+      ]
+    },
+    {
+      "title": "그분 (वहाँ - wahãã)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "वहाँ काम गर्नुहुन्छ ।",
+          "romanized": "wahãã kaam garnuhunchha.",
+          "korean": "그분이 일하세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "वहाँले काम गर्नुभयो ।",
+          "romanized": "wahããle kaam garnubhayo.",
+          "korean": "그분이 일하셨어요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "वहाँले काम गर्नुहुनेछ ।",
+          "romanized": "wahããle kaam garnuhunechha.",
+          "korean": "그분이 일을 하실 거예요."
+        }
+      ]
+    },
+    {
+      "title": "우리 (हामी - haami)",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "हामी काम गर्छौं ।",
+          "romanized": "haami kaam garchhaũ.",
+          "korean": "우리가 일해요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "हामीले काम गर्यौं ।",
+          "romanized": "haamile kaam garyaũ.",
+          "korean": "우리가 일했어요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "हामी काम गर्नेछौं ।",
+          "romanized": "haami kaam garnechaũ.",
+          "korean": "우리가 일할 거예요."
+        }
+      ]
+    }
+  ],
+  "grammar": [
+    {
+      "title": "1. 현재형 어미",
+      "details": [
+        "주어에 따라 현재형 어미가 달라집니다.",
+        "예: म -छु / तिमी -छौ / ऊ -छ"
+      ],
+      "examples": [
+        "ma kaam garchhu. (저는 일해요.)",
+        "u kaam garchha. (그가 일해요.)"
+      ]
+    },
+    {
+      "title": "2. 과거형과 'ले (le)' 조사",
+      "details": [
+        "과거형 타동사 문장에서는 주어 뒤에 'ले (le)'가 붙습니다.",
+        "일부 주어는 형태가 함께 변합니다."
+      ],
+      "examples": [
+        "ma → maile",
+        "u → usle",
+        "maile kaam gare. (저는 일했어요.)"
+      ]
+    },
+    {
+      "title": "3. 미래형 만들기",
+      "details": [
+        "동사 어간에 'ने (ne)'가 들어가면 미래형이 됩니다.",
+        "주어에 따라 미래형 어미도 달라집니다."
+      ],
+      "examples": [
+        "gar-ne-chhu",
+        "ma kaam garnechhu. (저는 일할 거예요.)"
+      ]
+    },
+    {
+      "title": "4. 존칭 표현",
+      "details": [
+        "तपाईं (당신)과 वहाँ (그분)은 같은 존칭 활용을 사용합니다.",
+        "존칭 표현에서는 '-नुहुन्छ', '-नुभयो' 형태가 자주 사용됩니다."
+      ],
+      "examples": [
+        "tapaaii kaam garnuhunchha ?",
+        "wahãã kaam garnuhunchha."
+      ]
+    },
+    {
+      "title": "5. 시제 변화 핵심 패턴",
+      "details": [
+        "현재형, 과거형, 미래형은 각각 다른 어미 패턴을 사용합니다.",
+        "반복 연습을 통해 입에 익히는 것이 중요합니다."
+      ],
+      "examples": [
+        "garchhu → gare → garnechhu",
+        "garchha → garyo → garnechha"
+      ]
+    }
+  ],
+  "quiz": [
+    {
+      "question": "'저는 일할 거예요'를 올바르게 표현한 것은 무엇입니까?",
+      "options": [
+        "ma kaam gare.",
+        "ma kaam garchhu.",
+        "ma kaam garnechhu.",
+        "maile kaam garyo."
+      ],
+      "answer": 2
+    },
+    {
+      "question": "네팔어 미래형에서 사용되는 핵심 요소는 무엇입니까?",
+      "options": [
+        "ले (le)",
+        "ने (ne)",
+        "छ (chha)",
+        "यो (yo)"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "'너는 일했니?'를 올바르게 표현한 것은 무엇입니까?",
+      "options": [
+        "timi kaam garchhau ?",
+        "timile kaam garyau ?",
+        "timi kaam garnechhau ?",
+        "timile kaam garnubhayo ?"
+      ],
+      "answer": 1
+    },
+    {
+      "question": "과거형 타동사 문장에서 주어 뒤에 붙는 조사는 무엇입니까?",
+      "options": [
+        "ने",
+        "मा",
+        "ले",
+        "को"
+      ],
+      "answer": 2
+    },
+    {
+      "question": "'그분이 일하세요.'를 올바르게 표현한 것은 무엇입니까?",
+      "options": [
+        "wahãã kaam garnuhunchha.",
+        "u kaam garchha.",
+        "haami kaam garchhaũ.",
+        "timi kaam garchhau."
+      ],
+      "answer": 0
+    }
+  ]
+}

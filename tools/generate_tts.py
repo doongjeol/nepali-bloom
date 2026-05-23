@@ -7,6 +7,7 @@ Google Cloud Text-to-Speech로 네팔어(mp3) 음성 파일을 생성합니다.
 - 단어 예문(네팔어만): public/audio/lesson_{N}/{romanized}_example.mp3
 - 대화문 라인: public/audio/lesson_{N}/dial_{dIdx}_{lIdx}.mp3
 - 예문 탭(examples): public/audio/lesson_{N}/example_{eIdx}.mp3
+- (추가 레슨) 대화문 라인: public/audio/extra_lesson_{N}/dial_{dIdx}_{lIdx}.mp3
 - 한국어(공통 폴더): public/audio/ko/*.mp3
 
 준비:
@@ -105,6 +106,7 @@ def generate_tts(
     vocab_examples_only: bool = False,
     dry_run: bool = False,
     ko_a_male: bool = False,
+    include_extra_lessons: bool = False,
 ):
     global texttospeech
     try:
@@ -130,20 +132,31 @@ def generate_tts(
         print(f"오류: lessons 폴더를 찾을 수 없습니다: {LESSONS_DIR}")
         return
 
-    files = list(LESSONS_DIR.glob("lesson_*.json"))
-    try:
-        files = sorted(files, key=lambda x: int(x.stem.split("_")[1]))
-    except Exception:
-        files = sorted(files)
+    files: list[Path] = []
+    if include_extra_lessons:
+        # When requested, generate ONLY extra lessons (do not mix with base lessons)
+        files.extend(list(LESSONS_DIR.glob("extra_lesson_*.json")))
+    else:
+        files.extend(list(LESSONS_DIR.glob("lesson_*.json")))
+
+    def _sort_key(p: Path):
+        stem = p.stem  # lesson_1 / extra_lesson_1
+        m = re.search(r'_(\d+)$', stem)
+        return (stem.split("_")[0], int(m.group(1)) if m else 10**9, stem)
+
+    files = sorted(files, key=_sort_key)
 
     for input_file in files:
-        lesson_name = input_file.stem  # lesson_1
+        lesson_name = input_file.stem  # lesson_1 / extra_lesson_1
+        is_extra = lesson_name.startswith("extra_lesson_")
+
         try:
-            lesson_num = int(lesson_name.split("_")[1])
+            lesson_num = int(re.search(r'_(\d+)$', lesson_name).group(1))  # type: ignore[union-attr]
         except Exception:
             lesson_num = -1
 
-        if target_lesson is not None and lesson_num != target_lesson:
+        # NOTE: --lesson 은 기본 레슨(lesson_*.json)에만 적용
+        if target_lesson is not None and (is_extra or lesson_num != target_lesson):
             continue
         if start_from is not None and lesson_num < start_from:
             continue
@@ -286,6 +299,11 @@ if __name__ == "__main__":
         help="Generate audio starting from this lesson number (ignored when --lesson is set).",
     )
     parser.add_argument(
+        "--include-extra-lessons",
+        action="store_true",
+        help="Also generate audio for extra lessons: src/data/lessons/extra_lesson_*.json -> public/audio/extra_lesson_*/...",
+    )
+    parser.add_argument(
         "--vocab-examples-only",
         action="store_true",
         help="Generate only vocabulary example audio (romanized_example.mp3). Skips vocab/dialogues/examples.",
@@ -308,6 +326,7 @@ if __name__ == "__main__":
         vocab_examples_only=args.vocab_examples_only,
         dry_run=args.dry_run,
         ko_a_male=args.ko_a_male,
+        include_extra_lessons=args.include_extra_lessons,
     )
 
 # --lesson 1 --vocab-examples-only

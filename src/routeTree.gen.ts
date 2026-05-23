@@ -14,6 +14,7 @@ import { Route as FeedRouteImport } from './routes/feed'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as StudyIndexRouteImport } from './routes/study.index'
 import { Route as LessonsIndexRouteImport } from './routes/lessons.index'
+import { Route as ExtraLessonsIndexRouteImport } from './routes/extra-lessons.index'
 import { Route as StudyVocabRouteImport } from './routes/study.vocab'
 import { Route as StudyQuizRouteImport } from './routes/study.quiz'
 import { Route as StudyPronunciationRouteImport } from './routes/study.pronunciation'
@@ -21,6 +22,7 @@ import { Route as StudyDrivingRouteImport } from './routes/study.driving'
 import { Route as StudyDialoguesRouteImport } from './routes/study.dialogues'
 import { Route as StudyBookmarksRouteImport } from './routes/study.bookmarks'
 import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
+import { Route as ExtraLessonsExtraLessonIdRouteImport } from './routes/extra-lessons.$extraLessonId'
 
 const StudyRoute = StudyRouteImport.update({
   id: '/study',
@@ -45,6 +47,11 @@ const StudyIndexRoute = StudyIndexRouteImport.update({
 const LessonsIndexRoute = LessonsIndexRouteImport.update({
   id: '/lessons/',
   path: '/lessons/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExtraLessonsIndexRoute = ExtraLessonsIndexRouteImport.update({
+  id: '/extra-lessons/',
+  path: '/extra-lessons/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StudyVocabRoute = StudyVocabRouteImport.update({
@@ -82,11 +89,18 @@ const LessonsLessonIdRoute = LessonsLessonIdRouteImport.update({
   path: '/lessons/$lessonId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ExtraLessonsExtraLessonIdRoute =
+  ExtraLessonsExtraLessonIdRouteImport.update({
+    id: '/extra-lessons/$extraLessonId',
+    path: '/extra-lessons/$extraLessonId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
+  '/extra-lessons/$extraLessonId': typeof ExtraLessonsExtraLessonIdRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/bookmarks': typeof StudyBookmarksRoute
   '/study/dialogues': typeof StudyDialoguesRoute
@@ -94,12 +108,14 @@ export interface FileRoutesByFullPath {
   '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
+  '/extra-lessons/': typeof ExtraLessonsIndexRoute
   '/lessons/': typeof LessonsIndexRoute
   '/study/': typeof StudyIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/feed': typeof FeedRoute
+  '/extra-lessons/$extraLessonId': typeof ExtraLessonsExtraLessonIdRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/bookmarks': typeof StudyBookmarksRoute
   '/study/dialogues': typeof StudyDialoguesRoute
@@ -107,6 +123,7 @@ export interface FileRoutesByTo {
   '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
+  '/extra-lessons': typeof ExtraLessonsIndexRoute
   '/lessons': typeof LessonsIndexRoute
   '/study': typeof StudyIndexRoute
 }
@@ -115,6 +132,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
+  '/extra-lessons/$extraLessonId': typeof ExtraLessonsExtraLessonIdRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/bookmarks': typeof StudyBookmarksRoute
   '/study/dialogues': typeof StudyDialoguesRoute
@@ -122,6 +140,7 @@ export interface FileRoutesById {
   '/study/pronunciation': typeof StudyPronunciationRoute
   '/study/quiz': typeof StudyQuizRoute
   '/study/vocab': typeof StudyVocabRoute
+  '/extra-lessons/': typeof ExtraLessonsIndexRoute
   '/lessons/': typeof LessonsIndexRoute
   '/study/': typeof StudyIndexRoute
 }
@@ -131,6 +150,7 @@ export interface FileRouteTypes {
     | '/'
     | '/feed'
     | '/study'
+    | '/extra-lessons/$extraLessonId'
     | '/lessons/$lessonId'
     | '/study/bookmarks'
     | '/study/dialogues'
@@ -138,12 +158,14 @@ export interface FileRouteTypes {
     | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
+    | '/extra-lessons/'
     | '/lessons/'
     | '/study/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/feed'
+    | '/extra-lessons/$extraLessonId'
     | '/lessons/$lessonId'
     | '/study/bookmarks'
     | '/study/dialogues'
@@ -151,6 +173,7 @@ export interface FileRouteTypes {
     | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
+    | '/extra-lessons'
     | '/lessons'
     | '/study'
   id:
@@ -158,6 +181,7 @@ export interface FileRouteTypes {
     | '/'
     | '/feed'
     | '/study'
+    | '/extra-lessons/$extraLessonId'
     | '/lessons/$lessonId'
     | '/study/bookmarks'
     | '/study/dialogues'
@@ -165,6 +189,7 @@ export interface FileRouteTypes {
     | '/study/pronunciation'
     | '/study/quiz'
     | '/study/vocab'
+    | '/extra-lessons/'
     | '/lessons/'
     | '/study/'
   fileRoutesById: FileRoutesById
@@ -173,7 +198,9 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FeedRoute: typeof FeedRoute
   StudyRoute: typeof StudyRouteWithChildren
+  ExtraLessonsExtraLessonIdRoute: typeof ExtraLessonsExtraLessonIdRoute
   LessonsLessonIdRoute: typeof LessonsLessonIdRoute
+  ExtraLessonsIndexRoute: typeof ExtraLessonsIndexRoute
   LessonsIndexRoute: typeof LessonsIndexRoute
 }
 
@@ -212,6 +239,13 @@ declare module '@tanstack/react-router' {
       path: '/lessons'
       fullPath: '/lessons/'
       preLoaderRoute: typeof LessonsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/extra-lessons/': {
+      id: '/extra-lessons/'
+      path: '/extra-lessons'
+      fullPath: '/extra-lessons/'
+      preLoaderRoute: typeof ExtraLessonsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/study/vocab': {
@@ -263,6 +297,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LessonsLessonIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/extra-lessons/$extraLessonId': {
+      id: '/extra-lessons/$extraLessonId'
+      path: '/extra-lessons/$extraLessonId'
+      fullPath: '/extra-lessons/$extraLessonId'
+      preLoaderRoute: typeof ExtraLessonsExtraLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -292,7 +333,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FeedRoute: FeedRoute,
   StudyRoute: StudyRouteWithChildren,
+  ExtraLessonsExtraLessonIdRoute: ExtraLessonsExtraLessonIdRoute,
   LessonsLessonIdRoute: LessonsLessonIdRoute,
+  ExtraLessonsIndexRoute: ExtraLessonsIndexRoute,
   LessonsIndexRoute: LessonsIndexRoute,
 }
 export const routeTree = rootRouteImport
