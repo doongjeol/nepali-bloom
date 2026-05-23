@@ -172,7 +172,7 @@
         { "speaker": "A", "nepali": "बिदामा के गर्ने ?", "romanized": "bidaamaa ke garne ?", "korean": "휴일에 뭐 할 거예요?" },
         { "speaker": "B", "nepali": "शहरमा जाने र रक्सी खाने ।", "romanized": "shaharmaa jaane ra raksi khaane.", "korean": "시내에 가서 술을 마실 거예요." },
         { "speaker": "A", "nepali": "तपाईं पनि आउने ?", "romanized": "tapaaI pani aaune ?", "korean": "당신도 올래요?" },
-        { "speaker": "B", "nepali": "आउने ।", "romanized": "aaune.", "korean": "갈게요." },
+        { "speaker": "B", "nepali": "आउने ।", "romanized": "aaune.", "korean": "갈게요.", "hintKo": "네팔어에서는 상대방이 있는 곳으로 이동하거나 상대방과 함께 목적지로 갈 때 '가다(jaanu)'가 아니라 '오다(aaunu)' 동사를 사용합니다. 그래서 A가 \"당신도 올래요?(aaune?)\"라고 물었을 때, 한국어로는 \"갈게요\"라고 해석되지만 네팔어로는 'aaune'로 대답하는 것이 자연스럽습니다." },
         { "speaker": "A", "nepali": "शहरबाट कति बजे फर्कने ?", "romanized": "shaharbaaTa kati baje pharkane ?", "korean": "시내에서 몇 시에 돌아올 거예요?" },
         { "speaker": "B", "nepali": "साढे दस बजे फर्कने ।", "romanized": "saaDhe das baje pharkane.", "korean": "10시 반에 돌아올 거예요." }
       ]
