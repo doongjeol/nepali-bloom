@@ -73,7 +73,7 @@
           "speaker": "A",
           "nepali": "अनि कहाँ जाने ?",
           "romanized": "ani kahãã jaane ?",
-          "korean": "그러고 나서 कहाँ 가요?"
+          "korean": "그러고 나서 어디 가요?"
         },
         {
           "speaker": "B",
@@ -92,6 +92,47 @@
           "nepali": "पाँच बजे होला ।",
           "romanized": "pããch baje holaa.",
           "korean": "아마 5시쯤요."
+        }
+      ]
+    },
+    {
+      "title": "담배 사기",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईंको पसलमा चुरोट छ ?",
+          "romanized": "tapaaIko pasalmaa churoT chha ?",
+          "korean": "가게에 담배 있나요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "छ । कति लिने ?",
+          "romanized": "chha. kati line ?",
+          "korean": "네, 있습니다. 얼마나 사시겠습니까?"
+        },
+        {
+          "speaker": "A",
+          "nepali": "एक बट्टाको कति ?",
+          "romanized": "ek baTTaako kati ?",
+          "korean": "한 갑에 얼마인가요?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "एक बट्टाको बीस रुपियाँ ।",
+          "romanized": "ek baTTaako bis rupiyãã.",
+          "korean": "한 갑에 20루피입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "दुई बट्टा दिनोस ।",
+          "romanized": "dui baTTaa dinos.",
+          "korean": "두 갑 주세요."
+        },
+        {
+          "speaker": "B",
+          "nepali": "लिनोस ।",
+          "romanized": "linos.",
+          "korean": "여기 있습니다."
         }
       ]
     },
@@ -179,7 +220,7 @@
           "speaker": "A",
           "nepali": "चिज कहाँ पाइन्छ त ?",
           "romanized": "chij kahãã paainchha ta ?",
-          "korean": "그럼 치즈는 कहाँ에 있나요?"
+          "korean": "그럼 치즈는 어디에 있나요?"
         },
         {
           "speaker": "B",
