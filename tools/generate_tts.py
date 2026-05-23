@@ -331,3 +331,4 @@ if __name__ == "__main__":
 
 # --lesson 1 --vocab-examples-only
 # --lesson 2 --ko-a-male
+# --include-extra-lessons

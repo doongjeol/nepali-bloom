@@ -17,6 +17,9 @@ export function getPronunciationAudioPath(audioPath: string): string {
 }
 
 export function getVocabAudioPath(lessonId: number | string, romanized: string): string {
+  if (typeof lessonId === "string" && lessonId.startsWith("extra_lesson_")) {
+    return formatAudioUrl(`/audio/${lessonId}/${romanized}.mp3`);
+  }
   return formatAudioUrl(`/audio/lesson_${lessonId}/${romanized}.mp3`);
 }
 
@@ -25,6 +28,9 @@ export function getDialogueAudioPath(
   dialogueIndex: number,
   lineIndex: number,
 ): string {
+  if (typeof lessonId === "string" && lessonId.startsWith("extra_lesson_")) {
+    return formatAudioUrl(`/audio/${lessonId}/dial_${dialogueIndex}_${lineIndex}.mp3`);
+  }
   return formatAudioUrl(`/audio/lesson_${lessonId}/dial_${dialogueIndex}_${lineIndex}.mp3`);
 }
 
@@ -37,6 +43,9 @@ export function getExtraDialogueAudioPath(
 }
 
 export function getExampleAudioPath(lessonId: number | string, index: number): string {
+  if (typeof lessonId === "string" && lessonId.startsWith("extra_lesson_")) {
+    return formatAudioUrl(`/audio/${lessonId}/example_${index}.mp3`);
+  }
   return formatAudioUrl(`/audio/lesson_${lessonId}/example_${index}.mp3`);
 }
 

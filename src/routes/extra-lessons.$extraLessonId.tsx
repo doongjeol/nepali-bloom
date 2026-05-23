@@ -9,6 +9,7 @@ import { DialogueGeneralQuiz } from "@/components/DialogueGeneralQuiz";
 import { Button } from "@/components/ui/button";
 import { getExtraDialogueAudioPath } from "@/lib/getAudioPath";
 import { Pause, Volume2 } from "lucide-react";
+import { DrivingModePlayer } from "@/components/DrivingModePlayer";
 
 export const Route = createFileRoute("/extra-lessons/$extraLessonId")({
   loader: async ({ params }) => {
@@ -35,6 +36,7 @@ function ExtraLessonDetailPage() {
   const lesson = Route.useLoaderData();
   const audioPlayer = useAudioPlayer();
 
+  const [showDrivingMode, setShowDrivingMode] = useState(false);
   const [tab, setTab] = useState<Tab>("vocabulary");
   const [showRomanized, setShowRomanized] = useState(true);
   const [isDialogueQuizMode, setIsDialogueQuizMode] = useState(false);
@@ -77,7 +79,12 @@ function ExtraLessonDetailPage() {
                 <p className="truncate text-xs text-muted-foreground sm:text-sm">{lesson.title}</p>
               </div>
             </div>
-            <div className="text-xs sm:text-sm text-muted-foreground">ID: {extraLessonId}</div>
+            <div className="flex items-center gap-2 self-start sm:self-center">
+              <Button variant="secondary" size="sm" className="rounded-xl" onClick={() => setShowDrivingMode(true)}>
+                🚗 드라이브
+              </Button>
+              <div className="text-xs sm:text-sm text-muted-foreground">ID: {extraLessonId}</div>
+            </div>
           </div>
           {lesson.description ? <p className="mt-2 text-sm text-muted-foreground">{lesson.description}</p> : null}
         </div>
@@ -104,7 +111,11 @@ function ExtraLessonDetailPage() {
         <div className="mt-4 sm:mt-6">
           {tab === "vocabulary" ? (
             lesson.vocabulary?.length ? (
-              <VocabLearningSystem lessonId={`extra-${extraLessonId}`} vocabulary={lesson.vocabulary} audioPlayer={audioPlayer} />
+              <VocabLearningSystem
+                lessonId={`extra_lesson_${extraLessonId}`}
+                vocabulary={lesson.vocabulary}
+                audioPlayer={audioPlayer}
+              />
             ) : (
               <EmptyState message="단어가 없습니다." />
             )
@@ -211,6 +222,27 @@ function ExtraLessonDetailPage() {
           ) : null}
         </div>
       </main>
+
+      {showDrivingMode ? (
+        <DrivingModePlayer
+          lessonId={`extra_lesson_${extraLessonId}`}
+          vocabulary={[
+            ...(lesson.vocabulary ?? []).map((v: any) => ({ ...v, lessonId: `extra_lesson_${extraLessonId}`, type: "vocab" })),
+            ...(lesson.dialogues ?? []).flatMap((d: any, dIdx: number) =>
+              (d.lines ?? []).map((l: any, lIdx: number) => ({
+                nepali: l.nepali,
+                romanized: l.romanized,
+                korean: l.speaker ? `[${l.speaker}] ${l.korean}` : l.korean,
+                lessonId: `extra_lesson_${extraLessonId}`,
+                type: "dialogue",
+                dIdx,
+                lIdx,
+              })),
+            ),
+          ]}
+          onClose={() => setShowDrivingMode(false)}
+        />
+      ) : null}
     </div>
   );
 }
