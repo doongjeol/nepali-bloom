@@ -9,6 +9,7 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as StudyNotesRouteImport } from './routes/study-notes'
 import { Route as StudyRouteImport } from './routes/study'
 import { Route as FeedRouteImport } from './routes/feed'
 import { Route as IndexRouteImport } from './routes/index'
@@ -24,6 +25,11 @@ import { Route as StudyBookmarksRouteImport } from './routes/study.bookmarks'
 import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 import { Route as ExtraLessonsExtraLessonIdRouteImport } from './routes/extra-lessons.$extraLessonId'
 
+const StudyNotesRoute = StudyNotesRouteImport.update({
+  id: '/study-notes',
+  path: '/study-notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StudyRoute = StudyRouteImport.update({
   id: '/study',
   path: '/study',
@@ -100,6 +106,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
+  '/study-notes': typeof StudyNotesRoute
   '/extra-lessons/$extraLessonId': typeof ExtraLessonsExtraLessonIdRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/bookmarks': typeof StudyBookmarksRoute
@@ -115,6 +122,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/feed': typeof FeedRoute
+  '/study-notes': typeof StudyNotesRoute
   '/extra-lessons/$extraLessonId': typeof ExtraLessonsExtraLessonIdRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/bookmarks': typeof StudyBookmarksRoute
@@ -132,6 +140,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/feed': typeof FeedRoute
   '/study': typeof StudyRouteWithChildren
+  '/study-notes': typeof StudyNotesRoute
   '/extra-lessons/$extraLessonId': typeof ExtraLessonsExtraLessonIdRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/study/bookmarks': typeof StudyBookmarksRoute
@@ -150,6 +159,7 @@ export interface FileRouteTypes {
     | '/'
     | '/feed'
     | '/study'
+    | '/study-notes'
     | '/extra-lessons/$extraLessonId'
     | '/lessons/$lessonId'
     | '/study/bookmarks'
@@ -165,6 +175,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/feed'
+    | '/study-notes'
     | '/extra-lessons/$extraLessonId'
     | '/lessons/$lessonId'
     | '/study/bookmarks'
@@ -181,6 +192,7 @@ export interface FileRouteTypes {
     | '/'
     | '/feed'
     | '/study'
+    | '/study-notes'
     | '/extra-lessons/$extraLessonId'
     | '/lessons/$lessonId'
     | '/study/bookmarks'
@@ -198,6 +210,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   FeedRoute: typeof FeedRoute
   StudyRoute: typeof StudyRouteWithChildren
+  StudyNotesRoute: typeof StudyNotesRoute
   ExtraLessonsExtraLessonIdRoute: typeof ExtraLessonsExtraLessonIdRoute
   LessonsLessonIdRoute: typeof LessonsLessonIdRoute
   ExtraLessonsIndexRoute: typeof ExtraLessonsIndexRoute
@@ -206,6 +219,13 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/study-notes': {
+      id: '/study-notes'
+      path: '/study-notes'
+      fullPath: '/study-notes'
+      preLoaderRoute: typeof StudyNotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/study': {
       id: '/study'
       path: '/study'
@@ -333,6 +353,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   FeedRoute: FeedRoute,
   StudyRoute: StudyRouteWithChildren,
+  StudyNotesRoute: StudyNotesRoute,
   ExtraLessonsExtraLessonIdRoute: ExtraLessonsExtraLessonIdRoute,
   LessonsLessonIdRoute: LessonsLessonIdRoute,
   ExtraLessonsIndexRoute: ExtraLessonsIndexRoute,

@@ -65,6 +65,17 @@ function Index() {
               <h2 className="mb-1 text-xl font-semibold text-foreground">추가 레슨</h2>
               <p className="text-sm text-muted-foreground">기본 레슨 외 확장 학습</p>
             </Link>
+
+            <Link
+              to="/study-notes"
+              className="group block rounded-2xl border bg-card p-6 text-center shadow-sm transition-all active:scale-[0.98] hover:shadow-md sm:col-span-2 sm:p-8"
+            >
+              <div className="mb-3 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-accent text-2xl">
+                📝
+              </div>
+              <h2 className="mb-1 text-xl font-semibold text-foreground">학습 노트</h2>
+              <p className="text-sm text-muted-foreground">내가 정리한 내용을 모아보고, Markdown으로 작성해요</p>
+            </Link>
           </div>
         </section>
 
