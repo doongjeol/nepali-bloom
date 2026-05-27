@@ -288,15 +288,13 @@ function StudyNotesRoute() {
                                 disabled={saving}
                               />
                             </TabsContent>
-                            <TabsContent value="preview" className="mt-2 rounded-md border bg-background p-3">
+                            <TabsContent value="preview" className="mt-2">
                               <MarkdownPreview value={editingContent} />
                             </TabsContent>
                           </Tabs>
                         </div>
                       ) : (
-                        <div className="rounded-md border bg-background p-3">
-                          <MarkdownPreview value={note.content} />
-                        </div>
+                        <MarkdownPreview value={note.content} />
                       )}
                     </CardContent>
                   </Card>
