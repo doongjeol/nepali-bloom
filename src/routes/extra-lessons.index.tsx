@@ -40,7 +40,7 @@ function ExtraLessonsPage() {
           </div>
         ) : (
           <div className="grid gap-2 sm:gap-3">
-            {list.map(({ l, extraId }) => {
+            {list.map(({ l, extraId }: { l: any; extraId: number }) => {
               const counts = {
                 vocabulary: l.vocabulary?.length ?? 0,
                 examples: l.examples?.length ?? 0,

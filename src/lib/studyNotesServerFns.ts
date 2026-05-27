@@ -14,7 +14,7 @@ function getServerClientId(fallbackClientId?: string) {
         : `cid_${Date.now()}`;
   setCookie("nb_cid", created, {
     path: "/",
-    sameSite: "Lax",
+    sameSite: "lax",
     secure: process.env.NODE_ENV === "production",
     maxAge: 60 * 60 * 24 * 365,
   });
