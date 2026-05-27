@@ -192,7 +192,7 @@ function StudyNotesRoute() {
                     disabled={saving}
                   />
                 </TabsContent>
-                <TabsContent value="preview" className="mt-2 rounded-md border bg-background p-3">
+                <TabsContent value="preview" className="mt-2">
                   <MarkdownPreview value={newContent} />
                 </TabsContent>
               </Tabs>
