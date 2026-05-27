@@ -9,7 +9,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
-import { isSupabaseConfigured } from "@/lib/supabaseClient";
 import {
   createStudyNote,
   deleteStudyNote,
@@ -56,7 +55,6 @@ function StudyNotesRoute() {
   const [editingContent, setEditingContent] = React.useState("");
 
   const refresh = React.useCallback(async () => {
-    if (!isSupabaseConfigured) return;
     setLoading(true);
     setErrorMessage(null);
     try {
@@ -75,7 +73,6 @@ function StudyNotesRoute() {
   }, [refresh]);
 
   async function onCreate() {
-    if (!isSupabaseConfigured) return;
     const content = newContent.trim();
     if (!content) {
       toast.error("노트 내용을 입력해 주세요.");
@@ -103,7 +100,6 @@ function StudyNotesRoute() {
   }
 
   async function onSaveEdit() {
-    if (!isSupabaseConfigured) return;
     if (!editingId) return;
     const content = editingContent.trim();
     if (!content) {
@@ -124,7 +120,6 @@ function StudyNotesRoute() {
   }
 
   async function onDelete(id: string) {
-    if (!isSupabaseConfigured) return;
     setSaving(true);
     try {
       await deleteStudyNote(id);
@@ -149,27 +144,16 @@ function StudyNotesRoute() {
             <p className="mt-1 text-sm text-muted-foreground">Markdown으로 작성하고, 나만의 복습 자료를 만들어 보세요.</p>
           </div>
           <div className="flex items-center gap-2">
-            <Button onClick={() => setIsAddOpen((v) => !v)} disabled={!isSupabaseConfigured || saving}>
+            <Button onClick={() => setIsAddOpen((v) => !v)} disabled={saving}>
               노트 추가하기
             </Button>
-            <Button variant="outline" onClick={() => void refresh()} disabled={!isSupabaseConfigured || saving || loading}>
+            <Button variant="outline" onClick={() => void refresh()} disabled={saving || loading}>
               새로고침
             </Button>
           </div>
         </div>
 
-        {!isSupabaseConfigured && (
-          <Card className="border bg-card shadow-sm">
-            <CardHeader className="space-y-1">
-              <CardTitle className="text-base sm:text-lg">Supabase 설정 필요</CardTitle>
-              <p className="text-sm text-muted-foreground">
-                `.env`에 `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`를 추가해 주세요.
-              </p>
-            </CardHeader>
-          </Card>
-        )}
-
-        {isSupabaseConfigured && isAddOpen && (
+        {isAddOpen && (
           <Card className="border bg-card shadow-sm">
             <CardHeader className="space-y-1">
               <CardTitle className="text-base sm:text-lg">새 노트</CardTitle>
@@ -217,9 +201,20 @@ function StudyNotesRoute() {
           </Card>
         )}
 
-        {isSupabaseConfigured && errorMessage && <p className="text-sm text-destructive">{errorMessage}</p>}
+        {errorMessage && (
+          <Card className="border bg-card shadow-sm">
+            <CardHeader className="space-y-1">
+              <CardTitle className="text-base sm:text-lg">학습 노트를 불러올 수 없어요</CardTitle>
+              <p className="text-sm text-muted-foreground">
+                Cloudflare Workers라면 `Settings → Variables`에서 `SUPABASE_URL`(vars)과 `SUPABASE_SERVICE_ROLE_KEY`(secret)를
+                설정했는지 확인해 주세요.
+              </p>
+              <p className="text-sm text-destructive">{errorMessage}</p>
+            </CardHeader>
+          </Card>
+        )}
 
-        {isSupabaseConfigured && (
+        {
           <div className="space-y-4">
             {loading ? (
               <p className="text-sm text-muted-foreground">불러오는 중…</p>
@@ -302,7 +297,7 @@ function StudyNotesRoute() {
               })
             )}
           </div>
-        )}
+        }
       </main>
     </div>
   );

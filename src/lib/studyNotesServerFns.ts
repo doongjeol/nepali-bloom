@@ -21,9 +21,20 @@ function getServerClientId(fallbackClientId?: string) {
   return created;
 }
 
-function getAdminSupabase() {
-  const url = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+async function getAdminSupabase() {
+  const runtimeEnv =
+    (typeof process !== "undefined" ? (process.env as Record<string, string | undefined>) : undefined) ?? {};
+
+  let cloudflareEnv: Record<string, string | undefined> = {};
+  try {
+    const mod = (await import("cloudflare:workers")) as unknown as { env?: Record<string, string | undefined> };
+    cloudflareEnv = mod.env ?? {};
+  } catch {}
+
+  const read = (key: string) => runtimeEnv[key] ?? cloudflareEnv[key];
+
+  const url = read("SUPABASE_URL") ?? read("VITE_SUPABASE_URL");
+  const serviceKey = read("SUPABASE_SERVICE_ROLE_KEY");
   if (!url || !serviceKey) {
     throw new Error(
       "서버 Supabase 설정이 없어요. `.env`에 `SUPABASE_URL`(또는 `VITE_SUPABASE_URL`)과 `SUPABASE_SERVICE_ROLE_KEY`를 설정해 주세요."
@@ -42,7 +53,7 @@ function getAdminSupabase() {
 export const listStudyNotesServer = createServerFn({ method: "GET" })
   .inputValidator((data: { clientId?: string } | undefined) => data)
   .handler(async ({ data: input }) => {
-  const supabase = getAdminSupabase();
+  const supabase = await getAdminSupabase();
   const clientId = getServerClientId(input?.clientId);
 
   const { data: rows, error } = await supabase
@@ -58,7 +69,7 @@ export const listStudyNotesServer = createServerFn({ method: "GET" })
 export const createStudyNoteServer = createServerFn({ method: "POST" })
   .inputValidator((data: { clientId?: string; title?: string; content: string }) => data)
   .handler(async ({ data: input }) => {
-    const supabase = getAdminSupabase();
+    const supabase = await getAdminSupabase();
     const clientId = getServerClientId(input.clientId);
 
     const { data: created, error } = await supabase
@@ -78,7 +89,7 @@ export const createStudyNoteServer = createServerFn({ method: "POST" })
 export const updateStudyNoteServer = createServerFn({ method: "POST" })
   .inputValidator((data: { clientId?: string; id: string; title?: string; content: string }) => data)
   .handler(async ({ data: input }) => {
-    const supabase = getAdminSupabase();
+    const supabase = await getAdminSupabase();
     const clientId = getServerClientId(input.clientId);
 
     const { data: updated, error } = await supabase
@@ -99,7 +110,7 @@ export const updateStudyNoteServer = createServerFn({ method: "POST" })
 export const deleteStudyNoteServer = createServerFn({ method: "POST" })
   .inputValidator((data: { clientId?: string; id: string }) => data)
   .handler(async ({ data: input }) => {
-    const supabase = getAdminSupabase();
+    const supabase = await getAdminSupabase();
     const clientId = getServerClientId(input.clientId);
 
     const { error } = await supabase.from("study_notes").delete().eq("id", input.id).eq("client_id", clientId);
