@@ -142,7 +142,7 @@ function LessonDetailPage() {
           .filter((entry: { line: any; idx: number }) => matchesLine(entry.line));
         return { dialogue, dIdx, lines };
       })
-      .filter((d) => d.lines.length > 0);
+      .filter((d: { lines: unknown[] }) => d.lines.length > 0);
   }, [dialogueQuery, lesson?.dialogues]);
 
   const startPlayAllForDialogue = (dIdx: number) => {
@@ -1046,7 +1046,7 @@ function LessonDetailPage() {
                   </div>
                 ) : null}
 
-                {dialogueResults.map(({ dialogue, dIdx, lines }) => (
+                {dialogueResults.map(({ dialogue, dIdx, lines }: { dialogue: any; dIdx: number; lines: any[] }) => (
                   <div key={dIdx}>
                     <div className="mb-2 sm:mb-3 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
                       <h2 className="text-sm sm:text-base font-semibold text-foreground">
