@@ -8,6 +8,9 @@ pnpm-debug.log*
 lerna-debug.log*
 
 node_modules
+.npm-cache/
+.bun-tmp/
+.env
 dist
 dist-ssr
 .output
