@@ -34,7 +34,7 @@ function formatShortDate(value: string) {
 
 function MarkdownPreview({ value }: { value: string }) {
   return (
-    <div className="prose prose-sm max-w-none dark:prose-invert">
+    <div className="notebook">
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{value || "_(미리보기)_"}</ReactMarkdown>
     </div>
   );
@@ -192,7 +192,7 @@ function StudyNotesRoute() {
                     disabled={saving}
                   />
                 </TabsContent>
-                <TabsContent value="preview" className="mt-2 rounded-md border bg-background p-3">
+                <TabsContent value="preview" className="mt-2">
                   <MarkdownPreview value={newContent} />
                 </TabsContent>
               </Tabs>
@@ -288,15 +288,13 @@ function StudyNotesRoute() {
                                 disabled={saving}
                               />
                             </TabsContent>
-                            <TabsContent value="preview" className="mt-2 rounded-md border bg-background p-3">
+                            <TabsContent value="preview" className="mt-2">
                               <MarkdownPreview value={editingContent} />
                             </TabsContent>
                           </Tabs>
                         </div>
                       ) : (
-                        <div className="rounded-md border bg-background p-3">
-                          <MarkdownPreview value={note.content} />
-                        </div>
+                        <MarkdownPreview value={note.content} />
                       )}
                     </CardContent>
                   </Card>
