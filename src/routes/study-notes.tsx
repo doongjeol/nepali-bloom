@@ -7,6 +7,16 @@ import { Header } from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "@/components/ui/alert-dialog";
+import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -58,6 +68,7 @@ function StudyNotesRoute() {
   const [syncSaving, setSyncSaving] = React.useState(false);
   const [syncOpen, setSyncOpen] = React.useState(false);
   const [selectedId, setSelectedId] = React.useState<string | null>(null);
+  const [deleteConfirmOpen, setDeleteConfirmOpen] = React.useState(false);
 
   const [isAddOpen, setIsAddOpen] = React.useState(false);
   const [newTitle, setNewTitle] = React.useState("");
@@ -184,6 +195,7 @@ function StudyNotesRoute() {
         return next;
       });
       if (editingId === id) setEditingId(null);
+      setDeleteConfirmOpen(false);
       toast.success("노트를 삭제했어요.");
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "노트 삭제에 실패했어요.");
@@ -397,7 +409,7 @@ function StudyNotesRoute() {
                             <Button
                               size="sm"
                               variant="destructive"
-                              onClick={() => void onDelete(selectedNote.id)}
+                              onClick={() => setDeleteConfirmOpen(true)}
                               disabled={saving}
                             >
                               삭제
@@ -441,6 +453,27 @@ function StudyNotesRoute() {
                   ) : (
                     <MarkdownPreview value={selectedNote.content} />
                   )}
+
+                  {selectedNote ? (
+                    <AlertDialog open={deleteConfirmOpen} onOpenChange={setDeleteConfirmOpen}>
+                      <AlertDialogContent>
+                        <AlertDialogHeader>
+                          <AlertDialogTitle>삭제하시겠습니까?</AlertDialogTitle>
+                          <AlertDialogDescription>이 작업은 되돌릴 수 없습니다.</AlertDialogDescription>
+                        </AlertDialogHeader>
+                        <AlertDialogFooter>
+                          <AlertDialogCancel disabled={saving}>취소</AlertDialogCancel>
+                          <AlertDialogAction
+                            className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
+                            onClick={() => void onDelete(selectedNote.id)}
+                            disabled={saving}
+                          >
+                            삭제
+                          </AlertDialogAction>
+                        </AlertDialogFooter>
+                      </AlertDialogContent>
+                    </AlertDialog>
+                  ) : null}
                 </CardContent>
               </Card>
             </div>
@@ -450,4 +483,3 @@ function StudyNotesRoute() {
     </div>
   );
 }
-
