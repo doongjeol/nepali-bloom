@@ -220,3 +220,211 @@
     scrollbar-width: none;
   }
 }
+
+/* ============================
+   Notebook-style Markdown
+   ============================ */
+.notebook {
+  --nb-paper: #fcfbf8;
+  --nb-paper-edge: #f1ece1;
+  --nb-ink: #2d3142;
+  --nb-ink-soft: #5b6072;
+  --nb-accent: #b28471;
+  --nb-highlight: #fff3c2;
+  --nb-rule: #e7e1d3;
+  --nb-code-bg: #f4efe4;
+  --nb-quote-bg: #fbf5e3;
+
+  background-color: var(--nb-paper);
+  color: var(--nb-ink);
+  border-radius: 1rem;
+  padding: 1.75rem;
+  box-shadow:
+    0 1px 2px rgba(60, 50, 30, 0.05),
+    0 8px 24px -12px rgba(60, 50, 30, 0.12);
+  font-family: "Caveat", "Gaegu", "Noto Sans KR", system-ui, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 640px) {
+  .notebook {
+    padding: 1.125rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    border-radius: 0.875rem;
+  }
+}
+
+.dark .notebook {
+  --nb-paper: #232634;
+  --nb-paper-edge: #2c3040;
+  --nb-ink: #e6e3d8;
+  --nb-ink-soft: #b8b4a4;
+  --nb-accent: #d4a373;
+  --nb-highlight: #5c4a1f;
+  --nb-rule: #3a3f52;
+  --nb-code-bg: #2c3040;
+  --nb-quote-bg: #2f2a1f;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 8px 24px -12px rgba(0, 0, 0, 0.4);
+}
+
+.notebook > :first-child {
+  margin-top: 0;
+}
+.notebook > :last-child {
+  margin-bottom: 0;
+}
+
+.notebook h1,
+.notebook h2,
+.notebook h3,
+.notebook h4 {
+  font-family: "Caveat", "Gaegu", "Noto Sans KR", system-ui, sans-serif;
+  color: var(--nb-ink);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-top: 1.75em;
+  margin-bottom: 0.6em;
+  letter-spacing: 0.005em;
+}
+.notebook h1 {
+  font-size: 2.25rem;
+  border-bottom: 2px solid var(--nb-accent);
+  padding-bottom: 0.25em;
+}
+.notebook h2 {
+  font-size: 1.85rem;
+  border-bottom: 1px dashed var(--nb-rule);
+  padding-bottom: 0.2em;
+}
+.notebook h3 {
+  font-size: 1.55rem;
+  color: var(--nb-accent);
+}
+.notebook h4 {
+  font-size: 1.3rem;
+  color: var(--nb-ink-soft);
+}
+
+.notebook p {
+  margin: 0.85em 0;
+}
+
+.notebook a {
+  color: var(--nb-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.notebook strong {
+  background: linear-gradient(transparent 60%, var(--nb-highlight) 60%);
+  font-weight: 700;
+  padding: 0 0.1em;
+}
+.notebook em {
+  color: var(--nb-accent);
+  font-style: italic;
+}
+
+.notebook ul,
+.notebook ol {
+  margin: 0.75em 0;
+  padding-left: 1.6em;
+}
+.notebook li {
+  margin: 0.3em 0;
+  padding-left: 0.25em;
+}
+.notebook ul > li::marker {
+  color: var(--nb-accent);
+  content: "•  ";
+}
+.notebook ol > li::marker {
+  color: var(--nb-accent);
+  font-weight: 700;
+}
+.notebook li > ul,
+.notebook li > ol {
+  margin: 0.25em 0;
+}
+
+.notebook blockquote {
+  margin: 1.1em 0;
+  padding: 0.75em 1em;
+  border-left: 4px solid var(--nb-accent);
+  background: var(--nb-quote-bg);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: var(--nb-ink-soft);
+  font-style: italic;
+}
+.notebook blockquote p {
+  margin: 0.3em 0;
+}
+
+.notebook hr {
+  border: 0;
+  border-top: 1px dashed var(--nb-rule);
+  margin: 1.75em 0;
+}
+
+.notebook code {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  background: var(--nb-code-bg);
+  color: var(--nb-ink);
+  padding: 0.1em 0.4em;
+  border-radius: 0.35em;
+}
+
+.notebook pre {
+  font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  background: var(--nb-code-bg);
+  border: 1px solid var(--nb-rule);
+  border-radius: 0.6rem;
+  padding: 1em 1.1em;
+  overflow-x: auto;
+  line-height: 1.55;
+  margin: 1.1em 0;
+}
+.notebook pre code {
+  background: transparent;
+  padding: 0;
+  font-size: 0.92em;
+}
+
+.notebook table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.1em 0;
+  font-size: 0.95em;
+}
+.notebook th,
+.notebook td {
+  border: 1px solid var(--nb-rule);
+  padding: 0.55em 0.75em;
+  text-align: left;
+}
+.notebook th {
+  background: var(--nb-paper-edge);
+  font-weight: 700;
+}
+.notebook tbody tr:nth-child(even) td {
+  background: color-mix(in oklab, var(--nb-paper-edge) 50%, transparent);
+}
+
+.notebook img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1em 0;
+}
+
+.notebook input[type="checkbox"] {
+  accent-color: var(--nb-accent);
+  margin-right: 0.4em;
+}
