@@ -34,7 +34,7 @@ function formatShortDate(value: string) {
 
 function MarkdownPreview({ value }: { value: string }) {
   return (
-    <div className="prose prose-sm max-w-none dark:prose-invert">
+    <div className="notebook">
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{value || "_(미리보기)_"}</ReactMarkdown>
     </div>
   );
