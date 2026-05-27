@@ -2,10 +2,17 @@ import { createClient } from "@supabase/supabase-js";
 import { createServerFn } from "@tanstack/react-start";
 import { getCookie, setCookie } from "@tanstack/react-start/server";
 
+function normalizeClientId(value: string | undefined) {
+  const trimmed = value?.trim();
+  if (!trimmed) return undefined;
+  if (trimmed.length > 128) throw new Error("Client id is too long (max 128 characters).");
+  return trimmed;
+}
+
 function getServerClientId(fallbackClientId?: string) {
   const existing = getCookie("nb_cid");
   if (existing) return existing;
-  const normalizedFallback = fallbackClientId?.trim();
+  const normalizedFallback = normalizeClientId(fallbackClientId);
   const created =
     normalizedFallback && normalizedFallback.length <= 128
       ? normalizedFallback
@@ -20,6 +27,22 @@ function getServerClientId(fallbackClientId?: string) {
   });
   return created;
 }
+
+export const setStudyNotesClientIdServer = createServerFn({ method: "POST" })
+  .inputValidator((data: { clientId: string }) => data)
+  .handler(async ({ data: input }) => {
+    const clientId = normalizeClientId(input.clientId);
+    if (!clientId) throw new Error("Client id is required.");
+
+    setCookie("nb_cid", clientId, {
+      path: "/",
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 60 * 60 * 24 * 365,
+    });
+
+    return { clientId };
+  });
 
 async function getAdminSupabase() {
   const runtimeEnv =

@@ -2,6 +2,7 @@ import {
   createStudyNoteServer,
   deleteStudyNoteServer,
   listStudyNotesServer,
+  setStudyNotesClientIdServer,
   updateStudyNoteServer,
 } from "@/lib/studyNotesServerFns";
 
@@ -24,6 +25,20 @@ export function getOrCreateClientId(): string {
     typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : `cid_${Date.now()}`;
   window.localStorage.setItem(CLIENT_ID_STORAGE_KEY, created);
   return created;
+}
+
+export function setClientId(value: string) {
+  if (typeof window === "undefined") return;
+  window.localStorage.setItem(CLIENT_ID_STORAGE_KEY, value);
+}
+
+export async function setStudyNotesClientId(clientId: string): Promise<string> {
+  const normalized = clientId.trim();
+  if (!normalized) throw new Error("Client id is required.");
+  const res = await setStudyNotesClientIdServer({ data: { clientId: normalized } });
+  const next = (res as { clientId: string } | undefined)?.clientId ?? normalized;
+  setClientId(next);
+  return next;
 }
 
 export async function listStudyNotes(clientId: string): Promise<StudyNote[]> {

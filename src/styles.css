@@ -224,6 +224,14 @@
 /* ============================
    Notebook-style Markdown
    ============================ */
+@font-face {
+  font-family: "OneStoreMobileGothicBody";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 .notebook {
   --nb-paper: #fcfbf8;
   --nb-paper-edge: #f1ece1;
@@ -242,17 +250,17 @@
   box-shadow:
     0 1px 2px rgba(60, 50, 30, 0.05),
     0 8px 24px -12px rgba(60, 50, 30, 0.12);
-  font-family: "Caveat", "Gaegu", "Noto Sans KR", system-ui, sans-serif;
-  font-size: 1.25rem;
-  line-height: 1.75;
+  font-family: "OneStoreMobileGothicBody", "Noto Sans KR", system-ui, sans-serif;
+  font-size: 0.92rem;
+  line-height: 1.6;
   letter-spacing: 0.01em;
 }
 
 @media (max-width: 640px) {
   .notebook {
     padding: 1.125rem;
-    font-size: 1.15rem;
-    line-height: 1.7;
+    font-size: 0.9rem;
+    line-height: 1.55;
     border-radius: 0.875rem;
   }
 }
@@ -283,7 +291,7 @@
 .notebook h2,
 .notebook h3,
 .notebook h4 {
-  font-family: "Caveat", "Gaegu", "Noto Sans KR", system-ui, sans-serif;
+  font-family: "OneStoreMobileGothicBody", "Noto Sans KR", system-ui, sans-serif;
   color: var(--nb-ink);
   font-weight: 700;
   line-height: 1.25;
@@ -292,21 +300,21 @@
   letter-spacing: 0.005em;
 }
 .notebook h1 {
-  font-size: 2.25rem;
+  font-size: 1.45rem;
   border-bottom: 2px solid var(--nb-accent);
   padding-bottom: 0.25em;
 }
 .notebook h2 {
-  font-size: 1.85rem;
+  font-size: 1.25rem;
   border-bottom: 1px dashed var(--nb-rule);
   padding-bottom: 0.2em;
 }
 .notebook h3 {
-  font-size: 1.55rem;
+  font-size: 1.08rem;
   color: var(--nb-accent);
 }
 .notebook h4 {
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--nb-ink-soft);
 }
 
