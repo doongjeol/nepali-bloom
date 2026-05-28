@@ -47,7 +47,11 @@ export const Route = createFileRoute("/study-notes")({
 function formatShortDate(value: string) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return value;
-  return new Intl.DateTimeFormat(undefined, { year: "numeric", month: "short", day: "2-digit" }).format(date);
+  return new Intl.DateTimeFormat(undefined, {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+  }).format(date);
 }
 
 function MarkdownPreview({ value }: { value: string }) {
@@ -102,7 +106,9 @@ function StudyNotesRoute() {
   }, [clientId]);
 
   function generateSyncKey() {
-    return typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : `cid_${Date.now()}`;
+    return typeof crypto !== "undefined" && "randomUUID" in crypto
+      ? crypto.randomUUID()
+      : `cid_${Date.now()}`;
   }
 
   async function onSaveSyncKey(): Promise<boolean> {
@@ -239,12 +245,17 @@ function StudyNotesRoute() {
             <DialogHeader>
               <DialogTitle>노트 동기화</DialogTitle>
               <DialogDescription>
-                같은 동기화 키를 입력한 브라우저들끼리 동일한 노트를 공유합니다. (키는 길고 랜덤하게 생성하는 걸 권장)
+                같은 동기화 키를 입력한 브라우저들끼리 동일한 노트를 공유합니다. (키는 길고 랜덤하게
+                생성하는 걸 권장)
               </DialogDescription>
             </DialogHeader>
 
             <div className="grid gap-2">
-              <Input value={syncKey} onChange={(e) => setSyncKey(e.target.value)} disabled={syncSaving || saving} />
+              <Input
+                value={syncKey}
+                onChange={(e) => setSyncKey(e.target.value)}
+                disabled={syncSaving || saving}
+              />
               <p className="text-xs text-muted-foreground">현재 키: {clientId}</p>
             </div>
 
@@ -276,11 +287,34 @@ function StudyNotesRoute() {
         {isAddOpen && (
           <Card className="border bg-card shadow-sm">
             <CardHeader className="space-y-1">
-              <CardTitle className="text-base sm:text-lg">새 노트</CardTitle>
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <CardTitle className="text-base sm:text-lg">새 노트</CardTitle>
+                <div className="flex items-center gap-2">
+                  <Button onClick={onCreate} disabled={saving}>
+                    추가
+                  </Button>
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setIsAddOpen(false);
+                      setNewTitle("");
+                      setNewContent("");
+                    }}
+                    disabled={saving}
+                  >
+                    닫기
+                  </Button>
+                </div>
+              </div>
               <p className="text-sm text-muted-foreground">내용은 Markdown으로 입력할 수 있어요.</p>
             </CardHeader>
             <CardContent className="grid gap-3">
-              <Input value={newTitle} onChange={(e) => setNewTitle(e.target.value)} placeholder="제목 (선택)" disabled={saving} />
+              <Input
+                value={newTitle}
+                onChange={(e) => setNewTitle(e.target.value)}
+                placeholder="제목 (선택)"
+                disabled={saving}
+              />
 
               <Tabs defaultValue="write">
                 <TabsList>
@@ -291,7 +325,9 @@ function StudyNotesRoute() {
                   <Textarea
                     value={newContent}
                     onChange={(e) => setNewContent(e.target.value)}
-                    placeholder={"예:\n- 오늘 배운 표현\n- 헷갈렸던 발음\n\n**Tip:** 내일 다시 복습하기"}
+                    placeholder={
+                      "예:\n- 오늘 배운 표현\n- 헷갈렸던 발음\n\n**Tip:** 내일 다시 복습하기"
+                    }
                     className="min-h-[400px]"
                     disabled={saving}
                   />
@@ -300,23 +336,6 @@ function StudyNotesRoute() {
                   <MarkdownPreview value={newContent} />
                 </TabsContent>
               </Tabs>
-
-              <div className="flex items-center gap-2">
-                <Button onClick={onCreate} disabled={saving}>
-                  추가
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setIsAddOpen(false);
-                    setNewTitle("");
-                    setNewContent("");
-                  }}
-                  disabled={saving}
-                >
-                  닫기
-                </Button>
-              </div>
             </CardContent>
           </Card>
         )}
@@ -326,8 +345,8 @@ function StudyNotesRoute() {
             <CardHeader className="space-y-1">
               <CardTitle className="text-base sm:text-lg">학습 노트를 불러올 수 없어요</CardTitle>
               <p className="text-sm text-muted-foreground">
-                Cloudflare Workers라면 `Settings → Variables`에서 `SUPABASE_URL`(vars)과 `SUPABASE_SERVICE_ROLE_KEY`(secret)를
-                설정했는지 확인해 주세요.
+                Cloudflare Workers라면 `Settings → Variables`에서 `SUPABASE_URL`(vars)과
+                `SUPABASE_SERVICE_ROLE_KEY`(secret)를 설정했는지 확인해 주세요.
               </p>
               <p className="text-sm text-destructive">{errorMessage}</p>
             </CardHeader>
@@ -341,7 +360,9 @@ function StudyNotesRoute() {
             <Card className="border bg-card shadow-sm">
               <CardHeader className="space-y-1">
                 <CardTitle className="text-base sm:text-lg">노트가 없어요</CardTitle>
-                <p className="text-sm text-muted-foreground">오른쪽 상단의 “노트 추가하기”로 첫 노트를 작성해 보세요.</p>
+                <p className="text-sm text-muted-foreground">
+                  오른쪽 상단의 “노트 추가하기”로 첫 노트를 작성해 보세요.
+                </p>
               </CardHeader>
             </Card>
           ) : (
@@ -349,7 +370,9 @@ function StudyNotesRoute() {
               <Card className="border bg-card shadow-sm">
                 <CardHeader className="space-y-1 pb-3">
                   <CardTitle className="text-base sm:text-lg">리스트</CardTitle>
-                  <p className="text-sm text-muted-foreground">항목을 클릭하면 상세를 볼 수 있어요.</p>
+                  <p className="text-sm text-muted-foreground">
+                    항목을 클릭하면 상세를 볼 수 있어요.
+                  </p>
                 </CardHeader>
                 <CardContent className="grid gap-1">
                   {notes.map((note) => {
@@ -371,7 +394,9 @@ function StudyNotesRoute() {
                         <div className="truncate text-sm font-medium text-foreground">
                           {note.title?.trim() ? note.title : "제목 없음"}
                         </div>
-                        <div className="mt-0.5 text-xs text-muted-foreground">{formatShortDate(note.created_at)}</div>
+                        <div className="mt-0.5 text-xs text-muted-foreground">
+                          {formatShortDate(note.created_at)}
+                        </div>
                       </button>
                     );
                   })}
@@ -383,10 +408,16 @@ function StudyNotesRoute() {
                   <div className="flex flex-wrap items-start justify-between gap-3">
                     <div className="min-w-0">
                       <CardTitle className="truncate text-base sm:text-lg">
-                        {selectedNote?.title?.trim() ? selectedNote.title : selectedNote ? "제목 없음" : "상세"}
+                        {selectedNote?.title?.trim()
+                          ? selectedNote.title
+                          : selectedNote
+                            ? "제목 없음"
+                            : "상세"}
                       </CardTitle>
                       {selectedNote ? (
-                        <p className="text-xs text-muted-foreground">{formatShortDate(selectedNote.created_at)}</p>
+                        <p className="text-xs text-muted-foreground">
+                          {formatShortDate(selectedNote.created_at)}
+                        </p>
                       ) : null}
                     </div>
 
@@ -397,13 +428,23 @@ function StudyNotesRoute() {
                             <Button size="sm" onClick={onSaveEdit} disabled={saving}>
                               저장
                             </Button>
-                            <Button size="sm" variant="outline" onClick={() => setEditingId(null)} disabled={saving}>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => setEditingId(null)}
+                              disabled={saving}
+                            >
                               취소
                             </Button>
                           </>
                         ) : (
                           <>
-                            <Button size="sm" variant="outline" onClick={() => startEdit(selectedNote)} disabled={saving}>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => startEdit(selectedNote)}
+                              disabled={saving}
+                            >
                               수정
                             </Button>
                             <Button
@@ -423,7 +464,9 @@ function StudyNotesRoute() {
 
                 <CardContent>
                   {!selectedNote ? (
-                    <p className="text-sm text-muted-foreground">왼쪽 리스트에서 노트를 선택해 주세요.</p>
+                    <p className="text-sm text-muted-foreground">
+                      왼쪽 리스트에서 노트를 선택해 주세요.
+                    </p>
                   ) : editingId === selectedNote.id ? (
                     <div className="grid gap-3">
                       <Input
@@ -459,7 +502,9 @@ function StudyNotesRoute() {
                       <AlertDialogContent>
                         <AlertDialogHeader>
                           <AlertDialogTitle>삭제하시겠습니까?</AlertDialogTitle>
-                          <AlertDialogDescription>이 작업은 되돌릴 수 없습니다.</AlertDialogDescription>
+                          <AlertDialogDescription>
+                            이 작업은 되돌릴 수 없습니다.
+                          </AlertDialogDescription>
                         </AlertDialogHeader>
                         <AlertDialogFooter>
                           <AlertDialogCancel disabled={saving}>취소</AlertDialogCancel>
