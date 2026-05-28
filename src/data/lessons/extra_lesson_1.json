@@ -334,6 +334,38 @@
         "garchhu → gare → garnechhu",
         "garchha → garyo → garnechha"
       ]
+    },
+    {
+      "title": "6. 주어별 동사 시제 변화 (현재/과거/미래)",
+      "details": [
+        "네팔어는 주어(나, 너, 당신, 그 등)에 따라 동사의 어미가 다르게 변화합니다. 기본 동사인 'खानु (khaanu - 먹다)'를 예시로 각 시제별 어미 변화를 살펴봅니다.",
+        "",
+        "[ 1. 현재 시제 (Present Tense) ]",
+        "• म (ma, 나는): खान्छु (khaanchhu)",
+        "• हामी (haami, 우리는): खान्छौं (khaanchhaũ)",
+        "• तिमी (timi, 너는): खान्छौ (khaanchhau)",
+        "• तपाईं (tapaaI, 당신은): खानुहुन्छ (khaanuhunchha)",
+        "• ऊ (u, 그/그녀는): खान्छ (khaanchha)",
+        "• उहाँ (wahãã, 그분은): खानुहुन्छ (khaanuhunchha)",
+        "",
+        "[ 2. 과거 시제 (Past Tense) ]",
+        "• म (ma, 나는): खाएँ (khaaẽ)",
+        "• हामी (haami, 우리는): खायौं (khaayaũ)",
+        "• तिमी (timi, 너는): खायौ (khaayau)",
+        "• तपाईं (tapaaI, 당신은): खानुभयो (khaanubhayo)",
+        "• ऊ (u, 그/그녀는): खायो (khaayo)",
+        "• उहाँ (wahãã, 그분은): खानुभयो (khaanubhayo)",
+        "",
+        "[ 3. 미래 시제 (Future Tense) ]",
+        "• म (ma, 나는): खानेछु (khaanechhu)",
+        "• हामी (haami, 우리는): खानेछौं (khaanechhaũ)",
+        "• तिमी (timi, 너는): खानेछौ (khaanechhau)",
+        "• तपाईं (tapaaI, 당신은): खानुहुनेछ (khaanuhunechha)",
+        "• ऊ (u, 그/그녀는): खानेछ (khaanechha)",
+        "• उहाँ (wahãã, 그분은): खानुहुनेछ (khaanuhunechha)",
+        "",
+        "💡 회화 팁: 일상 구어체에서는 미래의 계획이나 의도를 말할 때 주어에 따른 복잡한 변화 대신 '-ने(-ne)' 형태를 공통으로 자주 사용하기도 합니다. (예: म खाने, तपाईं खाने)"
+      ]
     }
   ],
   "quiz": [
