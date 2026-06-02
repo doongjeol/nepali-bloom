@@ -211,9 +211,15 @@
       "lines": [
         {
           "speaker": "A",
-          "nepali": "म बजार जाने । तपाईंलाई केही चाहिन्छ ?",
-          "romanized": "ma bajaar jaane. tapaaIlaai kehi chaahinchha ?",
-          "korean": "저 시장에 가요. 뭐 필요한 거 있어요?"
+          "nepali": "म बजार जाने ।",
+          "romanized": "ma bajaar jaane.",
+          "korean": "저 시장에 가요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईंलाई केही चाहिन्छ ?",
+          "romanized": "tapaaIlaai kehi chaahinchha ?",
+          "korean": "뭐 필요한 거 있어요?"
         },
         {
           "speaker": "B",
@@ -247,9 +253,15 @@
         },
         {
           "speaker": "A",
-          "nepali": "पैसा दिनोस । म ल्याइदिन्छु ।",
-          "romanized": "paisaa dinos. ma lyaaidinchhu.",
-          "korean": "돈을 주세요. 제가 사다 줄게요."
+          "nepali": "पैसा दिनोस । ",
+          "romanized": "paisaa dinos.",
+          "korean": "돈을 주세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "म ल्याइदिन्छु ।",
+          "romanized": "ma lyaaidinchhu.",
+          "korean": "제가 사다 줄게요."
         },
         {
           "speaker": "B",
@@ -335,9 +347,15 @@
         },
         {
           "speaker": "A",
-          "nepali": "महँगो छैन । एउटाको पचास रुपियाँ मात्र पर्छ ।",
-          "romanized": "mahango chhaina. euTaako pachaas rupiyãã maatra parchha.",
-          "korean": "비싸지 않아요. 하나에 겨우 50루피입니다."
+          "nepali": "महँगो छैन ।",
+          "romanized": "mahango chhaina.",
+          "korean": "비싸지 않아요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "एउटाको पचास रुपियाँ मात्र पर्छ ।",
+          "romanized": "euTaako pachaas rupiyãã maatra parchha.",
+          "korean": "하나에 겨우 50루피입니다."
         },
         {
           "speaker": "B",
@@ -364,9 +382,15 @@
         },
         {
           "speaker": "B",
-          "nepali": "पाइन्छ । कतिवटा लिने ?",
-          "romanized": "paainchha. katiwaTaa line ?",
-          "korean": "네, 있습니다. 몇 자루 사시겠어요?"
+          "nepali": "पाइन्छ ।",
+          "romanized": "paainchha.",
+          "korean": "네, 있습니다."
+        },
+        {
+          "speaker": "B",
+          "nepali": "कतिवटा लिने ?",
+          "romanized": "katiwaTaa line ?",
+          "korean": "몇 자루 사시겠어요?"
         },
         {
           "speaker": "A",
@@ -382,9 +406,15 @@
         },
         {
           "speaker": "A",
-          "nepali": "तीनवटा दिनोस । खाम पनि पाइन्छ ?",
-          "romanized": "tinwaTaa dinos. khaam pani paainchha ?",
-          "korean": "세 자루 주세요. 봉투도 있나요?"
+          "nepali": "तीनवटा दिनोस ।",
+          "romanized": "tinwaTaa dinos.",
+          "korean": "세 자루 주세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "खाम पनि पाइन्छ ?",
+          "romanized": "khaam pani paainchha ?",
+          "korean": "봉투도 있나요?"
         },
         {
           "speaker": "B",
