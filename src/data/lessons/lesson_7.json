@@ -241,6 +241,30 @@
       "lines": [
         {
           "speaker": "A",
+          "nepali": "त्यो के हो ?",
+          "romanized": "tyo ke ho ?",
+          "korean": "저것은 무엇입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो किताब हो।",
+          "romanized": "yo kitaab ho.",
+          "korean": "이것은 책입니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "त्यो कसको किताब हो ?",
+          "romanized": "tyo kasko kitaab ho ?",
+          "korean": "저것은 누구의 책입니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "यो मेरो किताब हो।",
+          "romanized": "yo mero kitaab ho.",
+          "korean": "이것은 제 책입니다."
+        },
+        {
+          "speaker": "A",
           "nepali": "पढ्नुस्। तपाईं के गर्दै हुनुहुन्छ ?",
           "romanized": "paDhnos. tapaaï ke gardai hunuhunchha ?",
           "korean": "읽으세요. 당신은 무엇을 하고 있습니까?"
@@ -270,15 +294,27 @@
       "lines": [
         {
           "speaker": "A",
+          "nepali": "तपाईं ब्ल्याकबोर्डनिर जाँदै हुनुहुन्छ ?",
+          "romanized": "blyaakborDnira jannus.",
+          "korean": "칠판 근처로 가세요."
+        },
+        {
+          "speaker": "A",
           "nepali": "तपाईं कहाँ जाँदै हुनुहुन्छ ?",
           "romanized": "tapaai kahãã jäädai hunuhunchha ?",
-          "korean": "당신은 कहाँ(어디에) 가고 있습니까?"
+          "korean": "당신은 어디에 가고 있습니까?"
         },
         {
           "speaker": "B",
           "nepali": "म ब्ल्याकबोर्डनिर जाँदै छु।",
           "romanized": "ma blyaakborDnira jäädai chhu.",
           "korean": "저는 칠판 근처로 가고 있습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": " तपाईं ब्ल्याकबोरडमा आफ्नो नाम लेख्नुस्।",
+          "romanized": "blyaakborDmaa tapaaiko naam lekhnaus.",
+          "korean": "칠판에 당신의 이름을 쓰세요."
         },
         {
           "speaker": "A",
@@ -303,6 +339,18 @@
           "nepali": "मैले आफ्नो नाम लेखेको।",
           "romanized": "maile aaphno naam lekheko.",
           "korean": "저는 제 이름을 썼습니다."
+        },
+        {
+          "speaker": "A",
+          "nepali": "उहाँले के गरेको ?",
+          "romanized": "wahaale ke gareko ?",
+          "korean": "그분은 무엇을 했습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "उहाँले आफ्नो नाम लेखेको।",
+          "romanized": "wahaale aaphno naam lekheko.",
+          "korean": "그분은 제 이름을 썼습니다."
         }
       ]
     },
@@ -357,6 +405,42 @@
           "romanized": "tyaspachhi pharkane.",
           "korean": "그 후에는 돌아옵니다."
         }
+      ]
+    },
+    {
+      "title": "",
+      "lines": [
+        {
+          "speaker": "A",
+          "nepali": "तपाईं ब्ल्याकबोर्डमा आफ्नो नाम लेख्नुस्।",
+          "romanized": "kaapimaa tapaaiko naam lekhnus.",
+          "korean": "노트에 당신의 이름을 쓰세요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "तपाईं मेरो नाम लेख्दै हुनुहुन्छ ?",
+          "romanized": "tapaai mero naam lekhdai hunuhunchha ?",
+          "korean": "당신은 제 이름을 쓰고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "होइन",
+          "romanized": "hoina.",
+          "korean": "아니요."
+        },
+        {
+          "speaker": "A",
+          "nepali": "कसलाई तपाईं नाम लेख्दै हुनुहुन्छ ?",
+          "romanized": "kasko naam lekhdai hunuhunchha ta?",
+          "korean": "누구의 이름을 쓰고 있습니까?"
+        },
+        {
+          "speaker": "B",
+          "nepali": "म आफ्नो नाम लेख्दै छु।",
+          "romanized": "ma aaphno naam lekhdaichhu.",
+          "korean": "저는 제 이름을 쓰고 있어요."
+        }
+        
       ]
     },
     {
